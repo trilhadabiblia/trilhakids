@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profetas Menores - Livros da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .menu-open { transform: translateX(0); }
+    .menu-closed { transform: translateX(-100%); }
+    .overlay-show { opacity: 1; visibility: visible; }
+    .overlay-hide { opacity: 0; visibility: hidden; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <button onclick="toggleMenu()" class="fixed top-6 left-6 z-50 bg-gradient-to-r from-purple-600 to-violet-600 p-3 rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <div id="overlay" class="overlay-hide fixed inset-0 bg-black/50 z-30 transition-all duration-300" onclick="toggleMenu()"></div>
+
+  <aside id="sidebar" class="menu-closed fixed left-0 top-0 h-screen w-80 bg-gradient-to-b from-slate-800 to-slate-900 border-r border-purple-500/30 z-40 transition-transform duration-300 overflow-y-auto">
+    <div class="p-6">
+      <h2 class="text-2xl font-black text-purple-300 mb-8">📖 LIVROS DA BÍBLIA</h2>
+      <div class="mb-6">
+        <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2"><span>📜</span> Antigo Testamento</h3>
+        <div class="space-y-2 pl-4">
+          <a href="pentateuco.html" class="block text-gray-300 hover:text-purple-300 transition">🔤 Pentateuco</a>
+          <a href="historicos.html" class="block text-gray-300 hover:text-purple-300 transition">⚖️ Históricos</a>
+          <a href="poeticos.html" class="block text-gray-300 hover:text-purple-300 transition">🎵 Poéticos</a>
+          <a href="profetas-maiores.html" class="block text-gray-300 hover:text-purple-300 transition">📢 Profetas Maiores</a>
+          <a href="profetas-menores.html" class="block text-gray-300 hover:text-purple-300 transition">🔔 Profetas Menores</a>
+        </div>
+      </div>
+      <div class="mb-6 border-t border-purple-500/30 pt-6">
+        <h3 class="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2"><span>✨</span> Novo Testamento</h3>
+        <div class="space-y-2 pl-4">
+          <a href="evangelhos.html" class="block text-gray-300 hover:text-purple-300 transition">😇 Evangelhos</a>
+          <a href="atos.html" class="block text-gray-300 hover:text-purple-300 transition">🚀 Histórico (Atos)</a>
+          <a href="cartas-paulo.html" class="block text-gray-300 hover:text-purple-300 transition">✉️ Cartas de Paulo</a>
+          <a href="outras-cartas.html" class="block text-gray-300 hover:text-purple-300 transition">📮 Outras Cartas</a>
+          <a href="apocalipse.html" class="block text-gray-300 hover:text-purple-300 transition">🔮 Profecias (Apocalipse)</a>
+        </div>
+      </div>
+      <div class="border-t border-purple-500/30 pt-6">
+        <a href="index.html" class="block text-purple-400 hover:text-purple-200 font-bold transition">← Voltar à Home</a>
+      </div>
+    </div>
+  </aside>
+
+  <header class="bg-gradient-to-r from-blue-600 to-indigo-600 backdrop-blur-xl border-b border-blue-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-between ml-16 md:ml-0">
+        <div>
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">🔔 PROFETAS MENORES</h1>
+          <p class="text-blue-100 text-sm md:text-base">12 livros de profecia concisa</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">📚 Doze Profetas com Mensagens Poderosas</h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">Chamados "menores" pelo tamanho, não pela importância. Seus livros contêm mensagens profundas sobre justiça, misericórdia e esperança.</p>
+    </section>
+
+    <div class="grid md:grid-cols-3 lg:grid-cols-6 gap-3 mb-12">
+      <div class="group cursor-pointer" onclick="irPara('oseias.html')"><div class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">💔</div><h3 class="font-bold text-white text-sm">Oséias</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('joel.html')"><div class="bg-gradient-to-br from-orange-600 to-amber-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">🦗</div><h3 class="font-bold text-white text-sm">Joel</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('amos.html')"><div class="bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">⚖️</div><h3 class="font-bold text-white text-sm">Amós</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('obadias.html')"><div class="bg-gradient-to-br from-lime-600 to-green-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">🗻</div><h3 class="font-bold text-white text-sm">Obadias</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('jonas.html')"><div class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">🐋</div><h3 class="font-bold text-white text-sm">Jonas</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('miqueias.html')"><div class="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">🎯</div><h3 class="font-bold text-white text-sm">Miqueias</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('naum.html')"><div class="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">⚔️</div><h3 class="font-bold text-white text-sm">Naum</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('habacuque.html')"><div class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">❓</div><h3 class="font-bold text-white text-sm">Habacuque</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('sofonias.html')"><div class="bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">🌪️</div><h3 class="font-bold text-white text-sm">Sofonias</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('ageu.html')"><div class="bg-gradient-to-br from-pink-600 to-rose-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">🏗️</div><h3 class="font-bold text-white text-sm">Ageu</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('zacarias.html')"><div class="bg-gradient-to-br from-rose-600 to-red-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">✨</div><h3 class="font-bold text-white text-sm">Zacarias</h3></div></div>
+      <div class="group cursor-pointer" onclick="irPara('malaquias.html')"><div class="bg-gradient-to-br from-red-600 to-orange-600 rounded-xl p-4 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105"><div class="text-3xl mb-2">📮</div><h3 class="font-bold text-white text-sm">Malaquias</h3></div></div>
+    </div>
+
+    <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="bg-gradient-to-br from-red-500/10 to-rose-500/10 border border-red-500/30 rounded-2xl p-6"><h3 class="font-bold text-red-300 mb-2">💔 Oséias</h3><p class="text-gray-300 text-sm">Amor de Deus apesar da infidelidade do povo.</p></div>
+      <div class="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-2xl p-6"><h3 class="font-bold text-orange-300 mb-2">🦗 Joel</h3><p class="text-gray-300 text-sm">Chamado ao arrependimento e promessa do Espírito.</p></div>
+      <div class="bg-gradient-to-br from-yellow-500/10 to-yellow-400/10 border border-yellow-500/30 rounded-2xl p-6"><h3 class="font-bold text-yellow-300 mb-2">⚖️ Amós</h3><p class="text-gray-300 text-sm">Justiça social e denúncia da injustiça.</p></div>
+      <div class="bg-gradient-to-br from-lime-500/10 to-green-500/10 border border-green-500/30 rounded-2xl p-6"><h3 class="font-bold text-lime-300 mb-2">🗻 Obadias</h3><p class="text-gray-300 text-sm">Julgamento de Edom e vitória de Israel.</p></div>
+      <div class="bg-gradient-to-br from-teal-500/10 to-cyan-500/10 border border-teal-500/30 rounded-2xl p-6"><h3 class="font-bold text-cyan-300 mb-2">🐋 Jonas</h3><p class="text-gray-300 text-sm">Misericórdia de Deus para com os inimigos.</p></div>
+      <div class="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-500/30 rounded-2xl p-6"><h3 class="font-bold text-cyan-300 mb-2">🎯 Miqueias</h3><p class="text-gray-300 text-sm">Julgamento e restauração, justiça divina.</p></div>
+      <div class="bg-gradient-to-br from-blue-500/10 to-indigo-500/10 border border-blue-500/30 rounded-2xl p-6"><h3 class="font-bold text-blue-300 mb-2">⚔️ Naum</h3><p class="text-gray-300 text-sm">Julgamento de Nínive e vingança divina.</p></div>
+      <div class="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 rounded-2xl p-6"><h3 class="font-bold text-indigo-300 mb-2">❓ Habacuque</h3><p class="text-gray-300 text-sm">Diálogo com Deus sobre justiça e sofrimento.</p></div>
+      <div class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-6"><h3 class="font-bold text-purple-300 mb-2">🌪️ Sofonias</h3><p class="text-gray-300 text-sm">Dia do Senhor e promessa de restauração.</p></div>
+      <div class="bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/30 rounded-2xl p-6"><h3 class="font-bold text-pink-300 mb-2">🏗️ Ageu</h3><p class="text-gray-300 text-sm">Reconstrução do templo e bênção de Deus.</p></div>
+      <div class="bg-gradient-to-br from-rose-500/10 to-red-500/10 border border-rose-500/30 rounded-2xl p-6"><h3 class="font-bold text-rose-300 mb-2">✨ Zacarias</h3><p class="text-gray-300 text-sm">Visões de esperança e promessas messiânicas.</p></div>
+      <div class="bg-gradient-to-br from-red-500/10 to-orange-500/10 border border-red-500/30 rounded-2xl p-6"><h3 class="font-bold text-red-300 mb-2">📮 Malaquias</h3><p class="text-gray-300 text-sm">Último profeta, chamado à fidelidade e esperança.</p></div>
+    </section>
+  </main>
+
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
+    <p class="text-sm">Ministério Infantil - Kids | Desenvolvido com ❤️ para crianças</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('menu-open');
+      sidebar.classList.toggle('menu-closed');
+      overlay.classList.toggle('overlay-show');
+      overlay.classList.toggle('overlay-hide');
+    }
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
+    });
+    window.addEventListener('resize', () => {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('menu-open');
+        sidebar.classList.add('menu-closed');
+        overlay.classList.remove('overlay-show');
+        overlay.classList.add('overlay-hide');
+      }
+    });
+  </script>
+  <script src="./gamificacao.js"></script>
+</body>
+</html>

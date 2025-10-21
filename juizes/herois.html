@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Juízes da Bíblia – Heróis da Fé</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+	<!-- Header -->
+	<header
+		class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-50 shadow-2xl">
+		<div class="max-w-6xl mx-auto px-4 py-8">
+			<div class="text-center">
+				<h1 class="text-5xl font-black text-white drop-shadow-lg mb-2">
+					⚔️ JUÍZES DA BÍBLIA ⚔️
+				</h1>
+				<p class="text-xl text-purple-100">🦁 Heróis da Fé - Clique para descobrir suas histórias 🦁</p>
+			</div>
+		</div>
+	</header>
+
+	<!-- Main Content -->
+	<main class="max-w-5xl mx-auto px-4 py-12">
+		<div id="cartas-container" class="space-y-6"></div>
+	</main>
+
+	<!-- Footer -->
+	<footer class="text-center py-8 text-purple-300 border-t border-purple-500/30 mt-16">
+		<p class="font-semibold">© 2025 - Trilha de Ensino: Livros Históricos</p>
+		<p class="text-sm mt-2">Ministério Infantil - Kids</p>
+	</footer>
+
+	<!-- Modal Imagem -->
+	<div id="modal-imagem"
+		class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+		onclick="fecharModal()">
+		<div class="bg-slate-900 rounded-2xl border-2 border-purple-500/50 p-6 max-w-2xl w-full shadow-2xl"
+			onclick="event.stopPropagation()">
+			<div class="flex justify-between items-center mb-4">
+				<h2 id="modal-titulo" class="text-2xl font-black text-white"></h2>
+				<button onclick="fecharModal()" class="text-gray-400 hover:text-white text-2xl">✕</button>
+			</div>
+			<img id="modal-imagem-src" src="" alt=""
+				class="w-full rounded-xl mb-4 max-h-96 md:max-h-[500px] object-contain mx-auto">
+			<p class="text-gray-300 text-center text-sm">Clique fora para fechar</p>
+		</div>
+	</div>
+
+	<script>
+		const juizes = [
+			{
+				id: 1,
+				nome: "Otniel",
+				img: "otniel.png",
+				tribo: "Judá",
+				funcao: "Juiz de Israel",
+				periodo: "40 anos",
+				poderEspecial: "Coragem inspiradora e discernimento estratégico",
+				fortes: ["Liderança sábia", "Fé em Deus", "Libertação do povo"],
+				fracos: ["Pouca menção histórica", "Falta de detalhes pessoais"],
+				versiculo: "O Espírito do Senhor se apossou de Otniel, e ele julgou Israel.",
+				referencia: "Juízes 3:10",
+				curiosidade: "Primeiro juiz de Israel após a morte de Josué, provou que Deus levanta libertadores quando o povo clama.",
+				cor: "from-amber-500 to-orange-500"
+			},
+			{
+				id: 2,
+				nome: "Eúde",
+				img: "eude.png",
+				tribo: "Benjamim",
+				funcao: "Juiz de Israel",
+				periodo: "80 anos",
+				poderEspecial: "Astúcia estratégica e coragem inusitada",
+				fortes: ["Inteligência tática", "Valentia", "Criatividade em combate"],
+				fracos: ["Ação violenta e impulsiva", "Métodos questionáveis"],
+				versiculo: "Eúde estendeu a mão esquerda, sacou a adaga e a cravou na barriga do rei.",
+				referencia: "Juízes 3:21",
+				curiosidade: "Eúde era canhoto (raro na época), o que o ajudou a surpreender o inimigo.",
+				cor: "from-red-500 to-rose-500"
+			},
+			{
+				id: 3,
+				nome: "Sangar",
+				img: "sangar.png",
+				tribo: "Israel",
+				funcao: "Juiz de Israel",
+				periodo: "Indefinido",
+				poderEspecial: "Força improvável contra os filisteus",
+				fortes: ["Improviso genial", "Coragem extrema", "Determinação"],
+				fracos: ["Recursos limitados", "Pouco reconhecimento histórico"],
+				versiculo: "Depois dele foi Sangar, filho de Anate, que feriu seiscentos homens dos filisteus com uma aguilhada de bois.",
+				referencia: "Juízes 3:31",
+				curiosidade: "Venceu 600 filisteus com apenas uma aguilhada de bois! Prova de que Deus usa o improvável.",
+				cor: "from-yellow-500 to-amber-500"
+			},
+			{
+				id: 4,
+				nome: "Débora",
+				img: "debora.png",
+				tribo: "Efraim",
+				funcao: "Profetisa e Juíza",
+				periodo: "40 anos",
+				poderEspecial: "Sabedoria profética e visão divina",
+				fortes: ["Liderança feminina forte", "Discernimento espiritual", "Coragem"],
+				fracos: ["Dependência de Baraque", "Falta de ação militar direta"],
+				versiculo: "Ela enviou uma mensagem a Baraque, filho de Abinoã, de Quedes, em Naftali.",
+				referencia: "Juízes 4:6",
+				curiosidade: "Uma das poucas mulheres líderes da Bíblia, Débora sentava sob a tamareira de Débora e julgava Israel.",
+				cor: "from-pink-500 to-fuchsia-500"
+			},
+			{
+				id: 5,
+				nome: "Gideão",
+				img: "gideao.png",
+				tribo: "Manassés",
+				funcao: "Juiz de Israel",
+				periodo: "40 anos",
+				poderEspecial: "Fé sobrenatural em Deus e estratégia divina",
+				fortes: ["Humildade", "Fé inabalável", "Obediência"],
+				fracos: ["Dúvidas iniciais", "Momento de incredulidade depois"],
+				versiculo: "O Senhor disse a Gideão: 'Com estes trezentos homens que lamberam a água, eu vos salvarei.'",
+				referencia: "Juízes 7:7",
+				curiosidade: "Venceu os midianitas com apenas 300 homens. Deus reduz o número de guerreiros para que a vitória seja claramente Dele.",
+				cor: "from-cyan-500 to-blue-500"
+			},
+			{
+				id: 6,
+				nome: "Tola",
+				img: "tola.png",
+				tribo: "Issacar",
+				funcao: "Juiz de Israel",
+				periodo: "23 anos",
+				poderEspecial: "Estabilidade e justiça equilibrada",
+				fortes: ["Sabedoria judicial", "Paz e ordem", "Equilíbrio"],
+				fracos: ["Pouco lembrado historicamente", "Sem feitos militares notáveis"],
+				versiculo: "Depois dele se levantou Tola, filho de Puá, filho de Dó, do povo de Issacar, que livrou Israel.",
+				referencia: "Juízes 10:1",
+				curiosidade: "Governou 23 anos em períodos de paz, mostrando que liderança também é manter a estabilidade.",
+				cor: "from-lime-500 to-green-500"
+			},
+			{
+				id: 7,
+				nome: "Jair",
+				img: "jair.png",
+				tribo: "Gileade",
+				funcao: "Juiz de Israel",
+				periodo: "22 anos",
+				poderEspecial: "Influência local e organização regional",
+				fortes: ["Organização comunitária", "Prosperidade econômica", "Liderança regional"],
+				fracos: ["Sem feitos militares marcantes", "Pouco reconhecimento histórico"],
+				versiculo: "Depois dele se levantou Jair, gileadita, que julgou Israel vinte e dois anos.",
+				referencia: "Juízes 10:3",
+				curiosidade: "Tinha trinta filhos que cavalgavam em trinta jumentos e possuíam trinta cidades, símbolo de sua prosperidade.",
+				cor: "from-teal-500 to-cyan-500"
+			},
+			{
+				id: 8,
+				nome: "Jefté",
+				img: "jefte.png",
+				tribo: "Gileade",
+				funcao: "Juiz e guerreiro",
+				periodo: "6 anos",
+				poderEspecial: "Bravura intensa e determinação inabalável",
+				fortes: ["Coragem extraordinária", "Fé em Deus", "Liderança militar"],
+				fracos: ["Impulsividade e votos precipitados", "Origem questionável (filho de prostituta)"],
+				versiculo: "O Espírito do Senhor se apossou de Jefté, e ele passou por Gileade e Manassés.",
+				referencia: "Juízes 11:29",
+				curiosidade: "Fez um voto precipitado a Deus que resultou em sacrifício pessoal, mostrando as consequências da impulsividade.",
+				cor: "from-violet-500 to-purple-500"
+			},
+			{
+				id: 9,
+				nome: "Ibsã",
+				img: "ibsa.png",
+				tribo: "Belém (Judá)",
+				funcao: "Juiz de Israel",
+				periodo: "7 anos",
+				poderEspecial: "Diplomacia e alianças familiares",
+				fortes: ["Sabedoria política", "Capacidade diplomática", "Influência social"],
+				fracos: ["Papel discreto na história", "Sem conflitos militares registrados"],
+				versiculo: "Depois dele julgou Israel Ibsã, de Belém.",
+				referencia: "Juízes 12:8",
+				curiosidade: "Tinha trinta filhos e trinta filhas, casava suas filhas com homens de fora, construindo alianças políticas.",
+				cor: "from-sky-500 to-blue-500"
+			},
+			{
+				id: 10,
+				nome: "Elom",
+				img: "elom.png",
+				tribo: "Zebulom",
+				funcao: "Juiz de Israel",
+				periodo: "10 anos",
+				poderEspecial: "Tranquilidade e sabedoria pacífica",
+				fortes: ["Paz e prudência", "Liderança estável", "Justiça equilibrada"],
+				fracos: ["Pouca ação militar", "Figura pouco citada nas escrituras"],
+				versiculo: "Depois dele julgou Israel Elom, de Zebulom, dez anos.",
+				referencia: "Juízes 12:11",
+				curiosidade: "Manteve Israel em paz durante dez anos, provando que nem todo juiz precisava de grandes batalhas.",
+				cor: "from-emerald-500 to-teal-500"
+			},
+			{
+				id: 11,
+				nome: "Abdom",
+				img: "abdom.png",
+				tribo: "Efraim",
+				funcao: "Juiz de Israel",
+				periodo: "8 anos",
+				poderEspecial: "Equilíbrio e fortalecimento da justiça",
+				fortes: ["Sabedoria judicial", "Força comunitária", "Prosperidade"],
+				fracos: ["Figura pouco lembrada", "Sem eventos marcantes registrados"],
+				versiculo: "Depois dele julgou Israel Abdom, filho de Hilel, o piratanita, oito anos.",
+				referencia: "Juízes 12:13",
+				curiosidade: "Tinha quarenta filhos e trinta netos que cavalgavam em setenta jumentos, símbolo de sua prosperidade e força.",
+				cor: "from-rose-500 to-pink-500"
+			},
+			{
+				id: 12,
+				nome: "Sansão",
+				img: "sansao.png",
+				tribo: "Dã",
+				funcao: "Juiz e guerreiro libertador",
+				periodo: "20 anos",
+				poderEspecial: "Força sobrenatural concedida por Deus",
+				fortes: ["Força imbatível", "Coragem extrema", "Espírito de libertação"],
+				fracos: ["Impulsividade emocional", "Fraqueza diante da sedução"],
+				versiculo: "O Espírito do Senhor se apossou de Sansão, e ele rasgou o leão como quem rasga um cabrito.",
+				referencia: "Juízes 14:6",
+				curiosidade: "Seu poder estava no cabelo nunca cortado (voto de nazireu). Dalila o traiu descobrindo o segredo.",
+				cor: "from-orange-500 to-red-500"
+			},
+			{
+				id: 13,
+				nome: "Eli",
+				img: "eli.png",
+				tribo: "Levi",
+				funcao: "Juiz e Sacerdote",
+				periodo: "40 anos",
+				poderEspecial: "Autoridade espiritual e sacerdotal",
+				fortes: ["Experiência espiritual", "Autoridade religiosa", "Dedicação a Deus"],
+				fracos: ["Tolerância excessiva com filhos ímpios", "Cegueira na velhice"],
+				versiculo: "E Eli era juiz de Israel naquele tempo. E Eli era muito idoso.",
+				referencia: "1 Samuel 4:18",
+				curiosidade: "Criou Samuel como filho, sendo a ponte entre o período dos juízes e a profecia através de Samuel.",
+				cor: "from-blue-500 to-indigo-500"
+			},
+			{
+				id: 14,
+				nome: "Samuel",
+				img: "samuel.png",
+				tribo: "Efraim",
+				funcao: "Último juiz e profeta",
+				periodo: "Indefinido",
+				poderEspecial: "Profecia divina e discernimento espiritual",
+				fortes: ["Fidelidade a Deus", "Discernimento aguçado", "Liderança prudente"],
+				fracos: ["Peso da responsabilidade", "Filhos que não seguiram seus caminhos"],
+				versiculo: "Samuel serviu o Senhor desde a infância, e o Senhor estava com ele e não deixou falhar nenhuma das suas palavras.",
+				referencia: "1 Samuel 3:19",
+				curiosidade: "Ungiu Davi como rei. Foi o último juiz e fez a transição para a monarquia em Israel.",
+				cor: "from-indigo-500 to-purple-500"
+			}
+		];
+
+		function criarCarta(heroi) {
+			return `
+        <div class="group cursor-pointer" onclick="toggleCard(${heroi.id})">
+          <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-purple-500/30 hover:border-purple-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/20 hover:shadow-2xl">
+            
+            <!-- Header Clicável -->
+            <div class="bg-gradient-to-r ${heroi.cor} p-6 flex items-center justify-between hover:opacity-90 transition-opacity">
+              <div class="flex items-center gap-4">
+                <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModal('${heroi.img}', '${heroi.nome}')">
+                  <img 
+                    src="${heroi.img}" 
+                    alt="${heroi.nome}"
+                    class="w-full h-full object-contain p-2"
+                    
+                  />
+                </div>
+                <div>
+                  <h2 class="text-3xl font-black text-white drop-shadow-lg">${heroi.nome}</h2>
+                  <p class="text-white/90 text-sm font-semibold mt-2">
+                    📍 ${heroi.tribo} • ⏱️ ${heroi.periodo}
+                  </p>
+                </div>
+              </div>
+              <div class="flex-shrink-0">
+                <svg class="w-8 h-8 text-white transition-transform duration-300 toggle-icon-${heroi.id}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Conteúdo Expandível -->
+            <div id="content-${heroi.id}" class="hidden bg-slate-800/50 px-6 pb-6 pt-0 space-y-5 max-h-96 overflow-y-auto">
+              
+              <!-- Poder Especial -->
+              <div class="pt-6 border-t border-purple-500/30">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-2xl">⚡</span>
+                  <h3 class="font-black text-amber-300 text-lg">PODER ESPECIAL</h3>
+                </div>
+                <p class="text-gray-200 pl-8">${heroi.poderEspecial}</p>
+              </div>
+
+              <!-- Pontos Fortes -->
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-2xl">✅</span>
+                  <h3 class="font-black text-green-400 text-lg">PONTOS FORTES</h3>
+                </div>
+                <div class="pl-8 space-y-2">
+                  ${heroi.fortes.map(f => `<p class="text-gray-200">🟢 ${f}</p>`).join('')}
+                </div>
+              </div>
+
+              <!-- Pontos Fracos -->
+              <div>
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-2xl">⚠️</span>
+                  <h3 class="font-black text-red-400 text-lg">PONTOS FRACOS</h3>
+                </div>
+                <div class="pl-8 space-y-2">
+                  ${heroi.fracos.map(f => `<p class="text-gray-200">🔴 ${f}</p>`).join('')}
+                </div>
+              </div>
+
+              <!-- Versículo -->
+              <div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 p-4 rounded-xl border border-blue-500/50 backdrop-blur">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-2xl">📖</span>
+                  <h3 class="font-black text-blue-300 text-lg">VERSÍCULO DE PODER</h3>
+                </div>
+                <p class="text-gray-100 italic pl-8">"${heroi.versiculo}"</p>
+                <p class="text-blue-200 pl-8 mt-2 font-bold">— ${heroi.referencia}</p>
+              </div>
+
+              <!-- Curiosidade -->
+              <div class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 p-4 rounded-xl border border-purple-500/50 backdrop-blur">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="text-2xl">💡</span>
+                  <h3 class="font-black text-purple-300 text-lg">CURIOSIDADE BÍBLICA</h3>
+                </div>
+                <p class="text-gray-100 pl-8">${heroi.curiosidade}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+		}
+
+		function toggleCard(id) {
+			const content = document.getElementById(`content-${id}`);
+			const icon = document.querySelector(`.toggle-icon-${id}`);
+
+			content.classList.toggle('hidden');
+			icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+		}
+
+		function abrirModal(src, nome) {
+			document.getElementById('modal-imagem').classList.remove('hidden');
+			document.getElementById('modal-imagem-src').src = src;
+			document.getElementById('modal-titulo').textContent = nome;
+			trilhoGame.visitarHeroi(nome);
+		}
+
+		function fecharModal() {
+			document.getElementById('modal-imagem').classList.add('hidden');
+		}
+
+		// Fechar modal com ESC
+		document.addEventListener('keydown', (e) => {
+			if (e.key === 'Escape') fecharModal();
+		});
+
+		// Renderizar cartas
+		const container = document.getElementById('cartas-container');
+		juizes.forEach(heroi => {
+			container.innerHTML += criarCarta(heroi);
+		});
+	</script>
+
+	<script src="/menu.js"></script>
+	<script src="../gamificacao.js"></script>
+
+</body>
+
+</html>

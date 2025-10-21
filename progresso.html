@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Progresso - Trilho Kids</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .menu-open { transform: translateX(0); }
+    .menu-closed { transform: translateX(-100%); }
+    .overlay-show { opacity: 1; visibility: visible; }
+    .overlay-hide { opacity: 0; visibility: hidden; }
+    .badge-item { animation: badgeAppear 0.5s ease-out; }
+    @keyframes badgeAppear {
+      from { transform: scale(0) rotate(-180deg); opacity: 0; }
+      to { transform: scale(1) rotate(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <!-- Menu Hamburger -->
+  <button onclick="toggleMenu()" class="fixed top-6 left-6 z-50 bg-gradient-to-r from-purple-600 to-violet-600 p-3 rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+
+  <div id="overlay" class="overlay-hide fixed inset-0 bg-black/50 z-30 transition-all duration-300" onclick="toggleMenu()"></div>
+
+  <aside id="sidebar" class="menu-closed fixed left-0 top-0 h-screen w-80 bg-gradient-to-b from-slate-800 to-slate-900 border-r border-purple-500/30 z-40 transition-transform duration-300 overflow-y-auto">
+    <div class="p-6">
+      <h2 class="text-2xl font-black text-purple-300 mb-8">📖 LIVROS DA BÍBLIA</h2>
+      <div class="mb-6">
+        <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2"><span>📜</span> Antigo Testamento</h3>
+        <div class="space-y-2 pl-4">
+          <a href="../pentateuco.html" class="block text-gray-300 hover:text-purple-300 transition">🔤 Pentateuco</a>
+          <a href="../historicos.html" class="block text-gray-300 hover:text-purple-300 transition">⚖️ Históricos</a>
+          <a href="../poeticos.html" class="block text-gray-300 hover:text-purple-300 transition">🎵 Poéticos</a>
+          <a href="../profetasmaiores.html" class="block text-gray-300 hover:text-purple-300 transition">📢 Profetas Maiores</a>
+          <a href="../profetasmenores.html" class="block text-gray-300 hover:text-purple-300 transition">🔔 Profetas Menores</a>
+        </div>
+      </div>
+      <div class="border-t border-purple-500/30 pt-6">
+        <a href="../index.html" class="block text-purple-400 hover:text-purple-200 font-bold transition">🏠 Voltar à Home</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6">
+      <div class="text-center">
+        <h1 class="text-4xl font-black text-white drop-shadow-lg mb-2">🏆 MEU PROGRESSO</h1>
+        <p class="text-purple-100">Acompanhe sua jornada no Trilho Kids!</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    
+    <!-- Stats Principais -->
+    <section class="grid md:grid-cols-4 gap-6 mb-12">
+      <div class="bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl p-6 text-center shadow-2xl">
+        <div class="text-5xl mb-3">⭐</div>
+        <div class="text-4xl font-black text-white mb-2" id="stat-pontos">0</div>
+        <p class="text-yellow-100 font-semibold">Pontos</p>
+      </div>
+      <div class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl p-6 text-center shadow-2xl">
+        <div class="text-5xl mb-3">🎖️</div>
+        <div class="text-4xl font-black text-white mb-2" id="stat-nivel">1</div>
+        <p class="text-purple-100 font-semibold" id="stat-nome-nivel">Iniciante</p>
+      </div>
+      <div class="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl p-6 text-center shadow-2xl">
+        <div class="text-5xl mb-3">📚</div>
+        <div class="text-4xl font-black text-white mb-2" id="stat-livros">0</div>
+        <p class="text-blue-100 font-semibold">Livros Visitados</p>
+      </div>
+      <div class="bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl p-6 text-center shadow-2xl">
+        <div class="text-5xl mb-3">🏅</div>
+        <div class="text-4xl font-black text-white mb-2" id="stat-badges">0</div>
+        <p class="text-green-100 font-semibold">Badges Conquistadas</p>
+      </div>
+    </section>
+
+    <!-- Progresso para Próximo Nível -->
+    <section class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-8 mb-12">
+      <h2 class="text-2xl font-black text-purple-300 mb-6">📈 Progresso para o Próximo Nível</h2>
+      <div class="space-y-4">
+        <div class="flex justify-between text-lg">
+          <span class="text-gray-300">Pontos Atuais:</span>
+          <span class="text-white font-bold" id="pontos-atuais">0</span>
+        </div>
+        <div class="flex justify-between text-lg">
+          <span class="text-gray-300">Próximo Nível:</span>
+          <span class="text-white font-bold" id="proximo-nivel-pontos">100</span>
+        </div>
+        <div class="flex justify-between text-lg">
+          <span class="text-gray-300">Faltam:</span>
+          <span class="text-yellow-300 font-bold" id="pontos-faltam">100</span>
+        </div>
+        <div class="w-full bg-gray-700 rounded-full h-6 overflow-hidden">
+          <div class="bg-gradient-to-r from-purple-600 to-violet-600 h-full transition-all duration-500" id="barra-progresso-nivel" style="width: 0%"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Badges Conquistadas -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-black text-purple-300 mb-6 text-center">🏅 Badges Conquistadas</h2>
+      <div id="badges-container" class="grid md:grid-cols-3 lg:grid-cols-4 gap-4">
+        <!-- Badges serão inseridas dinamicamente -->
+      </div>
+      <p id="sem-badges" class="text-center text-gray-400 mt-8 hidden">
+        Você ainda não conquistou nenhuma badge. Continue explorando para desbloquear conquistas! 🎯
+      </p>
+    </section>
+
+    <!-- Atividades Recentes -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-black text-purple-300 mb-6 text-center">📜 Atividades Recentes</h2>
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-purple-500/30 rounded-2xl p-6">
+        <div id="historia-container" class="space-y-3 max-h-96 overflow-y-auto">
+          <!-- Histórico será inserido dinamicamente -->
+        </div>
+        <p id="sem-historia" class="text-center text-gray-400 py-8 hidden">
+          Nenhuma atividade registrada ainda. Comece sua jornada! 🚀
+        </p>
+      </div>
+    </section>
+
+    <!-- Estatísticas Detalhadas -->
+    <section class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-blue-300 mb-4">⚔️ Heróis Descobertos</h3>
+        <div class="text-5xl font-black text-white text-center mb-2" id="stat-herois">0</div>
+        <p class="text-center text-gray-300">de 14 Juízes</p>
+        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden mt-4">
+          <div class="bg-gradient-to-r from-blue-600 to-cyan-600 h-full transition-all duration-500" id="barra-herois" style="width: 0%"></div>
+        </div>
+      </div>
+      <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-green-300 mb-4">🎯 Quizzes Completados</h3>
+        <div class="text-5xl font-black text-white text-center mb-2" id="stat-quizzes">0</div>
+        <p class="text-center text-gray-300">Desafios Concluídos</p>
+      </div>
+    </section>
+
+    <!-- Botão Reset -->
+    <section class="text-center">
+      <button onclick="resetarTudo()" class="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3 rounded-lg font-bold transition-all">
+        🔄 Resetar Progresso
+      </button>
+    </section>
+
+  </main>
+
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Continue explorando para desbloquear mais conquistas!</p>
+  </footer>
+
+  <script src="../gamificacao.js"></script>
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('menu-open');
+      sidebar.classList.toggle('menu-closed');
+      overlay.classList.toggle('overlay-show');
+      overlay.classList.toggle('overlay-hide');
+    }
+
+    function resetarTudo() {
+      trilhoGame.resetarProgresso();
+    }
+
+    // Carregar dados ao abrir a página
+    window.addEventListener('DOMContentLoaded', () => {
+      const stats = trilhoGame.getEstatisticas();
+      const badges = trilhoGame.getBadges();
+      const historia = trilhoGame.getHistoria();
+
+      // Atualizar estatísticas principais
+      document.getElementById('stat-pontos').textContent = stats.pontos;
+      document.getElementById('stat-nivel').textContent = stats.nivel;
+      document.getElementById('stat-nome-nivel').textContent = stats.nomeNivel;
+      document.getElementById('stat-livros').textContent = stats.livrosVisitados;
+      document.getElementById('stat-badges').textContent = stats.badges;
+      document.getElementById('stat-herois').textContent = stats.heroisVisitados;
+      document.getElementById('stat-quizzes').textContent = stats.quizzesCompletos;
+
+      // Progresso para próximo nível
+      document.getElementById('pontos-atuais').textContent = stats.pontos;
+      document.getElementById('proximo-nivel-pontos').textContent = stats.proximoNivel.pontos;
+      document.getElementById('pontos-faltam').textContent = stats.proximoNivel.faltam;
+      
+      const percentualNivel = ((stats.pontos / stats.proximoNivel.pontos) * 100).toFixed(0);
+      document.getElementById('barra-progresso-nivel').style.width = percentualNivel + '%';
+
+      // Barra de heróis
+      const percentualHerois = ((stats.heroisVisitados / 14) * 100).toFixed(0);
+      document.getElementById('barra-herois').style.width = percentualHerois + '%';
+
+      // Renderizar badges
+      const badgesContainer = document.getElementById('badges-container');
+      if (badges.length === 0) {
+        document.getElementById('sem-badges').classList.remove('hidden');
+      } else {
+        badges.forEach(badge => {
+          const badgeEl = document.createElement('div');
+          badgeEl.className = 'badge-item bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl p-6 text-center shadow-lg';
+          badgeEl.innerHTML = `
+            <div class="text-5xl mb-3">${badge.nome.split(' ')[0]}</div>
+            <h3 class="font-bold text-white mb-2">${badge.nome.substring(2)}</h3>
+            <p class="text-xs text-yellow-100">${badge.descricao || ''}</p>
+          `;
+          badgesContainer.appendChild(badgeEl);
+        });
+      }
+
+      // Renderizar histórico
+      const historiaContainer = document.getElementById('historia-container');
+      if (historia.length === 0) {
+        document.getElementById('sem-historia').classList.remove('hidden');
+      } else {
+        historia.slice(0, 20).forEach(item => {
+          const itemEl = document.createElement('div');
+          itemEl.className = 'bg-slate-700/50 rounded-lg p-4 flex items-center gap-4 hover:bg-slate-700 transition-colors';
+          
+          let icone = '📌';
+          let texto = '';
+          let cor = 'text-gray-300';
+          
+          if (item.tipo === 'livro') {
+            icone = '📖';
+            texto = `Visitou o livro: ${item.nome}`;
+            cor = 'text-blue-300';
+          } else if (item.tipo === 'heroi') {
+            icone = '⚔️';
+            texto = `Descobriu o herói: ${item.nome}`;
+            cor = 'text-purple-300';
+          } else if (item.tipo === 'quiz') {
+            icone = '🎯';
+            texto = `Quiz ${item.nome}: ${item.acertos}/${item.total} (${item.percentual.toFixed(0)}%)`;
+            cor = 'text-green-300';
+          } else if (item.tipo === 'pontos') {
+            icone = '⭐';
+            texto = item.motivo;
+            cor = 'text-yellow-300';
+          }
+          
+          const dataFormatada = new Date(item.data).toLocaleString('pt-BR', {
+            day: '2-digit',
+            month: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit'
+          });
+          
+          itemEl.innerHTML = `
+            <div class="text-3xl flex-shrink-0">${icone}</div>
+            <div class="flex-1">
+              <p class="${cor} font-semibold">${texto}</p>
+              <p class="text-xs text-gray-500 mt-1">${dataFormatada}</p>
+            </div>
+          `;
+          historiaContainer.appendChild(itemEl);
+        });
+      }
+    });
+  </script>
+  <script src="./gamificacao.js"></script>
+
+</body>
+</html>

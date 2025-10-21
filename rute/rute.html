@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livro de Rute - Resumo Visual</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media print {
+      body {
+        background: white;
+      }
+      .no-print {
+        display: none;
+      }
+      .section {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+  <!-- Botão Imprimir -->
+  <div class="no-print fixed bottom-6 right-6 z-50">
+    <button onclick="window.print()" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+      🖨️ Imprimir
+    </button>
+  </div>
+
+  <!-- Capa -->
+  <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+    <div class="w-full max-w-2xl text-center">
+      <img src="rute-capa.png" alt="Capa Rute" class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain">
+      <h1 class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mb-4">
+        🌾 LIVRO DE RUTE 🌾
+      </h1>
+      <p class="text-xl text-gray-600 font-semibold">Fidelidade e Amizade - Um Resumo Visual para Crianças</p>
+    </div>
+  </section>
+
+  <!-- Seção 1: Quem é Rute? -->
+  <section class="section bg-white p-8 mb-4 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <img src="rute-quem-e.png" alt="Quem é Rute?" class="w-full h-auto rounded-xl shadow-lg object-contain">
+        </div>
+        <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-4 border-amber-500">
+          <h2 class="text-4xl font-black text-amber-700 mb-6">❓ Quem é Rute?</h2>
+          <div class="space-y-4">
+            <p class="text-gray-800 text-lg leading-relaxed">
+              <span class="font-bold text-amber-600">Rute era uma mulher moabita</span> que amava a Deus e cuidava de sua sogra Noemi.
+            </p>
+            <p class="text-gray-800 text-lg leading-relaxed">
+              <span class="font-bold text-amber-600">Ela mostrou que a amizade e a fidelidade</span> são muito importantes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 2: O que o livro conta? -->
+  <section class="section bg-white p-8 mb-4 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1">
+          <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
+            <h2 class="text-4xl font-black text-green-700 mb-6">📖 O que o livro conta?</h2>
+            <div class="space-y-4">
+              <p class="text-gray-800 text-lg leading-relaxed">
+                <span class="font-bold text-green-600">Conta a história de como Rute</span> ajudou Noemi e depois se casou com Boaz.
+              </p>
+              <p class="text-gray-800 text-lg leading-relaxed">
+                <span class="font-bold text-green-600">Mostra como a fé e o amor</span> ajudam a resolver problemas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <img src="rute-o-que-conta.png" alt="O que o livro conta?" class="w-full h-auto rounded-xl shadow-lg object-contain">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 3: Por que é importante? -->
+  <section class="section bg-white p-8 mb-4 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <img src="rute-por-que-importante.png" alt="Por que é importante?" class="w-full h-auto rounded-xl shadow-lg object-contain">
+        </div>
+        <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-8 rounded-2xl border-4 border-rose-500">
+          <h2 class="text-4xl font-black text-rose-700 mb-6">⭐ Por que é importante?</h2>
+          <div class="space-y-4">
+            <p class="text-gray-800 text-lg leading-relaxed">
+              <span class="font-bold text-rose-600">🟢 Mostra que Deus cuida</span> das pessoas que confiam nele.
+            </p>
+            <p class="text-gray-800 text-lg leading-relaxed">
+              <span class="font-bold text-rose-600">🟢 Ensina sobre amizade, cuidado e fidelidade.</span>
+            </p>
+            <p class="text-gray-800 text-lg leading-relaxed">
+              <span class="font-bold text-rose-600">🟢 Rute e Boaz ajudam a preparar</span> a história que leva a Davi e Jesus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 4: Propósito do livro -->
+  <section class="section bg-white p-8 mb-4 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1">
+          <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
+            <h2 class="text-4xl font-black text-violet-700 mb-6">🎯 Propósito do livro</h2>
+            <div class="space-y-4">
+              <p class="text-gray-800 text-lg leading-relaxed">
+                <span class="font-bold text-violet-600">Mostrar que Deus cuida</span> das pessoas fiéis.
+              </p>
+              <p class="text-gray-800 text-lg leading-relaxed">
+                <span class="font-bold text-violet-600">Ensinar sobre amizade, coragem e confiança em Deus.</span>
+              </p>
+              <p class="text-gray-800 text-lg leading-relaxed">
+                <span class="font-bold text-violet-600">Preparar a história da família</span> que leva a Jesus.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <img src="rute-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-xl shadow-lg object-contain">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção 5: Curiosidade Divertida -->
+  <section class="section bg-white p-8 mb-4 shadow-lg">
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <img src="rute-curiosidade.png" alt="Curiosidade Divertida" class="w-full h-auto rounded-xl shadow-lg object-contain">
+        </div>
+        <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl border-4 border-cyan-500">
+          <h2 class="text-4xl font-black text-cyan-700 mb-6">💡 Curiosidade Divertida!</h2>
+          <div class="space-y-4">
+            <p class="text-gray-800 text-lg leading-relaxed">
+              <span class="font-bold text-cyan-600">O filho de Rute e Boaz foi Obede,</span> que foi <span class="font-bold text-cyan-600">o avó do rei Davi.</span>
+            </p>
+            <div class="bg-white p-4 rounded-lg mt-6 border-2 border-cyan-300">
+              <p class="text-sm text-gray-700 italic">Rute é parte da família que leva a Jesus! 👑</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <section class="section bg-gradient-to-r from-amber-600 to-yellow-600 text-white p-8 text-center">
+    <h3 class="text-2xl font-black mb-2">✨ Livro de Rute - Fidelidade e Amizade ✨</h3>
+    <p class="text-lg">Ministério Infantil - Kids © 2025</p>
+  </section>
+  <script src="/menu.js"></script>
+  <script src="../gamificacao.js"></script>  
+  <script>
+    trilhoGame.visitarLivro('Rute');
+  </script>
+</body>
+</html>
