@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Patriarcas da Fé – Trilho Kids</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-yellow-950 via-amber-900 to-stone-900 min-h-screen font-sans text-gray-100">
+
+<!-- Header -->
+<header
+	class="bg-gradient-to-r from-amber-700 to-yellow-600 backdrop-blur-xl border-b border-yellow-500/30 sticky top-0 z-50 shadow-2xl">
+	<div class="max-w-6xl mx-auto px-4 py-8">
+		<div class="text-center">
+			<h1 class="text-5xl font-black text-white drop-shadow-lg mb-2">
+				🌾 PATRIARCAS DA FÉ 🌾
+			</h1>
+			<p class="text-xl text-yellow-100">👑 A linhagem das promessas de Deus 👑</p>
+		</div>
+	</div>
+</header>
+
+<!-- Main Content -->
+<main class="max-w-5xl mx-auto px-4 py-12">
+	<div id="cartas-container" class="space-y-6"></div>
+</main>
+
+<!-- Footer -->
+<footer class="text-center py-8 text-yellow-300 border-t border-yellow-600/30 mt-16">
+	<p class="font-semibold">© 2025 - Trilha de Ensino: Patriarcas e Promessas</p>
+	<p class="text-sm mt-2">Ministério Infantil - Trilho Kids</p>
+</footer>
+
+<!-- Modal Imagem -->
+<div id="modal-imagem"
+	class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+	onclick="fecharModal()">
+	<div class="bg-stone-900 rounded-2xl border-2 border-amber-500/50 p-6 max-w-2xl w-full shadow-2xl"
+		onclick="event.stopPropagation()">
+		<div class="flex justify-between items-center mb-4">
+			<h2 id="modal-titulo" class="text-2xl font-black text-white"></h2>
+			<button onclick="fecharModal()" class="text-gray-400 hover:text-white text-2xl">✕</button>
+		</div>
+		<img id="modal-imagem-src" src="" alt=""
+			class="w-full rounded-xl mb-4 max-h-96 md:max-h-[500px] object-contain mx-auto">
+		<p class="text-gray-300 text-center text-sm">Clique fora para fechar</p>
+	</div>
+</div>
+
+<script>
+	const patriarcas = [
+		{
+			id: 1,
+			nome: "Abraão",
+			img: "img/abraao_sf.png",
+			funcao: "Pai da Fé",
+			poderEspecial: "Fé inabalável e obediência total a Deus",
+			fortes: ["Confiança nas promessas", "Coragem de deixar tudo por Deus", "Intercessão pelos outros"],
+			fracos: ["Momentos de dúvida", "Decisões apressadas"],
+			versiculo: "Abraão creu no Senhor, e isso lhe foi creditado como justiça.",
+			referencia: "Gênesis 15:6",
+			curiosidade: "Deus mudou seu nome de Abrão para Abraão, prometendo que seria pai de muitas nações.",
+			cor: "from-yellow-600 to-amber-700"
+		},
+		{
+			id: 2,
+			nome: "Isaque",
+			img: "img/isaque_sf.png",
+			funcao: "Filho da Promessa",
+			poderEspecial: "Paciência e fé serena em Deus",
+			fortes: ["Obediência filial", "Paz e mansidão", "Constância na fé"],
+			fracos: ["Passividade em decisões familiares", "Preferência por Esaú"],
+			versiculo: "Isaque orou ao Senhor por sua mulher, porque era estéril; e o Senhor ouviu as suas orações.",
+			referencia: "Gênesis 25:21",
+			curiosidade: "Primeiro a ser oferecido em sacrifício e poupado, simbolizando a obediência perfeita e a fé herdada de Abraão.",
+			cor: "from-amber-500 to-yellow-500"
+		},
+		{
+			id: 3,
+			nome: "Jacó",
+			img: "img/jaco_sf.png",
+			funcao: "O que lutou com Deus",
+			poderEspecial: "Persistência e transformação espiritual",
+			fortes: ["Determinação", "Desejo pela bênção divina", "Capacidade de mudança"],
+			fracos: ["Engano e astúcia inicial", "Família conturbada"],
+			versiculo: "Disse o homem: ‘Seu nome não será mais Jacó, mas Israel, porque você lutou com Deus e com os homens e venceu.’",
+			referencia: "Gênesis 32:28",
+			curiosidade: "Deus mudou seu nome para Israel, e dele vieram as doze tribos que formaram a nação de Israel.",
+			cor: "from-yellow-700 to-orange-700"
+		},
+		{
+			id: 4,
+			nome: "José",
+			img: "img/jose_sf.png",
+			funcao: "O Sonhador",
+			poderEspecial: "Perdão e sabedoria inspirada por Deus",
+			fortes: ["Fidelidade em tempos difíceis", "Sabedoria para governar", "Coração perdoador"],
+			fracos: ["Juventude sonhadora e ingênua", "Conflitos familiares"],
+			versiculo: "Vós intentastes o mal contra mim; porém Deus o tornou em bem, para fazer como se vê neste dia, para conservar muita gente com vida.",
+			referencia: "Gênesis 50:20",
+			curiosidade: "Traído pelos irmãos e vendido como escravo, José se tornou governador do Egito e salvou sua família da fome.",
+			cor: "from-amber-600 to-yellow-700"
+		}
+	];
+
+	function criarCarta(personagem) {
+		return `
+    <div class="group cursor-pointer" onclick="toggleCard(${personagem.id})">
+      <div class="bg-gradient-to-br from-stone-800 to-stone-900 rounded-2xl border-2 border-amber-600/40 hover:border-yellow-500 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-yellow-500/20 hover:shadow-2xl">
+        
+        <!-- Header Clicável -->
+        <div class="bg-gradient-to-r ${personagem.cor} p-6 flex items-center justify-between hover:opacity-90 transition-opacity">
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModal('${personagem.img}', '${personagem.nome}')">
+              <img 
+                src="${personagem.img}" 
+                alt="${personagem.nome}"
+                class="w-full h-full object-contain p-2"
+              />
+            </div>
+            <div>
+              <h2 class="text-3xl font-black text-white drop-shadow-lg">${personagem.nome}</h2>
+              <p class="text-white/90 text-sm font-semibold mt-2">
+                ✨ ${personagem.funcao}
+              </p>
+            </div>
+          </div>
+          <div class="flex-shrink-0">
+            <svg class="w-8 h-8 text-white transition-transform duration-300 toggle-icon-${personagem.id}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </div>
+        </div>
+
+        <!-- Conteúdo Expandível -->
+        <div id="content-${personagem.id}" class="hidden bg-stone-800/50 px-6 pb-6 pt-0 space-y-5 max-h-96 overflow-y-auto">
+          
+          <!-- Poder Especial -->
+          <div class="pt-6 border-t border-yellow-500/30">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">⚡</span>
+              <h3 class="font-black text-yellow-300 text-lg">PODER ESPECIAL</h3>
+            </div>
+            <p class="text-gray-200 pl-8">${personagem.poderEspecial}</p>
+          </div>
+
+          <!-- Pontos Fortes -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">✅</span>
+              <h3 class="font-black text-green-400 text-lg">PONTOS FORTES</h3>
+            </div>
+            <div class="pl-8 space-y-2">
+              ${personagem.fortes.map(f => `<p class="text-gray-200">🟢 ${f}</p>`).join('')}
+            </div>
+          </div>
+
+          <!-- Pontos Fracos -->
+          <div>
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">⚠️</span>
+              <h3 class="font-black text-red-400 text-lg">PONTOS FRACOS</h3>
+            </div>
+            <div class="pl-8 space-y-2">
+              ${personagem.fracos.map(f => `<p class="text-gray-200">🔴 ${f}</p>`).join('')}
+            </div>
+          </div>
+
+          <!-- Versículo -->
+          <div class="bg-gradient-to-r from-yellow-500/20 to-amber-500/20 p-4 rounded-xl border border-yellow-600/50 backdrop-blur">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">📖</span>
+              <h3 class="font-black text-yellow-300 text-lg">VERSÍCULO DE PROMESSA</h3>
+            </div>
+            <p class="text-gray-100 italic pl-8">"${personagem.versiculo}"</p>
+            <p class="text-yellow-200 pl-8 mt-2 font-bold">— ${personagem.referencia}</p>
+          </div>
+
+          <!-- Curiosidade -->
+          <div class="bg-gradient-to-r from-amber-500/20 to-yellow-500/20 p-4 rounded-xl border border-amber-600/50 backdrop-blur">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-2xl">💡</span>
+              <h3 class="font-black text-amber-300 text-lg">CURIOSIDADE BÍBLICA</h3>
+            </div>
+            <p class="text-gray-100 pl-8">${personagem.curiosidade}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+	}
+
+	function toggleCard(id) {
+		const content = document.getElementById(`content-${id}`);
+		const icon = document.querySelector(`.toggle-icon-${id}`);
+
+		content.classList.toggle('hidden');
+		icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+	}
+
+	function abrirModal(src, nome) {
+		document.getElementById('modal-imagem').classList.remove('hidden');
+		document.getElementById('modal-imagem-src').src = src;
+		document.getElementById('modal-titulo').textContent = nome;
+		trilhoGame.visitarHeroi(nome);
+	}
+
+	function fecharModal() {
+		document.getElementById('modal-imagem').classList.add('hidden');
+	}
+
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape') fecharModal();
+	});
+
+	const container = document.getElementById('cartas-container');
+	patriarcas.forEach(personagem => {
+		container.innerHTML += criarCarta(personagem);
+	});
+</script>
+
+<script src="/menu.js"></script>
+<script src="../gamificacao.js"></script>
+
+</body>
+
+</html>
