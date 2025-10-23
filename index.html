@@ -45,6 +45,15 @@
           <a href="#" class="block text-gray-300 hover:text-purple-300 transition">🔮 Profecias (Apocalipse)</a>
         </div>
       </div>
+      <!-- Links rápidos para Personagens -->
+      <div class="mt-6 border-t border-purple-500/20 pt-6">
+        <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2"><span>🧭</span> Personagens</h3>
+        <div class="space-y-2 pl-4">
+          <a href="./personagens/origens.html" class="block text-gray-300 hover:text-purple-300 transition">🌱 Origens</a>
+          <a href="./personagens/patriarcas.html" class="block text-gray-300 hover:text-purple-300 transition">🌾 Patriarcas</a>
+          <a href="./personagens/herois.html" class="block text-gray-300 hover:text-purple-300 transition">⚔️ Heróis da Fé</a>
+        </div>
+      </div>
     </div>
   </aside>
 
@@ -118,33 +127,16 @@
       </div>
     </section>
 
-    <!-- Cards de Ação -->
+    <!-- Cards de Ação (ordem ajustada: Explorar Livros | Heróis | Meu Progresso | Quiz) -->
     <section class="mb-16">
       <div class="text-center mb-8">
         <h2 class="text-3xl font-black text-purple-300 mb-2">🎯 Comece Sua Jornada!</h2>
         <p class="text-gray-400">Escolha como você quer explorar a Palavra de Deus</p>
       </div>
 
-      <div class="grid md:grid-cols-4 gap-6">
+      <div class="grid md:grid-cols-3 gap-6">
         
-        <!-- Meu Progresso -->
-        <div class="group cursor-pointer" onclick="irPara('./progresso.html')">
-          <div class="bg-gradient-to-br from-yellow-800 to-slate-800 rounded-2xl border-2 border-yellow-500/30 hover:border-yellow-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-yellow-500/20 hover:shadow-2xl hover:scale-105">
-            <div class="bg-gradient-to-r from-yellow-600 to-amber-600 p-8 text-center">
-              <div class="text-6xl mb-4">🏆</div>
-              <h3 class="text-3xl font-black text-white mb-2">MEU PROGRESSO</h3>
-              <p class="text-yellow-100 font-semibold">Acompanhe sua jornada</p>
-            </div>
-            <div class="p-6">
-              <p class="text-gray-300 mb-4">Veja seus pontos, badges e conquistas!</p>
-              <div class="text-sm text-yellow-300 font-bold hover:text-yellow-200">
-                Ver Dashboard → 
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Explorar Livros -->
+        <!-- Explorar Livros (mantido em primeiro) -->
         <div class="group cursor-pointer" onclick="toggleMenu()">
           <div class="bg-gradient-to-br from-amber-800 to-slate-800 rounded-2xl border-2 border-amber-500/30 hover:border-amber-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-amber-500/20 hover:shadow-2xl hover:scale-105">
             <div class="bg-gradient-to-r from-amber-600 to-orange-600 p-8 text-center">
@@ -161,24 +153,24 @@
           </div>
         </div>
 
-        <!-- Heróis da Fé -->
-        <div class="group cursor-pointer" onclick="irPara('./juizes/herois.html')">
-          <div class="bg-gradient-to-br from-purple-800 to-slate-800 rounded-2xl border-2 border-purple-500/30 hover:border-purple-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/20 hover:shadow-2xl hover:scale-105">
-            <div class="bg-gradient-to-r from-purple-600 to-red-600 p-8 text-center">
-              <div class="text-6xl mb-4">⚔️</div>
-              <h3 class="text-3xl font-black text-white mb-2">HERÓIS DA FÉ</h3>
-              <p class="text-purple-100 font-semibold">Juízes de Israel</p>
+        <!-- Meu Progresso (MOVIDO: agora fica entre Heróis e Quiz) -->
+        <div class="group cursor-pointer" onclick="irPara('./progresso.html')">
+          <div class="bg-gradient-to-br from-yellow-800 to-slate-800 rounded-2xl border-2 border-yellow-500/30 hover:border-yellow-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-yellow-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-yellow-600 to-amber-600 p-8 text-center">
+              <div class="text-6xl mb-4">🏆</div>
+              <h3 class="text-3xl font-black text-white mb-2">MEU PROGRESSO</h3>
+              <p class="text-yellow-100 font-semibold">Acompanhe sua jornada</p>
             </div>
             <div class="p-6">
-              <p class="text-gray-300 mb-4">Conheça 14 líderes corajosos que Deus levantou para proteger seu povo!</p>
-              <div class="text-sm text-purple-300 font-bold hover:text-purple-200">
-                Ver Heróis → 
+              <p class="text-gray-300 mb-4">Veja seus pontos, badges e conquistas!</p>
+              <div class="text-sm text-yellow-300 font-bold hover:text-yellow-200">
+                Ver Dashboard → 
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Quiz Bíblico -->
+        <!-- Quiz Bíblico (mantido em último) -->
         <div class="group cursor-pointer" onclick="irPara('./quiz.html')">
           <div class="bg-gradient-to-br from-blue-800 to-slate-800 rounded-2xl border-2 border-blue-500/30 hover:border-blue-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-blue-500/20 hover:shadow-2xl hover:scale-105">
             <div class="bg-gradient-to-r from-blue-600 to-cyan-600 p-8 text-center">
@@ -190,6 +182,67 @@
               <p class="text-gray-300 mb-4">Responda perguntas sobre as histórias bíblicas e aprenda brincando!</p>
               <div class="text-sm text-blue-300 font-bold hover:text-blue-200">
                 Começar Quiz → 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personagens em Destaque (nova seção) -->
+    <section class="mb-16">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-black text-amber-300 mb-2">🌟 Personagens em Destaque</h2>
+        <p class="text-gray-400">Explore grupos de personagens que contam a história da fé</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Origens -->
+        <div class="group cursor-pointer" onclick="irPara('./personagens/origens.html')">
+          <div class="bg-gradient-to-br from-emerald-700 to-lime-600 rounded-2xl border-2 border-green-500/30 hover:border-green-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-green-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-green-600 to-emerald-500 p-6 text-center">
+              <div class="text-6xl mb-2">🌱</div>
+              <h3 class="text-2xl font-black text-white mb-2">ORIGENS</h3>
+              <p class="text-green-100 font-semibold">Adão, Eva e família</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">O começo da história da humanidade — lições sobre criação, escolha e fé.</p>
+              <div class="text-sm text-green-300 font-bold hover:text-green-200">
+                Explorar Origens →
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Patriarcas -->
+        <div class="group cursor-pointer" onclick="irPara('./personagens/patriarcas.html')">
+          <div class="bg-gradient-to-br from-yellow-700 to-amber-600 rounded-2xl border-2 border-amber-500/30 hover:border-amber-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-amber-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-amber-600 to-yellow-500 p-6 text-center">
+              <div class="text-6xl mb-2">🌾</div>
+              <h3 class="text-2xl font-black text-white mb-2">PATRIARCAS</h3>
+              <p class="text-amber-100 font-semibold">Abraão, Isaque, Jacó e José</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">As promessas e a fé de homens que mudaram a história.</p>
+              <div class="text-sm text-amber-300 font-bold hover:text-amber-200">
+                Explorar Patriarcas →
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heróis da Fé -->
+        <div class="group cursor-pointer" onclick="irPara('./personagens/herois.html')">
+          <div class="bg-gradient-to-br from-purple-700 to-violet-600 rounded-2xl border-2 border-purple-500/30 hover:border-purple-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-purple-500/20 hover:shadow-2xl hover:scale-105">
+            <div class="bg-gradient-to-r from-purple-600 to-red-600 p-6 text-center">
+              <div class="text-6xl mb-2">⚔️</div>
+              <h3 class="text-2xl font-black text-white mb-2">HERÓIS DA FÉ</h3>
+              <p class="text-purple-100 font-semibold">Juízes e libertadores</p>
+            </div>
+            <div class="p-6">
+              <p class="text-gray-300 mb-4">Liderança, coragem e corações voltados a Deus.</p>
+              <div class="text-sm text-purple-300 font-bold hover:text-purple-200">
+                Explorar Heróis →
               </div>
             </div>
           </div>
