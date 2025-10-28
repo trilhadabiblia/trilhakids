@@ -1,0 +1,364 @@
+{
+  "livros": [
+    {
+      "nome": "Josué",
+      "perguntas": [
+        {
+          "pergunta": "Quem liderou o povo de Israel após a morte de Moisés?",
+          "opcoes": ["Arão", "Josué", "Calebe"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual cidade teve seus muros derrubados após sete voltas e toque de trombetas?",
+          "opcoes": ["Jericó", "Betel", "Hebrom"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que o povo devia fazer antes de entrar em Canaã?",
+          "opcoes": ["Fazer uma festa", "Guardar silêncio e obedecer a Deus", "Construir um templo"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Deus disse a Josué para ser...",
+          "opcoes": ["Forte e corajoso", "Triste e calado", "Rebelde e bravo"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que o livro de Josué mostra?",
+          "opcoes": ["A conquista da terra prometida", "A construção do templo", "O exílio na Babilônia"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "Juízes",
+      "perguntas": [
+        {
+          "pergunta": "Quem foi o juiz forte que lutou contra os filisteus?",
+          "opcoes": ["Gideão", "Sansão", "Débora"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que Deus levantava para libertar o povo?",
+          "opcoes": ["Reis", "Juízes", "Profetas"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Como se chamava a juíza e profetisa?",
+          "opcoes": ["Ana", "Débora", "Rute"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual juiz venceu com apenas 300 homens?",
+          "opcoes": ["Gideão", "Jefté", "Otoniel"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que o povo fazia repetidamente no tempo dos Juízes?",
+          "opcoes": ["Obedecia a Deus", "Desobedecia e voltava a pecar", "Vencia todas as guerras"],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "nome": "Rute",
+      "perguntas": [
+        {
+          "pergunta": "Quem foi a sogra de Rute?",
+          "opcoes": ["Ester", "Noemi", "Sara"],
+          "correta": 1
+        },
+        {
+          "pergunta": "De onde era Rute?",
+          "opcoes": ["Israel", "Moabe", "Egito"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Quem se casou com Rute?",
+          "opcoes": ["Boaz", "Davi", "Samuel"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Rute é exemplo de quê?",
+          "opcoes": ["Desobediência", "Fidelidade e amor", "Orgulho"],
+          "correta": 1
+        },
+        {
+          "pergunta": "De quem Rute foi bisavó?",
+          "opcoes": ["Salomão", "Davi", "Moisés"],
+          "correta": 1
+        }
+      ]
+    },
+    {
+      "nome": "1 Samuel",
+      "perguntas": [
+        {
+          "pergunta": "Quem era a mãe de Samuel?",
+          "opcoes": ["Ana", "Marta", "Maria"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Quem ungiu Saul como rei?",
+          "opcoes": ["Samuel", "Elias", "Eliseu"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Quem derrotou Golias?",
+          "opcoes": ["Davi", "Jonas", "Samuel"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que Davi usou contra Golias?",
+          "opcoes": ["Espada", "Funda e pedra", "Arco e flecha"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual o tema principal de 1 Samuel?",
+          "opcoes": ["A fé e obediência a Deus", "As guerras de Israel", "O exílio na Babilônia"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "2 Samuel",
+      "perguntas": [
+        {
+          "pergunta": "Quem se tornou rei após Saul?",
+          "opcoes": ["Samuel", "Davi", "Salomão"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que Davi trouxe para Jerusalém?",
+          "opcoes": ["A arca da aliança", "O templo", "O trono de ouro"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Qual profeta repreendeu Davi?",
+          "opcoes": ["Natã", "Elias", "Eliseu"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Quem era o filho de Davi que se revoltou contra ele?",
+          "opcoes": ["Salomão", "Absalão", "Adonias"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Deus prometeu a Davi um reino...",
+          "opcoes": ["Eterno", "Pequeno", "Sem fim"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "1 Reis",
+      "perguntas": [
+        {
+          "pergunta": "Quem foi o filho de Davi que se tornou rei?",
+          "opcoes": ["Roboão", "Salomão", "Saul"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que Salomão pediu a Deus?",
+          "opcoes": ["Riquezas", "Sabedoria", "Fama"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que Salomão construiu para Deus?",
+          "opcoes": ["Um palácio", "O templo", "Uma torre"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Quem desobedeceu a Deus e dividiu o reino?",
+          "opcoes": ["Roboão", "Jeroboão", "Salomão"],
+          "correta": 2
+        },
+        {
+          "pergunta": "Qual profeta enfrentou os profetas de Baal?",
+          "opcoes": ["Elias", "Eliseu", "Isaías"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "2 Reis",
+      "perguntas": [
+        {
+          "pergunta": "Quem sucedeu Elias como profeta?",
+          "opcoes": ["Eliseu", "Isaías", "Jeremias"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que Eliseu pediu a Elias antes dele subir ao céu?",
+          "opcoes": ["Riqueza", "Porção dobrada do Espírito", "Nova capa"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que aconteceu com o reino de Israel por causa da desobediência?",
+          "opcoes": ["Foi levado cativo", "Foi abençoado", "Ficou rico"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Quem curou Naamã da lepra?",
+          "opcoes": ["Eliseu", "Elias", "Samuel"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Deus mostrou que é...",
+          "opcoes": ["Fiel e cumpre Sua palavra", "Indiferente", "Esquecido"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "1 Crônicas",
+      "perguntas": [
+        {
+          "pergunta": "O livro começa com muitas listas de...",
+          "opcoes": ["Cidades", "Nomes e famílias", "Profetas"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Quem planejou o templo para Deus?",
+          "opcoes": ["Moisés", "Davi", "Salomão"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Quem realmente construiu o templo?",
+          "opcoes": ["Salomão", "Davi", "Elias"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Davi organizou grupos de...",
+          "opcoes": ["Sacerdotes e músicos", "Soldados e servos", "Profetas e reis"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que o livro de 1 Crônicas ensina?",
+          "opcoes": ["Adorar a Deus com alegria", "Lutar por poder", "Buscar riquezas"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "2 Crônicas",
+      "perguntas": [
+        {
+          "pergunta": "Quem pediu sabedoria a Deus?",
+          "opcoes": ["Salomão", "Ezequias", "Josias"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que foi destruído por causa da desobediência?",
+          "opcoes": ["O templo", "O palácio", "As muralhas"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Quem restaurou o templo?",
+          "opcoes": ["Josias", "Elias", "Ester"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que mostra a história de 2 Crônicas?",
+          "opcoes": ["A fidelidade de Deus mesmo diante da infidelidade", "A força dos exércitos", "A riqueza dos reis"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O livro termina com qual esperança?",
+          "opcoes": ["O retorno a Jerusalém", "O fim de tudo", "Um novo rei mau"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "Esdras",
+      "perguntas": [
+        {
+          "pergunta": "Quem liderou o retorno dos judeus a Jerusalém?",
+          "opcoes": ["Ester", "Esdras", "Neemias"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que o povo reconstruiu primeiro?",
+          "opcoes": ["O muro", "O templo", "O palácio"],
+          "correta": 1
+        },
+        {
+          "pergunta": "O que Esdras ensinava ao povo?",
+          "opcoes": ["As leis de Deus", "As histórias dos reis", "As canções de Davi"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Por que o povo chorou ao ouvir a lei?",
+          "opcoes": ["Ficaram alegres", "Perceberam que tinham pecado", "Estavam cansados"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Qual é o tema central de Esdras?",
+          "opcoes": ["Obediência e restauração", "Rebeldia", "Guerra"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "Neemias",
+      "perguntas": [
+        {
+          "pergunta": "O que Neemias reconstruiu?",
+          "opcoes": ["O templo", "Os muros de Jerusalém", "O palácio"],
+          "correta": 1
+        },
+        {
+          "pergunta": "Neemias era...",
+          "opcoes": ["Rei", "Profeta", "Copeiro do rei"],
+          "correta": 2
+        },
+        {
+          "pergunta": "Quanto tempo durou a reconstrução dos muros?",
+          "opcoes": ["52 dias", "1 ano", "100 dias"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que Neemias fez quando soube da destruição?",
+          "opcoes": ["Chorou e orou a Deus", "Fugiu", "Ficou feliz"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O livro ensina sobre...",
+          "opcoes": ["Trabalho e oração", "Riqueza e poder", "Força e guerra"],
+          "correta": 0
+        }
+      ]
+    },
+    {
+      "nome": "Ester",
+      "perguntas": [
+        {
+          "pergunta": "Quem foi a rainha corajosa que salvou seu povo?",
+          "opcoes": ["Ester", "Rute", "Débora"],
+          "correta": 0
+        },
+        {
+          "pergunta": "Quem era o vilão da história?",
+          "opcoes": ["Hamã", "Mardoqueu", "Assuero"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que Mardoqueu fez por Ester?",
+          "opcoes": ["Cuidou dela como pai", "Foi embora", "A vendeu"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que o povo fez quando soube do perigo?",
+          "opcoes": ["Oraram e jejuaram", "Fugiram", "Se revoltaram"],
+          "correta": 0
+        },
+        {
+          "pergunta": "O que aprendemos com Ester?",
+          "opcoes": ["Coragem e fé", "Orgulho e medo", "Tristeza e dúvida"],
+          "correta": 0
+        }
+      ]
+    }
+  ]
+}

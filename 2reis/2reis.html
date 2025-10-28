@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 2 Reis - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="2reis-capa.png" alt="Capa: 2 Reis" id="img-2reis"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                    aria-describedby="desc-2reis">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🔥</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 mx-2">
+                    LIVRO DE 2 REIS
+                </span>
+                <span>🔥</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Fidelidade, Profecia e Promessa — Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-2reis" class="sr-only" aria-hidden="true">
+                Clique na imagem para ler os versos!
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-2reis"
+        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-blue-200">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+
+            <h2
+                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600">
+                🌟 Os Três Segredos de 2 Reis 🌟
+            </h2>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <!-- Segredo 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">✨ 1️⃣ Deus quer obediência e amor</h3>
+                    <p>
+                        Mas o povo errou, virou as costas pro Senhor.<br>
+                        Seguiram reis maus, fizeram o que é ruim,<br>
+                        E Deus mostrou: o pecado tem fim!<br><br>
+
+                        ⚡ Mesmo quando parece que tudo acabou,<br>
+                        Deus é justo e sempre mostrou:<br>
+                        Obedecer é o melhor caminho,<br>
+                        Pra andar com Ele e não ficar sozinho.<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 17:7–18</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">📜 2️⃣ A palavra de Deus sempre acontece</h3>
+                    <p>
+                        Vieram profetas com algo a dizer,<br>
+                        Falando verdades que Deus quis fazer.<br>
+                        Tudo o que Ele disse, se realizou,<br>
+                        Pois o Senhor prometeu, cumpriu e mostrou!<br><br>
+
+                        💬 Suas palavras são luz e direção,<br>
+                        Pra quem escuta com o coração.<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 10:10</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💖 3️⃣ Deus é fiel e nunca esquece</h3>
+                    <p>
+                        <b>Por fim</b>, aprendemos que Deus é fiel,<br>
+                        Cumpre promessas, é puro, é do Céu!<br>
+                        Mesmo com reis ruins e gente desobediente,<br>
+                        Deus guardou Davi e sua semente!<br><br>
+
+                        🌈 Deus sempre cumpre o que prometeu,<br>
+                        Porque Ele é bom, é fiel, Ele é Deus!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 8:19</span>
+                    </p>
+                </div>
+
+                <!-- Moral -->
+                <div class="text-center mt-10">
+                    <p class="text-xl font-semibold text-blue-800">
+                        📘 Moral da história:<br>
+                        Obedeça, confie e ame o Senhor,<br>
+                        Que cuida de nós com todo amor! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const img2Reis = document.getElementById("img-2reis");
+        const modal = document.getElementById("modal-2reis");
+        const closeModal = document.getElementById("close-modal");
+
+        img2Reis.addEventListener("click", () => {
+            modal.classList.remove("modal-hidden");
+            modal.classList.add("modal-visible");
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("modal-visible");
+            modal.classList.add("modal-hidden");
+        });
+
+        // Fechar ao clicar fora
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem é o personagem principal? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="2reis-personagem.png" alt="Quem é o personagem principal?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border-4 border-orange-500">
+                    <h2 class="text-4xl font-black text-orange-700 mb-6">👥 Quem é o personagem principal?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Os profetas <span class="font-bold text-orange-600">Elias e Eliseu</span> são os grandes
+                            servos de Deus que aparecem neste livro.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Eles mostraram o poder de Deus através de <span class="font-bold text-orange-600">milagres e
+                                mensagens</span> ao povo de Israel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-yellow-50 to-lime-50 p-8 rounded-2xl border-4 border-yellow-500">
+                        <h2 class="text-4xl font-black text-yellow-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Conta como vários <span class="font-bold text-yellow-600">reis governaram</span> —
+                                alguns bons, outros maus.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostra os <span class="font-bold text-yellow-600">milagres incríveis</span> que Deus fez
+                                por meio de Elias e Eliseu.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Fala sobre quando o povo foi <span class="font-bold text-yellow-600">levado
+                                    cativo</span> por causa da desobediência.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-yellow-600">25 capítulos</span> cheios de ação e
+                                fé.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="2reis-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="2reis-importante.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
+                    <h2 class="text-4xl font-black text-green-700 mb-6">💫 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra que <span class="font-bold text-green-600">Deus fala através dos profetas</span> e
+                            deseja que o povo o ouça.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina que quando o povo se <span class="font-bold text-green-600">afasta de Deus,</span>
+                            colhe consequências.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mas também revela que <span class="font-bold text-green-600">Deus nunca deixa de amar</span>
+                            o seu povo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
+                        <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-purple-600">Ensinar que devemos escutar a voz de Deus</span>
+                                e obedecer aos seus mandamentos.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostrar que <span class="font-bold text-purple-600">Deus sempre dá novas chances</span>
+                                ao seu povo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="2reis-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="2reis-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-red-50 to-rose-50 p-8 rounded-2xl border-4 border-red-500">
+                    <h2 class="text-4xl font-black text-red-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-red-600">Elias subiu ao céu em um redemoinho de fogo — sem
+                                morrer!</span>
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-red-300">
+                            <p class="text-sm text-gray-700 italic">Com Deus, nada é impossível! 🔥🚀
+                                </br></br>
+                                Elias e Eliseu estavam caminhando juntos enquanto conversavam. De repente, um carro
+                                puxado por cavalos que pareciam de fogo separou Elias de Eliseu. Elias foi levado ao céu
+                                num redemoinho.</br>2 Reis 2:11</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-yellow-700/20 to-orange-700/20 border-2 border-yellow-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../1reis/1reis.html"
+                class="bg-gradient-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 1 Reis
+            </a>
+            <a href="../historicos.html"
+                class="bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Históricos
+            </a>
+            <a href="../1cronicas/1cronicas.html"
+                class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                1 Crônicas ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-orange-600 to-amber-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Reis - O Poder e o Amor de Deus ✨</h3>
+        <p class="text-lg">Ministério Infantil - Kids © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('II Reis');
+    </script>
+</body>
+
+</html>

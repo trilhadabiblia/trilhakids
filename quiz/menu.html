@@ -1,0 +1,113 @@
+<!-- Menu Hamburger Reutilizável -->
+<!-- Coloque este arquivo na raiz do projeto como: menu.html -->
+<!-- Incluir em cada página com: <script src="./menu.js"></script> no final do body -->
+
+<button onclick="toggleMenu()"
+    class="fixed top-6 left-6 z-50 bg-gradient-to-r from-purple-600 to-violet-600 p-3 rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg">
+    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+</button>
+
+<div id="overlay" class="overlay-hide fixed inset-0 bg-black/50 z-30 transition-all duration-300"
+    onclick="toggleMenu()"></div>
+
+<aside id="sidebar"
+    class="menu-closed fixed left-0 top-0 h-screen w-80 bg-gradient-to-b from-slate-800 to-slate-900 border-r border-purple-500/30 z-40 transition-transform duration-300 overflow-y-auto">
+    <div class="p-6">
+        <h2 class="text-2xl font-black text-purple-300 mb-8">📖 LIVROS DA BÍBLIA</h2>
+
+        <!-- Antigo Testamento -->
+        <div class="mb-6">
+            <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+                <span>📜</span> Antigo Testamento
+            </h3>
+            <div class="space-y-2 pl-4">
+                <a href="/pentateuco.html" class="block text-gray-300 hover:text-purple-300 transition">🔤
+                    Pentateuco</a>
+                <a href="/historicos.html" class="block text-gray-300 hover:text-purple-300 transition">⚖️
+                    Históricos</a>
+                <a href="/poeticos.html" class="block text-gray-300 hover:text-purple-300 transition">🎵 Poéticos</a>
+                <a href="/profetasmaiores.html" class="block text-gray-300 hover:text-purple-300 transition">📢
+                    Profetas Maiores</a>
+                <a href="/profetasmenores.html" class="block text-gray-300 hover:text-purple-300 transition">🔔
+                    Profetas Menores</a>
+            </div>
+        </div>
+
+        <!-- Novo Testamento -->
+        <div class="mb-6 border-t border-purple-500/30 pt-6">
+            <h3 class="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2">
+                <span>✨</span> Novo Testamento
+            </h3>
+            <div class="space-y-2 pl-4">
+                <a href="#" class="block text-gray-300 hover:text-purple-300 transition">😇 Evangelhos</a>
+                <a href="#" class="block text-gray-300 hover:text-purple-300 transition">🚀 Histórico (Atos)</a>
+                <a href="#" class="block text-gray-300 hover:text-purple-300 transition">✉️ Cartas de Paulo</a>
+                <a href="#" class="block text-gray-300 hover:text-purple-300 transition">📮 Outras Cartas</a>
+                <a href="#" class="block text-gray-300 hover:text-purple-300 transition">🔮 Profecias (Apocalipse)</a>
+            </div>
+        </div>
+
+        <!-- Home -->
+        <div class="border-t border-purple-500/30 pt-6">
+            <a href="/index.html" class="block text-purple-400 hover:text-purple-200 font-bold transition">🏠 Voltar à
+                Home</a>
+        </div>
+    </div>
+</aside>
+
+<style>
+    .menu-open {
+        transform: translateX(0);
+    }
+
+    .menu-closed {
+        transform: translateX(-100%);
+    }
+
+    .overlay-show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .overlay-hide {
+        opacity: 0;
+        visibility: hidden;
+    }
+</style>
+
+<script>
+    function toggleMenu() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        sidebar.classList.toggle('menu-open');
+        sidebar.classList.toggle('menu-closed');
+        overlay.classList.toggle('overlay-show');
+        overlay.classList.toggle('overlay-hide');
+    }
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('#sidebar a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Fechar menu ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+
+        if (window.innerWidth >= 768) {
+            sidebar.classList.remove('menu-open');
+            sidebar.classList.add('menu-closed');
+            overlay.classList.remove('overlay-show');
+            overlay.classList.add('overlay-hide');
+        }
+    });
+
+</script>

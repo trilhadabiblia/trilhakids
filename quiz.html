@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quiz Flashcard - Livros Históricos</title>
+  <title>Quiz Bíblico - Escolha seu Caminho</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    .card-flip {
-      transform-style: preserve-3d;
-      transition: transform 0.6s;
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
     }
-    .card-flip.flipped {
-      transform: rotateY(180deg);
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
     }
-    .card-front, .card-back {
-      backface-visibility: hidden;
+    .category-card {
+      transition: all 0.3s ease;
     }
-    .card-back {
-      transform: rotateY(180deg);
+    .category-card:hover {
+      transform: translateY(-5px);
     }
   </style>
 </head>
@@ -27,368 +27,260 @@
   <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 py-6">
       <div class="text-center">
-        <h1 class="text-4xl font-black text-white drop-shadow-lg mb-2">🎯 QUIZ FLASHCARD BÍBLICO</h1>
-        <p class="text-purple-100">Teste seus conhecimentos sobre os Livros Históricos!</p>
+        <h1 class="text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ BÍBLICO</h1>
+        <p class="text-purple-100 text-lg">Escolha uma categoria e teste seus conhecimentos!</p>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-4 py-12">
+  <main class="max-w-7xl mx-auto px-4 py-12">
     
-    <!-- Seletor de Livros -->
-    <div class="grid md:grid-cols-4 gap-4 mb-12">
-      <button onclick="selecionarLivro('josue')" class="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105 border-4 border-transparent" id="btn-josue">
-        <div class="text-4xl mb-3">📘</div>
-        <h3 class="font-bold text-white">Josué</h3>
-      </button>
-      <button onclick="selecionarLivro('juizes')" class="bg-gradient-to-br from-purple-600 to-red-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105 border-4 border-transparent" id="btn-juizes">
-        <div class="text-4xl mb-3">⚖️</div>
-        <h3 class="font-bold text-white">Juízes</h3>
-      </button>
-      <button onclick="selecionarLivro('rute')" class="bg-gradient-to-br from-amber-600 to-yellow-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105 border-4 border-transparent" id="btn-rute">
-        <div class="text-4xl mb-3">🌾</div>
-        <h3 class="font-bold text-white">Rute</h3>
-      </button>
-      <button onclick="selecionarLivro('1samuel')" class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105 border-4 border-transparent" id="btn-1samuel">
-        <div class="text-4xl mb-3">👑</div>
-        <h3 class="font-bold text-white">1 Samuel</h3>
-      </button>
-    </div>
-
-    <!-- Área do Flashcard -->
-    <div class="mb-12">
-      <div class="text-center mb-6">
-        <h2 class="text-3xl font-black text-white" id="titulo-livro">Selecione um livro para começar!</h2>
-        <p class="text-gray-300 mt-2" id="progresso">Carta 0 de 0</p>
+    <!-- Antigo Testamento -->
+    <section class="mb-16">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl font-black text-white mb-2">📜 ANTIGO TESTAMENTO</h2>
+        <p class="text-gray-300">Explore a história do povo de Deus</p>
       </div>
 
-      <!-- Card Flipável -->
-      <div class="mb-8 flex justify-center" style="perspective: 1000px;">
-        <div class="card-flip w-full max-w-2xl h-96 cursor-pointer relative" id="card" onclick="virarCarta()" style="transform-style: preserve-3d;">
-          <!-- Frente -->
-          <div class="card-front absolute w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-2xl p-8 flex flex-col justify-center items-center text-center border-4 border-white/20" style="backface-visibility: hidden;">
-            <div class="text-6xl mb-6">❓</div>
-            <p class="text-white text-2xl font-bold" id="pergunta">Selecione um livro para começar</p>
-            <p class="text-blue-100 text-sm mt-6">Clique para ver a resposta</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Pentateuco -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('pentateuco')">
+          <div class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-blue-500/50 border-4 border-blue-400/30">
+            <div class="text-6xl mb-4">🔤</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Pentateuco</h3>
+            <p class="text-blue-100 text-sm mb-4">Gênesis, Êxodo, Levítico, Números, Deuteronômio</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">5 livros</span>
+            </div>
           </div>
-          <!-- Verso -->
-          <div class="card-back absolute w-full h-full bg-gradient-to-br from-yellow-500 to-amber-500 rounded-2xl shadow-2xl p-8 flex flex-col justify-center items-center text-center border-4 border-white/20" style="backface-visibility: hidden; transform: rotateY(180deg);">
-            <div class="text-6xl mb-6">✅</div>
-            <p class="text-white text-2xl font-bold" id="resposta">Resposta</p>
-            <p class="text-yellow-100 text-sm mt-6">Clique para voltar</p>
+        </div>
+
+        <!-- Históricos -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('historicos')">
+          <div class="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-purple-500/50 border-4 border-purple-400/30">
+            <div class="text-6xl mb-4">⚖️</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Históricos</h3>
+            <p class="text-purple-100 text-sm mb-4">Josué, Juízes, Rute, Samuel, Reis, Crônicas...</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">12 livros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poéticos -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('poeticos')">
+          <div class="bg-gradient-to-br from-amber-600 to-yellow-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-yellow-500/50 border-4 border-yellow-400/30">
+            <div class="text-6xl mb-4">🎵</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Poéticos</h3>
+            <p class="text-yellow-100 text-sm mb-4">Jó, Salmos, Provérbios, Eclesiastes, Cantares</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">5 livros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profetas Maiores -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('profetas-maiores')">
+          <div class="bg-gradient-to-br from-red-600 to-rose-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-red-500/50 border-4 border-red-400/30">
+            <div class="text-6xl mb-4">📢</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Profetas Maiores</h3>
+            <p class="text-red-100 text-sm mb-4">Isaías, Jeremias, Lamentações, Ezequiel, Daniel</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">5 livros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profetas Menores -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('profetas-menores')">
+          <div class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-green-500/50 border-4 border-green-400/30">
+            <div class="text-6xl mb-4">🔔</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Profetas Menores</h3>
+            <p class="text-green-100 text-sm mb-4">Oséias, Joel, Amós, Obadias, Jonas, Miqueias...</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">12 livros</span>
+            </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Controles de Navegação -->
-      <div class="flex justify-center gap-4 mb-8">
-        <button onclick="cartaAnterior()" class="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-8 py-3 rounded-lg font-bold transition-all" id="btn-anterior" disabled>
-          ⬅️ Anterior
-        </button>
-        <button onclick="cartaProxima()" class="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-8 py-3 rounded-lg font-bold transition-all" id="btn-proxima">
-          Próxima ➡️
-        </button>
+    <!-- Divisor -->
+    <div class="relative py-8 mb-8">
+      <div class="absolute inset-0 flex items-center">
+        <div class="w-full border-t-2 border-purple-500/30"></div>
       </div>
-
-      <!-- Indicador de Progresso -->
-      <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-        <div class="bg-gradient-to-r from-purple-600 to-violet-600 h-full transition-all duration-500" id="barra-progresso" style="width: 0%"></div>
+      <div class="relative flex justify-center">
+        <span class="bg-slate-900 px-6 text-3xl">✨</span>
       </div>
     </div>
 
-    <!-- Stats -->
-    <div class="grid md:grid-cols-3 gap-6 bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-8">
-      <div class="text-center">
-        <div class="text-5xl font-black text-purple-300 mb-2" id="total-cartas">0</div>
-        <p class="text-gray-300">Total de Cartas</p>
+    <!-- Novo Testamento -->
+    <section class="mb-16">
+      <div class="text-center mb-8">
+        <h2 class="text-4xl font-black text-white mb-2">✨ NOVO TESTAMENTO</h2>
+        <p class="text-gray-300">A história de Jesus e da Igreja</p>
       </div>
-      <div class="text-center">
-        <div class="text-5xl font-black text-blue-300 mb-2" id="cartas-feitas">0</div>
-        <p class="text-gray-300">Cartas Estudadas</p>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Evangelhos -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('evangelhos')">
+          <div class="bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-indigo-500/50 border-4 border-indigo-400/30">
+            <div class="text-6xl mb-4">😇</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Evangelhos</h3>
+            <p class="text-indigo-100 text-sm mb-4">Mateus, Marcos, Lucas, João</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">4 livros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Histórico (Atos) -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('atos')">
+          <div class="bg-gradient-to-br from-orange-600 to-red-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-orange-500/50 border-4 border-orange-400/30">
+            <div class="text-6xl mb-4">🚀</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Histórico</h3>
+            <p class="text-orange-100 text-sm mb-4">Atos dos Apóstolos</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">1 livro</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cartas de Paulo -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('cartas-paulo')">
+          <div class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-teal-500/50 border-4 border-teal-400/30">
+            <div class="text-6xl mb-4">✉️</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Cartas de Paulo</h3>
+            <p class="text-teal-100 text-sm mb-4">Romanos, Coríntios, Gálatas, Efésios...</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">13 livros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Outras Cartas -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('outras-cartas')">
+          <div class="bg-gradient-to-br from-pink-600 to-rose-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-pink-500/50 border-4 border-pink-400/30">
+            <div class="text-6xl mb-4">📮</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Outras Cartas</h3>
+            <p class="text-pink-100 text-sm mb-4">Hebreus, Tiago, Pedro, João, Judas</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">8 livros</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profecias (Apocalipse) -->
+        <div class="category-card cursor-pointer" onclick="irParaQuiz('apocalipse')">
+          <div class="bg-gradient-to-br from-violet-600 to-purple-600 rounded-2xl p-8 text-center hover:shadow-2xl hover:shadow-violet-500/50 border-4 border-violet-400/30">
+            <div class="text-6xl mb-4">🔮</div>
+            <h3 class="text-2xl font-bold text-white mb-2">Profecias</h3>
+            <p class="text-violet-100 text-sm mb-4">Apocalipse</p>
+            <div class="bg-white/20 rounded-lg py-2 px-4 inline-block">
+              <span class="text-white font-semibold">1 livro</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="text-center">
-        <div class="text-5xl font-black text-green-300 mb-2" id="percentual">0%</div>
-        <p class="text-gray-300">Progresso</p>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-8">
+      <div class="text-center mb-6">
+        <h3 class="text-3xl font-black text-white mb-2">📊 Seu Progresso</h3>
+        <p class="text-gray-300">Acompanhe sua jornada pelo conhecimento bíblico</p>
       </div>
-    </div>
+      
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="text-5xl font-black text-blue-300 mb-2">10</div>
+          <p class="text-gray-300">Categorias</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-black text-purple-300 mb-2">66</div>
+          <p class="text-gray-300">Livros da Bíblia</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-black text-green-300 mb-2" id="quizzes-completos">0</div>
+          <p class="text-gray-300">Quizzes Completos</p>
+        </div>
+        <div class="text-center">
+          <div class="text-5xl font-black text-yellow-300 mb-2" id="total-pontos">0</div>
+          <p class="text-gray-300">Pontos Totais</p>
+        </div>
+      </div>
+    </section>
 
   </main>
 
   <!-- Footer -->
   <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
-    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
-    <p class="text-sm">Ministério Infantil - Kids | Quiz Flashcard 🎯</p>
+    <p class="font-semibold mb-2">© 2025 - Jornada Bíblica Interativa</p>
+    <p class="text-sm">Ministério Infantil - Kids | Explore toda a Palavra de Deus 🙏</p>
   </footer>
 
-  <script src="./gamificacao.js"></script>
   <script>
-    const cartas = {
-      josue: [
-        {
-          pergunta: "Quem foi o líder que substituiu Moisés e guiou o povo até a Terra Prometida?",
-          resposta: "Josué."
-        },
-        {
-          pergunta: "Qual cidade caiu depois que o povo marchou em volta dela por sete dias?",
-          resposta: "Jericó."
-        },
-        {
-          pergunta: "O que o povo de Israel fez para as muralhas de Jericó caírem?",
-          resposta: "Marcharam ao redor e tocaram trombetas gritando bem alto!"
-        },
-        {
-          pergunta: "O que o livro de Josué nos ensina sobre Deus?",
-          resposta: "Que Deus cumpre todas as Suas promessas."
-        }
-      ],
-      juizes: [
-        {
-          pergunta: "O que eram os \"Juízes\" na Bíblia?",
-          resposta: "Eram líderes que Deus levantava para ajudar o povo e libertá-los dos inimigos."
-        },
-        {
-          pergunta: "Qual juiz era muito forte e lutou contra os filisteus?",
-          resposta: "Sansão."
-        },
-        {
-          pergunta: "Quem usou apenas 300 homens e venceu um exército bem maior?",
-          resposta: "Gideão."
-        },
-        {
-          pergunta: "O que o povo fazia muitas vezes e deixava Deus triste?",
-          resposta: "Esquecia de Deus e fazia coisas erradas."
-        }
-      ],
-      rute: [
-        {
-          pergunta: "Quem era Rute?",
-          resposta: "Uma moabita que amava a Deus e seguiu sua sogra Noemi."
-        },
-        {
-          pergunta: "O que Rute disse para Noemi quando ela quis voltar sozinha?",
-          resposta: "\"O seu povo será o meu povo, e o seu Deus será o meu Deus.\""
-        },
-        {
-          pergunta: "Quem se casou com Rute e foi muito bondoso com ela?",
-          resposta: "Boaz."
-        },
-        {
-          pergunta: "Por que a história de Rute é importante?",
-          resposta: "Porque mostra o amor, a fé e como Deus cuida de quem confia Nele."
-        }
-      ],
-      "1samuel": [
-        {
-          pergunta: "Quem foi o menino que ouviu Deus chamando à noite?",
-          resposta: "Samuel."
-        },
-        {
-          pergunta: "Quem foi o primeiro rei de Israel?",
-          resposta: "Saul."
-        },
-        {
-          pergunta: "Quem venceu o gigante Golias com uma pedrinha e uma funda?",
-          resposta: "Davi."
-        },
-        {
-          pergunta: "O que aprendemos com Davi e Golias?",
-          resposta: "Que com fé em Deus, podemos vencer qualquer gigante."
-        }
-      ]
-    };
+    function irParaQuiz(categoria) {
+      // Mapeia categorias para os arquivos HTML correspondentes
+      const rotas = {
+        'pentateuco': 'quiz/antigo-testamento/quiz-pentateuco.html',
+        'historicos': 'quiz/antigo-testamento/quiz-historicos.html',
+        'poeticos': 'quiz/antigo-testamento/quiz-poeticos.html',
+        'profetas-maiores': 'quiz/antigo-testamento/quiz-profetas-maiores.html',
+        'profetas-menores': 'quiz/antigo-testamento/quiz-profetas-menores.html',
+        'evangelhos': 'quiz/novo-testamento/quiz-evangelhos.html',
+        'atos': 'quiz/novo-testamento/quiz-atos.html',
+        'cartas-paulo': 'quiz/novo-testamento/quiz-cartas-paulo.html',
+        'outras-cartas': 'quiz/novo-testamento/quiz-outras-cartas.html',
+        'apocalipse': 'quiz/novo-testamento/quiz-apocalipse.html'
+      };
 
-    let livroAtual = null;
-    let cartaAtual = 0;
-    let cartaVirada = false;
-    let acertos = 0;
-    let cartasRespondidas = new Set();
-
-    const nomes = {
-      josue: "📘 Livro de Josué",
-      juizes: "⚖️ Livro de Juízes",
-      rute: "🌾 Livro de Rute",
-      "1samuel": "👑 Livro de 1 Samuel"
-    };
-
-    const cores = {
-      josue: "from-cyan-600 to-blue-600",
-      juizes: "from-purple-600 to-red-600",
-      rute: "from-amber-600 to-yellow-600",
-      "1samuel": "from-red-600 to-rose-600"
-    };
-
-    function selecionarLivro(livro) {
-      livroAtual = livro;
-      cartaAtual = 0;
-      cartaVirada = false;
-      acertos = 0;
-      cartasRespondidas = new Set();
+      // Salva categoria selecionada
+      localStorage.setItem('categoria-selecionada', categoria);
       
-      // Remove seleção anterior
-      document.querySelectorAll('[id^="btn-"]').forEach(btn => {
-        btn.classList.remove('border-yellow-400');
+      // Redireciona para página do quiz
+      if (rotas[categoria]) {
+        window.location.href = rotas[categoria];
+      } else {
+        alert('Quiz em desenvolvimento! 🚧\n\nEm breve você poderá explorar esta categoria.');
+      }
+    }
+
+    // Carregar estatísticas (se houver sistema de gamificação)
+    function carregarEstatisticas() {
+      try {
+        // Verifica se há dados salvos
+        const quizzesCompletos = localStorage.getItem('quizzes-completos') || 0;
+        const pontosTotais = localStorage.getItem('pontos-totais') || 0;
+        
+        document.getElementById('quizzes-completos').textContent = quizzesCompletos;
+        document.getElementById('total-pontos').textContent = pontosTotais;
+      } catch (error) {
+        console.log('Sistema de estatísticas não disponível');
+      }
+    }
+
+    // Carregar ao iniciar
+    carregarEstatisticas();
+
+    // Efeito de hover nos cards
+    document.querySelectorAll('.category-card').forEach(card => {
+      card.addEventListener('mouseenter', function() {
+        this.querySelector('div > div').style.transform = 'scale(1.02)';
       });
       
-      // Adiciona seleção atual
-      document.getElementById(`btn-${livro}`).classList.add('border-yellow-400');
-      
-      atualizarCarta();
-    }
+      card.addEventListener('mouseleave', function() {
+        this.querySelector('div > div').style.transform = 'scale(1)';
+      });
+    });
 
-    function atualizarCarta() {
-      if (!livroAtual) return;
-
-      const cartasDoLivro = cartas[livroAtual];
-      const carta = cartasDoLivro[cartaAtual];
-
-      document.getElementById('titulo-livro').textContent = nomes[livroAtual];
-      document.getElementById('pergunta').textContent = carta.pergunta;
-      document.getElementById('resposta').textContent = carta.resposta;
-      document.getElementById('progresso').textContent = `Carta ${cartaAtual + 1} de ${cartasDoLivro.length}`;
-      
-      // Atualizar barra de progresso
-      const percentual = ((cartaAtual + 1) / cartasDoLivro.length) * 100;
-      document.getElementById('barra-progresso').style.width = percentual + '%';
-      document.getElementById('total-cartas').textContent = cartasDoLivro.length;
-      document.getElementById('cartas-feitas').textContent = cartaAtual + 1;
-      document.getElementById('percentual').textContent = Math.round(percentual) + '%';
-
-      // Resetar card
-      document.getElementById('card').classList.remove('flipped');
-      cartaVirada = false;
-
-      // Habilitar/desabilitar botões
-      document.getElementById('btn-anterior').disabled = cartaAtual === 0;
-      document.getElementById('btn-proxima').disabled = cartaAtual === cartasDoLivro.length - 1;
-
-      // Atualizar cor do card
-      const card = document.getElementById('card');
-      const corClass = cores[livroAtual];
-      card.querySelector('.card-front').className = `card-front absolute w-full h-full bg-gradient-to-br ${corClass} rounded-2xl shadow-2xl p-8 flex flex-col justify-center items-center text-center border-4 border-white/20`;
-    }
-
-    function virarCarta() {
-      const card = document.getElementById('card');
-      card.classList.toggle('flipped');
-      cartaVirada = !cartaVirada;
-      
-      // Se virou para ver a resposta e ainda não respondeu esta carta
-      if (cartaVirada && !cartasRespondidas.has(cartaAtual)) {
-        // Mostrar botões de acerto/erro
-        mostrarBotoesResposta();
-      }
-    }
-
-    function mostrarBotoesResposta() {
-      if (document.getElementById('btns-resposta')) return; // Já existe
-      
-      const container = document.querySelector('.flex.justify-center.gap-4.mb-8');
-      const btnsDiv = document.createElement('div');
-      btnsDiv.id = 'btns-resposta';
-      btnsDiv.className = 'flex justify-center gap-4 mt-4';
-      btnsDiv.innerHTML = `
-        <button onclick="registrarResposta(true)" class="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-          ✅ Acertei!
-        </button>
-        <button onclick="registrarResposta(false)" class="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-          ❌ Errei
-        </button>
-      `;
-      container.parentNode.insertBefore(btnsDiv, container.nextSibling);
-    }
-
-    function registrarResposta(acertou) {
-      if (cartasRespondidas.has(cartaAtual)) return;
-      
-      cartasRespondidas.add(cartaAtual);
-      if (acertou) acertos++;
-      
-      // Remover botões
-      const btns = document.getElementById('btns-resposta');
-      if (btns) btns.remove();
-      
-      // Se respondeu todas as cartas do livro
-      const cartasDoLivro = cartas[livroAtual];
-      if (cartasRespondidas.size === cartasDoLivro.length) {
-        finalizarQuiz();
-      } else {
-        // Avançar para próxima carta automaticamente
-        setTimeout(() => {
-          if (cartaAtual < cartasDoLivro.length - 1) {
-            cartaProxima();
-          }
-        }, 500);
-      }
-    }
-
-    function finalizarQuiz() {
-      const cartasDoLivro = cartas[livroAtual];
-      const total = cartasDoLivro.length;
-      
-      // Registrar no sistema de gamificação
-      trilhoGame.completarQuiz(`Quiz ${nomes[livroAtual]}`, acertos, total);
-      
-      // Mostrar resultado final
-      setTimeout(() => {
-        const percentual = Math.round((acertos / total) * 100);
-        let mensagem = '';
-        let emoji = '';
-        
-        if (percentual === 100) {
-          mensagem = 'PERFEITO! Você dominou este livro! 🏆';
-          emoji = '🎉';
-        } else if (percentual >= 75) {
-          mensagem = 'Muito bem! Continue assim! 👏';
-          emoji = '😊';
-        } else if (percentual >= 50) {
-          mensagem = 'Bom trabalho! Pode melhorar! 💪';
-          emoji = '🙂';
-        } else {
-          mensagem = 'Continue estudando! Você consegue! 📚';
-          emoji = '😅';
-        }
-        
-        alert(`${emoji}\n\n${mensagem}\n\nAcertos: ${acertos}/${total} (${percentual}%)\n\nSeus pontos foram registrados!`);
-        
-        // Reset para refazer o quiz
-        acertos = 0;
-        cartasRespondidas = new Set();
-        cartaAtual = 0;
-        atualizarCarta();
-      }, 500);
-    }
-
-    function cartaProxima() {
-      if (!livroAtual) return;
-      const btns = document.getElementById('btns-resposta');
-      if (btns) btns.remove();
-      
-      if (cartaAtual < cartas[livroAtual].length - 1) {
-        cartaAtual++;
-        atualizarCarta();
-      }
-    }
-
-    function cartaAnterior() {
-      if (!livroAtual) return;
-      const btns = document.getElementById('btns-resposta');
-      if (btns) btns.remove();
-      
-      if (cartaAtual > 0) {
-        cartaAtual--;
-        atualizarCarta();
-      }
-    }
-
-    // Teclado
+    // Atalhos de teclado
     document.addEventListener('keydown', (e) => {
-      if (!livroAtual) return;
-      if (e.key === 'ArrowRight') cartaProxima();
-      if (e.key === 'ArrowLeft') cartaAnterior();
-      if (e.key === ' ') {
-        e.preventDefault();
-        virarCarta();
+      // ESC para voltar
+      if (e.key === 'Escape') {
+        window.history.back();
       }
     });
   </script>

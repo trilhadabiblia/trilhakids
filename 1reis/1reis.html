@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 1 Reis - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="1reis-capa.png" alt="Capa: 1 Reis" id="img-1reis"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer"
+                    aria-describedby="desc-1reis">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>📘</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 mx-2">
+                    LIVRO DE 1 Reis
+                </span>
+                <span>📘</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Sabedoria e Fidelidade a Deus - Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-1reis" class="sr-only" aria-hidden="true">
+                Agora, obedeça cuidadosamente a todos os mandamentos do SENHOR, seu Deus, e cumpra cuidadosamente todos
+                os seus decretos, mandamentos, decisões e princípios. Obedeça a tudo o que está escrito nos ensinos de
+                Moisés para que tenha sucesso em tudo o que fizer e por onde quer que for. 1 Reis 2:3
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal (inicia escondido) -->
+    <div id="modal-1reis" role="dialog" aria-modal="true" aria-labelledby="modal-1reis-title"
+        class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center">
+        <div class="bg-white max-w-md mx-4 p-6 rounded-lg shadow-lg">
+            <h2 id="modal-1reis-title" class="text-lg font-semibold mb-2">Texto da palavra</h2>
+            <p class="text-sm text-gray-700 mb-4">
+                Agora, obedeça cuidadosamente a todos os mandamentos do SENHOR, seu Deus, e cumpra cuidadosamente todos
+                os
+                seus decretos, mandamentos, decisões e princípios. Obedeça a tudo o que está escrito nos ensinos de
+                Moisés para que tenha sucesso em tudo o que fizer e por onde quer que for.<br> 1 Reis 2:3
+            </p>
+            <button id="fechar-1reis" class="px-4 py-2 bg-blue-600 text-white rounded">Fechar</button>
+        </div>
+    </div>
+
+    <script>
+        // Abrir modal ao clicar na imagem
+        document.getElementById('img-1reis').addEventListener('click', function () {
+            document.getElementById('modal-1reis').classList.remove('hidden');
+        });
+        // Fechar modal
+        document.getElementById('fechar-1reis').addEventListener('click', function () {
+            document.getElementById('modal-1reis').classList.add('hidden');
+        });
+        // Fechar ao clicar fora (opcional)
+        document.getElementById('modal-1reis').addEventListener('click', function (e) {
+            if (e.target === this) {
+                this.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem é o personagem principal? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="1reis-personagem.png" alt="Quem é o personagem principal?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-4 border-blue-500">
+                    <h2 class="text-4xl font-black text-blue-700 mb-6">👑 Quem é o personagem principal?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            O <span class="font-bold text-blue-600">rei Salomão</span> é o personagem principal, junto
+                            com os reis que vieram depois dele.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ele ficou conhecido por pedir a <span class="font-bold text-blue-600">sabedoria de
+                                Deus</span> para governar o povo.
+                        </p>
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 3:7-14</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl border-4 border-yellow-500">
+                        <h2 class="text-4xl font-black text-yellow-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Conta sobre o reinado de <span class="font-bold text-yellow-600">Salomão</span>, que
+                                pediu sabedoria a Deus.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Fala sobre a <span class="font-bold text-yellow-600">construção do Templo</span> em
+                                Jerusalém.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostra como o reino se dividiu em <span class="font-bold text-yellow-600">Reino do Norte
+                                    (Israel)</span> e <span class="font-bold text-yellow-600">Reino do Sul
+                                    (Judá)</span>.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-yellow-600">22 capítulos</span> cheios de
+                                histórias e lições.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="1reis-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="1reis-importancia.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
+                    <h2 class="text-4xl font-black text-green-700 mb-6">🌟 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-green-600">Porque mostra que a verdadeira sabedoria vem de
+                                Deus.</span>
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina que <span class="font-bold text-green-600">obedecer a Deus traz bênção,</span> mas
+                            desobedecer traz tristeza.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra a importância de ter <span class="font-bold text-green-600">líderes que amam o
+                                Senhor.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
+                        <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-purple-600">Ensinar que a sabedoria e a fidelidade a
+                                    Deus</span> são mais valiosas que qualquer riqueza.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="1reis-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="1reis-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-2xl border-4 border-pink-500">
+                    <h2 class="text-4xl font-black text-pink-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-pink-600">Salomão foi considerado o homem mais sábio do
+                                mundo!</span>
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-pink-300">
+                            <p class="text-sm text-gray-700 italic">Quem busca a sabedoria de Deus, encontra o
+                                verdadeiro tesouro! 💎</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-yellow-700/20 to-orange-700/20 border-2 border-yellow-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../2samuel/2samuel.html"
+                class="bg-gradient-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 2 Samuel
+            </a>
+            <a href="../historicos.html"
+                class="bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Históricos
+            </a>
+            <a href="../2reis/2reis.html"
+                class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                2 Reis ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Reis - Sabedoria que Vem de Deus ✨</h3>
+        <p class="text-lg">Ministério Infantil - Kids © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('I Reis');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+# ==============================================
+# 🚫 ARQUIVOS E PASTAS PARA IGNORAR NO GIT
+# Projeto: Quiz Bíblico / Node.js / Front-end
+# ==============================================
+
+# Dependências e builds
+node_modules/
+dist/
+build/
+out/
+.tmp/
+temp/
+.cache/
+.vite/
+.next/
+.nuxt/
+.svelte-kit/
+storybook-static/
+coverage/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de sistema e editores
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+*.old
+
+# IDEs e configurações pessoais
+.vscode/
+.idea/
+*.code-workspace
+
+# Arquivos de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos de testes locais
+__tests__/
+__mocks__/
+jest.cache/
+cypress/videos/
+cypress/screenshots/
+
+# Arquivos de cache e build de front-end
+*.tsbuildinfo
+*.eslintcache
+.cache-loader/
+*.map
+
+# Arquivos de deploy temporários
+*.zip
+*.tar
+*.tgz
+*.tar.gz
+
+# Backups e exportações temporárias
+*.bak
+*.orig
+*.rej
+
+# Arquivos gerados por IA ou preprocessadores
+*.generated.*
+*.ai-temp.*
+*.tmp.*
+
+# Arquivos do sistema
