@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidscípulos - Resumo do Trimestre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+        
+        body {
+            font-family: 'Fredoka', sans-serif;
+        }
+        
+        .reel-container {
+            width: 100%;
+            max-width: 400px;
+            height: calc(100vh - 4rem);
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background: #000;
+        }
+
+        .reel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(100%);
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .reel.active {
+            transform: translateX(0);
+            opacity: 1;
+            z-index: 2;
+        }
+
+        .reel img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        .overlay {
+            background: linear-gradient(0deg, rgba(0,0,0,0.9) 20%, transparent 100%);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            color: white;
+            z-index: 20;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 15;
+        }
+
+        .video-container.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: black;
+        }
+
+        .close-video {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 25;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .close-video.active {
+            display: flex;
+        }
+
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            border: none;
+        }
+
+        .nav-button:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev { left: 1rem; }
+        .next { right: 1rem; }
+
+        .reel-progress {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.25rem;
+            z-index: 15;
+        }
+
+        .progress-segment {
+            flex: 1;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-segment.active {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .progress-segment.completed {
+            background: rgba(255,255,255,1);
+        }
+
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        @media (min-width: 400px) {
+            .reel-container {
+                height: min(90vh, calc(100vw * 1.78));
+                max-height: 90vh;
+                border: 2px solid rgba(255,255,255,0.1);
+            }
+        }
+
+        @media (min-width: 400px) and (min-height: 800px) {
+            .reel-container {
+                max-height: 80vh;
+            }
+            
+            .overlay {
+                padding: 2rem 1.5rem;
+            }
+            
+            .reel-progress {
+                top: 1.5rem;
+                left: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        .theme-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div class="reel-container">
+        <div class="reel-progress">
+            <div class="progress-segment" data-index="0"></div>
+            <div class="progress-segment" data-index="1"></div>
+            <div class="progress-segment" data-index="2"></div>
+        </div>
+
+        <!-- Reel 1: Reforma Protestante -->
+        <div class="reel active" data-index="0" data-theme="reforma">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
+                <div class="theme-icon">⛪</div>
+            </div>
+            
+            <div class="video-container" id="video-container-0">
+                <video id="video-0" controls preload="none">
+                    <source src="kidiscipulos/videos/reforma.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(0)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">A Reforma Protestante</h3>
+                <p class="text-sm opacity-80">Conheça a história da Reforma</p>
+                
+                <div class="flex gap-3 mt-4">
+                    <button onclick="playVideo(0)" 
+                        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('reforma')" 
+                        class="flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Ver Slides
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reel 2: Halloween -->
+        <div class="reel" data-index="1" data-theme="halloween">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-600 to-orange-900">
+                <div class="theme-icon">🚫</div>
+            </div>
+            
+            <div class="video-container" id="video-container-1">
+                <video id="video-1" controls preload="none">
+                    <source src="kidiscipulos/videos/halloween.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(1)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">Halloween: TÔ FORA</h3>
+                <p class="text-sm opacity-80">Entenda a posição cristã</p>
+                
+                <div class="flex gap-3 mt-4">
+                    <button onclick="playVideo(1)" 
+                        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('halloween')" 
+                        class="flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Ver Slides
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reel 3: Diaconato -->
+        <div class="reel" data-index="2" data-theme="diaconato">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-900">
+                <div class="theme-icon">⭐</div>
+            </div>
+            
+            <div class="video-container" id="video-container-2">
+                <video id="video-2" controls preload="none">
+                    <source src="kidiscipulos/videos/diaconato.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(2)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">Servindo com Excelência</h3>
+                <p class="text-sm opacity-80">Aprenda sobre o diaconato</p>
+                
+                <div class="flex gap-3 mt-4">
+                    <button onclick="playVideo(2)" 
+                        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('diaconato')" 
+                        class="flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Ver Slides
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <button class="nav-button prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-button next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <!-- Modal de Slides -->
+    <div id="slides-modal" class="fixed inset-0 bg-black z-50 hidden">
+        <button onclick="closeSlides()" class="absolute top-4 left-4 text-white text-2xl z-50 w-10 h-10 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+        
+        <div class="w-full h-full flex items-center justify-center relative px-12">
+            <button onclick="previousSlide()" class="absolute left-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <img id="current-slide" src="" class="max-w-full max-h-screen object-contain">
+            
+            <button onclick="nextSlide()" class="absolute right-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="absolute bottom-8 left-0 right-0 text-center text-white text-xl font-semibold">
+            <span id="slide-counter">1</span> / <span id="slide-total">1</span>
+        </div>
+    </div>
+
+    <script>
+        let currentReelIndex = 0;
+        let currentSlideIndex = 0;
+        let currentSlides = [];
+        let reels;
+        let prevBtn;
+        let nextBtn;
+        let touchStartX = 0;
+
+        // Configuração dos slides (adicione os nomes dos arquivos em ordem)
+        const slideFiles = {
+            reforma: ['reforma_img01.jpg', 'reforma_img02.jpg', 'reforma_img03.jpg', 'reforma_img04.jpg', 'reforma_img05.jpg', 'reforma_img06.jpg', 'reforma_img07.jpg', 'reforma_img08.jpg', 'reforma_img09.jpg', 'reforma_img10.jpg', 'reforma_img11.jpg', 'reforma_img12.jpg', 'reforma_img13.jpg', 'reforma_img14.jpg', 'reforma_img15.jpg'],
+            halloween: ['halloween_nao_img01.jpg', 'halloween_nao_img02.jpg', 'halloween_nao_img03.jpg', 'halloween_nao_img04.jpg', 'halloween_nao_img05.jpg', 'halloween_nao_img06.jpg', 'halloween_nao_img07.jpg', 'halloween_nao_img08.jpg', 'halloween_nao_img09.jpg', 'halloween_nao_img10.jpg', 'halloween_nao_img11.jpg'],
+            diaconato: ['diaconato_img01.jpg', 'diaconato_img02.jpg', 'diaconato_img03.jpg', 'diaconato_img04.jpg', 'diaconato_img05.jpg']
+        };
+
+        document.addEventListener('DOMContentLoaded', function() {
+            reels = document.querySelectorAll('.reel');
+            prevBtn = document.querySelector('.prev');
+            nextBtn = document.querySelector('.next');
+
+            prevBtn.addEventListener('click', () => {
+                currentReelIndex = currentReelIndex === 0 ? reels.length - 1 : currentReelIndex - 1;
+                showReel(currentReelIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentReelIndex = currentReelIndex === reels.length - 1 ? 0 : currentReelIndex + 1;
+                showReel(currentReelIndex);
+            });
+
+            const reelContainer = document.querySelector('.reel-container');
+            reelContainer.addEventListener('touchstart', e => touchStartX = e.touches[0].clientX);
+            reelContainer.addEventListener('touchend', e => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const diff = touchStartX - touchEndX;
+                if(Math.abs(diff) > 50) diff > 0 ? nextBtn.click() : prevBtn.click();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                const slidesModal = document.getElementById('slides-modal');
+                if(!slidesModal.classList.contains('hidden')) {
+                    if(e.key === 'ArrowLeft') previousSlide();
+                    if(e.key === 'ArrowRight') nextSlide();
+                    if(e.key === 'Escape') closeSlides();
+                } else {
+                    if(e.key === 'ArrowLeft') prevBtn.click();
+                    if(e.key === 'ArrowRight') nextBtn.click();
+                    if(e.key === 'Escape') closeAllVideos();
+                }
+            });
+
+            // Detectar quando sair de fullscreen (ESC ou botão nativo)
+            document.addEventListener('fullscreenchange', handleFullscreenChange);
+            document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+            document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+            document.addEventListener('MSFullscreenChange', handleFullscreenChange);
+
+            showReel(0);
+        });
+
+        function handleFullscreenChange() {
+            const isFullscreen = document.fullscreenElement || 
+                               document.webkitFullscreenElement || 
+                               document.mozFullScreenElement || 
+                               document.msFullscreenElement;
+            
+            if (!isFullscreen) {
+                // Saiu de fullscreen, pausar todos os vídeos
+                closeAllVideos();
+            }
+        }
+
+        function showReel(index) {
+            closeAllVideos();
+            
+            reels.forEach(reel => reel.classList.remove('active'));
+            reels[index].classList.add('active');
+            currentReelIndex = index;
+            
+            updateProgressBar();
+        }
+
+        function updateProgressBar() {
+            const segments = document.querySelectorAll('.progress-segment');
+            segments.forEach((segment, index) => {
+                segment.classList.remove('active', 'completed');
+                if(index < currentReelIndex) {
+                    segment.classList.add('completed');
+                } else if(index === currentReelIndex) {
+                    segment.classList.add('active');
+                }
+            });
+        }
+
+        function closeAllVideos() {
+            document.querySelectorAll('.video-container').forEach(container => {
+                container.classList.remove('active');
+                const video = container.querySelector('video');
+                if(video) {
+                    video.pause();
+                    video.currentTime = 0;
+                }
+            });
+            document.querySelectorAll('.close-video').forEach(btn => btn.classList.remove('active'));
+        }
+
+        function playVideo(index) {
+            const videoContainer = document.getElementById(`video-container-${index}`);
+            const video = document.getElementById(`video-${index}`);
+            const closeBtn = videoContainer.querySelector('.close-video');
+
+            closeAllVideos();
+            videoContainer.classList.add('active');
+            closeBtn.classList.add('active');
+            
+            // Tentar entrar em tela cheia
+            enterFullscreen(videoContainer, video);
+            
+            video.play().catch(error => console.log('Autoplay prevented:', error));
+
+            video.onended = () => closeVideo(index);
+        }
+
+        function enterFullscreen(container, video) {
+            const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Mobile: entrar em fullscreen com orientação paisagem
+                if (screen.orientation && screen.orientation.lock) {
+                    screen.orientation.lock('landscape').catch(err => {
+                        console.log('Não foi possível forçar orientação:', err);
+                    });
+                }
+                
+                // Tentar fullscreen no vídeo (iOS usa webkitEnterFullscreen)
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitEnterFullscreen) {
+                    video.webkitEnterFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                    video.mozRequestFullScreen();
+                } else if (video.msRequestFullscreen) {
+                    video.msRequestFullscreen();
+                }
+            } else {
+                // Desktop: fullscreen no container
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.mozRequestFullScreen) {
+                    container.mozRequestFullScreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+            }
+        }
+
+        function exitFullscreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            
+            // Desbloquear orientação
+            if (screen.orientation && screen.orientation.unlock) {
+                screen.orientation.unlock();
+            }
+        }
+
+        function closeVideo(index) {
+            const videoContainer = document.getElementById(`video-container-${index}`);
+            const video = document.getElementById(`video-${index}`);
+            if (videoContainer) {
+                videoContainer.classList.remove('active');
+                video.pause();
+                video.currentTime = 0;
+                exitFullscreen();
+            }
+        }
+
+        function showSlides(theme) {
+            const modal = document.getElementById('slides-modal');
+            const files = slideFiles[theme];
+            
+            currentSlides = files.map(file => `kidiscipulos/imagens/${theme}/${file}`);
+            currentSlideIndex = 0;
+            
+            modal.classList.remove('hidden');
+            updateSlideDisplay();
+        }
+
+        function closeSlides() {
+            document.getElementById('slides-modal').classList.add('hidden');
+        }
+
+        function previousSlide() {
+            if(currentSlideIndex > 0) {
+                currentSlideIndex--;
+                updateSlideDisplay();
+            }
+        }
+
+        function nextSlide() {
+            if(currentSlideIndex < currentSlides.length - 1) {
+                currentSlideIndex++;
+                updateSlideDisplay();
+            }
+        }
+
+        function updateSlideDisplay() {
+            document.getElementById('current-slide').src = currentSlides[currentSlideIndex];
+            document.getElementById('slide-counter').textContent = currentSlideIndex + 1;
+            document.getElementById('slide-total').textContent = currentSlides.length;
+        }
+    </script>
+</body>
+</html>
