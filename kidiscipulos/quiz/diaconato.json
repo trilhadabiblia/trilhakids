@@ -1,0 +1,114 @@
+{
+    "questoes": [
+        {
+            "pergunta": "O que a palavra grega “diácono” significa?",
+            "opcoes": [
+                "Guardião do templo",
+                "Servo ou ajudante",
+                "Líder espiritual",
+                "Mestre ou professor"
+            ],
+            "correta": 1,
+            "justificativa": "A palavra grega 'diákonos' se refere literalmente a servo, ajudante, ou aquele que serve aos outros."
+        },
+        {
+            "pergunta": "O que o diaconato representa para a igreja?",
+            "opcoes": [
+                "O ministério de pregação e ensino",
+                "O ministério do serviço prático",
+                "O corpo de líderes máximos",
+                "O grupo responsável apenas pela música"
+            ],
+            "correta": 1,
+            "justificativa": "O diaconato é o ministério do serviço prático, criado para cuidar das necessidades da igreja e apoiar os líderes espirituais."
+        },
+        {
+            "pergunta": "Qual situação na igreja primitiva levou ao surgimento do diaconato?",
+            "opcoes": [
+                "A falta de dinheiro para a construção de templos",
+                "Os apóstolos estavam sobrecarregados e viúvas estavam sendo esquecidas na distribuição de alimentos",
+                "A necessidade de mais pregadores itinerantes",
+                "O desejo de ter reuniões separadas para crianças"
+            ],
+            "correta": 1,
+            "justificativa": "O diaconato nasceu quando os apóstolos estavam sobrecarregados e viúvas estavam sendo esquecidas na distribuição diária de alimentos."
+        },
+        {
+            "pergunta": "Qual era o foco dos apóstolos após a escolha dos sete homens para o serviço?",
+            "opcoes": [
+                "Organizar os eventos sociais da igreja",
+                "Dedicar-se à oração e ao ministério da Palavra",
+                "Controlar as finanças da igreja",
+                "Cuidar da limpeza do templo"
+            ],
+            "correta": 1,
+            "justificativa": "Eles decidiram escolher sete homens para as tarefas práticas para que pudessem continuar se dedicando à oração e ao ministério da Palavra."
+        },
+        {
+            "pergunta": "Qual é a principal função do diácono hoje?",
+            "opcoes": [
+                "Apenas dar sermões e ministrar aulas",
+                "Servir à igreja, ajudando na ordem, cuidado e assistência ao corpo de Cristo",
+                "Tomar decisões sozinho sobre a igreja",
+                "Ser o responsável por todos os eventos financeiros"
+            ],
+            "correta": 1,
+            "justificativa": "A função principal é servir à igreja, ajudando na ordem, cuidado e assistência."
+        },
+        {
+            "pergunta": "De acordo com 1 Timóteo 3:13, qual é a recompensa para aqueles que servem bem como diáconos?",
+            "opcoes": [
+                "Ganhar muito dinheiro e fama",
+                "Alcançar para si uma boa posição e muita confiança na fé",
+                "Ter menos responsabilidades na igreja",
+                "Poder escolher quem será o próximo pastor"
+            ],
+            "correta": 1,
+            "justificativa": "Aqueles que servirem bem como diáconos alcançarão para si uma boa posição e muita confiança na fé que há em Cristo Jesus."
+        },
+        {
+            "pergunta": "Qual destas é uma responsabilidade prática do diácono na igreja?",
+            "opcoes": [
+                "Criar a programação dos louvores",
+                "Manter a ordem e reverência durante os cultos e receber visitantes",
+                "Escrever a lição bíblica semanal",
+                "Representar a igreja em viagens longas"
+            ],
+            "correta": 1,
+            "justificativa": "O diácono tem a responsabilidade de manter a ordem e reverência durante os cultos, além de receber e orientar membros e visitantes."
+        },
+        {
+            "pergunta": "Como o diácono deve ser em seu comportamento pessoal?",
+            "opcoes": [
+                "Ter vida de oração e ser exemplo de caráter",
+                "Falar mal dos outros membros",
+                "Faltar aos compromissos sem avisar",
+                "Ser orgulhoso e desobediente"
+            ],
+            "correta": 0,
+            "justificativa": "No comportamento pessoal, o diácono deve ter vida de oração, viver em santidade e ser exemplo de caráter dentro e fora da igreja."
+        },
+        {
+            "pergunta": "Quem é o modelo perfeito de diaconato, de acordo com o texto?",
+            "opcoes": [
+                "Moisés",
+                "O primeiro diácono escolhido",
+                "Jesus, que veio para servir e dar a vida",
+                "O apóstolo Paulo"
+            ],
+            "correta": 2,
+            "justificativa": "Jesus é o modelo perfeito de diaconato. Ele mesmo disse que não veio para ser servido, mas para servir e dar a sua vida."
+        },
+        {
+            "pergunta": "Qual deve ser a atitude de quem serve no ministério?",
+            "opcoes": [
+                "Servir apenas quando for elogiado",
+                "Servir com tristeza, mas por obrigação",
+                "Servir com alegria, não por obrigação, fazendo-o de todo o coração, como ao Senhor",
+                "Fazer o serviço de qualquer maneira"
+            ],
+            "correta": 2,
+            "justificativa": "O serviço deve ser feito com alegria, não por obrigação, e de todo o coração, como se estivesse servindo ao próprio Senhor."
+        }
+    ]
+}

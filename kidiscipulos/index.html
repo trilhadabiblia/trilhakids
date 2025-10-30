@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +9,11 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
-        
+
         body {
             font-family: 'Fredoka', sans-serif;
         }
-        
+
         .reel-container {
             width: 100%;
             max-width: 400px;
@@ -49,7 +50,7 @@
         }
 
         .overlay {
-            background: linear-gradient(0deg, rgba(0,0,0,0.9) 20%, transparent 100%);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 20%, transparent 100%);
             position: absolute;
             bottom: 0;
             left: 0;
@@ -91,7 +92,7 @@
             position: absolute;
             top: 1rem;
             right: 1rem;
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             width: 40px;
@@ -113,7 +114,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             width: 40px;
             height: 40px;
@@ -128,12 +129,17 @@
         }
 
         .nav-button:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             transform: translateY(-50%) scale(1.1);
         }
 
-        .prev { left: 1rem; }
-        .next { right: 1rem; }
+        .prev {
+            left: 1rem;
+        }
+
+        .next {
+            right: 1rem;
+        }
 
         .reel-progress {
             position: absolute;
@@ -148,23 +154,23 @@
         .progress-segment {
             flex: 1;
             height: 3px;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             border-radius: 2px;
             overflow: hidden;
         }
 
         .progress-segment.active {
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .progress-segment.completed {
-            background: rgba(255,255,255,1);
+            background: rgba(255, 255, 255, 1);
         }
 
         .hover-scale {
             transition: transform 0.2s ease;
         }
-        
+
         .hover-scale:hover {
             transform: scale(1.05);
         }
@@ -173,7 +179,7 @@
             .reel-container {
                 height: min(90vh, calc(100vw * 1.78));
                 max-height: 90vh;
-                border: 2px solid rgba(255,255,255,0.1);
+                border: 2px solid rgba(255, 255, 255, 0.1);
             }
         }
 
@@ -181,11 +187,11 @@
             .reel-container {
                 max-height: 80vh;
             }
-            
+
             .overlay {
                 padding: 2rem 1.5rem;
             }
-            
+
             .reel-progress {
                 top: 1.5rem;
                 left: 1.5rem;
@@ -200,6 +206,7 @@
         }
     </style>
 </head>
+
 <body class="bg-gray-900">
     <div class="reel-container">
         <div class="reel-progress">
@@ -213,7 +220,7 @@
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
                 <div class="theme-icon">⛪</div>
             </div>
-            
+
             <div class="video-container" id="video-container-0">
                 <video id="video-0" controls preload="none">
                     <source src="kidiscipulos/videos/reforma.mp4" type="video/mp4">
@@ -222,21 +229,26 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <div class="overlay">
                 <h3 class="text-3xl font-bold">A Reforma Protestante</h3>
                 <p class="text-sm opacity-80">Conheça a história da Reforma</p>
-                
-                <div class="flex gap-3 mt-4">
-                    <button onclick="playVideo(0)" 
-                        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(0)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
                     </button>
-                    <button onclick="showSlides('reforma')" 
-                        class="flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                    <button onclick="showSlides('reforma')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-images"></i>
-                        Ver Slides
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('reforma')"
+                        class="flex items-center gap-2 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
                     </button>
                 </div>
             </div>
@@ -247,7 +259,7 @@
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-600 to-orange-900">
                 <div class="theme-icon">🚫</div>
             </div>
-            
+
             <div class="video-container" id="video-container-1">
                 <video id="video-1" controls preload="none">
                     <source src="kidiscipulos/videos/halloween.mp4" type="video/mp4">
@@ -256,21 +268,26 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <div class="overlay">
                 <h3 class="text-3xl font-bold">Halloween: TÔ FORA</h3>
                 <p class="text-sm opacity-80">Entenda a posição cristã</p>
-                
-                <div class="flex gap-3 mt-4">
-                    <button onclick="playVideo(1)" 
-                        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(1)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
                     </button>
-                    <button onclick="showSlides('halloween')" 
-                        class="flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                    <button onclick="showSlides('halloween')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-images"></i>
-                        Ver Slides
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('halloween')"
+                        class="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
                     </button>
                 </div>
             </div>
@@ -281,7 +298,7 @@
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-900">
                 <div class="theme-icon">⭐</div>
             </div>
-            
+
             <div class="video-container" id="video-container-2">
                 <video id="video-2" controls preload="none">
                     <source src="kidiscipulos/videos/diaconato.mp4" type="video/mp4">
@@ -290,21 +307,26 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            
+
             <div class="overlay">
                 <h3 class="text-3xl font-bold">Servindo com Excelência</h3>
                 <p class="text-sm opacity-80">Aprenda sobre o diaconato</p>
-                
-                <div class="flex gap-3 mt-4">
-                    <button onclick="playVideo(2)" 
-                        class="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(2)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
                     </button>
-                    <button onclick="showSlides('diaconato')" 
-                        class="flex items-center gap-2 bg-white/20 text-white px-5 py-2 rounded-full text-sm font-semibold hover-scale">
+                    <button onclick="showSlides('diaconato')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-images"></i>
-                        Ver Slides
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('diaconato')"
+                        class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
                     </button>
                 </div>
             </div>
@@ -320,24 +342,110 @@
 
     <!-- Modal de Slides -->
     <div id="slides-modal" class="fixed inset-0 bg-black z-50 hidden">
-        <button onclick="closeSlides()" class="absolute top-4 left-4 text-white text-2xl z-50 w-10 h-10 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+        <button onclick="closeSlides()"
+            class="absolute top-4 left-4 text-white text-2xl z-50 w-10 h-10 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
             <i class="fas fa-arrow-left"></i>
         </button>
-        
+
         <div class="w-full h-full flex items-center justify-center relative px-12">
-            <button onclick="previousSlide()" class="absolute left-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+            <button onclick="previousSlide()"
+                class="absolute left-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
                 <i class="fas fa-chevron-left"></i>
             </button>
-            
+
             <img id="current-slide" src="" class="max-w-full max-h-screen object-contain">
-            
-            <button onclick="nextSlide()" class="absolute right-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
+
+            <button onclick="nextSlide()"
+                class="absolute right-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
                 <i class="fas fa-chevron-right"></i>
             </button>
         </div>
-        
+
         <div class="absolute bottom-8 left-0 right-0 text-center text-white text-xl font-semibold">
             <span id="slide-counter">1</span> / <span id="slide-total">1</span>
+        </div>
+    </div>
+
+    <!-- Modal de Quiz -->
+    <div id="quiz-modal"
+        class="fixed inset-0 bg-gradient-to-br from-purple-900 to-indigo-900 z-50 hidden overflow-y-auto">
+        <div class="min-h-screen p-4 flex flex-col">
+            <!-- Header do Quiz -->
+            <div class="flex items-center justify-between mb-6">
+                <button onclick="closeQuiz()"
+                    class="text-white text-2xl w-10 h-10 flex items-center justify-center bg-black bg-opacity-30 rounded-full">
+                    <i class="fas fa-times"></i>
+                </button>
+
+                <div class="flex-1 mx-4">
+                    <div class="bg-white bg-opacity-20 rounded-full h-3 overflow-hidden">
+                        <div id="quiz-progress-bar" class="bg-yellow-400 h-full transition-all duration-300"
+                            style="width: 0%"></div>
+                    </div>
+                    <p class="text-white text-center mt-2 text-sm">
+                        <span id="quiz-current">1</span> / <span id="quiz-total">10</span>
+                    </p>
+                </div>
+
+                <div class="text-white text-right">
+                    <div class="text-2xl font-bold" id="quiz-score">0</div>
+                    <div class="text-xs opacity-80">pontos</div>
+                </div>
+            </div>
+
+            <!-- Pergunta -->
+            <div class="flex-1 flex flex-col justify-center max-w-2xl mx-auto w-full">
+                <div class="bg-white rounded-3xl shadow-2xl p-6 mb-6">
+                    <h3 id="quiz-question" class="text-xl md:text-2xl font-bold text-gray-800 mb-6"></h3>
+
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Opções serão inseridas aqui -->
+                    </div>
+                </div>
+
+                <!-- Feedback -->
+                <div id="quiz-feedback" class="hidden bg-white rounded-2xl shadow-xl p-6 mb-4">
+                    <div class="flex items-start gap-4">
+                        <div id="feedback-icon" class="text-4xl"></div>
+                        <div class="flex-1">
+                            <h4 id="feedback-title" class="text-xl font-bold mb-2"></h4>
+                            <p id="feedback-text" class="text-gray-700"></p>
+                        </div>
+                    </div>
+                    <button onclick="nextQuestion()"
+                        class="w-full mt-4 bg-purple-600 text-white py-3 rounded-full font-semibold hover:bg-purple-700 transition">
+                        Próxima Pergunta
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Resultado Final -->
+    <div id="result-modal"
+        class="fixed inset-0 bg-gradient-to-br from-green-900 to-teal-900 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md w-full text-center">
+            <div class="text-6xl mb-4" id="result-emoji">🎉</div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Parabéns!</h2>
+            <p class="text-gray-600 mb-6">Você completou o quiz!</p>
+
+            <div class="bg-gradient-to-r from-purple-500 to-blue-500 text-white rounded-2xl p-6 mb-6">
+                <div class="text-5xl font-bold mb-2" id="final-score">0</div>
+                <div class="text-sm opacity-90">de <span id="final-total">10</span> pontos</div>
+            </div>
+
+            <p id="result-message" class="text-gray-700 mb-6 text-lg"></p>
+
+            <div class="flex gap-3">
+                <button onclick="restartQuiz()"
+                    class="flex-1 bg-purple-600 text-white py-3 rounded-full font-semibold hover:bg-purple-700 transition">
+                    <i class="fas fa-redo mr-2"></i>Refazer
+                </button>
+                <button onclick="closeQuiz()"
+                    class="flex-1 bg-gray-200 text-gray-800 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+                    Fechar
+                </button>
+            </div>
         </div>
     </div>
 
@@ -357,7 +465,7 @@
             diaconato: ['diaconato_img01.jpg', 'diaconato_img02.jpg', 'diaconato_img03.jpg', 'diaconato_img04.jpg', 'diaconato_img05.jpg']
         };
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             reels = document.querySelectorAll('.reel');
             prevBtn = document.querySelector('.prev');
             nextBtn = document.querySelector('.next');
@@ -377,19 +485,19 @@
             reelContainer.addEventListener('touchend', e => {
                 const touchEndX = e.changedTouches[0].clientX;
                 const diff = touchStartX - touchEndX;
-                if(Math.abs(diff) > 50) diff > 0 ? nextBtn.click() : prevBtn.click();
+                if (Math.abs(diff) > 50) diff > 0 ? nextBtn.click() : prevBtn.click();
             });
 
             document.addEventListener('keydown', (e) => {
                 const slidesModal = document.getElementById('slides-modal');
-                if(!slidesModal.classList.contains('hidden')) {
-                    if(e.key === 'ArrowLeft') previousSlide();
-                    if(e.key === 'ArrowRight') nextSlide();
-                    if(e.key === 'Escape') closeSlides();
+                if (!slidesModal.classList.contains('hidden')) {
+                    if (e.key === 'ArrowLeft') previousSlide();
+                    if (e.key === 'ArrowRight') nextSlide();
+                    if (e.key === 'Escape') closeSlides();
                 } else {
-                    if(e.key === 'ArrowLeft') prevBtn.click();
-                    if(e.key === 'ArrowRight') nextBtn.click();
-                    if(e.key === 'Escape') closeAllVideos();
+                    if (e.key === 'ArrowLeft') prevBtn.click();
+                    if (e.key === 'ArrowRight') nextBtn.click();
+                    if (e.key === 'Escape') closeAllVideos();
                 }
             });
 
@@ -403,11 +511,11 @@
         });
 
         function handleFullscreenChange() {
-            const isFullscreen = document.fullscreenElement || 
-                               document.webkitFullscreenElement || 
-                               document.mozFullScreenElement || 
-                               document.msFullscreenElement;
-            
+            const isFullscreen = document.fullscreenElement ||
+                document.webkitFullscreenElement ||
+                document.mozFullScreenElement ||
+                document.msFullscreenElement;
+
             if (!isFullscreen) {
                 // Saiu de fullscreen, pausar todos os vídeos
                 closeAllVideos();
@@ -416,11 +524,11 @@
 
         function showReel(index) {
             closeAllVideos();
-            
+
             reels.forEach(reel => reel.classList.remove('active'));
             reels[index].classList.add('active');
             currentReelIndex = index;
-            
+
             updateProgressBar();
         }
 
@@ -428,9 +536,9 @@
             const segments = document.querySelectorAll('.progress-segment');
             segments.forEach((segment, index) => {
                 segment.classList.remove('active', 'completed');
-                if(index < currentReelIndex) {
+                if (index < currentReelIndex) {
                     segment.classList.add('completed');
-                } else if(index === currentReelIndex) {
+                } else if (index === currentReelIndex) {
                     segment.classList.add('active');
                 }
             });
@@ -440,7 +548,7 @@
             document.querySelectorAll('.video-container').forEach(container => {
                 container.classList.remove('active');
                 const video = container.querySelector('video');
-                if(video) {
+                if (video) {
                     video.pause();
                     video.currentTime = 0;
                 }
@@ -456,10 +564,10 @@
             closeAllVideos();
             videoContainer.classList.add('active');
             closeBtn.classList.add('active');
-            
+
             // Tentar entrar em tela cheia
             enterFullscreen(videoContainer, video);
-            
+
             video.play().catch(error => console.log('Autoplay prevented:', error));
 
             video.onended = () => closeVideo(index);
@@ -467,7 +575,7 @@
 
         function enterFullscreen(container, video) {
             const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-            
+
             if (isMobile) {
                 // Mobile: entrar em fullscreen com orientação paisagem
                 if (screen.orientation && screen.orientation.lock) {
@@ -475,7 +583,7 @@
                         console.log('Não foi possível forçar orientação:', err);
                     });
                 }
-                
+
                 // Tentar fullscreen no vídeo (iOS usa webkitEnterFullscreen)
                 if (video.requestFullscreen) {
                     video.requestFullscreen();
@@ -510,7 +618,7 @@
             } else if (document.msExitFullscreen) {
                 document.msExitFullscreen();
             }
-            
+
             // Desbloquear orientação
             if (screen.orientation && screen.orientation.unlock) {
                 screen.orientation.unlock();
@@ -531,10 +639,10 @@
         function showSlides(theme) {
             const modal = document.getElementById('slides-modal');
             const files = slideFiles[theme];
-            
+
             currentSlides = files.map(file => `kidiscipulos/imagens/${theme}/${file}`);
             currentSlideIndex = 0;
-            
+
             modal.classList.remove('hidden');
             updateSlideDisplay();
         }
@@ -544,14 +652,14 @@
         }
 
         function previousSlide() {
-            if(currentSlideIndex > 0) {
+            if (currentSlideIndex > 0) {
                 currentSlideIndex--;
                 updateSlideDisplay();
             }
         }
 
         function nextSlide() {
-            if(currentSlideIndex < currentSlides.length - 1) {
+            if (currentSlideIndex < currentSlides.length - 1) {
                 currentSlideIndex++;
                 updateSlideDisplay();
             }
@@ -562,6 +670,173 @@
             document.getElementById('slide-counter').textContent = currentSlideIndex + 1;
             document.getElementById('slide-total').textContent = currentSlides.length;
         }
+
+        // ===== VARIÁVEIS DO QUIZ =====
+        let quizData = null;
+        let currentQuizTheme = '';
+        let currentQuestionIndex = 0;
+        let quizScore = 0;
+        let answeredCorrectly = false;
+
+        // ===== FUNÇÕES DO QUIZ =====
+
+        async function startQuiz(theme) {
+            currentQuizTheme = theme;
+            currentQuestionIndex = 0;
+            quizScore = 0;
+
+            try {
+                const response = await fetch(`kidiscipulos/quiz/${theme}.json`);
+                quizData = await response.json();
+
+                document.getElementById('quiz-modal').classList.remove('hidden');
+                document.getElementById('result-modal').classList.add('hidden');
+
+                showQuizQuestion();
+            } catch (error) {
+                alert('Erro ao carregar o quiz. Verifique se o arquivo existe: quiz/' + theme + '.json');
+                console.error('Erro:', error);
+            }
+        }
+
+        function showQuizQuestion() {
+            if (!quizData || currentQuestionIndex >= quizData.questoes.length) {
+                showQuizResults();
+                return;
+            }
+
+            answeredCorrectly = false;
+            const questao = quizData.questoes[currentQuestionIndex];
+
+            // Atualizar progresso
+            const progress = ((currentQuestionIndex + 1) / quizData.questoes.length) * 100;
+            document.getElementById('quiz-progress-bar').style.width = `${progress}%`;
+            document.getElementById('quiz-current').textContent = currentQuestionIndex + 1;
+            document.getElementById('quiz-total').textContent = quizData.questoes.length;
+            document.getElementById('quiz-score').textContent = quizScore;
+
+            // Mostrar pergunta
+            document.getElementById('quiz-question').textContent = questao.pergunta;
+
+            // Limpar e criar opções
+            const optionsContainer = document.getElementById('quiz-options');
+            optionsContainer.innerHTML = '';
+
+            questao.opcoes.forEach((opcao, index) => {
+                const button = document.createElement('button');
+                button.className = 'quiz-option w-full text-left p-4 rounded-xl border-2 border-gray-200 hover:border-purple-400 hover:bg-purple-50 transition font-medium';
+                button.textContent = opcao;
+                button.onclick = () => checkQuizAnswer(index);
+                optionsContainer.appendChild(button);
+            });
+
+            // Esconder feedback
+            document.getElementById('quiz-feedback').classList.add('hidden');
+        }
+
+        function checkQuizAnswer(selectedIndex) {
+            if (answeredCorrectly) return; // Já respondeu
+
+            const questao = quizData.questoes[currentQuestionIndex];
+            const isCorrect = selectedIndex === questao.correta;
+            const options = document.querySelectorAll('.quiz-option');
+
+            // Desabilitar todas as opções
+            options.forEach((option, index) => {
+                option.style.pointerEvents = 'none';
+
+                if (index === questao.correta) {
+                    // Marcar resposta correta em verde
+                    option.classList.remove('border-gray-200', 'hover:border-purple-400', 'hover:bg-purple-50');
+                    option.classList.add('border-green-500', 'bg-green-100');
+                    const icon = document.createElement('i');
+                    icon.className = 'fas fa-check-circle text-green-500 mr-2';
+                    option.insertBefore(icon, option.firstChild);
+                } else if (index === selectedIndex && !isCorrect) {
+                    // Marcar resposta errada em vermelho
+                    option.classList.remove('border-gray-200', 'hover:border-purple-400', 'hover:bg-purple-50');
+                    option.classList.add('border-red-500', 'bg-red-100');
+                    const icon = document.createElement('i');
+                    icon.className = 'fas fa-times-circle text-red-500 mr-2';
+                    option.insertBefore(icon, option.firstChild);
+                }
+            });
+
+            // Atualizar pontuação
+            if (isCorrect) {
+                quizScore += 10;
+                answeredCorrectly = true;
+                document.getElementById('quiz-score').textContent = quizScore;
+            }
+
+            // Mostrar feedback
+            const feedback = document.getElementById('quiz-feedback');
+            const feedbackIcon = document.getElementById('feedback-icon');
+            const feedbackTitle = document.getElementById('feedback-title');
+            const feedbackText = document.getElementById('feedback-text');
+
+            if (isCorrect) {
+                feedbackIcon.textContent = '🎉';
+                feedbackTitle.textContent = 'Muito bem!';
+                feedbackTitle.className = 'text-xl font-bold mb-2 text-green-600';
+            } else {
+                feedbackIcon.textContent = '📚';
+                feedbackTitle.textContent = 'Quase lá!';
+                feedbackTitle.className = 'text-xl font-bold mb-2 text-orange-600';
+            }
+
+            feedbackText.textContent = questao.justificativa;
+            feedback.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.questoes.length) {
+                showQuizQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function showQuizResults() {
+            document.getElementById('quiz-modal').classList.add('hidden');
+            document.getElementById('result-modal').classList.remove('hidden');
+
+            const totalQuestions = quizData.questoes.length;
+            const maxScore = totalQuestions * 10;
+            const percentage = (quizScore / maxScore) * 100;
+
+            document.getElementById('final-score').textContent = quizScore;
+            document.getElementById('final-total').textContent = maxScore;
+
+            let emoji, message;
+            if (percentage === 100) {
+                emoji = '🏆';
+                message = 'Perfeito! Você é um expert no assunto!';
+            } else if (percentage >= 70) {
+                emoji = '🎉';
+                message = 'Muito bem! Você aprendeu bastante!';
+            } else if (percentage >= 50) {
+                emoji = '👏';
+                message = 'Bom trabalho! Continue estudando!';
+            } else {
+                emoji = '📖';
+                message = 'Continue praticando! Você vai melhorar!';
+            }
+
+            document.getElementById('result-emoji').textContent = emoji;
+            document.getElementById('result-message').textContent = message;
+        }
+
+        function restartQuiz() {
+            startQuiz(currentQuizTheme);
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.add('hidden');
+            document.getElementById('result-modal').classList.add('hidden');
+        }        
     </script>
 </body>
+
 </html>

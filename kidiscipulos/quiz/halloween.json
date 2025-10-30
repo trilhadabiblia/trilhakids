@@ -1,0 +1,114 @@
+{
+    "questoes": [
+        {
+            "pergunta": "Quais são as duas raízes históricas principais do Halloween mencionadas no material?",
+            "opcoes": [
+                "Raízes romanas e egípcias.",
+                "Raízes celtas e católicas.",
+                "Raízes americanas e gregas.",
+                "Raízes protestantes e judaicas."
+            ],
+            "correta": 1,
+            "justificativa": "O Halloween tem raízes celtas (povos antigos que viviam na Irlanda) e católicos (dia de todos os santos)."
+        },
+        {
+            "pergunta": "Segundo o texto de 1 Coríntios 10:20, a quem são oferecidos os sacrifícios dos pagãos?",
+            "opcoes": [
+                "Aos santos.",
+                "Aos demônios.",
+                "Aos anjos.",
+                "Aos deuses da natureza."
+            ],
+            "correta": 1,
+            "justificativa": "Os sacrifícios dos pagãos são oferecidos aos demônios, não a Deus."
+        },
+        {
+            "pergunta": "Qual é a segunda data sazonal que mais gera dinheiro no comércio dos Estados Unidos?",
+            "opcoes": [
+                "Dia de Ação de Graças.",
+                "Páscoa.",
+                "Dia dos Namorados.",
+                "Halloween."
+            ],
+            "correta": 3,
+            "justificativa": "O Halloween é a data que gera mais dinheiro no comércio depois do Natal."
+        },
+        {
+            "pergunta": "Qual era a crença principal dos celtas sobre a noite de 31 de outubro, que marcava o fim do verão?",
+            "opcoes": [
+                "Que era o dia de maior adoração ao sol.",
+                "Que era o dia de maior colheita.",
+                "Que os espíritos poderiam atravessar a barreira para chegar aos vivos.",
+                "Que os deuses da natureza faziam uma trégua."
+            ],
+            "correta": 2,
+            "justificativa": "Os celtas acreditavam que na noite de 31 de outubro os espíritos poderiam atravessar a barreira para chegar aos vivos."
+        },
+        {
+            "pergunta": "Qual prática celta deu origem à brincadeira 'doce ou travessura'?",
+            "opcoes": [
+                "O uso de máscaras para afastar maus espíritos.",
+                "Acender grandes fogueiras para sacrificar animais.",
+                "Fazer ofertas de comida e bebida para agradar os bons espíritos.",
+                "Dançar em torno de árvores sagradas."
+            ],
+            "correta": 2,
+            "justificativa": "A origem da brincadeira 'doce ou travessura' veio das ofertas de comida e bebida que eram feitas pelos celtas para agradar os bons espíritos."
+        },
+        {
+            "pergunta": "O que acontece com os planos dos mortos, segundo o Salmo 146:4?",
+            "opcoes": [
+                "Eles continuam seus planos no mundo dos espíritos.",
+                "Eles louvam o Senhor no silêncio.",
+                "Eles voltam ao pó e seus planos acabam naquele mesmo dia.",
+                "Eles se tornam guardiões dos vivos."
+            ],
+            "correta": 2,
+            "justificativa": "Quando o espírito deles se vai, eles voltam ao pó; naquele mesmo dia acabam-se os seus planos."
+        },
+        {
+            "pergunta": "Em Deuteronômio 18:9, o que Deus disse ao seu povo sobre os costumes dos povos que Ele iria expulsar?",
+            "opcoes": [
+                "Que eles deveriam imitar os melhores costumes.",
+                "Que não deveriam imitar os costumes nojentos dos povos de lá.",
+                "Que podiam adotar a culinária e a música deles.",
+                "Que era necessário se integrar culturalmente."
+            ],
+            "correta": 1,
+            "justificativa": "O Senhor adverte: 'não imitem os costumes nojentos dos povos de lá'."
+        },
+        {
+            "pergunta": "Qual foi a tentativa da igreja Romana ao instituir o dia 1º de novembro como Dia de Todos os Santos (All Hallows’ Day)?",
+            "opcoes": [
+                "Eliminar todas as festas pagãs de uma vez.",
+                "Cristianizar as festas pagãs existentes.",
+                "Criar um novo feriado para o inverno.",
+                "Honrar todos os mártires do século IV."
+            ],
+            "correta": 1,
+            "justificativa": "A igreja Romana tentou cristianizar as festas pagãs ao invés de eliminá-las, instituindo o Dia de Todos os Santos."
+        },
+        {
+            "pergunta": "O que a Palavra de Deus diz que devemos fazer para que o Diabo fuja de nós (Tiago 4:7)?",
+            "opcoes": [
+                "Usar fantasias e amuletos.",
+                "Obedecer a Deus e enfrentar o Diabo.",
+                "Acender fogueiras para se proteger.",
+                "Ficar em silêncio e orar."
+            ],
+            "correta": 1,
+            "justificativa": "Devemos obedecer a Deus e enfrentar o Diabo, que ele fugirá de nós."
+        },
+        {
+            "pergunta": "Quais práticas, citadas em Gálatas 5:19-21, impedem as pessoas de receberem o Reino de Deus?",
+            "opcoes": [
+                "Estudar a Bíblia e louvar a Deus.",
+                "Ser honesto e ajudar os pobres.",
+                "Feitiçarias, inimizades e idolatria.",
+                "Cantar louvores em inglês."
+            ],
+            "correta": 2,
+            "justificativa": "A Bíblia lista as feitiçarias, inimizades, a adoração de ídolos e outras coisas semelhantes, e adverte que os que fazem essas coisas não receberão o Reino de Deus."
+        }
+    ]
+}

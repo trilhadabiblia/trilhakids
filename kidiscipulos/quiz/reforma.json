@@ -1,0 +1,114 @@
+{
+    "questoes": [
+        {
+            "pergunta": "Quem foi o monge que liderou o movimento da Reforma Protestante na Alemanha?",
+            "opcoes": [
+                "Apóstolo Paulo",
+                "João Calvino",
+                "Martinho Lutero",
+                "Tetzel"
+            ],
+            "correta": 2,
+            "justificativa": "Martinho Lutero era um monge da Alemanha e o idealizador da Reforma Protestante, um movimento de renovação da Igreja que começou em 1517."
+        },
+        {
+            "pergunta": "Em que ano Martinho Lutero pregou seus protestos na porta da igreja?",
+            "opcoes": [
+                "1450",
+                "1517",
+                "1648",
+                "1789"
+            ],
+            "correta": 1,
+            "justificativa": "Lutero pregou as 95 teses na porta da igreja no dia 31 de outubro de 1517."
+        },
+        {
+            "pergunta": "Qual era o costume errado da igreja da época, onde as pessoas pagavam para ter o perdão dos pecados?",
+            "opcoes": [
+                "Vender Bíblias",
+                "Vender indulgências",
+                "Fazer caridade",
+                "Comprar um templo"
+            ],
+            "correta": 1,
+            "justificativa": "A igreja vendia indulgências, que significava que as pessoas pagavam para ter o perdão dos pecados. Lutero protestou dizendo que o perdão não precisa de nada em troca."
+        },
+        {
+            "pergunta": "Qual é a principal forma de se livrar do pecado, segundo a Bíblia?",
+            "opcoes": [
+                "Dando dinheiro para a igreja",
+                "Fazendo muitas boas obras",
+                "Por meio da morte de Jesus Cristo na cruz",
+                "Por meio de sacrifícios de animais"
+            ],
+            "correta": 2,
+            "justificativa": "A forma de se livrar do pecado é por meio da morte de Jesus Cristo na cruz, onde Ele morreu para pagar pelos nossos pecados."
+        },
+        {
+            "pergunta": "Qual dos Cinco Solas significa que a salvação é um presente que não merecemos?",
+            "opcoes": [
+                "Sola Scriptura (Somente a Escritura)",
+                "Solus Christus (Somente Jesus)",
+                "Sola Gratia (Somente a graça)",
+                "Sola Fide (Somente a fé)"
+            ],
+            "correta": 2,
+            "justificativa": "Sola Gratia (Somente a graça) ensina que a graça é um presente que a gente não merece, e não somos salvos pelo que fazemos. A salvação é de graça."
+        },
+        {
+            "pergunta": "Por que o povo comum não tinha acesso à Bíblia na época de Lutero?",
+            "opcoes": [
+                "Porque era muito cara para ser impressa",
+                "Porque só existia em Latim, que não era a língua do povo",
+                "Porque as pessoas não sabiam ler",
+                "Porque era proibido por lei"
+            ],
+            "correta": 1,
+            "justificativa": "Havia poucos exemplares da Bíblia, e elas ainda estavam escritas em latim, que não era a língua do povo comum (alemã)."
+        },
+        {
+            "pergunta": "O que a palavra 'reforma' significa no contexto do movimento de Lutero?",
+            "opcoes": [
+                "Destruir algo completamente",
+                "Construir algo novo",
+                "Corrigir, consertar ou dar nova forma a alguma coisa",
+                "Mudar de país"
+            ],
+            "correta": 2,
+            "justificativa": "A palavra 'reforma' significa 'dar forma melhor e mais aperfeiçoada; modificar algo que estava em mau estado e pôr em bom estado'. No contexto da Igreja, significava corrigir o que estava errado."
+        },
+        {
+            "pergunta": "Qual dos Cinco Solas afirma que tudo o que fazemos é para a glória de Deus?",
+            "opcoes": [
+                "Soli Deo Gloria",
+                "Sola Scriptura",
+                "Sola Fide",
+                "Solus Christus"
+            ],
+            "correta": 0,
+            "justificativa": "Glória somente a Deus (Soli Deo Gloria) significa que tudo o que fazemos é para a glória de Deus, e Ele deve ser sempre o primeiro em tudo."
+        },
+        {
+            "pergunta": "Qual frase bíblica fez Martinho Lutero entender que a salvação vem pela fé?",
+            "opcoes": [
+                "Aquele que me ama guarda os meus mandamentos.",
+                "O justo viverá pela fé.",
+                "Deus amou o mundo de tal maneira.",
+                "Há maior felicidade em dar do que em receber."
+            ],
+            "correta": 1,
+            "justificativa": "Lutero entendeu a salvação ao ler o texto que diz: 'O justo viverá pela fé' (Romanos 1.17)."
+        },
+        {
+            "pergunta": "Qual versículo nos ensina que, ao conhecermos a Palavra de Deus, a verdade nos libertará?",
+            "opcoes": [
+                "Gênesis 1:1",
+                "Atos 20:35",
+                "João 8:32",
+                "Efésios 5:11"
+            ],
+            "correta": 2,
+            "justificativa": "O versículo para memorização ensina: 'E conhecereis a verdade e a verdade vos libertará' (João 8:32)."
+        }
+    ]
+}
