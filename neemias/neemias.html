@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Neemias - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-700 hover:to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="neemias-capa.png" alt="Capa: Neemias" id="img-neemias"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                    aria-describedby="desc-neemias">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🧱</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-600 mx-2">
+                    LIVRO DE NEEMIAS
+                </span>
+                <span>🧱</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Oração, Coragem e Reconstrução — Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-neemias" class="sr-only" aria-hidden="true">
+                Clique na imagem para ler os versos!
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-neemias"
+        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-200">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+
+            <h2
+                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-700 to-blue-600">
+                🌟 Os Três Segredos de Neemias 🌟
+            </h2>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <!-- Segredo 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🙏 1️⃣ A oração move montanhas</h3>
+                    <p>
+                        Neemias ficou triste ao saber da situação,<br>
+                        Jerusalém destruída, que desolação!<br>
+                        Mas antes de agir, ele foi orar,<br>
+                        Pedindo a Deus que viesse ajudar!<br><br>
+
+                        💙 A oração é a chave do céu,<br>
+                        Quando oramos, Deus escuta, Ele é fiel!<br>
+                        Antes de qualquer grande missão,<br>
+                        Comece falando com Deus em oração!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Neemias 1:4-6</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🤝 2️⃣ Juntos somos mais fortes</h3>
+                    <p>
+                        O trabalho era grande, os muros caídos,<br>
+                        Mas o povo se uniu, ficaram comprometidos!<br>
+                        Cada um fez sua parte com dedicação,<br>
+                        E juntos construíram com fé e união!<br><br>
+
+                        💪 Quando trabalhamos em equipe,<br>
+                        O impossível se torna possível, veja só que chique!<br>
+                        Unidos em amor e na mesma direção,<br>
+                        Conquistamos vitórias com o coração!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Neemias 4:6</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">💪 3️⃣ Coragem vence os obstáculos</h3>
+                    <p>
+                        <b>Mas não foi fácil!</b> Inimigos zombaram,<br>
+                        Tentaram assustar, até ameaçaram!<br>
+                        Porém Neemias não desistiu jamais,<br>
+                        Com Deus ao seu lado, tinha forças demais!<br><br>
+
+                        ⚔️ Quando Deus está conosco, quem poderá nos parar?<br>
+                        Com fé e coragem, podemos tudo enfrentar!<br>
+                        Não tema os obstáculos que vierem te testar,<br>
+                        Deus está contigo, vai te fortalecer e ajudar!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Neemias 4:14</span>
+                    </p>
+                </div>
+
+                <!-- Moral -->
+                <div class="text-center mt-10">
+                    <p class="text-xl font-semibold text-sky-800">
+                        📘 Moral da história:<br>
+                        Ore, una-se aos outros e seja corajoso,<br>
+                        Com Deus, o impossível se torna grandioso! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const imgNeemias = document.getElementById("img-neemias");
+        const modal = document.getElementById("modal-neemias");
+        const closeModal = document.getElementById("close-modal");
+
+        imgNeemias.addEventListener("click", () => {
+            modal.classList.remove("modal-hidden");
+            modal.classList.add("modal-visible");
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("modal-visible");
+            modal.classList.add("modal-hidden");
+        });
+
+        // Fechar ao clicar fora
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="neemias-personagem.png" alt="Quem são os personagens principais?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-2xl border-4 border-sky-500">
+                    <h2 class="text-4xl font-black text-sky-700 mb-6">👥 Quem são os personagens principais?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-sky-600">Neemias</span>, o homem corajoso que liderou a reconstrução dos muros de Jerusalém.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            O <span class="font-bold text-sky-600">rei Artaxerxes</span>, que deu permissão e recursos para Neemias voltar e reconstruir.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            E o <span class="font-bold text-sky-600">povo de Jerusalém</span>, que trabalhou unido para erguer os muros novamente.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-4 border-blue-500">
+                        <h2 class="text-4xl font-black text-blue-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Conta como <span class="font-bold text-blue-600">Neemias, mesmo trabalhando longe</span>, ficou triste ao saber que Jerusalém estava destruída.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Ele <span class="font-bold text-blue-600">pediu ajuda a Deus e ao rei</span>, mostrando coragem e fé.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Então <span class="font-bold text-blue-600">liderou o povo para reconstruir os muros</span> — mesmo enfrentando inimigos e dificuldades.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-blue-600">13 capítulos</span> de perseverança e vitória!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="neemias-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="neemias-importante.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
+                    <h2 class="text-4xl font-black text-violet-700 mb-6">💫 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra o <span class="font-bold text-violet-600">poder da oração</span> — Neemias sempre buscava a Deus antes de agir.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina sobre <span class="font-bold text-violet-600">união e trabalho em equipe</span> — juntos, o povo conseguiu o impossível!
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Demonstra que com <span class="font-bold text-violet-600">fé, coragem e confiança em Deus</span>, grandes coisas acontecem!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-cyan-50 to-teal-50 p-8 rounded-2xl border-4 border-cyan-500">
+                        <h2 class="text-4xl font-black text-cyan-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-cyan-600">Ensinar que, com fé e trabalho, é possível restaurar o que foi quebrado</span> — tanto muros quanto corações.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostrar que <span class="font-bold text-cyan-600">Deus honra aqueles que confiam nEle</span> e trabalham com dedicação para Sua glória.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="neemias-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="neemias-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border-4 border-orange-500">
+                    <h2 class="text-4xl font-black text-orange-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-orange-600">Neemias reconstruiu os muros de Jerusalém em apenas 52 dias!</span>
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Um recorde incrível alcançado com <span class="font-bold text-orange-600">muito trabalho, união e a ajuda de Deus!</span>
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-orange-300">
+                            <p class="text-sm text-gray-700 italic">Quando Deus está no projeto, o impossível acontece em tempo recorde! 🧱⚡
+                                </br></br>
+                                Assim, o muro foi concluído no dia vinte e cinco do mês de elul, em cinquenta e dois dias.</br>Neemias 6:15</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-sky-700/20 to-blue-700/20 border-2 border-sky-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../esdras/esdras.html"
+                class="bg-gradient-to-r from-sky-700 to-blue-600 hover:from-sky-800 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Esdras
+            </a>
+            <a href="../historicos.html"
+                class="bg-gradient-to-r from-blue-600 to-sky-700 hover:from-blue-700 hover:to-sky-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Históricos
+            </a>
+            <a href="../ester/ester.html"
+                class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Ester ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-600 to-blue-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Neemias - Coragem e Reconstrução ✨</h3>
+        <p class="text-lg">Ministério Infantil - Kids © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Neemias');
+    </script>
+</body>
+
+</html>

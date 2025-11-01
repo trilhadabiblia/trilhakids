@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estante Bíblica - Portal Trilho Kids</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .livro-dragging {
+      opacity: 0.5;
+      transform: scale(0.95);
+    }
+    .slot-hover {
+      background-color: rgba(168, 85, 247, 0.3);
+      transform: scale(1.05);
+    }
+    .livro {
+      transition: all 0.3s ease;
+    }
+    .livro-desktop {
+      cursor: grab;
+    }
+    .livro-desktop:active {
+      cursor: grabbing;
+    }
+    .livro-mobile {
+      cursor: pointer;
+    }
+    .livro-selecionado {
+      animation: pulse 1s infinite;
+      box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+      transform: scale(1.05);
+    }
+    .livro-correto {
+      animation: acerto 0.6s ease;
+    }
+    @keyframes acerto {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+    .selo-conquista {
+      animation: aparecer 0.8s ease;
+    }
+    @keyframes aparecer {
+      0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+      100% { transform: scale(1) rotate(0deg); opacity: 1; }
+    }
+    .dica-container {
+      animation: slideIn 0.5s ease;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .scroll-container {
+      height: calc(100vh - 300px);
+      overflow-y: auto;
+    }
+    .scroll-container::-webkit-scrollbar {
+      width: 8px;
+    }
+    .scroll-container::-webkit-scrollbar-track {
+      background: rgba(100, 116, 139, 0.1);
+      border-radius: 4px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb {
+      background: rgba(168, 85, 247, 0.5);
+      border-radius: 4px;
+    }
+    .scroll-container::-webkit-scrollbar-thumb:hover {
+      background: rgba(168, 85, 247, 0.7);
+    }
+    
+    /* Mobile: Layout vertical */
+    @media (max-width: 1023px) {
+      .layout-mobile {
+        display: flex;
+        flex-direction: column;
+      }
+      .scroll-container {
+        height: auto;
+        max-height: 400px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-4">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-4xl font-black text-white drop-shadow-lg mb-2">📚 ESTANTE BÍBLICA</h1>
+        <p class="text-purple-100 text-sm md:text-base">Organize os 66 livros da Bíblia na ordem certa!</p>
+        <p class="text-yellow-300 text-xs md:text-sm mt-1" id="instrucao-dispositivo">
+          <!-- Instrução será inserida aqui -->
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dica (aparece quando necessário) -->
+  <div id="dica-helper" class="hidden dica-container max-w-4xl mx-auto px-4 mt-4">
+    <div class="bg-yellow-500/20 border-2 border-yellow-500/50 rounded-lg p-4">
+      <div class="flex items-start gap-3">
+        <div class="text-3xl">💡</div>
+        <div class="flex-1">
+          <p class="text-yellow-200 font-semibold mb-1">Dica Amiga:</p>
+          <p class="text-yellow-100 text-sm" id="texto-dica"></p>
+        </div>
+        <button onclick="fecharDica()" class="text-yellow-200 hover:text-yellow-100 text-xl">✕</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-4 md:py-8">
+
+    <!-- Placar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-8">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-xl p-3 text-center">
+        <div class="text-2xl md:text-3xl font-black text-purple-300" id="livros-corretos">0</div>
+        <p class="text-gray-300 text-xs md:text-sm">Livros Corretos</p>
+      </div>
+      <div class="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 rounded-xl p-3 text-center">
+        <div class="text-2xl md:text-3xl font-black text-blue-300" id="selos-conquistados">0/10</div>
+        <p class="text-gray-300 text-xs md:text-sm">Selos</p>
+      </div>
+      <div class="bg-gradient-to-br from-yellow-500/20 to-amber-500/20 border border-yellow-500/30 rounded-xl p-3 text-center">
+        <div class="text-2xl md:text-3xl font-black text-yellow-300" id="pontos">0</div>
+        <p class="text-gray-300 text-xs md:text-sm">Pontos</p>
+      </div>
+      <div class="bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-xl p-3 text-center">
+        <div class="text-2xl md:text-3xl" id="trofeu-icon">🏆</div>
+        <p class="text-gray-300 text-xs md:text-sm">Troféu</p>
+      </div>
+    </div>
+
+    <!-- Layout Responsivo -->
+    <div class="grid lg:grid-cols-2 gap-4 md:gap-8">
+      
+      <!-- Estante (Esquerda no Desktop / Topo no Mobile) -->
+      <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-purple-500/30 rounded-2xl p-4 md:p-6">
+        <h2 class="text-xl md:text-2xl font-black text-purple-300 mb-4 md:mb-6 text-center">📖 ESTANTE ORGANIZADA</h2>
+        
+        <div class="scroll-container">
+          <!-- Antigo Testamento -->
+          <div class="mb-6 md:mb-8">
+            <h3 class="text-lg md:text-xl font-bold text-amber-400 mb-3 md:mb-4 flex items-center gap-2">
+              <span>📜</span> Antigo Testamento
+              <span id="selo-at" class="text-xl md:text-2xl opacity-30">🏅</span>
+            </h3>
+            
+            <!-- Pentateuco -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-cyan-300 text-xs md:text-sm">🔤 Pentateuco (5)</h4>
+                <span id="selo-pentateuco" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-pentateuco" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Históricos -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-purple-300 text-xs md:text-sm">⚖️ Históricos (12)</h4>
+                <span id="selo-historicos" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-historicos" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Poéticos -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-yellow-300 text-xs md:text-sm">🎵 Poéticos (5)</h4>
+                <span id="selo-poeticos" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-poeticos" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Profetas Maiores -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-red-300 text-xs md:text-sm">📢 Profetas Maiores (5)</h4>
+                <span id="selo-profetas-maiores" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-profetas-maiores" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Profetas Menores -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-green-300 text-xs md:text-sm">🔔 Profetas Menores (12)</h4>
+                <span id="selo-profetas-menores" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-profetas-menores" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+          </div>
+
+          <!-- Novo Testamento -->
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-blue-400 mb-3 md:mb-4 flex items-center gap-2">
+              <span>✨</span> Novo Testamento
+              <span id="selo-nt" class="text-xl md:text-2xl opacity-30">🏅</span>
+            </h3>
+            
+            <!-- Evangelhos -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-indigo-300 text-xs md:text-sm">😇 Evangelhos (4)</h4>
+                <span id="selo-evangelhos" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-evangelhos" class="grid grid-cols-4 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Atos -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-orange-300 text-xs md:text-sm">🚀 Histórico (1)</h4>
+                <span id="selo-atos" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-atos" class="grid grid-cols-1 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Cartas de Paulo -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-teal-300 text-xs md:text-sm">✉️ Cartas de Paulo (13)</h4>
+                <span id="selo-cartas-paulo" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-cartas-paulo" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Outras Cartas -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-pink-300 text-xs md:text-sm">📮 Outras Cartas (8)</h4>
+                <span id="selo-outras-cartas" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-outras-cartas" class="grid grid-cols-4 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+
+            <!-- Apocalipse -->
+            <div class="mb-3 md:mb-4">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-semibold text-violet-300 text-xs md:text-sm">🔮 Profecias (1)</h4>
+                <span id="selo-apocalipse" class="text-lg md:text-xl opacity-30">⭐</span>
+              </div>
+              <div id="estante-apocalipse" class="grid grid-cols-1 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Livros Espalhados (Direita no Desktop / Embaixo no Mobile) -->
+      <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-purple-500/30 rounded-2xl p-4 md:p-6">
+        <h2 class="text-xl md:text-2xl font-black text-purple-300 mb-3 md:mb-6 text-center">📚 LIVROS ESPALHADOS</h2>
+        <p class="text-gray-400 text-center mb-4 md:mb-6 text-xs md:text-sm" id="instrucao-livros">
+          <!-- Instrução será inserida aqui -->
+        </p>
+        
+        <div class="scroll-container">
+          <div id="livros-espalhados" class="grid grid-cols-3 sm:grid-cols-4 gap-2 md:gap-3">
+            <!-- Livros serão inseridos aqui embaralhados -->
+          </div>
+        </div>
+
+        <div class="mt-4 md:mt-6 flex gap-2 md:gap-3">
+          <button onclick="embaralhar()" class="flex-1 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold transition-all text-sm md:text-base">
+            🔀 Embaralhar
+          </button>
+          <button onclick="resetar()" class="flex-1 bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white px-4 md:px-6 py-2 md:py-3 rounded-lg font-bold transition-all text-sm md:text-base">
+            🔄 Recomeçar
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-4 md:p-6 text-center text-gray-400 mt-8 md:mt-12">
+    <p class="font-semibold mb-2 text-sm md:text-base">© 2025 - Portal Trilho Kids</p>
+    <p class="text-xs md:text-sm">Ministério Infantil - Sua jornada de fé começa aqui 🙏</p>
+  </footer>
+
+  <script>
+    const livrosBiblia = {
+      'pentateuco': ['Gênesis', 'Êxodo', 'Levítico', 'Números', 'Deuteronômio'],
+      'historicos': ['Josué', 'Juízes', 'Rute', '1 Samuel', '2 Samuel', '1 Reis', '2 Reis', '1 Crônicas', '2 Crônicas', 'Esdras', 'Neemias', 'Ester'],
+      'poeticos': ['Jó', 'Salmos', 'Provérbios', 'Eclesiastes', 'Cantares'],
+      'profetas-maiores': ['Isaías', 'Jeremias', 'Lamentações', 'Ezequiel', 'Daniel'],
+      'profetas-menores': ['Oséias', 'Joel', 'Amós', 'Obadias', 'Jonas', 'Miqueias', 'Naum', 'Habacuque', 'Sofonias', 'Ageu', 'Zacarias', 'Malaquias'],
+      'evangelhos': ['Mateus', 'Marcos', 'Lucas', 'João'],
+      'atos': ['Atos'],
+      'cartas-paulo': ['Romanos', '1 Coríntios', '2 Coríntios', 'Gálatas', 'Efésios', 'Filipenses', 'Colossenses', '1 Tessalonicenses', '2 Tessalonicenses', '1 Timóteo', '2 Timóteo', 'Tito', 'Filemom'],
+      'outras-cartas': ['Hebreus', 'Tiago', '1 Pedro', '2 Pedro', '1 João', '2 João', '3 João', 'Judas'],
+      'apocalipse': ['Apocalipse']
+    };
+
+    const coresLivros = {
+      'pentateuco': 'from-cyan-600 to-blue-600',
+      'historicos': 'from-purple-600 to-pink-600',
+      'poeticos': 'from-amber-600 to-yellow-600',
+      'profetas-maiores': 'from-red-600 to-rose-600',
+      'profetas-menores': 'from-green-600 to-emerald-600',
+      'evangelhos': 'from-indigo-600 to-blue-600',
+      'atos': 'from-orange-600 to-red-600',
+      'cartas-paulo': 'from-teal-600 to-cyan-600',
+      'outras-cartas': 'from-pink-600 to-rose-600',
+      'apocalipse': 'from-violet-600 to-purple-600'
+    };
+
+    let livrosCorretos = 0;
+    let selosConquistados = 0;
+    let pontos = 0;
+    let errosConsecutivos = 0;
+    let livroSelecionado = null;
+    let isMobile = window.innerWidth < 1024;
+
+    function inicializar() {
+      detectarDispositivo();
+      criarSlots();
+      embaralhar();
+      
+      window.addEventListener('resize', () => {
+        const novoIsMobile = window.innerWidth < 1024;
+        if (novoIsMobile !== isMobile) {
+          isMobile = novoIsMobile;
+          detectarDispositivo();
+          embaralhar();
+        }
+      });
+    }
+
+    function detectarDispositivo() {
+      const instrucaoDispositivo = document.getElementById('instrucao-dispositivo');
+      const instrucaoLivros = document.getElementById('instrucao-livros');
+      
+      if (isMobile) {
+        instrucaoDispositivo.textContent = '👆 Toque no livro e depois no lugar correto na estante';
+        instrucaoLivros.textContent = 'Toque em um livro para selecioná-lo';
+      } else {
+        instrucaoDispositivo.textContent = '🖱️ Arraste os livros para a estante na ordem correta';
+        instrucaoLivros.textContent = 'Arraste os livros para os lugares corretos';
+      }
+    }
+
+    function criarSlots() {
+      Object.keys(livrosBiblia).forEach(categoria => {
+        const container = document.getElementById(`estante-${categoria}`);
+        const livros = livrosBiblia[categoria];
+        
+        livros.forEach((livro, index) => {
+          const slot = document.createElement('div');
+          slot.className = 'border-2 border-dashed border-gray-600 rounded-lg min-h-[40px] md:min-h-[50px] flex items-center justify-center text-xs text-gray-500 transition-all';
+          slot.dataset.categoria = categoria;
+          slot.dataset.posicao = index;
+          slot.dataset.livroEsperado = livro;
+          
+          if (isMobile) {
+            // Mobile: Sistema de clique
+            slot.addEventListener('click', () => {
+              if (livroSelecionado && slot.children.length === 0) {
+                verificarPosicaoMobile(livroSelecionado, slot);
+              }
+            });
+          } else {
+            // Desktop: Drag & Drop
+            slot.addEventListener('dragover', (e) => {
+              e.preventDefault();
+              slot.classList.add('slot-hover');
+            });
+            
+            slot.addEventListener('dragleave', () => {
+              slot.classList.remove('slot-hover');
+            });
+            
+            slot.addEventListener('drop', (e) => {
+              e.preventDefault();
+              slot.classList.remove('slot-hover');
+              const livroNome = e.dataTransfer.getData('text/plain');
+              const livroElement = document.querySelector(`[data-livro="${livroNome}"]`);
+              
+              if (livroElement && slot.children.length === 0) {
+                verificarPosicao(livroElement, slot);
+              }
+            });
+          }
+          
+          container.appendChild(slot);
+        });
+      });
+    }
+
+    function embaralhar() {
+      const container = document.getElementById('livros-espalhados');
+      container.innerHTML = '';
+      
+      const todosLivros = [];
+      Object.keys(livrosBiblia).forEach(categoria => {
+        livrosBiblia[categoria].forEach(livro => {
+          todosLivros.push({ livro, categoria });
+        });
+      });
+      
+      // Embaralhar array
+      for (let i = todosLivros.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [todosLivros[i], todosLivros[j]] = [todosLivros[j], todosLivros[i]];
+      }
+      
+      todosLivros.forEach(({ livro, categoria }) => {
+        const livroDiv = document.createElement('div');
+        livroDiv.className = `livro bg-gradient-to-br ${coresLivros[categoria]} rounded-lg p-2 md:p-3 text-center text-white font-bold text-xs shadow-lg ${isMobile ? 'livro-mobile' : 'livro-desktop'}`;
+        livroDiv.dataset.livro = livro;
+        livroDiv.dataset.categoria = categoria;
+        livroDiv.textContent = livro;
+        
+        if (isMobile) {
+          // Mobile: Sistema de clique
+          livroDiv.addEventListener('click', () => {
+            if (livroSelecionado) {
+              livroSelecionado.classList.remove('livro-selecionado');
+            }
+            livroSelecionado = livroDiv;
+            livroDiv.classList.add('livro-selecionado');
+          });
+        } else {
+          // Desktop: Drag & Drop
+          livroDiv.draggable = true;
+          
+          livroDiv.addEventListener('dragstart', (e) => {
+            e.dataTransfer.setData('text/plain', livro);
+            livroDiv.classList.add('livro-dragging');
+          });
+          
+          livroDiv.addEventListener('dragend', () => {
+            livroDiv.classList.remove('livro-dragging');
+          });
+        }
+        
+        container.appendChild(livroDiv);
+      });
+    }
+
+    function verificarPosicaoMobile(livroElement, slot) {
+      const livroNome = livroElement.dataset.livro;
+      const livroCategoria = livroElement.dataset.categoria;
+      const slotCategoria = slot.dataset.categoria;
+      const livroEsperado = slot.dataset.livroEsperado;
+      
+      if (livroNome === livroEsperado && livroCategoria === slotCategoria) {
+        // CORRETO!
+        livroElement.classList.remove('livro-selecionado', 'livro-mobile');
+        slot.appendChild(livroElement);
+        livroElement.classList.add('livro-correto');
+        livroSelecionado = null;
+        
+        livrosCorretos++;
+        pontos += 10;
+        errosConsecutivos = 0;
+        
+        atualizarPlacar();
+        verificarGrupoCompleto(slotCategoria);
+        
+      } else {
+        // ERRADO!
+        errosConsecutivos++;
+        livroElement.classList.remove('livro-selecionado');
+        livroSelecionado = null;
+        
+        // Feedback visual de erro
+        slot.style.borderColor = '#ef4444';
+        setTimeout(() => {
+          slot.style.borderColor = '';
+        }, 500);
+        
+        // Mostrar dica após 3 erros
+        if (errosConsecutivos >= 3) {
+          mostrarDica();
+          errosConsecutivos = 0;
+        }
+      }
+    }
+
+    function verificarPosicao(livroElement, slot) {
+      const livroNome = livroElement.dataset.livro;
+      const livroCategoria = livroElement.dataset.categoria;
+      const slotCategoria = slot.dataset.categoria;
+      const livroEsperado = slot.dataset.livroEsperado;
+      
+      if (livroNome === livroEsperado && livroCategoria === slotCategoria) {
+        // CORRETO!
+        slot.appendChild(livroElement);
+        livroElement.classList.add('livro-correto');
+        livroElement.draggable = false;
+        livroElement.classList.remove('livro-desktop');
+        
+        livrosCorretos++;
+        pontos += 10;
+        errosConsecutivos = 0;
+        
+        atualizarPlacar();
+        verificarGrupoCompleto(slotCategoria);
+        
+      } else {
+        // ERRADO!
+        errosConsecutivos++;
+        
+        // Feedback visual de erro
+        slot.style.borderColor = '#ef4444';
+        setTimeout(() => {
+          slot.style.borderColor = '';
+        }, 500);
+        
+        // Mostrar dica após 3 erros
+        if (errosConsecutivos >= 3) {
+          mostrarDica();
+          errosConsecutivos = 0;
+        }
+      }
+    }
+
+    function verificarGrupoCompleto(categoria) {
+      const slots = document.querySelectorAll(`[data-categoria="${categoria}"]`);
+      const todosPreenchidos = Array.from(slots).every(slot => slot.children.length > 0);
+      
+      if (todosPreenchidos) {
+        const selo = document.getElementById(`selo-${categoria}`);
+        
+        // Verificar se o selo já não foi conquistado antes
+        if (selo.style.opacity !== '1') {
+          selosConquistados++;
+          pontos += 50;
+          
+          selo.style.opacity = '1';
+          selo.classList.add('selo-conquista');
+        }
+        
+        atualizarPlacar();
+        verificarTestamentoCompleto();
+      }
+    }
+
+    function verificarTestamentoCompleto() {
+      const categoriasAT = ['pentateuco', 'historicos', 'poeticos', 'profetas-maiores', 'profetas-menores'];
+      const categoriasNT = ['evangelhos', 'atos', 'cartas-paulo', 'outras-cartas', 'apocalipse'];
+      
+      const atCompleto = categoriasAT.every(cat => {
+        const slots = document.querySelectorAll(`[data-categoria="${cat}"]`);
+        return Array.from(slots).every(slot => slot.children.length > 0);
+      });
+      
+      const ntCompleto = categoriasNT.every(cat => {
+        const slots = document.querySelectorAll(`[data-categoria="${cat}"]`);
+        return Array.from(slots).every(slot => slot.children.length > 0);
+      });
+      
+      if (atCompleto && !document.getElementById('selo-at').classList.contains('selo-conquista')) {
+        document.getElementById('selo-at').style.opacity = '1';
+        document.getElementById('selo-at').classList.add('selo-conquista');
+        pontos += 100;
+      }
+      
+      if (ntCompleto && !document.getElementById('selo-nt').classList.contains('selo-conquista')) {
+        document.getElementById('selo-nt').style.opacity = '1';
+        document.getElementById('selo-nt').classList.add('selo-conquista');
+        pontos += 100;
+      }
+      
+      if (atCompleto && ntCompleto) {
+        conquistarTrofeu();
+      }
+      
+      atualizarPlacar();
+    }
+
+    function conquistarTrofeu() {
+      const trofeu = document.getElementById('trofeu-icon');
+      trofeu.textContent = '🏆';
+      trofeu.classList.add('selo-conquista');
+      trofeu.style.fontSize = '3rem';
+      
+      pontos += 500;
+      atualizarPlacar();
+      
+      // Registrar no sistema de gamificação se disponível
+      if (typeof trilhoGame !== 'undefined') {
+        trilhoGame.adicionarPontos(pontos);
+        trilhoGame.desbloquearConquista('mestre-biblia', 'Mestre da Bíblia', 'Organizou todos os 66 livros corretamente!');
+      }
+      
+      setTimeout(() => {
+        alert('🎉 PARABÉNS! 🎉\n\nVocê organizou toda a Bíblia!\n\n📚 66 livros na ordem certa!\n🏆 Troféu conquistado!\n⭐ ' + pontos + ' pontos totais!\n\nVocê é um verdadeiro conhecedor da Palavra de Deus!');
+      }, 500);
+    }
+
+    function atualizarPlacar() {
+      document.getElementById('livros-corretos').textContent = livrosCorretos;
+      document.getElementById('selos-conquistados').textContent = selosConquistados + '/10';
+      document.getElementById('pontos').textContent = pontos;
+    }
+
+    function mostrarDica() {
+      const dica = document.getElementById('dica-helper');
+      const textos = [
+        'Comece pelo Pentateuco! São os 5 primeiros livros: Gênesis, Êxodo, Levítico, Números e Deuteronômio.',
+        'Os Evangelhos estão no Novo Testamento: Mateus, Marcos, Lucas e João contam a vida de Jesus.',
+        'Dica: Os livros históricos contam a história de Israel após entrarem na terra prometida.',
+        'Lembre-se: Paulo escreveu 13 cartas, começando com Romanos!',
+        'Os profetas menores são 12 livros pequenos, mas poderosos! Começam com Oséias.',
+        'Atos é o único livro histórico do Novo Testamento, após os 4 Evangelhos.',
+        'Os livros poéticos são: Jó, Salmos, Provérbios, Eclesiastes e Cantares.',
+        'Apocalipse é o último livro da Bíblia! É o único livro profético do Novo Testamento.'
+      ];
+      
+      const textoAleatorio = textos[Math.floor(Math.random() * textos.length)];
+      document.getElementById('texto-dica').textContent = textoAleatorio;
+      
+      dica.classList.remove('hidden');
+      
+      setTimeout(() => {
+        fecharDica();
+      }, 10000);
+    }
+
+    function fecharDica() {
+      document.getElementById('dica-helper').classList.add('hidden');
+    }
+
+    function resetar() {
+      if (confirm('Tem certeza que deseja recomeçar? Todo o progresso será perdido.')) {
+        livrosCorretos = 0;
+        selosConquistados = 0;
+        pontos = 0;
+        errosConsecutivos = 0;
+        livroSelecionado = null;
+        
+        // Limpar slots
+        document.querySelectorAll('[data-categoria]').forEach(slot => {
+          if (slot.dataset.categoria) {
+            slot.innerHTML = '';
+          }
+        });
+        
+        // Resetar selos
+        document.querySelectorAll('[id^="selo-"]').forEach(selo => {
+          selo.style.opacity = '0.3';
+          selo.classList.remove('selo-conquista');
+        });
+        
+        // Resetar troféu
+        const trofeu = document.getElementById('trofeu-icon');
+        trofeu.textContent = '🏆';
+        trofeu.style.fontSize = '';
+        trofeu.classList.remove('selo-conquista');
+        
+        atualizarPlacar();
+        embaralhar();
+      }
+    }
+
+    // Inicializar
+    inicializar();
+  </script>
+  <script src="/gamificacao.js"></script>
+</body>
+</html>

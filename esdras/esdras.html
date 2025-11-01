@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Esdras - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="esdras-capa.png" alt="Capa: Esdras" id="img-esdras"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                    aria-describedby="desc-esdras">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🏗️</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-600 mx-2">
+                    LIVRO DE ESDRAS
+                </span>
+                <span>🏗️</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Reconstrução, Recomeço e Renovação — Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-esdras" class="sr-only" aria-hidden="true">
+                Clique na imagem para ler os versos!
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-esdras"
+        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-teal-200">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+
+            <h2
+                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-700 to-cyan-600">
+                🌟 Os Três Segredos de Esdras 🌟
+            </h2>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <!-- Segredo 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">🏗️ 1️⃣ Deus sempre dá uma nova chance</h3>
+                    <p>
+                        O povo estava longe, em terra estranha,<br>
+                        Por causa do pecado, perdeu a confiança.<br>
+                        Mas Deus não desiste, Ele é amor,<br>
+                        E trouxe o povo de volta com todo fervor!<br><br>
+
+                        💚 Mesmo quando erramos feio,<br>
+                        Deus estende a mão, nos dá um novo enredo.<br>
+                        Ele nos permite recomeçar,<br>
+                        E o templo da vida, novamente edificar!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Esdras 1:1-4</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">📖 2️⃣ A Palavra de Deus transforma vidas</h3>
+                    <p>
+                        Esdras era um escriba dedicado,<br>
+                        Estudava a Palavra, era muito aplicado.<br>
+                        Ele leu para o povo, explicou com cuidado,<br>
+                        E todos entenderam o que Deus tinha falado!<br><br>
+
+                        ✨ A Bíblia não é só pra ler e guardar,<br>
+                        É pra entender, obedecer e praticar!<br>
+                        Quando conhecemos o que Deus diz,<br>
+                        Nosso coração fica muito mais feliz!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Esdras 7:10</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">❤️ 3️⃣ Deus toca corações e move reis</h3>
+                    <p>
+                        <b>Olha só que incrível!</b> Deus tocou o rei Ciro,<br>
+                        Um rei que nem conhecia o Deus vivo!<br>
+                        Mas o Senhor moveu seu coração,<br>
+                        E ele deixou o povo voltar pra sua nação!<br><br>
+
+                        👑 Deus pode usar qualquer pessoa,<br>
+                        Até reis poderosos, pra fazer algo que nos alegra!<br>
+                        Nada é impossível quando Deus quer agir,<br>
+                        Ele abre portas que ninguém pode impedir!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Esdras 1:1</span>
+                    </p>
+                </div>
+
+                <!-- Moral -->
+                <div class="text-center mt-10">
+                    <p class="text-xl font-semibold text-teal-800">
+                        📘 Moral da história:<br>
+                        Reconstrua sua fé, volte pro Senhor,<br>
+                        Pois Deus sempre restaura com amor! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const imgEsdras = document.getElementById("img-esdras");
+        const modal = document.getElementById("modal-esdras");
+        const closeModal = document.getElementById("close-modal");
+
+        imgEsdras.addEventListener("click", () => {
+            modal.classList.remove("modal-hidden");
+            modal.classList.add("modal-visible");
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("modal-visible");
+            modal.classList.add("modal-hidden");
+        });
+
+        // Fechar ao clicar fora
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="esdras-personagem.png" alt="Quem são os personagens principais?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl border-4 border-teal-500">
+                    <h2 class="text-4xl font-black text-teal-700 mb-6">👥 Quem são os personagens principais?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-teal-600">Esdras</span>, o escriba e sacerdote que amava a Palavra de Deus e ensinava o povo.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            O <span class="font-bold text-teal-600">rei Ciro da Pérsia</span>, que Deus usou para libertar o povo israelita.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            E o <span class="font-bold text-teal-600">povo que voltou para Jerusalém</span>, cheio de esperança para recomeçar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-cyan-50 to-sky-50 p-8 rounded-2xl border-4 border-cyan-500">
+                        <h2 class="text-4xl font-black text-cyan-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Conta como <span class="font-bold text-cyan-600">Deus tocou o coração do rei Ciro</span> para deixar os israelitas voltarem para sua terra.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostra a <span class="font-bold text-cyan-600">reconstrução do templo</span>, que havia sido destruído, trazendo esperança ao povo.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Depois, <span class="font-bold text-cyan-600">Esdras ensina o povo</span> a obedecer novamente à Palavra de Deus.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-cyan-600">10 capítulos</span> de restauração e renovação!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="esdras-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="esdras-importante.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-8 rounded-2xl border-4 border-emerald-500">
+                    <h2 class="text-4xl font-black text-emerald-700 mb-6">💫 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra que <span class="font-bold text-emerald-600">Deus sempre dá uma nova chance</span>, não importa o que aconteceu no passado.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mesmo depois do cativeiro, <span class="font-bold text-emerald-600">Ele permitiu que o povo recomeçasse</span> e restaurasse o templo e sua fé.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina que <span class="font-bold text-emerald-600">nunca é tarde para voltar a Deus</span> e reconstruir nossa vida espiritual.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-4 border-blue-500">
+                        <h2 class="text-4xl font-black text-blue-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-blue-600">Inspirar o povo a se arrepender e voltar para os caminhos de Deus</span>, deixando os erros do passado para trás.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostrar que precisamos <span class="font-bold text-blue-600">reconstruir não só o templo, mas também o coração</span>, voltando-o para o Senhor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="esdras-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="esdras-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-4 border-amber-500">
+                    <h2 class="text-4xl font-black text-amber-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-amber-600">Esdras era um grande estudioso da Bíblia!</span>
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ele ajudou o povo a <span class="font-bold text-amber-600">entendê-la direitinho</span>, lendo e explicando cada parte com paciência e amor.
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-amber-300">
+                            <p class="text-sm text-gray-700 italic">Esdras foi como um super professor da Palavra de Deus! 📚✨
+                                </br></br>
+                                Esdras havia dedicado a vida ao estudo e à obediência da lei do Senhor, e também ao ensino dos decretos e das ordenanças de Deus em Israel.</br>Esdras 7:10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-teal-700/20 to-cyan-700/20 border-2 border-teal-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../2cronicas/2cronicas.html"
+                class="bg-gradient-to-r from-teal-700 to-cyan-600 hover:from-teal-800 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 2 Crônicas
+            </a>
+            <a href="../historicos.html"
+                class="bg-gradient-to-r from-cyan-600 to-teal-700 hover:from-cyan-700 hover:to-teal-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Históricos
+            </a>
+            <a href="../neemias/neemias.html"
+                class="bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Neemias ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-teal-600 to-cyan-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Esdras - Reconstrução e Renovação ✨</h3>
+        <p class="text-lg">Ministério Infantil - Kids © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Esdras');
+    </script>
+</body>
+
+</html>
