@@ -75,12 +75,7 @@
       background: rgba(168, 85, 247, 0.7);
     }
     
-    /* Mobile: Layout vertical */
     @media (max-width: 1023px) {
-      .layout-mobile {
-        display: flex;
-        flex-direction: column;
-      }
       .scroll-container {
         height: auto;
         max-height: 400px;
@@ -90,20 +85,16 @@
 </head>
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
 
-  <!-- Header -->
   <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 py-4">
       <div class="text-center">
         <h1 class="text-3xl md:text-4xl font-black text-white drop-shadow-lg mb-2">📚 ESTANTE BÍBLICA</h1>
         <p class="text-purple-100 text-sm md:text-base">Organize os 66 livros da Bíblia na ordem certa!</p>
-        <p class="text-yellow-300 text-xs md:text-sm mt-1" id="instrucao-dispositivo">
-          <!-- Instrução será inserida aqui -->
-        </p>
+        <p class="text-yellow-300 text-xs md:text-sm mt-1" id="instrucao-dispositivo"></p>
       </div>
     </div>
   </header>
 
-  <!-- Dica (aparece quando necessário) -->
   <div id="dica-helper" class="hidden dica-container max-w-4xl mx-auto px-4 mt-4">
     <div class="bg-yellow-500/20 border-2 border-yellow-500/50 rounded-lg p-4">
       <div class="flex items-start gap-3">
@@ -117,10 +108,8 @@
     </div>
   </div>
 
-  <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-4 md:py-8">
 
-    <!-- Placar -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-8">
       <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-xl p-3 text-center">
         <div class="text-2xl md:text-3xl font-black text-purple-300" id="livros-corretos">0</div>
@@ -140,143 +129,114 @@
       </div>
     </div>
 
-    <!-- Layout Responsivo -->
     <div class="grid lg:grid-cols-2 gap-4 md:gap-8">
       
-      <!-- Estante (Esquerda no Desktop / Topo no Mobile) -->
       <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-purple-500/30 rounded-2xl p-4 md:p-6">
         <h2 class="text-xl md:text-2xl font-black text-purple-300 mb-4 md:mb-6 text-center">📖 ESTANTE ORGANIZADA</h2>
         
         <div class="scroll-container">
-          <!-- Antigo Testamento -->
           <div class="mb-6 md:mb-8">
             <h3 class="text-lg md:text-xl font-bold text-amber-400 mb-3 md:mb-4 flex items-center gap-2">
               <span>📜</span> Antigo Testamento
               <span id="selo-at" class="text-xl md:text-2xl opacity-30">🏅</span>
             </h3>
             
-            <!-- Pentateuco -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-cyan-300 text-xs md:text-sm">🔤 Pentateuco (5)</h4>
                 <span id="selo-pentateuco" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-pentateuco" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-pentateuco" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Históricos -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-purple-300 text-xs md:text-sm">⚖️ Históricos (12)</h4>
                 <span id="selo-historicos" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-historicos" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-historicos" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Poéticos -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-yellow-300 text-xs md:text-sm">🎵 Poéticos (5)</h4>
                 <span id="selo-poeticos" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-poeticos" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-poeticos" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Profetas Maiores -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-red-300 text-xs md:text-sm">📢 Profetas Maiores (5)</h4>
                 <span id="selo-profetas-maiores" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-profetas-maiores" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-profetas-maiores" class="grid grid-cols-5 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Profetas Menores -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-green-300 text-xs md:text-sm">🔔 Profetas Menores (12)</h4>
                 <span id="selo-profetas-menores" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-profetas-menores" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-profetas-menores" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
           </div>
 
-          <!-- Novo Testamento -->
           <div>
             <h3 class="text-lg md:text-xl font-bold text-blue-400 mb-3 md:mb-4 flex items-center gap-2">
               <span>✨</span> Novo Testamento
               <span id="selo-nt" class="text-xl md:text-2xl opacity-30">🏅</span>
             </h3>
             
-            <!-- Evangelhos -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-indigo-300 text-xs md:text-sm">😇 Evangelhos (4)</h4>
                 <span id="selo-evangelhos" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-evangelhos" class="grid grid-cols-4 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-evangelhos" class="grid grid-cols-4 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Atos -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-orange-300 text-xs md:text-sm">🚀 Histórico (1)</h4>
                 <span id="selo-atos" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-atos" class="grid grid-cols-1 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-atos" class="grid grid-cols-1 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Cartas de Paulo -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-teal-300 text-xs md:text-sm">✉️ Cartas de Paulo (13)</h4>
                 <span id="selo-cartas-paulo" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-cartas-paulo" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-cartas-paulo" class="grid grid-cols-6 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Outras Cartas -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-pink-300 text-xs md:text-sm">📮 Outras Cartas (8)</h4>
                 <span id="selo-outras-cartas" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-outras-cartas" class="grid grid-cols-4 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-outras-cartas" class="grid grid-cols-4 gap-1 md:gap-2 min-h-[80px] md:min-h-[100px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
 
-            <!-- Apocalipse -->
             <div class="mb-3 md:mb-4">
               <div class="flex items-center justify-between mb-2">
                 <h4 class="font-semibold text-violet-300 text-xs md:text-sm">🔮 Profecias (1)</h4>
                 <span id="selo-apocalipse" class="text-lg md:text-xl opacity-30">⭐</span>
               </div>
-              <div id="estante-apocalipse" class="grid grid-cols-1 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2">
-              </div>
+              <div id="estante-apocalipse" class="grid grid-cols-1 gap-1 md:gap-2 min-h-[50px] md:min-h-[60px] bg-slate-700/30 rounded-lg p-2"></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Livros Espalhados (Direita no Desktop / Embaixo no Mobile) -->
       <div class="bg-gradient-to-br from-slate-800/80 to-slate-900/80 border-2 border-purple-500/30 rounded-2xl p-4 md:p-6">
         <h2 class="text-xl md:text-2xl font-black text-purple-300 mb-3 md:mb-6 text-center">📚 LIVROS ESPALHADOS</h2>
-        <p class="text-gray-400 text-center mb-4 md:mb-6 text-xs md:text-sm" id="instrucao-livros">
-          <!-- Instrução será inserida aqui -->
-        </p>
+        <p class="text-gray-400 text-center mb-4 md:mb-6 text-xs md:text-sm" id="instrucao-livros"></p>
         
         <div class="scroll-container">
-          <div id="livros-espalhados" class="grid grid-cols-3 sm:grid-cols-4 gap-2 md:gap-3">
-            <!-- Livros serão inseridos aqui embaralhados -->
-          </div>
+          <div id="livros-espalhados" class="grid grid-cols-3 sm:grid-cols-4 gap-2 md:gap-3"></div>
         </div>
 
         <div class="mt-4 md:mt-6 flex gap-2 md:gap-3">
@@ -292,7 +252,6 @@
     </div>
   </main>
 
-  <!-- Footer -->
   <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-4 md:p-6 text-center text-gray-400 mt-8 md:mt-12">
     <p class="font-semibold mb-2 text-sm md:text-base">© 2025 - Portal Trilho Kids</p>
     <p class="text-xs md:text-sm">Ministério Infantil - Sua jornada de fé começa aqui 🙏</p>
@@ -373,14 +332,12 @@
           slot.dataset.livroEsperado = livro;
           
           if (isMobile) {
-            // Mobile: Sistema de clique
             slot.addEventListener('click', () => {
               if (livroSelecionado && slot.children.length === 0) {
                 verificarPosicaoMobile(livroSelecionado, slot);
               }
             });
           } else {
-            // Desktop: Drag & Drop
             slot.addEventListener('dragover', (e) => {
               e.preventDefault();
               slot.classList.add('slot-hover');
@@ -418,7 +375,6 @@
         });
       });
       
-      // Embaralhar array
       for (let i = todosLivros.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [todosLivros[i], todosLivros[j]] = [todosLivros[j], todosLivros[i]];
@@ -432,7 +388,6 @@
         livroDiv.textContent = livro;
         
         if (isMobile) {
-          // Mobile: Sistema de clique
           livroDiv.addEventListener('click', () => {
             if (livroSelecionado) {
               livroSelecionado.classList.remove('livro-selecionado');
@@ -441,7 +396,6 @@
             livroDiv.classList.add('livro-selecionado');
           });
         } else {
-          // Desktop: Drag & Drop
           livroDiv.draggable = true;
           
           livroDiv.addEventListener('dragstart', (e) => {
@@ -465,7 +419,6 @@
       const livroEsperado = slot.dataset.livroEsperado;
       
       if (livroNome === livroEsperado && livroCategoria === slotCategoria) {
-        // CORRETO!
         livroElement.classList.remove('livro-selecionado', 'livro-mobile');
         slot.appendChild(livroElement);
         livroElement.classList.add('livro-correto');
@@ -479,18 +432,15 @@
         verificarGrupoCompleto(slotCategoria);
         
       } else {
-        // ERRADO!
         errosConsecutivos++;
         livroElement.classList.remove('livro-selecionado');
         livroSelecionado = null;
         
-        // Feedback visual de erro
         slot.style.borderColor = '#ef4444';
         setTimeout(() => {
           slot.style.borderColor = '';
         }, 500);
         
-        // Mostrar dica após 3 erros
         if (errosConsecutivos >= 3) {
           mostrarDica();
           errosConsecutivos = 0;
@@ -505,7 +455,6 @@
       const livroEsperado = slot.dataset.livroEsperado;
       
       if (livroNome === livroEsperado && livroCategoria === slotCategoria) {
-        // CORRETO!
         slot.appendChild(livroElement);
         livroElement.classList.add('livro-correto');
         livroElement.draggable = false;
@@ -519,16 +468,13 @@
         verificarGrupoCompleto(slotCategoria);
         
       } else {
-        // ERRADO!
         errosConsecutivos++;
         
-        // Feedback visual de erro
         slot.style.borderColor = '#ef4444';
         setTimeout(() => {
           slot.style.borderColor = '';
         }, 500);
         
-        // Mostrar dica após 3 erros
         if (errosConsecutivos >= 3) {
           mostrarDica();
           errosConsecutivos = 0;
@@ -537,23 +483,63 @@
     }
 
     function verificarGrupoCompleto(categoria) {
-      const slots = document.querySelectorAll(`[data-categoria="${categoria}"]`);
-      const todosPreenchidos = Array.from(slots).every(slot => slot.children.length > 0);
+      console.log(`\n=== Verificando grupo: ${categoria} ===`);
       
-      if (todosPreenchidos) {
-        const selo = document.getElementById(`selo-${categoria}`);
+      // Pegar apenas os slots DIRETOS do container (não os livros dentro)
+      const container = document.getElementById(`estante-${categoria}`);
+      if (!container) {
+        console.log(`❌ Container não encontrado`);
+        return;
+      }
+      
+      const slots = Array.from(container.children).filter(el => el.dataset.livroEsperado);
+      console.log(`Total de slots encontrados: ${slots.length}`);
+
+      if (slots.length === 0) {
+        console.log(`❌ Nenhum slot encontrado`);
+        return;
+      }
+
+      let preenchidosCorretos = 0;
+      let vazios = 0;
+
+      slots.forEach((slot, index) => {
+        const livroEsperado = slot.dataset.livroEsperado;
         
-        // Verificar se o selo já não foi conquistado antes
-        if (selo.style.opacity !== '1') {
-          selosConquistados++;
-          pontos += 50;
-          
-          selo.style.opacity = '1';
-          selo.classList.add('selo-conquista');
+        if (slot.children.length === 0) {
+          vazios++;
+          return;
         }
         
-        atualizarPlacar();
-        verificarTestamentoCompleto();
+        const livroEle = slot.children[0];
+        const livroAtual = livroEle.dataset.livro;
+        
+        if (livroAtual === livroEsperado) {
+          preenchidosCorretos++;
+          console.log(`Slot ${index + 1}: ✅ ${livroAtual}`);
+        }
+      });
+
+      console.log(`✅ Corretos: ${preenchidosCorretos} | ⚪ Vazios: ${vazios}`);
+      
+      const completo = (preenchidosCorretos === slots.length) && (vazios === 0);
+      console.log(`Grupo completo? ${completo}`);
+
+      if (completo) {
+        const selo = document.getElementById(`selo-${categoria}`);
+        
+        if (selo && !selo.classList.contains('selo-conquista')) {
+          selosConquistados++;
+          pontos += 50;
+
+          selo.style.opacity = '1';
+          selo.classList.add('selo-conquista');
+          
+          console.log(`🎉 SELO CONQUISTADO! Total: ${selosConquistados}/10`);
+          
+          atualizarPlacar();
+          verificarTestamentoCompleto();
+        }
       }
     }
 
@@ -599,7 +585,6 @@
       pontos += 500;
       atualizarPlacar();
       
-      // Registrar no sistema de gamificação se disponível
       if (typeof trilhoGame !== 'undefined') {
         trilhoGame.adicionarPontos(pontos);
         trilhoGame.desbloquearConquista('mestre-biblia', 'Mestre da Bíblia', 'Organizou todos os 66 livros corretamente!');
@@ -651,20 +636,17 @@
         errosConsecutivos = 0;
         livroSelecionado = null;
         
-        // Limpar slots
         document.querySelectorAll('[data-categoria]').forEach(slot => {
           if (slot.dataset.categoria) {
             slot.innerHTML = '';
           }
         });
         
-        // Resetar selos
         document.querySelectorAll('[id^="selo-"]').forEach(selo => {
           selo.style.opacity = '0.3';
           selo.classList.remove('selo-conquista');
         });
         
-        // Resetar troféu
         const trofeu = document.getElementById('trofeu-icon');
         trofeu.textContent = '🏆';
         trofeu.style.fontSize = '';
@@ -675,7 +657,6 @@
       }
     }
 
-    // Inicializar
     inicializar();
   </script>
   <script src="/gamificacao.js"></script>
