@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Eclesiastes - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="eclesiastes-capa.png" alt="Capa: Eclesiastes" id="img-eclesiastes"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                    aria-describedby="desc-eclesiastes">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⏰</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-gray-600 mx-2">
+                    LIVRO DE ECLESIASTES
+                </span>
+                <span>⏰</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Propósito, Tempo e Sentido da Vida — Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-eclesiastes" class="sr-only" aria-hidden="true">
+                Clique na imagem para ler os versos!
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-eclesiastes"
+        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-slate-200">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+
+            <h2
+                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-gray-600">
+                🌟 Os Três Segredos de Eclesiastes 🌟
+            </h2>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <!-- Segredo 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-700 mb-2">🌪️ 1️⃣ Sem Deus, nada faz sentido</h3>
+                    <p>
+                        Salomão teve tudo: riqueza, fama e sabedoria,<br>
+                        Mas descobriu que sem Deus, falta alegria.<br>
+                        Coisas, prazeres, nada preenche o coração,<br>
+                        Só Deus pode dar verdadeira satisfação!<br><br>
+
+                        💨 "Vaidade de vaidades", ele declarou,<br>
+                        Tudo é passageiro, tudo se esvaiu e voou.<br>
+                        Mas quando vivemos com Deus no centro,<br>
+                        A vida ganha sentido, encontramos o centro!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Eclesiastes 1:2; 12:13</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-700 mb-2">⏰ 2️⃣ Tudo tem o seu tempo determinado</h3>
+                    <p>
+                        "Há tempo de plantar e tempo de colher,<br>
+                        Tempo de rir e tempo de chorar também ter."<br>
+                        Cada momento da vida tem seu propósito,<br>
+                        Deus controla tudo com amor e juízo!<br><br>
+
+                        🕐 Não se desespere nas fases difíceis,<br>
+                        Nem se esqueça de Deus nos momentos gentis.<br>
+                        Cada estação tem seu valor especial,<br>
+                        Confie no tempo de Deus, Ele sabe o que é ideal!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Eclesiastes 3:1-8</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-700 mb-2">🎯 3️⃣ O propósito da vida é amar e obedecer a Deus</h3>
+                    <p>
+                        <b>A conclusão final</b> de tudo que aprendeu,<br>
+                        Salomão resumiu o que Deus nos deu:<br>
+                        "Teme a Deus e guarda Seus mandamentos,<br>
+                        Pois este é o dever de todos os momentos!"<br><br>
+
+                        ❤️ Viva para Deus em cada respiração,<br>
+                        Ame-O de todo o seu coração!<br>
+                        Esta é a chave para uma vida com sentido,<br>
+                        Viver para o Criador, ser por Ele dirigido!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Eclesiastes 12:13</span>
+                    </p>
+                </div>
+
+                <!-- Moral -->
+                <div class="text-center mt-10">
+                    <p class="text-xl font-semibold text-slate-800">
+                        📘 Moral da história:<br>
+                        Viva cada momento com Deus no coração,<br>
+                        Pois só Ele dá sentido e direção! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const imgEclesiastes = document.getElementById("img-eclesiastes");
+        const modal = document.getElementById("modal-eclesiastes");
+        const closeModal = document.getElementById("close-modal");
+
+        imgEclesiastes.addEventListener("click", () => {
+            modal.classList.remove("modal-hidden");
+            modal.classList.add("modal-visible");
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("modal-visible");
+            modal.classList.add("modal-hidden");
+        });
+
+        // Fechar ao clicar fora
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem é o personagem principal? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="eclesiastes-personagem.png" alt="Quem é o personagem principal?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-2xl border-4 border-slate-500">
+                    <h2 class="text-4xl font-black text-slate-700 mb-6">👥 Quem é o personagem principal?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-slate-600">Salomão</span>, o sábio rei que reflete profundamente sobre a vida e suas experiências.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ele teve <span class="font-bold text-slate-600">tudo que alguém poderia desejar</span> — riquezas, sabedoria, poder — mas descobriu que só Deus preenche o coração.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-gray-50 to-zinc-50 p-8 rounded-2xl border-4 border-gray-500">
+                        <h2 class="text-4xl font-black text-gray-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Salomão observa como <span class="font-bold text-gray-600">a vida pode ser cheia de altos e baixos</span>, de alegrias e tristezas.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Ele percebe que <span class="font-bold text-gray-600">nada faz sentido sem Deus</span> — nem riquezas, nem fama, nem prazeres.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                E descobre que <span class="font-bold text-gray-600">o verdadeiro valor da vida</span> está em amá-Lo e obedecê-Lo.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-gray-600">12 capítulos</span> de reflexões profundas sobre a vida!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="eclesiastes-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="eclesiastes-importante.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-stone-50 to-neutral-50 p-8 rounded-2xl border-4 border-stone-500">
+                    <h2 class="text-4xl font-black text-stone-700 mb-6">💫 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ajuda a entender que <span class="font-bold text-stone-600">a felicidade não está nas coisas que temos</span>, mas em nosso relacionamento com Deus.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina a <span class="font-bold text-stone-600">viver com propósito e gratidão</span> diante de Deus, valorizando cada momento.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra que <span class="font-bold text-stone-600">o verdadeiro sentido da vida</span> vem de amar e obedecer ao Criador!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-4 border-blue-500">
+                        <h2 class="text-4xl font-black text-blue-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-blue-600">Lembrar que tudo passa</span>, mas viver com Deus dá sentido a cada momento da vida.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostrar que <span class="font-bold text-blue-600">o propósito da vida</span> é temer a Deus e guardar Seus mandamentos com amor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="eclesiastes-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="eclesiastes-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl border-4 border-teal-500">
+                    <h2 class="text-4xl font-black text-teal-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-teal-600">A frase "tudo tem o seu tempo" vem desse livro!</span>
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ela mostra que <span class="font-bold text-teal-600">cada fase da vida tem um propósito especial</span> determinado por Deus!
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-teal-300">
+                            <p class="text-sm text-gray-700 italic">Confie no tempo de Deus — Ele sabe o que é melhor! ⏰✨
+                                </br></br>
+                                Tudo tem o seu tempo determinado, e há tempo para todo propósito debaixo do céu: tempo de nascer e tempo de morrer; tempo de plantar e tempo de arrancar o que se plantou; tempo de chorar e tempo de rir; tempo de prantear e tempo de saltar de alegria...</br>Eclesiastes 3:1-4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-slate-700/20 to-gray-700/20 border-2 border-slate-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../proverbios/proverbios.html"
+                class="bg-gradient-to-r from-slate-700 to-gray-600 hover:from-slate-800 hover:to-gray-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Provérbios
+            </a>
+            <a href="../poeticos.html"
+                class="bg-gradient-to-r from-gray-600 to-slate-700 hover:from-gray-700 hover:to-slate-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros Poéticos
+            </a>
+            <a href="../cantares/cantares.html"
+                class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Cantares ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-slate-600 to-gray-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Eclesiastes - Propósito e Sentido ✨</h3>
+        <p class="text-lg">Ministério Infantil - Kids © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Eclesiastes');
+    </script>
+</body>
+
+</html>
