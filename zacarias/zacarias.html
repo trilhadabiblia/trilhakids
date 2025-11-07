@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Zacarias - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="zacarias-capa.png" alt="Capa: Zacarias" id="img-zacarias"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🌟</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                    LIVRO DE ZACARIAS
+                </span>
+                <span>🌟</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Visões de Esperança e o Messias Prometido — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-zacarias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                🌟 Os Três Segredos de Zacarias 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Primeiro Segredo: Visões da Noite</h3>
+                    <p class="italic text-gray-800">
+                        Em uma noite estrelada, Deus revelou,<br>
+                        Oito visões que o profeta contemplou!<br>
+                        Cavalos, candelabros e anjos a voar,<br>
+                        Mostrando que Deus nunca vai nos deixar!<br>
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Zacarias 1:7-8</p>
+                </div>
+
+                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">👑 Segundo Segredo: O Rei Humilde Vem</h3>
+                    <p class="italic text-gray-800">
+                        "Alegra-te muito, ó filha de Sião!"<br>
+                        Um Rei chegará montado em jumentinho, então!<br>
+                        Humilde e justo, trazendo salvação,<br>
+                        Jesus cumpriu esta linda profecia com amor no coração!<br>
+                    </p>
+                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 Zacarias 9:9</p>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💎 Terceiro Segredo: Deus Restaura Tudo</h3>
+                    <p class="italic text-gray-800">
+                        Quando tudo parece destruído e sem cor,<br>
+                        Deus promete reconstruir com Seu amor!<br>
+                        O templo, a cidade, o povo e a fé,<br>
+                        Nada é impossível quando Deus está de pé!<br>
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Zacarias 8:3</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-zacarias");
+        const modal = document.getElementById("modal-zacarias");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-2xl shadow-lg border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">🎭 Os Heróis da História</h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">📜</span>
+                            <span><strong class="text-purple-600">Zacarias:</strong> O profeta que teve visões incríveis de Deus durante a noite!</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">👷</span>
+                            <span><strong class="text-indigo-600">Zorobabel:</strong> O líder corajoso que reconstruiu o templo de Deus em Jerusalém.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">👼</span>
+                            <span><strong class="text-purple-600">O Anjo do Senhor:</strong> Mensageiro divino que explicava as visões e trazia palavras de esperança!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="zacarias-personagem.png" alt="Personagens de Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="zacarias-o-que-conta.png" alt="O que Zacarias conta" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🌈 Uma História de Esperança</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Zacarias recebeu <strong class="text-purple-600">oito visões maravilhosas</strong> em uma única noite! 
+                        Deus mostrou cavalos coloridos, candelabros de ouro, rolos voadores e muito mais!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Cada visão trazia uma mensagem: <strong class="text-indigo-600">Deus vai restaurar Seu povo</strong> 
+                        e enviar um Rei especial — o Messias!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O livro também fala sobre <strong class="text-purple-600">Jesus</strong>, que viria montado em um jumentinho, 
+                        trazendo paz e salvação para todos! 🕊️
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            💡 Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl shadow-lg border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">🎯 Lições Poderosas</h3>
+                    <div class="space-y-4 text-lg text-gray-700">
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                            <span class="text-3xl mr-4">🔮</span>
+                            <div>
+                                <strong class="text-indigo-600">Deus tem planos perfeitos:</strong> Mesmo quando tudo parece perdido, Deus está trabalhando!
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                            <span class="text-3xl mr-4">🏗️</span>
+                            <div>
+                                <strong class="text-purple-600">Restauração é possível:</strong> Deus pode reconstruir o que foi destruído em nossas vidas!
+                            </div>
+                        </div>
+                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
+                            <span class="text-3xl mr-4">👑</span>
+                            <div>
+                                <strong class="text-indigo-600">Jesus é o Messias prometido:</strong> As profecias de Zacarias se cumpriram perfeitamente!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="zacarias-importante.png" alt="Importância de Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="zacarias-proposito.png" alt="Propósito de Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🌟 Missão Especial</h3>
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-600">
+                            <p class="text-lg text-gray-700">
+                                <strong class="text-purple-600">Reanimar o povo desanimado:</strong> Depois do exílio, 
+                                o povo estava triste e cansado. Zacarias trouxe palavras de ânimo e esperança! 💪
+                            </p>
+                        </div>
+                        <div class="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-600">
+                            <p class="text-lg text-gray-700">
+                                <strong class="text-indigo-600">Apontar para Jesus:</strong> Centenas de anos antes, 
+                                Zacarias já falava sobre o Messias que viria salvar o mundo! 🌍
+                            </p>
+                        </div>
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-600">
+                            <p class="text-lg text-gray-700">
+                                <strong class="text-purple-600">Mostrar o futuro glorioso:</strong> Deus revelou que 
+                                um dia tudo será perfeito em Seu Reino eterno! 👑
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl shadow-lg border-4 border-yellow-400">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">😴💭✨</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4 text-center">Oito Visões em Uma Noite!</h3>
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
+                        Zacarias teve <strong class="text-purple-600">OITO visões incríveis</strong> 
+                        em apenas <strong class="text-indigo-600">UMA NOITE</strong>! 🌙
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed text-center mb-4">
+                        Imagine acordar e lembrar de oito sonhos diferentes, cada um com uma mensagem especial de Deus! 
+                        Foi como assistir oito filmes seguidos, mas muito mais emocionante! 🎬
+                    </p>
+                    <div class="bg-white p-4 rounded-lg mt-4">
+                        <p class="text-lg text-gray-700 text-center">
+                            <strong class="text-purple-600">Curiosidade:</strong> Essas visões incluíam cavalos coloridos, 
+                            candelabros de ouro, um rolo voador gigante e até uma mulher dentro de um cesto! 🐴📜🕯️
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="zacarias-curiosidade.png" alt="Curiosidade sobre Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-purple-700 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../ageu/ageu.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Ageu
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../malaquias/malaquias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Malaquias ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Zacarias - Visões de Esperança ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Zacarias');
+    </script>
+</body>
+</html>

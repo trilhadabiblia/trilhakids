@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Amós - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="amos-capa.png" alt="Capa: Amós" id="img-amos"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⚖️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                    LIVRO DE AMÓS
+                </span>
+                <span>⚖️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">O Pastor que Clamou por Justiça — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-amos" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+                🌟 Os Três Segredos de Amós 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🐑 Primeiro Segredo: Deus Chama Quem Ele Quer</h3>
+                    <p class="italic text-gray-800">
+                        Amós não era profeta, nem filho de profeta,<br>
+                        Cuidava de ovelhas, colhia figos nareta.<br>
+                        Mas Deus o chamou para falar Sua verdade,<br>
+                        Mostrando que Ele usa quem tem humildade!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-2 font-semibold">📖 Amós 7:14-15</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">⚖️ Segundo Segredo: Justiça é o Coração de Deus</h3>
+                    <p class="italic text-gray-800">
+                        "Corra a justiça como um rio caudaloso,<br>
+                        E a retidão como riacho poderoso!"<br>
+                        Deus não aceita culto sem amor ao próximo,<br>
+                        Ele quer que sejamos justos, não só religiosos!
+                    </p>
+                    <p class="text-sm text-yellow-700 mt-2 font-semibold">📖 Amós 5:24</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">💪 Terceiro Segredo: Coragem para Falar a Verdade</h3>
+                    <p class="italic text-gray-800">
+                        Amós não teve medo de falar ao poderoso,<br>
+                        Denunciou a injustiça com coração corajoso.<br>
+                        Quando vemos o errado, devemos agir,<br>
+                        Pois Deus nos dá força para o bem sempre prosseguir!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-2 font-semibold">📖 Amós 3:8</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-amos");
+        const modal = document.getElementById("modal-amos");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🐑 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div>
+                <img src="amos-personagem.png" alt="Amós, o Pastor Profeta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-amber-800 mb-4">Amós - O Pastor Chamado por Deus</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Amós não era um profeta profissional. Ele era um simples pastor de ovelhas e cuidava de figueiras na região de Tecoa. 
+                    Mas Deus o escolheu para levar uma mensagem poderosa ao povo de Israel!
+                </p>
+                <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-600">
+                    <p class="text-amber-900 font-semibold">
+                        ✨ Amós mostrou que Deus pode usar qualquer pessoa — não importa sua profissão ou origem — 
+                        para fazer Sua vontade e proclamar a verdade!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            📢 O que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <h3 class="text-3xl font-bold text-yellow-800 mb-4">Denúncia contra Injustiça e Egoísmo</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Amós foi enviado ao reino do norte (Israel) em um tempo de prosperidade material, mas de grande corrupção moral. 
+                    O povo era rico, mas oprimia os pobres, praticava injustiças e adorava ídolos.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Ele denunciou corajosamente:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+                    <li>A exploração dos pobres pelos ricos</li>
+                    <li>A corrupção nos tribunais</li>
+                    <li>A hipocrisia religiosa</li>
+                    <li>O luxo excessivo enquanto outros sofriam</li>
+                </ul>
+                <div class="bg-yellow-100 p-4 rounded-lg border-l-4 border-yellow-600">
+                    <p class="text-yellow-900 font-semibold">
+                        ⚖️ "Corra a justiça como um rio!" — Amós pregou que Deus não aceita culto sem justiça social.
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="amos-o-que-conta.png" alt="Amós denuncia injustiças" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            💖 Por que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div>
+                <img src="amos-importante.png" alt="Importância de Amós" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-amber-800 mb-4">Deus Se Importa com Justiça e Amor</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    O livro de Amós nos ensina que Deus não quer apenas que vamos à igreja ou façamos orações. 
+                    Ele quer que vivamos de maneira justa, tratando os outros com amor, respeito e verdade!
+                </p>
+                <div class="space-y-4">
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <p class="text-amber-900 font-semibold">
+                            ⚖️ <strong>Justiça Social:</strong> Deus se importa profundamente com os pobres, oprimidos e marginalizados.
+                        </p>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg">
+                        <p class="text-yellow-900 font-semibold">
+                            💪 <strong>Coragem Moral:</strong> Devemos ter coragem de defender o que é certo, mesmo quando é difícil.
+                        </p>
+                    </div>
+                    <div class="bg-amber-50 p-4 rounded-lg">
+                        <p class="text-amber-900 font-semibold">
+                            ❤️ <strong>Fé Verdadeira:</strong> Nossa fé deve se manifestar em ações concretas de amor ao próximo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <h3 class="text-3xl font-bold text-yellow-800 mb-4">Fé Verdadeira em Atitudes Justas</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    O grande propósito do livro de Amós é mostrar que a verdadeira fé em Deus não é apenas questão de rituais religiosos, 
+                    mas se manifesta em como tratamos as pessoas ao nosso redor.
+                </p>
+                <div class="bg-yellow-100 p-6 rounded-xl border-2 border-yellow-400 mb-4">
+                    <h4 class="font-bold text-yellow-900 text-xl mb-3">🌟 Mensagem Central:</h4>
+                    <p class="text-yellow-900 italic text-lg">
+                        "Não basta dizer que amamos a Deus — precisamos demonstrar esse amor através de ações justas, 
+                        cuidando dos necessitados e defendendo a verdade!"
+                    </p>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-600">
+                    <p class="text-amber-900 font-semibold">
+                        ✝️ Amós nos desafia a viver uma fé autêntica que transforma o mundo ao nosso redor!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="amos-proposito.png" alt="Propósito de Amós" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div>
+                <img src="amos-curiosidade.png" alt="Curiosidade sobre Amós" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div>
+                <h3 class="text-3xl font-bold text-amber-800 mb-4">🐑 Amós: De Pastor a Profeta!</h3>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    Amós não era profeta de profissão — ele cuidava de ovelhas e cultivava figueiras antes de ser chamado por Deus! 
+                    Isso mostra que Deus pode usar qualquer pessoa, independentemente de sua ocupação ou status social.
+                </p>
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-xl border-2 border-amber-400">
+                    <h4 class="font-bold text-amber-900 text-xl mb-3">✨ Fatos Interessantes:</h4>
+                    <ul class="space-y-3 text-gray-800">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">🌳</span>
+                            <span>Amós era um "boieiro de sicômoros" — ele perfurava figos para amadurecê-los!</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">🗣️</span>
+                            <span>Ele falou contra o rei e os sacerdotes, mesmo sendo um "estrangeiro" de Judá falando em Israel!</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">📜</span>
+                            <span>Amós é considerado o primeiro profeta a ter seus escritos preservados em um livro!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-amber-900 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../joel/joel.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Joel
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../obadias/obadias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Obadias ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Amós - O Pastor que Clamou por Justiça ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Amós');
+    </script>
+</body>
+</html>

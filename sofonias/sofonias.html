@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Sofonias - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-700 to-indigo-800 hover:from-purple-800 hover:to-indigo-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="sofonias-capa.png" alt="Capa: Sofonias" id="img-sofonias"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🌪️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800 mx-2">
+                    LIVRO DE SOFONIAS
+                </span>
+                <span>⚡</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">O Dia do Senhor — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-sofonias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800">
+                🌟 Os Três Segredos de Sofonias 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-700">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🌪️ Primeiro Segredo: O Dia da Correção</h3>
+                    <p class="italic text-gray-800">
+                        Quando o povo esqueceu de Deus adorar,<br>
+                        Sofonias veio para alertar:<br>
+                        "O Dia do Senhor está chegando, sim!<br>
+                        Tempo de correção para quem fez assim."<br>
+                        Mas não é só castigo, não é só dor,<br>
+                        É um chamado ao arrependimento e amor!
+                    </p>
+                    <p class="text-sm text-purple-600 mt-2 font-semibold">📖 Sofonias 1:14-15</p>
+                </div>
+
+                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-700">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">💙 Segundo Segredo: Busque o Senhor com Humildade</h3>
+                    <p class="italic text-gray-800">
+                        "Busquem o Senhor com coração sincero,<br>
+                        Sejam humildes, mansos, verdadeiros!<br>
+                        Pratiquem a justiça, andem no bem,<br>
+                        Pois Deus protege quem O busca também."<br>
+                        Não é com orgulho que se chega ao céu,<br>
+                        Mas com um coração pequeno e fiel!
+                    </p>
+                    <p class="text-sm text-indigo-600 mt-2 font-semibold">📖 Sofonias 2:3</p>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-700">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🎉 Terceiro Segredo: A Alegria da Restauração</h3>
+                    <p class="italic text-gray-800">
+                        Depois da tempestade, vem a bonança,<br>
+                        Deus restaura Seu povo com esperança!<br>
+                        "Cantarei sobre você com alegria,<br>
+                        Você será Minha joia, noite e dia!"<br>
+                        Deus não abandona quem se arrepende,<br>
+                        Ele salva, renova e sempre nos defende!
+                    </p>
+                    <p class="text-sm text-purple-600 mt-2 font-semibold">📖 Sofonias 3:17</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-sofonias");
+        const modal = document.getElementById("modal-sofonias");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="sofonias-personagem.png" alt="Personagens de Sofonias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-700">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-2">🌪️ Sofonias</h3>
+                    <p class="text-gray-700 text-lg">
+                        Um profeta corajoso que veio de uma família real! Ele era descendente do rei Ezequias e foi chamado por Deus para alertar o povo de Judá sobre o "Dia do Senhor" — um tempo de correção, mas também de esperança e restauração.
+                    </p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-700">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-2">👨‍👩‍👧‍👦 O Povo de Judá</h3>
+                    <p class="text-gray-700 text-lg">
+                        O povo que havia se afastado de Deus, adorando ídolos e vivendo de forma injusta. Sofonias foi enviado para chamá-los de volta à humildade, à justiça e à adoração ao único Deus verdadeiro.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-700">
+                    <h3 class="text-xl font-bold text-purple-800 mb-2">⚡ O Dia do Senhor Está Chegando</h3>
+                    <p class="text-gray-700">
+                        Sofonias anuncia que o "Dia do Senhor" está próximo — um tempo de julgamento para aqueles que se afastaram de Deus. É um dia de trevas e tempestade para os desobedientes.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-700">
+                    <h3 class="text-xl font-bold text-indigo-800 mb-2">🙏 Um Chamado à Humildade</h3>
+                    <p class="text-gray-700">
+                        Mas há esperança! Deus chama o povo a buscá-Lo com humildade, a praticar a justiça e a viver de forma correta. Quem se arrepende encontra proteção.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-700">
+                    <h3 class="text-xl font-bold text-purple-800 mb-2">🎉 Restauração e Alegria</h3>
+                    <p class="text-gray-700">
+                        Após a correção, Deus promete restaurar Seu povo. Ele cantará de alegria sobre eles e os fará uma bênção entre as nações. O final é de esperança e renovação!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="sofonias-o-que-conta.png" alt="O que Sofonias conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800">
+            💡 Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="sofonias-importante.png" alt="Importância de Sofonias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-purple-50 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🌪️ Deus Corrige Porque Ama</h3>
+                    <p class="text-gray-700 text-lg">
+                        Sofonias nos ensina que quando Deus corrige, não é porque Ele é mau, mas porque Ele nos ama! A correção é um caminho para nos levar de volta ao caminho certo.
+                    </p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">💙 Humildade Abre as Portas do Céu</h3>
+                    <p class="text-gray-700 text-lg">
+                        O livro nos mostra que Deus valoriza um coração humilde. Não é sobre ser perfeito, mas sobre reconhecer nossos erros e buscar a Deus com sinceridade.
+                    </p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🎉 Sempre Há Esperança</h3>
+                    <p class="text-gray-700 text-lg">
+                        Mesmo após o julgamento, Deus promete restauração. Ele não abandona Seu povo — Ele renova, salva e traz alegria! Sempre há uma segunda chance com Deus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🙏 Chamar o Povo ao Arrependimento</h3>
+                    <p class="text-gray-700 text-lg">
+                        O principal propósito de Sofonias é chamar o povo de Judá a se arrepender de seus pecados e voltar para Deus. É um convite urgente para deixar os ídolos e buscar o Senhor com todo o coração.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">⚖️ Ensinar Sobre Justiça e Humildade</h3>
+                    <p class="text-gray-700 text-lg">
+                        Deus deseja que Seu povo viva com justiça, pratique a bondade e ande humildemente. Sofonias mostra que a verdadeira adoração não é só cantar, mas viver de acordo com a vontade de Deus.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🌟 Trazer Esperança de Restauração</h3>
+                    <p class="text-gray-700 text-lg">
+                        Mesmo falando de julgamento, Sofonias termina com uma linda promessa: Deus restaurará Seu povo, cantará de alegria sobre eles e os fará brilhar entre as nações!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="sofonias-proposito.png" alt="Propósito de Sofonias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-800">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="sofonias-curiosidade.png" alt="Curiosidade sobre Sofonias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-xl shadow-md">
+                <h3 class="text-3xl font-bold text-purple-800 mb-4">👑 Sofonias Era de Família Real!</h3>
+                <p class="text-gray-700 text-xl leading-relaxed mb-4">
+                    Isso mesmo! Sofonias era descendente do rei Ezequias, um dos reis mais justos de Judá. Ele tinha sangue real, mas escolheu ser um servo humilde de Deus, levando a mensagem divina ao povo.
+                </p>
+                <p class="text-gray-700 text-xl leading-relaxed">
+                    Isso mostra que não importa de onde você vem ou quem são seus pais — o que importa é o coração que você tem para Deus! Sofonias usou sua posição não para orgulho, mas para servir ao Senhor com coragem e fidelidade. 🌟
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-purple-700/20 to-indigo-800/20 border-2 border-purple-700/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-purple-900 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../habacuque/habacuque.html" class="bg-gradient-to-r from-purple-700 to-indigo-800 hover:from-purple-800 hover:to-indigo-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Habacuque
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-800 to-purple-700 hover:from-indigo-900 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../ageu/ageu.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Ageu ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-700 to-indigo-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Sofonias - O Dia do Senhor ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Sofonias');
+    </script>
+</body>
+</html>

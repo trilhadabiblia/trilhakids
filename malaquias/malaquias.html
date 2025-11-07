@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Malaquias - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="malaquias-capa.png" alt="Capa: Malaquias" id="img-malaquias"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>📮</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mx-2">
+                    LIVRO DE MALAQUIAS
+                </span>
+                <span>💌</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Última Mensagem — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-malaquias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+                🌟 Os Três Segredos de Malaquias 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">💝 Primeiro Segredo: O Coração Sincero</h3>
+                    <p class="italic text-gray-800">
+                        Deus não quer apenas presentes,<br>
+                        Ele quer corações obedientes!<br>
+                        Não adianta fingir adoração,<br>
+                        Deus vê dentro do seu coração!<br>
+                        Seja verdadeiro, seja fiel,<br>
+                        E sua vida brilhará como mel!
+                    </p>
+                    <p class="text-sm text-amber-600 mt-3 font-semibold">📖 Malaquias 1:6-8</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🎁 Segundo Segredo: O Dízimo da Bênção</h3>
+                    <p class="italic text-gray-800">
+                        Traga seus dízimos ao Senhor,<br>
+                        E verá Seu grande amor!<br>
+                        As janelas do céu vão se abrir,<br>
+                        E bênçãos sem medida vão cair!<br>
+                        Não é sobre dinheiro, é sobre confiar,<br>
+                        Que Deus sempre vai nos cuidar!
+                    </p>
+                    <p class="text-sm text-yellow-600 mt-3 font-semibold">📖 Malaquias 3:10</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🌅 Terceiro Segredo: O Mensageiro Vem!</h3>
+                    <p class="italic text-gray-800">
+                        Depois de 400 anos de silêncio profundo,<br>
+                        Um mensageiro vai preparar o mundo!<br>
+                        João Batista virá anunciar,<br>
+                        Que Jesus, o Salvador, vai chegar!<br>
+                        Malaquias fechou o Antigo Testamento,<br>
+                        Mas abriu a porta para um novo momento!
+                    </p>
+                    <p class="text-sm text-orange-600 mt-3 font-semibold">📖 Malaquias 3:1; 4:5-6</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-malaquias");
+        const modal = document.getElementById("modal-malaquias");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-4">📮 Malaquias - O Último Mensageiro</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Malaquias foi o último profeta do Antigo Testamento! Seu nome significa "Meu Mensageiro". 
+                        Ele trouxe uma mensagem importante para o povo de Israel que tinha se afastado de Deus. 
+                        Como um carteiro especial, ele entregou as palavras de Deus para chamar o povo de volta à adoração verdadeira!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600 mt-4">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">👨‍👩‍👧‍👦 O Povo de Israel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O povo de Israel tinha voltado do exílio, mas seus corações estavam frios. 
+                        Eles ofereciam sacrifícios ruins a Deus, não pagavam os dízimos e tinham se esquecido de amá-Lo de verdade. 
+                        Era como dar um presente quebrado para alguém que você ama!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="malaquias-personagem.png" alt="Personagens de Malaquias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="malaquias-o-que-conta.png" alt="História de Malaquias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">💔 Uma Adoração Fingida</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        O livro de Malaquias é como uma carta de amor de Deus para Seu povo! 
+                        Mas também é uma carta de correção, porque o povo estava oferecendo animais doentes e defeituosos como sacrifícios. 
+                        Era como dar sobras para Deus!
+                    </p>
+                    <h3 class="text-2xl font-bold text-amber-700 mb-4">🌅 A Promessa do Mensageiro</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Mas Deus não desistiu do Seu povo! Ele prometeu enviar um mensageiro especial (João Batista) 
+                        que prepararia o caminho para o próprio Senhor Jesus! Era como anunciar: "Preparem-se! 
+                        O Rei está chegando!" Depois de Malaquias, houve 400 anos de silêncio até João Batista nascer!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl shadow-lg border-l-4 border-amber-600">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <span class="text-4xl">💝</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-amber-700 mb-2">Deus Quer Seu Coração</h3>
+                                <p class="text-gray-700">
+                                    Malaquias nos ensina que Deus não quer apenas nossas ofertas ou presentes, 
+                                    Ele quer nosso coração sincero e verdadeiro! Não adianta ir à igreja se seu coração não está ali.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-4xl">🎁</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-yellow-700 mb-2">Dê o Seu Melhor</h3>
+                                <p class="text-gray-700">
+                                    O livro nos lembra de sempre dar o nosso melhor para Deus! 
+                                    Não devemos oferecer sobras ou coisas quebradas. Deus merece o melhor de nós!
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <span class="text-4xl">🌉</span>
+                            <div>
+                                <h3 class="text-xl font-bold text-orange-700 mb-2">A Ponte Entre Testamentos</h3>
+                                <p class="text-gray-700">
+                                    Malaquias é a ponte entre o Antigo e o Novo Testamento! 
+                                    Ele aponta para Jesus e nos prepara para a chegada do Salvador!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="malaquias-importante.png" alt="Importância de Malaquias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="malaquias-proposito.png" alt="Propósito de Malaquias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-yellow-600">
+                    <h3 class="text-3xl font-bold text-yellow-700 mb-6 flex items-center gap-3">
+                        <span>🔥</span>
+                        Chamar o Povo de Volta à Adoração Verdadeira
+                    </h3>
+                    <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+                        <p class="flex items-start gap-3">
+                            <span class="text-2xl">📢</span>
+                            <span><strong>Despertar:</strong> Acordar o povo que estava dormindo espiritualmente!</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="text-2xl">💔</span>
+                            <span><strong>Corrigir:</strong> Mostrar onde o povo estava errando em sua adoração!</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="text-2xl">❤️</span>
+                            <span><strong>Restaurar:</strong> Trazer o povo de volta para um relacionamento verdadeiro com Deus!</span>
+                        </p>
+                        <p class="flex items-start gap-3">
+                            <span class="text-2xl">🌟</span>
+                            <span><strong>Preparar:</strong> Preparar o caminho para a vinda de Jesus Cristo!</span>
+                        </p>
+                        <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-4 rounded-lg mt-6 border-l-4 border-amber-600">
+                            <p class="font-semibold text-amber-800">
+                                💡 Malaquias queria que o povo entendesse: Deus não mudou! 
+                                Ele ainda os amava e queria um relacionamento real, não apenas rituais vazios!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-100 to-yellow-100 p-8 rounded-2xl shadow-xl border-4 border-amber-600">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">🤫</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-amber-700 mb-6 text-center">
+                        Os 400 Anos de Silêncio!
+                    </h3>
+                    <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+                        <p class="bg-white p-4 rounded-lg shadow">
+                            <strong class="text-amber-600">🔇 Último profeta:</strong> Depois de Malaquias, 
+                            Deus ficou 400 anos sem enviar nenhum profeta para Israel!
+                        </p>
+                        <p class="bg-white p-4 rounded-lg shadow">
+                            <strong class="text-yellow-600">⏰ Silêncio profético:</strong> Foram 4 séculos inteiros 
+                            sem nenhuma palavra nova de Deus! Era como se o céu estivesse em silêncio.
+                        </p>
+                        <p class="bg-white p-4 rounded-lg shadow">
+                            <strong class="text-orange-600">🎺 João Batista:</strong> O silêncio só foi quebrado 
+                            quando João Batista nasceu, exatamente como Malaquias tinha profetizado!
+                        </p>
+                        <p class="bg-white p-4 rounded-lg shadow">
+                            <strong class="text-amber-700">🌟 Vale a pena esperar:</strong> Esses 400 anos de espera 
+                            valeram a pena, porque depois veio Jesus, o Salvador do mundo!
+                        </p>
+                        <div class="bg-gradient-to-r from-amber-600 to-yellow-600 text-white p-6 rounded-xl mt-6 text-center">
+                            <p class="font-bold text-xl">
+                                🎉 Malaquias foi como o último capítulo de um livro emocionante, 
+                                que deixou todo mundo ansioso pelo próximo volume... 
+                                que seria o Novo Testamento com Jesus! 📖✨
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="malaquias-curiosidade.png" alt="Curiosidade sobre Malaquias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-yellow-600/20 border-2 border-amber-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../zacarias/zacarias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Zacarias
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../../novotestamento/" class="bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Novo Testamento ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-600 to-yellow-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Malaquias - A Última Mensagem ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Malaquias');
+    </script>
+</body>
+</html>

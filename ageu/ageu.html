@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Ageu - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="ageu-capa.png" alt="Capa: Ageu" id="img-ageu"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🏗️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700 mx-2">
+                    LIVRO DE AGEU
+                </span>
+                <span>⛪</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Reconstruindo o Templo de Deus — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-ageu" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
+                🌟 Os Três Segredos de Ageu 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🏠 Primeiro Segredo: A Casa de Deus em Primeiro Lugar</h3>
+                    <p class="text-gray-800 leading-relaxed">
+                        O povo construía suas casas luxuosas,<br>
+                        Mas o templo de Deus estava em ruínas dolorosas.<br>
+                        Ageu veio com mensagem clara e verdadeira:<br>
+                        "Coloquem Deus em primeiro, de maneira sincera!"<br>
+                        Quando priorizamos o Senhor com amor,<br>
+                        Ele nos abençoa com Seu favor!
+                    </p>
+                    <p class="text-sm text-amber-600 mt-3 font-semibold">📖 Ageu 1:4-9</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💪 Segundo Segredo: Coragem para Reconstruir</h3>
+                    <p class="text-gray-800 leading-relaxed">
+                        "Sejam fortes!" Deus disse ao povo escolhido,<br>
+                        "Eu estou com vocês, não tenham medo nem gemido!"<br>
+                        Zorobabel e Josué se levantaram com fé,<br>
+                        E o povo trabalhou, de joelho e de pé.<br>
+                        Com Deus ao nosso lado, somos mais que vencedores,<br>
+                        Ele transforma desafios em grandes louvores!
+                    </p>
+                    <p class="text-sm text-yellow-600 mt-3 font-semibold">📖 Ageu 2:4-5</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">✨ Terceiro Segredo: A Glória Futura Será Maior</h3>
+                    <p class="text-gray-800 leading-relaxed">
+                        O templo antigo era cheio de esplendor,<br>
+                        Mas Deus prometeu algo ainda maior e melhor!<br>
+                        "A glória desta casa será mais radiante,<br>
+                        E trarei paz", disse o Senhor constante.<br>
+                        Quando obedecemos com coração sincero,<br>
+                        Deus traz restauração, isso é verdadeiro!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 Ageu 2:9</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-ageu");
+        const modal = document.getElementById("modal-ageu");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Personagens Principais -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-4">🏗️ Os Construtores da Fé</h3>
+                    <ul class="space-y-4 text-gray-700 text-lg">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">📢</span>
+                            <span><strong class="text-amber-700">Ageu:</strong> O profeta corajoso que trouxe a mensagem de Deus para reconstruir o templo</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">👑</span>
+                            <span><strong class="text-yellow-700">Zorobabel:</strong> O governador que liderou o povo na reconstrução com determinação</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">⛪</span>
+                            <span><strong class="text-amber-800">Josué:</strong> O sumo sacerdote que restaurou a adoração e o serviço a Deus</span>
+                        </li>
+                    </ul>
+                    <p class="mt-6 text-gray-600 italic">Juntos, eles mostraram que quando trabalhamos unidos por Deus, grandes coisas acontecem!</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="ageu-personagem.png" alt="Personagens de Ageu" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O Que o Livro Conta -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1">
+                <img src="ageu-o-que-conta.png" alt="História de Ageu" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">🏗️ A Reconstrução do Templo</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Depois de voltar do exílio na Babilônia, o povo de Israel começou a reconstruir suas próprias casas, mas deixou o templo de Deus abandonado e em ruínas.
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Deus enviou o profeta Ageu com uma mensagem poderosa: <strong>"É tempo de vocês morarem em casas luxuosas, enquanto a Minha casa está destruída?"</strong>
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        O povo ouviu, se arrependeu e começou a trabalhar na reconstrução do templo. Deus prometeu estar com eles e abençoá-los!
+                    </p>
+                    <div class="bg-amber-100 p-4 rounded-lg mt-4">
+                        <p class="text-amber-800 font-semibold">✨ Mensagem: Quando colocamos Deus em primeiro lugar, Ele cuida de nós!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por Que É Importante -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">🌟 Prioridades que Transformam</h3>
+                    <div class="space-y-4 text-gray-700 text-lg">
+                        <div class="flex items-start">
+                            <span class="text-3xl mr-3">🎯</span>
+                            <div>
+                                <strong class="text-amber-700">Deus em Primeiro Lugar:</strong>
+                                <p>Ageu ensina que quando priorizamos Deus e Sua obra, Ele nos abençoa em todas as áreas da vida!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-3xl mr-3">💝</span>
+                            <div>
+                                <strong class="text-yellow-700">Obediência Traz Bênçãos:</strong>
+                                <p>O livro mostra que obedecer a Deus não é um fardo, mas o caminho para receber Suas promessas!</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-3xl mr-3">🏠</span>
+                            <div>
+                                <strong class="text-amber-800">Restauração Espiritual:</strong>
+                                <p>Assim como o templo foi reconstruído, Deus quer restaurar nosso relacionamento com Ele!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-amber-100 p-4 rounded-lg mt-6">
+                        <p class="text-amber-800 font-semibold text-center">💡 Quando colocamos Deus em primeiro lugar, tudo o mais se encaixa!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="ageu-importante.png" alt="Importância de Ageu" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do Livro -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1">
+                <img src="ageu-proposito.png" alt="Propósito de Ageu" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-4">🏗️ Motivar a Restauração</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        O propósito principal de Ageu era <strong>motivar o povo a restaurar a casa de Deus e o relacionamento com Ele</strong>.
+                    </p>
+                    <div class="bg-yellow-50 p-6 rounded-xl mb-4">
+                        <h4 class="font-bold text-yellow-700 mb-3 text-xl">📋 Objetivos do Livro:</h4>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🔨</span>
+                                <span>Encorajar o povo a terminar a reconstrução do templo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">💖</span>
+                                <span>Restaurar a adoração verdadeira e o relacionamento com Deus</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">🌟</span>
+                                <span>Mostrar que Deus está presente e deseja abençoar Seu povo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-xl mr-2">⚡</span>
+                                <span>Ensinar sobre prioridades corretas e obediência</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-amber-100 p-4 rounded-lg">
+                        <p class="text-amber-800 font-semibold">✨ Deus quer que nossa vida seja como um templo onde Ele habita!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você Sabia -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">✨ A Glória Prometida!</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Depois que o povo obedeceu e começou a reconstruir o templo, <strong>Deus fez uma promessa incrível</strong>!
+                    </p>
+                    <div class="bg-amber-100 p-6 rounded-xl mb-4">
+                        <p class="text-amber-800 text-lg font-semibold mb-3">
+                            🌟 "A glória desta última casa será maior do que a da primeira, diz o Senhor dos Exércitos!"
+                        </p>
+                        <p class="text-gray-700">
+                            Isso significa que Deus não apenas restauraria o templo, mas traria algo ainda mais glorioso!
+                        </p>
+                    </div>
+                    <div class="space-y-3 text-gray-700">
+                        <p class="flex items-start">
+                            <span class="text-2xl mr-2">⏱️</span>
+                            <span><strong>Rapidez:</strong> Ageu é um dos livros mais curtos da Bíblia - apenas 2 capítulos!</span>
+                        </p>
+                        <p class="flex items-start">
+                            <span class="text-2xl mr-2">📅</span>
+                            <span><strong>Resultado:</strong> Em apenas 23 dias após a primeira mensagem, o povo começou a trabalhar!</span>
+                        </p>
+                        <p class="flex items-start">
+                            <span class="text-2xl mr-2">🎉</span>
+                            <span><strong>Cumprimento:</strong> O templo foi concluído e a presença de Deus voltou a habitar ali!</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="ageu-curiosidade.png" alt="Curiosidade sobre Ageu" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-amber-600/20 to-yellow-700/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../sofonias/sofonias.html" class="bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Sofonias
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-yellow-700 to-amber-600 hover:from-yellow-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../zacarias/zacarias.html" class="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Zacarias ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-600 to-yellow-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Ageu - Reconstruindo o Templo de Deus ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Ageu');
+    </script>
+</body>
+</html>

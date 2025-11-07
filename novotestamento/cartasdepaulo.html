@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartas de Paulo - Livros da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-900 via-cyan-900 to-blue-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-blue-600 to-cyan-600 backdrop-blur-xl border-b border-blue-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center">
+        <div class="hidden md:block text-center">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">✉️ CARTAS DE PAULO</h1>
+          <p class="text-blue-100 text-sm md:text-base">Mensagens de Sabedoria e Amor</p>
+        </div>
+        <div class="md:hidden text-center">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">✉️ CARTAS DE PAULO</h1>
+          <p class="text-blue-100 text-sm">Mensagens de Sabedoria</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        📬 13 Cartas Inspiradoras
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Paulo escreveu cartas cheias de ensinamentos para ajudar as igrejas a crescerem na fé e no amor de Jesus!
+      </p>
+    </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+
+      <!-- Romanos -->
+      <div class="group cursor-pointer" onclick="irPara('romanos/romanos.html')">
+        <div
+          class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">📖</div>
+          <h3 class="font-bold text-white mb-2">Romanos</h3>
+          <p class="text-sm text-red-100">O Evangelho em Detalhes</p>
+        </div>
+      </div>
+
+      <!-- 1 Coríntios -->
+      <div class="group cursor-pointer" onclick="irPara('1corintios/1corintios.html')">
+        <div
+          class="bg-gradient-to-br from-orange-600 to-amber-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💝</div>
+          <h3 class="font-bold text-white mb-2">1 Coríntios</h3>
+          <p class="text-sm text-orange-100">Amor e Unidade</p>
+        </div>
+      </div>
+
+      <!-- 2 Coríntios -->
+      <div class="group cursor-pointer" onclick="irPara('2corintios/2corintios.html')">
+        <div
+          class="bg-gradient-to-br from-yellow-600 to-amber-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💪</div>
+          <h3 class="font-bold text-white mb-2">2 Coríntios</h3>
+          <p class="text-sm text-yellow-100">Força na Fraqueza</p>
+        </div>
+      </div>
+
+      <!-- Gálatas -->
+      <div class="group cursor-pointer" onclick="irPara('galatas/galatas.html')">
+        <div
+          class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🆓</div>
+          <h3 class="font-bold text-white mb-2">Gálatas</h3>
+          <p class="text-sm text-green-100">Liberdade em Cristo</p>
+        </div>
+      </div>
+
+      <!-- Efésios -->
+      <div class="group cursor-pointer" onclick="irPara('efesios/efesios.html')">
+        <div
+          class="bg-gradient-to-br from-cyan-600 to-blue-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">⛪</div>
+          <h3 class="font-bold text-white mb-2">Efésios</h3>
+          <p class="text-sm text-cyan-100">A Igreja de Cristo</p>
+        </div>
+      </div>
+
+      <!-- Filipenses -->
+      <div class="group cursor-pointer" onclick="irPara('filipenses/filipenses.html')">
+        <div
+          class="bg-gradient-to-br from-indigo-600 to-purple-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">😊</div>
+          <h3 class="font-bold text-white mb-2">Filipenses</h3>
+          <p class="text-sm text-indigo-100">Alegria em Tudo</p>
+        </div>
+      </div>
+
+      <!-- Colossenses -->
+      <div class="group cursor-pointer" onclick="irPara('colossenses/colossenses.html')">
+        <div
+          class="bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">👑</div>
+          <h3 class="font-bold text-white mb-2">Colossenses</h3>
+          <p class="text-sm text-violet-100">Cristo é Tudo</p>
+        </div>
+      </div>
+
+      <!-- 1 Tessalonicenses -->
+      <div class="group cursor-pointer" onclick="irPara('1tessalonicenses/1tessalonicenses.html')">
+        <div
+          class="bg-gradient-to-br from-pink-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🌟</div>
+          <h3 class="font-bold text-white mb-2">1 Tessalonicenses</h3>
+          <p class="text-sm text-pink-100">Volta de Jesus</p>
+        </div>
+      </div>
+
+      <!-- 2 Tessalonicenses -->
+      <div class="group cursor-pointer" onclick="irPara('2tessalonicenses/2tessalonicenses.html')">
+        <div
+          class="bg-gradient-to-br from-fuchsia-600 to-pink-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">⏰</div>
+          <h3 class="font-bold text-white mb-2">2 Tessalonicenses</h3>
+          <p class="text-sm text-fuchsia-100">Aguardando o Senhor</p>
+        </div>
+      </div>
+
+      <!-- 1 Timóteo -->
+      <div class="group cursor-pointer" onclick="irPara('1timoteo/1timoteo.html')">
+        <div
+          class="bg-gradient-to-br from-lime-600 to-green-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-lime-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🎓</div>
+          <h3 class="font-bold text-white mb-2">1 Timóteo</h3>
+          <p class="text-sm text-lime-100">Liderança na Igreja</p>
+        </div>
+      </div>
+
+      <!-- 2 Timóteo -->
+      <div class="group cursor-pointer" onclick="irPara('2timoteo/2timoteo.html')">
+        <div
+          class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🔥</div>
+          <h3 class="font-bold text-white mb-2">2 Timóteo</h3>
+          <p class="text-sm text-teal-100">Guardando a Fé</p>
+        </div>
+      </div>
+
+      <!-- Tito -->
+      <div class="group cursor-pointer" onclick="irPara('tito/tito.html')">
+        <div
+          class="bg-gradient-to-br from-sky-600 to-blue-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🏛️</div>
+          <h3 class="font-bold text-white mb-2">Tito</h3>
+          <p class="text-sm text-sky-100">Boas Obras</p>
+        </div>
+      </div>
+
+      <!-- Filemom -->
+      <div class="group cursor-pointer" onclick="irPara('filemom/filemom.html')">
+        <div
+          class="bg-gradient-to-br from-slate-600 to-gray-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-slate-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🤝</div>
+          <h3 class="font-bold text-white mb-2">Filemom</h3>
+          <p class="text-sm text-slate-100">Perdão e Amor</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Descrições por Categoria -->
+    <section class="mb-12">
+      <h3 class="text-3xl font-black text-white text-center mb-8">📚 Tipos de Cartas</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-2xl p-6">
+          <h4 class="text-xl font-bold text-blue-300 mb-3">🏛️ Para Igrejas</h4>
+          <p class="text-gray-300 text-sm mb-3">Romanos, Coríntios, Gálatas, Efésios, Filipenses, Colossenses, Tessalonicenses</p>
+          <p class="text-gray-400 text-sm">Orientações para comunidades inteiras sobre fé, amor e vida cristã.</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-6">
+          <h4 class="text-xl font-bold text-purple-300 mb-3">👨‍🏫 Para Pastores</h4>
+          <p class="text-gray-300 text-sm mb-3">1 e 2 Timóteo, Tito</p>
+          <p class="text-gray-400 text-sm">Conselhos especiais para líderes sobre como cuidar da igreja de Deus.</p>
+        </div>
+
+        <div class="bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/30 rounded-2xl p-6">
+          <h4 class="text-xl font-bold text-pink-300 mb-3">💌 Pessoal</h4>
+          <p class="text-gray-300 text-sm mb-3">Filemom</p>
+          <p class="text-gray-400 text-sm">Uma carta linda sobre perdão e como tratar uns aos outros com amor.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidade -->
+    <section class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-2xl p-8 text-center">
+      <div class="text-5xl mb-4">💡</div>
+      <h3 class="text-2xl font-bold text-blue-300 mb-3">Curiosidade Incrível!</h3>
+      <p class="text-gray-300 max-w-3xl mx-auto">
+        Paulo escreveu muitas dessas cartas na prisão! Mesmo preso, ele não parou de ensinar sobre Jesus. Suas cartas viajaram milhares de quilômetros e ainda hoje nos ensinam sobre o amor de Deus. Que exemplo de coragem e dedicação!
+      </p>
+    </section>
+
+  </main>
+
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-blue-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
+    <p class="text-sm">Ministério Infantil - Kids | Desenvolvido com ❤️ para crianças</p>
+  </footer>
+
+  <script>
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+  </script>
+  <script src="/menu.js"></script>
+  <script src="../gamificacao.js"></script>
+</body>
+
+</html>

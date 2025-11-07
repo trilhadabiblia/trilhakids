@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Naum - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-800 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="naum-capa.png" alt="Capa: Naum" id="img-naum"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⚔️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600 mx-2">
+                    LIVRO DE NAUM
+                </span>
+                <span>⚔️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Justiça de Deus sobre Nínive — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-naum" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+                🌟 Os Três Segredos de Naum 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">⚖️ Primeiro Segredo: A Justiça Chega!</h3>
+                    <p class="italic leading-loose">
+                        Deus é paciente e espera com amor,<br>
+                        Mas quando o mal não cessa, vem o clamor!<br>
+                        Nínive voltou a pecar sem parar,<br>
+                        E a justiça de Deus veio para julgar!<br>
+                        <span class="text-sm text-gray-600 block mt-2">📖 Naum 1:3 - "O SENHOR é tardio em irar-se, mas grande em poder"</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">🛡️ Segundo Segredo: Deus Protege os Seus!</h3>
+                    <p class="italic leading-loose">
+                        Para quem confia, Deus é refúgio e proteção,<br>
+                        Um lugar seguro em meio à tribulação!<br>
+                        Ele conhece aqueles que nEle confiam,<br>
+                        E suas vidas com amor Ele guiam!<br>
+                        <span class="text-sm text-gray-600 block mt-2">📖 Naum 1:7 - "O SENHOR é bom, um refúgio no dia da angústia"</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-red-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🔥 Terceiro Segredo: O Arrependimento é Real!</h3>
+                    <p class="italic leading-loose">
+                        Jonas pregou e Nínive se arrependeu,<br>
+                        Mas cem anos depois, o mal prevaleceu!<br>
+                        Não basta apenas dizer "sim" uma vez,<br>
+                        Precisamos seguir a Deus com firmeza e altivez!<br>
+                        <span class="text-sm text-gray-600 block mt-2">📖 Naum 3:1 - "Ai da cidade sanguinária, toda cheia de mentiras"</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-naum");
+        const modal = document.getElementById("modal-naum");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Personagens Principais -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <h3 class="text-3xl font-bold text-red-800 mb-4">⚔️ Naum, o Profeta da Justiça</h3>
+                <p class="text-xl text-gray-700 leading-relaxed mb-4">
+                    Naum foi um profeta corajoso que trouxe uma mensagem difícil: Deus ia julgar Nínive! 
+                    Seu nome significa "consolador" — ele consolava o povo de Deus mostrando que a justiça chegaria.
+                </p>
+                <h3 class="text-3xl font-bold text-orange-700 mb-4">🏛️ O Povo de Nínive</h3>
+                <p class="text-xl text-gray-700 leading-relaxed">
+                    Nínive era a capital da Assíria, um império cruel e violento. Eles haviam se arrependido nos dias de Jonas, 
+                    mas voltaram a praticar o mal. Agora, a paciência de Deus havia chegado ao fim.
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="naum-personagem.png" alt="Naum e Nínive" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O Que o Livro Conta? -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+            📖 O Que o Livro de Naum Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="naum-o-que-conta.png" alt="A Destruição de Nínive" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2 space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-2">⚡ A Ira de Deus</h3>
+                    <p class="text-lg text-gray-700">
+                        Naum começa descrevendo como Deus é poderoso e justo. Ele não deixará o mal sem punição!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-2">🏙️ O Julgamento de Nínive</h3>
+                    <p class="text-lg text-gray-700">
+                        Deus anuncia que Nínive será destruída por causa de sua violência, mentiras e crueldade.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-2">🔥 A Queda da Cidade</h3>
+                    <p class="text-lg text-gray-700">
+                        Naum descreve poeticamente como Nínive cairá — e isso realmente aconteceu em 612 a.C.!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por Que é Importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+            ⭐ Por Que o Livro de Naum é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold text-red-800 mb-3 flex items-center">
+                            <span class="text-3xl mr-3">⚖️</span> Deus é Paciente, Mas Também Justo
+                        </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Deus dá muitas chances para as pessoas se arrependerem, mas Ele não ignora o mal para sempre. 
+                            A paciência de Deus não significa que Ele não se importa — Ele é justo e fará o que é certo!
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl shadow-md">
+                        <h3 class="text-2xl font-bold text-orange-800 mb-3 flex items-center">
+                            <span class="text-3xl mr-3">🛡️</span> Deus Protege Quem Confia Nele
+                        </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Enquanto Nínive seria destruída, Deus prometeu ser um refúgio para aqueles que confiassem nEle. 
+                            Ele cuida dos Seus filhos mesmo em tempos difíceis!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="naum-importante.png" alt="A Importância de Naum" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do Livro -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+            🎯 Qual é o Propósito do Livro de Naum?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="naum-proposito.png" alt="Propósito de Naum" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-4 border-red-700">
+                    <h3 class="text-3xl font-bold text-red-800 mb-6 text-center">🔥 Três Grandes Lições</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <span class="text-4xl">1️⃣</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-red-700 mb-2">Deus Pune o Mal Persistente</h4>
+                                <p class="text-gray-700">Nínive teve sua chance, mas voltou a pecar. Deus não tolera o mal para sempre.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-4xl">2️⃣</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-orange-700 mb-2">Deus Protege Quem Confia Nele</h4>
+                                <p class="text-gray-700">Para os que confiam em Deus, Ele é um refúgio seguro em qualquer tempestade.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <span class="text-4xl">3️⃣</span>
+                            <div>
+                                <h4 class="text-xl font-bold text-yellow-700 mb-2">O Arrependimento Precisa Ser Real</h4>
+                                <p class="text-gray-700">Não basta apenas dizer "desculpa" — precisamos realmente mudar e seguir a Deus!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-red-100 to-orange-100 p-8 rounded-2xl shadow-xl border-4 border-yellow-500">
+                    <h3 class="text-3xl font-bold text-red-800 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">⏰</span> 100 Anos Depois de Jonas!
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
+                        Naum escreveu cerca de 100 anos depois de Jonas! Lembra quando Jonas pregou e Nínive se arrependeu? 
+                        Pois é... eles voltaram a fazer o mal! 😔
+                    </p>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
+                        Isso nos ensina que o arrependimento precisa ser verdadeiro e duradouro. Não adianta apenas dizer 
+                        "desculpa" e depois continuar fazendo as mesmas coisas erradas!
+                    </p>
+                    <div class="bg-white p-4 rounded-lg mt-4">
+                        <p class="text-lg font-semibold text-orange-800">
+                            💡 Lição: Quando pedimos perdão a Deus, precisamos realmente mudar nosso coração e nossas atitudes!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="naum-curiosidade.png" alt="Curiosidade sobre Naum" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print bg-gradient-to-r from-red-700/20 to-orange-600/20 border-2 border-red-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-center text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../miqueias/miqueias.html" class="bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-800 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Miquéias
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../habacuque/habacuque.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Habacuque ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-red-700 to-orange-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Naum - A Justiça de Deus ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Naum');
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Daniel - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="daniel-capa.png" alt="Capa: Daniel" id="img-daniel"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🦁</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 mx-2">
+                    LIVRO DE DANIEL
+                </span>
+                <span>🙏</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Um Jovem Fiél à Deus — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-daniel" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-indigo-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+                🌟 Os Três Segredos de Daniel 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <div>
+                    <h3>🙏 Fé e Oração</h3>
+                    <p>Daniel orava três vezes por dia, mesmo sabendo que podia colocá-lo em perigo,
+                    <br>mas Deus o salvou milagrosamente, mostrando que a fé verdadeira é recompensada.
+                    <br>Referência: Daniel 6:10</p>
+                </div>
+                <div>
+                    <h3>🔮 Visões e Sonhos</h3>
+                    <p>Daniel interpretou sonhos e viu visões sobre o futuro, demonstrando que Deus está no controle da história
+                    <br>e queEle honra quem confia Nele.
+                    <br>Referência: Daniel 2:1-49</p>
+                </div>
+                <div>
+                    <h3>🦁 Coragem e Proteção</h3>
+                    <p>Daniel permaneceu fiel a Deus, mesmo na cova dos leões, e foi milagrosamente protegido,
+                    <br>mostrando que coragem e fé em Deus podem nos proteger em qualquer situação.
+                    <br>Referência: Daniel 6:1-28</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-daniel");
+        const modal = document.getElementById("modal-daniel");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seções 1-5 com alternância de imagem/texto -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <h2 class="text-3xl font-black mb-4">Quem são os personagens principais?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="text-lg text-gray-700">
+                    <p>Daniel, um jovem fiel a Deus, e seus amigos Hananias, Misael e Azarias (também conhecidos como Sadraque, Mesaque e Abede-Nego).</p>
+                </div>
+                <img src="daniel-personagem.png" alt="Personagens de Daniel" class="w-full h-auto rounded-xl shadow-xl object-contain">
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-white p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <h2 class="text-3xl font-black mb-4">O que o livro conta?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:flex-row-reverse">
+                <div class="text-lg text-gray-700">
+                    <p>Daniel foi levado para a Babilônia, mas permaneceu fiel a Deus. Ele interpretou sonhos e viu visões sobre o futuro.</p>
+                </div>
+                <img src="daniel-o-que-conta.png" alt="O que o livro de Daniel conta" class="w-full h-auto rounded-xl shadow-xl object-contain">
+            </div>
+        </div>
+    </section>
+
+    <section class="section bg-white p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <h2 class="text-3xl font-black mb-4">Por que é importante?</h2>
+            <p class="text-lg text-gray-700">Mostra que coragem e fé em Deus podem nos proteger até na cova dos leões!</p>
+            <img src="daniel-importante.png" alt="Importância do livro de Daniel" class="w-full h-auto rounded-xl shadow-xl object-contain mt-4">
+        </div>
+    </section>
+
+    <section class="section bg-white p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <h2 class="text-3xl font-black mb-4">Propósito do livro</h2>
+            <p class="text-lg text-gray-700">Ensinar que Deus está no controle da história e honra quem confia Nele.</p>
+            <img src="daniel-proposito.png" alt="Propósito do livro de Daniel" class="w-full h-auto rounded-xl shadow-xl object-contain mt-4">
+        </div>
+    </section>
+
+    <section class="section bg-white p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <h2 class="text-3xl font-black mb-4">Você sabia?</h2>
+            <p class="text-lg text-gray-700">Daniel orava três vezes por dia, mesmo sabendo que isso poderia colocá-lo em perigo — e Deus o salvou milagrosamente!</p>
+            <img src="daniel-curiosidade.png" alt="Curiosidade sobre Daniel" class="w-full h-auto rounded-xl shadow-xl object-contain mt-4">
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-indigo-600/20 to-purple-600/20 border-2 border-indigo-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../esdras/esdras.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ ESDRAS
+            </a>
+            <a href="../profetas-maiores.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros Proféticos
+            </a>
+            <a href="../oseias/oseias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                OSEIAS ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Daniel - Profetas Maiores ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Daniel');
+    </script>
+</body>
+</html>

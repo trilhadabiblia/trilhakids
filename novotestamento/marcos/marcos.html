@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Marcos - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="marcos-capa.png" alt="Capa: Marcos" id="img-marcos"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🦁</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 mx-2">
+                    LIVRO DE MARCOS
+                </span>
+                <span>⚡</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Jesus em Ação — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-marcos" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+                🌟 Os Três Segredos de Marcos 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">💪 Primeiro Segredo: Jesus Serve com Poder</h3>
+                    <p class="italic">
+                        Jesus não veio para ser servido,<br>
+                        Mas para servir com amor infinito!<br>
+                        Ele curou, ensinou e libertou,<br>
+                        Mostrando que servir é ser abençoado!<br>
+                        <span class="text-sm font-semibold text-sky-700 mt-2 block">📖 Marcos 10:45</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">⚡ Segundo Segredo: Milagres Acontecem!</h3>
+                    <p class="italic">
+                        Com uma palavra, o vento parou,<br>
+                        Com um toque, o cego enxergou!<br>
+                        Jesus fez milagres sem parar,<br>
+                        Mostrando que nada pode O limitar!<br>
+                        <span class="text-sm font-semibold text-blue-700 mt-2 block">📖 Marcos 4:39-41</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">❤️ Terceiro Segredo: Compaixão em Ação</h3>
+                    <p class="italic">
+                        Jesus viu os doentes e teve compaixão,<br>
+                        Tocou os leprosos com Seu coração!<br>
+                        Abraçou as crianças, alimentou multidões,<br>
+                        Ensinando amor através de Suas ações!<br>
+                        <span class="text-sm font-semibold text-sky-700 mt-2 block">📖 Marcos 1:41</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-marcos");
+        const modal = document.getElementById("modal-marcos");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            👥 Quem são os personagens principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="marcos-personagem.png" alt="Personagens de Marcos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✨ Jesus Cristo</h3>
+                    <p class="text-gray-700 text-lg">O Servo perfeito de Deus, sempre em movimento fazendo o bem, curando e ensinando com autoridade!</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">👨‍👨‍👦‍👦 Os Discípulos</h3>
+                    <p class="text-gray-700 text-lg">Pedro, João, Tiago e os outros que seguiram Jesus de perto, aprendendo a servir como Ele!</p>
+                </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🙏 Pessoas Curadas</h3>
+                    <p class="text-gray-700 text-lg">Cegos, surdos, paralíticos e muitos outros que experimentaram o poder transformador de Jesus!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">⚡ Jesus em Movimento</h3>
+                    <p class="text-gray-700 text-lg">Marcos mostra Jesus sempre ativo! Ele não para: cura doentes, expulsa demônios, ensina multidões e serve a todos!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">💪 Poder e Compaixão</h3>
+                    <p class="text-gray-700 text-lg">Cada milagre revela o coração de Jesus: Ele tem poder sobre tudo, mas usa esse poder para amar e ajudar!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✝️ Sacrifício e Salvação</h3>
+                    <p class="text-gray-700 text-lg">O livro termina mostrando Jesus dando Sua vida na cruz e ressuscitando, completando Sua missão de salvar!</p>
+                </div>
+            </div>
+            <div>
+                <img src="marcos-o-que-conta.png" alt="O que Marcos conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            💡 Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="marcos-importante.png" alt="Importância de Marcos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🌟 O Verdadeiro Exemplo</h3>
+                    <p class="text-gray-700 text-lg">Marcos ensina que a verdadeira grandeza está em servir aos outros, assim como Jesus fez!</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">❤️ Amor em Ação</h3>
+                    <p class="text-gray-700 text-lg">Aprendemos que amar não é só falar, mas fazer! Jesus mostrou amor através de Suas ações!</p>
+                </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🙌 Poder para Vencer</h3>
+                    <p class="text-gray-700 text-lg">O livro nos mostra que Jesus tem poder sobre todas as coisas e está sempre pronto para nos ajudar!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🦁 Jesus, o Servo Poderoso</h3>
+                    <p class="text-gray-700 text-lg">Mostrar Jesus como o Servo de Deus que veio para fazer o bem e demonstrar o amor do Pai!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">✝️ Missão de Salvação</h3>
+                    <p class="text-gray-700 text-lg">Revelar que Jesus veio para salvar a humanidade através de Sua vida, morte e ressurreição!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">👣 Chamado para Seguir</h3>
+                    <p class="text-gray-700 text-lg">Inspirar todos nós a seguir o exemplo de Jesus, servindo aos outros com amor e compaixão!</p>
+                </div>
+            </div>
+            <div>
+                <img src="marcos-proposito.png" alt="Propósito de Marcos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            🤔 Você sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="marcos-curiosidade.png" alt="Curiosidade sobre Marcos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl shadow-lg border-4 border-amber-400">
+                    <div class="text-6xl mb-4 text-center">📚⚡</div>
+                    <h3 class="text-3xl font-bold text-amber-600 mb-4 text-center">Evangelho de Ação!</h3>
+                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
+                        Marcos foi o <span class="font-bold text-amber-600">evangelho mais curto</span> e o <span class="font-bold text-sky-600">primeiro a ser escrito</span>! 
+                    </p>
+                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
+                        É cheio de <span class="font-bold text-blue-600">ação e milagres</span>, perfeito para mostrar Jesus em movimento! 
+                    </p>
+                    <p class="text-gray-700 text-xl leading-relaxed">
+                        A palavra <span class="font-bold text-sky-600">"imediatamente"</span> aparece mais de 40 vezes, mostrando que Jesus nunca parava de fazer o bem! ⚡
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../mateus/mateus.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Mateus
+            </a>
+            <a href="../novo-testamento.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Novo Testamento
+            </a>
+            <a href="../lucas/lucas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Lucas ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Marcos - Jesus em Ação ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Marcos');
+    </script>
+</body>
+</html>

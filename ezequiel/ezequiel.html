@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Ezequiel - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="ezequiel-capa.png" alt="Capa: Ezequiel" id="img-ezequiel"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                    aria-describedby="desc-ezequiel">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>👁️</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                    LIVRO DE EZEQUIEL
+                </span>
+                <span>👁️</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Visões, Restauração e Nova Vida — Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-ezequiel" class="sr-only" aria-hidden="true">
+                Clique na imagem para ler os versos!
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-ezequiel"
+        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-200">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+
+            <h2
+                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">
+                🌟 Os Três Segredos de Ezequiel 🌟
+            </h2>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <!-- Segredo 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✨ 1️⃣ A glória de Deus é impressionante e poderosa</h3>
+                    <p>
+                        Ezequiel viu visões maravilhosas do trono de Deus,<br>
+                        Querubins com asas, rodas de fogo, tudo grandioso!<br>
+                        A glória do Senhor brilhava como cristal,<br>
+                        Mostrando que Deus é soberano e celestial!<br><br>
+
+                        👁️ Quando vemos quem Deus realmente é,<br>
+                        Ficamos maravilhados, com reverência e fé!<br>
+                        Ele é glorioso, majestoso e santo,<br>
+                        Digno de todo louvor e canto!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ezequiel 1:1-28</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🦴 2️⃣ Deus pode dar vida ao que parece morto</h3>
+                    <p>
+                        Ezequiel viu um vale cheio de ossos secos,<br>
+                        Parecia impossível, sem vida, sem nexo!<br>
+                        Mas Deus mandou profetizar aos ossos ali,<br>
+                        E eles ganharam vida, ficaram de pé, vi!<br><br>
+
+                        💪 O que parece impossível para nós,<br>
+                        É totalmente possível para Deus, nossa voz!<br>
+                        Ele pode restaurar sonhos, corações e vidas,<br>
+                        Trazendo esperança às almas feridas!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ezequiel 37:1-14</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">❤️ 3️⃣ Deus promete um coração novo</h3>
+                    <p>
+                        <b>Que promessa linda!</b> Deus não desiste de nós,<br>
+                        Ele promete um coração novo, uma nova voz!<br>
+                        Tirará o coração de pedra, duro e frio,<br>
+                        E dará um coração de carne, cheio de brio!<br><br>
+
+                        🌱 Deus transforma por dentro, muda nossa essência,<br>
+                        Coloca Seu Espírito, dá nova presença!<br>
+                        Não importa o passado ou onde estivemos,<br>
+                        Deus nos renova, somos recriados, cremos!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ezequiel 36:26-27</span>
+                    </p>
+                </div>
+
+                <!-- Moral -->
+                <div class="text-center mt-10">
+                    <p class="text-xl font-semibold text-purple-800">
+                        📘 Moral da história:<br>
+                        Confie no poder de Deus para restaurar,<br>
+                        Ele pode renovar e tudo transformar! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const imgEzequiel = document.getElementById("img-ezequiel");
+        const modal = document.getElementById("modal-ezequiel");
+        const closeModal = document.getElementById("close-modal");
+
+        imgEzequiel.addEventListener("click", () => {
+            modal.classList.remove("modal-hidden");
+            modal.classList.add("modal-visible");
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("modal-visible");
+            modal.classList.add("modal-hidden");
+        });
+
+        // Fechar ao clicar fora
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="ezequiel-personagem.png" alt="Quem são os personagens principais?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-4 border-purple-500">
+                    <h2 class="text-4xl font-black text-purple-700 mb-6">👥 Quem são os personagens principais?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-purple-600">Ezequiel</span>, o profeta sacerdote que teve visões impressionantes de Deus.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Os <span class="font-bold text-purple-600">exilados na Babilônia</span>, o povo de Israel vivendo longe de casa.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            E os <span class="font-bold text-purple-600">líderes e reis de Israel</span>, que precisavam ouvir as mensagens de Deus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-8 rounded-2xl border-4 border-indigo-500">
+                        <h2 class="text-4xl font-black text-indigo-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Ezequiel teve <span class="font-bold text-indigo-600">visões impressionantes de Deus</span> — querubins, rodas de fogo e Sua glória!
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Ele falou ao <span class="font-bold text-indigo-600">povo cativo na Babilônia</span> sobre arrependimento e mudança.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Trouxe mensagens de <span class="font-bold text-indigo-600">esperança e restauração</span>, mostrando que Deus não os havia esquecido!
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-indigo-600">48 capítulos</span> de visões e profecias poderosas!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="ezequiel-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="ezequiel-importante.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
+                    <h2 class="text-4xl font-black text-violet-700 mb-6">💫 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina que, <span class="font-bold text-violet-600">mesmo longe de casa</span>, Deus continua conosco e nos ouve.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra que <span class="font-bold text-violet-600">Deus tem poder para restaurar tudo</span> — sonhos, esperanças e vidas!
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Revela que <span class="font-bold text-violet-600">nada é impossível para Deus</span>, nem situações que parecem sem vida!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-fuchsia-50 to-pink-50 p-8 rounded-2xl border-4 border-fuchsia-500">
+                        <h2 class="text-4xl font-black text-fuchsia-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-fuchsia-600">Mostrar que Deus renova corações</span> e tira o que é duro para colocar amor e vida.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Ensinar que <span class="font-bold text-fuchsia-600">Deus dá nova vida ao Seu povo</span>, transformando o que parece morto em algo vivo!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="ezequiel-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="ezequiel-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-4 border-emerald-500">
+                    <h2 class="text-4xl font-black text-emerald-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-emerald-600">Ezequiel viu uma visão de ossos secos que voltaram à vida!</span>
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            É <span class="font-bold text-emerald-600">um dos momentos mais incríveis da Bíblia</span> — mostrando o poder de Deus de ressuscitar!
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-emerald-300">
+                            <p class="text-sm text-gray-700 italic">Deus transforma morte em vida com Seu poder! 🦴✨
+                                </br></br>
+                                Então o Senhor me perguntou: "Filho do homem, esses ossos poderão tornar a viver?" E eu respondi: "Ó Soberano Senhor, só tu o sabes." Então ele me disse: "Profetize a estes ossos e diga-lhes: Ossos secos, ouçam a palavra do Senhor!"</br>Ezequiel 37:3-4</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-purple-700/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../lamentacoes/lamentacoes.html"
+                class="bg-gradient-to-r from-purple-700 to-indigo-600 hover:from-purple-800 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Lamentações
+            </a>
+            <a href="../profetas-maiores.html"
+                class="bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros Proféticos
+            </a>
+            <a href="../daniel/daniel.html"
+                class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Daniel ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Ezequiel - Visões e Restauração ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Ezequiel');
+    </script>
+</body>
+
+</html>

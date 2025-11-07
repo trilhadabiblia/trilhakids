@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Novo Testamento - Livros da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-blue-600 to-indigo-600 backdrop-blur-xl border-b border-blue-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center">
+        <div class="hidden md:block text-center">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">✝️ NOVO TESTAMENTO</h1>
+          <p class="text-blue-100 text-sm md:text-base">A História de Jesus e da Igreja</p>
+        </div>
+        <div class="md:hidden text-center">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">✝️ NOVO TESTAMENTO</h1>
+          <p class="text-blue-100 text-sm">A História de Jesus e da Igreja</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        📖 27 Livros de Esperança e Amor
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        O Novo Testamento nos conta a incrível história de Jesus Cristo e como seu amor transformou o mundo!
+      </p>
+    </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+
+      <!-- Evangelhos -->
+      <div class="group cursor-pointer" onclick="irPara('evangelhos.html')">
+        <div
+          class="bg-gradient-to-br from-rose-600 to-pink-600 rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-pink-500/40 transition-all duration-300 hover:scale-105 border border-pink-400/30">
+          <div class="text-6xl mb-4">❤️</div>
+          <h3 class="font-black text-white text-2xl mb-3">Evangelhos</h3>
+          <p class="text-pink-100 mb-3">4 livros</p>
+          <p class="text-sm text-pink-200">A vida e os ensinamentos de Jesus</p>
+        </div>
+      </div>
+
+      <!-- Histórico -->
+      <div class="group cursor-pointer" onclick="irPara('historico.html')">
+        <div
+          class="bg-gradient-to-br from-orange-600 to-amber-600 rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105 border border-orange-400/30">
+          <div class="text-6xl mb-4">🔥</div>
+          <h3 class="font-black text-white text-2xl mb-3">Histórico</h3>
+          <p class="text-orange-100 mb-3">1 livro</p>
+          <p class="text-sm text-orange-200">Os primeiros dias da Igreja</p>
+        </div>
+      </div>
+
+      <!-- Cartas de Paulo -->
+      <div class="group cursor-pointer" onclick="irPara('cartasdepaulo.html')">
+        <div
+          class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-blue-500/40 transition-all duration-300 hover:scale-105 border border-blue-400/30">
+          <div class="text-6xl mb-4">✉️</div>
+          <h3 class="font-black text-white text-2xl mb-3">Cartas de Paulo</h3>
+          <p class="text-blue-100 mb-3">13 livros</p>
+          <p class="text-sm text-blue-200">Ensinamentos para as igrejas</p>
+        </div>
+      </div>
+
+      <!-- Outras Cartas -->
+      <div class="group cursor-pointer" onclick="irPara('outrascartas.html')">
+        <div
+          class="bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-300 hover:scale-105 border border-purple-400/30">
+          <div class="text-6xl mb-4">📨</div>
+          <h3 class="font-black text-white text-2xl mb-3">Outras Cartas</h3>
+          <p class="text-purple-100 mb-3">8 livros</p>
+          <p class="text-sm text-purple-200">Mensagens de esperança e fé</p>
+        </div>
+      </div>
+
+      <!-- Profético -->
+      <div class="group cursor-pointer" onclick="irPara('profetico.html')">
+        <div
+          class="bg-gradient-to-br from-emerald-600 to-teal-600 rounded-xl p-8 text-center hover:shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-105 border border-emerald-400/30">
+          <div class="text-6xl mb-4">🌟</div>
+          <h3 class="font-black text-white text-2xl mb-3">Profético</h3>
+          <p class="text-emerald-100 mb-3">1 livro</p>
+          <p class="text-sm text-emerald-200">A revelação do futuro</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Descrições detalhadas -->
+    <section class="grid md:grid-cols-2 gap-6 mb-12">
+
+      <div class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-pink-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-pink-300 mb-3">❤️ Evangelhos</h3>
+        <p class="text-gray-300 mb-3">Os quatro evangelhos (Mateus, Marcos, Lucas e João) contam a história da vida, morte e ressurreição de Jesus.</p>
+        <p class="text-sm text-pink-200">📖 Mateus • Marcos • Lucas • João</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-orange-300 mb-3">🔥 Histórico</h3>
+        <p class="text-gray-300 mb-3">O livro de Atos mostra como o Espírito Santo capacitou os apóstolos a espalhar o evangelho pelo mundo.</p>
+        <p class="text-sm text-orange-200">📖 Atos dos Apóstolos</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-blue-300 mb-3">✉️ Cartas de Paulo</h3>
+        <p class="text-gray-300 mb-3">Paulo escreveu cartas cheias de sabedoria para orientar as primeiras comunidades cristãs.</p>
+        <p class="text-sm text-blue-200">📖 Romanos • Coríntios • Gálatas • e mais 10 livros</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-purple-300 mb-3">📨 Outras Cartas</h3>
+        <p class="text-gray-300 mb-3">Cartas escritas por outros apóstolos, ensinando sobre fé, amor e perseverança.</p>
+        <p class="text-sm text-purple-200">📖 Hebreus • Tiago • Pedro • João • Judas</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-emerald-500/10 to-teal-500/10 border border-emerald-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-emerald-300 mb-3">🌟 Profético</h3>
+        <p class="text-gray-300 mb-3">O Apocalipse revela a vitória final de Jesus e a promessa de um novo céu e uma nova terra.</p>
+        <p class="text-sm text-emerald-200">📖 Apocalipse</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border border-yellow-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-yellow-300 mb-3">💫 Importância</h3>
+        <p class="text-gray-300">O Novo Testamento nos mostra o amor de Deus através de Jesus e como podemos viver uma vida que agrada a Ele.</p>
+      </div>
+
+    </section>
+
+    <!-- Curiosidade -->
+    <section class="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 rounded-2xl p-8 text-center">
+      <div class="text-5xl mb-4">✨</div>
+      <h3 class="text-2xl font-bold text-indigo-300 mb-3">Você Sabia?</h3>
+      <p class="text-gray-300 max-w-3xl mx-auto">
+        O Novo Testamento foi escrito em grego, a língua mais falada da época! Jesus falava aramaico, mas os escritores usaram o grego para que mais pessoas pudessem conhecer sua mensagem de amor.
+      </p>
+    </section>
+
+  </main>
+
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-blue-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
+    <p class="text-sm">Ministério Infantil - Kids | Desenvolvido com ❤️ para crianças</p>
+  </footer>
+
+  <script>
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+  </script>
+  <script src="/menu.js"></script>
+  <script src="./gamificacao.js"></script>
+</body>
+
+</html>

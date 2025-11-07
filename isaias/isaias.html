@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Isaías - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print {
+            body {
+                background: white;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
+        .modal {
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="isaias-capa.png" alt="Capa: Isaías" id="img-isaias"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
+                    aria-describedby="desc-isaias">
+            </div>
+
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>📣</span>
+                <span
+                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 mx-2">
+                    LIVRO DE ISAÍAS
+                </span>
+                <span>📣</span>
+            </h1>
+
+            <p class="text-xl text-gray-600 font-semibold">Profecia, Esperança e o Salvador — Um Resumo Visual para
+                Crianças</p>
+
+            <span id="desc-isaias" class="sr-only" aria-hidden="true">
+                Clique na imagem para ler os versos!
+            </span>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal-isaias"
+        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div
+            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-blue-200">
+            <button id="close-modal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+
+            <h2
+                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-600">
+                🌟 Os Três Segredos de Isaías 🌟
+            </h2>
+
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <!-- Segredo 1 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🙌 1️⃣ Deus é santo, mas também misericordioso</h3>
+                    <p>
+                        Isaías viu a glória de Deus no trono celestial,<br>
+                        Anjos cantavam: "Santo, santo, santo é o Senhor real!"<br>
+                        Deus é perfeito, justo e puro em Seu ser,<br>
+                        Mas também cheio de amor e perdão, pronto a acolher!<br><br>
+
+                        ✨ Mesmo quando pecamos e nos afastamos,<br>
+                        Deus estende Sua mão e nos chamamos.<br>
+                        Ele é santo, mas nunca nos abandona,<br>
+                        Seu amor e misericórdia sempre nos perdoa!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Isaías 6:1-7</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 2 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">✝️ 2️⃣ Jesus foi profetizado centenas de anos antes</h3>
+                    <p>
+                        Isaías falou de um Salvador que viria,<br>
+                        Um menino nasceria, Emanuel seria!<br>
+                        Servo sofredor que carregaria nossa dor,<br>
+                        Morreria por nós, esse é Jesus, nosso Senhor!<br><br>
+
+                        🌟 Séculos antes de Cristo nascer,<br>
+                        Isaías já podia ver e conhecer!<br>
+                        Ele profetizou Seu nascimento e missão,<br>
+                        Provando que Deus cumpre toda promessa com precisão!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Isaías 7:14; 53:1-12</span>
+                    </p>
+                </div>
+
+                <!-- Segredo 3 -->
+                <div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🌈 3️⃣ Deus promete um futuro glorioso</h3>
+                    <p>
+                        <b>Que esperança!</b> Isaías falou de um novo céu e terra,<br>
+                        Onde não haverá choro, dor ou guerra.<br>
+                        Paz eterna, alegria sem fim,<br>
+                        Todos os que confiam em Deus viverão assim!<br><br>
+
+                        💫 As promessas de Deus são certas e verdadeiras,<br>
+                        Ele prepara um lugar de forma sincera!<br>
+                        Um dia todo mal será desfeito,<br>
+                        E viveremos com Ele para sempre, perfeito!<br><br>
+
+                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Isaías 65:17-25</span>
+                    </p>
+                </div>
+
+                <!-- Moral -->
+                <div class="text-center mt-10">
+                    <p class="text-xl font-semibold text-blue-800">
+                        📘 Moral da história:<br>
+                        Confie em Deus, pois Ele tem um plano perfeito,<br>
+                        De amor, perdão e um futuro sem defeito! 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const imgIsaias = document.getElementById("img-isaias");
+        const modal = document.getElementById("modal-isaias");
+        const closeModal = document.getElementById("close-modal");
+
+        imgIsaias.addEventListener("click", () => {
+            modal.classList.remove("modal-hidden");
+            modal.classList.add("modal-visible");
+        });
+
+        closeModal.addEventListener("click", () => {
+            modal.classList.remove("modal-visible");
+            modal.classList.add("modal-hidden");
+        });
+
+        // Fechar ao clicar fora
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("modal-visible");
+                modal.classList.add("modal-hidden");
+            }
+        });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="isaias-personagem.png" alt="Quem são os personagens principais?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-4 border-blue-500">
+                    <h2 class="text-4xl font-black text-blue-700 mb-6">👥 Quem são os personagens principais?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-blue-600">Isaías</span>, o grande profeta que recebeu mensagens poderosas de Deus.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Os <span class="font-bold text-blue-600">reis de Judá</span>, como Ezequias e Acaz, que precisavam ouvir a voz de Deus.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            E o <span class="font-bold text-blue-600">povo de Israel</span>, que precisava se arrepender e voltar para Deus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-8 rounded-2xl border-4 border-indigo-500">
+                        <h2 class="text-4xl font-black text-indigo-700 mb-6">📖 O que o livro conta?</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Isaías traz <span class="font-bold text-indigo-600">mensagens de Deus sobre arrependimento</span>, chamando o povo a voltar para Ele.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Fala sobre <span class="font-bold text-indigo-600">esperança e o futuro Salvador</span> que viria para trazer paz e salvação ao mundo.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Profetiza sobre <span class="font-bold text-indigo-600">Jesus Cristo</span> com detalhes incríveis, centenas de anos antes!
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                O livro tem <span class="font-bold text-indigo-600">66 capítulos</span> repletos de profecias e esperança!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="isaias-o-que-conta.png" alt="O que o livro conta?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="isaias-importante.png" alt="Por que é importante?"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
+                    <h2 class="text-4xl font-black text-violet-700 mb-6">💫 Por que é importante?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Mostra que <span class="font-bold text-violet-600">Deus tem um plano de amor e perdão</span>, mesmo quando o povo erra.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Revela que <span class="font-bold text-violet-600">Deus sempre cumpre Suas promessas</span>, inclusive enviando Jesus como Salvador.
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Ensina que <span class="font-bold text-violet-600">nunca é tarde para se arrepender</span> e voltar para os braços de Deus!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div
+                        class="bg-gradient-to-br from-cyan-50 to-sky-50 p-8 rounded-2xl border-4 border-cyan-500">
+                        <h2 class="text-4xl font-black text-cyan-700 mb-6">🎯 Propósito do livro</h2>
+                        <div class="space-y-4">
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                <span class="font-bold text-cyan-600">Ensinar que Deus é justo, mas também cheio de misericórdia</span>, sempre pronto a perdoar.
+                            </p>
+                            <p class="text-gray-800 text-lg leading-relaxed">
+                                Mostrar que <span class="font-bold text-cyan-600">Ele cumpre todas as Suas promessas</span> e tem um plano perfeito de salvação!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="isaias-proposito.png" alt="Propósito do livro"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-white p-8 mb-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="isaias-curiosidade.png" alt="Curiosidade Divertida"
+                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                </div>
+                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-4 border-emerald-500">
+                    <h2 class="text-4xl font-black text-emerald-700 mb-6">💡 Você sabia?</h2>
+                    <div class="space-y-4">
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            <span class="font-bold text-emerald-600">Isaías é chamado de "profeta evangelista"!</span>
+                        </p>
+                        <p class="text-gray-800 text-lg leading-relaxed">
+                            Porque ele <span class="font-bold text-emerald-600">falou muito sobre Jesus</span> centenas de anos antes do Seu nascimento!
+                        </p>
+                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-emerald-300">
+                            <p class="text-sm text-gray-700 italic">Deus já sabia de tudo e planejou nossa salvação desde sempre! ✝️✨
+                                </br></br>
+                                Portanto, o próprio Senhor lhes dará um sinal: a virgem ficará grávida e dará à luz um filho, e o chamará Emanuel... Porque um menino nos nasceu, um filho nos foi dado, e o governo está sobre os seus ombros. E ele será chamado Maravilhoso Conselheiro, Deus Poderoso, Pai Eterno, Príncipe da Paz.</br>Isaías 7:14; 9:6</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NAVEGAÇÃO -->
+    <section
+        class="no-print text-center bg-gradient-to-r from-blue-700/20 to-indigo-700/20 border-2 border-blue-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../profetas-maiores.html"
+                class="bg-gradient-to-r from-blue-700 to-indigo-600 hover:from-blue-800 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Ver Livros Proféticos
+            </a>
+            <a href="../jeremias/jeremias.html"
+                class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Jeremias ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Isaías - O Profeta Evangelista ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Isaías');
+    </script>
+</body>
+
+</html>

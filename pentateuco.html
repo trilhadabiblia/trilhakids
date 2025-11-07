@@ -1,89 +1,25 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pentateuco - Livros da Bíblia</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    .menu-open {
-      transform: translateX(0);
-    }
-    
-    .menu-closed {
-      transform: translateX(-100%);
-    }
-    
-    .overlay-show {
-      opacity: 1;
-      visibility: visible;
-    }
-    
-    .overlay-hide {
-      opacity: 0;
-      visibility: hidden;
-    }
-  </style>
 </head>
+
 <body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
-  <!-- Menu Hamburger -->
-  <!--button onclick="toggleMenu()" class="fixed top-6 left-6 z-50 bg-gradient-to-r from-purple-600 to-violet-600 p-3 rounded-lg hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg">
-    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button-->
 
-  <!-- Overlay -->
-  <div id="overlay" class="overlay-hide fixed inset-0 bg-black/50 z-30 transition-all duration-300" onclick="toggleMenu()"></div>
-
-  <!-- Sidebar Menu -->
-  <aside id="sidebar" class="menu-closed fixed left-0 top-0 h-screen w-80 bg-gradient-to-b from-slate-800 to-slate-900 border-r border-purple-500/30 z-40 transition-transform duration-300 overflow-y-auto">
-    <div class="p-6">
-      <h2 class="text-2xl font-black text-purple-300 mb-8">📖 LIVROS DA BÍBLIA</h2>
-      
-      <!-- Antigo Testamento -->
-      <div class="mb-6">
-        <h3 class="text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
-          <span>📜</span> Antigo Testamento
-        </h3>
-        <div class="space-y-2 pl-4">
-          <a href="pentateuco.html" class="block text-gray-300 hover:text-purple-300 transition">🔤 Pentateuco</a>
-          <a href="historicos.html" class="block text-gray-300 hover:text-purple-300 transition">⚖️ Históricos</a>
-          <a href="poeticos.html" class="block text-gray-300 hover:text-purple-300 transition">🎵 Poéticos</a>
-          <a href="profetas-maiores.html" class="block text-gray-300 hover:text-purple-300 transition">📢 Profetas Maiores</a>
-          <a href="profetas-menores.html" class="block text-gray-300 hover:text-purple-300 transition">🔔 Profetas Menores</a>
-        </div>
-      </div>
-
-      <!-- Novo Testamento -->
-      <div class="mb-6 border-t border-purple-500/30 pt-6">
-        <h3 class="text-lg font-bold text-blue-400 mb-3 flex items-center gap-2">
-          <span>✨</span> Novo Testamento
-        </h3>
-        <div class="space-y-2 pl-4">
-          <a href="evangelhos.html" class="block text-gray-300 hover:text-purple-300 transition">😇 Evangelhos</a>
-          <a href="atos.html" class="block text-gray-300 hover:text-purple-300 transition">🚀 Histórico (Atos)</a>
-          <a href="cartas-paulo.html" class="block text-gray-300 hover:text-purple-300 transition">✉️ Cartas de Paulo</a>
-          <a href="outras-cartas.html" class="block text-gray-300 hover:text-purple-300 transition">📮 Outras Cartas</a>
-          <a href="apocalipse.html" class="block text-gray-300 hover:text-purple-300 transition">🔮 Profecias (Apocalipse)</a>
-        </div>
-      </div>
-
-      <!-- Link Home -->
-      <div class="border-t border-purple-500/30 pt-6">
-        <a href="index.html" class="block text-purple-400 hover:text-purple-200 font-bold transition">← Voltar à Home</a>
-      </div>
-    </div>
-  </aside>
-
-  <!-- Header -->
-  <header class="bg-gradient-to-r from-amber-600 to-yellow-600 backdrop-blur-xl border-b border-amber-400/30 sticky top-0 z-20 shadow-2xl">
+  <header
+    class="bg-gradient-to-r from-amber-600 to-yellow-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-      <div class="flex items-center justify-between ml-16 md:ml-0">
-        <div>
-          <h1 class="text-4xl font-black text-white drop-shadow-lg">
-            🔤 PENTATEUCO
-          </h1>
+      <div class="flex items-center justify-center"> <!-- centraliza o conteúdo -->
+        <div class="hidden md:block">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">🔤 PENTATEUCO</h1>
+          <p class="text-amber-100 text-sm md:text-base">Os 5 primeiros livros da Bíblia</p>
+        </div>
+        <div class="md:hidden">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">🔤 PENTATEUCO</h1>
           <p class="text-amber-100 text-sm md:text-base">Os 5 primeiros livros da Bíblia</p>
         </div>
       </div>
@@ -92,7 +28,7 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto px-4 py-12">
-    
+
     <!-- Hero Section -->
     <section class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
@@ -105,10 +41,11 @@
 
     <!-- Livros Grid -->
     <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
-      
+
       <!-- Gênesis -->
       <div class="group cursor-pointer" onclick="irPara('genesis/genesis.html')">
-        <div class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+        <div
+          class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
           <div class="text-4xl mb-3">🌍</div>
           <h3 class="font-bold text-white mb-2">Gênesis</h3>
           <p class="text-sm text-red-100">Criação e Origem</p>
@@ -117,7 +54,8 @@
 
       <!-- Êxodo -->
       <div class="group cursor-pointer" onclick="irPara('exodo/exodo.html')">
-        <div class="bg-gradient-to-br from-orange-600 to-amber-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
+        <div
+          class="bg-gradient-to-br from-orange-600 to-amber-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
           <div class="text-4xl mb-3">⛩️</div>
           <h3 class="font-bold text-white mb-2">Êxodo</h3>
           <p class="text-sm text-orange-100">Libertação e Lei</p>
@@ -126,7 +64,8 @@
 
       <!-- Levítico -->
       <div class="group cursor-pointer" onclick="irPara('levitico/levitico.html')">
-        <div class="bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
+        <div
+          class="bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
           <div class="text-4xl mb-3">🕯️</div>
           <h3 class="font-bold text-white mb-2">Levítico</h3>
           <p class="text-sm text-yellow-100">Leis Sagradas</p>
@@ -135,7 +74,8 @@
 
       <!-- Números -->
       <div class="group cursor-pointer" onclick="irPara('numeros/numeros.html')">
-        <div class="bg-gradient-to-br from-lime-600 to-green-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
+        <div
+          class="bg-gradient-to-br from-lime-600 to-green-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
           <div class="text-4xl mb-3">📊</div>
           <h3 class="font-bold text-white mb-2">Números</h3>
           <p class="text-sm text-lime-100">Jornada no Deserto</p>
@@ -144,7 +84,8 @@
 
       <!-- Deuteronômio -->
       <div class="group cursor-pointer" onclick="irPara('deuteronomio/deuteronomio.html')">
-        <div class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+        <div
+          class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
           <div class="text-4xl mb-3">📜</div>
           <h3 class="font-bold text-white mb-2">Deuteronômio</h3>
           <p class="text-sm text-teal-100">Lei Revisitada</p>
@@ -154,10 +95,11 @@
 
     <!-- Descrições detalhadas -->
     <section class="grid md:grid-cols-2 gap-6 mb-12">
-      
+
       <div class="bg-gradient-to-br from-red-500/10 to-rose-500/10 border border-red-500/30 rounded-2xl p-6">
         <h3 class="text-2xl font-bold text-red-300 mb-3">🌍 Gênesis</h3>
-        <p class="text-gray-300">A história da criação, Adão e Eva, Noé e o dilúvio, e as promessas de Deus a Abraão.</p>
+        <p class="text-gray-300">A história da criação, Adão e Eva, Noé e o dilúvio, e as promessas de Deus a Abraão.
+        </p>
       </div>
 
       <div class="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/30 rounded-2xl p-6">
@@ -182,23 +124,25 @@
 
       <div class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-6">
         <h3 class="text-2xl font-bold text-purple-300 mb-3">🎯 Importância</h3>
-        <p class="text-gray-300">O Pentateuco estabelece os fundamentos da fé, a lei de Deus e a história do povo escolhido.</p>
+        <p class="text-gray-300">O Pentateuco estabelece os fundamentos da fé, a lei de Deus e a história do povo
+          escolhido.</p>
       </div>
     </section>
 
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
-    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
-    <p class="text-sm">Ministério Infantil - Kids | Desenvolvido com ❤️ para crianças</p>
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para criança</p>
   </footer>
 
   <script>
     function toggleMenu() {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
-      
+
       sidebar.classList.toggle('menu-open');
       sidebar.classList.toggle('menu-closed');
       overlay.classList.toggle('overlay-show');
@@ -218,7 +162,7 @@
     window.addEventListener('resize', () => {
       const sidebar = document.getElementById('sidebar');
       const overlay = document.getElementById('overlay');
-      
+
       if (window.innerWidth >= 768) {
         sidebar.classList.remove('menu-open');
         sidebar.classList.add('menu-closed');
@@ -230,4 +174,5 @@
   <script src="/menu.js"></script>
   <script src="./gamificacao.js"></script>
 </body>
+
 </html>

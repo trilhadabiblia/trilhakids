@@ -2,266 +2,276 @@
 <html lang="pt-BR">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Origens da Humanidade – Trilho Kids</title>
-	<script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Origens da Humanidade – Trilho Kids</title>
+  <meta name="description"
+    content="Conheça Adão, Eva, Caim, Abel e Sete — os primeiros personagens da Bíblia. Aprenda sobre fé, escolhas e a criação no Portal Trilho Kids.">
+  <meta name="keywords"
+    content="Trilho Kids, Bíblia, crianças, Adão, Eva, Criação, Gênesis, Origens da Humanidade">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animações suaves para transições e modal */
+    .card-content {
+      transition: all 0.3s ease-in-out;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  </style>
 </head>
 
-<body class="bg-gradient-to-br from-emerald-900 via-amber-900 to-yellow-900 min-h-screen font-sans text-gray-100">
+<body
+  class="bg-gradient-to-br from-emerald-900 via-amber-900 to-yellow-900 min-h-screen font-sans text-gray-100 selection:bg-amber-500/30">
 
-	<!-- Header -->
-	<header
-		class="bg-gradient-to-r from-emerald-600 to-lime-600 backdrop-blur-xl border-b border-green-400/30 sticky top-0 z-50 shadow-2xl">
-		<div class="max-w-6xl mx-auto px-4 py-8">
-			<div class="text-center">
-				<h1 class="text-5xl font-black text-white drop-shadow-lg mb-2">
-					🌍 ORIGENS DA HUMANIDADE 🌿
-				</h1>
-				<p class="text-xl text-green-100">👣 Os Primeiros Passos da Criação – Trilho Kids 👣</p>
-			</div>
-		</div>
-		
-	</header>
+  <!-- Header -->
+  <header
+    class="bg-gradient-to-r from-emerald-600 to-lime-600 backdrop-blur-xl border-b border-green-400/30 sticky top-0 z-50 shadow-2xl">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-center">
+      <h1 class="text-5xl font-black text-white drop-shadow-lg mb-2">
+        🌍 ORIGENS DA HUMANIDADE 🌿
+      </h1>
+      <p class="text-xl text-green-100">👣 Os Primeiros Passos da Criação – Trilho Kids 👣</p>
+    </div>
+  </header>
 
-	<!-- Versículo Tema -->
-	<section
-		class="max-w-4xl mx-auto mt-10 mb-6 bg-gradient-to-r from-green-700/40 to-emerald-800/40 border border-green-500/30 p-6 rounded-2xl shadow-lg backdrop-blur text-center">
-		<p class="text-2xl italic text-amber-200 mb-2">
-			“Criou Deus o homem à sua imagem; à imagem de Deus o criou; homem e mulher os criou.”
-		</p>
-		<p class="text-green-300 font-bold">— Gênesis 1:27</p>
-		<p class="max-w-2xl mx-auto text-white-900 text-base leading-relaxed">
-			<br>
-			Aqui começa a grande história da humanidade 🌱✨  
-			Deus criou o mundo com amor, moldou o homem e a mulher com suas próprias mãos e os colocou no Jardim do Éden.  
-			Nessa jornada, aprendemos sobre a obediência, a fé e as escolhas que moldam nosso coração.  
-			Cada personagem deste início carrega lições preciosas sobre como viver perto de Deus.
-		</p>
-	</section>
+  <!-- Versículo Tema -->
+  <section
+    class="max-w-4xl mx-auto mt-10 mb-6 bg-gradient-to-r from-green-700/40 to-emerald-800/40 border border-green-500/30 p-6 rounded-2xl shadow-lg backdrop-blur text-center">
+    <p class="text-2xl italic text-amber-200 mb-2">
+      “Criou Deus o homem à sua imagem; à imagem de Deus o criou; homem e mulher os criou.”
+    </p>
+    <p class="text-green-300 font-bold">— Gênesis 1:27</p>
+    <p class="max-w-2xl mx-auto text-white text-base leading-relaxed mt-4">
+      Aqui começa a grande história da humanidade 🌱✨  
+      Deus criou o mundo com amor, moldou o homem e a mulher com suas próprias mãos e os colocou no Jardim do Éden.  
+      Nessa jornada, aprendemos sobre a obediência, a fé e as escolhas que moldam nosso coração.  
+      Cada personagem deste início carrega lições preciosas sobre como viver perto de Deus.
+    </p>
+  </section>
 
-	<!-- Main Content -->
-	<main class="max-w-5xl mx-auto px-4 py-12">
-		<div id="cartas-container" class="space-y-6"></div>
-	</main>
+  <!-- Main Content -->
+  <main id="main-content" class="max-w-5xl mx-auto px-4 py-12">
+    <div id="cartas-container" class="space-y-6"></div>
+  </main>
 
-	<!-- Footer -->
-	<footer class="text-center py-8 text-amber-300 border-t border-yellow-500/30 mt-16">
-		<p class="font-semibold">© 2025 - Trilha de Ensino: O Início de Tudo</p>
-		<p class="text-sm mt-2">Ministério Infantil - Trilho Kids</p>
-	</footer>
+  <!-- Footer -->
+  <footer class="text-center py-8 text-amber-300 border-t border-yellow-500/30 mt-16">
+    <p class="font-semibold">© 2025 - Trilha de Ensino: O Início de Tudo</p>
+    <p class="text-sm mt-2">Ministério Infantil - Trilho Kids</p>
+  </footer>
 
-	<!-- Modal Imagem -->
-	<div id="modal-imagem"
-		class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-		onclick="fecharModal()">
-		<div class="bg-slate-900 rounded-2xl border-2 border-green-500/50 p-6 max-w-2xl w-full shadow-2xl"
-			onclick="event.stopPropagation()">
-			<div class="flex justify-between items-center mb-4">
-				<h2 id="modal-titulo" class="text-2xl font-black text-white"></h2>
-				<button onclick="fecharModal()" class="text-gray-400 hover:text-white text-2xl">✕</button>
-			</div>
-			<img id="modal-imagem-src" src="" alt=""
-				class="w-full rounded-xl mb-4 max-h-96 md:max-h-[500px] object-contain mx-auto">
-			<p class="text-gray-300 text-center text-sm">Clique fora para fechar</p>
-		</div>
-	</div>
+  <!-- Modal Imagem -->
+  <div id="modal-imagem"
+    class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+    aria-hidden="true">
+    <div
+      class="bg-slate-900 rounded-2xl border-2 border-green-500/50 p-6 max-w-2xl w-full shadow-2xl fade-in relative"
+      role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+      <button onclick="fecharModal()" aria-label="Fechar modal"
+        class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">✕</button>
+      <h2 id="modal-titulo" class="text-2xl font-black text-white mb-4 text-center"></h2>
+      <img id="modal-imagem-src" src="" alt="" loading="lazy"
+        class="w-full rounded-xl mb-4 max-h-96 md:max-h-[500px] object-contain mx-auto">
+      <p class="text-gray-300 text-center text-sm">Clique fora ou pressione ESC para fechar</p>
+    </div>
+  </div>
 
-	<script>
-		const juizes = [
-			{
-				id: 1,
-				nome: "Adão",
-				img: "img/adao.png",
-				tribo: "Jardim do Éden",
-				funcao: "Primeiro homem",
-				periodo: "Criação",
-				poderEspecial: "Nomear toda a criação e refletir a imagem de Deus",
-				fortes: ["Primeiro ser humano", "Criado à imagem de Deus", "Companheiro e líder no Éden"],
-				fracos: ["Desobediência", "Queda no pecado"],
-				versiculo: "Formou o Senhor Deus o homem do pó da terra e soprou em suas narinas o fôlego da vida.",
-				referencia: "Gênesis 2:7",
-				curiosidade: "Adão foi o primeiro homem, criado diretamente por Deus, responsável por cuidar do Jardim do Éden.",
-				cor: "from-green-500 to-emerald-600"
-			},
-			{
-				id: 2,
-				nome: "Eva",
-				img: "img/eva.png",
-				tribo: "Jardim do Éden",
-				funcao: "Primeira mulher",
-				periodo: "Criação",
-				poderEspecial: "Doadora de vida e auxiliadora perfeita",
-				fortes: ["Criada por Deus", "Mãe de todos os viventes", "Sábia e sensível"],
-				fracos: ["Enganada pela serpente", "Influência na queda do homem"],
-				versiculo: "Disse o homem: Esta, afinal, é osso dos meus ossos e carne da minha carne.",
-				referencia: "Gênesis 2:23",
-				curiosidade: "Eva foi formada da costela de Adão e recebeu o nome que significa ‘vida’, sendo mãe de toda a humanidade.",
-				cor: "from-amber-400 to-yellow-500"
-			},
-			{
-				id: 3,
-				nome: "Caim",
-				img: "img/caim.png",
-				tribo: "Descendente de Adão",
-				funcao: "Filho mais velho",
-				periodo: "Gênesis",
-				poderEspecial: "Habilidade no cultivo da terra",
-				fortes: ["Trabalhador do solo", "Primeiro filho de Adão e Eva"],
-				fracos: ["Inveja", "Ira e desobediência", "Assassinato de seu irmão"],
-				versiculo: "Caim se levantou contra Abel, seu irmão, e o matou.",
-				referencia: "Gênesis 4:8",
-				curiosidade: "Caim foi o primeiro homicida da história, mostrando o quanto o pecado afastou o homem de Deus.",
-				cor: "from-red-600 to-amber-700"
-			},
-			{
-				id: 4,
-				nome: "Abel",
-				img: "img/abel.png",
-				tribo: "Descendente de Adão",
-				funcao: "Pastor de ovelhas",
-				periodo: "Gênesis",
-				poderEspecial: "Fé verdadeira e adoração sincera",
-				fortes: ["Coração obediente", "Ofereceu o melhor a Deus", "Exemplo de fé"],
-				fracos: ["Vítima da inveja", "Vida interrompida cedo"],
-				versiculo: "Pela fé, Abel ofereceu a Deus um sacrifício superior ao de Caim.",
-				referencia: "Hebreus 11:4",
-				curiosidade: "Abel foi o primeiro mártir da fé, lembrado por sua obediência e amor a Deus.",
-				cor: "from-blue-400 to-cyan-500"
-			},
-			{
-				id: 5,
-				nome: "Sete",
-				img: "img/sete.png",
-				tribo: "Descendente de Adão",
-				funcao: "Filho de substituição",
-				periodo: "Gênesis",
-				poderEspecial: "Continuidade da linhagem de fé",
-				fortes: ["Fiel a Deus", "Pai de Enos", "Origem da linhagem que leva a Noé"],
-				fracos: ["Pouca informação histórica", "Figura discreta nas Escrituras"],
-				versiculo: "Sete também teve um filho, e lhe deu o nome de Enos. Daí se começou a invocar o nome do Senhor.",
-				referencia: "Gênesis 4:26",
-				curiosidade: "Sete representa o recomeço da linhagem piedosa após a tragédia entre Caim e Abel.",
-				cor: "from-yellow-600 to-amber-500"
-			}
-		];
+  <script>
+    const personagensOrigens = [
+      {
+        id: 1,
+        nome: "Adão",
+        img: "img/adao.png",
+        tribo: "Jardim do Éden",
+        funcao: "Primeiro homem",
+        periodo: "Criação",
+        poderEspecial: "Nomear toda a criação e refletir a imagem de Deus",
+        fortes: ["Primeiro ser humano", "Criado à imagem de Deus", "Companheiro e líder no Éden"],
+        fracos: ["Desobediência", "Queda no pecado"],
+        versiculo: "Formou o Senhor Deus o homem do pó da terra e soprou em suas narinas o fôlego da vida.",
+        referencia: "Gênesis 2:7",
+        curiosidade: "Adão foi o primeiro homem, criado diretamente por Deus, responsável por cuidar do Jardim do Éden.",
+        cor: "from-green-500 to-emerald-600"
+      },
+      {
+        id: 2,
+        nome: "Eva",
+        img: "img/eva.png",
+        tribo: "Jardim do Éden",
+        funcao: "Primeira mulher",
+        periodo: "Criação",
+        poderEspecial: "Doadora de vida e auxiliadora perfeita",
+        fortes: ["Criada por Deus", "Mãe de todos os viventes", "Sábia e sensível"],
+        fracos: ["Enganada pela serpente", "Influência na queda do homem"],
+        versiculo: "Disse o homem: Esta, afinal, é osso dos meus ossos e carne da minha carne.",
+        referencia: "Gênesis 2:23",
+        curiosidade: "Eva foi formada da costela de Adão e recebeu o nome que significa ‘vida’, sendo mãe de toda a humanidade.",
+        cor: "from-amber-400 to-yellow-500"
+      },
+      {
+        id: 3,
+        nome: "Caim",
+        img: "img/caim.png",
+        tribo: "Descendente de Adão",
+        funcao: "Filho mais velho",
+        periodo: "Gênesis",
+        poderEspecial: "Habilidade no cultivo da terra",
+        fortes: ["Trabalhador do solo", "Primeiro filho de Adão e Eva"],
+        fracos: ["Inveja", "Ira e desobediência", "Assassinato de seu irmão"],
+        versiculo: "Caim se levantou contra Abel, seu irmão, e o matou.",
+        referencia: "Gênesis 4:8",
+        curiosidade: "Caim foi o primeiro homicida da história, mostrando o quanto o pecado afastou o homem de Deus.",
+        cor: "from-red-600 to-amber-700"
+      },
+      {
+        id: 4,
+        nome: "Abel",
+        img: "img/abel.png",
+        tribo: "Descendente de Adão",
+        funcao: "Pastor de ovelhas",
+        periodo: "Gênesis",
+        poderEspecial: "Fé verdadeira e adoração sincera",
+        fortes: ["Coração obediente", "Ofereceu o melhor a Deus", "Exemplo de fé"],
+        fracos: ["Vítima da inveja", "Vida interrompida cedo"],
+        versiculo: "Pela fé, Abel ofereceu a Deus um sacrifício superior ao de Caim.",
+        referencia: "Hebreus 11:4",
+        curiosidade: "Abel foi o primeiro mártir da fé, lembrado por sua obediência e amor a Deus.",
+        cor: "from-blue-400 to-cyan-500"
+      },
+      {
+        id: 5,
+        nome: "Sete",
+        img: "img/sete.png",
+        tribo: "Descendente de Adão",
+        funcao: "Filho de substituição",
+        periodo: "Gênesis",
+        poderEspecial: "Continuidade da linhagem de fé",
+        fortes: ["Fiel a Deus", "Pai de Enos", "Origem da linhagem que leva a Noé"],
+        fracos: ["Pouca informação histórica", "Figura discreta nas Escrituras"],
+        versiculo: "Sete também teve um filho, e lhe deu o nome de Enos. Daí se começou a invocar o nome do Senhor.",
+        referencia: "Gênesis 4:26",
+        curiosidade: "Sete representa o recomeço da linhagem piedosa após a tragédia entre Caim e Abel.",
+        cor: "from-yellow-600 to-amber-500"
+      }
+    ];
 
-		function criarCarta(heroi) {
-			return `
-        <div class="group cursor-pointer" onclick="toggleCard(${heroi.id})">
+    // Criação dos cards dinamicamente
+    function criarCarta(personagem) {
+      return `
+        <article class="group cursor-pointer" onclick="toggleCard(${personagem.id})" aria-expanded="false">
           <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl border-2 border-green-500/30 hover:border-green-400 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-green-500/20 hover:shadow-2xl">
             
-            <!-- Header Clicável -->
-            <div class="bg-gradient-to-r ${heroi.cor} p-6 flex items-center justify-between hover:opacity-90 transition-opacity">
+            <!-- Cabeçalho -->
+            <header class="bg-gradient-to-r ${personagem.cor} p-6 flex items-center justify-between hover:opacity-90 transition-opacity">
               <div class="flex items-center gap-4">
-                <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModal('${heroi.img}', '${heroi.nome}')">
-                  <img 
-                    src="${heroi.img}" 
-                    alt="${heroi.nome}"
-                    class="w-full h-full object-contain p-2"
-                  />
+                <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModal('${personagem.img}', '${personagem.nome}')">
+                  <img src="${personagem.img}" alt="${personagem.nome}" loading="lazy" class="w-full h-full object-contain p-2"/>
                 </div>
                 <div>
-                  <h2 class="text-3xl font-black text-white drop-shadow-lg">${heroi.nome}</h2>
+                  <h2 class="text-3xl font-black text-white drop-shadow-lg">${personagem.nome}</h2>
                   <p class="text-white/90 text-sm font-semibold mt-2">
-                    📍 ${heroi.tribo} • ⏱️ ${heroi.periodo}
+                    📍 ${personagem.tribo} • ⏱️ ${personagem.periodo}
                   </p>
                 </div>
               </div>
               <div class="flex-shrink-0">
-                <svg class="w-8 h-8 text-white transition-transform duration-300 toggle-icon-${heroi.id}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8 text-white transition-transform duration-300 toggle-icon-${personagem.id}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
               </div>
-            </div>
+            </header>
 
-            <!-- Conteúdo Expandível -->
-            <div id="content-${heroi.id}" class="hidden bg-slate-800/50 px-6 pb-6 pt-0 space-y-5 max-h-96 overflow-y-auto">
+            <!-- Conteúdo -->
+            <div id="content-${personagem.id}" class="card-content hidden bg-slate-800/50 px-6 pb-6 pt-0 space-y-5 max-h-96 overflow-y-auto">
               
-              <!-- Poder Especial -->
-              <div class="pt-6 border-t border-green-500/30">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="text-2xl">⚡</span>
-                  <h3 class="font-black text-amber-300 text-lg">PODER ESPECIAL</h3>
-                </div>
-                <p class="text-gray-200 pl-8">${heroi.poderEspecial}</p>
-              </div>
+              <section class="pt-6 border-t border-green-500/30">
+                <h3 class="font-black text-amber-300 text-lg mb-2 flex items-center gap-2"><span>⚡</span>PODER ESPECIAL</h3>
+                <p class="text-gray-200 pl-8">${personagem.poderEspecial}</p>
+              </section>
 
-              <!-- Pontos Fortes -->
-              <div>
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="text-2xl">✅</span>
-                  <h3 class="font-black text-green-400 text-lg">PONTOS FORTES</h3>
-                </div>
-                <div class="pl-8 space-y-2">
-                  ${heroi.fortes.map(f => `<p class="text-gray-200">🟢 ${f}</p>`).join('')}
-                </div>
-              </div>
+              <section>
+                <h3 class="font-black text-green-400 text-lg mb-2 flex items-center gap-2"><span>✅</span>PONTOS FORTES</h3>
+                <ul class="pl-8 space-y-2 list-none">
+                  ${personagem.fortes.map(f => `<li class="text-gray-200">🟢 ${f}</li>`).join('')}
+                </ul>
+              </section>
 
-              <!-- Pontos Fracos -->
-              <div>
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="text-2xl">⚠️</span>
-                  <h3 class="font-black text-red-400 text-lg">PONTOS FRACOS</h3>
-                </div>
-                <div class="pl-8 space-y-2">
-                  ${heroi.fracos.map(f => `<p class="text-gray-200">🔴 ${f}</p>`).join('')}
-                </div>
-              </div>
+              <section>
+                <h3 class="font-black text-red-400 text-lg mb-2 flex items-center gap-2"><span>⚠️</span>PONTOS FRACOS</h3>
+                <ul class="pl-8 space-y-2 list-none">
+                  ${personagem.fracos.map(f => `<li class="text-gray-200">🔴 ${f}</li>`).join('')}
+                </ul>
+              </section>
 
-              <!-- Versículo -->
-              <div class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 p-4 rounded-xl border border-blue-500/50 backdrop-blur">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="text-2xl">📖</span>
-                  <h3 class="font-black text-blue-300 text-lg">VERSÍCULO DE PODER</h3>
-                </div>
-                <p class="text-gray-100 italic pl-8">"${heroi.versiculo}"</p>
-                <p class="text-blue-200 pl-8 mt-2 font-bold">— ${heroi.referencia}</p>
-              </div>
+              <section class="bg-gradient-to-r from-blue-500/20 to-cyan-500/20 p-4 rounded-xl border border-blue-500/50 backdrop-blur">
+                <h3 class="font-black text-blue-300 text-lg mb-2 flex items-center gap-2"><span>📖</span>VERSÍCULO DE PODER</h3>
+                <p class="text-gray-100 italic pl-8">"${personagem.versiculo}"</p>
+                <p class="text-blue-200 pl-8 mt-2 font-bold">— ${personagem.referencia}</p>
+              </section>
 
-              <!-- Curiosidade -->
-              <div class="bg-gradient-to-r from-green-500/20 to-amber-500/20 p-4 rounded-xl border border-green-500/50 backdrop-blur">
-                <div class="flex items-center gap-2 mb-3">
-                  <span class="text-2xl">💡</span>
-                  <h3 class="font-black text-amber-300 text-lg">CURIOSIDADE BÍBLICA</h3>
-                </div>
-                <p class="text-gray-100 pl-8">${heroi.curiosidade}</p>
-              </div>
+              <section class="bg-gradient-to-r from-green-500/20 to-amber-500/20 p-4 rounded-xl border border-green-500/50 backdrop-blur">
+                <h3 class="font-black text-amber-300 text-lg mb-2 flex items-center gap-2"><span>💡</span>CURIOSIDADE BÍBLICA</h3>
+                <p class="text-gray-100 pl-8">${personagem.curiosidade}</p>
+              </section>
             </div>
           </div>
-        </div>
+        </article>
       `;
-		}
+    }
 
-		function toggleCard(id) {
-			const content = document.getElementById(`content-${id}`);
-			const icon = document.querySelector(`.toggle-icon-${id}`);
-			content.classList.toggle('hidden');
-			icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-		}
+    // Alternar exibição dos cards
+    function toggleCard(id) {
+      const content = document.getElementById(`content-${id}`);
+      const icon = document.querySelector(`.toggle-icon-${id}`);
+      const article = content.closest('article');
+      const expanded = !content.classList.contains('hidden');
+      content.classList.toggle('hidden');
+      icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
+      article.setAttribute('aria-expanded', !expanded);
+    }
 
-		function abrirModal(src, nome) {
-			document.getElementById('modal-imagem').classList.remove('hidden');
-			document.getElementById('modal-imagem-src').src = src;
-			document.getElementById('modal-titulo').textContent = nome;
-			trilhoGame.visitarHeroi(nome);
-		}
+    // Modal
+    function abrirModal(src, nome) {
+      const modal = document.getElementById('modal-imagem');
+      modal.classList.remove('hidden');
+      modal.setAttribute('aria-hidden', 'false');
+      document.getElementById('modal-imagem-src').src = src;
+      document.getElementById('modal-titulo').textContent = nome;
+    }
 
-		function fecharModal() {
-			document.getElementById('modal-imagem').classList.add('hidden');
-		}
+    function fecharModal() {
+      const modal = document.getElementById('modal-imagem');
+      modal.classList.add('hidden');
+      modal.setAttribute('aria-hidden', 'true');
+    }
 
-		document.addEventListener('keydown', (e) => {
-			if (e.key === 'Escape') fecharModal();
-		});
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') fecharModal();
+    });
 
-		const container = document.getElementById('cartas-container');
-		juizes.forEach(heroi => container.innerHTML += criarCarta(heroi));
-	</script>
+    // Renderização
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('cartas-container');
+      personagensOrigens.forEach(p => container.innerHTML += criarCarta(p));
+    });
+  </script>
 
-	<script src="/menu.js"></script>
-	<script src="../gamificacao.js"></script>
-
+  <script src="/menu.js"></script>
+  <script src="../gamificacao.js"></script>
 </body>
 
 </html>

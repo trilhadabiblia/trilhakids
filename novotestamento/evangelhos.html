@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evangelhos - Livros da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-rose-900 via-pink-900 to-rose-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-rose-600 to-pink-600 backdrop-blur-xl border-b border-pink-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center">
+        <div class="hidden md:block text-center">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">❤️ EVANGELHOS</h1>
+          <p class="text-pink-100 text-sm md:text-base">A História de Jesus em 4 Perspectivas</p>
+        </div>
+        <div class="md:hidden text-center">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">❤️ EVANGELHOS</h1>
+          <p class="text-pink-100 text-sm">A História de Jesus</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        📖 4 Livros sobre o Maior Amor
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Cada evangelho nos mostra Jesus de uma forma especial, revelando seu amor, poder e mensagem de salvação!
+      </p>
+    </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+
+      <!-- Mateus -->
+      <div class="group cursor-pointer" onclick="irPara('mateus/mateus.html')">
+        <div
+          class="bg-gradient-to-br from-amber-600 to-yellow-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">👑</div>
+          <h3 class="font-bold text-white mb-2">Mateus</h3>
+          <p class="text-sm text-amber-100">Jesus, o Rei</p>
+        </div>
+      </div>
+
+      <!-- Marcos -->
+      <div class="group cursor-pointer" onclick="irPara('marcos/marcos.html')">
+        <div
+          class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💪</div>
+          <h3 class="font-bold text-white mb-2">Marcos</h3>
+          <p class="text-sm text-red-100">Jesus, o Servo</p>
+        </div>
+      </div>
+
+      <!-- Lucas -->
+      <div class="group cursor-pointer" onclick="irPara('lucas/lucas.html')">
+        <div
+          class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🤝</div>
+          <h3 class="font-bold text-white mb-2">Lucas</h3>
+          <p class="text-sm text-blue-100">Jesus, o Homem</p>
+        </div>
+      </div>
+
+      <!-- João -->
+      <div class="group cursor-pointer" onclick="irPara('joao/joao.html')">
+        <div
+          class="bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">✨</div>
+          <h3 class="font-bold text-white mb-2">João</h3>
+          <p class="text-sm text-purple-100">Jesus, o Deus</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Descrições detalhadas -->
+    <section class="grid md:grid-cols-2 gap-6 mb-12">
+
+      <div class="bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border border-amber-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-amber-300 mb-3">👑 Mateus</h3>
+        <p class="text-gray-300">Escrito para os judeus, mostra Jesus como o Rei prometido. Conta sobre seu nascimento especial e os ensinamentos do Reino de Deus.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-red-500/10 to-rose-500/10 border border-red-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-red-300 mb-3">💪 Marcos</h3>
+        <p class="text-gray-300">O evangelho mais curto e cheio de ação! Mostra Jesus servindo e realizando milagres incríveis para ajudar as pessoas.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-blue-300 mb-3">🤝 Lucas</h3>
+        <p class="text-gray-300">Escrito por um médico! Apresenta Jesus como o homem perfeito que ama todas as pessoas, especialmente os pobres e rejeitados.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border border-purple-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-purple-300 mb-3">✨ João</h3>
+        <p class="text-gray-300">Revela Jesus como Deus em forma humana. Mostra os sinais miraculosos que provam que Ele é o Filho de Deus.</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-pink-500/10 to-rose-500/10 border border-pink-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-pink-300 mb-3">🎯 Mensagem Central</h3>
+        <p class="text-gray-300">Todos os evangelhos mostram o amor de Jesus, sua morte na cruz para nos salvar e sua ressurreição vitoriosa!</p>
+      </div>
+
+      <div class="bg-gradient-to-br from-indigo-500/10 to-purple-500/10 border border-indigo-500/30 rounded-2xl p-6">
+        <h3 class="text-2xl font-bold text-indigo-300 mb-3">💝 Por Que 4 Evangelhos?</h3>
+        <p class="text-gray-300">Cada escritor mostra Jesus de forma única, como peças de um quebra-cabeça que revelam a imagem completa!</p>
+      </div>
+    </section>
+
+    <!-- Curiosidade -->
+    <section class="bg-gradient-to-br from-rose-500/10 to-pink-500/10 border border-rose-500/30 rounded-2xl p-8 text-center">
+      <div class="text-5xl mb-4">💡</div>
+      <h3 class="text-2xl font-bold text-rose-300 mb-3">Curiosidade Incrível!</h3>
+      <p class="text-gray-300 max-w-3xl mx-auto">
+        Os evangelhos foram escritos por diferentes pessoas: Mateus era cobrador de impostos, Marcos era jovem ajudante de Pedro, Lucas era médico e João era pescador! Cada um tinha um jeito especial de contar a história de Jesus.
+      </p>
+    </section>
+
+  </main>
+
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-pink-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilha Histórica da Bíblia</p>
+    <p class="text-sm">Ministério Infantil - Kids | Desenvolvido com ❤️ para crianças</p>
+  </footer>
+
+  <script>
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+  </script>
+  <script src="/menu.js"></script>
+  <script src="../gamificacao.js"></script>
+</body>
+
+</html>

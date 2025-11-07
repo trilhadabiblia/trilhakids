@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Daniel - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="daniel-capa.png" alt="Capa: Daniel" id="img-daniel"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🦁</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                    LIVRO DE DANIEL
+                </span>
+                <span>🦁</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Coragem e Fé na Cova dos Leões — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-daniel" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                🌟 Os Três Segredos de Daniel 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🙏 Primeiro Segredo: Oração Sem Parar</h3>
+                    <p class="italic">
+                        Daniel orava três vezes ao dia,<br>
+                        Mesmo quando o perigo se aproximava.<br>
+                        Ele não tinha medo de mostrar sua fé,<br>
+                        Pois sabia que Deus sempre está de pé!<br>
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Daniel 6:10</p>
+                </div>
+
+                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🦁 Segundo Segredo: Deus Fecha a Boca dos Leões</h3>
+                    <p class="italic">
+                        Na cova escura com leões ferozes,<br>
+                        Daniel não teve feridas nem arranhões dolorosos.<br>
+                        Um anjo veio e fechou suas bocas,<br>
+                        Mostrando que Deus nos protege em todas as rocas!<br>
+                    </p>
+                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 Daniel 6:22</p>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">👑 Terceiro Segredo: Deus Governa Todos os Reinos</h3>
+                    <p class="italic">
+                        Reis poderosos e impérios grandiosos,<br>
+                        Passam como sonhos misteriosos.<br>
+                        Mas o Reino de Deus durará para sempre,<br>
+                        E quem confia Nele, vitória sempre tem na mente!<br>
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Daniel 2:44</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-daniel");
+        const modal = document.getElementById("modal-daniel");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                👥 Quem são os personagens principais?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="daniel-personagem.png" alt="Personagens de Daniel" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+                <div class="space-y-4 text-lg text-gray-700">
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-purple-700">🧑 Daniel:</span> Um jovem hebreu sábio e fiel a Deus, conhecido por interpretar sonhos e visões. Ele foi jogado na cova dos leões por orar a Deus!
+                    </p>
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-indigo-700">🔥 Sadraque, Mesaque e Abede-Nego:</span> Os três amigos corajosos de Daniel (também chamados Hananias, Misael e Azarias) que foram lançados na fornalha ardente por não adorarem um ídolo — e Deus os salvou!
+                    </p>
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-purple-700">👑 Nabucodonosor:</span> O rei poderoso da Babilônia que teve sonhos misteriosos interpretados por Daniel.
+                    </p>
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-indigo-700">👑 Belsazar e Dario:</span> Outros reis que governaram e testemunharam o poder de Deus através de Daniel.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                📖 O que o livro conta?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 text-lg text-gray-700 order-2 md:order-1">
+                    <p class="leading-relaxed">
+                        Daniel foi levado cativo para a <span class="font-bold text-purple-700">Babilônia</span> quando era jovem, mas ele decidiu permanecer fiel a Deus em tudo.
+                    </p>
+                    <p class="leading-relaxed">
+                        Ele interpretou <span class="font-bold text-indigo-700">sonhos misteriosos</span> do rei Nabucodonosor, revelando que Deus controla o futuro de todos os reinos.
+                    </p>
+                    <p class="leading-relaxed">
+                        Daniel teve <span class="font-bold text-purple-700">visões proféticas</span> sobre impérios que viriam e sobre o Reino eterno de Deus.
+                    </p>
+                    <p class="leading-relaxed">
+                        Mesmo sob ameaça de morte, Daniel continuou orando a Deus — e foi <span class="font-bold text-indigo-700">protegido milagrosamente</span> na cova dos leões!
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="daniel-o-que-conta.png" alt="O que Daniel conta" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                ⭐ Por que é importante?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="daniel-importante.png" alt="Importância de Daniel" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+                <div class="space-y-4 text-lg text-gray-700">
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-purple-700">🦁 Coragem diante do perigo:</span> Daniel nos ensina que podemos ser corajosos mesmo quando todos ao nosso redor não seguem a Deus.
+                    </p>
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-indigo-700">🙏 Fé inabalável:</span> Mesmo sabendo que seria jogado aos leões, Daniel continuou orando — e Deus o protegeu!
+                    </p>
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-purple-700">👑 Deus está no controle:</span> Os sonhos e visões mostram que Deus governa sobre todos os reinos da terra.
+                    </p>
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-indigo-700">✨ Deus honra quem O honra:</span> Por causa de sua fidelidade, Daniel foi exaltado e respeitado por reis poderosos!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                🎯 Propósito do livro
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="space-y-4 text-lg text-gray-700 order-2 md:order-1">
+                    <p class="leading-relaxed">
+                        O livro de Daniel foi escrito para mostrar que <span class="font-bold text-purple-700">Deus está no controle da história</span> — desde o passado até o futuro!
+                    </p>
+                    <p class="leading-relaxed">
+                        Ele ensina que <span class="font-bold text-indigo-700">confiar em Deus</span> é mais importante do que ter medo de reis ou de situações perigosas.
+                    </p>
+                    <p class="leading-relaxed">
+                        Daniel revela que, mesmo quando tudo parece perdido, <span class="font-bold text-purple-700">Deus pode fazer milagres</span> e salvar Seu povo.
+                    </p>
+                    <p class="leading-relaxed">
+                        O livro também nos dá esperança: um dia, o <span class="font-bold text-indigo-700">Reino de Deus</span> reinará para sempre, e todos os que confiam Nele viverão com Ele eternamente!
+                    </p>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="daniel-proposito.png" alt="Propósito de Daniel" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                🤔 Você sabia?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <img src="daniel-curiosidade.png" alt="Curiosidade sobre Daniel" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+                <div class="space-y-4 text-lg text-gray-700">
+                    <p class="leading-relaxed">
+                        <span class="font-bold text-purple-700">🙏 Daniel orava três vezes por dia</span>, sempre voltado para Jerusalém — mesmo sabendo que isso era proibido e poderia custar sua vida!
+                    </p>
+                    <p class="leading-relaxed">
+                        Quando foi jogado na cova dos leões, <span class="font-bold text-indigo-700">um anjo de Deus fechou a boca dos leões</span>, e Daniel passou a noite inteira sem sofrer nenhum arranhão!
+                    </p>
+                    <p class="leading-relaxed">
+                        No dia seguinte, o rei Dario ficou tão impressionado que <span class="font-bold text-purple-700">decretou que todos deveriam respeitar o Deus de Daniel</span>!
+                    </p>
+                    <p class="leading-relaxed">
+                        A história de Daniel nos ensina que <span class="font-bold text-indigo-700">Deus recompensa aqueles que confiam Nele</span>, não importa quão impossível a situação pareça! 🦁✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../ezequiel/ezequiel.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Ezequiel
+            </a>
+            <a href="../profetas-maiores.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Maiores
+            </a>
+            <a href="../oseias/oseias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Oséias ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Daniel - Coragem e Fé ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Daniel');
+    </script>
+</body>
+</html>

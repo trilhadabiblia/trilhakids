@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Miqueias - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="miqueias-capa.png" alt="Capa: Miqueias" id="img-miqueias"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⚖️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                    LIVRO DE MIQUEIAS
+                </span>
+                <span>⚖️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Justiça, Misericórdia e Esperança — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-miqueias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+                🌟 Os Três Segredos de Miqueias 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Primeiro Segredo: A Balança da Justiça</h3>
+                    <p class="italic text-gray-800">
+                        Deus não gosta de ver o mal,<br>
+                        Quando os fortes fazem o mal aos pequeninos.<br>
+                        Miqueias bradou com voz celestial:<br>
+                        "Pratiquem justiça em todos os caminhos!"<br>
+                        <span class="text-purple-600 font-semibold mt-2 block">— Miqueias 6:8</span>
+                    </p>
+                </div>
+
+                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">💝 Segundo Segredo: O Coração Bondoso</h3>
+                    <p class="italic text-gray-800">
+                        Não basta apenas saber o que é certo,<br>
+                        Deus quer que amemos a bondade de coração aberto.<br>
+                        Como um abraço quentinho e afetuoso,<br>
+                        Sejamos gentis, amorosos e generosos!<br>
+                        <span class="text-indigo-600 font-semibold mt-2 block">— Miqueias 6:8</span>
+                    </p>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🌟 Terceiro Segredo: A Estrela de Belém</h3>
+                    <p class="italic text-gray-800">
+                        Miqueias viu com olhos proféticos,<br>
+                        Que em Belém nasceria o Salvador.<br>
+                        Séculos antes, em versos poéticos,<br>
+                        Anunciou a vinda do Redentor!<br>
+                        <span class="text-purple-600 font-semibold mt-2 block">— Miqueias 5:2</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-miqueias");
+        const modal = document.getElementById("modal-miqueias");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            👥 Quem são os personagens principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="miqueias-personagem.png" alt="Personagens de Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">📣 Miqueias - O Profeta da Justiça</h3>
+                    <p class="text-gray-700 text-lg">
+                        Miqueias era um profeta corajoso que vivia no campo. Ele não tinha medo de falar a verdade aos poderosos! 
+                        Seu nome significa "Quem é como o Senhor?" e ele mostrou que Deus se importa com os pobres e oprimidos.
+                    </p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">👑 Líderes de Israel e Judá</h3>
+                    <p class="text-gray-700 text-lg">
+                        Os reis, juízes e sacerdotes que estavam fazendo coisas erradas. Miqueias os repreendeu por não cuidarem 
+                        do povo com justiça e por se afastarem de Deus.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Denúncia da Injustiça</h3>
+                    <p class="text-gray-700 text-lg">
+                        Miqueias viu que os líderes estavam sendo cruéis com os pobres, roubando suas terras e não seguindo 
+                        as leis de Deus. Ele bradou contra essas injustiças com voz forte e clara!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌟 A Profecia do Messias</h3>
+                    <p class="text-gray-700 text-lg">
+                        Em meio às mensagens de julgamento, Miqueias trouxe uma esperança maravilhosa: ele profetizou que 
+                        o Salvador nasceria em Belém, uma pequena cidade! Essa profecia se cumpriu com Jesus!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💝 O Que Deus Requer</h3>
+                    <p class="text-gray-700 text-lg">
+                        Miqueias ensinou o versículo mais famoso do livro: Deus quer que pratiquemos a justiça, 
+                        amemos a bondade e andemos humildemente com Ele. Simples e poderoso!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="miqueias-o-que-conta.png" alt="O que Miqueias conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            💎 Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="miqueias-importante.png" alt="Importância de Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ A Receita de Deus para uma Vida Boa</h3>
+                    <p class="text-gray-700 text-lg">
+                        Miqueias 6:8 é como uma receita divina! Ele nos ensina exatamente o que Deus espera de nós: 
+                        ser justo, amar fazer o bem e caminhar com humildade ao lado de Deus. Não é complicado!
+                    </p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">💝 Deus Se Importa com os Pequenos</h3>
+                    <p class="text-gray-700 text-lg">
+                        Este livro mostra que Deus vê quando alguém é maltratado. Ele defende os fracos e quer que 
+                        façamos o mesmo. Somos chamados a ser a voz dos que não têm voz!
+                    </p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🌟 Esperança no Messias</h3>
+                    <p class="text-gray-700 text-lg">
+                        A profecia sobre Belém nos lembra que Deus sempre cumpre Suas promessas. Mesmo nos momentos 
+                        difíceis, há esperança de salvação e restauração!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Deus é Justo</h3>
+                    <p class="text-gray-700 text-lg">
+                        Miqueias nos lembra que Deus não ignora o pecado e a injustiça. Ele é um juiz justo que 
+                        defende o que é certo e corrige o que está errado. Sua justiça é perfeita!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">💝 Deus é Misericordioso</h3>
+                    <p class="text-gray-700 text-lg">
+                        Mas Deus não é apenas justo - Ele também é cheio de misericórdia! Mesmo quando Seu povo 
+                        errava, Ele oferecia perdão e uma nova chance. Que amor maravilhoso!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🌈 O Equilíbrio Perfeito</h3>
+                    <p class="text-gray-700 text-lg">
+                        O livro mostra o equilíbrio perfeito entre a justiça e a misericórdia de Deus. Ele não 
+                        tolera o mal, mas sempre oferece restauração para quem se arrepende sinceramente.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="miqueias-proposito.png" alt="Propósito de Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            🤔 Você sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="miqueias-curiosidade.png" alt="Curiosidade sobre Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-2xl shadow-xl border-4 border-purple-300">
+                    <h3 class="text-3xl font-black text-purple-700 mb-4">🌟 A Profecia Mais Precisa!</h3>
+                    <p class="text-gray-800 text-xl leading-relaxed mb-4">
+                        Miqueias profetizou o local EXATO onde Jesus nasceria - Belém! Isso aconteceu cerca de 
+                        700 anos ANTES de Jesus nascer! 
+                    </p>
+                    <p class="text-gray-800 text-xl leading-relaxed mb-4">
+                        Quando os magos do Oriente perguntaram ao rei Herodes onde nasceria o Rei dos Judeus, 
+                        os sacerdotes citaram a profecia de Miqueias 5:2!
+                    </p>
+                    <p class="text-gray-800 text-xl leading-relaxed">
+                        É incrível como Deus planejou tudo com antecedência e cumpriu cada detalhe perfeitamente! 
+                        Ele é o Deus que vê o futuro e controla a história! 🎯✨
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../jonas/jonas.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Jonas
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Profetas Menores
+            </a>
+            <a href="../naum/naum.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Naum ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Miqueias - Justiça e Misericórdia ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Miqueias');
+    </script>
+</body>
+</html>
