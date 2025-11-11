@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem é o personagem principal do livro de Levítico?",
+      "opcoes": [
+        "Abraão",
+        "Davi",
+        "Deus falando com Moisés",
+        "Salomão"
+      ],
+      "correta": 2,
+      "justificativa": "Em Levítico, Deus fala diretamente com Moisés para ensinar o povo sobre santidade e adoração."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Levítico?",
+      "opcoes": [
+        "25 capítulos",
+        "30 capítulos",
+        "27 capítulos",
+        "20 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Levítico tem exatamente 27 capítulos cheios de ensinamentos sobre santidade."
+    },
+    {
+      "pergunta": "De onde vem o nome 'Levítico'?",
+      "opcoes": [
+        "Da tribo de Levi",
+        "Do monte Sinai",
+        "Do deserto",
+        "Do tabernáculo"
+      ],
+      "correta": 0,
+      "justificativa": "O nome 'Levítico' vem da tribo de Levi, que eram os ajudantes especiais do templo de Deus!"
+    },
+    {
+      "pergunta": "Qual é o principal ensinamento de Levítico sobre como devemos viver?",
+      "opcoes": [
+        "De forma rica",
+        "De forma pura e santa",
+        "De forma independente",
+        "De forma isolada"
+      ],
+      "correta": 1,
+      "justificativa": "Levítico ensina que devemos viver de forma pura e santa, porque Deus é santo e quer que Seu povo também seja santo."
+    },
+    {
+      "pergunta": "Quem eram as pessoas responsáveis por cuidar do templo e oferecer sacrifícios?",
+      "opcoes": [
+        "Os reis",
+        "Os sacerdotes",
+        "Os soldados",
+        "Os comerciantes"
+      ],
+      "correta": 1,
+      "justificativa": "Os sacerdotes eram os responsáveis especiais por cuidar do templo e oferecer sacrifícios a Deus."
+    },
+    {
+      "pergunta": "Por que o livro de Levítico é importante para nós?",
+      "opcoes": [
+        "Ensina sobre guerra",
+        "Ensina que Deus é santo e quer que sejamos santos",
+        "Ensina sobre dinheiro",
+        "Ensina sobre viagens"
+      ],
+      "correta": 1,
+      "justificativa": "Levítico é importante porque nos ensina que Deus é santo e deseja que vivamos de forma santa também, respeitando Sua presença."
+    },
+    {
+      "pergunta": "O que Levítico ensina sobre estar perto de Deus?",
+      "opcoes": [
+        "Que é fácil e não precisa de preparo",
+        "Que exige respeito, pureza e amor",
+        "Que só alguns podem se aproximar",
+        "Que não é importante"
+      ],
+      "correta": 1,
+      "justificativa": "Levítico ensina que estar perto de Deus exige respeito, pureza e amor, mostrando reverência pelo nosso Criador."
+    },
+    {
+      "pergunta": "Qual era o propósito principal das regras dadas em Levítico?",
+      "opcoes": [
+        "Tornar a vida difícil",
+        "Mostrar que Deus quer um relacionamento verdadeiro com Seu povo",
+        "Criar confusão",
+        "Separar as pessoas"
+      ],
+      "correta": 1,
+      "justificativa": "As regras de Levítico mostram que Deus deseja ter um relacionamento verdadeiro e próximo com Seu povo."
+    },
+    {
+      "pergunta": "O que Levítico nos ensina sobre obediência?",
+      "opcoes": [
+        "Que não é necessária",
+        "Que é importante junto com reverência a Deus",
+        "Que é opcional",
+        "Que é impossível"
+      ],
+      "correta": 1,
+      "justificativa": "Levítico nos ensina que a obediência e reverência a Deus são importantes para vivermos de acordo com Sua vontade."
+    },
+    {
+      "pergunta": "Como Levítico nos ajuda a entender o caráter de Deus?",
+      "opcoes": [
+        "Mostra que Deus é confuso",
+        "Mostra que Deus é santo e merece nosso respeito",
+        "Mostra que Deus é distante",
+        "Mostra que Deus não se importa"
+      ],
+      "correta": 1,
+      "justificativa": "Levítico nos ajuda a entender que Deus é santo, puro e merece todo nosso respeito e adoração."
+    }
+  ]
+}

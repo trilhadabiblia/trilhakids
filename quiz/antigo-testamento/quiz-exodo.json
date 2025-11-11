@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem foi o personagem principal que Deus escolheu para libertar o povo de Israel do Egito?",
+      "opcoes": [
+        "Arão",
+        "Moisés",
+        "Faraó",
+        "Josué"
+      ],
+      "correta": 1,
+      "justificativa": "Moisés foi o homem que Deus escolheu para libertar o povo israelita da escravidão no Egito, mesmo quando ele não se sentia preparado."
+    },
+    {
+      "pergunta": "O que significa a palavra 'Êxodo'?",
+      "opcoes": [
+        "Entrada",
+        "Saída",
+        "Viagem",
+        "Montanha"
+      ],
+      "correta": 1,
+      "justificativa": "Êxodo significa 'saída' porque conta a história de como o povo de Israel saiu do Egito para ir à Terra Prometida."
+    },
+    {
+      "pergunta": "Quem era o irmão de Moisés que o ajudou a falar com Faraó?",
+      "opcoes": [
+        "José",
+        "Arão",
+        "Calebe",
+        "Davi"
+      ],
+      "correta": 1,
+      "justificativa": "Arão era irmão de Moisés e o ajudou a falar com Faraó, pois Moisés disse que tinha dificuldade para falar em público."
+    },
+    {
+      "pergunta": "Quantos mandamentos Deus deu a Moisés no Monte Sinai?",
+      "opcoes": [
+        "Cinco",
+        "Oito",
+        "Dez",
+        "Doze"
+      ],
+      "correta": 2,
+      "justificativa": "Deus deu os Dez Mandamentos a Moisés, que são regras importantes para vivermos bem com Deus e com outras pessoas."
+    },
+    {
+      "pergunta": "O que aconteceu quando o povo chegou ao Mar Vermelho com os egípcios perseguindo?",
+      "opcoes": [
+        "Eles voltaram para o Egito",
+        "Eles se esconderam",
+        "Deus abriu o mar para eles passarem",
+        "Eles lutaram contra os egípcios"
+      ],
+      "correta": 2,
+      "justificativa": "Deus fez um milagre incrível abrindo o Mar Vermelho para que o povo passasse em terra seca e escapasse dos egípcios."
+    },
+    {
+      "pergunta": "Durante o dia, como Deus guiava o povo no deserto?",
+      "opcoes": [
+        "Com uma nuvem",
+        "Com um anjo visível",
+        "Com uma estrela",
+        "Com um arco-íris"
+      ],
+      "correta": 0,
+      "justificativa": "Deus usava uma coluna de nuvem durante o dia e uma coluna de fogo à noite para guiar e proteger seu povo no deserto."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Êxodo?",
+      "opcoes": [
+        "30",
+        "35",
+        "40",
+        "45"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Êxodo tem 40 capítulos cheios de aventuras emocionantes e milagres que mostram o cuidado de Deus."
+    },
+    {
+      "pergunta": "Por que o livro de Êxodo é importante para nós hoje?",
+      "opcoes": [
+        "Só conta histórias antigas",
+        "Mostra que Deus ouve nosso clamor e tem um plano para cada um",
+        "É apenas sobre Moisés",
+        "Fala só sobre o Egito"
+      ],
+      "correta": 1,
+      "justificativa": "Êxodo nos ensina que Deus ouve quando clamamos a Ele e que tem um plano especial para cada pessoa, além de ensinar sobre obediência e confiança."
+    },
+    {
+      "pergunta": "O que Deus usou para convencer Faraó a libertar o povo de Israel?",
+      "opcoes": [
+        "Apenas palavras",
+        "Dez pragas",
+        "Um exército",
+        "Presentes valiosos"
+      ],
+      "correta": 1,
+      "justificativa": "Deus enviou dez pragas sobre o Egito para mostrar seu poder e convencer Faraó a deixar o povo de Israel partir."
+    },
+    {
+      "pergunta": "Qual é o propósito principal do livro de Êxodo?",
+      "opcoes": [
+        "Contar sobre animais",
+        "Mostrar que Deus liberta, guia e cuida do seu povo",
+        "Ensinar sobre plantas",
+        "Falar sobre reis"
+      ],
+      "correta": 1,
+      "justificativa": "O propósito de Êxodo é mostrar como Deus liberta, guia e cuida de seu povo, e como a obediência a Ele traz bênçãos para nossa vida."
+    }
+  ]
+}

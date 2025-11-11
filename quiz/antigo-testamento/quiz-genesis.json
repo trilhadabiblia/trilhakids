@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "O que significa a palavra 'Gênesis'?",
+      "opcoes": [
+        "Fim",
+        "Começo",
+        "Meio",
+        "História"
+      ],
+      "correta": 1,
+      "justificativa": "Gênesis significa 'começo' ou 'origem'! É por isso que é o primeiro livro da Bíblia e conta como tudo começou."
+    },
+    {
+      "pergunta": "Quem é o personagem principal do livro de Gênesis?",
+      "opcoes": [
+        "Abraão",
+        "José",
+        "Deus",
+        "Adão"
+      ],
+      "correta": 2,
+      "justificativa": "Deus é o personagem principal! Ele é o Criador de todas as coisas e aparece em todas as histórias do livro."
+    },
+    {
+      "pergunta": "Em quantos dias Deus criou o mundo?",
+      "opcoes": [
+        "5 dias",
+        "6 dias",
+        "7 dias",
+        "10 dias"
+      ],
+      "correta": 1,
+      "justificativa": "Deus criou tudo em 6 dias e no sétimo dia descansou. Que poder incrível o nosso Deus tem!"
+    },
+    {
+      "pergunta": "Qual foi o primeiro casal criado por Deus?",
+      "opcoes": [
+        "Abraão e Sara",
+        "Adão e Eva",
+        "Isaque e Rebeca",
+        "Jacó e Raquel"
+      ],
+      "correta": 1,
+      "justificativa": "Adão e Eva foram as primeiras pessoas que Deus criou. Eles viviam no jardim do Éden em perfeita harmonia com Deus."
+    },
+    {
+      "pergunta": "O que aconteceu quando Adão e Eva desobedeceram a Deus?",
+      "opcoes": [
+        "Nada mudou",
+        "Ficaram mais felizes",
+        "O pecado entrou no mundo",
+        "Ganharam superpoderes"
+      ],
+      "correta": 2,
+      "justificativa": "Quando eles desobedeceram, o pecado entrou no mundo. Mas Deus não desistiu deles e nem desiste de nós!"
+    },
+    {
+      "pergunta": "Quantos filhos de Noé entraram na arca?",
+      "opcoes": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "correta": 1,
+      "justificativa": "Sem, Cam e Jafé foram os três filhos de Noé que entraram na arca com suas esposas. Deus salvou a família de Noé porque ele era obediente."
+    },
+    {
+      "pergunta": "Qual promessa especial Deus fez a Abraão?",
+      "opcoes": [
+        "Que seria rico",
+        "Que viveria para sempre",
+        "Que seria pai de uma grande nação",
+        "Que nunca ficaria doente"
+      ],
+      "correta": 2,
+      "justificativa": "Deus prometeu que Abraão seria pai de uma grande nação e que através dele todas as famílias da terra seriam abençoadas!"
+    },
+    {
+      "pergunta": "Qual era o nome do filho que Deus deu a Abraão e Sara na velhice?",
+      "opcoes": [
+        "Isaque",
+        "Ismael",
+        "Jacó",
+        "José"
+      ],
+      "correta": 0,
+      "justificativa": "Isaque nasceu quando Abraão e Sara já eram muito idosos. Isso mostra que nada é impossível para Deus!"
+    },
+    {
+      "pergunta": "Por que José foi vendido como escravo pelos seus irmãos?",
+      "opcoes": [
+        "Porque era desobediente",
+        "Porque tinha sonhos especiais e seus irmãos ficaram com ciúmes",
+        "Porque era o mais novo",
+        "Porque não trabalhava"
+      ],
+      "correta": 1,
+      "justificativa": "José tinha sonhos que mostravam que seria importante, e seus irmãos ficaram com ciúmes. Mas Deus transformou essa situação ruim em algo bom!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Gênesis?",
+      "opcoes": [
+        "40",
+        "45",
+        "50",
+        "60"
+      ],
+      "correta": 2,
+      "justificativa": "Gênesis tem 50 capítulos cheios de histórias incríveis sobre como Deus criou tudo e cuidou do seu povo!"
+    }
+  ]
+}
