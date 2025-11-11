@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poéticos - Quiz da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-pink-600 to-rose-600 backdrop-blur-xl border-b border-pink-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center"> <!-- centraliza o conteúdo -->
+        <div>
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">🎵 Quiz Poéticos</h1>
+          <p class="text-pink-100 text-sm md:text-base">5 livros de sabedoria e adoração</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        📚 Poesia, Sabedoria e Adoração
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">Livros cheios de beleza, reflexão e expressões profundas de fé
+        e adoração a Deus.</p>
+    </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+      <div class="group cursor-pointer" onclick="irPara('quiz-jo.html')">
+        <div
+          class="bg-gradient-to-br from-violet-600 to-purple-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">😟</div>
+          <h3 class="font-bold text-white mb-2">Jó</h3>
+          <p class="text-sm text-purple-100">Sofrimento e Fé</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-salmos.html')">
+        <div
+          class="bg-gradient-to-br from-blue-600 to-cyan-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🎶</div>
+          <h3 class="font-bold text-white mb-2">Salmos</h3>
+          <p class="text-sm text-blue-100">Cânticos de Adoração</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-proverbios.html')">
+        <div
+          class="bg-gradient-to-br from-green-600 to-emerald-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💎</div>
+          <h3 class="font-bold text-white mb-2">Provérbios</h3>
+          <p class="text-sm text-green-100">Sabedoria Prática</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-eclesiastes.html')">
+        <div
+          class="bg-gradient-to-br from-amber-600 to-yellow-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">☀️</div>
+          <h3 class="font-bold text-white mb-2">Eclesiastes</h3>
+          <p class="text-sm text-amber-100">Reflexão sobre a Vida</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-cantares.html')">
+        <div
+          class="bg-gradient-to-br from-pink-600 to-red-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💕</div>
+          <h3 class="font-bold text-white mb-2">Cantares de Salomão</h3>
+          <p class="text-sm text-pink-100">Amor e Relacionamento</p>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+    <!-- Footer -->
+    <footer
+      class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
+      <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+      <p class="text-sm">Desenvolvido com ❤️ para criança</p>
+    </footer>
+
+    <script>
+      function irPara(pagina) {
+        window.location.href = pagina;
+      }
+
+    </script>
+    <script src="./gamificacao.js"></script>
+    <script src="/menu.js"></script>
+</body>
+
+</html>
