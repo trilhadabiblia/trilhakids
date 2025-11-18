@@ -1,0 +1,73 @@
+% livro_aluno.tex
+% Compilar com: xelatex livro_aluno.tex (2x)
+\documentclass[11pt,a4paper]{article}
+\usepackage{fontspec}
+\usepackage[brazil]{babel}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{geometry}
+\geometry{margin=2.2cm}
+
+\title{Arduino Kids — Caderno do Aluno}
+\author{Projeto Arduino Kids}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\section*{Como usar este caderno}
+Explicação curta e simples: siga as etapas, registre suas experiências, desenhe e cole fotos.
+
+\section{Missão 1 — Semáforo Infantil (6--8 anos)}
+\textbf{Personagem:} Luzinha \\
+\textbf{Tempo:} 45 minutos \\
+\textbf{Objetivo:} Aprender sobre cores e sequência.
+
+\subsection*{1) Materiais}
+Lista simples (LEDs, resistores, Arduino, buzzer).
+
+\subsection*{2) Montagem}
+Espaço para colar o esquema (deixe um retângulo):
+\begin{center}
+\fbox{\parbox[c][6cm][c]{0.8\textwidth}{\centering Cole aqui a foto do seu circuito}}
+\end{center}
+
+\subsection*{3) Código}
+\begin{verbatim}
+// Semáforo simples (versão curta)
+void setup(){ pinMode(10, OUTPUT); pinMode(9, OUTPUT); pinMode(8, OUTPUT);}
+void loop(){ digitalWrite(10, HIGH); delay(1000); digitalWrite(10, LOW);
+ digitalWrite(9, HIGH); delay(700); digitalWrite(9, LOW);
+ digitalWrite(8, HIGH); delay(1000); digitalWrite(8, LOW); }
+\end{verbatim}
+
+\subsection*{4) Perguntas (responda em poucas palavras)}
+\begin{enumerate}[label=\alph*)]
+  \item O que aconteceu quando você ligou o semáforo?
+  \item Qual cor significa que podemos passar?
+  \item O que você aprendeu de novo?
+\end{enumerate}
+
+\subsection*{5) Desafio Criativo}
+Desenhe um carro que segue o semáforo ou invente uma história curta sobre Luzinha.
+
+\clearpage
+
+% Repetir blocos semelhantes para as demais missões/projetos (2..10)
+\section{Missão 2 — Planta que Fala (6--8 anos)}
+% ... conteúdo similar (materiais, montagem, espaço para foto, perguntas)
+
+\section*{Glossário}
+Definições simples: LED, resistor, sensor, protoboard.
+
+\section*{Certificado}
+Espaço para carimbo / assinatura quando completar todas as missões.
+
+\end{document}

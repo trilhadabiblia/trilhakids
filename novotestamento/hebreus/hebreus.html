@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Hebreus - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="hebreus-capa.png" alt="Capa: Hebreus" id="img-hebreus"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>✝️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mx-2">
+                    LIVRO DE HEBREUS
+                </span>
+                <span>👑</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Jesus é Superior — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-hebreus" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                🌟 Os Três Segredos de Hebreus 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">👑 Primeiro Segredo: Jesus é Superior!</h3>
+                    <p class="italic">
+                        Maior que os anjos, maior que Moisés,<br>
+                        Sacerdote perfeito, o Rei de uma vez!<br>
+                        Filho de Deus, o Salvador sem igual,<br>
+                        Em Jesus temos tudo, Ele é celestial!
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Hebreus 1:3-4</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-2xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">✝️ Segundo Segredo: Sacrifício Completo!</h3>
+                    <p class="italic">
+                        Não precisa mais sangue, não precisa altar,<br>
+                        Jesus na cruz veio nos resgatar!<br>
+                        Uma vez por todas, o preço pagou,<br>
+                        Nossos pecados Ele perdoou!
+                    </p>
+                    <p class="text-sm text-blue-600 mt-3 font-semibold">📖 Hebreus 10:10-14</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💪 Terceiro Segredo: Fé que Vence!</h3>
+                    <p class="italic">
+                        Abraão, Moisés, Davi e Raabe,<br>
+                        Heróis da fé que Deus não esquece!<br>
+                        Com fé em Jesus, também podemos ser,<br>
+                        Campeões de Deus, prontos pra vencer!
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Hebreus 11:1-40</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-hebreus");
+        const modal = document.getElementById("modal-hebreus");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="hebreus-personagem.png" alt="Personagens de Hebreus" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✍️ O Autor Inspirado</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Não sabemos quem escreveu Hebreus, mas sabemos que foi inspirado por Deus! 
+                        Alguns dizem que foi Paulo, outros dizem Barnabé ou Apolo. O importante é que 
+                        Deus usou alguém especial para escrever esta carta poderosa!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">⛪ Os Cristãos Hebreus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Eram judeus que aceitaram Jesus como Salvador! Mas estavam enfrentando 
+                        perseguição e tentação de voltar às antigas práticas. Esta carta foi 
+                        escrita para fortalecer a fé deles e mostrar que Jesus é suficiente!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">👑 Jesus - O Personagem Central</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ele é o verdadeiro herói de Hebreus! O livro todo fala sobre como Jesus 
+                        é superior a tudo e todos: anjos, Moisés, sacerdotes e sacrifícios. 
+                        Ele é o Filho de Deus perfeito!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-purple-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✝️ Jesus é o Filho de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O livro começa mostrando que Jesus é maior que os anjos! Ele é o Filho 
+                        de Deus, o criador do universo, e tem toda autoridade no céu e na terra. 
+                        Ninguém é como Ele!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🕊️ O Sacerdote Perfeito</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Jesus não é como os sacerdotes antigos que precisavam fazer sacrifícios 
+                        todos os dias. Ele é o sacerdote perfeito segundo a ordem de Melquisedeque, 
+                        que vive para sempre e intercede por nós!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🩸 O Sacrifício Completo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Jesus ofereceu o sacrifício perfeito: Ele mesmo! Na cruz, Ele pagou o 
+                        preço pelos nossos pecados de uma vez por todas. Não precisamos de mais 
+                        sacrifícios - Jesus é suficiente!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="hebreus-o-que-conta.png" alt="O que Hebreus conta" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="hebreus-importante.png" alt="Importância de Hebreus" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🎯 Jesus é Suficiente</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Hebreus nos ensina que não precisamos de mais nada além de Jesus! 
+                        Não precisamos de rituais complicados, sacrifícios de animais ou 
+                        intermediários. Jesus fez tudo por nós na cruz!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💪 Fortalece Nossa Fé</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Quando passamos por dificuldades e tentações, Hebreus nos lembra de 
+                        permanecer firmes em Jesus. Ele é a âncora da nossa alma, seguro e 
+                        firme! Não devemos desistir!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🏆 Mostra Heróis da Fé</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O capítulo 11 é incrível! Ele conta sobre Abraão, Moisés, Raabe, 
+                        Davi e muitos outros que confiaram em Deus. Eles nos inspiram a 
+                        também viver pela fé!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-blue-50 to-purple-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🛡️ Fortalecer a Fé</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O principal objetivo de Hebreus é fortalecer a fé dos cristãos que 
+                        estavam sendo perseguidos e tentados a desistir. O autor os encoraja 
+                        a permanecer firmes em Jesus, não importa o que aconteça!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">👑 Exaltar Jesus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Hebreus foi escrito para mostrar que Jesus é superior a tudo! Ele é 
+                        maior que os anjos, maior que Moisés, maior que os sacerdotes. Ele é 
+                        o Filho de Deus, o Salvador perfeito!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">📚 Explicar a Nova Aliança</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O livro explica como Jesus inaugurou uma nova aliança melhor que a antiga. 
+                        Não precisamos mais de sacrifícios de animais porque Jesus é o sacrifício 
+                        perfeito e final!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🔥 Avisar Contra a Apostasia</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Hebreus alerta sobre o perigo de abandonar a fé em Jesus. O autor 
+                        encoraja os leitores a não endurecer o coração, mas a perseverar até 
+                        o fim com confiança em Deus!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="hebreus-proposito.png" alt="Propósito de Hebreus" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-gradient-to-br from-purple-100 to-blue-100 p-8 mb-4 rounded-2xl shadow-lg border-4 border-purple-300">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="hebreus-curiosidade.png" alt="Curiosidade sobre Hebreus" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-purple-600">
+                    <h3 class="text-3xl font-bold text-purple-700 mb-4">📖 O Capítulo da Fé!</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg mb-4">
+                        Hebreus 11 é conhecido como o "Capítulo da Fé" ou o "Hall da Fama da Fé"! 
+                        Ele lista mais de 15 heróis da Bíblia que viveram pela fé em Deus.
+                    </p>
+                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-xl mb-4">
+                        <p class="text-gray-700 leading-relaxed font-semibold">
+                            🌟 Alguns heróis mencionados:<br>
+                            • Abel - ofereceu sacrifício pela fé<br>
+                            • Enoque - andou com Deus<br>
+                            • Noé - construiu a arca<br>
+                            • Abraão - obedeceu a Deus<br>
+                            • Sara - recebeu força para ter um filho<br>
+                            • Moisés - escolheu sofrer com o povo de Deus<br>
+                            • Raabe - escondeu os espias<br>
+                            • E muitos outros!
+                        </p>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        O capítulo termina dizendo que todos esses heróis esperavam por algo 
+                        melhor que Deus havia prometido - e esse "algo melhor" é Jesus! 
+                        Agora nós também podemos fazer parte dessa lista de heróis da fé! 💪
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-2 border-purple-600/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../filemom/filemom.html" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Filemom
+            </a>
+            <a href="../epistolas-gerais.html" class="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Epístolas Gerais
+            </a>
+            <a href="../tiago/tiago.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Tiago ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-600 to-blue-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Hebreus - Jesus é Superior ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Hebreus');
+    </script>
+</body>
+</html>

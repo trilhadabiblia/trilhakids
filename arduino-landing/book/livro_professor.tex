@@ -1,0 +1,168 @@
+% livro_professor.tex
+% Compilar com: xelatex livro_professor.tex (2x)
+\documentclass[12pt,a4paper]{book}
+\usepackage{fontspec}
+\usepackage[brazil]{babel}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{xcolor}
+\geometry{margin=2.5cm}
+
+% Código Arduino settings
+\lstset{
+  language=C,
+  basicstyle=\ttfamily\small,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  morekeywords={pinMode, digitalWrite, analogRead, analogWrite, delay, tone, noTone}
+}
+
+% Metadata
+\title{Arduino Kids — Guia do Professor}
+\author{Projeto Arduino Kids \\ Desenvolvido por Claudecir Miranda}
+\date{\today}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+\tableofcontents
+\clearpage
+
+\chapter*{Apresentação}
+\addcontentsline{toc}{chapter}{Apresentação}
+Breve apresentação do programa, público-alvo, objetivos gerais, alinhamento BNCC e como utilizar este guia.
+
+\chapter{Projeto Pedagógico}
+\section{Objetivos Gerais}
+\begin{itemize}
+  \item Desenvolver pensamento lógico e criativo.
+  \item Introduzir conceitos básicos de eletrônica e programação.
+  \item Integrar temas transversais (meio ambiente, cidadania).
+\end{itemize}
+
+\section{Metodologia}
+Descrição da abordagem — aprendizagem por projetos, divisão em estações, papéis (montador, programador, narrador), avaliação formativa.
+
+\section{Avaliação}
+Instrumentos sugeridos: observação, checklist, portfólio do aluno, rubricas de criatividade e resolução de problemas.
+
+\chapter{Como usar os projetos}
+Instruções de logística: tempo por projeto, número de kits, segurança, lista de materiais por turma.
+
+\section{Lista geral de materiais por kit}
+\begin{longtable}{p{8cm} p{5cm}}
+\textbf{Componente} & \textbf{Quantidade por kit} \\
+\hline
+Arduino Uno (ou compatible) & 1 \\
+Protoboard pequena & 1 \\
+Jumpers macho-fêmea & 20 \\
+LEDs (vermelho, amarelo, verde) & 3 \\
+Resistores 220\(\Omega\) & 3 \\
+Buzzer piezo & 1 \\
+Sensor de umidade & 1 \\
+Sensor ultrassônico HC-SR04 & 1 \\
+OLED 0.96" (opcional) & 1 \\
+% ... adicione o restante
+\end{longtable}
+
+\chapter{Projetos - Guia do Professor}
+% Repetir o bloco abaixo para cada um dos 10 projetos
+\section{Projeto 1 — Semáforo Infantil (6--8 anos)}
+\subsection{Objetivos}
+\begin{itemize}
+  \item Ensinar sequência e noções de trânsito.
+  \item Trabalhar atenção e tempo.
+\end{itemize}
+
+\subsection{Tempo estimado}
+45 minutos (30 min montagem + 15 min atividade prática)
+
+\subsection{Materiais por grupo}
+\begin{itemize}
+  \item 1 Arduino Uno
+  \item Protoboard
+  \item LEDs: vermelho, amarelo, verde
+  \item Resistores 220\(\Omega\) x3
+  \item Buzzer
+  \item Jumpers
+\end{itemize}
+
+\subsection{Preparação do professor}
+Dicas de preparo: pré-montar partes, verificar códigos, imprimir fichas.
+
+\subsection{Passo a passo (sugestão para condução)}
+\begin{enumerate}
+  \item Apresentar a história do personagem (Luzinha).
+  \item Demonstrar montagem do circuito (mostrar no projetor).
+  \item Dividir os alunos em grupos e distribuir materiais.
+  \item Orientar montagem e testar com o código.
+  \item Propor extensão: adaptar tempo ou botão de pedestre.
+\end{enumerate}
+
+\subsection{Código exemplo}
+\begin{lstlisting}
+// Semáforo simples
+int ledV = 10;
+int ledA = 9;
+int ledG = 8;
+int buzzer = 7;
+
+void setup() {
+  pinMode(ledV, OUTPUT);
+  pinMode(ledA, OUTPUT);
+  pinMode(ledG, OUTPUT);
+  pinMode(buzzer, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledV, HIGH); tone(buzzer, 500); delay(1000); noTone(buzzer); digitalWrite(ledV, LOW);
+  digitalWrite(ledA, HIGH); delay(700); digitalWrite(ledA, LOW);
+  digitalWrite(ledG, HIGH); delay(1000); digitalWrite(ledG, LOW);
+}
+\end{lstlisting}
+
+\subsection{Sugeridas adaptações e desafios}
+\begin{itemize}
+  \item Inserir botão de pedestre (material adicional).
+  \item Fazer competição de quem monta mais rápido com qualidade.
+  \item Trabalho interdisciplinar: mapa de rua em papelão.
+\end{itemize}
+
+\subsection{Competências BNCC}
+Relacionar explicitamente os itens da BNCC atendidos (ex.: EF15CI01, etc.) — preencher com os códigos apropriados.
+
+\subsection{Avaliação}
+Rubrica com critérios: montagem correta, explicação do circuito, trabalho em equipe, criatividade.
+
+\vspace{6pt}
+% Fim do projeto 1. Repetir para projetos 2..10
+
+\chapter{Apêndices}
+\section{Códigos completos}
+Coleção de códigos de todos os projetos (copiar e colar os \texttt{lstlisting}).
+
+\section{Esquemáticos}
+Instruções para inserir imagens: coloque os PDFs/PNGs em \texttt{images/} e inclua com \verb|\includegraphics[width=0.8\textwidth]{images/semaforo.png}|.
+
+\section{Modelos de Ficha de Avaliação}
+Sugestões de rubricas em tabela.
+
+\chapter*{Referências}
+\addcontentsline{toc}{chapter}{Referências}
+Listar referências pedagógicas, links e agradecimentos.
+
+\end{document}

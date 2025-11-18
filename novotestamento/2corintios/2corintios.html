@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 2 Coríntios - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="2corintios-capa.png" alt="Capa: 2 Coríntios" id="img-2corintios"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>💪</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 mx-2">
+                    LIVRO DE 2 CORÍNTIOS
+                </span>
+                <span>💪</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Força na Fraqueza — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2corintios" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+                🌟 Os Três Segredos de 2 Coríntios 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">💪 Primeiro Segredo: Força na Fraqueza</h3>
+                    <p class="italic">
+                        Quando você se sente pequeno e fraco,<br>
+                        Deus está bem perto, não é um eco!<br>
+                        Seu poder brilha quando eu não posso,<br>
+                        Na minha fraqueza, Ele é o mais grosso!<br>
+                        Paulo aprendeu este grande tesouro,<br>
+                        Que a graça de Deus vale mais que ouro!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "A minha graça te basta, porque o poder se aperfeiçoa na fraqueza." - 2 Coríntios 12:9</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">❤️ Segundo Segredo: Amor que Consola</h3>
+                    <p class="italic">
+                        Deus nos consola em toda aflição,<br>
+                        Para consolarmos com compaixão!<br>
+                        Quando alguém sofre, posso ajudar,<br>
+                        Pois Deus primeiro veio me abraçar!<br>
+                        O amor de Cristo nos constrange,<br>
+                        E nosso coração Ele arranje!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Bendito seja o Deus que nos consola em toda tribulação." - 2 Coríntios 1:3-4</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🎁 Terceiro Segredo: Generosidade Alegre</h3>
+                    <p class="italic">
+                        Deus ama quem dá com alegria,<br>
+                        Não por tristeza ou obrigação vazia!<br>
+                        Quando compartilho o que tenho aqui,<br>
+                        Deus multiplica e cuida de mim!<br>
+                        Semeio bênçãos, colho gratidão,<br>
+                        Pois dar com amor é linda ação!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Deus ama quem dá com alegria!" - 2 Coríntios 9:7</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-2corintios");
+        const modal = document.getElementById("modal-2corintios");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2corintios-personagem.png" alt="Paulo e os Coríntios" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ Paulo - O Apóstolo Corajoso</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo é um missionário que passou por muitas dificuldades: prisões, naufrágios, perseguições! 
+                        Mas ele nunca desistiu de pregar sobre Jesus. Nesta carta, ele abre seu coração e mostra como 
+                        Deus o fortalecia mesmo quando estava fraco e cansado.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">⛪ Os Cristãos de Corinto</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os cristãos de Corinto eram pessoas que acreditavam em Jesus, mas enfrentavam desafios e dúvidas. 
+                        Paulo os amava muito e escreveu esta carta para encorajá-los, ensiná-los e lembrá-los do amor 
+                        e do poder de Deus em suas vidas!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            📖 O que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-xl font-bold text-sky-600 mb-2">💪 As Dificuldades de Paulo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo conta sobre todas as coisas difíceis que enfrentou: foi preso, apedrejado, 
+                        naufragou três vezes, passou fome e frio! Mas em tudo isso, ele não desanimou porque 
+                        sabia que Deus estava com ele.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">✨ O Poder de Deus na Fraqueza</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo aprendeu uma lição incrível: quando ele se sentia fraco, era exatamente aí que 
+                        o poder de Deus brilhava mais forte! Deus disse a ele: "A minha graça é suficiente para você, 
+                        porque o meu poder se aperfeiçoa na fraqueza."
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-2">❤️ Encorajamento e Amor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo escreve com muito amor para encorajar os cristãos de Corinto. Ele os lembra de serem 
+                        generosos, de perdoarem uns aos outros e de confiarem em Deus em todas as situações da vida!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="2corintios-o-que-conta.png" alt="O que 2 Coríntios conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            ⭐ Por que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2corintios-importante.png" alt="Importância de 2 Coríntios" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💪</span>
+                        Força na Fraqueza
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        2 Coríntios nos ensina que não precisamos ser perfeitos ou super-heróis! Quando nos sentimos 
+                        fracos, cansados ou com medo, é justamente aí que Deus mostra Seu poder incrível em nossas vidas. 
+                        Ele nos fortalece e nos ajuda a continuar!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🌟</span>
+                        Confiança em Deus
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Este livro nos encoraja a confiar em Deus em todas as situações, sejam elas boas ou difíceis. 
+                        Deus sempre está conosco, nos consolando, nos fortalecendo e nos guiando. Nunca estamos sozinhos!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">❤️</span>
+                        Amor e Generosidade
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo nos ensina a importância de amar uns aos outros, de perdoar e de ser generosos. 
+                        Quando compartilhamos o que temos com alegria, Deus abençoa ainda mais nossas vidas!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🌈 Encorajar os Cristãos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O principal propósito de 2 Coríntios é encorajar os cristãos a perseverarem e não desistirem, 
+                        mesmo quando a vida fica difícil. Paulo mostra que vale a pena continuar seguindo a Jesus, 
+                        porque Deus nos dá força e nos recompensa!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">🙏 Confiar em Deus nos Desafios</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo quer que os cristãos aprendam a confiar em Deus em meio aos desafios e tribulações. 
+                        Ele mostra que Deus é fiel e nos consola em todas as nossas aflições, nos dando esperança 
+                        e paz mesmo nas tempestades da vida.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">💎 Valorizar a Graça de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Este livro nos ensina a valorizar a graça maravilhosa de Deus! Não importa quão fracos ou 
+                        imperfeitos nos sintamos, a graça de Deus é suficiente e Seu poder se manifesta em nossas 
+                        fraquezas. Isso é libertador e incrível!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="2corintios-proposito.png" alt="Propósito de 2 Coríntios" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2corintios-curiosidade.png" alt="Curiosidade sobre 2 Coríntios" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl border-4 border-amber-300 shadow-lg">
+                    <div class="flex items-start mb-4">
+                        <span class="text-5xl mr-4">💌</span>
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-700 mb-3">Uma Carta Cheia de Emoção!</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                Paulo escreveu esta carta com o coração cheio de emoção e gratidão! Você pode sentir 
+                                o amor dele pelos coríntios em cada palavra. Ele chora, se alegra, se preocupa e 
+                                celebra com eles!
+                            </p>
+                            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                                Esta é considerada a carta mais pessoal e emocional de Paulo. Ele compartilha seus 
+                                sentimentos mais profundos, suas lágrimas e suas vitórias. É como ler o diário de um 
+                                amigo muito querido!
+                            </p>
+                            <div class="bg-white p-4 rounded-lg border-l-4 border-amber-500">
+                                <p class="text-gray-600 italic">
+                                    "Alargai-vos também vós. Tenho grande confiança em vós, tenho grande glória por 
+                                    vossa causa; estou cheio de consolação e transbordo de gozo." - 2 Coríntios 7:4
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../1corintios/1corintios.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 1 Coríntios
+            </a>
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
+            </a>
+            <a href="../galatas/galatas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Gálatas ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Coríntios - Força na Fraqueza ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('2 Coríntios');
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Tiago - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="tiago-capa.png" alt="Capa: Tiago" id="img-tiago"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⚒️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600 mx-2">
+                    LIVRO DE TIAGO
+                </span>
+                <span>⚒️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Fé que age — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-tiago" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+                🌟 Os Três Segredos de Tiago 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🔨 Primeiro Segredo: Fé com Ação</h3>
+                    <p class="italic">
+                        "Não basta só acreditar,<br>
+                        É preciso também agir!<br>
+                        A fé sem obras vai parar,<br>
+                        Como planta sem florir."
+                    </p>
+                    <p class="text-sm text-amber-600 mt-3 font-semibold">📖 Tiago 2:17 - "A fé sem obras está morta"</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-2 border-orange-300">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">👅 Segundo Segredo: Controle Sua Língua</h3>
+                    <p class="italic">
+                        "A língua é pequenina,<br>
+                        Mas pode muito estragar!<br>
+                        Como fogo que ilumina,<br>
+                        Ou que vem para queimar."
+                    </p>
+                    <p class="text-sm text-orange-600 mt-3 font-semibold">📖 Tiago 3:5-6 - "A língua é um fogo"</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💎 Terceiro Segredo: Sabedoria do Céu</h3>
+                    <p class="italic">
+                        "Se sabedoria você quer ter,<br>
+                        Peça a Deus com humildade!<br>
+                        Ele vai te responder,<br>
+                        Com amor e bondade."
+                    </p>
+                    <p class="text-sm text-yellow-600 mt-3 font-semibold">📖 Tiago 1:5 - "Se alguém tem falta de sabedoria, peça a Deus"</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-tiago");
+        const modal = document.getElementById("modal-tiago");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+            👥 Quem são os personagens principais?
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="tiago-personagem.png" alt="Personagens de Tiago" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">⚒️ Tiago</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Irmão de Jesus e líder da igreja em Jerusalém. Ele escreveu esta carta cheia de conselhos práticos para os cristãos que estavam espalhados pelo mundo. Tiago era conhecido por sua sabedoria e por viver exatamente o que ensinava!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🌍 Os Cristãos Espalhados</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pessoas que acreditavam em Jesus mas estavam longe de casa, enfrentando dificuldades e perseguições. Tiago escreveu para encorajá-los a viver sua fé com coragem e sabedoria, mesmo nos momentos difíceis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-amber-50 to-orange-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+            📖 O que o livro conta?
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🎯 Fé em Ação</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Tiago ensina que não basta só dizer que temos fé — precisamos mostrar isso através das nossas atitudes! É como construir uma casa: não adianta só ter o projeto, é preciso pegar as ferramentas e trabalhar!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">💬 Controle da Língua</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ele usa exemplos incríveis para mostrar o poder das palavras: a língua é como um leme que dirige um navio enorme, ou como uma faísca que pode incendiar uma floresta inteira! Por isso, devemos tomar cuidado com o que falamos.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🙏 Sabedoria e Paciência</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Tiago nos encoraja a pedir sabedoria a Deus e ter paciência nas dificuldades. Ele usa o exemplo do agricultor que espera pacientemente pela colheita — assim devemos ser nós, confiando em Deus!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="tiago-o-que-conta.png" alt="O que Tiago conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+            ⭐ Por que é importante?
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="tiago-importante.png" alt="Importância de Tiago" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4">🌟 Fé Verdadeira em Ação</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Tiago nos mostra que fé verdadeira não é só acreditar com a mente — é viver de acordo com o que acreditamos! É como plantar uma semente: ela só cresce se for regada e cuidada.
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border-2 border-amber-300">
+                        <p class="text-amber-700 font-bold text-center">
+                            "Sejam praticantes da palavra, e não apenas ouvintes!" ⚒️
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl border-2 border-orange-300">
+                    <h3 class="text-xl font-bold text-orange-700 mb-2">💪 Fé que Transforma</h3>
+                    <p class="text-gray-700">
+                        Este livro nos desafia a sair da zona de conforto e colocar nossa fé em prática através de boas obras, palavras gentis e atitudes que honram a Deus!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-orange-50 to-yellow-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+            🎯 Propósito do livro
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-amber-300">
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4">🌱 Encorajar e Fortalecer</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Tiago escreveu esta carta para encorajar os cristãos a viverem com:
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3 bg-amber-50 p-4 rounded-lg">
+                            <span class="text-3xl">⏳</span>
+                            <div>
+                                <h4 class="font-bold text-amber-700">Paciência</h4>
+                                <p class="text-gray-600">Esperar em Deus mesmo nas dificuldades</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-orange-50 p-4 rounded-lg">
+                            <span class="text-3xl">🙇</span>
+                            <div>
+                                <h4 class="font-bold text-orange-700">Humildade</h4>
+                                <p class="text-gray-600">Reconhecer que precisamos de Deus e dos outros</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-yellow-50 p-4 rounded-lg">
+                            <span class="text-3xl">❤️</span>
+                            <div>
+                                <h4 class="font-bold text-yellow-700">Boas Obras</h4>
+                                <p class="text-gray-600">Demonstrar amor através de ações práticas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="tiago-proposito.png" alt="Propósito de Tiago" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+            🤔 Você sabia?
+        </h2>
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="tiago-curiosidade.png" alt="Curiosidade sobre Tiago" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-2xl shadow-xl border-4 border-amber-300">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">🔥</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4 text-center">Exemplos do Dia a Dia!</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                        Tiago é um mestre em usar exemplos simples e poderosos para ensinar grandes verdades! Ele compara:
+                    </p>
+                    <div class="space-y-3">
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-amber-500">
+                            <p class="font-bold text-amber-700">👅 A língua com um fogo</p>
+                            <p class="text-gray-600 text-sm">Pequena, mas pode causar grande destruição!</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-orange-500">
+                            <p class="font-bold text-orange-700">🚢 A língua com um leme de navio</p>
+                            <p class="text-gray-600 text-sm">Pequena peça que dirige algo enorme!</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-yellow-500">
+                            <p class="font-bold text-yellow-700">🌊 A pessoa indecisa com ondas do mar</p>
+                            <p class="text-gray-600 text-sm">Levada de um lado para o outro!</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg border-l-4 border-red-500">
+                            <p class="font-bold text-red-700">🌱 O agricultor com o cristão paciente</p>
+                            <p class="text-gray-600 text-sm">Espera pela colheita com confiança!</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-amber-200 p-4 rounded-lg text-center">
+                        <p class="text-amber-800 font-bold">
+                            ✨ Esses exemplos tornam as lições de Tiago inesquecíveis! ✨
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-amber-600/20 to-orange-600/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../hebreus/hebreus.html" class="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Hebreus
+            </a>
+            <a href="../epistolas-gerais.html" class="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Epístolas Gerais
+            </a>
+            <a href="../1pedro/1pedro.html" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                1 Pedro ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-600 to-orange-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Tiago - Fé que Age ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Tiago');
+    </script>
+</body>
+</html>

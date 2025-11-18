@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 2 Pedro - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="2pedro-capa.png" alt="Capa: 2 Pedro" id="img-2pedro"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🌿</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600 mx-2">
+                    LIVRO DE 2 PEDRO
+                </span>
+                <span>🛡️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Últimas Palavras de Fé — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2pedro" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-emerald-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                🌟 Os Três Segredos de 2 Pedro 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-2xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3">🛡️ Primeiro Segredo: Cresça na Fé!</h3>
+                    <p class="italic">
+                        Pedro diz com voz serena:<br>
+                        "Cresçam no conhecimento pleno,<br>
+                        De Jesus, nossa luz amena,<br>
+                        Que nos guia com amor eterno!"
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 2 Pedro 3:18</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">⚠️ Segundo Segredo: Cuidado com os Falsos!</h3>
+                    <p class="italic">
+                        "Falsos mestres vão aparecer,<br>
+                        Com mentiras para enganar,<br>
+                        Mas a Palavra vai nos proteger,<br>
+                        Se em Jesus nos firmar!"
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 2 Pedro 2:1-3</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-2xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3">⏰ Terceiro Segredo: Jesus Voltará!</h3>
+                    <p class="italic">
+                        O Senhor não esqueceu da promessa,<br>
+                        Ele voltará com grande glória,<br>
+                        Vivamos com santa pureza,<br>
+                        Preparados para Sua história!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 2 Pedro 3:9-10</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-2pedro");
+        const modal = document.getElementById("modal-2pedro");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            👥 Quem são os personagens principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2pedro-personagem.png" alt="Personagens de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 rounded-xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-2">🌿 Pedro, o Apóstolo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O mesmo pescador que Jesus chamou! Agora, velhinho e sábio, Pedro escreve suas últimas palavras para proteger os cristãos dos falsos ensinamentos.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-teal-100 to-emerald-100 p-6 rounded-xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">⛪ Os Cristãos Fiéis</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pessoas que amavam Jesus mas estavam sendo confundidas por falsos mestres. Pedro os ensina a ficarem firmes na verdade!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-emerald-50 to-teal-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1 space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-2">📜 Últimas Palavras</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pedro sabia que logo iria morrer, então escreveu esta carta especial para lembrar os cristãos de crescerem no conhecimento de Jesus!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">⚠️ Alerta Contra Mentiras</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ele avisa sobre falsos mestres que tentariam enganar o povo de Deus com ensinamentos errados. "Fiquem atentos!", Pedro alerta!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-2">⏰ Jesus Voltará!</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pedro garante: Jesus não esqueceu Sua promessa! Ele voltará para buscar Seu povo. Por isso, devemos viver com pureza e esperança!
+                    </p>
+                </div>
+            </div>
+            <div class="order-2">
+                <img src="2pedro-o-que-conta.png" alt="O que 2 Pedro conta" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            ⭐ Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2pedro-importante.png" alt="Importância de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🛡️</span>
+                        Proteção Espiritual
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Este livro nos ensina a identificar mentiras e a nos proteger de quem quer nos afastar de Jesus. É como um escudo de sabedoria!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-teal-100 to-emerald-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">📚</span>
+                        Crescimento na Fé
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pedro nos motiva a nunca parar de aprender sobre Jesus. Quanto mais conhecemos a Palavra, mais fortes ficamos!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-6 rounded-xl">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">⏰</span>
+                        Esperança Viva
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nos lembra que Jesus voltará! Isso nos dá esperança para viver cada dia com alegria, pureza e amor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-emerald-600 to-teal-600 text-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-1 space-y-6">
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border-2 border-white/30">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center">
+                        <span class="text-3xl mr-3">💎</span>
+                        Permanecer Puros
+                    </h3>
+                    <p class="leading-relaxed">
+                        Pedro quer que os cristãos vivam de forma pura e santa, sem se deixar contaminar por ensinamentos falsos ou pelo pecado.
+                    </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border-2 border-white/30">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🔥</span>
+                        Manter a Fé Viva
+                    </h3>
+                    <p class="leading-relaxed">
+                        Ajudar os cristãos a manterem a fé firme e verdadeira, mesmo quando pessoas tentarem enganá-los ou desanimá-los.
+                    </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border-2 border-white/30">
+                    <h3 class="text-2xl font-bold mb-3 flex items-center">
+                        <span class="text-3xl mr-3">👑</span>
+                        Preparados para Jesus
+                    </h3>
+                    <p class="leading-relaxed">
+                        Garantir que todos estejam prontos para o dia em que Jesus voltar — vivendo com esperança e santidade!
+                    </p>
+                </div>
+            </div>
+            <div class="order-2">
+                <img src="2pedro-proposito.png" alt="Propósito de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-white/30">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            💡 Você sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2pedro-curiosidade.png" alt="Curiosidade sobre 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-br from-amber-100 to-yellow-100 p-8 rounded-2xl border-4 border-amber-400 shadow-xl">
+                    <div class="flex items-center justify-center mb-4">
+                        <span class="text-6xl">📜</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-amber-800 mb-4 text-center">
+                        Últimas Palavras de Pedro!
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
+                        Esta carta foi escrita pouco antes da morte de Pedro — são suas últimas palavras registradas na Bíblia!
+                    </p>
+                    <p class="text-lg text-gray-600 leading-relaxed text-center">
+                        Imagine: um avô sábio, sabendo que logo vai para o céu, deixando conselhos preciosos para seus netos amados. Cada palavra é um tesouro! 💎
+                    </p>
+                    <div class="mt-6 p-4 bg-white rounded-xl">
+                        <p class="text-center text-emerald-700 font-bold italic">
+                            "Cresçam na graça e no conhecimento de nosso Senhor e Salvador Jesus Cristo!"
+                        </p>
+                        <p class="text-center text-sm text-gray-500 mt-2">- 2 Pedro 3:18</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-2 border-emerald-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-center text-emerald-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../1pedro/1pedro.html" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                ⬅️ 1 Pedro
+            </a>
+            <a href="../epistolas-gerais.html" class="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Epístolas Gerais
+            </a>
+            <a href="../1joao/1joao.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                1 João ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-emerald-600 to-teal-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Pedro - Últimas Palavras de Fé ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('2 Pedro');
+    </script>
+</body>
+</html>

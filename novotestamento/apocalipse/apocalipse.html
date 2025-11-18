@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Apocalipse - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="apocalipse-capa.png" alt="Capa: Apocalipse" id="img-apocalipse"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🌟</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600 mx-2">
+                    LIVRO DE APOCALIPSE
+                </span>
+                <span>👑</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Revelação da Vitória Final — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-apocalipse" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+                🌟 Os Três Segredos de Apocalipse 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">👑 Primeiro Segredo: Jesus É o Rei dos Reis!</h3>
+                    <p class="italic">
+                        Na ilha de Patmos João estava,<br>
+                        Quando Jesus glorioso veio mostrar:<br>
+                        "Eu sou o primeiro e o último, o que vive!<br>
+                        Minha vitória é certa, ninguém resiste!"<br>
+                        Com voz de trombeta e olhos de fogo,<br>
+                        Jesus revelou: Ele vence o jogo!
+                    </p>
+                    <p class="text-sm text-amber-600 mt-3 font-semibold">📖 Apocalipse 1:17-18</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">⚔️ Segundo Segredo: O Bem Sempre Vence o Mal!</h3>
+                    <p class="italic">
+                        Dragões, bestas e batalhas sem fim,<br>
+                        Mas não tenha medo, o final é bom assim:<br>
+                        Jesus cavalga em cavalo branco,<br>
+                        Derrota o inimigo com poder santo!<br>
+                        Satanás é lançado no lago de fogo,<br>
+                        E a justiça de Deus brilha em todo lugar logo!
+                    </p>
+                    <p class="text-sm text-yellow-600 mt-3 font-semibold">📖 Apocalipse 19:11-16; 20:10</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🏰 Terceiro Segredo: Um Novo Céu e Uma Nova Terra!</h3>
+                    <p class="italic">
+                        Deus enxugará toda lágrima e dor,<br>
+                        Não haverá mais tristeza, só amor!<br>
+                        A cidade santa desce do céu,<br>
+                        Com ruas de ouro e portões de véu.<br>
+                        Viveremos com Deus para sempre feliz,<br>
+                        Num paraíso perfeito que Ele prometeu e fez!
+                    </p>
+                    <p class="text-sm text-amber-600 mt-3 font-semibold">📖 Apocalipse 21:1-4</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-apocalipse");
+        const modal = document.getElementById("modal-apocalipse");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="apocalipse-personagem.png" alt="Personagens de Apocalipse" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-4 text-lg leading-relaxed">
+                <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500">
+                    <p class="font-bold text-amber-700">✍️ João:</p>
+                    <p class="text-gray-700">O apóstolo que escreveu as visões que Deus lhe mostrou enquanto estava na ilha de Patmos.</p>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                    <p class="font-bold text-yellow-700">👑 Jesus:</p>
+                    <p class="text-gray-700">O Cordeiro de Deus, o Rei dos reis e Senhor dos senhores que vence todas as batalhas!</p>
+                </div>
+                <div class="bg-amber-50 p-4 rounded-lg border-l-4 border-amber-500">
+                    <p class="font-bold text-amber-700">😇 Anjos:</p>
+                    <p class="text-gray-700">Mensageiros celestiais que anunciam os julgamentos e as boas novas de Deus.</p>
+                </div>
+                <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                    <p class="font-bold text-yellow-700">💪 Servos Fiéis:</p>
+                    <p class="text-gray-700">Aqueles que permanecem firmes em Jesus, mesmo nas dificuldades, e recebem a coroa da vida!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+            📜 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 text-lg leading-relaxed order-2 md:order-1">
+                <p class="text-gray-700 font-semibold">
+                    Apocalipse é um livro cheio de visões incríveis que Deus mostrou a João sobre o futuro!
+                </p>
+                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-amber-500">
+                    <p class="text-gray-700">
+                        🌟 <strong>Visões Celestiais:</strong> João vê Jesus glorificado, anjos poderosos e o trono de Deus no céu.
+                    </p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <p class="text-gray-700">
+                        ⚔️ <strong>Batalha do Bem Contra o Mal:</strong> O livro mostra a luta entre as forças de Deus e as forças do mal.
+                    </p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-amber-500">
+                    <p class="text-gray-700">
+                        🏆 <strong>Vitória Final de Jesus:</strong> No fim, Jesus vence completamente e derrota o diabo para sempre!
+                    </p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md border-l-4 border-yellow-500">
+                    <p class="text-gray-700">
+                        🏰 <strong>Novo Céu e Nova Terra:</strong> Deus cria um lugar perfeito onde não há mais choro, dor ou morte!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="apocalipse-o-que-conta.png" alt="O que Apocalipse conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="apocalipse-importante.png" alt="Importância de Apocalipse" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6 text-lg leading-relaxed">
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">💪 Deus Está no Controle!</h3>
+                    <p class="text-gray-700">
+                        Mesmo quando as coisas parecem difíceis ou assustadoras, Apocalipse nos lembra que Deus tem o controle de tudo. Ele é mais forte que qualquer problema!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🏆 O Bem Sempre Vence!</h3>
+                    <p class="text-gray-700">
+                        O livro nos ensina que, no final da história, o bem sempre vence o mal. Jesus já ganhou a batalha na cruz, e um dia todos verão Sua vitória completa!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🌈 Esperança para Hoje!</h3>
+                    <p class="text-gray-700">
+                        Apocalipse nos dá esperança! Sabemos que Deus tem um plano maravilhoso para o futuro, e isso nos ajuda a viver com coragem e fé hoje!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 text-lg leading-relaxed order-2 md:order-1">
+                <p class="text-gray-700 font-semibold text-xl">
+                    O propósito de Apocalipse é revelar que Jesus voltará para estabelecer um novo céu e uma nova terra, cheios de paz e alegria!
+                </p>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-500">
+                    <p class="font-bold text-amber-700 mb-2">👑 Jesus Voltará!</p>
+                    <p class="text-gray-700">
+                        O livro promete que Jesus voltará em glória para buscar Seu povo e reinar para sempre!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-500">
+                    <p class="font-bold text-yellow-700 mb-2">🏰 Um Novo Paraíso!</p>
+                    <p class="text-gray-700">
+                        Deus criará um lugar perfeito onde viveremos com Ele eternamente, sem tristeza, dor ou lágrimas!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-500">
+                    <p class="font-bold text-amber-700 mb-2">🌟 Viva com Esperança!</p>
+                    <p class="text-gray-700">
+                        Apocalipse nos ensina a viver hoje com esperança, sabendo que o melhor ainda está por vir!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="apocalipse-proposito.png" alt="Propósito de Apocalipse" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="apocalipse-curiosidade.png" alt="Curiosidade sobre Apocalipse" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-8 rounded-2xl border-4 border-amber-300 shadow-xl">
+                    <h3 class="text-3xl font-black text-amber-700 mb-4">🏝️ Escrito na Prisão!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        João escreveu Apocalipse enquanto estava <strong>preso na ilha de Patmos</strong> — um lugar isolado e rochoso no meio do mar!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Mesmo estando sozinho e longe de casa, João recebeu visões incríveis de Jesus e uma mensagem cheia de <strong>esperança</strong> para todos nós!
+                    </p>
+                    <div class="bg-white p-4 rounded-lg border-l-4 border-yellow-500">
+                        <p class="text-gray-700 font-semibold">
+                            💡 <strong>Lição:</strong> Mesmo nos momentos mais difíceis, Deus está conosco e pode nos usar para fazer coisas extraordinárias!
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-2 border-yellow-300">
+                    <p class="text-gray-700">
+                        <strong>🌟 Curiosidade Extra:</strong> Apocalipse é o único livro da Bíblia que promete uma bênção especial para quem o lê! (Apocalipse 1:3)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-500/20 to-yellow-600/20 border-2 border-amber-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../judas/judas.html" class="bg-gradient-to-r from-amber-500 to-yellow-600 hover:from-amber-600 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Judas
+            </a>
+            <a href="../novo-testamento.html" class="bg-gradient-to-r from-yellow-600 to-amber-500 hover:from-yellow-700 hover:to-amber-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Novo Testamento
+            </a>
+            <a href="../../index.html" class="bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                🏠 Página Inicial
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-500 to-yellow-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Apocalipse - A Revelação da Vitória Final ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Apocalipse');
+    </script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 1 Pedro - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="1-pedro-capa.png" alt="Capa: 1 Pedro" id="img-1-pedro"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🔥</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 mx-2">
+                    LIVRO DE 1 PEDRO
+                </span>
+                <span>💪</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Esperança e Coragem no Sofrimento — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-1-pedro" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+                🌟 Os Três Segredos de 1 Pedro 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🛡️ Primeiro Segredo: A Fé que Protege</h3>
+                    <p class="italic">
+                        Quando as tempestades vierem,<br>
+                        E o mundo te fizer sofrer,<br>
+                        Lembra que tua fé é escudo,<br>
+                        E Jesus está com você!<br><br>
+                        Como ouro no fogo brilha,<br>
+                        Tua fé vai se fortalecer,<br>
+                        Nas provas, Deus te abraça,<br>
+                        E te ensina a vencer!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 1 Pedro 1:6-7</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">❤️ Segundo Segredo: O Amor que Transforma</h3>
+                    <p class="italic">
+                        Ame de coração sincero,<br>
+                        Como Jesus nos amou,<br>
+                        Perdoe quem te machuca,<br>
+                        Pois Ele assim ensinou!<br><br>
+                        Seja humilde e bondoso,<br>
+                        Mesmo quando dói demais,<br>
+                        O amor cobre muitos erros,<br>
+                        E traz a verdadeira paz!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 1 Pedro 4:8</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">👑 Terceiro Segredo: A Esperança Viva</h3>
+                    <p class="italic">
+                        Você é pedra preciosa,<br>
+                        Escolhida pelo Rei,<br>
+                        Sua esperança está no céu,<br>
+                        Guardada pela fé!<br><br>
+                        Mesmo nas dificuldades,<br>
+                        Você pode celebrar,<br>
+                        Pois Jesus já venceu tudo,<br>
+                        E vai te coroar!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 1 Pedro 1:3-4</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-1-pedro");
+        const modal = document.getElementById("modal-1-pedro");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            👥 Quem são os personagens principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="1-pedro-personagem.png" alt="Pedro e os cristãos perseguidos" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✉️ Pedro, o Apóstolo</h3>
+                    <p class="text-gray-700 text-lg">
+                        O pescador que Jesus transformou em líder! Pedro escreve esta carta cheia de amor e coragem para animar os cristãos que estavam sofrendo perseguição. Ele conhecia bem o sofrimento e tinha muita sabedoria para compartilhar!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💪 Os Cristãos Perseguidos</h3>
+                    <p class="text-gray-700 text-lg">
+                        Crentes espalhados pela Ásia Menor que estavam sendo maltratados por causa da fé em Jesus. Eles precisavam de encorajamento para não desistir e continuar firmes, mesmo quando tudo parecia difícil!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🔥 Fé no Fogo</h3>
+                    <p class="text-gray-700 text-lg">
+                        Pedro ensina que o sofrimento é como o fogo que purifica o ouro - ele torna nossa fé mais forte e brilhante! Mesmo nas dificuldades, podemos ter esperança porque Jesus já venceu tudo!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">❤️ Amor em Ação</h3>
+                    <p class="text-gray-700 text-lg">
+                        A carta mostra como viver de maneira santa: amando uns aos outros, sendo humildes, perdoando e fazendo o bem mesmo quando os outros são maus. Jesus é nosso maior exemplo!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">👑 Esperança Eterna</h3>
+                    <p class="text-gray-700 text-lg">
+                        Pedro lembra que somos peregrinos neste mundo e que nossa verdadeira casa está no céu! Nossa esperança está guardada lá, e nada pode tirar isso de nós!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="1-pedro-o-que-conta.png" alt="Fé e esperança no sofrimento" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            ⭐ Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="1-pedro-importante.png" alt="A importância da fé e coragem" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-gradient-to-br from-sky-100 to-blue-100 p-6 rounded-xl shadow-md border-2 border-sky-300">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🛡️</span> Fé que Fortalece
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Este livro nos ensina que a fé verdadeira não desiste quando as coisas ficam difíceis. Ela cresce e fica mais forte! Como um músculo que se exercita, nossa fé se fortalece nas provações.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-100 to-indigo-100 p-6 rounded-xl shadow-md border-2 border-blue-300">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💎</span> Jesus, Nosso Exemplo
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Pedro mostra que Jesus é nosso maior exemplo de coragem e amor. Ele sofreu por nós, mas não revidou. Seguir Jesus significa confiar Nele e fazer o bem, mesmo quando dói!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💪</span> Animar os Cristãos
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Pedro escreveu para encorajar os cristãos que estavam passando por momentos difíceis. Ele queria que eles soubessem que não estavam sozinhos e que o sofrimento não duraria para sempre!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">✨</span> Viver com Fé e Bondade
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        O objetivo é ensinar como viver de forma santa diante das dificuldades: sendo humildes, amorosos, perdoadores e sempre fazendo o bem. Nossa vida deve brilhar como luz no mundo!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🌟</span> Manter a Esperança Viva
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Pedro quer que os cristãos mantenham os olhos fixos na esperança eterna! Não importa o que aconteça aqui, temos uma herança maravilhosa guardada no céu que ninguém pode roubar!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="1-pedro-proposito.png" alt="Propósito de animar e fortalecer" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            🤔 Você sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="1-pedro-curiosidade.png" alt="Pedro escreveu de Roma" 
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-br from-amber-100 to-yellow-100 p-8 rounded-2xl shadow-xl border-4 border-amber-300">
+                    <h3 class="text-3xl font-black text-amber-700 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🏛️</span> A Misteriosa "Babilônia"
+                    </h3>
+                    <p class="text-gray-800 text-xl leading-relaxed mb-4">
+                        Pedro escreveu essa carta de <span class="font-bold text-amber-700">Roma</span>, mas ele a chamou de <span class="font-bold text-amber-700">"Babilônia"</span>! 
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                        Por quê? Porque Roma era o centro do império que perseguia os cristãos, assim como a antiga Babilônia havia perseguido o povo de Deus! Era um nome secreto que os cristãos entendiam perfeitamente!
+                    </p>
+                    <div class="bg-white p-4 rounded-lg mt-4">
+                        <p class="text-gray-600 text-base italic">
+                            💡 <strong>Dica:</strong> Isso mostra que Pedro estava em perigo também! Ele escrevia com coragem, mesmo arriscando sua própria vida para encorajar outros cristãos!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../tiago/tiago.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Tiago
+            </a>
+            <a href="../epistolas-gerais.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Epístolas Gerais
+            </a>
+            <a href="../2pedro/2pedro.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                2 Pedro ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Pedro - Esperança e Coragem no Sofrimento ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('1 Pedro');
+    </script>
+</body>
+</html>

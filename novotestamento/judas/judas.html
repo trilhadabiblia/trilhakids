@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Judas - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="judas-capa.png" alt="Capa: Judas" id="img-judas"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⚔️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mx-2">
+                    LIVRO DE JUDAS
+                </span>
+                <span>🛡️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Defensores da Verdade — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-judas" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+                🌟 Os Três Segredos de Judas 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">⚔️ Primeiro Segredo: A Batalha pela Verdade</h3>
+                    <p class="italic">
+                        Quando mentiras tentam entrar sorrateiras,<br>
+                        Judas nos ensina com palavras certeiras:<br>
+                        "Defendam a fé com coragem e amor,<br>
+                        Pois a verdade de Deus é nosso maior tesouro!"
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Judas 1:3 - "Batalhando pela fé que uma vez por todas foi entregue aos santos."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🛡️ Segundo Segredo: Cuidado com os Falsos Mestres</h3>
+                    <p class="italic">
+                        Alguns falam bonito, mas enganam de verdade,<br>
+                        Judas nos alerta com toda a claridade:<br>
+                        "Fiquem atentos, não se deixem enganar,<br>
+                        Só a Palavra de Deus pode nos guiar!"
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Judas 1:4 - "Pois certos homens se introduziram com dissimulação."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🙏 Terceiro Segredo: A Benção do Guardador</h3>
+                    <p class="italic">
+                        Judas termina com louvor ao Senhor,<br>
+                        Que nos guarda e nos enche de amor:<br>
+                        "Àquele que pode nos guardar de tropeçar,<br>
+                        Glória e majestade devemos sempre dar!"
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Judas 1:24-25 - "Ora, àquele que é poderoso para vos guardar de tropeçar..."</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-judas");
+        const modal = document.getElementById("modal-judas");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-red-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">✍️</span>
+                        Judas - O Irmão Protetor
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Judas era irmão de Tiago e meio-irmão de Jesus! Ele escreveu esta carta curta mas poderosa para alertar os cristãos sobre os perigos espirituais.
+                    </p>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="font-semibold text-red-600">🎯 Sua Missão:</p>
+                        <p class="text-gray-700">Proteger a igreja dos falsos ensinamentos e fortalecer a fé dos crentes verdadeiros.</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-orange-600 mt-6">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">⚠️</span>
+                        Os Cristãos em Perigo
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Os cristãos estavam sendo enganados por pessoas que diziam ensinar sobre Deus, mas na verdade distorciam a verdade. Judas os chama de volta à fé genuína!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="judas-personagem.png" alt="Personagens de Judas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o Livro Conta -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            📖 O que o Livro de Judas Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-1">
+                <img src="judas-o-que-conta.png" alt="História de Judas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-6 rounded-2xl shadow-lg mb-6">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🚨</span>
+                        Um Alerta Urgente
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Judas escreve uma carta curta mas cheia de poder! Ele alerta que falsos mestres estão entrando na igreja, ensinando coisas erradas sobre Deus e levando as pessoas para longe da verdade.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg mb-6">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">⚔️</span>
+                        Chamado à Batalha
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Judas chama os cristãos a "batalhar pela fé" — não com espadas, mas defendendo a verdade com amor, sabedoria e coragem. Ele mostra exemplos do Antigo Testamento de pessoas que desobedeceram a Deus.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-2 border-red-300">
+                    <h3 class="text-2xl font-bold text-red-800 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">💪</span>
+                        Permaneçam Firmes!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A mensagem principal é clara: fiquem firmes na fé verdadeira, não se deixem enganar, e confiem que Deus é poderoso para guardar vocês até o fim!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é Importante -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-red-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+            ⭐ Por que Judas é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-2xl mb-6 border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">🛡️</span>
+                        Ensina a Defender a Verdade
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Judas nos ensina que é importante conhecer bem a Palavra de Deus para não sermos enganados. Quando sabemos a verdade, podemos defendê-la com amor e sabedoria!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-orange-50 to-yellow-50 p-6 rounded-2xl mb-6 border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">👀</span>
+                        Nos Deixa Atentos
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O livro nos ensina a ter discernimento — saber diferenciar o que é verdadeiro do que é falso. Nem tudo que parece bom realmente é de Deus!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-4 flex items-center">
+                        <span class="text-3xl mr-3">❤️</span>
+                        Fortalece Nossa Fé
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Judas nos lembra que Deus é poderoso para nos guardar de cair. Isso nos dá confiança e coragem para continuar firmes, mesmo quando as coisas ficam difíceis!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="judas-importante.png" alt="Importância de Judas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do Livro -->
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            🎯 Qual é o Propósito de Judas?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-1">
+                <img src="judas-proposito.png" alt="Propósito de Judas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl shadow-lg mb-6">
+                    <h3 class="text-3xl font-bold text-red-700 mb-6 text-center flex items-center justify-center">
+                        <span class="text-4xl mr-3">🛡️</span>
+                        Proteger a Igreja
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
+                        O objetivo principal de Judas é proteger os cristãos da confusão espiritual e dos falsos ensinamentos que estavam se espalhando.
+                    </p>
+                    <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl">
+                        <p class="text-lg text-gray-800 font-semibold text-center">
+                            "Batalhando pela fé que uma vez por todas foi entregue aos santos"
+                        </p>
+                        <p class="text-sm text-gray-600 text-center mt-2">📖 Judas 1:3</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-orange-700 mb-6 text-center flex items-center justify-center">
+                        <span class="text-4xl mr-3">💪</span>
+                        Fortalecer os Crentes
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
+                        Judas quer que os cristãos cresçam fortes na fé verdadeira, conhecendo bem a Palavra de Deus e permanecendo firmes no amor de Cristo.
+                    </p>
+                    <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl">
+                        <p class="text-lg text-gray-800 font-semibold text-center">
+                            Edificar-se na santíssima fé, orar no Espírito Santo e guardar-se no amor de Deus!
+                        </p>
+                        <p class="text-sm text-gray-600 text-center mt-2">📖 Judas 1:20-21</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-yellow-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl shadow-lg border-l-4 border-yellow-600">
+                    <h3 class="text-3xl font-bold text-yellow-700 mb-6 flex items-center">
+                        <span class="text-4xl mr-3">🙏</span>
+                        A Bênção Mais Linda!
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                        Judas termina sua carta com uma das bênçãos mais bonitas e poderosas de toda a Bíblia — uma oração de louvor a Deus que nos enche de esperança e alegria!
+                    </p>
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <p class="text-lg text-gray-800 italic leading-relaxed mb-4">
+                            "Ora, àquele que é poderoso para vos guardar de tropeçar e apresentar-vos irrepreensíveis, com alegria, perante a sua glória, ao único Deus sábio, Salvador nosso, seja glória e majestade, domínio e poder, agora, e para todo o sempre. Amém."
+                        </p>
+                        <p class="text-sm text-gray-600 font-semibold text-right">📖 Judas 1:24-25</p>
+                    </div>
+                    <div class="mt-6 bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl">
+                        <p class="text-lg text-gray-800 font-bold mb-2">✨ Que promessa incrível!</p>
+                        <p class="text-gray-700">
+                            Deus é poderoso para nos guardar de cair e nos apresentar diante dele cheios de alegria! Essa é a nossa esperança e confiança!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="judas-curiosidade.png" alt="Curiosidade sobre Judas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-600/30 rounded-2xl p-10 mx-4 mb-8">
+        <h3 class="text-3xl font-black text-gray-800 mb-6 text-center">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../3-joao/3-joao.html" class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 3 João
+            </a>
+            <a href="../epistolas-gerais.html" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Epístolas Gerais
+            </a>
+            <a href="../apocalipse/apocalipse.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Apocalipse ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-red-600 to-orange-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Judas - Defensores da Verdade ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Judas');
+    </script>
+</body>
+</html>

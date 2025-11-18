@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Lucas - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="lucas-capa.png" alt="Capa: Lucas" id="img-lucas"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>❤️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400 mx-2">
+                    LIVRO DE LUCAS
+                </span>
+                <span>🕊️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">O Evangelho da Compaixão — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-lucas" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+                🌟 Os Três Segredos de Lucas 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">💝 Primeiro Segredo: Jesus Ama a Todos!</h3>
+                    <p class="italic">
+                        Rico ou pobre, grande ou pequeno,<br>
+                        Jesus veio com amor tão belo!<br>
+                        Zaqueu na árvore subiu,<br>
+                        E Jesus o amor não esqueceu!<br>
+                        Ninguém fica de fora, isso é verdade,<br>
+                        O coração de Jesus tem grande bondade! ❤️
+                    </p>
+                    <p class="text-sm text-gray-500 mt-3">📖 Lucas 19:10 - "O Filho do Homem veio buscar e salvar o que estava perdido."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-400">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">🙏 Segundo Segredo: A Oração é Poderosa!</h3>
+                    <p class="italic">
+                        Jesus orava de manhã e de noite,<br>
+                        Conversava com o Pai sem açoite!<br>
+                        Nos ensinou a falar com Deus,<br>
+                        Como um filho fala aos seus!<br>
+                        "Pai nosso que estás no céu",<br>
+                        Essa oração é nosso troféu! 🌟
+                    </p>
+                    <p class="text-sm text-gray-500 mt-3">📖 Lucas 11:1 - "Senhor, ensina-nos a orar."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🎉 Terceiro Segredo: Alegria no Céu!</h3>
+                    <p class="italic">
+                        Quando alguém se arrepende aqui,<br>
+                        No céu a festa eu vi!<br>
+                        A ovelha perdida foi achada,<br>
+                        E a alegria foi dobrada!<br>
+                        Deus não quer ninguém perdido,<br>
+                        Quer todos no céu reunidos! 🎊
+                    </p>
+                    <p class="text-sm text-gray-500 mt-3">📖 Lucas 15:7 - "Haverá mais alegria no céu por um pecador que se arrepende."</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-lucas");
+        const modal = document.getElementById("modal-lucas");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="lucas-personagem.png" alt="Personagens de Lucas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-4 text-lg leading-relaxed">
+                <p class="bg-sky-50 p-4 rounded-lg border-l-4 border-sky-500">
+                    <strong class="text-sky-600">✝️ Jesus:</strong> O Salvador do mundo, cheio de amor e compaixão por todos!
+                </p>
+                <p class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                    <strong class="text-blue-600">👸 Maria e José:</strong> Os pais terrenos de Jesus, escolhidos por Deus.
+                </p>
+                <p class="bg-sky-50 p-4 rounded-lg border-l-4 border-sky-500">
+                    <strong class="text-sky-600">👨‍👩‍👧‍👦 Os Discípulos:</strong> Amigos fiéis que seguiram Jesus e aprenderam com Ele.
+                </p>
+                <p class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-400">
+                    <strong class="text-blue-600">🌳 Zaqueu:</strong> Um cobrador de impostos que subiu numa árvore para ver Jesus!
+                </p>
+                <p class="bg-sky-50 p-4 rounded-lg border-l-4 border-sky-500">
+                    <strong class="text-sky-600">❤️ O Bom Samaritano:</strong> Um exemplo de amor ao próximo que Jesus contou.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4 text-lg leading-relaxed order-2 md:order-1">
+                <p class="bg-white p-4 rounded-lg shadow-md">
+                    Lucas conta a história completa de Jesus, desde o nascimento especial em Belém até Sua volta ao céu! 🌟
+                </p>
+                <p class="bg-white p-4 rounded-lg shadow-md">
+                    Vemos Jesus curando os doentes, ensinando sobre o amor de Deus e fazendo milagres incríveis! 🙌
+                </p>
+                <p class="bg-white p-4 rounded-lg shadow-md">
+                    Lucas mostra como Jesus se importava especialmente com os rejeitados, pobres e pecadores. Ninguém era deixado de fora! ❤️
+                </p>
+                <p class="bg-white p-4 rounded-lg shadow-md">
+                    O livro termina com a ressurreição de Jesus e Sua ascensão ao céu, provando que Ele venceu a morte! 🎉
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="lucas-o-que-conta.png" alt="O que Lucas conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="lucas-importante.png" alt="Importância de Lucas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-4 text-lg leading-relaxed">
+                <p class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-lg border-l-4 border-sky-500">
+                    <strong class="text-sky-600 text-xl">💝 Salvação Para Todos!</strong><br>
+                    Lucas ensina que Jesus veio para salvar TODAS as pessoas, não importa quem sejam! Rico, pobre, criança, adulto - todos são amados!
+                </p>
+                <p class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-lg border-l-4 border-blue-400">
+                    <strong class="text-blue-600 text-xl">🙏 Compaixão e Amor!</strong><br>
+                    Aprendemos a ter um coração bondoso como Jesus, ajudando quem precisa e amando nosso próximo!
+                </p>
+                <p class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-lg border-l-4 border-sky-500">
+                    <strong class="text-sky-600 text-xl">✨ Esperança Verdadeira!</strong><br>
+                    A história de Jesus nos dá esperança de vida eterna e nos mostra que Deus nunca desiste de nós!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4 text-lg leading-relaxed order-2 md:order-1">
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">❤️ Mostrar o Coração de Jesus</h3>
+                    <p>Lucas queria que todos conhecessem o coração bondoso e amoroso de Jesus, que se importa com cada pessoa!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-blue-400">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">🌍 Missão de Salvação</h3>
+                    <p>O livro revela a missão de Jesus: trazer salvação para TODOS, sem exceção! Ele veio buscar e salvar o que estava perdido!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">📚 Ensinar e Inspirar</h3>
+                    <p>Lucas escreveu para ensinar sobre a vida de Jesus e inspirar as pessoas a seguirem Seu exemplo de amor e compaixão!</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="lucas-proposito.png" alt="Propósito de Lucas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="lucas-curiosidade.png" alt="Curiosidade sobre Lucas" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-sky-500 to-blue-400 text-white p-8 rounded-2xl shadow-xl">
+                    <h3 class="text-3xl font-black mb-4">🩺 Lucas, o Médico Escritor!</h3>
+                    <p class="text-xl leading-relaxed mb-4">
+                        Lucas era médico e o único escritor não judeu do Novo Testamento! Ele escreveu com detalhes médicos e cuidado especial!
+                    </p>
+                    <p class="text-lg leading-relaxed mb-4">
+                        📖 Ele também escreveu o livro de Atos, contando a história da igreja primitiva!
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        🌟 Lucas entrevistou testemunhas oculares e pesquisou cuidadosamente para escrever tudo com precisão!
+                    </p>
+                </div>
+                <div class="bg-sky-50 p-6 rounded-xl border-2 border-sky-200">
+                    <p class="text-center text-lg font-semibold text-gray-700">
+                        💡 <em>"Lucas 1:3 - Investiguei tudo cuidadosamente desde o começo!"</em>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-400/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../marcos/marcos.html" class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Marcos
+            </a>
+            <a href="../evangelhos.html" class="bg-gradient-to-r from-blue-400 to-sky-500 hover:from-blue-500 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Evangelhos
+            </a>
+            <a href="../joao/joao.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                João ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-400 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Lucas - O Evangelho da Compaixão ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Lucas');
+    </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Atos dos Apóstolos - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="atos-capa.png" alt="Capa: Atos dos Apóstolos" id="img-atos"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🔥</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 mx-2">
+                    LIVRO DE ATOS DOS APÓSTOLOS
+                </span>
+                <span>🔥</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">O Poder do Espírito Santo — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-atos" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-orange-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+                🌟 Os Três Segredos de Atos 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-3">🔥 Primeiro Segredo: O Fogo do Pentecostes</h3>
+                    <p class="italic">
+                        Quando o Espírito desceu com línguas de fogo,<br>
+                        Os discípulos ficaram cheios de um poder novo!<br>
+                        Falaram em outras línguas, pregaram com ousadia,<br>
+                        E três mil pessoas creram naquele dia!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Atos 2:1-4, 41</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-600 mb-3">✨ Segundo Segredo: Coragem para Testemunhar</h3>
+                    <p class="italic">
+                        Pedro, que negou Jesus com tanto medo,<br>
+                        Agora pregava sem nenhum segredo!<br>
+                        Paulo viajou por terras tão distantes,<br>
+                        Levando o evangelho a todos os instantes!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Atos 4:13, 20</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3">🌍 Terceiro Segredo: O Evangelho Sem Fronteiras</h3>
+                    <p class="italic">
+                        De Jerusalém até os confins da terra,<br>
+                        A igreja crescia, não havia guerra!<br>
+                        Judeus e gentios, todos eram irmãos,<br>
+                        Unidos em Cristo, de corações e mãos!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Atos 1:8; 10:34-35</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-atos");
+        const modal = document.getElementById("modal-atos");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="atos-personagem.png" alt="Personagens de Atos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-4 rounded-lg border-l-4 border-orange-500">
+                    <h3 class="font-bold text-xl text-orange-600 mb-2">🗝️ Pedro</h3>
+                    <p class="text-gray-700">O pescador corajoso que pregou no Pentecostes e viu milhares se converterem!</p>
+                </div>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-4 rounded-lg border-l-4 border-red-500">
+                    <h3 class="font-bold text-xl text-red-600 mb-2">⚡ Paulo</h3>
+                    <p class="text-gray-700">O perseguidor que se tornou o maior missionário, levando Jesus ao mundo inteiro!</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                    <h3 class="font-bold text-xl text-yellow-600 mb-2">🔥 Espírito Santo</h3>
+                    <p class="text-gray-700">O poder de Deus que encheu os discípulos de coragem, sabedoria e ousadia!</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="font-bold text-xl text-blue-600 mb-2">💎 Estêvão, João e Barnabé</h3>
+                    <p class="text-gray-700">Heróis da fé que pregaram, curaram e deram suas vidas por Jesus!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+            📖 O que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-500">
+                    <h3 class="font-bold text-2xl text-orange-600 mb-3">🔥 O Dia de Pentecostes</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Depois que Jesus subiu ao céu, Ele enviou o Espírito Santo! 
+                        Os discípulos estavam reunidos quando de repente veio um vento forte 
+                        e línguas de fogo apareceram sobre eles. Ficaram cheios do poder de Deus!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500">
+                    <h3 class="font-bold text-2xl text-red-600 mb-3">✨ A Igreja Cresce</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pedro pregou com tanta coragem que 3 mil pessoas creram em Jesus! 
+                        Os apóstolos faziam milagres, curavam doentes e a igreja crescia todos os dias.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-500">
+                    <h3 class="font-bold text-2xl text-yellow-600 mb-3">🌍 Missões ao Mundo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo fez três grandes viagens missionárias, levando o evangelho 
+                        a cidades distantes. Enfrentou perigos, mas nunca desistiu de falar de Jesus!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="atos-o-que-conta.png" alt="O que Atos conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+            💡 Por que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="atos-importante.png" alt="Importância de Atos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-2xl text-orange-600 mb-3 flex items-center gap-2">
+                        <span>🔥</span> O Poder do Espírito Santo
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Atos nos ensina que o mesmo Espírito Santo que encheu os discípulos 
+                        está disponível para nós hoje! Ele nos dá coragem para falar de Jesus 
+                        e poder para viver uma vida que agrada a Deus.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-2xl text-red-600 mb-3 flex items-center gap-2">
+                        <span>💪</span> Coragem e Amor
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Mesmo quando foram presos, ameaçados e perseguidos, os apóstolos 
+                        continuaram pregando com amor e coragem. Eles nos mostram que 
+                        vale a pena seguir Jesus, não importa o que aconteça!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-2xl text-yellow-600 mb-3 flex items-center gap-2">
+                        <span>🌟</span> Todos Podem Conhecer Jesus
+                    </h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Atos mostra que o evangelho é para todo mundo — não importa de onde você é 
+                        ou quem você é. Jesus ama a todos e quer que todos O conheçam!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-orange-500">
+                    <div class="flex items-start gap-4">
+                        <span class="text-4xl">📜</span>
+                        <div>
+                            <h3 class="font-bold text-xl text-orange-600 mb-2">Contar a História da Igreja</h3>
+                            <p class="text-gray-700">
+                                Atos é como um diário que mostra como tudo começou! 
+                                Como a igreja nasceu, cresceu e se espalhou pelo mundo inteiro.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-red-500">
+                    <div class="flex items-start gap-4">
+                        <span class="text-4xl">🕊️</span>
+                        <div>
+                            <h3 class="font-bold text-xl text-red-600 mb-2">Mostrar o Espírito Santo em Ação</h3>
+                            <p class="text-gray-700">
+                                O livro revela como o Espírito Santo guiou, fortaleceu e capacitou 
+                                os primeiros cristãos a fazer coisas incríveis para Deus!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
+                    <div class="flex items-start gap-4">
+                        <span class="text-4xl">🌍</span>
+                        <div>
+                            <h3 class="font-bold text-xl text-yellow-600 mb-2">Inspirar Missões e Evangelismo</h3>
+                            <p class="text-gray-700">
+                                Atos nos ensina que somos chamados a levar o evangelho a todas as nações, 
+                                começando onde estamos e indo até os confins da terra!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="atos-proposito.png" alt="Propósito de Atos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="atos-curiosidade.png" alt="Curiosidade sobre Atos" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-br from-orange-100 via-red-100 to-yellow-100 p-8 rounded-2xl shadow-xl border-4 border-orange-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-5xl">📖</span>
+                        <h3 class="font-black text-3xl text-orange-600">Curiosidade Incrível!</h3>
+                    </div>
+                    <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
+                        <p class="font-semibold">
+                            🎬 O livro de Atos é como a "continuação" do Evangelho de Lucas! 
+                            Lucas escreveu os dois livros para contar toda a história de Jesus 
+                            e da igreja primitiva.
+                        </p>
+                        <p>
+                            ✈️ <span class="font-bold">Paulo fez três viagens missionárias</span> incríveis! 
+                            Ele viajou mais de 16.000 quilômetros a pé e de barco, 
+                            enfrentou naufrágios, prisões e perigos — tudo para levar Jesus às nações!
+                        </p>
+                        <p>
+                            🔢 <span class="font-bold">No dia de Pentecostes, 3.000 pessoas foram batizadas!</span> 
+                            Foi o maior batismo coletivo da história da igreja primitiva!
+                        </p>
+                        <p>
+                            🌟 <span class="font-bold">Atos tem 28 capítulos</span> e termina com Paulo 
+                            pregando em Roma — mostrando que o evangelho chegou ao centro do mundo conhecido!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../joao/joao.html" class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ João
+            </a>
+            <a href="../novo-testamento.html" class="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Novo Testamento
+            </a>
+            <a href="../romanos/romanos.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Romanos ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-orange-500 to-red-500 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Atos dos Apóstolos - O Poder do Espírito Santo ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Atos dos Apóstolos');
+    </script>
+</body>
+</html>

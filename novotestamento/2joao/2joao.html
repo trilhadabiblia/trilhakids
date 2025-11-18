@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 2 João - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="2joao-capa.png" alt="Capa: 2 João" id="img-2joao"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>💌</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400 mx-2">
+                    LIVRO DE 2 JOÃO
+                </span>
+                <span>💌</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Verdade e Amor em Uma Carta — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2joao" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+                🌟 Os Três Segredos de 2 João 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">💖 Primeiro Segredo: Amor e Verdade Juntos</h3>
+                    <p class="italic">
+                        Andar na verdade é o caminho a seguir,<br>
+                        Mas sem amor, não podemos prosseguir.<br>
+                        João nos ensina com sabedoria e cor:<br>
+                        Verdade sem amor não tem valor!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Amados, não vos escrevo mandamento novo, mas o mandamento antigo... que nos amemos uns aos outros." (2 João 1:5)</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">🛡️ Segundo Segredo: Cuidado com os Enganadores</h3>
+                    <p class="italic">
+                        Muitos por aí vão tentar confundir,<br>
+                        Com palavras bonitas para nos iludir.<br>
+                        Mas João nos alerta: "Fiquem de olho!"<br>
+                        Protejam a fé como um tesouro de ouro!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Muitos enganadores saíram pelo mundo... Acautelai-vos, para que não percais o fruto do vosso trabalho." (2 João 1:7-8)</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">✉️ Terceiro Segredo: Uma Cartinha Poderosa</h3>
+                    <p class="italic">
+                        Apenas treze versículos, tão pequenina,<br>
+                        Mas cheia de força, sabedoria divina!<br>
+                        Às vezes, poucas palavras são o bastante,<br>
+                        Para transmitir um amor gigante!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Muito tenho que escrever-vos; todavia, não quis fazê-lo com papel e tinta... espero ir ter convosco." (2 João 1:12)</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-2joao");
+        const modal = document.getElementById("modal-2joao");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2joao-personagem.png" alt="Personagens de 2 João" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ O Apóstolo João</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O discípulo amado de Jesus, agora mais velho e sábio, escreve com carinho e cuidado pastoral. Ele é conhecido como o apóstolo do amor!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">👩‍👧‍👦 A Senhora Eleita e Seus Filhos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pode ser uma mulher cristã especial com sua família, ou uma igreja inteira! João os chama de "eleitos" — escolhidos por Deus.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">⚠️ Os Enganadores</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pessoas que ensinavam coisas erradas sobre Jesus. João alerta seus amigos para terem cuidado com eles!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg border-2 border-sky-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">💝 Andar na Verdade e no Amor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João começa sua carta com alegria! Ele ficou muito feliz ao saber que os filhos da senhora estavam andando na verdade. Mas ele lembra: não basta conhecer a verdade — precisamos viver no amor de Jesus!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">⚠️ Alerta Contra Falsos Mestres</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João avisa sobre pessoas que não ensinavam a verdade sobre Jesus. Ele diz: "Cuidado! Não deixem essas pessoas entrarem em sua casa ou apoiem seus ensinamentos errados!"
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🤝 Permanecer na Doutrina de Cristo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A mensagem principal: fiquem firmes no que Jesus ensinou! Quem permanece nessa verdade tem tanto o Pai quanto o Filho.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="2joao-o-que-conta.png" alt="O que 2 João conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2joao-importante.png" alt="Importância de 2 João" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🛡️ Proteção Contra Ensinamentos Falsos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Hoje em dia, assim como naquela época, existem muitas pessoas ensinando coisas que não são verdadeiras sobre Jesus. 2 João nos ensina a ser sábios e cuidadosos!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">💖 Equilíbrio Entre Verdade e Amor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Algumas pessoas são muito amorosas, mas não se importam com a verdade. Outras defendem a verdade, mas sem amor. João nos mostra que precisamos dos dois!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">👨‍👩‍👧‍👦 Responsabilidade Familiar</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A carta mostra que os pais têm a responsabilidade de ensinar seus filhos a andar na verdade. A fé começa em casa!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg border-2 border-sky-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🛡️ Proteger a Fé Verdadeira</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João queria garantir que seus amigos cristãos não fossem enganados por falsos mestres. Ele os ensinou a reconhecer e rejeitar ensinamentos errados sobre Jesus.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">💕 Reforçar o Amor Cristão</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Mesmo alertando sobre perigos, João não esquece o mais importante: o amor! Ele lembra que amar uns aos outros é um mandamento antigo, mas sempre novo.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🏠 Fortalecer a Igreja</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ao escrever para a "senhora eleita", João fortalece toda a comunidade cristã, ensinando-os a permanecer firmes na fé e unidos no amor.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="2joao-proposito.png" alt="Propósito de 2 João" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="2joao-curiosidade.png" alt="Curiosidade sobre 2 João" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl border-4 border-amber-300 shadow-lg">
+                    <div class="text-6xl text-center mb-4">📏✉️</div>
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4 text-center">Uma das Menores Cartas da Bíblia!</h3>
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
+                        2 João tem apenas <span class="font-black text-amber-600">13 versículos</span>! É uma das cartas mais curtas de toda a Bíblia — você pode ler tudo em menos de 5 minutos! 
+                    </p>
+                    <div class="bg-white p-4 rounded-lg">
+                        <p class="text-lg text-gray-600 italic">
+                            💡 <strong>Curiosidade Extra:</strong> Na época de João, as cartas eram escritas em papiro (um tipo de papel antigo) e eram caras! Por isso, as pessoas escreviam de forma curta e direta. Mas mesmo sendo pequena, essa carta está cheia de sabedoria!
+                        </p>
+                    </div>
+                    <p class="text-center text-gray-600 mt-4 font-semibold">
+                        🎯 Lição: Às vezes, poucas palavras são suficientes para dizer algo muito importante!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-400/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../1joao/1joao.html" class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                ⬅️ 1 João
+            </a>
+            <a href="../cartas-gerais.html" class="bg-gradient-to-r from-blue-400 to-sky-500 hover:from-blue-500 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Cartas Gerais
+            </a>
+            <a href="../3joao/3joao.html" class="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                3 João ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-400 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 João - Verdade e Amor ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('2 João');
+    </script>
+</body>
+</html>

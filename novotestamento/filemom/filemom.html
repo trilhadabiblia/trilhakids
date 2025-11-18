@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Filemom - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="filemom-capa.png" alt="Capa: Filemom" id="img-filemom"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🤝</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500 mx-2">
+                    LIVRO DE FILEMOM
+                </span>
+                <span>💌</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Uma Carta de Perdão e Amor — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-filemom" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-rose-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+                🌟 Os Três Segredos de Filemom 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">💝 Primeiro Segredo: O Perdão que Liberta</h3>
+                    <p class="italic text-gray-800">
+                        Quando alguém erra e pede perdão,<br>
+                        Abra seu peito, estenda a mão!<br>
+                        Paulo ensinou com muito amor:<br>
+                        Perdoar é refletir o Salvador!<br>
+                        <span class="text-sm font-semibold text-rose-600 mt-2 block">— Filemom 1:17-18</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">🤝 Segundo Segredo: Todos São Irmãos</h3>
+                    <p class="italic text-gray-800">
+                        Não importa quem você era antes,<br>
+                        Em Cristo, somos todos semelhantes!<br>
+                        Escravo ou livre, rico ou pobre,<br>
+                        O amor de Deus a todos cobre!<br>
+                        <span class="text-sm font-semibold text-pink-600 mt-2 block">— Filemom 1:16</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">✉️ Terceiro Segredo: Cartas de Amor</h3>
+                    <p class="italic text-gray-800">
+                        Uma carta pequena, mas cheia de poder,<br>
+                        Mostra que o amor pode tudo vencer!<br>
+                        Paulo escreveu com compaixão,<br>
+                        Transformando vidas com sua oração!<br>
+                        <span class="text-sm font-semibold text-rose-600 mt-2 block">— Filemom 1:4-7</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-filemom");
+        const modal = document.getElementById("modal-filemom");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="filemom-personagem.png" alt="Personagens de Filemom" 
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-2">✍️ Paulo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O apóstolo que escreve esta carta cheia de amor! Ele está na prisão, mas seu coração está livre para amar e interceder pelos outros.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-2">🏠 Filemom</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Um cristão rico que abria sua casa para a igreja se reunir. Ele tinha um coração generoso, mas agora precisa exercitar o perdão!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-2">🏃 Onésimo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Um escravo que fugiu de Filemom, mas encontrou Paulo e se converteu a Cristo. Agora ele volta transformado, pedindo uma nova chance!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-pink-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">💌 Uma Carta Especial</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo escreve a Filemom pedindo que ele receba Onésimo de volta — não como escravo, mas como irmão amado em Cristo!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">🙏 Um Pedido de Perdão</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo até se oferece para pagar qualquer dívida que Onésimo tenha! Ele mostra que o amor cristão vai além das ofensas e busca a reconciliação.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">❤️ Uma Nova Família</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O livro mostra que em Cristo não há diferenças: todos somos irmãos! Onésimo volta transformado, pronto para servir com amor.
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="filemom-o-que-conta.png" alt="O que Filemom conta" 
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="filemom-importante.png" alt="Importância de Filemom" 
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">💝 Ensina Sobre Perdão</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Filemom nos mostra que perdoar é imitar Jesus! Quando alguém nos machuca, podemos escolher o amor e dar uma nova chance.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">🤝 Mostra a Igualdade em Cristo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Não importa nossa posição social — todos somos iguais diante de Deus! Em Cristo, somos todos irmãos e parte da mesma família.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">🌟 Revela o Poder da Graça</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A graça de Deus transforma vidas! Onésimo era um fugitivo, mas se tornou um filho amado. Deus pode transformar qualquer história!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-pink-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
+            🎯 Qual o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">💖 Mostrar o Amor Prático</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O amor cristão não é apenas palavras — é ação! Paulo mostra como colocar o amor em prática através do perdão e da reconciliação.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">🔄 Ensinar Sobre Restauração</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Deus não desiste de ninguém! Ele restaura relacionamentos quebrados e transforma erros do passado em oportunidades de crescimento.
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">🌈 Demonstrar a Nova Vida em Cristo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Em Cristo, tudo é novo! Onésimo deixou de ser apenas um escravo e se tornou um irmão amado. Essa é a transformação que Jesus oferece!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="filemom-proposito.png" alt="Propósito de Filemom" 
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+            🎉 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="filemom-curiosidade.png" alt="Curiosidade sobre Filemom" 
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">📏 A Carta Mais Curta!</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Filemom é a carta mais curta de Paulo — tem apenas 25 versículos! Mas não se engane: ela está cheia de amor, compaixão e ensinamentos profundos sobre perdão e graça.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">💌 Uma Carta Pessoal</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Diferente de outras cartas que Paulo escreveu para igrejas inteiras, esta foi escrita diretamente para Filemom. É como uma carta de um amigo para outro!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3">🔗 Onésimo Significa "Útil"</h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Paulo faz um jogo de palavras: Onésimo significa "útil" em grego. Ele diz que antes Onésimo foi "inútil", mas agora se tornou verdadeiramente útil!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print section bg-gradient-to-r from-rose-100 to-pink-100 text-center border-2 border-rose-300 rounded-2xl p-10 mx-4 mb-8">
+        <h3 class="text-3xl font-black text-rose-600 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../tito/tito.html" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                ⬅️ Tito
+            </a>
+            <a href="../epistolas-paulinas.html" class="bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Epístolas Paulinas
+            </a>
+            <a href="../hebreus/hebreus.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                Hebreus ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-rose-500 to-pink-500 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Filemom - Perdão e Amor ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Filemom');
+    </script>
+</body>
+</html>

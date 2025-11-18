@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 1 Coríntios - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="1corintios-capa.png" alt="Capa: 1 Coríntios" id="img-1corintios"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>💒</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 mx-2">
+                    LIVRO DE 1 CORÍNTIOS
+                </span>
+                <span>❤️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Carta do Amor e da Unidade — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-1corintios" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-pink-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
+                🌟 Os Três Segredos de 1 Coríntios 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-600">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">💝 Primeiro Segredo: O Amor Verdadeiro</h3>
+                    <p class="italic text-gray-800">
+                        O amor é paciente, o amor é bondoso,<br>
+                        Não é invejoso, nem orgulhoso ou vaidoso.<br>
+                        Tudo suporta, tudo crê, tudo espera,<br>
+                        O amor é a maior virtude que se venera!<br>
+                        <span class="text-sm font-semibold text-pink-600 mt-2 block">📖 1 Coríntios 13:4-7</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🤝 Segundo Segredo: Unidos em Cristo</h3>
+                    <p class="italic text-gray-800">
+                        Somos um só corpo, muitos membros unidos,<br>
+                        Cada um importante, todos bem-vindos.<br>
+                        Não há divisões quando Cristo nos guia,<br>
+                        Juntos somos fortes na harmonia!<br>
+                        <span class="text-sm font-semibold text-purple-600 mt-2 block">📖 1 Coríntios 12:12-27</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-rose-50 to-red-50 p-6 rounded-2xl border-l-4 border-rose-600">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">✨ Terceiro Segredo: Dons para Servir</h3>
+                    <p class="italic text-gray-800">
+                        Deus dá dons especiais a cada pessoa,<br>
+                        Para servir aos outros com alegria formosa.<br>
+                        Use seus talentos para o bem fazer,<br>
+                        E a glória de Deus você vai ver!<br>
+                        <span class="text-sm font-semibold text-rose-600 mt-2 block">📖 1 Coríntios 12:4-11</span>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-1corintios");
+        const modal = document.getElementById("modal-1corintios");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
+                👥 Quem São os Personagens Principais?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-2xl border-2 border-pink-200">
+                        <h3 class="text-2xl font-bold text-pink-700 mb-4">✍️ Paulo - O Missionário Escritor</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                            Paulo era um apóstolo que amava a igreja de Corinto. Ele escreveu esta carta especial para ajudar os cristãos a resolverem seus problemas e viverem melhor juntos!
+                        </p>
+                        <h3 class="text-2xl font-bold text-rose-700 mb-4">💒 A Igreja de Corinto</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Era uma igreja cheia de pessoas diferentes que precisavam aprender a se amar e viver em paz. Eles tinham muitas dúvidas e Paulo estava ali para ensinar!
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="1corintios-personagem.png" alt="Paulo e a Igreja de Corinto"
+                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
+                📖 O Que o Livro Conta?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-1">
+                    <img src="1corintios-o-que-conta.png" alt="Ensinamentos de 1 Coríntios"
+                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="order-2">
+                    <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-lg">
+                        <h3 class="text-2xl font-bold text-pink-700 mb-4">💝 Lições de Amor e Unidade</h3>
+                        <ul class="space-y-3 text-lg text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">🤝</span>
+                                <span><strong>Unidade:</strong> Paulo ensina que não deve haver brigas na igreja, todos devem ser amigos!</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">❤️</span>
+                                <span><strong>Amor:</strong> O capítulo 13 é famoso por falar sobre o amor verdadeiro que vem de Deus.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">✨</span>
+                                <span><strong>Dons:</strong> Deus dá talentos especiais para cada pessoa usar para ajudar os outros.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">🙏</span>
+                                <span><strong>Vida Santa:</strong> Como viver de um jeito que agrada a Deus todos os dias.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
+                ⭐ Por Que é Importante?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl border-2 border-rose-200">
+                        <h3 class="text-2xl font-bold text-rose-700 mb-4">💖 O Maior de Todos os Dons</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                            Este livro nos ensina que <strong>o AMOR é o maior dom de todos!</strong> Podemos ter muitos talentos, mas sem amor, nada disso tem valor.
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border-l-4 border-pink-600 mb-4">
+                            <p class="text-gray-800 italic">
+                                "Agora, pois, permanecem a fé, a esperança e o amor, estes três; porém o maior destes é o amor."
+                            </p>
+                            <p class="text-sm text-pink-600 font-semibold mt-2">📖 1 Coríntios 13:13</p>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Paulo mostra que quando amamos de verdade, conseguimos viver em paz, perdoar e ajudar uns aos outros. O amor de Deus transforma tudo!
+                        </p>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="1corintios-importante.png" alt="O Amor é o Maior Dom"
+                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-purple-50 to-pink-50 p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
+                🎯 Propósito do Livro
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-1">
+                    <img src="1corintios-proposito.png" alt="Propósito de 1 Coríntios"
+                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="order-2">
+                    <div class="bg-white p-6 rounded-2xl border-2 border-purple-200 shadow-lg">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-4">🔧 Corrigir e Fortalecer</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                            Paulo escreveu esta carta com dois grandes objetivos:
+                        </p>
+                        <div class="space-y-4">
+                            <div class="bg-gradient-to-r from-pink-100 to-rose-100 p-4 rounded-xl">
+                                <h4 class="font-bold text-pink-700 mb-2">🩹 1. Corrigir Atitudes Erradas</h4>
+                                <p class="text-gray-700">
+                                    Ajudar a igreja a parar de brigar, a deixar comportamentos ruins e a seguir Jesus de verdade.
+                                </p>
+                            </div>
+                            <div class="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-xl">
+                                <h4 class="font-bold text-purple-700 mb-2">💪 2. Fortalecer a Comunhão</h4>
+                                <p class="text-gray-700">
+                                    Ensinar como viver unidos, se amando e usando os dons de Deus para ajudar uns aos outros.
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                            O resultado? Uma igreja mais forte, mais amorosa e mais parecida com Jesus! 🌟
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
+                🤔 Você Sabia?
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="order-2 md:order-1">
+                    <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+                        <h3 class="text-2xl font-bold text-amber-700 mb-4">📜 O Famoso Capítulo do Amor!</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                            <strong>1 Coríntios 13</strong> é chamado de "Capítulo do Amor" e é um dos textos mais conhecidos da Bíblia inteira! 💝
+                        </p>
+                        <div class="bg-white p-4 rounded-xl border-l-4 border-pink-600 mb-4">
+                            <p class="text-gray-800 font-semibold">
+                                ✨ É lido em casamentos<br>
+                                ✨ É decorado por crianças<br>
+                                ✨ É citado em músicas<br>
+                                ✨ É usado em cartões e mensagens
+                            </p>
+                        </div>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                            Esse capítulo ensina exatamente como é o amor de verdade: paciente, bondoso, não invejoso, não orgulhoso... É como um manual do amor perfeito!
+                        </p>
+                        <div class="bg-pink-100 p-4 rounded-xl text-center">
+                            <p class="text-pink-700 font-bold text-xl">
+                                💡 Desafio: Que tal decorar 1 Coríntios 13:4-7?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="1corintios-curiosidade.png" alt="O Capítulo do Amor"
+                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-pink-600/20 to-rose-600/20 border-2 border-pink-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-pink-700 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../romanos/romanos.html" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Romanos
+            </a>
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
+            </a>
+            <a href="../2corintios/2corintios.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                2 Coríntios ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-pink-600 to-rose-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Coríntios - O Amor é o Maior Dom ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('1 Coríntios');
+    </script>
+</body>
+</html>

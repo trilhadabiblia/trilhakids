@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arduino Kids - Tecnologia que Encanta e Ensina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            background: #0a0e27;
+            color: #fff;
+        }
+
+        /* Hero Section - PREPARADO PARA CAPA */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(102,126,234,0.95) 0%, rgba(118,75,162,0.95) 50%, rgba(240,147,251,0.95) 100%),
+                        url('/arduino-landing/assets/img/capa.png');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* INSTRUÇÕES: Substitua a URL acima pela sua imagem da capa:
+           background: linear-gradient(135deg, rgba(102,126,234,0.8) 0%, rgba(118,75,162,0.8) 100%),
+                       url('caminho-para-sua-capa.jpg');
+        */
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 1200px;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(10px);
+            border-radius: 30px;
+            border: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero .tagline {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.4s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-primary {
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: #fff;
+            color: #667eea;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease 0.6s backwards;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(255,255,255,0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollBounce 2s infinite;
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+
+        @keyframes scrollBounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, 10px); }
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .problem p {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            max-width: 800px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .problem .highlight {
+            color: #ffd700;
+            font-weight: 700;
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .solution-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .solution h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 3rem;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .benefit-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* NOVA SEÇÃO - Conheça a Equipe */
+        .team {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+        }
+
+        .team h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .team-subtitle {
+            text-align: center;
+            font-size: 1.3rem;
+            opacity: 0.8;
+            margin-bottom: 4rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .team-member:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: rgba(102,126,234,0.6);
+            box-shadow: 0 25px 70px rgba(102,126,234,0.4);
+        }
+
+        .team-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* INSTRUÇÕES: Adicione suas imagens aqui */
+        .team-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover .team-image img {
+            transform: scale(1.1);
+        }
+
+        /* Placeholder para quando ainda não tiver imagem */
+        .team-image::before {
+            content: attr(data-emoji);
+            font-size: 5rem;
+        }
+
+        .team-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .team-role {
+            display: inline-block;
+            background: rgba(102,126,234,0.3);
+            padding: 0.4rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            color: #a8b5ff;
+        }
+
+        .team-member h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+        }
+
+        .team-member p {
+            opacity: 0.85;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        /* Cenários Section */
+        .scenarios {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #232526 0%, #414345 100%);
+        }
+
+        .scenarios h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .scenarios-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.8;
+            margin-bottom: 4rem;
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .scenario-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 25px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .scenario-card:hover {
+            transform: scale(1.05);
+            border-color: rgba(240,147,251,0.5);
+            box-shadow: 0 20px 60px rgba(240,147,251,0.3);
+        }
+
+        .scenario-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, #667eea, #f093fb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+        }
+
+        /* INSTRUÇÕES: Adicione suas imagens de cenários aqui */
+        .scenario-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scenario-info {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .scenario-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .scenario-info p {
+            opacity: 0.85;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #4e54c8 0%, #8f94fb 100%);
+        }
+
+        .projects h2 {
+            text-align: center;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .projects-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 4rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(255,255,255,0.4);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-age {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-card p {
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* BNCC Section */
+        .bncc {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            text-align: center;
+        }
+
+        .bncc h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .bncc-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .bncc-list {
+            text-align: left;
+            font-size: 1.2rem;
+            line-height: 2;
+            list-style: none;
+        }
+
+        .bncc-list li {
+            margin-bottom: 1rem;
+            padding-left: 2.5rem;
+            position: relative;
+        }
+
+        .bncc-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.8rem;
+            background: rgba(255,255,255,0.2);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.5rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            padding: 1.5rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-button.primary {
+            background: #fff;
+            color: #f5576c;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            color: #fff;
+            border: 3px solid #fff;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: #0a0e27;
+            text-align: center;
+            border-top: 2px solid rgba(102,126,234,0.3);
+        }
+
+        footer p {
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .benefits-grid, .projects-grid, .scenarios-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .cta-buttons { 
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .scenarios-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>🚀 Arduino Kids</h1>
+            <p class="subtitle">Tecnologia que Encanta e Ensina</p>
+            <p class="tagline">Crianças criando, programando e se divertindo com eletrônica de verdade!</p>
+            <a href="#cta" class="cta-primary">✨ Quero Conhecer Agora!</a>
+        </div>
+        <div class="scroll-indicator">⬇️</div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <h2>😔 O Desafio da Educação Hoje</h2>
+        <p>Crianças passam horas em telas, mas sem aprender <span class="highlight">habilidades do futuro</span></p>
+        <p>Escolas buscam formas de ensinar <span class="highlight">tecnologia de verdade</span>, não só consumir</p>
+        <p>Pais querem <span class="highlight">atividades criativas</span> que desenvolvam o raciocínio lógico</p>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution">
+        <div class="solution-content">
+            <h2>✨ A Solução: Arduino Kids</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 2rem;">Um programa completo que transforma crianças em <strong>criadores de tecnologia</strong> através de projetos lúdicos, histórias encantadoras e aprendizado prático!</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon">🧠</div>
+                    <h3>Raciocínio Lógico</h3>
+                    <p>Desenvolve pensamento computacional desde cedo</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🎨</div>
+                    <h3>Criatividade</h3>
+                    <p>Projetos artísticos com tecnologia real</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">🤝</div>
+                    <h3>Trabalho em Equipe</h3>
+                    <p>Colaboração e papéis rotativos</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon">📚</div>
+                    <h3>Alinhado à BNCC</h3>
+                    <p>Competências oficiais do MEC</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO - Conheça a Equipe -->
+    <section class="team">
+        <h2>🌟 Conheça Nossa Equipe de Aventureiros</h2>
+        <p class="team-subtitle">Personagens que vão guiar as crianças nessa jornada incrível!</p>
+        <div class="team-grid">
+            <!-- Bit - Mascote Principal -->
+            <div class="team-member">
+                <div class="team-image" >
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="bit-robo.jpg" alt="Bit, o Robô Aprendiz"> -->
+                    <img src="/arduino-landing/assets/img/bit-robo.png" alt="Bit, o Robô Aprendiz">
+                </div>
+                <div class="team-info">
+                    <span class="team-role">Mascote Principal</span>
+                    <h3>Bit, o Robô Aprendiz</h3>
+                    <p>Um robô amigável e tecnológico que aprende junto com as crianças. Sempre curioso e pronto para novas aventuras!</p>
+                </div>
+            </div>
+
+            <!-- Lumi -->
+            <div class="team-member">
+                <div class="team-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="lumi-engenheira.jpg" alt="Lumi, a Engenheira Mirim"> -->
+                    <img src="/arduino-landing/assets/img/lumi-engenheira.png" alt="Lumi, a Engenheira Mirim">
+                </div>
+                <div class="team-info">
+                    <span class="team-role">Engenheira Mirim</span>
+                    <h3>Lumi</h3>
+                    <p>A criança que simboliza criatividade + tecnologia. Adora inventar coisas novas e resolver problemas!</p>
+                </div>
+            </div>
+
+            <!-- Theo -->
+            <div class="team-member">
+                <div class="team-image" style="background: linear-gradient(135deg, #11998e, #38ef7d);">
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="theo-explorador.jpg" alt="Theo, o Explorador Cientista"> -->
+                    <img src="/arduino-landing/assets/img/theo-explorador.png" alt="Theo, o Explorador Cientista">
+                </div>
+                <div class="team-info">
+                    <span class="team-role">Explorador Cientista</span>
+                    <h3>Theo</h3>
+                    <p>Criança curiosa com espírito investigativo. Sempre fazendo perguntas e descobrindo coisas novas!</p>
+                </div>
+            </div>
+
+            <!-- Profa. Clara -->
+            <div class="team-member">
+                <div class="team-image" style="background: linear-gradient(135deg, #ffd89b, #19547b);">
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="profa-clara.jpg" alt="Professora Clara"> -->
+                    <img src="/arduino-landing/assets/img/profa-clara.png" alt="Professora Clara">
+                </div>
+                <div class="team-info">
+                    <span class="team-role">Professora Guia</span>
+                    <h3>Profa. Clara</h3>
+                    <p>A figura que conduz as atividades com leveza e profissionalismo. Paciente e inspiradora!</p>
+                </div>
+            </div>
+
+            <!-- Prof. Tom -->
+            <div class="team-member">
+                <div class="team-image" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="prof-tom.jpg" alt="Professor Tom"> -->
+                    <img src="/arduino-landing/assets/img/prof-tom.png" alt="Professor Tom">
+                </div>
+                <div class="team-info">
+                    <span class="team-role">Professor Guia</span>
+                    <h3>Prof. Tom</h3>
+                    <p>O cientista "maluco" e brincalhão! Como o Doc Brown, transforma aprendizado em diversão pura!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOVA SEÇÃO - Cenários -->
+    <section class="scenarios">
+        <h2>🎨 Nossos Espaços de Aprendizagem</h2>
+        <p class="scenarios-subtitle">Ambientes preparados para criar, experimentar e aprender!</p>
+        <div class="scenarios-grid">
+            <!-- Sala Tech Infantil -->
+            <div class="scenario-card">
+                <div class="scenario-image">
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="sala-tech-infantil.jpg" alt="Sala Tech Infantil"> -->
+                    <img src="/arduino-landing/assets/img/sala-tech-infantil.png" alt="Sala Tech Infantil">
+                </div>
+                <div class="scenario-info">
+                    <h3>Sala Tech Infantil</h3>
+                    <p>Espaço colorido e acolhedor onde a tecnologia encontra a imaginação. Mesas colaborativas, materiais organizados e muita cor!</p>
+                </div>
+            </div>
+
+            <!-- Estação Maker -->
+            <div class="scenario-card">
+                <div class="scenario-image" style="background: linear-gradient(135deg, #38ef7d, #11998e);">
+                    <!-- INSTRUÇÕES: Adicione aqui: <img src="estacao-maker.jpg" alt="Estação de Montagem Maker"> -->
+                    <img src="/arduino-landing/assets/img/estacao-maker.png" alt="Estação de Montagem Maker">
+                </div>
+                <div class="scenario-info">
+                    <h3>Estação de Montagem Maker</h3>
+                    <p>Bancada de trabalho equipada com ferramentas e componentes. Aqui as ideias ganham vida!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects">
+        <h2>🎯 10 Projetos Incríveis</h2>
+        <p class="projects-subtitle">Cada um com história, materiais, código e muito aprendizado!</p>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-image">🚦</div>
+                <div class="project-content">
+                    <span class="project-age">6-8 anos</span>
+                    <h3>Semáforo Infantil</h3>
+                    <p>Luzinho ensina sobre sinais de trânsito com cores e sons!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #11998e, #38ef7d);">🌱</div>
+                <div class="project-content">
+                    <span class="project-age">6-8 anos</span>
+                    <h3>Planta que Fala</h3>
+                    <p>Senhor Verdinho avisa quando precisa de água!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #f093fb, #f5576c);">🤖</div>
+                <div class="project-content">
+                    <span class="project-age">6-7 anos</span>
+                    <h3>Robô Desenhista</h3>
+                    <p>Rabiscop cria arte enquanto dança!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #ffd89b, #19547b);">⚡</div>
+                <div class="project-content">
+                    <span class="project-age">8-10 anos</span>
+                    <h3>Jogo de Reflexo</h3>
+                    <p>Capitão Tempo desafia sua velocidade!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #a8edea, #fed6e3);">😊</div>
+                <div class="project-content">
+                    <span class="project-age">8-10 anos</span>
+                    <h3>Bichinho Eletrônico</h3>
+                    <p>Bitina muda de expressão com botões mágicos!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #667eea, #f093fb);">🎹</div>
+                <div class="project-content">
+                    <span class="project-age">6-9 anos</span>
+                    <h3>Piano Musical</h3>
+                    <p>DoRéMi Bot cria melodias coloridas!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #f5576c, #ffd89b);">📖</div>
+                <div class="project-content">
+                    <span class="project-age">7-10 anos</span>
+                    <h3>Livro Interativo</h3>
+                    <p>Páginas que acendem e tocam música!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #38ef7d, #11998e);">😄</div>
+                <div class="project-content">
+                    <span class="project-age">8-10 anos</span>
+                    <h3>Detector de Sorrisos</h3>
+                    <p>Risadinha 3000 só funciona com alegria!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #764ba2, #f093fb);">🚸</div>
+                <div class="project-content">
+                    <span class="project-age">7-10 anos</span>
+                    <h3>Semáforo de Pedestre</h3>
+                    <p>Sinalzinho ensina segurança no trânsito!</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image" style="background: linear-gradient(135deg, #667eea, #764ba2);">🐢</div>
+                <div class="project-content">
+                    <span class="project-age">6-9 anos</span>
+                    <h3>Tartaruga Luminosa</h3>
+                    <p>TurTuga RGB muda de cor com a luz!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BNCC Section -->
+    <section class="bncc">
+        <h2>✅ Alinhado com a BNCC</h2>
+        <div class="bncc-content">
+            <ul class="bncc-list">
+                <li>Pensamento científico, crítico e criativo</li>
+                <li>Cultura digital e letramento computacional</li>
+                <li>Trabalho, projeto de vida e colaboração</li>
+                <li>Matemática: padrões, sequências, medidas</li>
+                <li>Ciências: materiais, energia, fenômenos</li>
+                <li>Artes: criatividade e expressão visual</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <h2>🚀 Pronto para Transformar a Educação?</h2>
+        <p>Acesso completo a 10 projetos com histórias, materiais, códigos e muito mais!</p>
+        <div class="cta-buttons">
+            <a href="#contato" class="cta-button primary">💬 Quero Saber Mais</a>
+            <a href="#materiais" class="cta-button secondary">📦 Ver Materiais</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🌈 Arduino Kids - Tecnologia, Criatividade e Aprendizagem</p>
+        <p>Desenvolvendo os criadores do futuro, hoje! ✨</p>
+        <p style="margin-top: 2rem; opacity: 0.5; font-size: 0.9rem;">
+            Com Bit 🤖 Lumi 💡 Theo 🔬 Profa. Clara 👩‍🏫 e Prof. Tom 🧪
+        </p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .benefit-card, .team-member, .scenario-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero::before');
+            if (hero) {
+                document.querySelector('.hero').style.backgroundPositionY = scrolled * 0.5 + 'px';
+            }
+        });
+    </script>
+</body>
+</html>

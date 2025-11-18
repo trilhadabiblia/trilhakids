@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Colossenses - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="colossenses-capa.png" alt="Capa: Colossenses" id="img-colossenses"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>✨</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600 mx-2">
+                    LIVRO DE COLOSSENSES
+                </span>
+                <span>✨</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Jesus é Suficiente — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-colossenses" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+                🌟 Os Três Segredos de Colossenses 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">👑 Primeiro Segredo: Jesus é o Centro!</h3>
+                    <p class="italic mb-2">
+                        Jesus não é só mais um,<br>
+                        Ele é o primeiro, a luz que reluz!<br>
+                        Tudo foi feito por Ele e para Ele,<br>
+                        Nada existe sem que Ele revele!
+                    </p>
+                    <p class="text-sm text-sky-600 font-semibold">📖 Colossenses 1:16-17</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">💎 Segundo Segredo: Ele é Suficiente!</h3>
+                    <p class="italic mb-2">
+                        Não precisa de mais nada,<br>
+                        Jesus é a resposta sagrada!<br>
+                        Nenhuma regra ou tradição,<br>
+                        Substitui Sua salvação!
+                    </p>
+                    <p class="text-sm text-blue-600 font-semibold">📖 Colossenses 2:9-10</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌱 Terceiro Segredo: Viva em Cristo!</h3>
+                    <p class="italic mb-2">
+                        Suas roupas sejam de amor e perdão,<br>
+                        Compaixão, bondade e gratidão!<br>
+                        Viva cada dia focado no céu,<br>
+                        Pois sua vida está com Deus, não no véu!
+                    </p>
+                    <p class="text-sm text-indigo-600 font-semibold">📖 Colossenses 3:12-14</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-colossenses");
+        const modal = document.getElementById("modal-colossenses");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-4 border-sky-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-4">✍️ Paulo - O Apóstolo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Paulo escreveu esta carta da prisão! Mesmo preso, ele queria ensinar sobre Jesus. Ele nunca visitou Colossos pessoalmente, mas amava aquela igreja e queria que eles conhecessem a verdade sobre Cristo.
+                    </p>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-4">⛪ A Igreja de Colossos</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Uma comunidade de cristãos que estava sendo enganada por falsas doutrinas. Paulo escreveu para lembrá-los de que Jesus é tudo o que eles precisam — nada mais, nada menos!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="colossenses-personagem.png" alt="Personagens de Colossenses" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O Que o Livro Conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-4 border-blue-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-1">
+                <img src="colossenses-o-que-conta.png" alt="O que Colossenses conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-4">✨ Jesus é Suficiente!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Paulo ensina que <strong>Jesus é o centro de tudo</strong>! Ele criou o universo, Ele sustenta todas as coisas, e Ele é a cabeça da igreja.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Algumas pessoas estavam dizendo que os cristãos precisavam seguir regras extras ou adorar anjos. Mas Paulo disse: <strong>"Não! Jesus é tudo que vocês precisam!"</strong>
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quando você tem Jesus, você tem vida completa. Não precisa de mais nada para ser salvo ou amado por Deus!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por Que É Importante? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-4 border-indigo-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
+            💡 Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🛡️ Protege da Mentira</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Este livro nos ensina a não acreditar em mentiras! Muitas pessoas tentam dizer que precisamos de algo além de Jesus — mas isso não é verdade.
+                    </p>
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">❤️ Mostra o Amor de Cristo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Jesus não é apenas poderoso — Ele também nos ama profundamente! Nada pode substituir o amor e o poder que Ele tem.
+                    </p>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🌟 Nos Dá Segurança</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quando sabemos que Jesus é suficiente, podemos viver com paz e confiança. Não precisamos ter medo ou dúvida!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="colossenses-importante.png" alt="Importância de Colossenses" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do Livro -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-4 border-purple-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-1">
+                <img src="colossenses-proposito.png" alt="Propósito de Colossenses" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-2">
+                <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">🎯 Lembrar: Viva com Foco em Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        O propósito de Colossenses é <strong>lembrar aos cristãos que devem viver com o foco em Jesus</strong>. Não em regras, não em tradições, mas em Cristo!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Paulo queria que eles entendessem: <em>"Vocês morreram para o mundo e agora vivem escondidos em Cristo. Então vivam como pessoas novas!"</em>
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Isso significa viver com amor, perdão, bondade e gratidão — porque é assim que Jesus viveu! Quando Ele é o nosso foco, nossa vida fica cheia de alegria e propósito.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-4 border-pink-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-4">✉️ Uma Carta de Longe!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        <strong>Paulo nunca visitou Colossos pessoalmente</strong> — ele escreveu a carta de longe, provavelmente de Roma, enquanto estava preso!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Mesmo sem conhecer a igreja pessoalmente, Paulo se importava tanto com eles que escreveu uma das cartas mais bonitas do Novo Testamento!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        <strong>Curiosidade:</strong> A cidade de Colossos foi destruída por um terremoto pouco tempo depois, mas a mensagem de Paulo permanece viva até hoje!
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Isso nos ensina que a Palavra de Deus é eterna — ela atravessa o tempo e o espaço para chegar até nós!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="colossenses-curiosidade.png" alt="Curiosidade sobre Colossenses" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../filipenses/filipenses.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Filipenses
+            </a>
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
+            </a>
+            <a href="../1-tessalonicenses/1-tessalonicenses.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                1 Tessalonicenses ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Colossenses - Jesus é Suficiente ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Colossenses');
+    </script>
+</body>
+</html>

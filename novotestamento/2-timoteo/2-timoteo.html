@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 2 Timóteo - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="2-timoteo-capa.png" alt="Capa: 2 Timóteo" id="img-2timoteo"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🛡️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600 mx-2">
+                    LIVRO DE 2 TIMÓTEO
+                </span>
+                <span>🔥</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Última Carta de Coragem — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2timoteo" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-orange-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+                🌟 Os Três Segredos de 2 Timóteo 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🔥 Primeiro Segredo: Nunca Desista da Fé</h3>
+                    <p class="italic">
+                        Quando as coisas ficarem difíceis, não tenha medo,<br>
+                        Deus está contigo, do começo até o fim do enredo!<br>
+                        Paulo ensinou: "Seja forte, meu filho querido",<br>
+                        A fé é um tesouro que nunca será perdido!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 2 Timóteo 1:7 - "Deus não nos deu espírito de covardia, mas de poder, amor e moderação."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">📖 Segundo Segredo: Guarde a Palavra de Deus</h3>
+                    <p class="italic">
+                        A Bíblia é como espada, escudo e luz brilhante,<br>
+                        Guarde no coração, seja sempre vigilante!<br>
+                        Timóteo aprendeu desde pequenino,<br>
+                        Que a Palavra de Deus é o melhor caminho!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 2 Timóteo 3:16-17 - "Toda a Escritura é inspirada por Deus e útil para ensinar."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">👑 Terceiro Segredo: Corra a Boa Corrida</h3>
+                    <p class="italic">
+                        Paulo disse ao fim: "Combati o bom combate",<br>
+                        Guardou a fé até o último embate!<br>
+                        Como um atleta que corre até vencer,<br>
+                        Viva para Jesus, isso é o que você deve fazer!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 2 Timóteo 4:7-8 - "Combati o bom combate, acabei a carreira, guardei a fé."</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-2timoteo");
+        const modal = document.getElementById("modal-2timoteo");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="2-timoteo-personagens.png" alt="Paulo e Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">✍️ Paulo - O Mestre Corajoso</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Paulo era um apóstolo valente que estava preso por pregar sobre Jesus. Mesmo na prisão, ele escreveu esta carta cheia de amor e sabedoria para seu amigo Timóteo. Paulo sabia que logo partiria para estar com Jesus, mas queria deixar palavras de ânimo e força!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">🛡️ Timóteo - O Jovem Fiel</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Timóteo era um jovem pastor que amava a Deus e servia na igreja. Paulo o considerava como um filho e queria encorajá-lo a continuar firme na fé, mesmo quando as coisas ficassem difíceis. Timóteo tinha um coração sincero e puro!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-red-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+            📜 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 order-2 md:order-1">
+                <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-orange-600">
+                    <span class="font-bold text-orange-700">📝 Uma Carta de Despedida:</span> Esta é a última carta que Paulo escreveu antes de morrer. Ele estava preso em Roma e sabia que logo seria executado por causa de sua fé em Jesus.
+                </p>
+                <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-600">
+                    <span class="font-bold text-red-700">💪 Palavras de Coragem:</span> Paulo encoraja Timóteo a ser forte e corajoso, a não ter vergonha do evangelho e a continuar pregando a Palavra de Deus com ousadia!
+                </p>
+                <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-orange-600">
+                    <span class="font-bold text-orange-700">🔥 Avisos Importantes:</span> Paulo também alerta sobre falsos mestres que viriam e ensina Timóteo a se manter firme na verdade da Bíblia.
+                </p>
+                <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-600">
+                    <span class="font-bold text-red-700">👑 Vitória Final:</span> Paulo termina dizendo que completou sua missão e que uma coroa de justiça o aguarda no céu!
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="2-timoteo-o-que-conta.png" alt="A última carta" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="2-timoteo-importante.png" alt="Importância do livro" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🛡️ Ensina a Não Desistir</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Mesmo quando tudo parece difícil, devemos continuar firmes na fé. Paulo estava preso e sabia que morreria, mas não desistiu de servir a Jesus até o último momento!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">📖 Valoriza a Palavra de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A Bíblia é nosso tesouro mais precioso! Ela nos ensina, corrige e nos prepara para fazer o bem. Devemos ler, estudar e obedecer a Palavra de Deus todos os dias!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">💪 Inspira Coragem</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Esta carta nos ensina a ser corajosos e fiéis, mesmo quando as pessoas ao nosso redor não acreditam em Jesus. Deus nos dá força para enfrentar qualquer desafio!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-red-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🔥</span>
+                        Motivar a Guardar a Fé
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Paulo queria que Timóteo (e todos nós!) guardasse a fé verdadeira em Jesus e não deixasse ninguém enfraquecer sua confiança em Deus. A fé é como um tesouro que devemos proteger!
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">📢</span>
+                        Anunciar a Palavra de Deus
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Paulo incentivou Timóteo a pregar a Palavra de Deus com ousadia, "a tempo e fora de tempo". Isso significa falar de Jesus sempre, seja fácil ou difícil. Todos precisam ouvir sobre o amor de Deus!
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">👑</span>
+                        Viver com Esperança Eterna
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Paulo mostrou que, mesmo diante da morte, ele tinha esperança no céu. Ele sabia que Jesus o esperava com uma coroa de vitória. Essa esperança nos dá força para viver cada dia!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="2-timoteo-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="2-timoteo-curiosidade.png" alt="Curiosidade sobre 2 Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-8 rounded-2xl border-4 border-orange-300">
+                    <h3 class="text-3xl font-bold text-orange-700 mb-4 flex items-center">
+                        <span class="text-5xl mr-3">⛓️</span>
+                        A Última Carta de Paulo
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
+                        Paulo escreveu esta carta enquanto estava preso em uma prisão escura e fria em Roma. Ele sabia que logo seria executado por causa de sua fé em Jesus, mas não tinha medo!
+                    </p>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
+                        Esta é considerada a <span class="font-bold text-red-700">última carta que Paulo escreveu</span> antes de morrer. Ele queria deixar palavras de encorajamento e sabedoria para seu amigo Timóteo e para todos nós!
+                    </p>
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        Paulo pediu a Timóteo que trouxesse sua capa e seus livros, mostrando que mesmo no final da vida, ele continuava estudando e se preparando para servir a Deus. <span class="font-bold text-orange-700">Que exemplo incrível de dedicação!</span> 📚🙏
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-2 border-red-300">
+                    <p class="text-lg text-gray-700 italic text-center">
+                        "Combati o bom combate, acabei a carreira, guardei a fé!" 
+                        <span class="block mt-2 font-bold text-red-700">- 2 Timóteo 4:7</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-orange-600/20 to-red-600/20 border-2 border-orange-600/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../1-timoteo/1-timoteo.html" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 1 Timóteo
+            </a>
+            <a href="../epistolas-paulinas.html" class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Epístolas Paulinas
+            </a>
+            <a href="../tito/tito.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Tito ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-orange-600 to-red-600 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Timóteo - A Última Carta de Coragem ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('2 Timóteo');
+    </script>
+</body>
+</html>

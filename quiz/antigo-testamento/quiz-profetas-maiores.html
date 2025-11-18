@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profetas Maiores - Quiz da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+  <header
+    class="bg-gradient-to-r from-red-600 to-orange-600 backdrop-blur-xl border-b border-red-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center"> <!-- centraliza o conteúdo -->
+        <div>
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">📢 PROFETAS MAIORES</h1>
+          <p class="text-red-100 text-sm md:text-base">5 livros de profecia divina</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-12">
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">📚 Mensagens Profundas de Deus</h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">Profetas que revelaram a vontade de Deus, predisseram o futuro
+        e chamaram o povo ao arrependimento.</p>
+    </section>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-4 mb-12">
+      <div class="group cursor-pointer" onclick="irPara('quiz-isaias.html')">
+        <div
+          class="bg-gradient-to-br from-red-600 to-rose-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🔥</div>
+          <h3 class="font-bold text-white mb-2">Isaías</h3>
+          <p class="text-sm text-red-100">Consolação e Esperança</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-jeremias.html')">
+        <div
+          class="bg-gradient-to-br from-orange-600 to-amber-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">😢</div>
+          <h3 class="font-bold text-white mb-2">Jeremias</h3>
+          <p class="text-sm text-orange-100">Chamado ao Arrependimento</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-lamentacoes.html')">
+        <div
+          class="bg-gradient-to-br from-yellow-600 to-yellow-500 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💔</div>
+          <h3 class="font-bold text-white mb-2">Lamentações</h3>
+          <p class="text-sm text-yellow-100">Pranto e Esperança</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-ezequiel.html')">
+        <div
+          class="bg-gradient-to-br from-lime-600 to-green-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">👁️</div>
+          <h3 class="font-bold text-white mb-2">Ezequiel</h3>
+          <p class="text-sm text-lime-100">Visões Divinas</p>
+        </div>
+      </div>
+      <div class="group cursor-pointer" onclick="irPara('quiz-daniel.html')">
+        <div
+          class="bg-gradient-to-br from-teal-600 to-cyan-600 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">✨</div>
+          <h3 class="font-bold text-white mb-2">Daniel</h3>
+          <p class="text-sm text-teal-100">Profecia e Fé</p>
+        </div>
+      </div>
+    </div>
+
+
+  </main>
+
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para criança</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      sidebar.classList.toggle('menu-open');
+      sidebar.classList.toggle('menu-closed');
+      overlay.classList.toggle('overlay-show');
+      overlay.classList.toggle('overlay-hide');
+    }
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
+    });
+    window.addEventListener('resize', () => {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('menu-open');
+        sidebar.classList.add('menu-closed');
+        overlay.classList.remove('overlay-show');
+        overlay.classList.add('overlay-hide');
+      }
+    });
+  </script>
+  <script src="./gamificacao.js"></script>
+  <script src="/menu.js"></script>
+
+</body>
+
+</html>

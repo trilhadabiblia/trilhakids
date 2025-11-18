@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Gálatas - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-slate-100 font-sans">
+
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="galatas-capa.png" alt="Capa: Gálatas" id="img-galatas"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🕊️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400 mx-2">
+                    LIVRO DE GÁLATAS
+                </span>
+                <span>⛓️‍💥</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Carta da Liberdade em Cristo — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-galatas" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+                🌟 Os Três Segredos de Gálatas 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-l-8 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🎁 Primeiro Segredo: A Graça que Liberta</h3>
+                    <p class="italic font-semibold">
+                        Não são regras que salvam o coração,<br>
+                        É a fé em Jesus, nossa salvação!<br>
+                        Pela graça somos livres, sem precisar ganhar,<br>
+                        O amor de Deus é presente, só precisamos aceitar!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Porque pela graça sois salvos, por meio da fé" - Gálatas 2:16</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl border-l-8 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">⛓️‍💥 Segundo Segredo: Liberdade Verdadeira</h3>
+                    <p class="italic font-semibold">
+                        Cristo nos libertou, quebrou toda prisão,<br>
+                        Não vivemos mais escravos, temos nova direção!<br>
+                        Livres para amar, livres para servir,<br>
+                        Em Cristo somos filhos, podemos sorrir!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Para a liberdade foi que Cristo nos libertou" - Gálatas 5:1</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-l-8 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🍇 Terceiro Segredo: O Fruto do Espírito</h3>
+                    <p class="italic font-semibold">
+                        Quando o Espírito em nós vem morar,<br>
+                        Amor, alegria começam a brotar!<br>
+                        Paz, paciência, bondade sem fim,<br>
+                        São frutos lindos que crescem em mim!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Mas o fruto do Espírito é amor, alegria, paz..." - Gálatas 5:22-23</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-galatas");
+        const modal = document.getElementById("modal-galatas");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Personagens Principais -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border-l-8 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-4">✉️ Paulo, o Apóstolo</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Paulo era um missionário corajoso que amava Jesus e queria que todos conhecessem a verdade do evangelho. 
+                        Ele escreveu esta carta aos cristãos da região da Galácia.
+                    </p>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4">⛪ Os Cristãos da Galácia</h3>
+                    <p class="text-lg leading-relaxed text-gray-700">
+                        Eram pessoas que haviam crido em Jesus, mas estavam confusas. Alguns falsos mestres diziam que 
+                        precisavam seguir regras antigas para serem salvos. Paulo escreveu para corrigir esse erro!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="galatas-personagem.png" alt="Paulo e os Gálatas" 
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o Livro Conta -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-500">
+            📖 O que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1">
+                <img src="galatas-o-que-conta.png" alt="Salvação pela Fé" 
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-6 rounded-2xl border-l-8 border-blue-500 shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4">🎁 A Mensagem da Graça</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Paulo ensina uma verdade maravilhosa: <strong>a salvação vem pela fé em Jesus, não pelas regras antigas!</strong>
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Alguns diziam: "Vocês precisam seguir todas as leis do Antigo Testamento para serem salvos!" 
+                        Mas Paulo explicou: "Não! Jesus já fez tudo por nós na cruz!"
+                    </p>
+                    <div class="bg-sky-100 p-4 rounded-lg mt-4">
+                        <p class="text-gray-800 font-semibold">
+                            ✨ Não precisamos fazer nada para merecer o amor de Deus. Ele nos ama de graça! 
+                            Só precisamos crer em Jesus com o coração!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é Importante -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            ⭐ Por que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border-l-8 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-4">🕊️ Liberdade em Cristo</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Gálatas nos ensina que <strong>em Cristo somos verdadeiramente livres!</strong> Não vivemos mais 
+                        presos tentando seguir um monte de regras para agradar a Deus.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Jesus já nos libertou! Agora vivemos pelo amor e pelo Espírito Santo que mora em nós.
+                    </p>
+                    <div class="bg-blue-100 p-4 rounded-lg">
+                        <p class="text-gray-800 font-bold text-center">
+                            "Para a liberdade foi que Cristo nos libertou!"<br>
+                            <span class="text-sm">- Gálatas 5:1</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="galatas-importante.png" alt="Liberdade em Cristo" 
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do Livro -->
+    <section class="section bg-gradient-to-br from-blue-50 to-indigo-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1">
+                <img src="galatas-proposito.png" alt="Evangelho da Graça" 
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-6 rounded-2xl border-l-8 border-indigo-500 shadow-lg">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-4">🛡️ Defender o Evangelho da Graça</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Paulo escreveu Gálatas para <strong>defender o verdadeiro evangelho</strong> - a boa notícia de que 
+                        somos salvos pela graça, não pelas obras!
+                    </p>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4">👨‍👩‍👧‍👦 Filhos de Deus pela Fé</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Ele também queria lembrar que <strong>todos são filhos de Deus pela fé em Jesus</strong>. Não importa 
+                        quem você é ou de onde veio - em Cristo, somos todos uma família!
+                    </p>
+                    <div class="bg-indigo-100 p-4 rounded-lg">
+                        <p class="text-gray-800 font-semibold text-center">
+                            💙 Você é filho amado de Deus!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você Sabia -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-8 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-4">✉️ Uma das Primeiras Cartas!</h3>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Gálatas foi <strong>uma das primeiras cartas que Paulo escreveu!</strong> Provavelmente foi escrita 
+                        por volta do ano 48-49 d.C., logo depois de sua primeira viagem missionária.
+                    </p>
+                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                        Paulo estava tão preocupado com os cristãos da Galácia que escreveu rapidamente para corrigir 
+                        os falsos ensinamentos antes que se espalhassem!
+                    </p>
+                    <div class="bg-yellow-100 p-4 rounded-lg">
+                        <p class="text-gray-800 font-bold text-center">
+                            📜 Esta carta tem quase 2.000 anos e ainda nos ensina sobre liberdade e graça!
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="galatas-curiosidade.png" alt="Primeira Carta de Paulo" 
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-400/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../2corintios/2corintios.html" class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 2 Coríntios
+            </a>
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-blue-400 to-sky-500 hover:from-blue-500 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
+            </a>
+            <a href="../efesios/efesios.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Efésios ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-sky-500 to-blue-400 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Gálatas - Liberdade em Cristo ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Gálatas');
+    </script>
+</body>
+</html>
