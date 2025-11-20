@@ -3,257 +3,282 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deuteronômio - Trilho Kids</title>
+    <title>Livro de Deuteronômio - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .menu-open {
-            transform: translateX(0);
-        }
-
-        .menu-closed {
-            transform: translateX(-100%);
-        }
-
-        .overlay-show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .overlay-hide {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-
-            .page-break {
-                page-break-after: always;
-            }
-
-            body {
-                background: white !important;
-            }
-
-            .print-section {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 2rem;
-            }
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
     </style>
 </head>
+<body class="bg-slate-100 font-sans">
 
-<body class="bg-gradient-to-br from-purple-900 via-pink-700 to-purple-800 min-h-screen font-sans text-gray-100">
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
 
-    <header class="no-print bg-gradient-to-r from-purple-700 via-pink-600 to-purple-700 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-            <div class="flex items-center justify-between ml-16 md:ml-0">
-                <div>
-                    <h1 class="text-4xl font-black text-white drop-shadow-lg">📜 Deuteronômio</h1>
-                    <p class="text-purple-100 text-sm md:text-base">Segunda Lei</p>
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="deuteronomio-capa.png" alt="Capa: Deuteronômio" id="img-deuteronomio"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>📜</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 mx-2">
+                    LIVRO DE DEUTERONÔMIO
+                </span>
+                <span>📜</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">As Últimas Palavras de Moisés — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-deuteronomio" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-yellow-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+                🌟 Os Três Segredos de Deuteronômio 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💛 Primeiro Segredo: Lembre-se Sempre!</h3>
+                    <p class="italic">
+                        Quando a vida parecer difícil de entender,<br>
+                        Olhe para trás e veja Deus te proteger!<br>
+                        Ele te tirou do Egito com amor e poder,<br>
+                        Nunca se esqueça do que Ele fez por você!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 8:2</p>
                 </div>
-                <button onclick="window.print()"
-                    class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-lg font-bold transition-all">
-                    🖨️ Imprimir
-                </button>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">❤️ Segundo Segredo: Ame de Todo Coração!</h3>
+                    <p class="italic">
+                        "Amarás ao Senhor teu Deus" é o que diz a lei,<br>
+                        Com toda sua força, alma e coração, você verá:<br>
+                        Quando amamos a Deus de verdade e com fervor,<br>
+                        Ele nos guia sempre com seu infinito amor!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 6:5</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌈 Terceiro Segredo: Escolha a Bênção!</h3>
+                    <p class="italic">
+                        Moisés disse: "Escolham hoje o que vão fazer,<br>
+                        Obedecer a Deus é vida, podem crer!<br>
+                        Mas se afastar d'Ele traz só tristeza e dor,<br>
+                        Escolha a vida e o caminho do Senhor!"
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 30:19</p>
+                </div>
+
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-7xl mx-auto px-4 py-12">
-
-        <!-- CAPA -->
-        <section class="page-break print-section mb-16">
-            <div class="text-center mb-8">
-                <div class="inline-block bg-purple-600/20 border-2 border-purple-500/50 rounded-full px-6 py-3 mb-6">
-                    <p class="text-purple-300 font-bold text-lg">📚 Pentateuco - Livro 5 de 5</p>
-                </div>
-                <h2 class="text-5xl md:text-6xl font-black text-purple-300 mb-4">📜 Deuteronômio</h2>
-                <p class="text-2xl text-white font-semibold mb-8">Segunda Lei</p>
-            </div>
-            <div class="flex justify-center mb-8">
-                <img src="deuteronomio-capa.png" alt="Capa Deuteronômio" class="rounded-2xl shadow-2xl max-w-2xl w-full border-4 border-purple-500/30">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-                    Moisés reafirma a lei e os pactos de Deus antes de o povo entrar em Canaã.
-                </p>
-            </div>
-        </section>
-
-        <!-- QUEM É O PERSONAGEM PRINCIPAL -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-purple-600/20 to-pink-600/20 border-2 border-purple-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">👨‍🦳</div>
-                    <h3 class="text-4xl font-black text-purple-300">Quem é o personagem principal?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="deuteronomio-quem-e.png" alt="Personagem Principal" class="rounded-2xl shadow-2xl w-full border-4 border-purple-500/20">
-                </div>
-                <div class="bg-purple-950/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        <strong class="text-purple-300">Moisés, já idoso</strong>, lembrando o povo de tudo o que Deus fez por eles.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- O QUE O LIVRO CONTA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-pink-600/20 to-purple-600/20 border-2 border-pink-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">📖</div>
-                    <h3 class="text-4xl font-black text-pink-300">O que o livro conta?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="deuteronomio-o-que-conta.png" alt="O que o livro conta" class="rounded-2xl shadow-2xl w-full border-4 border-pink-500/20">
-                </div>
-                <div class="bg-purple-950/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Conta os <strong class="text-pink-300">últimos ensinamentos de Moisés</strong> antes da chegada à Terra Prometida.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Ele <strong class="text-pink-300">relembra as leis</strong> e incentiva o povo a amar e obedecer a Deus.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O livro tem <strong class="text-pink-300">34 capítulos</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- POR QUE É IMPORTANTE -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-2 border-purple-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">⭐</div>
-                    <h3 class="text-4xl font-black text-purple-300">Por que é importante?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="deuteronomio-por-que-importante.png" alt="Por que é importante" class="rounded-2xl shadow-2xl w-full border-4 border-purple-500/20">
-                </div>
-                <div class="bg-purple-950/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Porque ensina que devemos <strong class="text-purple-300">lembrar sempre da fidelidade de Deus</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Mostra que <strong class="text-purple-300">seguir a Palavra traz vida e bênção</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Inspira o povo a <strong class="text-purple-300">continuar obedecendo ao Senhor</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROPÓSITO DO LIVRO -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-fuchsia-600/20 to-purple-700/20 border-2 border-fuchsia-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎯</div>
-                    <h3 class="text-4xl font-black text-fuchsia-300">Propósito do Livro</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="deuteronomio-proposito.png" alt="Propósito do livro" class="rounded-2xl shadow-2xl w-full border-4 border-fuchsia-500/20">
-                </div>
-                <div class="bg-purple-950/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        <strong class="text-fuchsia-300">Relembrar o amor de Deus</strong> e preparar o povo para uma nova fase.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        <strong class="text-fuchsia-300">Fortalecer a fé</strong> antes de entrar na Terra Prometida.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CURIOSIDADE DIVERTIDA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/20 border-2 border-pink-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎉</div>
-                    <h3 class="text-4xl font-black text-pink-300">Curiosidade Divertida!</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="deuteronomio-curiosidade.png" alt="Curiosidade" class="rounded-2xl shadow-2xl w-full border-4 border-pink-500/20">
-                </div>
-                <div class="bg-purple-950/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O nome <strong class="text-pink-300">"Deuteronômio"</strong> significa <strong class="text-pink-300">"segunda lei"</strong> — é como uma revisão das leis de Deus!
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NAVEGAÇÃO -->
-        <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-pink-600/20 border-2 border-purple-500/30 rounded-2xl p-10">
-            <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="../numeros/numeros.html"
-                    class="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    ⬅️ Números
-                </a>
-                <a href="../pentateuco.html"
-                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    📚 Ver Pentateuco
-                </a>
-                <a href="../historicos.html"
-                    class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    Livros Históricos ➡️
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="no-print bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
-        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
-        <p class="text-sm">Desenvolvido com ❤️ para criança</p>
-    </footer>
-
+    <!-- Script Modal -->
     <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('menu-open');
-            sidebar.classList.toggle('menu-closed');
-            overlay.classList.toggle('overlay-show');
-            overlay.classList.toggle('overlay-hide');
-        }
-
-        document.querySelectorAll('#sidebar a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            if (window.innerWidth >= 768) {
-                sidebar.classList.remove('menu-open');
-                sidebar.classList.add('menu-closed');
-                overlay.classList.remove('overlay-show');
-                overlay.classList.add('overlay-hide');
-            }
-        });
+        const img = document.getElementById("img-deuteronomio");
+        const modal = document.getElementById("modal-deuteronomio");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            👤 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="deuteronomio-personagem.png" alt="Moisés" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">👴 Moisés</h3>
+                    <p class="text-gray-700 text-lg">
+                        O grande líder do povo de Israel, agora já idoso e sábio. Ele está dando suas últimas palavras antes de o povo entrar na Terra Prometida. Moisés relembra tudo o que Deus fez e ensina o povo a nunca esquecer!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">👨‍👩‍👧‍👦 O Povo de Israel</h3>
+                    <p class="text-gray-700 text-lg">
+                        A nova geração que vai finalmente entrar na terra que Deus prometeu. Eles precisam aprender as leis e lembrar sempre de obedecer ao Senhor!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600">
+                    <h3 class="text-xl font-bold text-yellow-700 mb-2">📜 Últimos Ensinamentos</h3>
+                    <p class="text-gray-700">
+                        Moisés reúne todo o povo e relembra a jornada pelo deserto. Ele conta sobre as vitórias, os erros e as bênçãos de Deus. É como uma grande aula de revisão antes da prova final!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-700">
+                    <h3 class="text-xl font-bold text-amber-700 mb-2">⚖️ Relembrar as Leis</h3>
+                    <p class="text-gray-700">
+                        Moisés repete as leis que Deus deu no Monte Sinai. Ele explica como viver de forma que agrade a Deus, com amor, justiça e obediência. São 34 capítulos cheios de sabedoria!
+                    </p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600">
+                    <h3 class="text-xl font-bold text-yellow-700 mb-2">❤️ Amar e Obedecer</h3>
+                    <p class="text-gray-700">
+                        O coração do livro é sobre amar a Deus de todo coração! Moisés incentiva o povo a nunca se esquecer do Senhor e a ensinar seus filhos sobre Ele todos os dias.
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="deuteronomio-o-que-conta.png" alt="O que conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="deuteronomio-importante.png" alt="Importância" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">🙏 Lembrar da Fidelidade</h3>
+                    <p class="text-gray-700 text-lg">
+                        Deuteronômio nos ensina a nunca esquecer o que Deus fez por nós. Mesmo quando as coisas ficam difíceis, devemos lembrar que Ele sempre esteve conosco!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">🌟 Vida e Bênção</h3>
+                    <p class="text-gray-700 text-lg">
+                        O livro mostra que seguir a Palavra de Deus traz vida abundante e muitas bênçãos. Quando obedecemos, vivemos melhor e mais felizes!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">💪 Continuar Obedecendo</h3>
+                    <p class="text-gray-700 text-lg">
+                        Inspira o povo (e nós também!) a continuar seguindo ao Senhor, não importa o que aconteça. A obediência é o caminho para uma vida plena!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-yellow-600">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl">💝</span>
+                        <div>
+                            <h3 class="text-2xl font-bold text-yellow-700 mb-3">Relembrar o Amor de Deus</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Preparar o povo para uma nova fase da vida, mostrando que Deus sempre os amou e cuidou deles. É hora de entrar na Terra Prometida com fé renovada!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-amber-700">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-5xl">💪</span>
+                        <div>
+                            <h3 class="text-2xl font-bold text-amber-700 mb-3">Fortalecer a Fé</h3>
+                            <p class="text-gray-700 text-lg leading-relaxed">
+                                Dar ao povo coragem e confiança para enfrentar os desafios que virão. Com Deus ao lado deles, nada é impossível! A fé precisa estar forte para as batalhas à frente.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="deuteronomio-proposito.png" alt="Propósito" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="deuteronomio-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-8 rounded-2xl shadow-xl border-4 border-yellow-600">
+                    <div class="text-center mb-4">
+                        <span class="text-6xl">📚</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-yellow-700 mb-4 text-center">Segunda Lei!</h3>
+                    <p class="text-gray-700 text-xl leading-relaxed text-center mb-4">
+                        O nome "Deuteronômio" vem do grego e significa <strong>"segunda lei"</strong>! 
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        É como se fosse uma grande revisão das leis que Deus deu antes! Moisés está repassando tudo novamente para a nova geração que vai entrar na Terra Prometida. É como quando a professora revisa a matéria antes da prova importante! 📝✨
+                    </p>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-yellow-600 text-white px-6 py-2 rounded-full font-bold">
+                            🎓 Revisão Divina!
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../numeros/numeros.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
+                ⬅️ Números
+            </a>
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
+                📚 Ver Livros do Pentateuco
+            </a>
+            <a href="../josue/josue.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
+                Josué ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-yellow-600 to-amber-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Deuteronômio - As Últimas Palavras de Moisés ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        if (typeof trilhoGame !== 'undefined') {
-            trilhoGame.visitarLivro('Deuteronômio');
-        }
+        trilhoGame.visitarLivro('Deuteronômio');
     </script>
-    <script src="/menu.js"></script>
-
 </body>
 </html>

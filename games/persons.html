@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quem é o Personagem? - Jogo Bíblico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .card-container {
+            perspective: 1000px;
+        }
+        
+        .card {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+        
+        .card-gradient-back {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <!-- Header -->
+        <div class="text-center mb-8 float">
+            <a href="index.html" class="inline-block mb-4 text-white/80 hover:text-white transition-colors">
+                ← Voltar ao Menu
+            </a>
+            <h1 class="text-5xl font-bold text-white mb-2">👤 Quem é o Personagem?</h1>
+            <p class="text-white/90 text-lg">Adivinhe qual personagem bíblico é!</p>
+        </div>
+        
+        <!-- Progress -->
+        <div class="mb-6">
+            <div class="flex justify-between text-white mb-2">
+                <span class="font-semibold">Pergunta <span id="current">1</span> de 10</span>
+                <span class="font-semibold"><span id="score">0</span> pontos</span>
+            </div>
+            <div class="w-full bg-white/30 rounded-full h-3 overflow-hidden">
+                <div id="progress" class="bg-white h-full rounded-full transition-all duration-300" style="width: 10%"></div>
+            </div>
+        </div>
+        
+        <!-- Card Container -->
+        <div class="card-container w-full h-[500px] mb-6">
+            <div id="card" class="card w-full h-full cursor-pointer" onclick="flipCard()">
+                <!-- Front Face -->
+                <div class="card-face card-gradient rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-between">
+                    <div class="text-6xl mb-4">🤔</div>
+                    <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">Quem é o personagem?</h2>
+                    
+                    <div class="flex-1 flex items-center justify-center w-full">
+                        <p id="cardQuestion" class="text-xl text-gray-700 text-center leading-relaxed px-4">
+                            O personagem da Bíblia que construiu um bunker e avisou a todos no Twitter que o mundo iria acabar, mas ninguém acreditou.
+                        </p>
+                    </div>
+                    
+                    <div class="flex flex-col items-center gap-2">
+                        <p class="text-gray-600 text-center font-semibold">👆 Clique para revelar a resposta</p>
+                        <div class="flex gap-2">
+                            <span class="inline-block w-2 h-2 bg-cyan-500 rounded-full animate-bounce"></span>
+                            <span class="inline-block w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay: 0.1s"></span>
+                            <span class="inline-block w-2 h-2 bg-cyan-500 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back Face -->
+                <div class="card-face card-back card-gradient-back rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-center overflow-y-auto">
+                    <div class="text-center">
+                        <p class="text-gray-600 text-xl mb-3">A resposta é:</p>
+                        <div class="text-6xl mb-3" id="answerEmoji">🚢</div>
+                        <h2 id="answer" class="text-6xl font-bold text-gray-800 mb-4">Noé</h2>
+                        <div class="bg-white/50 rounded-2xl p-4 mb-4 max-w-md mx-auto">
+                            <p id="verse" class="text-gray-700 text-base italic leading-relaxed">
+                                Faze para ti uma arca da madeira de gofer; farás compartimentos na arca e a betumarás por dentro e por fora com betume.
+                            </p>
+                            <p id="reference" class="text-gray-600 text-sm mt-2 font-semibold">
+                                Gênesis 6:14
+                            </p>
+                        </div>
+                        <div class="text-5xl mb-2">🎉</div>
+                        <p class="text-gray-600 text-lg font-semibold">Acertou!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="flex gap-4">
+            <button onclick="previousCard()" id="prevBtn" 
+                    class="flex-1 bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
+                ← Anterior
+            </button>
+            <button onclick="nextCard()" id="nextBtn"
+                    class="flex-1 bg-white hover:bg-white/90 text-cyan-700 font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg">
+                Próximo →
+            </button>
+        </div>
+        
+        <!-- Finish Message (Hidden by default) -->
+        <div id="finishMessage" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-3xl p-8 max-w-md text-center transform scale-95 transition-transform">
+                <div class="text-7xl mb-4">🏆</div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Parabéns!</h2>
+                <p class="text-xl text-gray-600 mb-6">
+                    Você completou o jogo!<br>
+                    Pontuação final: <span id="finalScore" class="font-bold text-cyan-600">0</span> pontos
+                </p>
+                <div class="flex gap-4">
+                    <button onclick="restartGame()" class="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-transform">
+                        Jogar Novamente
+                    </button>
+                    <a href="index.html" class="flex-1 bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-xl hover:scale-105 transition-transform flex items-center justify-center">
+                        Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const cards = [
+            { 
+                question: "O personagem da Bíblia que construiu um bunker e avisou a todos no Twitter que o mundo iria acabar, mas ninguém acreditou.", 
+                answer: "Noé",
+                emoji: "🚢",
+                verse: "Faze para ti uma arca da madeira de gofer; farás compartimentos na arca e a betumarás por dentro e por fora com betume.",
+                reference: "Gênesis 6:14"
+            },
+            { 
+                question: "O personagem da Bíblia que abriu a maior rodovia aquática da história.", 
+                answer: "Moisés",
+                emoji: "🌊",
+                verse: "Então Moisés estendeu a sua mão sobre o mar, e o Senhor fez retirar o mar por um forte vento oriental toda aquela noite; e o mar tornou-se em seco.",
+                reference: "Êxodo 14:21"
+            },
+            { 
+                question: "O personagem da Bíblia que pegou o Uber e não pagou a conta e foi devolvido ao ponto de origem.", 
+                answer: "Jonas",
+                emoji: "🐋",
+                verse: "Preparou o Senhor um grande peixe, para que tragasse a Jonas; e esteve Jonas três dias e três noites nas entranhas do peixe.",
+                reference: "Jonas 1:17"
+            },
+            { 
+                question: "O personagem da Bíblia que era baixinho e teve que subir numa árvore porque não havia cadeira VIP no evento de Jesus.", 
+                answer: "Zaqueu",
+                emoji: "🌳",
+                verse: "E, correndo adiante, subiu a um sicômoro para o ver; porque havia de passar por ali.",
+                reference: "Lucas 19:4"
+            },
+            { 
+                question: "O personagem da Bíblia que não sabia a hora certa de ficar quieto e acabou sendo vendido no OLX por um preço de um Samsung.", 
+                answer: "José",
+                emoji: "👑",
+                verse: "E passaram os midianitas, mercadores, e tiraram a José, alçando-o da cova, e venderam José por vinte moedas de prata aos ismaelitas.",
+                reference: "Gênesis 37:28"
+            },
+            { 
+                question: "O personagem da Bíblia que era bilionário não sabia o que queria da vida e gastou tudo com mulheres e psicólogos.", 
+                answer: "Salomão",
+                emoji: "💎",
+                verse: "Assim o rei Salomão excedeu a todos os reis da terra, tanto em riquezas como em sabedoria.",
+                reference: "1 Reis 10:23"
+            },
+            { 
+                question: "O personagem da Bíblia que caiu numa fake news e arrastou o marido.", 
+                answer: "Eva",
+                emoji: "🍎",
+                verse: "E viu a mulher que aquela árvore era boa para se comer, e agradável aos olhos, e árvore desejável para dar entendimento; tomou do seu fruto, e comeu, e deu também a seu marido.",
+                reference: "Gênesis 3:6"
+            },
+            { 
+                question: "O personagem da Bíblia que teve a conta hackeada no Instagram e vendeu a conta para ter em troca pastéis de nata.", 
+                answer: "Esaú",
+                emoji: "🍲",
+                verse: "Então Jacó deu pão a Esaú e o cozinhado de lentilhas; e ele comeu, e bebeu, e levantou-se, e saiu. Assim desprezou Esaú a sua primogenitura.",
+                reference: "Gênesis 25:34"
+            },
+            { 
+                question: "O personagem da Bíblia que recebeu uma mensagem misteriosa e da noite para o dia virou profeta.", 
+                answer: "Samuel",
+                emoji: "📢",
+                verse: "E veio o Senhor, e ali esteve, e chamou como das outras vezes: Samuel, Samuel. E disse Samuel: Fala, porque o teu servo ouve.",
+                reference: "1 Samuel 3:10"
+            },
+            { 
+                question: "O personagem da Bíblia que era empresária, dominava o mercado de tecido na época de Atos e era concorrente da Prada e da Gucci.", 
+                answer: "Dorcas",
+                emoji: "👗",
+                verse: "E em Jope havia uma discípula chamada Tabita, que traduzido se diz Dorcas. Esta estava cheia de boas obras e esmolas que fazia.",
+                reference: "Atos 9:36"
+            }
+        ];
+        
+        let currentCard = 0;
+        let isFlipped = false;
+        let score = 0;
+        
+        function flipCard() {
+            const card = document.getElementById('card');
+            card.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+            
+            if (isFlipped && !cards[currentCard].revealed) {
+                score += 10;
+                cards[currentCard].revealed = true;
+                document.getElementById('score').textContent = score;
+            }
+        }
+        
+        function updateCard() {
+            const card = document.getElementById('card');
+            const data = cards[currentCard];
+            
+            if (isFlipped) {
+                card.classList.remove('flipped');
+                isFlipped = false;
+            }
+            
+            setTimeout(() => {
+                document.getElementById('cardQuestion').textContent = data.question;
+                document.getElementById('answer').textContent = data.answer;
+                document.getElementById('answerEmoji').textContent = data.emoji;
+                document.getElementById('verse').textContent = data.verse;
+                document.getElementById('reference').textContent = data.reference;
+                document.getElementById('current').textContent = currentCard + 1;
+                document.getElementById('progress').style.width = ((currentCard + 1) / cards.length * 100) + '%';
+                
+                document.getElementById('prevBtn').disabled = currentCard === 0;
+            }, 300);
+        }
+        
+        function nextCard() {
+            if (currentCard < cards.length - 1) {
+                currentCard++;
+                updateCard();
+            } else {
+                showFinishMessage();
+            }
+        }
+        
+        function previousCard() {
+            if (currentCard > 0) {
+                currentCard--;
+                updateCard();
+            }
+        }
+        
+        function showFinishMessage() {
+            document.getElementById('finalScore').textContent = score;
+            document.getElementById('finishMessage').classList.remove('hidden');
+            setTimeout(() => {
+                document.querySelector('#finishMessage > div').classList.add('scale-100');
+            }, 10);
+        }
+        
+        function restartGame() {
+            currentCard = 0;
+            score = 0;
+            cards.forEach(card => card.revealed = false);
+            document.getElementById('score').textContent = score;
+            document.getElementById('finishMessage').classList.add('hidden');
+            document.querySelector('#finishMessage > div').classList.remove('scale-100');
+            updateCard();
+        }
+        
+        updateCard();
+    </script>
+</body>
+</html>

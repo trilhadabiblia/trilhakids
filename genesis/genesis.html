@@ -3,254 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gênesis - Trilho Kids</title>
+    <title>Livro de Gênesis - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .menu-open {
-            transform: translateX(0);
-        }
-
-        .menu-closed {
-            transform: translateX(-100%);
-        }
-
-        .overlay-show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .overlay-hide {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-
-            .page-break {
-                page-break-after: always;
-            }
-
-            body {
-                background: white !important;
-            }
-
-            .print-section {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 2rem;
-            }
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
     </style>
 </head>
+<body class="bg-slate-100 font-sans">
 
-<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
-    <header class="no-print bg-gradient-to-r from-blue-600 to-cyan-600 backdrop-blur-xl border-b border-blue-400/30 sticky top-0 z-20 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-            <div class="flex items-center justify-between ml-16 md:ml-0">
-                <div>
-                    <h1 class="text-4xl font-black text-white drop-shadow-lg">🌍 Gênesis</h1>
-                    <p class="text-blue-100 text-sm md:text-base">Criação e Origem</p>
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
+
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="genesis-capa.png" alt="Capa: Gênesis" id="img-genesis"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🌍</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 mx-2">
+                    LIVRO DE GÊNESIS
+                </span>
+                <span>✨</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">O Começo de Tudo — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-genesis" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-yellow-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+                🌟 Os Três Segredos de Gênesis 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌅 Primeiro Segredo: Deus Criou Tudo!</h3>
+                    <p class="italic">
+                        No princípio Deus fez o céu e o mar,<br>
+                        As estrelas brilhantes para nos encantar,<br>
+                        Os animais, as plantas e você também,<br>
+                        Tudo foi feito com amor, muito além!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 1:1 - "No princípio, criou Deus os céus e a terra."</p>
                 </div>
-                <button onclick="window.print()"
-                    class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-lg font-bold transition-all">
-                    🖨️ Imprimir
-                </button>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🤝 Segundo Segredo: Deus Faz Promessas!</h3>
+                    <p class="italic">
+                        A Abraão Deus prometeu abençoar,<br>
+                        Uma família grande Ele ia formar,<br>
+                        Mesmo quando tudo parecia impossível,<br>
+                        Deus cumpriu Sua palavra, foi incrível!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 12:2 - "Farei de ti uma grande nação."</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">❤️ Terceiro Segredo: Deus Nunca Desiste!</h3>
+                    <p class="italic">
+                        Mesmo quando as pessoas erraram feio,<br>
+                        Deus sempre teve um plano, um anseio,<br>
+                        De salvar, perdoar e recomeçar,<br>
+                        Seu amor por nós nunca vai acabar!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 50:20 - "Vós intentastes o mal contra mim; porém Deus o tornou em bem."</p>
+                </div>
+
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-7xl mx-auto px-4 py-12">
-
-        <!-- CAPA -->
-        <section class="page-break print-section mb-16">
-            <div class="text-center mb-8">
-                <div class="inline-block bg-blue-500/20 border-2 border-blue-500/50 rounded-full px-6 py-3 mb-6">
-                    <p class="text-blue-300 font-bold text-lg">📚 Pentateuco - Livro 1 de 5</p>
-                </div>
-                <h2 class="text-5xl md:text-6xl font-black text-blue-300 mb-4">📘 GÊNESIS</h2>
-                <p class="text-2xl text-white font-semibold mb-8">O Começo de Tudo</p>
-            </div>
-            <div class="flex justify-center mb-8">
-                <img src="genesis-capa.png" alt="Capa Gênesis" class="rounded-2xl shadow-2xl max-w-2xl w-full border-4 border-blue-500/30">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Gênesis conta como tudo começou: o mundo, o ser humano e o plano de Deus para a humanidade.
-                </p>
-            </div>
-        </section>
-
-        <!-- QUEM É O PERSONAGEM PRINCIPAL -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-2 border-blue-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">👨‍🏫</div>
-                    <h3 class="text-4xl font-black text-blue-300">Quem é o personagem principal?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="genesis-quem-e.png" alt="Personagem Principal" class="rounded-2xl shadow-2xl w-full border-4 border-blue-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        <strong class="text-blue-300">Deus é o Criador de tudo!</strong> Ele fez o céu, a terra, os animais e as pessoas.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        <strong class="text-blue-300">Também aparecem Abraão, Isaque, Jacó e José</strong> — famílias escolhidas por Deus.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- O QUE O LIVRO CONTA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-teal-500/10 to-emerald-500/10 border-2 border-teal-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">📖</div>
-                    <h3 class="text-4xl font-black text-teal-300">O que o livro conta?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="genesis-o-que-conta.png" alt="O que o livro conta" class="rounded-2xl shadow-2xl w-full border-4 border-teal-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Conta como <strong class="text-teal-300">tudo começou:</strong> o mundo, o ser humano e o plano de Deus.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Mostra como Deus <strong class="text-teal-300">prometeu abençoar Abraão</strong> e sua família.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O livro tem <strong class="text-teal-300">50 capítulos</strong> cheios de histórias incríveis.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- POR QUE É IMPORTANTE -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-green-500/10 to-emerald-500/10 border-2 border-green-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">⭐</div>
-                    <h3 class="text-4xl font-black text-green-300">Por que é importante?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="genesis-por-que-importante.png" alt="Por que é importante" class="rounded-2xl shadow-2xl w-full border-4 border-green-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Mostra que <strong class="text-green-300">Deus criou tudo com amor</strong> e tem um plano especial para cada um.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Ensina que <strong class="text-green-300">Deus cumpre o que promete</strong>, mesmo quando as coisas parecem difíceis.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Mostra que <strong class="text-green-300">o pecado entrou no mundo</strong>, mas Deus nunca desistiu das pessoas.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROPÓSITO DO LIVRO -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-orange-500/10 to-amber-500/10 border-2 border-orange-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎯</div>
-                    <h3 class="text-4xl font-black text-orange-300">Propósito do Livro</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="genesis-proposito.png" alt="Propósito do livro" class="rounded-2xl shadow-2xl w-full border-4 border-orange-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Ensinar que <strong class="text-orange-300">Deus é o Criador</strong> e que devemos confiar no Seu plano.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Mostrar como <strong class="text-orange-300">começou a história</strong> do povo de Deus.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CURIOSIDADE DIVERTIDA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-purple-500/10 to-violet-500/10 border-2 border-purple-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎉</div>
-                    <h3 class="text-4xl font-black text-purple-300">Curiosidade Divertida!</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="genesis-curiosidade.png" alt="Curiosidade" class="rounded-2xl shadow-2xl w-full border-4 border-purple-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        A palavra <strong class="text-purple-300">"Gênesis"</strong> significa <strong class="text-purple-300">"começo" ou "origem"</strong>! É o primeiro livro da Bíblia! 🌟
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NAVEGAÇÃO -->
-        <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-violet-600/20 border-2 border-purple-500/30 rounded-2xl p-10">
-            <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="../pentateuco.html"
-                    class="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    📚 Ver Pentateuco
-                </a>
-                <a href="../exodo/exodo.html"
-                    class="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    Êxodo ➡️
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="no-print bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
-        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
-        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
-    </footer>
-
+    <!-- Script Modal -->
     <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('menu-open');
-            sidebar.classList.toggle('menu-closed');
-            overlay.classList.toggle('overlay-show');
-            overlay.classList.toggle('overlay-hide');
-        }
-
-        document.querySelectorAll('#sidebar a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            if (window.innerWidth >= 768) {
-                sidebar.classList.remove('menu-open');
-                sidebar.classList.add('menu-closed');
-                overlay.classList.remove('overlay-show');
-                overlay.classList.add('overlay-hide');
-            }
-        });
+        const img = document.getElementById("img-genesis");
+        const modal = document.getElementById("modal-genesis");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div>
+                <img src="genesis-personagem.png" alt="Personagens de Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-4 text-lg leading-relaxed text-gray-700">
+                <p class="font-bold text-2xl text-yellow-700">🌟 Deus - O Criador de Tudo!</p>
+                <p>Ele é o personagem mais importante! Deus fez o céu, a terra, os animais, as plantas e as pessoas. Tudo começou com Ele!</p>
+                
+                <p class="font-bold text-2xl text-amber-700 mt-6">👨‍👩‍👧‍👦 As Famílias Escolhidas:</p>
+                <ul class="list-disc list-inside space-y-2 ml-4">
+                    <li><strong>Abraão:</strong> O pai da fé, que confiou em Deus</li>
+                    <li><strong>Isaque:</strong> O filho da promessa</li>
+                    <li><strong>Jacó:</strong> Que se tornou Israel</li>
+                    <li><strong>José:</strong> O sonhador que salvou sua família</li>
+                </ul>
+                <p class="text-yellow-600 font-semibold mt-4">✨ Deus escolheu essas famílias para mostrar Seu amor ao mundo!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl border-2 border-yellow-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-4 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
+                <p class="font-bold text-2xl text-amber-700">🌍 Como Tudo Começou!</p>
+                <p>Gênesis conta a história de como o mundo foi criado. Deus fez tudo em 6 dias e descansou no sétimo!</p>
+                
+                <p class="font-bold text-2xl text-yellow-700 mt-6">👨‍👩‍👧 O Plano de Deus:</p>
+                <p>Mostra como Deus prometeu abençoar Abraão e sua família. Mesmo quando as coisas ficavam difíceis, Deus sempre cumpria Suas promessas!</p>
+                
+                <p class="font-bold text-2xl text-amber-700 mt-6">📚 50 Capítulos Incríveis:</p>
+                <p>O livro tem 50 capítulos cheios de histórias emocionantes sobre criação, fé, família e o amor de Deus!</p>
+                
+                <div class="bg-white p-4 rounded-lg border-2 border-yellow-300 mt-6">
+                    <p class="text-yellow-700 font-bold">💡 Resumo Rápido:</p>
+                    <p class="text-gray-600">Criação → Adão e Eva → Noé → Abraão → Isaque → Jacó → José</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="genesis-o-que-conta.png" alt="O que Gênesis conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div>
+                <img src="genesis-importante.png" alt="Importância de Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <p class="font-bold text-xl text-yellow-700 mb-2">❤️ Deus Criou Tudo com Amor!</p>
+                    <p>Gênesis mostra que Deus fez você com muito carinho e tem um plano especial para sua vida!</p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-xl border-l-4 border-amber-600">
+                    <p class="font-bold text-xl text-amber-700 mb-2">🤝 Deus Cumpre Suas Promessas!</p>
+                    <p>Mesmo quando as coisas parecem impossíveis, Deus sempre faz o que promete. Podemos confiar Nele!</p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <p class="font-bold text-xl text-yellow-700 mb-2">🌟 Deus Nunca Desiste!</p>
+                    <p>O livro mostra que o pecado entrou no mundo, mas Deus nunca desistiu das pessoas. Ele sempre nos ama!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-r from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl border-2 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-600">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
+                <div class="bg-white p-6 rounded-xl shadow-md border-2 border-yellow-300">
+                    <p class="font-bold text-2xl text-yellow-700 mb-3">🌟 Ensinar Sobre o Criador</p>
+                    <p>Gênesis foi escrito para ensinar que Deus é o Criador de tudo e que devemos confiar no Seu plano maravilhoso!</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md border-2 border-amber-300">
+                    <p class="font-bold text-2xl text-amber-700 mb-3">📜 Início da História</p>
+                    <p>O livro mostra como começou a história do povo de Deus. É o primeiro capítulo de uma história incrível!</p>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-200 to-amber-200 p-6 rounded-xl border-2 border-yellow-400">
+                    <p class="font-bold text-xl text-gray-800 mb-2">💡 Lição Principal:</p>
+                    <p class="text-gray-700">Deus é o Criador, Ele tem um plano para você, e você pode confiar Nele sempre!</p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="genesis-proposito.png" alt="Propósito de Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div>
+                <img src="genesis-curiosidade.png" alt="Curiosidade sobre Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-8 rounded-2xl border-4 border-yellow-300 shadow-xl">
+                    <p class="text-3xl font-black text-yellow-700 mb-4">🌟 Curiosidade Incrível!</p>
+                    <p class="text-2xl text-gray-800 leading-relaxed">
+                        A palavra <span class="font-black text-amber-700">"Gênesis"</span> significa 
+                        <span class="font-black text-yellow-700">"começo"</span> ou 
+                        <span class="font-black text-amber-700">"origem"</span>!
+                    </p>
+                    <div class="mt-6 p-4 bg-white rounded-xl border-2 border-yellow-400">
+                        <p class="text-lg text-gray-700">
+                            ✨ É o livro perfeito para começar a ler a Bíblia, porque ele conta como tudo começou!
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-amber-200 to-yellow-200 p-6 rounded-xl">
+                    <p class="font-bold text-xl text-gray-800 mb-2">📚 Mais Curiosidades:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>É o primeiro livro da Bíblia</li>
+                        <li>Foi escrito por Moisés</li>
+                        <li>Tem as histórias mais famosas da Bíblia!</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Pentateuco
+            </a>
+            <a href="../exodo/exodo.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Êxodo ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-yellow-600 to-amber-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Gênesis - O Começo de Tudo ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        if (typeof trilhoGame !== 'undefined') {
-            trilhoGame.visitarLivro('Gênesis');
-        }
+        trilhoGame.visitarLivro('Gênesis');
     </script>
-    <script src="/menu.js"></script>
 </body>
 </html>

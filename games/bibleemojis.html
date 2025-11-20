@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo Bíblico - Descubra o Livro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .card-container {
+            perspective: 1000px;
+        }
+        
+        .card {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-border {
+            0%, 100% { border-color: rgba(251, 191, 36, 0.5); }
+            50% { border-color: rgba(251, 191, 36, 1); }
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-gradient-gold {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            border: 3px solid #fbbf24;
+            animation: pulse-border 2s infinite;
+        }
+        
+        .card-gradient-back {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .sparkle {
+            animation: sparkle 2s infinite;
+        }
+        
+        .shine-effect {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 70%);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <!-- Header -->
+        <div class="text-center mb-8 float">
+            <a href="index.html" class="inline-block mb-4 text-white/80 hover:text-white transition-colors">
+                ← Voltar ao Menu
+            </a>
+            <h1 class="text-5xl font-bold text-white mb-2">📖 Quiz Bíblico</h1>
+            <p class="text-white/90 text-lg">Descubra qual é o livro da Bíblia!</p>
+        </div>
+        
+        <!-- Progress -->
+        <div class="mb-6">
+            <div class="flex justify-between text-white mb-2">
+                <span class="font-semibold">Pergunta <span id="current">1</span> de 21</span>
+                <span class="font-semibold">🏆 <span id="score">0</span> pontos</span>
+            </div>
+            <div class="w-full bg-white/30 rounded-full h-3 overflow-hidden">
+                <div id="progress" class="bg-gradient-to-r from-yellow-400 to-amber-500 h-full rounded-full transition-all duration-300" style="width: 4.76%"></div>
+            </div>
+        </div>
+        
+        <!-- Card Container -->
+        <div class="card-container w-full h-[500px] mb-6 relative">
+            <div id="card" class="card w-full h-full cursor-pointer absolute" onclick="flipCard()">
+                <!-- Front Face -->
+                <div class="card-face card-gradient-gold rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-between overflow-hidden">
+                    <div class="shine-effect"></div>
+                    <div class="relative z-10 w-full">
+                        <div class="flex justify-center mb-4">
+                            <span class="sparkle text-4xl">✨</span>
+                            <h2 class="text-3xl font-bold text-amber-900 text-center mx-3">Qual é o livro da Bíblia?</h2>
+                            <span class="sparkle text-4xl" style="animation-delay: 1s">✨</span>
+                        </div>
+                        
+                        <div class="flex-1 flex items-center justify-center w-full my-6">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-amber-400/20 rounded-2xl blur-xl"></div>
+                                <img id="cardImage" src="/games/img/pedro.png" 
+                                     alt="Dica" 
+                                     class="relative rounded-2xl shadow-2xl max-h-64 object-cover border-4 border-amber-300">
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-4">
+                            <p class="text-amber-900 font-bold text-lg mb-2">👆 Clique para revelar</p>
+                            <div class="flex justify-center gap-1">
+                                <span class="inline-block w-2 h-2 bg-amber-600 rounded-full animate-bounce"></span>
+                                <span class="inline-block w-2 h-2 bg-amber-600 rounded-full animate-bounce" style="animation-delay: 0.1s"></span>
+                                <span class="inline-block w-2 h-2 bg-amber-600 rounded-full animate-bounce" style="animation-delay: 0.2s"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Back Face -->
+                <div class="card-face card-back card-gradient-back rounded-3xl shadow-2xl p-8 flex flex-col items-center justify-center overflow-hidden">
+                    <div class="text-center">
+                        <p class="text-white/80 text-xl mb-4">✅ A resposta é:</p>
+                        <h2 id="answer" class="text-6xl font-bold text-white mb-6">Pedro</h2>
+                        <div class="text-7xl mb-4 animate-bounce">🎉</div>
+                        <p class="text-white text-lg font-semibold">Parabéns! +10 pontos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Buttons -->
+        <div class="flex gap-4">
+            <button onclick="previousCard()" id="prevBtn" 
+                    class="flex-1 bg-white/20 hover:bg-white/30 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed">
+                ← Anterior
+            </button>
+            <button onclick="nextCard()" id="nextBtn"
+                    class="flex-1 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-amber-900 font-bold py-4 px-6 rounded-xl transition-all transform hover:scale-105 shadow-lg">
+                Próximo →
+            </button>
+        </div>
+        
+        <!-- Finish Message (Hidden by default) -->
+        <div id="finishMessage" class="hidden fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+            <div class="bg-white rounded-3xl p-8 max-w-md text-center transform scale-95 transition-transform">
+                <div class="text-7xl mb-4">🏆</div>
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Parabéns!</h2>
+                <p class="text-xl text-gray-600 mb-6">
+                    Você completou o jogo!<br>
+                    Pontuação final: <span id="finalScore" class="font-bold text-amber-600">0</span> pontos
+                </p>
+                <div class="flex gap-4">
+                    <button onclick="restartGame()" class="flex-1 bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-bold py-3 px-6 rounded-xl hover:scale-105 transition-transform">
+                        Jogar Novamente
+                    </button>
+                    <a href="index.html" class="flex-1 bg-gray-200 text-gray-800 font-bold py-3 px-6 rounded-xl hover:scale-105 transition-transform flex items-center justify-center">
+                        Menu
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const cards = [
+            { image: "/games/img/pedro.png", answer: "Pedro" },
+            { image: "/games/img/1reis.png", answer: "1 Reis" },
+            { image: "/games/img/2timoteo.png", answer: "2 Timóteo" },
+            { image: "/games/img/amos.png", answer: "Amós" },
+            { image: "/games/img/cantares.png", answer: "Cantares" },
+            { image: "/games/img/colossenses.png", answer: "Colossenses" },
+            { image: "/games/img/filemon.png", answer: "Filemon" },
+            { image: "/games/img/filipenses.png", answer: "Filipenses" },
+            { image: "/games/img/galatas.png", answer: "Gálatas" },
+            { image: "/games/img/genesis.png", answer: "Gênesis" },
+            { image: "/games/img/1pedro.png", answer: "1 Pedro" },
+            { image: "/games/img/jonas.png", answer: "Jonas" },
+            { image: "/games/img/lamentacoes.png", answer: "Lamentações" },
+            { image: "/games/img/lucas.png", answer: "Lucas" },
+            { image: "/games/img/malaquias.png", answer: "Malaquias" },
+            { image: "/games/img/marcos.png", answer: "Marcos" },
+            { image: "/games/img/miqueias.png", answer: "Miqueias" },
+            { image: "/games/img/naum.png", answer: "Naum" },
+            { image: "/games/img/neemias.png", answer: "Neemias" },
+            { image: "/games/img/salmos.png", answer: "Salmos" }
+        ];
+        
+        let currentCard = 0;
+        let isFlipped = false;
+        let score = 0;
+        
+        function flipCard() {
+            const card = document.getElementById('card');
+            card.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+            
+            if (isFlipped && !cards[currentCard].revealed) {
+                score += 10;
+                cards[currentCard].revealed = true;
+                document.getElementById('score').textContent = score;
+            }
+        }
+        
+        function updateCard() {
+            const card = document.getElementById('card');
+            const data = cards[currentCard];
+            
+            if (isFlipped) {
+                card.classList.remove('flipped');
+                isFlipped = false;
+            }
+            
+            setTimeout(() => {
+                document.getElementById('cardImage').src = data.image;
+                document.getElementById('answer').textContent = data.answer;
+                document.getElementById('current').textContent = currentCard + 1;
+                document.getElementById('progress').style.width = ((currentCard + 1) / cards.length * 100) + '%';
+                
+                document.getElementById('prevBtn').disabled = currentCard === 0;
+            }, 300);
+        }
+        
+        function nextCard() {
+            if (currentCard < cards.length - 1) {
+                currentCard++;
+                updateCard();
+            } else {
+                showFinishMessage();
+            }
+        }
+        
+        function previousCard() {
+            if (currentCard > 0) {
+                currentCard--;
+                updateCard();
+            }
+        }
+        
+        function showFinishMessage() {
+            document.getElementById('finalScore').textContent = score;
+            document.getElementById('finishMessage').classList.remove('hidden');
+            setTimeout(() => {
+                document.querySelector('#finishMessage > div').classList.add('scale-100');
+            }, 10);
+        }
+        
+        function restartGame() {
+            currentCard = 0;
+            score = 0;
+            cards.forEach(card => card.revealed = false);
+            document.getElementById('score').textContent = score;
+            document.getElementById('finishMessage').classList.add('hidden');
+            document.querySelector('#finishMessage > div').classList.remove('scale-100');
+            updateCard();
+        }
+        
+        updateCard();
+    </script>
+</body>
+</html>

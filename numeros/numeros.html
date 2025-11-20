@@ -3,257 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Números - Trilho Kids</title>
+    <title>Livro de Números - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .menu-open {
-            transform: translateX(0);
-        }
-
-        .menu-closed {
-            transform: translateX(-100%);
-        }
-
-        .overlay-show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .overlay-hide {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-
-            .page-break {
-                page-break-after: always;
-            }
-
-            body {
-                background: white !important;
-            }
-
-            .print-section {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 2rem;
-            }
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
     </style>
 </head>
+<body class="bg-slate-100 font-sans">
 
-<body class="bg-gradient-to-br from-stone-800 via-amber-700 to-yellow-600 min-h-screen font-sans text-gray-100">
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
 
-    <header class="no-print bg-gradient-to-r from-amber-700 via-yellow-600 to-orange-600 backdrop-blur-xl border-b border-amber-400/30 sticky top-0 z-20 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-            <div class="flex items-center justify-between ml-16 md:ml-0">
-                <div>
-                    <h1 class="text-4xl font-black text-white drop-shadow-lg">🧮 Números</h1>
-                    <p class="text-amber-100 text-sm md:text-base">Jornada no Deserto</p>
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="numeros-capa.png" alt="Capa: Números" id="img-numeros"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>🏜️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                    LIVRO DE NÚMEROS
+                </span>
+                <span>⛺</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">A Jornada no Deserto — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-numeros" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+                🌟 Os Três Segredos de Números 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🛤️ Primeiro Segredo: A Jornada da Confiança</h3>
+                    <p class="italic">
+                        No deserto quente, sob o sol a brilhar,<br>
+                        Deus guiou Seu povo sem nunca falhar.<br>
+                        Com nuvem de dia e fogo à noite,<br>
+                        Mostrou que confiar é o melhor açoite!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 "O SENHOR ia adiante deles" - Números 10:33</p>
                 </div>
-                <button onclick="window.print()"
-                    class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-lg font-bold transition-all">
-                    🖨️ Imprimir
-                </button>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">💧 Segundo Segredo: Reclamar ou Confiar?</h3>
+                    <p class="italic">
+                        O povo reclamou, queria voltar atrás,<br>
+                        Mas Deus tinha planos de dar-lhes muito mais!<br>
+                        Quando confiamos, mesmo na dor,<br>
+                        Descobrimos o cuidado do nosso Senhor!
+                    </p>
+                    <p class="text-sm text-yellow-700 mt-3 font-semibold">📖 "Não murmureis" - Números 14:27</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🎯 Terceiro Segredo: Promessas Cumpridas</h3>
+                    <p class="italic">
+                        Quarenta anos andando, aprendendo a esperar,<br>
+                        Deus nunca desistiu de os abençoar!<br>
+                        Cada promessa que Ele faz,<br>
+                        Sempre, sempre se cumpre, trazendo paz!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 "Nem uma palavra falhou" - Números 23:19</p>
+                </div>
+
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-7xl mx-auto px-4 py-12">
-
-        <!-- CAPA -->
-        <section class="page-break print-section mb-16">
-            <div class="text-center mb-8">
-                <div class="inline-block bg-amber-600/20 border-2 border-amber-500/50 rounded-full px-6 py-3 mb-6">
-                    <p class="text-amber-300 font-bold text-lg">📚 Pentateuco - Livro 4 de 5</p>
-                </div>
-                <h2 class="text-5xl md:text-6xl font-black text-amber-300 mb-4">🧮 Números</h2>
-                <p class="text-2xl text-white font-semibold mb-8">Jornada no Deserto</p>
-            </div>
-            <div class="flex justify-center mb-8">
-                <img src="numeros-capa.png" alt="Capa Números" class="rounded-2xl shadow-2xl max-w-2xl w-full border-4 border-amber-500/30">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-100 max-w-3xl mx-auto leading-relaxed">
-                    Registra a jornada de 40 anos do povo de Deus no deserto até a Terra Prometida.
-                </p>
-            </div>
-        </section>
-
-        <!-- QUEM É O PERSONAGEM PRINCIPAL -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-amber-600/20 to-yellow-600/20 border-2 border-amber-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">👨‍🏫</div>
-                    <h3 class="text-4xl font-black text-amber-300">Quem é o personagem principal?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="numeros-quem-e.png" alt="Personagem Principal" class="rounded-2xl shadow-2xl w-full border-4 border-amber-500/20">
-                </div>
-                <div class="bg-stone-900/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        <strong class="text-amber-300">Moisés e o povo de Israel</strong> durante a caminhada no deserto.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- O QUE O LIVRO CONTA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-yellow-600/20 to-orange-600/20 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">📖</div>
-                    <h3 class="text-4xl font-black text-yellow-300">O que o livro conta?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="numeros-o-que-conta.png" alt="O que o livro conta" class="rounded-2xl shadow-2xl w-full border-4 border-yellow-500/20">
-                </div>
-                <div class="bg-stone-900/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Conta as <strong class="text-yellow-300">viagens do povo no deserto</strong> e como Deus cuidava deles todos os dias.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Mostra <strong class="text-yellow-300">momentos de obediência e de reclamações</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O livro tem <strong class="text-yellow-300">36 capítulos</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- POR QUE É IMPORTANTE -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-orange-600/20 to-amber-600/20 border-2 border-orange-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">⭐</div>
-                    <h3 class="text-4xl font-black text-orange-300">Por que é importante?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="numeros-por-que-importante.png" alt="Por que é importante" class="rounded-2xl shadow-2xl w-full border-4 border-orange-500/20">
-                </div>
-                <div class="bg-stone-900/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Porque mostra que <strong class="text-orange-300">Deus é fiel mesmo quando o povo erra</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Ensina a <strong class="text-orange-300">confiar em Deus mesmo em tempos difíceis</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Mostra que <strong class="text-orange-300">Deus sempre cumpre Suas promessas</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROPÓSITO DO LIVRO -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-red-600/20 to-orange-700/20 border-2 border-red-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎯</div>
-                    <h3 class="text-4xl font-black text-red-300">Propósito do Livro</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="numeros-proposito.png" alt="Propósito do livro" class="rounded-2xl shadow-2xl w-full border-4 border-red-500/20">
-                </div>
-                <div class="bg-stone-900/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Ensinar que devemos <strong class="text-red-300">confiar em Deus em qualquer situação</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Lembrar que a <strong class="text-red-300">desobediência traz consequências</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CURIOSIDADE DIVERTIDA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-amber-500/20 to-yellow-500/20 border-2 border-amber-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎉</div>
-                    <h3 class="text-4xl font-black text-amber-300">Curiosidade Divertida!</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="numeros-curiosidade.png" alt="Curiosidade" class="rounded-2xl shadow-2xl w-full border-4 border-amber-500/20">
-                </div>
-                <div class="bg-stone-900/40 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O nome <strong class="text-amber-300">"Números"</strong> vem dos <strong class="text-amber-300">registros e contagens</strong> do povo de Israel no deserto!
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NAVEGAÇÃO -->
-        <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-orange-600/20 border-2 border-amber-500/30 rounded-2xl p-10">
-            <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="../levitico/levitico.html"
-                    class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    ⬅️ Levítico
-                </a>
-                <a href="../pentateuco.html"
-                    class="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    📚 Ver Pentateuco
-                </a>
-                <a href="../deuteronomio/deuteronomio.html"
-                    class="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    Deuteronômio ➡️
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="no-print bg-gradient-to-r from-slate-800 to-slate-900 border-t border-amber-500/30 p-6 text-center text-gray-400 mt-12">
-        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
-        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
-    </footer>
-
+    <!-- Script Modal -->
     <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('menu-open');
-            sidebar.classList.toggle('menu-closed');
-            overlay.classList.toggle('overlay-show');
-            overlay.classList.toggle('overlay-hide');
-        }
-
-        document.querySelectorAll('#sidebar a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            if (window.innerWidth >= 768) {
-                sidebar.classList.remove('menu-open');
-                sidebar.classList.add('menu-closed');
-                overlay.classList.remove('overlay-show');
-                overlay.classList.add('overlay-hide');
-            }
-        });
+        const img = document.getElementById("img-numeros");
+        const modal = document.getElementById("modal-numeros");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-3xl font-bold text-amber-800 mb-4">🧔 Moisés - O Líder Fiel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Moisés guiou o povo de Israel durante toda a jornada no deserto. 
+                        Ele conversava com Deus e transmitia as instruções ao povo.
+                    </p>
+                    <h3 class="text-3xl font-bold text-yellow-800 mb-4">🚶‍♂️ O Povo de Israel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Milhares de pessoas que saíram do Egito e caminharam pelo deserto 
+                        rumo à Terra Prometida. Às vezes obedeciam, às vezes reclamavam!
+                    </p>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="numeros-personagem.png" alt="Moisés e o Povo" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1">
+                <img src="numeros-o-que-conta.png" alt="Jornada no Deserto" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl border-2 border-yellow-300 shadow-lg">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-4">🏜️ A Grande Caminhada</h3>
+                    <ul class="space-y-4 text-lg text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">⛺</span>
+                            <span>As viagens do povo pelo deserto, de um lugar para outro</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">🍞</span>
+                            <span>Como Deus cuidava deles todos os dias com maná e água</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">😊</span>
+                            <span>Momentos de obediência quando o povo confiava em Deus</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">😢</span>
+                            <span>Momentos de reclamações e consequências da desobediência</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-2xl mr-3">📚</span>
+                            <span>O livro tem 36 capítulos cheios de aventuras!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-2xl border-l-4 border-amber-600">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-3">💝 Deus é Fiel Sempre</h3>
+                        <p class="text-lg text-gray-700">
+                            Mesmo quando o povo errava e reclamava, Deus continuava cuidando deles. 
+                            Isso mostra que o amor de Deus não desiste de nós!
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-2xl border-l-4 border-yellow-600">
+                        <h3 class="text-2xl font-bold text-yellow-800 mb-3">🙏 Confiar em Tempos Difíceis</h3>
+                        <p class="text-lg text-gray-700">
+                            O deserto era difícil, mas Deus estava lá! Aprendemos a confiar em Deus 
+                            mesmo quando as coisas parecem complicadas.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-2xl border-l-4 border-amber-600">
+                        <h3 class="text-2xl font-bold text-amber-800 mb-3">✅ Promessas Cumpridas</h3>
+                        <p class="text-lg text-gray-700">
+                            Deus prometeu levar o povo à Terra Prometida, e cumpriu! 
+                            Todas as promessas de Deus se cumprem no tempo certo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="numeros-importante.png" alt="Importância de Números" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1">
+                <img src="numeros-proposito.png" alt="Propósito de Números" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2">
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-amber-300">
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl">
+                            <h3 class="text-2xl font-bold text-amber-800 mb-3 flex items-center">
+                                <span class="text-3xl mr-3">🌟</span>
+                                Confiar em Qualquer Situação
+                            </h3>
+                            <p class="text-lg text-gray-700">
+                                O livro ensina que devemos confiar em Deus não importa o que aconteça. 
+                                No calor do deserto ou na alegria, Deus está conosco!
+                            </p>
+                        </div>
+                        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl">
+                            <h3 class="text-2xl font-bold text-yellow-800 mb-3 flex items-center">
+                                <span class="text-3xl mr-3">⚠️</span>
+                                Desobediência Tem Consequências
+                            </h3>
+                            <p class="text-lg text-gray-700">
+                                Quando o povo desobedecia, enfrentava problemas. Isso nos lembra que 
+                                obedecer a Deus é sempre o melhor caminho para nossa vida!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🤓 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-100 to-yellow-100 p-8 rounded-2xl border-4 border-amber-400 shadow-xl">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">🔢</span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-amber-800 mb-4 text-center">
+                        Por Que Se Chama "Números"?
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
+                        O nome "Números" vem dos registros e contagens do povo de Israel no deserto!
+                    </p>
+                    <div class="bg-white p-6 rounded-xl mt-4">
+                        <p class="text-lg text-gray-600 text-center">
+                            📊 Deus mandou Moisés contar quantas pessoas havia em cada família e tribo. 
+                            Por isso o livro tem esse nome especial: <strong>NÚMEROS</strong>!
+                        </p>
+                    </div>
+                    <div class="text-center mt-6">
+                        <span class="text-4xl">📝✨📊</span>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="numeros-curiosidade.png" alt="Curiosidade sobre Números" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../levitico/levitico.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Levítico
+            </a>
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Pentateuco
+            </a>
+            <a href="../deuteronomio/deuteronomio.html" class="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Deuteronômio ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Números - A Jornada da Confiança ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        if (typeof trilhoGame !== 'undefined') {
-            trilhoGame.visitarLivro('Números');
-        }
+        trilhoGame.visitarLivro('Números');
     </script>
-    <script src="/menu.js"></script>
-
 </body>
 </html>

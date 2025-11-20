@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Bíblicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 255, 255, 0.6); }
+        }
+        
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .float-delayed {
+            animation: float 3s ease-in-out 1.5s infinite;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            animation: pulse-glow 1.5s infinite;
+        }
+        
+        .card-1 {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .card-2 {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        @keyframes shine {
+            0% { background-position: -200% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .shine-effect {
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 255, 255, 0.3) 50%, 
+                transparent 100%);
+            background-size: 200% 100%;
+            animation: shine 3s infinite;
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-6xl w-full">
+        <!-- Header -->
+        <div class="text-center mb-12 float">
+            <div class="text-8xl mb-4">🎮</div>
+            <h1 class="text-6xl md:text-7xl font-bold text-white mb-4">
+                Games Bíblicos
+            </h1>
+            <p class="text-white/90 text-xl md:text-2xl font-semibold">
+                Aprenda a Bíblia de forma divertida!
+            </p>
+            <div class="mt-6 flex justify-center gap-2">
+                <span class="inline-block w-3 h-3 bg-white rounded-full animate-pulse"></span>
+                <span class="inline-block w-3 h-3 bg-white rounded-full animate-pulse" style="animation-delay: 0.2s"></span>
+                <span class="inline-block w-3 h-3 bg-white rounded-full animate-pulse" style="animation-delay: 0.4s"></span>
+            </div>
+        </div>
+        
+        <!-- Game Cards -->
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+            <!-- Card 1: Qual é o Livro -->
+            <a href="bibleemojis.html" class="game-card card-1 rounded-3xl shadow-2xl p-8 relative overflow-hidden group">
+                <div class="shine-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <div class="text-7xl mb-6 text-center float">📖</div>
+                    <h2 class="text-4xl font-bold text-white mb-4 text-center">
+                        Qual é o Livro da Bíblia?
+                    </h2>
+                    <p class="text-white/90 text-center text-lg mb-6">
+                        Veja uma imagem e descubra qual livro da Bíblia ela representa!
+                    </p>
+                    <div class="flex items-center justify-center gap-3 text-white/80">
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
+                            📊 20 Perguntas
+                        </span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
+                            ⭐ Nível Médio
+                        </span>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white text-pink-600 font-bold py-3 px-6 rounded-full group-hover:scale-110 transition-transform">
+                            Jogar Agora →
+                        </span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Card 2: Quem é o Personagem -->
+            <a href="persons.html" class="game-card card-2 rounded-3xl shadow-2xl p-8 relative overflow-hidden group float-delayed">
+                <div class="shine-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <div class="text-7xl mb-6 text-center">👤</div>
+                    <h2 class="text-4xl font-bold text-white mb-4 text-center">
+                        Quem é o Personagem?
+                    </h2>
+                    <p class="text-white/90 text-center text-lg mb-6">
+                        Teste seus conhecimentos sobre os personagens bíblicos!
+                    </p>
+                    <div class="flex items-center justify-center gap-3 text-white/80">
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
+                            📊 10 Perguntas
+                        </span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
+                            ⭐ Nível Fácil
+                        </span>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white text-cyan-600 font-bold py-3 px-6 rounded-full group-hover:scale-110 transition-transform">
+                            Jogar Agora →
+                        </span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Card 3: Estante Bíblica -->
+            <a href="estante.html" class="game-card rounded-3xl shadow-2xl p-8 relative overflow-hidden group" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                <div class="shine-effect absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="relative z-10">
+                    <div class="text-7xl mb-6 text-center float">📚</div>
+                    <h2 class="text-4xl font-bold text-white mb-4 text-center">
+                        Estante Bíblica
+                    </h2>
+                    <p class="text-white/90 text-center text-lg mb-6">
+                        Organize os 66 livros da Bíblia na ordem certa!
+                    </p>
+                    <div class="flex items-center justify-center gap-3 text-white/80">
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
+                            📖 66 Livros
+                        </span>
+                        <span class="bg-white/20 px-4 py-2 rounded-full text-sm font-semibold">
+                            ⭐ Nível Difícil
+                        </span>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <span class="inline-block bg-white text-pink-600 font-bold py-3 px-6 rounded-full group-hover:scale-110 transition-transform">
+                            Jogar Agora →
+                        </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Stats Footer -->
+        <div class="bg-white/10 backdrop-blur-lg rounded-2xl p-6 text-center">
+            <div class="grid grid-cols-3 gap-4 text-white">
+                <div>
+                    <div class="text-3xl font-bold mb-1">3</div>
+                    <div class="text-white/80 text-sm">Jogos</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-1">96</div>
+                    <div class="text-white/80 text-sm">Desafios</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold mb-1">∞</div>
+                    <div class="text-white/80 text-sm">Diversão</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Made with love -->
+        <div class="text-center mt-8 text-white/60 text-sm">
+            Feito com ❤️ para aprender a Palavra
+        </div>
+    </div>
+</body>
+</html>

@@ -3,257 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Levítico - Trilho Kids</title>
+    <title>Livro de Levítico - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .menu-open {
-            transform: translateX(0);
-        }
-
-        .menu-closed {
-            transform: translateX(-100%);
-        }
-
-        .overlay-show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .overlay-hide {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        @media print {
-            .no-print {
-                display: none !important;
-            }
-
-            .page-break {
-                page-break-after: always;
-            }
-
-            body {
-                background: white !important;
-            }
-
-            .print-section {
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                padding: 2rem;
-            }
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
     </style>
 </head>
+<body class="bg-slate-100 font-sans">
 
-<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
+    </div>
 
-    <header class="no-print bg-gradient-to-r from-yellow-600 to-yellow-500 backdrop-blur-xl border-b border-yellow-400/30 sticky top-0 z-20 shadow-2xl">
-        <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-            <div class="flex items-center justify-between ml-16 md:ml-0">
-                <div>
-                    <h1 class="text-4xl font-black text-white drop-shadow-lg">🕯️ LEVÍTICO</h1>
-                    <p class="text-yellow-100 text-sm md:text-base">Leis Sagradas e Santidade</p>
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="levitico-capa.png" alt="Capa: Levítico" id="img-levitico"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>✨</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 mx-2">
+                    LIVRO DE LEVÍTICO
+                </span>
+                <span>🕊️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Santidade e Adoração — Um Resumo Visual para Crianças</p>
+        </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-levitico" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
+                🌟 Os Três Segredos de Levítico 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Primeiro Segredo: Santidade é Ser Especial</h3>
+                    <p class="italic">
+                        Deus é santo, puro e bom,<br>
+                        E quer que sejamos também, com amor e dom!<br>
+                        Ser santo é viver de forma especial,<br>
+                        Obedecendo a Deus, fazendo o que é legal!
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 "Sede santos, porque eu sou santo" - Levítico 11:45</p>
                 </div>
-                <button onclick="window.print()"
-                    class="bg-white/20 hover:bg-white/30 text-white px-6 py-2 rounded-lg font-bold transition-all">
-                    🖨️ Imprimir
-                </button>
+
+                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🕊️ Segundo Segredo: Adoração com Respeito</h3>
+                    <p class="italic">
+                        Os sacerdotes cuidavam com atenção,<br>
+                        Do templo sagrado, com dedicação!<br>
+                        Nos ensina que Deus merece reverência,<br>
+                        E nossa adoração com toda excelência!
+                    </p>
+                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 "Guardareis os meus mandamentos" - Levítico 22:31</p>
+                </div>
+
+                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">❤️ Terceiro Segredo: Relacionamento Verdadeiro</h3>
+                    <p class="italic">
+                        Deus não quer apenas regras seguir,<br>
+                        Mas um coração que O ama e quer servir!<br>
+                        Pureza e amor devem andar juntos,<br>
+                        Para com Deus estarmos sempre prontos!
+                    </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 "Amarás o teu próximo como a ti mesmo" - Levítico 19:18</p>
+                </div>
+
             </div>
         </div>
-    </header>
+    </div>
 
-    <main class="max-w-7xl mx-auto px-4 py-12">
-
-        <!-- CAPA -->
-        <section class="page-break print-section mb-16">
-            <div class="text-center mb-8">
-                <div class="inline-block bg-yellow-500/20 border-2 border-yellow-500/50 rounded-full px-6 py-3 mb-6">
-                    <p class="text-yellow-300 font-bold text-lg">📚 Pentateuco - Livro 3 de 5</p>
-                </div>
-                <h2 class="text-5xl md:text-6xl font-black text-yellow-300 mb-4">🕯️ LEVÍTICO</h2>
-                <p class="text-2xl text-white font-semibold mb-8">Leis Sagradas e Santidade</p>
-            </div>
-            <div class="flex justify-center mb-8">
-                <img src="levitico-capa.png" alt="Capa Levítico" class="rounded-2xl shadow-2xl max-w-2xl w-full border-4 border-yellow-500/30">
-            </div>
-            <div class="text-center">
-                <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                    Levítico ensina como o povo de Deus deveria viver de forma pura e santa, mostrando respeito e reverência ao Senhor.
-                </p>
-            </div>
-        </section>
-
-        <!-- QUEM É O PERSONAGEM PRINCIPAL -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-yellow-500/10 to-amber-500/10 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">👨‍🏫</div>
-                    <h3 class="text-4xl font-black text-yellow-300">Quem é o personagem principal?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="levitico-quem-e.png" alt="Personagem Principal" class="rounded-2xl shadow-2xl w-full border-4 border-yellow-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        <strong class="text-yellow-300">Deus falando com Moisés</strong> e ensinando o povo sobre santidade e adoração.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- O QUE O LIVRO CONTA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-orange-500/10 to-yellow-500/10 border-2 border-orange-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">📖</div>
-                    <h3 class="text-4xl font-black text-orange-300">O que o livro conta?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="levitico-o-que-conta.png" alt="O que o livro conta" class="rounded-2xl shadow-2xl w-full border-4 border-orange-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Conta as <strong class="text-yellow-300">regras que Deus deu ao povo</strong> para viver de forma correta e pura.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Mostra como os sacerdotes deviam cuidar do templo e oferecer sacrifícios.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O livro tem <strong class="text-yellow-300">27 capítulos</strong>.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- POR QUE É IMPORTANTE -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-amber-500/10 to-yellow-500/10 border-2 border-amber-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">⭐</div>
-                    <h3 class="text-4xl font-black text-amber-300">Por que é importante?</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="levitico-por-que-importante.png" alt="Por que é importante" class="rounded-2xl shadow-2xl w-full border-4 border-amber-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Porque ensina que <strong class="text-yellow-300">Deus é santo</strong> e quer que o Seu povo também seja santo.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Mostra como podemos <strong class="text-yellow-300">respeitar a presença de Deus</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Ensina sobre obediência e reverência.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROPÓSITO DO LIVRO -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-yellow-500/10 to-lime-500/10 border-2 border-yellow-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎯</div>
-                    <h3 class="text-4xl font-black text-yellow-300">Propósito do Livro</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="levitico-proposito.png" alt="Propósito do livro" class="rounded-2xl shadow-2xl w-full border-4 border-yellow-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold mb-6">
-                        Ensinar que <strong class="text-yellow-300">estar perto de Deus exige respeito, pureza e amor</strong>.
-                    </p>
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        Mostrar que Deus quer um <strong class="text-yellow-300">relacionamento verdadeiro</strong> com Seu povo.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- CURIOSIDADE DIVERTIDA -->
-        <section class="page-break print-section mb-16">
-            <div class="bg-gradient-to-br from-purple-500/10 to-pink-500/10 border-2 border-purple-500/30 rounded-3xl p-8 md:p-12">
-                <div class="flex items-center gap-4 mb-8">
-                    <div class="text-6xl">🎉</div>
-                    <h3 class="text-4xl font-black text-purple-300">Curiosidade Divertida!</h3>
-                </div>
-                <div class="mb-8">
-                    <img src="levitico-curiosidade.png" alt="Curiosidade" class="rounded-2xl shadow-2xl w-full border-4 border-purple-500/20">
-                </div>
-                <div class="bg-white/5 backdrop-blur rounded-2xl p-8">
-                    <p class="text-white text-2xl md:text-3xl leading-relaxed font-semibold">
-                        O nome <strong class="text-yellow-300">"Levítico"</strong> vem da tribo de <strong class="text-yellow-300">Levi</strong> — os ajudantes do templo! 🕍
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- NAVEGAÇÃO -->
-        <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-violet-600/20 border-2 border-purple-500/30 rounded-2xl p-10">
-            <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="../exodo/exodo.html"
-                    class="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    ⬅️ Êxodo
-                </a>
-                <a href="../pentateuco.html"
-                    class="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    📚 Ver Pentateuco
-                </a>
-                <a href="../numeros/numeros.html"
-                    class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                    Números ➡️
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="no-print bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
-        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
-        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
-    </footer>
-
+    <!-- Script Modal -->
     <script>
-        function toggleMenu() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            sidebar.classList.toggle('menu-open');
-            sidebar.classList.toggle('menu-closed');
-            overlay.classList.toggle('overlay-show');
-            overlay.classList.toggle('overlay-hide');
-        }
-
-        document.querySelectorAll('#sidebar a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth < 768) {
-                    toggleMenu();
-                }
-            });
-        });
-
-        window.addEventListener('resize', () => {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-            if (window.innerWidth >= 768) {
-                sidebar.classList.remove('menu-open');
-                sidebar.classList.add('menu-closed');
-                overlay.classList.remove('overlay-show');
-                overlay.classList.add('overlay-hide');
-            }
-        });
+        const img = document.getElementById("img-levitico");
+        const modal = document.getElementById("modal-levitico");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <img src="levitico-personagem.png" alt="Personagens de Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✨ Deus</h3>
+                    <p class="text-gray-700 text-lg">O personagem principal! Ele ensina Seu povo sobre santidade, pureza e como viver de forma que O agrada.</p>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">📜 Moisés</h3>
+                    <p class="text-gray-700 text-lg">O líder que recebe as instruções de Deus e as ensina ao povo de Israel.</p>
+                </div>
+                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🕊️ Os Sacerdotes</h3>
+                    <p class="text-gray-700 text-lg">Da tribo de Levi, eles cuidavam do templo e ajudavam o povo a adorar a Deus corretamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
+                    <h3 class="text-xl font-bold text-purple-700 mb-2">📜 Regras de Santidade</h3>
+                    <p class="text-gray-700">Deus ensinou regras para o povo viver de forma pura e correta, mostrando como ser diferente do mundo.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
+                    <h3 class="text-xl font-bold text-indigo-700 mb-2">🕊️ Sacrifícios e Ofertas</h3>
+                    <p class="text-gray-700">Os sacerdotes ofereciam sacrifícios no templo para perdão dos pecados e adoração a Deus.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
+                    <h3 class="text-xl font-bold text-purple-700 mb-2">✨ 27 Capítulos</h3>
+                    <p class="text-gray-700">O livro tem 27 capítulos cheios de instruções sobre como viver uma vida santa e adorar a Deus!</p>
+                </div>
+            </div>
+            <div>
+                <img src="levitico-o-que-conta.png" alt="O que Levítico conta" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <img src="levitico-importante.png" alt="Importância de Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-6">
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Deus é Santo</h3>
+                    <p class="text-gray-700 text-lg">Levítico nos ensina que Deus é completamente puro e perfeito, e Ele deseja que Seu povo também seja santo!</p>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🙏 Respeito à Presença de Deus</h3>
+                    <p class="text-gray-700 text-lg">Aprendemos como respeitar e honrar a presença de Deus em nossas vidas e na adoração.</p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">❤️ Obediência e Reverência</h3>
+                    <p class="text-gray-700 text-lg">O livro mostra que obedecer a Deus com amor e reverência é o caminho para uma vida abençoada!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-600">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-4">✨ Ensinar Santidade</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Estar perto de Deus exige respeito, pureza e amor. Levítico nos mostra como viver de forma que agrada ao coração de Deus!
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">❤️ Relacionamento Verdadeiro</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Deus quer um relacionamento verdadeiro com Seu povo — não apenas seguir regras, mas amar e servir com o coração!
+                    </p>
+                </div>
+            </div>
+            <div>
+                <img src="levitico-proposito.png" alt="Propósito de Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <img src="levitico-curiosidade.png" alt="Curiosidade sobre Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-2xl shadow-lg border-4 border-purple-300">
+                    <h3 class="text-3xl font-bold text-purple-700 mb-4">🕊️ O Nome Especial!</h3>
+                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
+                        O nome <span class="font-bold text-purple-600">"Levítico"</span> vem da tribo de Levi — os ajudantes especiais do templo!
+                    </p>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Os levitas eram responsáveis por cuidar do lugar sagrado onde Deus habitava e ajudar o povo a adorar corretamente. Que trabalho importante! 🌟
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../exodo/exodo.html" class="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Êxodo
+            </a>
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-indigo-700 to-purple-600 hover:from-indigo-800 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Pentateuco
+            </a>
+            <a href="../numeros/numeros.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Números ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-purple-600 to-indigo-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Levítico - Santidade e Adoração ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        if (typeof trilhoGame !== 'undefined') {
-            trilhoGame.visitarLivro('Levítico');
-        }
+        trilhoGame.visitarLivro('Levítico');
     </script>
-    <script src="/menu.js"></script>
-
 </body>
 </html>
