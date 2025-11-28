@@ -215,10 +215,67 @@
             <div class="progress-segment" data-index="2"></div>
         </div>
 
+        <!-- Reel 0: Missões -->
+        <div class="reel active" data-index="0" data-theme="reforma">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
+                <div class="theme-icon">🌎</div>
+            </div>
+
+            <div class="video-container" id="video-container-0">
+                <video id="video-0" controls preload="none">
+                    <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(0)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="video-container" id="video-container-0">
+                <video id="video-0" controls preload="none">
+                    <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(0)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">Missões</h3>
+                <p class="text-sm opacity-80">A Tripla Missão: Orar, Contribuir e Ir</p>
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(0)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('missoes')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('missoes')"
+                        class="flex items-center gap-2 bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <!-- Reel 1: Reforma Protestante -->
         <div class="reel active" data-index="0" data-theme="reforma">
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
                 <div class="theme-icon">⛪</div>
+            </div>
+
+            <div class="video-container" id="video-container-0">
+                <video id="video-0" controls preload="none">
+                    <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(0)">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
 
             <div class="video-container" id="video-container-0">

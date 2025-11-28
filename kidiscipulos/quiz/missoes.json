@@ -1,0 +1,224 @@
+{
+    "questoes": [
+        {
+            "pergunta": "Qual é o texto base da Grande Comissão?",
+            "opcoes": [
+                "João 3:16",
+                "Mateus 28:19-20",
+                "Atos 1:8",
+                "Romanos 10:9"
+            ],
+            "correta": 1,
+            "justificativa": "A Grande Comissão está registrada em Mateus 28:19-20, onde Jesus ordena que façamos discípulos de todas as nações."
+        },
+        {
+            "pergunta": "O que são missões segundo o conteúdo?",
+            "opcoes": [
+                "Apenas viagens religiosas",
+                "Ações da igreja para levar o evangelho a outras pessoas, culturas e lugares",
+                "Programas de ajuda humanitária",
+                "Reuniões dentro da igreja"
+            ],
+            "correta": 1,
+            "justificativa": "Missões são ações da igreja para levar o evangelho a outras pessoas, culturas e lugares, sendo o coração da igreja desde o início."
+        },
+        {
+            "pergunta": "Em Atos 8:1-4, o que aconteceu com o evangelho durante a perseguição?",
+            "opcoes": [
+                "Foi completamente interrompido",
+                "Ficou restrito a Jerusalém",
+                "Foi impulsionado e espalhado",
+                "Foi esquecido temporariamente"
+            ],
+            "correta": 2,
+            "justificativa": "A perseguição não impediu o avanço do evangelho, mas o impulsionou, levando os cristãos a espalharem a mensagem por outros lugares."
+        },
+        {
+            "pergunta": "Qual organização é mencionada como exemplo de apoio a cristãos perseguidos?",
+            "opcoes": [
+                "Cruz Vermelha",
+                "Portas Abertas",
+                "Visão Mundial",
+                "Médicos Sem Fronteiras"
+            ],
+            "correta": 1,
+            "justificativa": "Portas Abertas é mencionada como organização que ajuda cristãos perseguidos com apoio espiritual e prático."
+        },
+        {
+            "pergunta": "Quais países são mencionados como lugares perigosos para ser cristão?",
+            "opcoes": [
+                "Brasil, Argentina e Chile",
+                "Estados Unidos, Canadá e México",
+                "Coreia do Norte, Afeganistão e Somália",
+                "França, Alemanha e Itália"
+            ],
+            "correta": 2,
+            "justificativa": "O conteúdo menciona Coreia do Norte, Afeganistão e Somália como países onde ser cristão é perigoso."
+        },
+        {
+            "pergunta": "Qual versículo contém o mandamento 'Ide por todo mundo e pregai o evangelho'?",
+            "opcoes": [
+                "Marcos 16:15",
+                "Lucas 10:2",
+                "João 20:21",
+                "Atos 1:8"
+            ],
+            "correta": 0,
+            "justificativa": "O mandamento 'Ide por todo mundo e pregai o evangelho a toda a criatura' está em Marcos 16:15."
+        },
+        {
+            "pergunta": "Segundo Atos 11:29-30, como os discípulos ajudaram os irmãos da Judeia?",
+            "opcoes": [
+                "Enviando missionários",
+                "Construindo igrejas",
+                "Enviando ofertas através de Barnabé e Saulo",
+                "Organizando jejuns coletivos"
+            ],
+            "correta": 2,
+            "justificativa": "Os discípulos enviaram suas ofertas aos presbíteros pelas mãos de Barnabé e Saulo para ajudar os irmãos que viviam na Judeia."
+        },
+        {
+            "pergunta": "Onde o conteúdo afirma que a maior obra de Deus deve ser realizada?",
+            "opcoes": [
+                "Dentro dos templos",
+                "Nas escolas dominicais",
+                "Fora dos templos",
+                "Nos seminários teológicos"
+            ],
+            "correta": 2,
+            "justificativa": "O conteúdo afirma que a maior obra de Deus deve ser realizada fora dos templos, evangelizando, amando e servindo aos que precisam."
+        },
+        {
+            "pergunta": "Quantas maneiras de fazer missões são mencionadas no conteúdo?",
+            "opcoes": [
+                "Duas maneiras",
+                "Três maneiras",
+                "Quatro maneiras",
+                "Cinco maneiras"
+            ],
+            "correta": 1,
+            "justificativa": "O conteúdo menciona três maneiras de fazer missões: Orando, Contribuindo com dinheiro e Indo."
+        },
+        {
+            "pergunta": "O que é a oração de intercessão segundo o conteúdo?",
+            "opcoes": [
+                "Oração apenas por si mesmo",
+                "Oração que clamamos a Deus por outras pessoas",
+                "Oração em grupo",
+                "Oração de agradecimento"
+            ],
+            "correta": 1,
+            "justificativa": "A oração de intercessão é a oração que clamamos a Deus por outras pessoas, especialmente importante para os missionários."
+        },
+        {
+            "pergunta": "Por que alguns missionários realizam cultos em barcos ou cavernas?",
+            "opcoes": [
+                "Por tradição local",
+                "Por falta de prédios",
+                "Para se sentirem seguros da perseguição",
+                "Por preferência pessoal"
+            ],
+            "correta": 2,
+            "justificativa": "Em alguns países, cultos são realizados em barcos no meio de mares ou em cavernas porque só lá os cristãos sentem que estão seguros da perseguição."
+        },
+        {
+            "pergunta": "Quem o conteúdo define como missionário?",
+            "opcoes": [
+                "Apenas pastores ordenados",
+                "Somente pessoas com formação teológica",
+                "Pessoa que tem um chamado de Deus para levar a palavra Dele às pessoas",
+                "Apenas quem viaja para outros países"
+            ],
+            "correta": 2,
+            "justificativa": "Missionário é a pessoa que tem um chamado de Deus para levar a palavra Dele às pessoas, tanto de perto quanto de longe."
+        },
+        {
+            "pergunta": "Como alguém deve se preparar para o campo missionário?",
+            "opcoes": [
+                "Apenas comprando passagens",
+                "Com estudos da Palavra, oração, jejum e preparação espiritual",
+                "Somente aprendendo idiomas",
+                "Apenas com recursos financeiros"
+            ],
+            "correta": 1,
+            "justificativa": "A preparação inclui estudos da Palavra de Deus, preparação espiritual com oração e jejum, fortalecimento com o Espírito Santo e estudo de idiomas."
+        },
+        {
+            "pergunta": "Na evangelização das cores da salvação, o que a cor amarela representa?",
+            "opcoes": [
+                "O pecado",
+                "O amor de Deus e as ruas de ouro",
+                "A limpeza",
+                "O crescimento"
+            ],
+            "correta": 1,
+            "justificativa": "A cor amarela representa o amor de Deus por todas as pessoas e as ruas de ouro que Ele está preparando (João 14:2)."
+        },
+        {
+            "pergunta": "O que a cor preta representa nas cores da salvação?",
+            "opcoes": [
+                "A noite",
+                "A morte",
+                "Um coração sujo de pecados",
+                "O sofrimento"
+            ],
+            "correta": 2,
+            "justificativa": "A cor preta representa um coração sujo de pecados, conforme Romanos 3:23."
+        },
+        {
+            "pergunta": "Segundo Romanos 5:8, o que o sangue vermelho de Jesus representa?",
+            "opcoes": [
+                "Sua humanidade",
+                "Sua coragem",
+                "Que Ele morreu no nosso lugar para nos trazer salvação",
+                "Seu sofrimento físico apenas"
+            ],
+            "correta": 2,
+            "justificativa": "A cor vermelha representa o sangue de Jesus que foi derramado na cruz, pois Ele morreu no nosso lugar para nos trazer salvação."
+        },
+        {
+            "pergunta": "O que a cor branca significa na evangelização das cores?",
+            "opcoes": [
+                "Paz",
+                "Pureza e um coração limpo",
+                "Alegria",
+                "Esperança"
+            ],
+            "correta": 1,
+            "justificativa": "A cor branca representa um coração limpo e purificado pelo sangue de Jesus."
+        },
+        {
+            "pergunta": "Segundo Romanos 10:9, o que você deve fazer para ter o coração limpo?",
+            "opcoes": [
+                "Apenas frequentar a igreja",
+                "Confessar com a boca que Jesus é Senhor e crer que Deus o ressuscitou",
+                "Fazer boas obras",
+                "Doar dinheiro"
+            ],
+            "correta": 1,
+            "justificativa": "Você deve confessar com sua boca que Jesus é o seu Senhor e crer que Deus o ressuscitou dentre os mortos para ter o coração limpo."
+        },
+        {
+            "pergunta": "O que a cor verde representa nas cores da salvação?",
+            "opcoes": [
+                "A natureza",
+                "A esperança",
+                "O crescimento espiritual",
+                "A juventude"
+            ],
+            "correta": 2,
+            "justificativa": "A cor verde representa o crescimento espiritual, uma vida de crescimento para cada dia ser mais parecido com Cristo."
+        },
+        {
+            "pergunta": "Qual é a responsabilidade de todos que seguem a Jesus?",
+            "opcoes": [
+                "Apenas frequentar cultos",
+                "Somente dar ofertas",
+                "Anunciar o Evangelho - é um mandamento, não uma opção",
+                "Apenas orar em casa"
+            ],
+            "correta": 2,
+            "justificativa": "Anunciar o Evangelho não é uma opção, é um mandamento para todos aqueles que aceitaram e seguem a Jesus."
+        }
+    ]
+}
