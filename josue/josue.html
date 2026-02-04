@@ -1,222 +1,260 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livro de Josué - Resumo Visual</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <style>
-    @media print {
-      body {
-        background: white;
-      }
-
-      .no-print {
-        display: none;
-      }
-
-      .section {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Josué - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
-  <!-- Botão Imprimir -->
-  <div class="no-print fixed bottom-6 right-6 z-50">
-    <button onclick="window.print()"
-      class="bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
-      🖨️ Imprimir
-    </button>
-  </div>
-
-  <!-- Capa -->
-  <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
-    <div class="w-full max-w-2xl text-center">
-      <img src="josue-capa.png" alt="Capa Josue" class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain">
-
-      <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-        <span>📘</span>
-        <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 mb-4">
-          &nbsp;LIVRO DE JOSUÉ&nbsp;
-        </span>
-        <span>📘</span>
-      </h1>
-      <p class="text-xl text-gray-600 font-semibold">Um Líder Corajoso - Um Resumo Visual para Crianças</p>
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
     </div>
-  </section>
 
-  <!-- Seção 1: Quem é Josué? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="josue-quem-e.png" alt="Quem é Josué?" class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="josue-capa.png" alt="Capa: Josué" id="img-josue"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>📘</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                    LIVRO DE JOSUÉ
+                </span>
+                <span>📘</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Um Líder Corajoso — Um Resumo Visual para Crianças</p>
         </div>
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-4 border-blue-500">
-          <h2 class="text-4xl font-black text-blue-700 mb-6">❓ Quem é Josué?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-blue-600">Josué foi um líder forte</span> que ajudou o povo de Deus a ir para
-              a Terra Prometida.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-blue-600">Ele é ligado a Jesus</span> de uma forma bíblica (em grego, o nome
-              pode soar como Jesus).
-            </p>
-          </div>
+    </section>
+
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-josue" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+                🌟 Os Três Segredos de Josué 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🛡️ Primeiro Segredo: Coragem na Promessa</h3>
+                    <p class="italic text-gray-700 leading-relaxed">
+                        Josué era forte, Josué era fiel,<br>
+                        Deus lhe disse: "Seja corajoso, meu papel!"<br>
+                        Com o povo atravessou o rio Jordão,<br>
+                        Confiando em Deus de todo coração!<br>
+                        <span class="text-sm text-amber-700 font-semibold mt-2 block">📖 Josué 1:9</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-400">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🎺 Segundo Segredo: Obediência que Derruba Muros</h3>
+                    <p class="italic text-gray-700 leading-relaxed">
+                        Jericó tinha muros tão altos assim,<br>
+                        Mas Deus tinha um plano desde o fim!<br>
+                        Marcharam, tocaram, gritaram com fé,<br>
+                        E os muros caíram aos seus pés!<br>
+                        <span class="text-sm text-yellow-700 font-semibold mt-2 block">📖 Josué 6:20</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-400">
+                    <h3 class="text-2xl font-bold text-amber-900 mb-3">✨ Terceiro Segredo: Escolha Servir ao Senhor</h3>
+                    <p class="italic text-gray-700 leading-relaxed">
+                        No final da vida, Josué proclamou:<br>
+                        "Escolham hoje a quem vão servir, meu irmão!"<br>
+                        "Eu e minha casa serviremos ao Senhor,<br>
+                        Pois Ele é fiel, nosso protetor!"<br>
+                        <span class="text-sm text-amber-800 font-semibold mt-2 block">📖 Josué 24:15</span>
+                    </p>
+                </div>
+
+            </div>
         </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Seção 2: O que o livro conta? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1">
-          <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-8 rounded-2xl border-4 border-teal-500">
-            <h2 class="text-4xl font-black text-teal-700 mb-6">📖 O que o livro conta?</h2>
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-josue");
+        const modal = document.getElementById("modal-josue");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem é Josué? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ❓ Quem é Josué?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="josue-personagem.png" alt="Josué - O Líder Corajoso" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
             <div class="space-y-4">
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-teal-600">Conta a história de Josué</span> guiando os amigos de Deus para
-                uma nova terra.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-teal-600">O livro tem 24 capítulos</span> cheios de aventuras e miracles.
-              </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    <span class="font-bold text-amber-700">Josué foi um líder forte</span> que ajudou o povo de Deus a ir para a <span class="font-bold text-yellow-700">Terra Prometida</span>.
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    Ele foi assistente de <span class="font-bold text-amber-800">Moisés</span> e aprendeu muito com ele. Quando Moisés morreu, Deus escolheu Josué para liderar o povo!
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    O nome Josué significa <span class="font-bold text-yellow-800">"O Senhor salva"</span> — e isso nos lembra de Jesus, nosso Salvador! ✨
+                </p>
             </div>
-          </div>
         </div>
-        <div class="order-1 md:order-2">
-          <img src="josue-o-que-conta.png" alt="O que o livro conta?"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seção 3: Por que é importante? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="josue-por-que-importante.png" alt="Por que é importante?"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
-          <h2 class="text-4xl font-black text-green-700 mb-6">⭐ Por que é importante?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">🟢 Mostra como Deus permanece fiel</span> às promessas dele.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">🟢 Mostra que Deus cuida do seu povo</span> quando eles confiam
-              nele.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">🟢 Josué e o povo aprendem a obedecer a Deus</span> para viver bem
-              na terra nova.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 4: Propósito do livro -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1">
-          <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border-4 border-orange-500">
-            <h2 class="text-4xl font-black text-orange-700 mb-6">🎯 Propósito do livro</h2>
-            <div class="space-y-4">
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-orange-600">Continuar a história</span> que começou com Moisés.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-orange-600">Mostrar que Deus é fiel à aliança</span> com Abraão, Isaac e
-                Jacó.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-orange-600">Ensinar que Canaã</span> (terra nova) é um lugar onde o povo
-                aprende a viver com Deus.
-              </p>
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-yellow-300">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-amber-800">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 order-2 md:order-1">
+                <p class="text-xl leading-relaxed text-gray-700">
+                    O livro de Josué conta a <span class="font-bold text-amber-700">história emocionante</span> de como o povo de Israel finalmente entrou na Terra Prometida!
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    Com <span class="font-bold text-yellow-700">24 capítulos</span> cheios de aventuras, vemos Josué liderar batalhas, conquistar cidades e dividir a terra entre as tribos de Israel.
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    Há milagres incríveis, como o <span class="font-bold text-amber-800">Rio Jordão se abrindo</span> e as <span class="font-bold text-yellow-800">muralhas de Jericó caindo</span>! 🎺
+                </p>
             </div>
-          </div>
-        </div>
-        <div class="order-1 md:order-2">
-          <img src="josue-proposito.png" alt="Propósito do livro"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 5: Curiosidade Divertida -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="josue-curiosidade.png" alt="Curiosidade Divertida"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-        <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
-          <h2 class="text-4xl font-black text-purple-700 mb-6">💡 Curiosidade Divertida!</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-purple-600">O nome de Josué em hebraico</span> pode significar <span
-                class="font-bold text-purple-600">"Salvador".</span>
-            <p>
-              <span class="font-bold text-purple-600">Jericó</span> caiu depois que o povo marchou em volta dela <span
-                class="font-bold text-purple-600">por sete dias</span>.
-
-            <p>O povo de Israel marchou ao redor e tocaram trombetas gritando bem alto para as muralhas de Jericó
-              caírem.
-              </span>
-            </p>
-            <div class="bg-white p-4 rounded-lg mt-6 border-2 border-purple-300">
-              <p class="text-sm text-gray-700 italic">Isso conecta Josué a Jesus, que também é nosso Salvador! ✨</p>
+            <div class="order-1 md:order-2">
+                <img src="josue-o-que-conta.png" alt="As Aventuras de Josué" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NAVEGAÇÃO -->
-  <section
-    class="no-print text-center bg-gradient-to-r from-yellow-700/20 to-orange-700/20 border-2 border-yellow-600/30 rounded-2xl p-10">
-    <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="../historicos.html"
-        class="bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        📚 Ver Históricos
-      </a>
-      <a href="../juizes/juizes.html"
-        class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        Juízes ➡️
-      </a>
-    </div>
-  </section>  
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-amber-300">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ⭐ Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="josue-importante.png" alt="A Importância do Livro de Josué" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="flex items-start space-x-4">
+                    <span class="text-4xl">🟢</span>
+                    <p class="text-xl leading-relaxed text-gray-700">
+                        <span class="font-bold text-amber-700">Mostra como Deus cumpre Suas promessas!</span> Ele prometeu a Abraão uma terra especial, e agora o povo está lá!
+                    </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <span class="text-4xl">🟢</span>
+                    <p class="text-xl leading-relaxed text-gray-700">
+                        <span class="font-bold text-yellow-700">Ensina sobre confiança em Deus.</span> Quando obedecemos e confiamos, Deus faz coisas incríveis!
+                    </p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <span class="text-4xl">🟢</span>
+                    <p class="text-xl leading-relaxed text-gray-700">
+                        <span class="font-bold text-amber-800">Mostra a importância da obediência.</span> Josué e o povo aprenderam que seguir a Deus traz vitória e bênçãos!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Rodapé -->
-  <section class="section bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-8 text-center">
-    <h3 class="text-2xl font-black mb-2">✨ Livro de Josué - Um Líder Corajoso ✨</h3>
-    <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
-  </section>
-  <script src="/menu.js"></script>
-  <script src="../gamificacao.js"></script>  
-  <script>
-    // Na página do livro (josue.html)
-    trilhoGame.visitarLivro('Josué');
-  </script>
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-yellow-400">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-amber-800">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-4 order-2 md:order-1">
+                <p class="text-xl leading-relaxed text-gray-700">
+                    O livro de Josué <span class="font-bold text-amber-700">continua a história</span> que começou com Moisés no deserto.
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    Ele mostra que <span class="font-bold text-yellow-700">Deus é fiel à aliança</span> que fez com Abraão, Isaque e Jacó — Ele sempre cumpre o que promete!
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    Ensina que <span class="font-bold text-amber-800">Canaã (a Terra Prometida)</span> é um lugar especial onde o povo de Deus aprende a viver em obediência e adoração.
+                </p>
+                <p class="text-xl leading-relaxed text-gray-700">
+                    É um livro sobre <span class="font-bold text-yellow-800">coragem, fé e a fidelidade de Deus</span>! 💪
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="josue-proposito.png" alt="O Propósito do Livro de Josué" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            💡 Curiosidade Divertida!
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="josue-curiosidade.png" alt="Curiosidades sobre Josué" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-amber-100 p-6 rounded-2xl border-2 border-amber-300">
+                    <p class="text-xl leading-relaxed text-gray-700">
+                        🌟 O nome de Josué em hebraico pode significar <span class="font-bold text-amber-800">"Salvador"</span> — isso conecta Josué a Jesus, que também é nosso Salvador! ✨
+                    </p>
+                </div>
+                <div class="bg-yellow-100 p-6 rounded-2xl border-2 border-yellow-300">
+                    <p class="text-xl leading-relaxed text-gray-700">
+                        🎺 As muralhas de Jericó caíram depois que o povo <span class="font-bold text-yellow-800">marchou ao redor da cidade por sete dias</span>, tocou trombetas e gritou bem alto!
+                    </p>
+                </div>
+                <div class="bg-amber-100 p-6 rounded-2xl border-2 border-amber-300">
+                    <p class="text-xl leading-relaxed text-gray-700">
+                        ☀️ Em uma batalha, Josué pediu a Deus que o <span class="font-bold text-amber-800">sol parasse no céu</span> — e Deus atendeu! Que milagre incrível! (Josué 10:12-13)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mx-4 mb-8">
+        <h3 class="text-3xl font-black text-amber-900 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../deuteronomio/deuteronomio.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Deuteronômio
+            </a>
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros do Pentateuco
+            </a>
+            <a href="../juizes/juizes.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Juízes ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Josué - Um Líder Corajoso ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Josué');
+    </script>
 </body>
-
 </html>

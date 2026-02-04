@@ -1,211 +1,281 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livro de 2 Samuel - Resumo Visual</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @media print {
-      body {
-        background: white;
-      }
-
-      .no-print {
-        display: none;
-      }
-
-      .section {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de 2 Samuel - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
-  <!-- Botão Imprimir -->
-  <div class="no-print fixed bottom-6 right-6 z-50">
-    <button onclick="window.print()"
-      class="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
-      🖨️ Imprimir
-    </button>
-  </div>
-
-  <!-- Capa -->
-  <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
-    <div class="w-full max-w-2xl text-center">
-      <img src="2samuel-capa.png" alt="Capa 1 Samuel" class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain">
-      <h1 class="text-5xl font-black mb-4 flex items-center gap-2">
-        <span>👑</span>
-        <span class="bg-clip-text text-transparent bg-gradient-to-r from-red-600 to-rose-600">
-          LIVRO DE 2 SAMUEL
-        </span>
-        <span>👑</span>
-      </h1>
-      <p class="text-xl text-gray-600 font-semibold">Samuel, Saul e Davi: a história da transição para a monarquia em
-        Israel.</p>
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
     </div>
-  </section>
 
-  <!-- Seção 1: Quem é Daví? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="2samuel-quem-e.png" alt="Quem é Davi" class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-        <div class="bg-gradient-to-br from-red-50 to-rose-50 p-8 rounded-2xl border-4 border-red-500">
-          <h2 class="text-4xl font-black text-red-700 mb-6">❓ Quem foi Davi?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-red-600">O rei Davi, </span> foi um homem que amava muito a Deus e governou
-              com coragem e fé.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-red-600">É conhecido tanto por sua fé</span> quanto por seus pecados.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 2: O que o livro conta? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1">
-          <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl border-4 border-yellow-500">
-            <h2 class="text-4xl font-black text-yellow-700 mb-6">📖 O que o livro conta?</h2>
-            <div class="space-y-4">
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-yellow-600">Conta como Davi se tornou rei</span> de todo Israel.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-yellow-600">Mostra suas vitórias, seus erros</span> e como ele sempre
-                buscava o perdão de Deus.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-yellow-600">O livro tem 24 capítulos.</span>
-              </p>
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="2samuel-capa.png" alt="Capa: 2 Samuel" id="img-2samuel"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-          </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>👑</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                    LIVRO DE 2 SAMUEL
+                </span>
+                <span>👑</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">O Rei Davi: Coragem, Fé e Arrependimento — Um Resumo Visual para Crianças</p>
         </div>
-        <div class="order-1 md:order-2">
-          <img src="2samuel-o-que-conta.png" alt="O que o livro conta?"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seção 3: Por que é importante? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="2samuel-por-que-importante.png" alt="Por que é importante?"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-4 border-blue-500">
-          <h2 class="text-4xl font-black text-blue-700 mb-6">⭐ Por que é importante?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-blue-600">Porque ensina que Deus olha o coração</span> e perdoa quem se
-              arrepende.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              Mostra que mesmo os grandes <span class="font-bold text-blue-600">líderes precisam obedecer a Deus.</span>
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              Davi foi um rei que amava <span class="font-bold text-blue-600">louvar ao Senhor.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2samuel" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+                🌟 Os Três Segredos de 2 Samuel 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">💖 Primeiro Segredo: O Coração que Deus Vê</h3>
+                    <p class="italic">
+                        Davi não era perfeito, mas seu coração era sincero,<br>
+                        Deus não olha a aparência, mas o amor verdadeiro!<br>
+                        Quando erramos e nos arrependemos de coração,<br>
+                        O Senhor nos perdoa e nos dá nova direção!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "O Senhor não vê como o homem vê; o homem olha a aparência, mas o Senhor olha o coração." (1 Samuel 16:7)</p>
+                </div>
 
-  <!-- Seção 4: Propósito do livro -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1">
-          <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
-            <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
-            <div class="space-y-4">
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-purple-600">Ensinar que o amor e o arrependimento</span> são mais fortes do
-                que os erros.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-purple-600">Mostrar que Deus é fiel</span> e dá novas chances.
-              </p>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🎵 Segundo Segredo: O Rei que Louvava</h3>
+                    <p class="italic">
+                        Davi era guerreiro, mas também era adorador,<br>
+                        Tocava harpa e cantava ao seu Criador!<br>
+                        Nos momentos difíceis ou de grande alegria,<br>
+                        Sempre encontrava tempo para louvar todo dia!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Cantarei ao Senhor enquanto eu viver; cantarei louvores ao meu Deus enquanto eu existir." (Salmo 104:33)</p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">✨ Terceiro Segredo: Novas Chances de Deus</h3>
+                    <p class="italic">
+                        Mesmo quando Davi pecou e se afastou do caminho,<br>
+                        Deus o perdoou e não o deixou sozinho!<br>
+                        Isso nos ensina que o amor de Deus é maior,<br>
+                        Que nossos erros, quando há arrependimento e fervor!
+                    </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 "Cria em mim um coração puro, ó Deus, e renova dentro de mim um espírito inabalável." (Salmo 51:10)</p>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="order-1 md:order-2">
-          <img src="2samuel-proposito.png" alt="Propósito do livro"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Seção 5: Curiosidade Divertida -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="2samuel-curiosidade.png" alt="Curiosidade Divertida"
-            class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-2samuel");
+        const modal = document.getElementById("modal-2samuel");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem é Davi -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ❓ Quem foi Davi?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="relative group">
+                <img src="2samuel-personagem.png" alt="Rei Davi" class="w-full h-auto rounded-xl shadow-xl object-cover transform group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">👑</span>
+                        Um Rei com Coração de Adorador
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O rei Davi foi um homem que amava muito a Deus e governou com coragem e fé. Ele é conhecido tanto por sua fé quanto por seus pecados, mostrando que todos precisamos do perdão de Deus.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">💪</span>
+                        Guerreiro e Pastor
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Antes de ser rei, Davi foi um pastor de ovelhas que derrotou o gigante Golias. Ele era corajoso nas batalhas, mas também era sensível para louvar a Deus com música e poesia.
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
-          <h2 class="text-4xl font-black text-green-700 mb-6">💡 Você sabia?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">Davi escreveu muitos salmos</span> que ainda cantamos hoje!
-            </p>
-          </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">📚</span>
+                        A História do Reino de Davi
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O livro conta como Davi se tornou rei de todo Israel. Mostra suas vitórias, seus erros e como ele sempre buscava o perdão de Deus. O livro tem 24 capítulos cheios de lições importantes.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">⚔️</span>
+                        Vitórias e Desafios
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Vemos Davi conquistando Jerusalém, derrotando inimigos e expandindo o reino. Mas também vemos seus erros e como ele lidou com as consequências, sempre voltando para Deus.
+                    </p>
+                </div>
+            </div>
+            <div class="relative group order-1 md:order-2">
+                <img src="2samuel-o-que-conta.png" alt="O que o livro conta" class="w-full h-auto rounded-xl shadow-xl object-cover transform group-hover:scale-105 transition-transform duration-300">
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NAVEGAÇÃO -->
-  <section
-    class="no-print text-center bg-gradient-to-r from-yellow-700/20 to-orange-700/20 border-2 border-yellow-600/30 rounded-2xl p-10">
-    <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="../1samuel/1samuel.html"
-        class="bg-gradient-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        ⬅️ 1 Samuel
-      </a>
-      <a href="../historicos.html"
-        class="bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        📚 Ver Históricos
-      </a>
-      <a href="../1reis/1reis.html"
-        class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        1 Reis ➡️
-      </a>
-    </div>
-  </section>
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ⭐ Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="relative group">
+                <img src="2samuel-importante.png" alt="Por que é importante" class="w-full h-auto rounded-xl shadow-xl object-cover transform group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">💖</span>
+                        Deus Olha o Coração
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Este livro ensina que Deus olha o coração e perdoa quem se arrepende. Não importa o quão grande seja nosso erro, se voltarmos para Deus com sinceridade, Ele nos perdoa.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🎵</span>
+                        Um Rei que Louvava
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Mostra que mesmo os grandes líderes precisam obedecer a Deus. Davi foi um rei que amava louvar ao Senhor, nos ensinando que o louvor deve fazer parte da nossa vida diária.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Rodapé -->
-  <section class="section bg-gradient-to-r from-red-600 to-rose-600 text-white p-8 text-center">
-    <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Samuel - a história da transição para a monarquia em Israel. ✨
-    </h3>
-    <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
-  </section>
-  <script src="/menu.js"></script>
-  <script src="../gamificacao.js"></script>
-  <script>
-    trilhoGame.visitarLivro('I Samuel');
-  </script>
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-6 order-2 md:order-1">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">✨</span>
+                        Amor e Arrependimento
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Ensinar que o amor e o arrependimento são mais fortes do que os erros. Quando reconhecemos nossos pecados e pedimos perdão, Deus nos restaura completamente.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🙏</span>
+                        Deus é Fiel
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Mostrar que Deus é fiel e dá novas chances. Mesmo quando falhamos, Ele não desiste de nós e continua nos amando e nos guiando para o caminho certo.
+                    </p>
+                </div>
+            </div>
+            <div class="relative group order-1 md:order-2">
+                <img src="2samuel-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-xl shadow-xl object-cover transform group-hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-gradient-to-br from-amber-50 via-yellow-50 to-amber-100 p-8 mb-4 rounded-2xl shadow-lg border-4 border-amber-300">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            💡 Você sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="relative group">
+                <img src="2samuel-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-xl shadow-xl object-cover transform group-hover:scale-105 transition-transform duration-300 border-4 border-white">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-700">
+                    <h3 class="text-3xl font-bold text-amber-800 mb-4 flex items-center">
+                        <span class="text-4xl mr-3">🎶</span>
+                        Davi, o Compositor de Salmos
+                    </h3>
+                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
+                        Davi escreveu muitos salmos que ainda cantamos hoje! Ele transformou suas experiências, alegrias e tristezas em lindas canções de louvor a Deus.
+                    </p>
+                    <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-4 rounded-lg">
+                        <p class="text-lg text-amber-900 font-semibold">
+                            📖 Muitos dos 150 Salmos da Bíblia foram escritos por Davi, incluindo o famoso Salmo 23: "O Senhor é o meu pastor, nada me faltará!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../1samuel/1samuel.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ 1 Samuel
+            </a>
+            <a href="../livros-historicos.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros Históricos
+            </a>
+            <a href="../1reis/1reis.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                1 Reis ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Samuel - O Rei Davi: Coragem, Fé e Arrependimento ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('2 Samuel');
+    </script>
 </body>
-
 </html>

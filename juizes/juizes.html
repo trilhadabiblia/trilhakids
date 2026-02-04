@@ -1,196 +1,242 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Livro de Juízes - Resumo Visual</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @media print {
-      body {
-        background: white;
-      }
-      .no-print {
-        display: none;
-      }
-      .section {
-        page-break-inside: avoid;
-        break-inside: avoid;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro de Juízes - Resumo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+    </style>
 </head>
 <body class="bg-slate-100 font-sans">
 
-  <!-- Botão Imprimir -->
-  <div class="no-print fixed bottom-6 right-6 z-50">
-    <button onclick="window.print()" class="bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
-      🖨️ Imprimir
-    </button>
-  </div>
-
-  <!-- Capa -->
-  <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
-    <div class="w-full max-w-2xl text-center">
-      <img src="juizes-capa.png" alt="Capa Rute" class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain">
-
-      <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-        <span>⚖️</span>
-        <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-red-600 mb-4">
-          &nbsp;LIVRO DE JUÍZES&nbsp;
-        </span>
-        <span>⚖️</span>
-      </h1>
-      <p class="text-xl text-gray-600 font-semibold">Heróis da Fé - Um Resumo Visual para Crianças</p>
+    <!-- Botão Imprimir -->
+    <div class="no-print fixed bottom-6 right-6 z-50">
+        <button onclick="window.print()"
+            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            🖨️ Imprimir
+        </button>
     </div>
-  </section>
 
-  <!-- Seção 1: Quem eram os Juízes? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="juizes-quem-eram.png" alt="Quem eram os Juízes?" class="w-full h-auto rounded-xl shadow-lg object-cover max-h-96">
-        </div>
-        <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-2xl border-4 border-amber-500">
-          <h2 class="text-4xl font-black text-amber-700 mb-6">❓ Quem eram os Juízes?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-amber-600">Eles eram líderes</span> que Deus levantava para proteger o povo e ajudá-lo a vencer os inimigos.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-amber-600">Alguns eram homens e outros eram mulheres,</span> todos corajosos.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Seção 2: O que o livro conta? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1">
-          <div class="bg-gradient-to-br from-cyan-50 to-blue-50 p-8 rounded-2xl border-4 border-cyan-500">
-            <h2 class="text-4xl font-black text-cyan-700 mb-6">📖 O que o livro conta?</h2>
-            <div class="space-y-4">
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-cyan-600">Conta histórias de pessoas</span> que confiaram em Deus para vencer dificuldades.
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-cyan-600">Mostra como o povo esquecia de Deus</span> às vezes, mas Ele sempre oferecia ajuda.
-              </p>
+    <!-- Capa -->
+    <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
+        <div class="w-full max-w-2xl text-center">
+            <div class="relative inline-block">
+                <img src="juizes-capa.png" alt="Capa: Juízes" id="img-juizes"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-          </div>
+            <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
+                <span>⚔️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                    LIVRO DE JUÍZES
+                </span>
+                <span>🛡️</span>
+            </h1>
+            <p class="text-xl text-gray-600 font-semibold">Heróis da Fé — Um Resumo Visual para Crianças</p>
         </div>
-        <div class="order-1 md:order-2">
-          <img src="juizes-o-que-conta.png" alt="O que o livro conta?" class="w-full h-auto rounded-xl shadow-lg object-cover max-h-96">
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seção 3: Por que é importante? -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="juizes-por-que-importante.png" alt="Por que é importante?" class="w-full h-auto rounded-xl shadow-lg object-cover max-h-96">
-        </div>
-        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
-          <h2 class="text-4xl font-black text-green-700 mb-6">⭐ Por que é importante?</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">🟢 Mostra que Deus levanta líderes</span> quando precisamos.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">🟢 Mostra que confiar em Deus</span> ajuda a vencer problemas.
-            </p>
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-green-600">🟢 Ensina que o povo precisa ouvir e obedecer a Deus</span> para viver bem.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-juizes" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+                🌟 Os Três Segredos de Juízes 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🦁 Primeiro Segredo: Deus Levanta Heróis</h3>
+                    <p class="italic">
+                        Quando o povo clamava com fervor,<br>
+                        Deus enviava um libertador!<br>
+                        Débora, Gideão, Sansão também,<br>
+                        Mostraram que Deus cuida muito bem!<br>
+                        <span class="text-sm text-amber-700 font-semibold mt-2 block">📖 Juízes 2:16</span>
+                    </p>
+                </div>
 
-  <!-- Seção 4: Propósito do livro -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1">
-          <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
-            <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
-            <div class="space-y-4">
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-purple-600">Ensinar sobre coragem, confiança em Deus e obediência.</span>
-              </p>
-              <p class="text-gray-800 text-lg leading-relaxed">
-                <span class="font-bold text-purple-600">Mostrar que Deus nunca abandona o seu povo,</span> mesmo quando ele erra.
-              </p>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🔄 Segundo Segredo: O Ciclo da Obediência</h3>
+                    <p class="italic">
+                        O povo esquecia, depois chorava,<br>
+                        Deus os salvava e os perdoava!<br>
+                        Mas logo voltavam a se esquecer,<br>
+                        Precisando aprender a obedecer!<br>
+                        <span class="text-sm text-yellow-700 font-semibold mt-2 block">📖 Juízes 2:18-19</span>
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">💪 Terceiro Segredo: A Força Vem de Deus</h3>
+                    <p class="italic">
+                        Não importa se você é pequenino,<br>
+                        Com Deus ao lado, vence o caminho!<br>
+                        A força real não está nos músculos não,<br>
+                        Mas em confiar de todo coração!<br>
+                        <span class="text-sm text-amber-700 font-semibold mt-2 block">📖 Juízes 6:12-14</span>
+                    </p>
+                </div>
+
             </div>
-          </div>
         </div>
-        <div class="order-1 md:order-2">
-          <img src="juizes-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-xl shadow-lg object-cover max-h-96">
-        </div>
-      </div>
     </div>
-  </section>
 
-  <!-- Seção 5: Curiosidade Divertida -->
-  <section class="section bg-white p-8 mb-4 shadow-lg">
-    <div class="max-w-4xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <img src="juizes-curiosidade.png" alt="Curiosidade Divertida" class="w-full h-auto rounded-xl shadow-lg object-cover max-h-96">
-        </div>
-        <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-2xl border-4 border-pink-500">
-          <h2 class="text-4xl font-black text-pink-700 mb-6">💡 Curiosidade Divertida!</h2>
-          <div class="space-y-4">
-            <p class="text-gray-800 text-lg leading-relaxed">
-              <span class="font-bold text-pink-600">Sansão podia ser muito forte</span> porque Deus o ajudava, mas <span class="font-bold text-pink-600">perdia a força quando não obedecia.</span>
-            </p>
-            <div class="bg-white p-4 rounded-lg mt-6 border-2 border-pink-300">
-              <p class="text-sm text-gray-700 italic">Isso nos ensina que obedecer a Deus nos deixa fortes! 💪</p>
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-juizes");
+        const modal = document.getElementById("modal-juizes");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem eram os Juízes? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-amber-700/30">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ❓ Quem eram os Juízes?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="juizes-personagem.png" alt="Os Juízes" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
-          </div>
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <span class="font-bold text-amber-800">🦸‍♂️ Líderes Corajosos:</span> Eles eram líderes que Deus levantava para proteger o povo e ajudá-lo a vencer os inimigos.
+                </p>
+                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <span class="font-bold text-yellow-800">👥 Homens e Mulheres:</span> Alguns eram homens e outros eram mulheres, todos corajosos e escolhidos por Deus!
+                </p>
+                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <span class="font-bold text-amber-800">✨ Heróis da Fé:</span> Débora, Gideão, Sansão e muitos outros mostraram que Deus usa pessoas comuns para fazer coisas extraordinárias!
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- NAVEGAÇÃO -->
-  <section
-    class="no-print text-center bg-gradient-to-r from-yellow-700/20 to-orange-700/20 border-2 border-yellow-600/30 rounded-2xl p-10">
-    <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="../josue/josue.html"
-        class="bg-gradient-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        ⬅️ Josué
-      </a>
-      <a href="../historicos.html"
-        class="bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        📚 Ver Históricos
-      </a>
-      <a href="../rute/rute.html"
-        class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-        Rute ➡️
-      </a>
-    </div>
-  </section>
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-yellow-700/30">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-800 to-amber-700">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
+                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <span class="font-bold text-yellow-800">🎯 Histórias de Vitória:</span> Conta histórias de pessoas que confiaram em Deus para vencer dificuldades e batalhas impossíveis!
+                </p>
+                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <span class="font-bold text-amber-800">🔄 O Ciclo:</span> Mostra como o povo esquecia de Deus às vezes, sofria as consequências, mas Ele sempre oferecia ajuda quando clamavam!
+                </p>
+                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <span class="font-bold text-yellow-800">💝 Amor de Deus:</span> Mesmo quando erravam, Deus nunca desistia do Seu povo e sempre enviava libertadores!
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="juizes-o-que-conta.png" alt="O que o livro conta" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
 
-  <!-- Rodapé -->
-  <section class="section bg-gradient-to-r from-purple-600 to-red-600 text-white p-8 text-center">
-    <h3 class="text-2xl font-black mb-2">✨ Juízes da Bíblia - Heróis da Fé ✨</h3>
-    <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
-  </section>
-  <script src="/menu.js"></script>
-  <script src="../gamificacao.js"></script>  
-  <script>
-    trilhoGame.visitarLivro('Juízes');
-  </script>
+    <!-- Seção 3: Por que é importante? -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-amber-700/30">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            ⭐ Por que é importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="juizes-importante.png" alt="Por que é importante" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <span class="font-bold text-amber-800">🟢 Líderes de Deus:</span> Mostra que Deus levanta líderes quando precisamos de ajuda e proteção!
+                </p>
+                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <span class="font-bold text-yellow-800">🟢 Vitória em Deus:</span> Mostra que confiar em Deus ajuda a vencer problemas que parecem impossíveis!
+                </p>
+                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <span class="font-bold text-amber-800">🟢 Obediência:</span> Ensina que o povo precisa ouvir e obedecer a Deus para viver bem e em paz!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-yellow-700/30">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-800 to-amber-700">
+            🎯 Propósito do livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
+                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <span class="font-bold text-yellow-800">🦁 Coragem e Fé:</span> Ensinar sobre coragem, confiança em Deus e obediência ao Seu chamado!
+                </p>
+                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
+                    <span class="font-bold text-amber-800">💖 Amor Eterno:</span> Mostrar que Deus nunca abandona o seu povo, mesmo quando ele erra e se desvia!
+                </p>
+                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
+                    <span class="font-bold text-yellow-800">✨ Transformação:</span> Demonstrar que Deus pode usar qualquer pessoa disposta a confiar Nele para fazer grandes coisas!
+                </p>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="juizes-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 5: Curiosidade Divertida -->
+    <section class="section bg-gradient-to-r from-amber-100 to-yellow-100 rounded-3xl shadow-2xl p-10 mb-8 border-4 border-amber-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            💡 Curiosidade Divertida!
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="juizes-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
+                <p class="bg-white p-6 rounded-xl border-l-4 border-amber-700 shadow-md">
+                    <span class="font-bold text-amber-800">💪 Sansão e sua Força:</span> Sansão podia ser muito forte porque Deus o ajudava, mas perdia a força quando não obedecia!
+                </p>
+                <p class="bg-white p-6 rounded-xl border-l-4 border-yellow-700 shadow-md">
+                    <span class="font-bold text-yellow-800">🌟 Lição Especial:</span> Isso nos ensina que obedecer a Deus nos deixa fortes de verdade! A força real vem de dentro! 💪
+                </p>
+                <p class="bg-white p-6 rounded-xl border-l-4 border-amber-700 shadow-md">
+                    <span class="font-bold text-amber-800">🎁 Presente de Deus:</span> Quando seguimos a Deus, Ele nos dá força, sabedoria e coragem para vencer qualquer desafio!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-amber-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../josue/josue.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                ⬅️ Josué
+            </a>
+            <a href="../historicos.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Livros Históricos
+            </a>
+            <a href="../rute/rute.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                Rute ➡️
+            </a>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Juízes - Heróis da Fé ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    </section>
+
+    <script src="/menu.js"></script>
+    <script src="../gamificacao.js"></script>
+    <script>
+        trilhoGame.visitarLivro('Juízes');
+    </script>
 </body>
 </html>

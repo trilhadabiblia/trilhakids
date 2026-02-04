@@ -1,35 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de 1 Crônicas - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -37,177 +25,197 @@
     <!-- Capa -->
     <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
         <div class="w-full max-w-2xl text-center">
-            <img src="1cronicas-capa.png" alt="Capa 1 Crônicas" class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain">
-
+            <div class="relative inline-block">
+                <img src="1cronicas-capa.png" alt="Capa: 1 Crônicas" id="img-1cronicas"
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+            </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🏛️</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-lime-600 to-green-600 mb-4">
-                    &nbsp;LIVRO DE 1 CRÔNICAS&nbsp;
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                    LIVRO DE 1 CRÔNICAS
                 </span>
                 <span>🎶</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Deus é fiel ao seu povo e cumpre suas promessas</p>
+            <p class="text-xl text-gray-600 font-semibold">Deus é Fiel ao Seu Povo — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Seção 1: Quem é o personagem principal? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="1cronicas-personagem.png" alt="Quem é o personagem principal?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-1cronicas" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+                🌟 Os Três Segredos de 1 Crônicas 🌟
+            </h2>
+            <div class="space-y-8 text-lg leading-relaxed text-gray-700">
+                
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">📜 Primeiro Segredo: A História Não Se Esquece</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Desde Adão até Davi, cada nome tem valor,<br>
+                        Deus cuida de cada um com imenso amor.<br>
+                        As gerações passam, mas a fé permanece,<br>
+                        Quem confia em Deus jamais desaparece!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 1 Crônicas 1-9</p>
                 </div>
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
-                    <h2 class="text-4xl font-black text-green-700 mb-6">👑 Quem é o personagem principal?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            O <span class="font-bold text-green-600">rei Davi</span> e o <span class="font-bold text-green-600">povo de Israel</span> são os principais personagens deste livro.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Davi aparece como um homem que ama a Deus e prepara tudo para a construção do templo.
-                        </p>
-                    </div>
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🏗️ Segundo Segredo: Preparar com Amor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Davi não construiu, mas tudo preparou,<br>
+                        Com ouro, prata e bronze ele trabalhou.<br>
+                        O templo seria a casa do Senhor,<br>
+                        Feito com dedicação, alegria e amor!
+                    </p>
+                    <p class="text-sm text-yellow-700 mt-3 font-semibold">📖 1 Crônicas 22:5</p>
                 </div>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🎵 Terceiro Segredo: Adoração com Alegria</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Com harpas, címbalos e muita canção,<br>
+                        O povo adorava com todo coração.<br>
+                        Deus merece louvor, festa e gratidão,<br>
+                        Servir ao Senhor é nossa missão!
+                    </p>
+                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 1 Crônicas 25:1-7</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Script Modal -->
+    <script>
+        const img = document.getElementById("img-1cronicas");
+        const modal = document.getElementById("modal-1cronicas");
+        const closeModal = document.getElementById("close-modal");
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
+    </script>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            👑 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="1cronicas-personagem.png" alt="Rei Davi" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p class="text-2xl font-bold text-amber-800">👑 O Rei Davi e o Povo de Israel</p>
+                <p>O rei <span class="font-bold text-amber-700">Davi</span> é o personagem principal deste livro. Ele aparece como um homem que ama a Deus de todo coração!</p>
+                <p>Davi preparou tudo para a construção do <span class="font-bold text-yellow-700">templo de Deus</span>, mesmo sabendo que seria seu filho Salomão quem o construiria.</p>
+                <p>O <span class="font-bold text-amber-700">povo de Israel</span> também é importante, mostrando como Deus cuida de cada geração com fidelidade.</p>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-yellow-50 to-lime-50 p-8 rounded-2xl border-4 border-yellow-500">
-                        <h2 class="text-4xl font-black text-yellow-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Reconta a história de Israel desde <span class="font-bold text-yellow-600">Adão até Davi</span>.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostra como Davi preparou <span class="font-bold text-yellow-600">materiais e pessoas</span> para a construção do templo.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-yellow-600">29 capítulos</span> cheios de história e fé.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="1cronicas-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg border-2 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1 space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p class="text-2xl font-bold text-amber-800">📜 A História de Israel Recontada</p>
+                <p>O livro reconta a história de Israel desde <span class="font-bold text-amber-700">Adão</span> até o reinado de <span class="font-bold text-yellow-700">Davi</span>.</p>
+                <p>Mostra como Davi preparou <span class="font-bold text-amber-700">materiais e pessoas</span> para a construção do templo do Senhor.</p>
+                <p>São <span class="font-bold text-yellow-700">29 capítulos</span> cheios de história, fé e adoração a Deus!</p>
+                <p class="text-amber-700 font-semibold">✨ Cada nome e cada detalhe mostram o cuidado de Deus com seu povo!</p>
+            </div>
+            <div class="order-2">
+                <img src="1cronicas-o-que-conta.png" alt="História de Israel" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="1cronicas-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-4 border-blue-500">
-                    <h2 class="text-4xl font-black text-blue-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Porque lembra como <span class="font-bold text-blue-600">Deus cuidou de cada geração</span> do seu povo.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-blue-600">adorar a Deus</span> é o centro da vida do Seu povo.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina a importância de <span class="font-bold text-blue-600">ser fiel e servir com alegria</span>.
-                        </p>
-                    </div>
-                </div>
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            💫 Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="1cronicas-importante.png" alt="Importância" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p class="text-2xl font-bold text-amber-800">🌟 Deus Cuida de Cada Geração</p>
+                <p>Este livro lembra como Deus <span class="font-bold text-amber-700">cuidou de cada geração</span> do seu povo, desde o começo!</p>
+                <p>Mostra que <span class="font-bold text-yellow-700">adorar a Deus</span> é o centro da vida do Seu povo.</p>
+                <p>Ensina a importância de ser <span class="font-bold text-amber-700">fiel</span> e servir com <span class="font-bold text-yellow-700">alegria</span>!</p>
+                <p class="text-amber-700 font-semibold">✨ Deus é fiel e cumpre todas as suas promessas!</p>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
-                        <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-purple-600">Lembrar que tudo o que fazemos deve honrar a Deus</span>.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostrar que Davi <span class="font-bold text-purple-600">planejou o templo com amor e dedicação</span>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="1cronicas-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg border-2 border-yellow-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            🎯 Propósito do Livro
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-1 space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p class="text-2xl font-bold text-amber-800">🏛️ Honrar a Deus em Tudo</p>
+                <p>O propósito é lembrar que <span class="font-bold text-amber-700">tudo o que fazemos</span> deve honrar a Deus!</p>
+                <p>Mostrar que Davi planejou o <span class="font-bold text-yellow-700">templo</span> com amor e dedicação, mesmo sem construí-lo.</p>
+                <p>Ensinar que servir a Deus é preparar o caminho para as <span class="font-bold text-amber-700">próximas gerações</span>.</p>
+                <p class="text-amber-700 font-semibold">✨ Quando fazemos tudo para a glória de Deus, Ele é honrado!</p>
+            </div>
+            <div class="order-2">
+                <img src="1cronicas-proposito.png" alt="Propósito" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="1cronicas-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-red-50 to-rose-50 p-8 rounded-2xl border-4 border-red-500">
-                    <h2 class="text-4xl font-black text-red-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-red-600">Davi fez instrumentos musicais e organizou os levitas para cantarem no templo!</span>
-                        </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-red-300">
-                            <p class="text-sm text-gray-700 italic">Adorar a Deus com alegria é um presente de amor! 🎵🙌</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Seção 5: Você sabia? -->
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            💡 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="order-2 md:order-1">
+                <img src="1cronicas-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4 text-lg text-gray-700 leading-relaxed">
+                <p class="text-2xl font-bold text-amber-800">🎵 Davi, o Músico de Deus!</p>
+                <p>Davi fez <span class="font-bold text-amber-700">instrumentos musicais</span> e organizou os levitas para cantarem no templo!</p>
+                <p>Ele criou times de músicos com <span class="font-bold text-yellow-700">harpas, címbalos e liras</span> para adorar a Deus com alegria!</p>
+                <p>Adorar a Deus com <span class="font-bold text-amber-700">música e alegria</span> é um presente de amor! 🎵🙌</p>
+                <p class="text-amber-700 font-semibold">✨ Deus ama quando O adoramos com todo nosso coração!</p>
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-green-700/20 to-lime-700/20 border-2 border-green-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-amber-900 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../2reis/2reis.html"
-                class="bg-gradient-to-r from-amber-700 to-orange-600 hover:from-amber-800 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2reis/2reis.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ 2 Reis
             </a>
-            <a href="../historicos.html"
-                class="bg-gradient-to-r from-yellow-600 to-green-700 hover:from-yellow-700 hover:to-green-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Históricos
+            <a href="../livros-historicos.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros Históricos
             </a>
-            <a href="../2cronicas/2cronicas.html"
-                class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2cronicas/2cronicas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 2 Crônicas ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-lime-600 to-green-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Crônicas - Fidelidade e Adoração ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança</p>
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Crônicas - Deus é Fiel ao Seu Povo ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        trilhoGame.visitarLivro('I Crônicas');
+        trilhoGame.visitarLivro('1 Crônicas');
     </script>
 </body>
-
 </html>

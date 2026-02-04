@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conheça o Projeto TrilhoKids 2026 - Fundamentos Pedagógicos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+        }
+
+        .breadcrumb {
+            background: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 40px;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
+
+        .sidebar {
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .nav-menu {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .nav-menu h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-menu ul {
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-bottom: 12px;
+        }
+
+        .nav-menu a {
+            color: #555;
+            text-decoration: none;
+            display: block;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            padding: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .section {
+            margin-bottom: 60px;
+            scroll-margin-top: 20px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f0f0;
+        }
+
+        .section h3 {
+            color: #764ba2;
+            font-size: 1.6em;
+            margin-top: 35px;
+            margin-bottom: 20px;
+        }
+
+        .section h4 {
+            color: #667eea;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-left: 4px solid #667eea;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .highlight-box strong {
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            border-color: #667eea;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .feature-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature-item h4 {
+            margin-top: 0;
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .checklist {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .checklist li {
+            padding: 12px 0 12px 35px;
+            position: relative;
+            font-size: 1.05em;
+        }
+
+        .checklist li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: white;
+            background: #667eea;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .comparison-table th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 18px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 18px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .comparison-table tr:hover {
+            background: #f8f9fa;
+        }
+
+        .quote-box {
+            background: white;
+            border-left: 5px solid #764ba2;
+            padding: 25px 30px;
+            margin: 30px 0;
+            font-style: italic;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-radius: 0 10px 10px 0;
+        }
+
+        .quote-box cite {
+            display: block;
+            margin-top: 15px;
+            font-style: normal;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .stats-inline {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 15px;
+            color: white;
+        }
+
+        .stat-box {
+            text-align: center;
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .stat-box .number {
+            font-size: 3em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-box .label {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 20px;
+            align-items: start;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .step:hover {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            color: white;
+            border: none;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-white {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-white:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                position: static;
+            }
+
+            .main-content {
+                padding: 30px 25px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        .bnc-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .methodology-visual {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            margin: 35px 0;
+        }
+
+        .methodology-card {
+            background: white;
+            border: 2px solid #667eea;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .methodology-card:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .methodology-card .num {
+            font-size: 2em;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+            color: #667eea;
+        }
+
+        .methodology-card:hover .num {
+            color: white;
+        }
+
+        .methodology-card h5 {
+            font-size: 1em;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .methodology-visual {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-inline {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>📚 Conheça o Projeto TrilhoKids</h1>
+            <p>Um Projeto Pedagógico Completo e Estruturado</p>
+        </div>
+    </div>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">← Voltar para Home</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <h3>Navegação</h3>
+                    <ul>
+                        <li><a href="#visao" class="active">Visão do Projeto</a></li>
+                        <li><a href="#pedagogico">Fundamentos Pedagógicos</a></li>
+                        <li><a href="#bnc">Alinhamento com BNC</a></li>
+                        <li><a href="#metodologia">Metodologia</a></li>
+                        <li><a href="#estrutura">Estrutura das Aulas</a></li>
+                        <li><a href="#materiais">Materiais Inclusos</a></li>
+                        <li><a href="#gamificacao">Sistema de Gamificação</a></li>
+                        <li><a href="#digital">Infraestrutura Digital</a></li>
+                        <li><a href="#treinamento">Treinamento</a></li>
+                        <li><a href="#resultados">Resultados Esperados</a></li>
+                    </ul>
+                </nav>
+            </aside>
+
+            <main class="main-content">
+                <section id="visao" class="section">
+                    <h2>🌟 Visão do Projeto</h2>
+                    
+                    <p style="font-size: 1.15em; line-height: 1.8; margin-bottom: 25px;">
+                        O TrilhoKids é uma <strong>jornada completa de ensino bíblico estruturado, gamificado e progressivo</strong>, criada para fortalecer o Ministério Infantil e apoiar professores, famílias e igrejas na formação de crianças que amam a Palavra e vivem a fé de forma prática.
+                    </p>
+
+                    <div class="quote-box">
+                        "Ele mostrou a você, ó homem, o que é bom e o que o Senhor exige de você: pratique a justiça, ame a lealdade e ande humildemente com o seu Deus."
+                        <cite>— Miquéias 6:8 (Versículo-chave do projeto)</cite>
+                    </div>
+
+                    <h3>🎯 Nossos Objetivos</h3>
+                    
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">🔹</div>
+                            <h4>Cultivando Heróis da Fé</h4>
+                            <p>Crianças capazes de conhecer a Bíblia, compreender sua história e aplicar suas verdades no dia a dia.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🔹</div>
+                            <h4>Engajamento Profundo</h4>
+                            <p>Aulas dinâmicas, mapas visuais, atividades interativas e progressão estruturada.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🔹</div>
+                            <h4>Progresso Visível</h4>
+                            <p>Selos, níveis, trilhas, conquistas e certificado final com recompensas claras.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🔹</div>
+                            <h4>Professores Equipados</h4>
+                            <p>Material pronto, simples e completo, liberando o foco para relacionamento e ensino.</p>
+                        </div>
+                    </div>
+
+                    <h3>✨ O Verdadeiro Tesouro</h3>
+                    
+                    <p>Nosso objetivo é formar crianças que:</p>
+                    
+                    <ul class="checklist">
+                        <li>Conhecem a Bíblia como um todo (66 livros)</li>
+                        <li>Desenvolvem caráter e propósito cristão</li>
+                        <li>Aplicam princípios de justiça, amor e humildade</li>
+                        <li>Crescem com identidade cristã firme</li>
+                        <li>Caminham com Deus ao longo de toda a vida</li>
+                    </ul>
+                </section>
+
+                <section id="pedagogico" class="section">
+                    <h2>🎓 Fundamentos Pedagógicos</h2>
+                    
+                    <div class="highlight-box">
+                        <strong>Importante:</strong> O TrilhoKids não é apenas um programa bíblico — é um <strong>projeto pedagógico completo</strong>, estruturado com base em princípios reconhecidos pela educação formal e pela psicologia do desenvolvimento infantil.
+                    </div>
+
+                    <h3>📚 Base Teórica</h3>
+                    
+                    <p>O projeto integra três pilares fundamentais:</p>
+
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Construtivismo Social</h4>
+                                <p>Aprendizagem construída através da interação social, diálogo e experiências compartilhadas. As crianças constroem conhecimento ativamente, não apenas recebem informações.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Aprendizagem Significativa</h4>
+                                <p>Conexão do conteúdo bíblico com a realidade das crianças. Cada lição tem aplicação prática imediata, tornando o aprendizado relevante e memorável.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Gamificação Educacional</h4>
+                                <p>Uso de elementos de jogos (selos, pontos, missões) para motivar, engajar e tornar o processo de aprendizado naturalmente divertido e recompensador.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>🧠 Desenvolvimento por Competências</h3>
+
+                    <p>O TrilhoKids trabalha múltiplas dimensões do desenvolvimento infantil:</p>
+
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Dimensão</th>
+                            <th>Como Trabalhamos</th>
+                            <th>Resultado Esperado</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Cognitiva</strong></td>
+                            <td>Compreensão de histórias, memorização de versículos, quizzes</td>
+                            <td>Conhecimento bíblico sólido e raciocínio lógico</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Socioemocional</strong></td>
+                            <td>Desafios em grupo, cooperação, valores cristãos</td>
+                            <td>Empatia, autocontrole e habilidades sociais</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Motora</strong></td>
+                            <td>Atividades manuais, jogos, dramatizações</td>
+                            <td>Coordenação e expressão corporal</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cultural/Ética</strong></td>
+                            <td>Valores bíblicos, histórias de fé, convivência</td>
+                            <td>Identidade cristã e caráter formado</td>
+                        </tr>
+                    </table>
+                </section>
+
+                <section id="bnc" class="section">
+                    <h2>📋 Alinhamento com a Base Nacional Comum (BNC)</h2>
+                    
+                    <span class="bnc-badge">✓ PROJETO ALINHADO À BNC</span>
+
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">
+                        Embora o foco seja espiritual e formativo, a metodologia aplicada segue <strong>competências previstas pela Base Nacional Comum Curricular</strong>, garantindo um processo de aprendizado organizado, progressivo e significativo.
+                    </p>
+
+                    <h3>Como o TrilhoKids Atende à BNC</h3>
+
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">✅</div>
+                            <h4>1. Desenvolvimento Integral</h4>
+                            <p>Contempla todas as dimensões: cognitiva, socioemocional, motora, cultural e ética.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">✅</div>
+                            <h4>2. Narrativas e Exploração</h4>
+                            <p>Ensino baseado em histórias, imaginação, descoberta e exploração ativa.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">✅</div>
+                            <h4>3. Progressão Contínua</h4>
+                            <p>Conteúdo estruturado em sequência lógica, construindo conhecimento passo a passo.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">✅</div>
+                            <h4>4. Avaliação Formativa</h4>
+                            <p>Registro contínuo, observacional, positivo e não punitivo do progresso.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">✅</div>
+                            <h4>5. Autonomia e Autoria</h4>
+                            <p>Crianças participam, escolhem, expressam e criam ativamente.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">✅</div>
+                            <h4>6. Múltiplas Linguagens</h4>
+                            <p>Comunicação oral, visual, escrita, artística e corporal integradas.</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Diferencial Pedagógico:</strong> O TrilhoKids é um dos poucos programas de ensino bíblico infantil no Brasil que documentam explicitamente seu alinhamento com a BNC, oferecendo às igrejas um projeto pedagogicamente fundamentado e profissionalmente estruturado.
+                    </div>
+
+                    <h3>🎯 Competências Gerais Trabalhadas</h3>
+
+                    <ul class="checklist">
+                        <li><strong>Conhecimento</strong> — 66 livros da Bíblia, contexto histórico e aplicação</li>
+                        <li><strong>Pensamento Crítico</strong> — Reflexão sobre valores, escolhas e consequências</li>
+                        <li><strong>Repertório Cultural</strong> — História bíblica como fundamento cultural</li>
+                        <li><strong>Comunicação</strong> — Expressão oral, escrita e artística</li>
+                        <li><strong>Argumentação</strong> — Defender ideias e valores com base bíblica</li>
+                        <li><strong>Autoconhecimento</strong> — Identidade cristã e propósito pessoal</li>
+                        <li><strong>Empatia e Cooperação</strong> — Trabalho em grupo e valores sociais</li>
+                        <li><strong>Autonomia</strong> — Tomada de decisões baseada em princípios</li>
+                        <li><strong>Responsabilidade</strong> — Compromisso com comunidade e fé</li>
+                    </ul>
+                </section>
+
+                <section id="metodologia" class="section">
+                    <h2>🧭 Metodologia TrilhoKids</h2>
+
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">
+                        Nossa metodologia é baseada em <strong>5 pilares complementares</strong> que trabalham juntos para criar uma experiência de aprendizado completa e transformadora:
+                    </p>
+
+                    <div class="methodology-visual">
+                        <div class="methodology-card">
+                            <span class="num">1</span>
+                            <h5>Aprendizagem Visual</h5>
+                        </div>
+                        <div class="methodology-card">
+                            <span class="num">2</span>
+                            <h5>Gamificação Leve</h5>
+                        </div>
+                        <div class="methodology-card">
+                            <span class="num">3</span>
+                            <h5>História + Interação</h5>
+                        </div>
+                        <div class="methodology-card">
+                            <span class="num">4</span>
+                            <h5>Vivência Prática</h5>
+                        </div>
+                        <div class="methodology-card">
+                            <span class="num">5</span>
+                            <h5>Memória Espiritual</h5>
+                        </div>
+                    </div>
+
+                    <h3>Detalhamento dos Pilares</h3>
+
+                    <h4>🎨 Pilar 1: Aprendizagem Visual</h4>
+                    <p>66 livros bíblicos ilustrados profissionalmente, mapas, infográficos e recursos gráficos que facilitam compreensão e memorização. Crianças são aprendizes visuais naturais.</p>
+
+                    <h4>🏅 Pilar 2: Gamificação Leve</h4>
+                    <p>Sistema de selos, pontos e conquistas que motivam sem criar competição negativa. O foco é no progresso pessoal, celebração de esforço e construção de hábitos positivos.</p>
+
+                    <h4>📖 Pilar 3: História + Interação</h4>
+                    <p>Aulas dinâmicas com contação de histórias, diálogos guiados, perguntas reflexivas e participação ativa. As crianças não são espectadoras, mas protagonistas.</p>
+
+                    <h4>🤲 Pilar 4: Vivência Prática</h4>
+                    <p>Cada lição tem desafios semanais aplicáveis à vida real. A Bíblia sai do abstrato e se torna guia prático para decisões, relacionamentos e caráter.</p>
+
+                    <h4>💫 Pilar 5: Memória Espiritual</h4>
+                    <p>Jornada completa de Gênesis a Apocalipse. Ao final do ano, as crianças têm uma visão panorâmica de toda a Bíblia, criando uma base sólida para vida toda.</p>
+                </section>
+
+                <section id="estrutura" class="section">
+                    <h2>📅 Estrutura das Aulas</h2>
+
+                    <h3>⭐ Modelo Padrão de Cada Livro Bíblico</h3>
+
+                    <p>Cada um dos 66 livros segue a mesma estrutura pedagógica consistente:</p>
+
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">1️⃣</div>
+                            <h4>3 Segredos</h4>
+                            <p>Três lições principais extraídas do livro</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">2️⃣</div>
+                            <h4>Versículo Central</h4>
+                            <p>Um versículo-chave para memorização</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">3️⃣</div>
+                            <h4>Personagens</h4>
+                            <p>Quem são os protagonistas da história</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">4️⃣</div>
+                            <h4>O Que Conta</h4>
+                            <p>Resumo narrativo acessível</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">5️⃣</div>
+                            <h4>Propósito</h4>
+                            <p>Por que este livro foi escrito</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">6️⃣</div>
+                            <h4>Por Que É Importante</h4>
+                            <p>Relevância para a vida da criança</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">7️⃣</div>
+                            <h4>Você Sabia?</h4>
+                            <p>Curiosidades que despertam interesse</p>
+                        </div>
+                    </div>
+
+                    <h3>⏱️ Fluxo de Uma Aula Típica (60 minutos)</h3>
+
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Etapa</th>
+                            <th>Tempo</th>
+                            <th>Descrição</th>
+                        </tr>
+                        <tr>
+                            <td>Boas-vindas / Dinâmica</td>
+                            <td>3 min</td>
+                            <td>Acolhimento e preparação do ambiente</td>
+                        </tr>
+                        <tr>
+                            <td>Momento TrilhoKids</td>
+                            <td>5 min</td>
+                            <td>Distribuição de selos, atualização do painel</td>
+                        </tr>
+                        <tr>
+                            <td>Livro 1 — Apresentação</td>
+                            <td>15 min</td>
+                            <td>Estrutura completa do primeiro livro</td>
+                        </tr>
+                        <tr>
+                            <td>Atividade Rápida</td>
+                            <td>5 min</td>
+                            <td>Fixação do conteúdo do Livro 1</td>
+                        </tr>
+                        <tr>
+                            <td>Livro 2 — Apresentação</td>
+                            <td>15 min</td>
+                            <td>Estrutura completa do segundo livro</td>
+                        </tr>
+                        <tr>
+                            <td>Aplicação Prática</td>
+                            <td>10 min</td>
+                            <td>Conexão com a vida real das crianças</td>
+                        </tr>
+                        <tr>
+                            <td>Quiz / Desafio</td>
+                            <td>5 min</td>
+                            <td>Avaliação formativa e interativa</td>
+                        </tr>
+                        <tr>
+                            <td>Oração Final</td>
+                            <td>2 min</td>
+                            <td>Encerramento e envio do desafio semanal</td>
+                        </tr>
+                    </table>
+
+                    <div class="highlight-box">
+                        <strong>Flexibilidade:</strong> Esta estrutura é uma sugestão base. Professores podem adaptar os tempos conforme a necessidade e resposta das crianças, mantendo sempre o foco no engajamento e aprendizado significativo.
+                    </div>
+                </section>
+
+                <section id="materiais" class="section">
+                    <h2>📦 Materiais Inclusos</h2>
+
+                    <h3>✔️ Para o Professor</h3>
+
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">📘</div>
+                            <div class="step-content">
+                                <h4>Apostila Completa do Professor</h4>
+                                <p><strong>Conteúdo:</strong> Roteiro semanal detalhado, pontos de ensino, diálogos sugeridos, dinâmicas, atividades e materiais necessários. Formato A5, pronta para impressão.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">📋</div>
+                            <div class="step-content">
+                                <h4>Guia de Implementação</h4>
+                                <p>Instruções completas sobre como usar todos os recursos, organizar a sala, gerenciar o sistema de pontos e comunicar-se com os pais.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">🎨</div>
+                            <div class="step-content">
+                                <h4>Recursos Visuais</h4>
+                                <p>Selos para impressão, modelos de painéis, badges, cartazes e todos os materiais gráficos necessários.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">💻</div>
+                            <div class="step-content">
+                                <h4>Acesso ao Portal</h4>
+                                <p>Login para área do professor com recursos digitais, vídeos de apoio e comunidade de educadores.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>✔️ Para o Aluno</h3>
+
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">📕</div>
+                            <div class="step-content">
+                                <h4>Livro do Aluno (Trimestral)</h4>
+                                <p>Um livro por trimestre contendo: resumos ilustrados, espaços para selos, versículos, "o que aprendi hoje", atividades práticas e QR Codes para conteúdo digital.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">🎫</div>
+                            <div class="step-content">
+                                <h4>Passaporte TrilhoKids</h4>
+                                <p>Crachá personalizado com espaço para registro de presenças e QR Code de acesso ao portal.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">⭐</div>
+                            <div class="step-content">
+                                <h4>Selos Colecionáveis</h4>
+                                <p>66 selos únicos (3x3cm), um para cada livro da Bíblia, com design exclusivo e legenda personalizada.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">🏆</div>
+                            <div class="step-content">
+                                <h4>Certificado Final</h4>
+                                <p>Certificado oficial de conclusão da jornada TrilhoKids 2026 entregue na formatura.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stats-inline">
+                        <div class="stat-box">
+                            <span class="number">4</span>
+                            <span class="label">Apostilas<br>(1 por trimestre)</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">66</span>
+                            <span class="label">Selos<br>Colecionáveis</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">45</span>
+                            <span class="label">Aulas<br>Estruturadas</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">100%</span>
+                            <span class="label">Material<br>Pronto</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="gamificacao" class="section">
+                    <h2>🎮 Sistema de Gamificação</h2>
+
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">
+                        A gamificação no TrilhoKids não é apenas "diversão" — é uma ferramenta pedagógica cientificamente fundamentada que aumenta motivação, engajamento e retenção do aprendizado.
+                    </p>
+
+                    <h3>⚡ Como Funciona</h3>
+
+                    <h4>Sistema de Pontuação Semanal</h4>
+
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Ação</th>
+                            <th>Pontos</th>
+                            <th>Objetivo Pedagógico</th>
+                        </tr>
+                        <tr>
+                            <td>Presença</td>
+                            <td>+10</td>
+                            <td>Criar hábito de frequência e compromisso</td>
+                        </tr>
+                        <tr>
+                            <td>Participação na atividade</td>
+                            <td>+5</td>
+                            <td>Incentivar envolvimento ativo</td>
+                        </tr>
+                        <tr>
+                            <td>Realizou o quiz</td>
+                            <td>+10</td>
+                            <td>Consolidar conhecimento</td>
+                        </tr>
+                        <tr>
+                            <td>Acertou ≥70% no quiz</td>
+                            <td>+10</td>
+                            <td>Reconhecer esforço e aprendizado</td>
+                        </tr>
+                        <tr>
+                            <td>Trouxe Bíblia</td>
+                            <td>+5</td>
+                            <td>Valorizar a Palavra como ferramenta</td>
+                        </tr>
+                        <tr>
+                            <td>Decorou o versículo</td>
+                            <td>+10</td>
+                            <td>Memorização e internalização</td>
+                        </tr>
+                        <tr>
+                            <td>Ajudou um colega</td>
+                            <td>+5</td>
+                            <td>Promover cooperação e valores</td>
+                        </tr>
+                    </table>
+
+                    <h4>🏅 Badges Mensais</h4>
+
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">📘</div>
+                            <h4>Leitor do Mês</h4>
+                            <p>Completou todos os quizzes do mês</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🧠</div>
+                            <h4>Memorizador</h4>
+                            <p>Decorou todos os versículos semanais</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🛠️</div>
+                            <h4>Construtor</h4>
+                            <p>Participou de todas as atividades manuais</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">⭐</div>
+                            <h4>Super Trilha</h4>
+                            <p>Manteve média ≥ 80% nos quizzes</p>
+                        </div>
+                    </div>
+
+                    <div class="highlight-box">
+                        <strong>Princípio Fundamental:</strong> No TrilhoKids, todos podem vencer. A gamificação não cria competição entre crianças, mas celebra o progresso individual e o esforço de cada um. O sistema incentiva colaboração, não rivalidade.
+                    </div>
+
+                    <h3>📊 Sistema Analógico (Presencial)</h3>
+
+                    <p><strong>Painel Oficial da Turma</strong> — Mural visível com:</p>
+                    <ul class="checklist">
+                        <li>Nome de cada aluno</li>
+                        <li>Pontos totais acumulados</li>
+                        <li>Selos conquistados</li>
+                        <li>Badges especiais</li>
+                        <li>Presenças registradas</li>
+                    </ul>
+
+                    <p style="margin-top: 20px;"><strong>Coleção de Selos</strong> — Cada criança cola seus selos no Livro do Aluno, criando uma coleção física que representa sua jornada completa pela Bíblia.</p>
+                </section>
+
+                <section id="digital" class="section">
+                    <h2>🌐 Infraestrutura Digital</h2>
+
+                    <h3>Portal TrilhoKids</h3>
+
+                    <p style="font-size: 1.1em; margin-bottom: 30px;">
+                        O portal digital não substitui as aulas presenciais — ele as <strong>complementa e potencializa</strong>, oferecendo recursos que enriquecem a experiência de aprendizado.
+                    </p>
+
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">📚</div>
+                            <h4>66 Livros Ilustrados</h4>
+                            <p>Versão digital completa com ilustrações, áudios e animações interativas.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">❓</div>
+                            <h4>Quizzes por Livro</h4>
+                            <p>Sistema gamificado de perguntas com feedback imediato e dicas educativas.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🎮</div>
+                            <h4>Jogos e Desafios</h4>
+                            <p>Atividades interativas que reforçam o aprendizado de forma divertida.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">📱</div>
+                            <h4>Acesso via QR Code</h4>
+                            <p>Integração perfeita entre material físico e digital através de QR Codes.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">👨‍👩‍👧</div>
+                            <h4>Área para Pais</h4>
+                            <p>Acompanhamento do progresso, conteúdos auxiliares e comunicação com professores.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">🔒</div>
+                            <h4>Ambiente Seguro</h4>
+                            <p>Plataforma infantil com controles de privacidade e conteúdo apropriado.</p>
+                        </div>
+                    </div>
+
+                    <h3>📊 Sistema de Gestão para Igrejas</h3>
+
+                    <p>Cada igreja recebe acesso a um painel administrativo com:</p>
+
+                    <ul class="checklist">
+                        <li>Cadastro e gestão de alunos</li>
+                        <li>Registro de presenças automático</li>
+                        <li>Acompanhamento de progresso individual e coletivo</li>
+                        <li>Rankings e estatísticas</li>
+                        <li>Relatórios para coordenação e pais</li>
+                        <li>Backup automático de todos os dados</li>
+                    </ul>
+                </section>
+
+                <section id="treinamento" class="section">
+                    <h2>🛠️ Treinamento de Professores</h2>
+
+                    <div class="highlight-box">
+                        <strong>Investimento no Professor = Qualidade no Ensino</strong><br>
+                        Antes do início das aulas (03/02/2026), toda equipe passa por treinamento obrigatório e completo.
+                    </div>
+
+                    <h3>📅 Formatos Disponíveis</h3>
+
+                    <div class="feature-grid">
+                        <div class="feature-item">
+                            <div class="icon">👥</div>
+                            <h4>Presencial</h4>
+                            <p>Treinamento com dinâmicas práticas, simulações de aulas e tira-dúvidas.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="icon">💻</div>
+                            <h4>Online</h4>
+                            <p>Videoaulas, webinars ao vivo e materiais de apoio digital.</p>
+                        </div>
+                    </div>
+
+                    <h3>📚 Conteúdo do Treinamento</h3>
+
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Visão Geral do Projeto</h4>
+                                <p>Filosofia, objetivos, metodologia e estrutura completa do TrilhoKids.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Como Usar os Materiais</h4>
+                                <p>Guia do Professor, Livro do Aluno, Portal, selos, pontos e todos os recursos.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Abordagem Pedagógica</h4>
+                                <p>Técnicas por faixa etária, gestão de sala, dinâmicas e resolução de desafios.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Sistema de Gamificação</h4>
+                                <p>Como aplicar pontos, badges e motivação sem perder o foco espiritual.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Organização e Rotina</h4>
+                                <p>Preparação da sala, quadro de progresso, materiais e fluxo de aula.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div class="step-content">
+                                <h4>Comunicação com Pais</h4>
+                                <p>Estratégias para envolver famílias e manter transparência sobre o progresso.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="font-size: 1.1em; margin-top: 30px; padding: 20px; background: #f8f9fa; border-radius: 10px;">
+                        <strong>Meta do Treinamento:</strong> Cada professor inicia o ano letivo <strong>100% preparado e seguro</strong>, com domínio completo da metodologia, materiais e objetivos do projeto.
+                    </p>
+                </section>
+
+                <section id="resultados" class="section">
+                    <h2>🎯 Resultados Esperados</h2>
+
+                    <h3>🚀 Transformação em Múltiplos Níveis</h3>
+
+                    <h4>👧👦 Para as Crianças</h4>
+                    <ul class="checklist">
+                        <li>Conhecimento completo da Bíblia (66 livros)</li>
+                        <li>Desenvolvimento de fé sólida e identidade cristã</li>
+                        <li>Compreensão e aplicação de princípios morais</li>
+                        <li>Melhoria em concentração, disciplina e cooperação</li>
+                        <li>Senso de conquista e progresso pessoal</li>
+                        <li>Base espiritual para toda a vida</li>
+                    </ul>
+
+                    <h4>👨‍🏫 Para os Professores</h4>
+                    <ul class="checklist">
+                        <li>Ensino simples, direto e estruturado</li>
+                        <li>Segurança e confiança na aplicação</li>
+                        <li>Menos improviso, mais impacto</li>
+                        <li>Tempo livre para focar em relacionamentos</li>
+                        <li>Crescimento profissional através de treinamento</li>
+                        <li>Satisfação em ver resultados concretos</li>
+                    </ul>
+
+                    <h4>⛪ Para a Igreja</h4>
+                    <ul class="checklist">
+                        <li>Ministério infantil forte e relevante</li>
+                        <li>Estrutura anual sólida e replicável</li>
+                        <li>Maior engajamento das famílias</li>
+                        <li>Reputação de excelência educacional</li>
+                        <li>Formação de futuros líderes</li>
+                        <li>Impacto mensurável e visível</li>
+                    </ul>
+
+                    <h4>👨‍👩‍👧‍👦 Para as Famílias</h4>
+                    <ul class="checklist">
+                        <li>Progresso visível e acompanhável</li>
+                        <li>Conversas sobre fé em casa facilitadas</li>
+                        <li>Integração na jornada espiritual dos filhos</li>
+                        <li>Confiança no ensino recebido</li>
+                        <li>Conexão com outros pais</li>
+                    </ul>
+
+                    <div class="stats-inline">
+                        <div class="stat-box">
+                            <span class="number">↑</span>
+                            <span class="label">Frequência e<br>Engajamento</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">↑</span>
+                            <span class="label">Conhecimento<br>Bíblico</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">↑</span>
+                            <span class="label">Satisfação de<br>Professores</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="number">↑</span>
+                            <span class="label">Participação das<br>Famílias</span>
+                        </div>
+                    </div>
+
+                    <div class="quote-box">
+                        "O TrilhoKids 2026 não é apenas um currículo. É uma jornada, uma experiência, uma formação completa. Uma trilha que transforma crianças, professores, famílias e igrejas através da Palavra de Deus, apresentada com propósito, criatividade e excelência."
+                        <cite>— Visão do Projeto TrilhoKids</cite>
+                    </div>
+                </section>
+
+                <div class="cta-section">
+                    <h2>Pronto para Fazer Parte?</h2>
+                    <p>O TrilhoKids 2026 começa em 3 de fevereiro. Transforme seu Ministério Infantil com um projeto pedagogicamente fundamentado e biblicamente completo.</p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-white">Solicitar Orçamento</a>
+                        <a href="#" class="btn btn-outline">Baixar Material Demo</a>
+                        <a href="#" class="btn btn-outline">Falar com Consultor</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.nav-menu a').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            let current = '';
+            document.querySelectorAll('.section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrilhoKids 2026 - Uma Jornada de Fé Completa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M30 0L35 20L30 40L25 20Z M0 30L20 25L40 30L20 35Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .verse {
+            font-size: 1.1em;
+            font-style: italic;
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 20px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+            color: #667eea;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .features {
+            background: #f8f9fa;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        .pillars {
+            background: white;
+        }
+
+        .pillars-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .pillar {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .pillar:hover {
+            transform: scale(1.05);
+        }
+
+        .pillar-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .pillar h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .stats {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .stat-item {
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 3.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .stat-label {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .journey {
+            background: #f8f9fa;
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            width: calc(50% - 40px);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #667eea;
+            border: 4px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px #667eea;
+            top: 30px;
+        }
+
+        .timeline-content h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .cta {
+            background: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cta h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 18px 45px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .btn-secondary:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2em;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2em;
+            }
+
+            .section-title {
+                font-size: 2em;
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-content {
+                width: calc(100% - 80px);
+                margin-left: 60px !important;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        .impact {
+            background: white;
+            padding: 80px 20px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .impact-card {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .impact-card:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .impact-card h3 {
+            color: inherit;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .impact-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>🌟 TrilhoKids 2026</h1>
+            <p class="subtitle">Uma Jornada de Fé Completa através dos 66 Livros da Bíblia</p>
+            <div class="verse">
+                "Ele mostrou a você, ó homem, o que é bom e o que o Senhor exige de você: pratique a justiça, ame a lealdade e ande humildemente com o seu Deus."<br>
+                <strong>— Miquéias 6:8</strong>
+            </div>
+        </div>
+    </div>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">O Que é o TrilhoKids?</h2>
+            <p style="text-align: center; font-size: 1.2em; max-width: 800px; margin: 0 auto 50px;">
+                O TrilhoKids é uma jornada completa de ensino bíblico estruturado, gamificado e progressivo, criada para transformar o Ministério Infantil através de uma experiência envolvente que percorre toda a Bíblia em um ano.
+            </p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📘</div>
+                    <h3>66 Livros Ilustrados</h3>
+                    <p>Narrativas bíblicas completas com ilustrações profissionais e linguagem acessível para crianças.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏅</div>
+                    <h3>Gamificação Inteligente</h3>
+                    <p>Selos colecionáveis, pontuação, badges e conquistas que motivam e celebram o progresso.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧑‍🏫</div>
+                    <h3>Material Completo</h3>
+                    <p>Apostilas para professores e livros para alunos, tudo estruturado semana a semana.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">❓</div>
+                    <h3>Quizzes Interativos</h3>
+                    <p>Avaliação formativa por livro bíblico, com feedback imediato e aprendizado contínuo.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Atividades Práticas</h3>
+                    <p>Dinâmicas visuais, atividades manuais e desafios que conectam a Bíblia com a vida real.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Portal Digital</h3>
+                    <p>Acesso online a todo conteúdo, com QR Codes integrados nas apostilas para facilitar o acesso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillars">
+        <div class="container">
+            <h2 class="section-title">5 Pilares da Metodologia</h2>
+            <div class="pillars-container">
+                <div class="pillar">
+                    <div class="pillar-number">1</div>
+                    <h3>Aprendizagem Visual</h3>
+                    <p>Livros ilustrados e recursos gráficos que facilitam a compreensão e memorização.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-number">2</div>
+                    <h3>Gamificação Leve</h3>
+                    <p>Selos, conquistas e progresso visível que mantêm o interesse sem competitividade negativa.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-number">3</div>
+                    <h3>História + Interação</h3>
+                    <p>Aulas dinâmicas e participativas que envolvem as crianças ativamente.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-number">4</div>
+                    <h3>Vivência Prática</h3>
+                    <p>Desafios semanais que conectam os ensinamentos bíblicos com o dia a dia.</p>
+                </div>
+                <div class="pillar">
+                    <div class="pillar-number">5</div>
+                    <h3>Memória Espiritual</h3>
+                    <p>Jornada completa do Gênesis ao Apocalipse, construindo uma base bíblica sólida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">TrilhoKids em Números</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">66</div>
+                    <div class="stat-label">Livros da Bíblia</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">Aulas no Ano</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Trimestres</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">da Bíblia Coberta</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="journey">
+        <div class="container">
+            <h2 class="section-title">A Jornada 2026</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🟦 1º Trimestre (Fev-Abr)</h3>
+                        <p><strong>13 aulas</strong> — Do Gênesis a Jeremias. Fundamentos da fé, patriarcas, libertação, reis e profetas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🟩 2º Trimestre (Mai-Jul)</h3>
+                        <p><strong>13 aulas</strong> — Profetas menores e início do Novo Testamento. De Lamentações a Gálatas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🟧 3º Trimestre (Ago-Out)</h3>
+                        <p><strong>13 aulas</strong> — Cartas de Paulo, cartas gerais e Apocalipse. De Efésios até o fim da Bíblia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>🟥 4º Trimestre (Nov-Dez)</h3>
+                        <p><strong>6 aulas</strong> — Revisão completa, mega quiz e formatura com entrega de certificados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact">
+        <div class="container">
+            <h2 class="section-title">Transformando Vidas</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <div class="impact-icon">👧👦</div>
+                    <h3>Para as Crianças</h3>
+                    <p>Conhecimento completo da Bíblia, fé sólida e princípios de justiça, amor e humildade.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">👨‍🏫</div>
+                    <h3>Para os Professores</h3>
+                    <p>Material completo e pronto, segurança na aplicação e mais tempo para relacionamento.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">⛪</div>
+                    <h3>Para a Igreja</h3>
+                    <p>Ministério infantil forte, estrutura anual sólida e formação de futuros líderes.</p>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Para as Famílias</h3>
+                    <p>Progresso visível, acompanhamento facilitado e integração na jornada espiritual.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Pronto para Transformar seu Ministério Infantil?</h2>
+            <p style="font-size: 1.2em; color: #666; max-width: 600px; margin: 20px auto;">
+                O TrilhoKids 2026 começa em <strong>3 de fevereiro de 2026</strong>. Prepare sua igreja para uma jornada inesquecível!
+            </p>
+            <div class="cta-buttons">
+                <a href="planner/sobre.html" class="btn btn-primary">Quero Conhecer Mais</a>
+                <a href="#" class="btn btn-secondary">Baixar Material Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p><strong>TrilhoKids 2026</strong> — Cultivando Heróis da Fé</p>
+            <p style="margin-top: 10px;">© 2025 TrilhoKids. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
