@@ -449,7 +449,18 @@
                 <i class="fas fa-chevron-left"></i>
             </button>
 
-            <img id="current-slide" src="" class="max-w-full max-h-screen object-contain">
+            <!--img id="current-slide" src="" class="max-w-full max-h-screen object-contain"-->
+            <img
+                id="current-image"
+                class="max-w-full max-h-screen object-contain hidden"
+            />
+
+            <video
+                id="current-video"
+                class="max-w-full max-h-screen object-contain hidden"
+                controls
+                autoplay
+            ></video>
 
             <button onclick="nextSlide()"
                 class="absolute right-4 text-white text-3xl w-12 h-12 flex items-center justify-center bg-black bg-opacity-50 rounded-full">
@@ -763,9 +774,33 @@
         }
 
         function updateSlideDisplay() {
-            document.getElementById('current-slide').src = currentSlides[currentSlideIndex];
+            const imageEl = document.getElementById('current-image');
+            const videoEl = document.getElementById('current-video');
+
+            const file = currentSlides[currentSlideIndex];
+
+            // Reset
+            imageEl.classList.add('hidden');
+            videoEl.classList.add('hidden');
+            videoEl.pause();
+            videoEl.src = '';
+
+            if (isVideo(file)) {
+                videoEl.src = file;
+                videoEl.classList.remove('hidden');
+                videoEl.load();
+                videoEl.play();
+            } else {
+                imageEl.src = file;
+                imageEl.classList.remove('hidden');
+            }
+
             document.getElementById('slide-counter').textContent = currentSlideIndex + 1;
             document.getElementById('slide-total').textContent = currentSlides.length;
+        }
+
+        function isVideo(file) {
+            return file.toLowerCase().endsWith('.mp4');
         }
 
         // ===== VARIÁVEIS DO QUIZ =====
