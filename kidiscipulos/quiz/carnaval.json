@@ -1,0 +1,224 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o principal objetivo da lição apresentada no texto?",
+      "opcoes": [
+        "Ensinar sobre a história do carnaval",
+        "Mostrar que o carnaval não agrada a Deus e que precisamos do Fruto do Espírito",
+        "Explicar como fazer fantasias de carnaval",
+        "Organizar uma festa de aniversário na igreja"
+      ],
+      "correta": 1,
+      "justificativa": "O texto afirma explicitamente que o objetivo é mostrar que o carnaval desagrada a Deus e que a força do cristão vem do Fruto do Espírito [1]."
+    },
+    {
+      "pergunta": "Quem é Roy na história contada para as crianças?",
+      "opcoes": [
+        "Um menino que gosta de pular carnaval",
+        "Um gato muito esperto",
+        "Um ratinho curioso que não pensa antes de agir",
+        "O dono de uma loja de doces"
+      ],
+      "correta": 2,
+      "justificativa": "Roy é descrito como um ratinho curioso que não pensa antes de fazer as coisas e acaba atraído por uma armadilha [2]."
+    },
+    {
+      "pergunta": "A que o carnaval é comparado na analogia com o ratinho Roy?",
+      "opcoes": [
+        "A uma festa de aniversário",
+        "A uma caixa de presente",
+        "A uma ratoeira ou armadilha",
+        "A um parquinho de diversões"
+      ],
+      "correta": 2,
+      "justificativa": "O texto compara a alegria, músicas e fantasias do carnaval a uma ratoeira pronta para pegar os desatentos [3]."
+    },
+    {
+      "pergunta": "Segundo o texto, o que o nome 'carnaval' lembra e o que significa?",
+      "opcoes": [
+        "Lembra música e significa alegria",
+        "Lembra carne e significa 'a carne vale' ou 'festa da carne'",
+        "Lembra carinho e significa amor",
+        "Lembra canção e significa cantar"
+      ],
+      "correta": 1,
+      "justificativa": "O autor explica que carnaval lembra carne e que o nome quer dizer 'a carne vale', sendo a festa da carne [3]."
+    },
+    {
+      "pergunta": "Qual versículo bíblico é usado para dizer que quem segue a carne não agrada a Deus?",
+      "opcoes": [
+        "João 3:16",
+        "Salmos 23:1",
+        "Romanos 8:8",
+        "Gálatas 5:22"
+      ],
+      "correta": 2,
+      "justificativa": "O texto cita Romanos 8:8: 'Portanto os que estão na carne não podem agradar a Deus' [4]."
+    },
+    {
+      "pergunta": "Por que o texto critica o uso de certas roupas no carnaval?",
+      "opcoes": [
+        "Porque são roupas muito caras",
+        "Porque são roupas desconfortáveis",
+        "Porque mostram partes do corpo que deveriam ficar tampadas",
+        "Porque as cores são muito chamativas"
+      ],
+      "correta": 2,
+      "justificativa": "O texto menciona que no carnaval as pessoas usam roupas pequenas, mostrando partes do corpo que devem ser preservadas [5]."
+    },
+    {
+      "pergunta": "O que o texto afirma sobre o consumo de bebidas alcoólicas no carnaval?",
+      "opcoes": [
+        "Que é permitido com moderação",
+        "Que Deus não quer que ninguém fique bêbado",
+        "Que a bebida ajuda a ficar mais alegre",
+        "Que as crianças podem beber sucos coloridos"
+      ],
+      "correta": 1,
+      "justificativa": "O texto destaca que Deus não quer a bebedeira, pois ela leva a comportamentos feios e palavrões [5]."
+    },
+    {
+      "pergunta": "Qual é a crítica feita às músicas de carnaval?",
+      "opcoes": [
+        "São muito barulhentas",
+        "Falam de coisas feias ou de outros deuses",
+        "São muito longas e cansativas",
+        "Não têm ritmo para dançar"
+      ],
+      "correta": 1,
+      "justificativa": "Segundo o texto, as músicas de carnaval falam de coisas feias ou adoram outros deuses, em vez de adorar ao único Deus [5]."
+    },
+    {
+      "pergunta": "Quem, segundo o texto, quer ver as pessoas fazendo coisas ruins para entristecer a Deus?",
+      "opcoes": [
+        "O ratinho Roy",
+        "O inimigo de Deus",
+        "Os vizinhos",
+        "As pessoas que usam fantasias"
+      ],
+      "correta": 1,
+      "justificativa": "O texto afirma que o inimigo de Deus quer ver todos fazendo coisas ruins para que Deus fique triste conosco [6]."
+    },
+    {
+      "pergunta": "Qual deve ser a atitude das crianças em relação ao carnaval, segundo a lição?",
+      "opcoes": [
+        "Participar apenas se tiver fantasias bonitas",
+        "Ir apenas para olhar os carros alegóricos",
+        "Dizer 'Não' ao carnaval",
+        "Ficar em silêncio"
+      ],
+      "correta": 2,
+      "justificativa": "A lição incentiva as crianças a dizerem explicitamente 'Não' ao carnaval para não caírem na armadilha [6]."
+    },
+    {
+      "pergunta": "O que representa a 'Primeira Árvore' (árvore seca) na dinâmica?",
+      "opcoes": [
+        "Uma pessoa cristã mas sem frutos",
+        "Uma pessoa que não tem Jesus no coração",
+        "Uma pessoa que gosta muito de festas",
+        "Uma pessoa que está descansando"
+      ],
+      "correta": 1,
+      "justificativa": "A árvore seca representa alguém sem Jesus no coração, que vive com ódio, mentiras e bebedices [7, 8]."
+    },
+    {
+      "pergunta": "O que representa a 'Segunda Árvore' (com folhas verdes, mas sem frutos)?",
+      "opcoes": [
+        "Uma pessoa que nunca ouviu falar de Deus",
+        "Uma pessoa cristã que aceitou Jesus, mas ainda não tem frutos",
+        "Uma pessoa que está triste",
+        "Uma pessoa que deu muito dinheiro para festas"
+      ],
+      "correta": 1,
+      "justificativa": "Esta árvore representa o cristão que aceitou Jesus e foi purificado, mas onde ainda não se vê frutos [8]."
+    },
+    {
+      "pergunta": "Como um cristão consegue dar frutos, segundo a 'Terceira Árvore'?",
+      "opcoes": [
+        "Comprando frutos no mercado",
+        "Permanecendo perto do Pai celestial, em oração e adoração",
+        "Participando de desfiles de rua",
+        "Usando roupas verdes"
+      ],
+      "correta": 1,
+      "justificativa": "O cristão dá frutos porque permanece perto de Deus, vive em oração e faz o que agrada a Ele [9]."
+    },
+    {
+      "pergunta": "O Fruto do Espírito é comparado a qual fruta na explicação sobre seus gomos?",
+      "opcoes": [
+        "Maçã",
+        "Tangerina",
+        "Melancia",
+        "Uva"
+      ],
+      "correta": 1,
+      "justificativa": "O texto usa a analogia da tangerina, onde cada gomo representa uma parte do Fruto do Espírito [9]."
+    },
+    {
+      "pergunta": "Qual parte do Fruto do Espírito significa amar inclusive os inimigos?",
+      "opcoes": [
+        "Paz",
+        "Bondade",
+        "Amor",
+        "Fidelidade"
+      ],
+      "correta": 2,
+      "justificativa": "O gomo do 'Amor' é definido como amar a Jesus, ao próximo e até aos inimigos [10]."
+    },
+    {
+      "pergunta": "O que significa ter 'Longanimidade' segundo a lição?",
+      "opcoes": [
+        "Ser muito inteligente",
+        "Ter paciência e saber esperar o tempo das coisas",
+        "Ser muito forte fisicamente",
+        "Saber cantar bem"
+      ],
+      "correta": 1,
+      "justificativa": "Longanimidade é explicada como ter paciência, saber esperar em filas e não se irritar com os outros [10]."
+    },
+    {
+      "pergunta": "Como o texto define a 'Benignidade'?",
+      "opcoes": [
+        "Dar presentes caros",
+        "Pensar bem das pessoas e tratá-las com carinho",
+        "Saber ler a Bíblia inteira",
+        "Fazer exercícios físicos"
+      ],
+      "correta": 1,
+      "justificativa": "Benignidade é pensar bem das pessoas, tratar com carinho e não fazer fofocas [11]."
+    },
+    {
+      "pergunta": "O que é o 'Domínio Próprio'?",
+      "opcoes": [
+        "Mandar nos outros",
+        "Ter equilíbrio, se controlar e não perder a cabeça facilmente",
+        "Ter sua própria casa",
+        "Escolher a própria roupa"
+      ],
+      "correta": 1,
+      "justificativa": "Domínio próprio é definido como ter equilíbrio, se controlar e não fazer nada que seja excessivo [11]."
+    },
+    {
+      "pergunta": "Onde a figura de Jesus deve ser colocada na árvore que dá frutos?",
+      "opcoes": [
+        "Nas raízes",
+        "Embaixo da árvore",
+        "No topo da árvore",
+        "Atrás do tronco"
+      ],
+      "correta": 2,
+      "justificativa": "As instruções pedem para colocar a figura de Jesus no topo da árvore, permitindo que Cristo seja visto na vida da pessoa [12]."
+    },
+    {
+      "pergunta": "Qual é o apelo final feito às crianças?",
+      "opcoes": [
+        "Que elas comprem balas de goma",
+        "Que peçam ajuda a Deus para serem árvores que dão frutos do Espírito",
+        "Que elas aprendam a tocar tambores",
+        "Que elas viajem nas férias"
+      ],
+      "correta": 1,
+      "justificativa": "O apelo convida as crianças a orarem pedindo a Deus que as ajude a ter todos os pedacinhos do Fruto do Espírito [12, 13]."
+    }
+  ]
+}

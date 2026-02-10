@@ -389,6 +389,45 @@
             </div>
         </div>
 
+        <!-- Reel 4: Carnaval -->
+        <div class="reel" data-index="3" data-theme="carnaval">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900">
+                <div class="theme-icon">🎉</div>
+            </div>
+
+            <div class="video-container" id="video-container-3">
+                <video id="video-3" controls preload="none">
+                    <source src="kidiscipulos/videos/carnaval.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(2)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">O Fruto do Espírito</h3>
+                <p class="text-sm opacity-80">A armadilha do Carnaval</p>
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(3)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('carnaval')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('carnaval')"
+                        class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <button class="nav-button prev">
             <i class="fas fa-chevron-left"></i>
         </button>
@@ -519,7 +558,8 @@
         const slideFiles = {
             reforma: ['reforma_img01.jpg', 'reforma_img02.jpg', 'reforma_img03.jpg', 'reforma_img04.jpg', 'reforma_img05.jpg', 'reforma_img06.jpg', 'reforma_img07.jpg', 'reforma_img08.jpg', 'reforma_img09.jpg', 'reforma_img10.jpg', 'reforma_img11.jpg', 'reforma_img12.jpg', 'reforma_img13.jpg', 'reforma_img14.jpg', 'reforma_img15.jpg'],
             halloween: ['halloween_nao_img01.jpg', 'halloween_nao_img02.jpg', 'halloween_nao_img03.jpg', 'halloween_nao_img04.jpg', 'halloween_nao_img05.jpg', 'halloween_nao_img06.jpg', 'halloween_nao_img07.jpg', 'halloween_nao_img08.jpg', 'halloween_nao_img09.jpg', 'halloween_nao_img10.jpg', 'halloween_nao_img11.jpg'],
-            diaconato: ['diaconato_img01.jpg', 'diaconato_img02.jpg', 'diaconato_img03.jpg', 'diaconato_img04.jpg', 'diaconato_img05.jpg']
+            diaconato: ['diaconato_img01.jpg', 'diaconato_img02.jpg', 'diaconato_img03.jpg', 'diaconato_img04.jpg', 'diaconato_img05.jpg'],
+            carnaval: ['carnaval_img01.jpg', 'carnaval_img02.jpg', 'carnaval_img03.jpg', 'carnaval_img04.jpg', 'carnaval_img05.jpg']
         };
 
         document.addEventListener('DOMContentLoaded', function () {
