@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta aos Efésios?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "João",
+        "Mateus"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreveu a carta aos Efésios enquanto estava preso, demonstrando seu amor e cuidado pela igreja de Éfeso!"
+    },
+    {
+      "pergunta": "Segundo Efésios, como somos salvos?",
+      "opcoes": [
+        "Pelas nossas boas obras",
+        "Pela graça, mediante a fé",
+        "Por sermos bonzinhos",
+        "Por irmos à igreja"
+      ],
+      "correta": 1,
+      "justificativa": "Efésios 2:8-9 nos ensina que somos salvos pela graça de Deus, mediante a fé, e não por nossas obras. É um presente de Deus!"
+    },
+    {
+      "pergunta": "Quantas partes tem a armadura de Deus mencionada em Efésios?",
+      "opcoes": [
+        "Quatro partes",
+        "Cinco partes",
+        "Seis partes",
+        "Sete partes"
+      ],
+      "correta": 2,
+      "justificativa": "A armadura de Deus tem seis partes especiais: cinturão, couraça, calçado, escudo, capacete e espada!"
+    },
+    {
+      "pergunta": "O que representa o 'Capacete da Salvação' na armadura de Deus?",
+      "opcoes": [
+        "Ser corajoso",
+        "Lembrar que somos salvos",
+        "Estudar muito",
+        "Ajudar os outros"
+      ],
+      "correta": 1,
+      "justificativa": "O capacete da salvação nos lembra sempre que somos salvos por Jesus e nossa mente fica protegida com esse pensamento!"
+    },
+    {
+      "pergunta": "Qual é o 'Cinturão da Verdade'?",
+      "opcoes": [
+        "Ser forte",
+        "Ser honesto sempre",
+        "Ser inteligente",
+        "Ser rápido"
+      ],
+      "correta": 1,
+      "justificativa": "O cinturão da verdade significa ser honesto sempre, falando a verdade e vivendo de forma sincera diante de Deus!"
+    },
+    {
+      "pergunta": "O que a 'Espada do Espírito' representa na armadura de Deus?",
+      "opcoes": [
+        "A força física",
+        "A Palavra de Deus",
+        "A oração",
+        "A música"
+      ],
+      "correta": 1,
+      "justificativa": "A espada do Espírito é a Palavra de Deus - a Bíblia! É nossa arma espiritual mais poderosa!"
+    },
+    {
+      "pergunta": "Segundo Efésios, quantos são o corpo, o Espírito, a fé e o Senhor?",
+      "opcoes": [
+        "Dois de cada",
+        "Um só de cada",
+        "Três de cada",
+        "Muitos de cada"
+      ],
+      "correta": 1,
+      "justificativa": "Efésios 4:4-6 ensina que temos 'um só corpo, um só Espírito, uma fé, um só Senhor', mostrando nossa união em Cristo!"
+    },
+    {
+      "pergunta": "Para que Paulo queria que os cristãos usassem a armadura de Deus?",
+      "opcoes": [
+        "Para lutar com pessoas",
+        "Para ficar mais fortes fisicamente",
+        "Para se proteger espiritualmente",
+        "Para impressionar os outros"
+      ],
+      "correta": 2,
+      "justificativa": "A armadura de Deus serve para proteção espiritual, nos ajudando a resistir às tentações e permanecer firmes na fé!"
+    },
+    {
+      "pergunta": "O que o 'Escudo da Fé' nos ensina a fazer?",
+      "opcoes": [
+        "Correr rápido",
+        "Confiar em Deus sempre",
+        "Ser quieto",
+        "Comer bem"
+      ],
+      "correta": 1,
+      "justificativa": "O escudo da fé nos ensina a confiar em Deus sempre, sabendo que Ele nos protege em todas as situações!"
+    },
+    {
+      "pergunta": "Qual era o objetivo principal de Paulo ao escrever Efésios?",
+      "opcoes": [
+        "Contar histórias engraçadas",
+        "Ensinar sobre vida em Cristo e união da igreja",
+        "Falar sobre comida",
+        "Ensinar matemática"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreveu Efésios para ensinar sobre nossa nova vida em Cristo, a união da igreja e como nos proteger espiritualmente!"
+    }
+  ]
+}

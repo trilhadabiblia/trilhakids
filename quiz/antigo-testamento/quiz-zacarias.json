@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quantas visões incríveis Zacarias teve em uma única noite?",
+      "opcoes": [
+        "Cinco visões",
+        "Seis visões",
+        "Sete visões",
+        "Oito visões"
+      ],
+      "correta": 3,
+      "justificativa": "Zacarias teve oito visões maravilhosas em apenas uma noite! Cada visão trazia uma mensagem especial de Deus para encorajar o povo."
+    },
+    {
+      "pergunta": "Qual foi o nome do líder corajoso que ajudou a reconstruir o templo de Deus?",
+      "opcoes": [
+        "Zorobabel",
+        "Josué",
+        "Davi",
+        "Salomão"
+      ],
+      "correta": 0,
+      "justificativa": "Zorobabel foi o líder corajoso que trabalhou para reconstruir o templo de Deus em Jerusalém, cumprindo os planos do Senhor."
+    },
+    {
+      "pergunta": "Segundo Zacarias 9:9, como o Rei prometido (Jesus) chegaria a Jerusalém?",
+      "opcoes": [
+        "Montado em um cavalo branco",
+        "Caminhando a pé",
+        "Montado em um jumento",
+        "Em uma carruagem dourada"
+      ],
+      "correta": 2,
+      "justificativa": "A profecia disse que o Rei seria humilde e viria montado em um jumento. Jesus cumpriu essa profecia quando entrou em Jerusalém!"
+    },
+    {
+      "pergunta": "O que as visões de Zacarias mostraram sobre os planos de Deus?",
+      "opcoes": [
+        "Deus havia esquecido Seu povo",
+        "Deus nunca abandonaria Seu povo",
+        "Deus estava bravo para sempre",
+        "Deus não se importava mais"
+      ],
+      "correta": 1,
+      "justificativa": "As visões mostraram que Deus nunca abandona Seu povo! Mesmo quando tudo parecia perdido, Deus tinha planos maravilhosos de restauração."
+    },
+    {
+      "pergunta": "Qual era o sentimento do povo de Israel quando Zacarias começou a profetizar?",
+      "opcoes": [
+        "Muito alegres e animados",
+        "Tristes e desanimados",
+        "Com raiva de Deus",
+        "Sem nenhuma preocupação"
+      ],
+      "correta": 1,
+      "justificativa": "O povo estava triste e desanimado depois do exílio. Zacarias veio para trazer palavras de esperança e ânimo de Deus!"
+    },
+    {
+      "pergunta": "Nas visões de Zacarias, o que representava os cavalos coloridos?",
+      "opcoes": [
+        "Os inimigos de Israel",
+        "Os mensageiros de Deus vigiando a terra",
+        "Os sonhos do profeta",
+        "Os animais do templo"
+      ],
+      "correta": 1,
+      "justificativa": "Os cavalos coloridos eram mensageiros especiais de Deus que patrulhavam a terra, mostrando que Deus cuida de tudo!"
+    },
+    {
+      "pergunta": "O que Deus prometeu fazer com as coisas que estavam destruídas?",
+      "opcoes": [
+        "Deixá-las como estavam",
+        "Destruir ainda mais",
+        "Restaurar e reconstruir",
+        "Escondê-las para sempre"
+      ],
+      "correta": 2,
+      "justificativa": "Deus prometeu restaurar tudo! O templo, a cidade, o povo e a fé - nada é impossível para Deus reconstruir com Seu amor."
+    },
+    {
+      "pergunta": "Quem explicava as visões para o profeta Zacarias?",
+      "opcoes": [
+        "Seu pai",
+        "O rei",
+        "O Anjo do Senhor",
+        "Outro profeta"
+      ],
+      "correta": 2,
+      "justificativa": "O Anjo do Senhor era o mensageiro divino que explicava as visões e trazia palavras de esperança para Zacarias!"
+    },
+    {
+      "pergunta": "Qual é uma das principais lições do livro de Zacarias?",
+      "opcoes": [
+        "Deus não tem planos para nós",
+        "Devemos sempre ter medo",
+        "Deus tem planos perfeitos mesmo quando tudo parece perdido",
+        "Nunca devemos orar"
+      ],
+      "correta": 2,
+      "justificativa": "Uma lição poderosa de Zacarias é que Deus sempre tem planos perfeitos! Mesmo quando tudo parece perdido, Deus está trabalhando para o nosso bem."
+    },
+    {
+      "pergunta": "O livro de Zacarias fala sobre qual pessoa especial que viria salvar o mundo?",
+      "opcoes": [
+        "Um guerreiro forte",
+        "Jesus, o Messias prometido",
+        "Um rei rico",
+        "Um anjo poderoso"
+      ],
+      "correta": 1,
+      "justificativa": "Zacarias profetizou sobre Jesus, o Messias prometido! Centenas de anos antes, ele já falava sobre Aquele que viria salvar o mundo."
+    }
+  ]
+}

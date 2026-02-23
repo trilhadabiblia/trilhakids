@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o nome do apóstolo que escreveu a carta aos Gálatas?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "João",
+        "Tiago"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo foi o apóstolo corajoso que escreveu esta carta para ensinar os cristãos da Galácia sobre a verdadeira salvação pela fé em Jesus."
+    },
+    {
+      "pergunta": "Segundo Gálatas, como somos salvos?",
+      "opcoes": [
+        "Seguindo muitas regras",
+        "Pela fé em Jesus",
+        "Fazendo boas obras",
+        "Indo sempre à igreja"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensinou que somos salvos pela fé em Jesus, não por seguir regras ou fazer obras. É um presente de Deus!"
+    },
+    {
+      "pergunta": "Complete o versículo: 'Para a liberdade foi que Cristo nos...'",
+      "opcoes": [
+        "ensinou",
+        "libertou",
+        "chamou",
+        "escolheu"
+      ],
+      "correta": 1,
+      "justificativa": "Este é um versículo muito importante em Gálatas 5:1 que nos lembra que Jesus nos deu verdadeira liberdade!"
+    },
+    {
+      "pergunta": "Quais são os três primeiros frutos do Espírito mencionados em Gálatas?",
+      "opcoes": [
+        "Paz, bondade, fé",
+        "Amor, alegria, paz",
+        "Paciência, mansidão, amor",
+        "Alegria, bondade, paciência"
+      ],
+      "correta": 1,
+      "justificativa": "Em Gálatas 5:22, Paulo lista os frutos do Espírito começando com amor, alegria e paz - qualidades lindas que Deus desenvolve em nós!"
+    },
+    {
+      "pergunta": "Por que Paulo escreveu a carta aos Gálatas?",
+      "opcoes": [
+        "Para contar histórias",
+        "Para corrigir falsos ensinamentos",
+        "Para pedir dinheiro",
+        "Para marcar uma visita"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo estava preocupado porque falsos mestres estavam confundindo os cristãos, dizendo que precisavam seguir regras antigas para serem salvos."
+    },
+    {
+      "pergunta": "O que significa 'salvação pela graça'?",
+      "opcoes": [
+        "Precisamos merecer o amor de Deus",
+        "É um presente gratuito de Deus",
+        "Temos que pagar por nossa salvação",
+        "Só pessoas especiais podem ser salvas"
+      ],
+      "correta": 1,
+      "justificativa": "Graça significa que a salvação é um presente de Deus! Não precisamos fazer nada para merecer - Ele nos ama de graça!"
+    },
+    {
+      "pergunta": "Quantos anos tem aproximadamente a carta de Gálatas?",
+      "opcoes": [
+        "500 anos",
+        "1000 anos",
+        "Quase 2000 anos",
+        "100 anos"
+      ],
+      "correta": 2,
+      "justificativa": "A carta foi escrita por volta do ano 48-49 d.C., então tem quase 2000 anos! E ainda nos ensina coisas importantes hoje!"
+    },
+    {
+      "pergunta": "Em Cristo, o que todos nós somos?",
+      "opcoes": [
+        "Servos",
+        "Uma família de filhos de Deus",
+        "Estranhos",
+        "Visitantes"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensinou que pela fé em Jesus, todos somos filhos amados de Deus e formamos uma grande família, não importa quem somos!"
+    },
+    {
+      "pergunta": "Qual era o problema dos cristãos da Galácia?",
+      "opcoes": [
+        "Não tinham Bíblia",
+        "Estavam confusos sobre a salvação",
+        "Não queriam orar",
+        "Brigavam muito"
+      ],
+      "correta": 1,
+      "justificativa": "Os gálatas estavam confusos porque falsos mestres diziam que precisavam seguir regras antigas para serem salvos, mas isso não era verdade!"
+    },
+    {
+      "pergunta": "Segundo Gálatas, quem pode ser filho de Deus?",
+      "opcoes": [
+        "Só pessoas muito boas",
+        "Só adultos",
+        "Todos que creem em Jesus",
+        "Só quem segue muitas regras"
+      ],
+      "correta": 2,
+      "justificativa": "Que notícia maravilhosa! Qualquer pessoa que crê em Jesus com o coração pode ser filho amado de Deus - isso inclui você!"
+    }
+  ]
+}

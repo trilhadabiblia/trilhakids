@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era o nome do profeta que Deus enviou para falar sobre a reconstrução do templo?",
+      "opcoes": [
+        "Ageu",
+        "Daniel",
+        "Isaías",
+        "Jeremias"
+      ],
+      "correta": 0,
+      "justificativa": "Ageu foi o profeta corajoso que Deus enviou para motivar o povo a reconstruir o templo e colocar Deus em primeiro lugar!"
+    },
+    {
+      "pergunta": "O que o povo estava construindo para si mesmo enquanto o templo de Deus estava em ruínas?",
+      "opcoes": [
+        "Escolas",
+        "Casas luxuosas",
+        "Parques",
+        "Mercados"
+      ],
+      "correta": 1,
+      "justificativa": "O povo construía casas luxuosas para si, mas deixou o templo de Deus abandonado. Ageu ensinou que devemos colocar Deus em primeiro lugar!"
+    },
+    {
+      "pergunta": "Quem era o governador que liderou o povo na reconstrução do templo?",
+      "opcoes": [
+        "Josué",
+        "Zorobabel",
+        "Neemias",
+        "Esdras"
+      ],
+      "correta": 1,
+      "justificativa": "Zorobabel era o governador corajoso que, junto com Josué, liderou o povo na importante tarefa de reconstruir a casa de Deus!"
+    },
+    {
+      "pergunta": "Qual era a profissão de Josué, que ajudou na reconstrução?",
+      "opcoes": [
+        "Carpinteiro",
+        "Soldado",
+        "Sumo sacerdote",
+        "Escriba"
+      ],
+      "correta": 2,
+      "justificativa": "Josué era o sumo sacerdote que ajudou a restaurar a adoração e o serviço a Deus no templo reconstruído!"
+    },
+    {
+      "pergunta": "Qual foi a mensagem principal que Ageu trouxe ao povo?",
+      "opcoes": [
+        "Construam mais casas",
+        "Plantem mais alimentos",
+        "Coloquem Deus em primeiro lugar",
+        "Façam mais festas"
+      ],
+      "correta": 2,
+      "justificativa": "A mensagem de Ageu era clara: 'Coloquem Deus em primeiro lugar!' Quando priorizamos Deus, Ele nos abençoa!"
+    },
+    {
+      "pergunta": "O que Deus prometeu sobre a glória do novo templo?",
+      "opcoes": [
+        "Seria igual ao anterior",
+        "Seria menor que o anterior",
+        "Seria maior que o anterior",
+        "Não teria glória"
+      ],
+      "correta": 2,
+      "justificativa": "Deus fez uma promessa maravilhosa: a glória do novo templo seria ainda maior que a do primeiro! Deus sempre tem algo melhor preparado!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Ageu?",
+      "opcoes": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Ageu tem apenas 2 capítulos, sendo um dos livros mais curtos da Bíblia, mas com uma mensagem muito poderosa!"
+    },
+    {
+      "pergunta": "O que Deus disse ao povo para encorajá-los na reconstrução?",
+      "opcoes": [
+        "'Tenham medo!'",
+        "'Sejam fracos!'",
+        "'Sejam fortes!'",
+        "'Desistam!'"
+      ],
+      "correta": 2,
+      "justificativa": "Deus encorajou o povo dizendo 'Sejam fortes!' e prometeu estar com eles. Com Deus ao nosso lado, somos mais que vencedores!"
+    },
+    {
+      "pergunta": "Em quantos dias após a primeira mensagem de Ageu o povo começou a trabalhar no templo?",
+      "opcoes": [
+        "10 dias",
+        "23 dias",
+        "30 dias",
+        "50 dias"
+      ],
+      "correta": 1,
+      "justificativa": "Em apenas 23 dias após ouvir a mensagem de Ageu, o povo obedeceu e começou a trabalhar! A obediência rápida traz bênçãos!"
+    },
+    {
+      "pergunta": "Qual é a principal lição que aprendemos com o livro de Ageu?",
+      "opcoes": [
+        "Construir casas bonitas",
+        "Guardar muito dinheiro",
+        "Colocar Deus em primeiro lugar",
+        "Trabalhar sem parar"
+      ],
+      "correta": 2,
+      "justificativa": "A grande lição de Ageu é que quando colocamos Deus em primeiro lugar em nossas vidas, Ele cuida de nós e nos abençoa em tudo!"
+    }
+  ]
+}

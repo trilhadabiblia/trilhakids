@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era a profissão de Lucas, o escritor do Evangelho?",
+      "opcoes": [
+        "Pescador",
+        "Médico",
+        "Carpinteiro",
+        "Pastor"
+      ],
+      "correta": 1,
+      "justificativa": "Lucas era médico e escreveu com muito cuidado e detalhes sobre a vida de Jesus!"
+    },
+    {
+      "pergunta": "Segundo Lucas, quem Jesus veio salvar?",
+      "opcoes": [
+        "Apenas os ricos",
+        "Apenas as crianças",
+        "Todas as pessoas",
+        "Apenas os adultos"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus ama a todos! Rico ou pobre, grande ou pequeno, Ele veio com amor para todas as pessoas!"
+    },
+    {
+      "pergunta": "Que oração Jesus ensinou aos seus discípulos em Lucas?",
+      "opcoes": [
+        "Ave Maria",
+        "Pai Nosso",
+        "Salmo 23",
+        "Credo"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus ensinou o 'Pai Nosso' quando os discípulos pediram: 'Senhor, ensina-nos a orar!'"
+    },
+    {
+      "pergunta": "Quem subiu numa árvore para ver Jesus passar?",
+      "opcoes": [
+        "Pedro",
+        "João",
+        "Zaqueu",
+        "Mateus"
+      ],
+      "correta": 2,
+      "justificativa": "Zaqueu, o cobrador de impostos, subiu numa árvore para ver Jesus, e Jesus mostrou amor por ele!"
+    },
+    {
+      "pergunta": "Complete o versículo: 'O Filho do Homem veio buscar e salvar...'",
+      "opcoes": [
+        "os justos",
+        "os ricos",
+        "o que estava perdido",
+        "os sábios"
+      ],
+      "correta": 2,
+      "justificativa": "Lucas 19:10 nos ensina que Jesus veio buscar e salvar o que estava perdido - isso inclui todos nós!"
+    },
+    {
+      "pergunta": "Segundo Lucas 15:7, quando há alegria no céu?",
+      "opcoes": [
+        "Quando alguém fica rico",
+        "Quando um pecador se arrepende",
+        "Quando chove",
+        "Quando é domingo"
+      ],
+      "correta": 1,
+      "justificativa": "Há grande festa no céu quando alguém se arrepende! Deus quer todos salvos e reunidos no céu!"
+    },
+    {
+      "pergunta": "Qual parábola Jesus contou sobre ajudar o próximo?",
+      "opcoes": [
+        "O Bom Pastor",
+        "O Bom Samaritano",
+        "O Filho Pródigo",
+        "A Ovelha Perdida"
+      ],
+      "correta": 1,
+      "justificativa": "A parábola do Bom Samaritano nos ensina a amar e ajudar nosso próximo, assim como Jesus faz!"
+    },
+    {
+      "pergunta": "Onde Jesus nasceu, segundo Lucas?",
+      "opcoes": [
+        "Jerusalém",
+        "Nazaré",
+        "Belém",
+        "Cafarnaum"
+      ],
+      "correta": 2,
+      "justificativa": "Lucas conta o nascimento especial de Jesus em Belém, cumprindo as profecias sobre o Salvador!"
+    },
+    {
+      "pergunta": "O que aconteceu no final do livro de Lucas?",
+      "opcoes": [
+        "Jesus morreu",
+        "Jesus ressuscitou e subiu ao céu",
+        "Jesus ficou na terra",
+        "Jesus se escondeu"
+      ],
+      "correta": 1,
+      "justificativa": "Lucas termina mostrando que Jesus ressuscitou e subiu ao céu, provando que Ele venceu a morte!"
+    },
+    {
+      "pergunta": "Qual é o principal tema do Evangelho de Lucas?",
+      "opcoes": [
+        "A justiça de Deus",
+        "A compaixão e amor de Jesus",
+        "As leis religiosas",
+        "O fim do mundo"
+      ],
+      "correta": 1,
+      "justificativa": "Lucas é conhecido como 'O Evangelho da Compaixão' porque mostra o coração amoroso de Jesus por todos!"
+    }
+  ]
+}

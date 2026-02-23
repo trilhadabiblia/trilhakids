@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o nome do profeta que trouxe a mensagem de Deus sobre Nínive no livro que estamos estudando?",
+      "opcoes": [
+        "Jonas",
+        "Naum",
+        "Daniel",
+        "Jeremias"
+      ],
+      "correta": 1,
+      "justificativa": "Naum foi o profeta corajoso que trouxe a mensagem de justiça sobre Nínive. Seu nome significa 'consolador' porque ele consolava o povo de Deus mostrando que a justiça chegaria."
+    },
+    {
+      "pergunta": "O que significa o nome 'Naum'?",
+      "opcoes": [
+        "Guerreiro",
+        "Consolador",
+        "Profeta",
+        "Justo"
+      ],
+      "correta": 1,
+      "justificativa": "O nome Naum significa 'consolador'. Ele consolava o povo de Deus mostrando que Deus faria justiça contra aqueles que praticavam o mal."
+    },
+    {
+      "pergunta": "Segundo Naum 1:3, como é o caráter de Deus?",
+      "opcoes": [
+        "Sempre com raiva",
+        "Tardio em irar-se, mas grande em poder",
+        "Nunca se irrita",
+        "Esquece facilmente o mal"
+      ],
+      "correta": 1,
+      "justificativa": "Naum 1:3 nos ensina que Deus é paciente ('tardio em irar-se'), mas também poderoso. Ele espera com amor, mas não ignora o mal para sempre."
+    },
+    {
+      "pergunta": "Nínive era a capital de qual império?",
+      "opcoes": [
+        "Egito",
+        "Babilônia",
+        "Assíria",
+        "Pérsia"
+      ],
+      "correta": 2,
+      "justificativa": "Nínive era a capital da Assíria, um império conhecido por sua crueldade e violência. Era uma cidade muito poderosa naquela época."
+    },
+    {
+      "pergunta": "Quantos anos se passaram entre a pregação de Jonas em Nínive e a profecia de Naum?",
+      "opcoes": [
+        "50 anos",
+        "75 anos",
+        "100 anos",
+        "150 anos"
+      ],
+      "correta": 2,
+      "justificativa": "Naum escreveu cerca de 100 anos depois de Jonas! Isso nos mostra que Nínive se arrependeu com Jonas, mas depois voltou a praticar o mal."
+    },
+    {
+      "pergunta": "Segundo Naum 1:7, o que Deus é para quem confia nEle?",
+      "opcoes": [
+        "Um juiz severo",
+        "Um refúgio no dia da angústia",
+        "Um rei distante",
+        "Um professor rigoroso"
+      ],
+      "correta": 1,
+      "justificativa": "Naum 1:7 nos ensina que 'O SENHOR é bom, um refúgio no dia da angústia'. Para quem confia em Deus, Ele é proteção e lugar seguro!"
+    },
+    {
+      "pergunta": "Por que Deus decidiu julgar Nínive novamente?",
+      "opcoes": [
+        "Porque eram de outro país",
+        "Porque voltaram a praticar violência, mentiras e crueldade",
+        "Porque não gostavam de profetas",
+        "Porque eram muito ricos"
+      ],
+      "correta": 1,
+      "justificativa": "Nínive voltou a praticar o mal: violência, mentiras e crueldade. Eles haviam se arrependido com Jonas, mas depois abandonaram o bom caminho."
+    },
+    {
+      "pergunta": "Qual é uma das principais lições do livro de Naum sobre o arrependimento?",
+      "opcoes": [
+        "Basta pedir desculpas uma vez na vida",
+        "O arrependimento precisa ser real e duradouro",
+        "Deus sempre esquece o que fizemos",
+        "Não precisamos mudar nossas atitudes"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Naum nos ensina que não basta apenas dizer 'desculpa' - precisamos realmente mudar nosso coração e nossas atitudes de forma duradoura."
+    },
+    {
+      "pergunta": "Em que ano Nínive foi realmente destruída, cumprindo a profecia de Naum?",
+      "opcoes": [
+        "612 a.C.",
+        "586 a.C.",
+        "722 a.C.",
+        "539 a.C."
+      ],
+      "correta": 0,
+      "justificativa": "A profecia de Naum se cumpriu exatamente como Deus havia dito! Nínive foi destruída em 612 a.C., mostrando que a Palavra de Deus sempre se cumpre."
+    },
+    {
+      "pergunta": "Qual é o equilíbrio que o livro de Naum nos mostra sobre o caráter de Deus?",
+      "opcoes": [
+        "Deus é só amor",
+        "Deus é só justiça",
+        "Deus é paciente, mas também justo",
+        "Deus não se importa com o mal"
+      ],
+      "correta": 2,
+      "justificativa": "Naum nos mostra que Deus é tanto paciente quanto justo. Ele dá oportunidades para o arrependimento, mas não tolera o mal para sempre. Ele também protege quem confia nEle!"
+    }
+  ]
+}

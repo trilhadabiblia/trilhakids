@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Para onde Deus pediu para Jonas ir pregar?",
+      "opcoes": [
+        "Para Tarsis",
+        "Para Nínive",
+        "Para Jerusalém",
+        "Para o Egito"
+      ],
+      "correta": 1,
+      "justificativa": "Deus pediu para Jonas ir até a cidade de Nínive avisar o povo sobre seus pecados. Nínive era uma cidade muito grande e cheia de pessoas que faziam coisas erradas."
+    },
+    {
+      "pergunta": "O que Jonas fez quando Deus lhe deu a missão?",
+      "opcoes": [
+        "Obedeceu imediatamente",
+        "Fugiu para Tarsis",
+        "Ficou em casa orando",
+        "Foi visitar sua família"
+      ],
+      "correta": 1,
+      "justificativa": "Jonas tentou fugir de Deus pegando um barco para Tarsis, na direção oposta de Nínive. Mas descobrimos que não podemos fugir de Deus - Ele nos vê onde quer que estejamos!"
+    },
+    {
+      "pergunta": "O que aconteceu quando Jonas estava no barco?",
+      "opcoes": [
+        "O mar ficou calmo",
+        "Apareceu um arco-íris",
+        "Veio uma grande tempestade",
+        "Chegaram rapidamente ao destino"
+      ],
+      "correta": 2,
+      "justificativa": "Deus mandou uma tempestade gigante! Os marinheiros ficaram com muito medo. Esta tempestade aconteceu porque Jonas estava desobedecendo a Deus."
+    },
+    {
+      "pergunta": "Por quantos dias Jonas ficou dentro do grande peixe?",
+      "opcoes": [
+        "Um dia",
+        "Dois dias",
+        "Três dias e três noites",
+        "Uma semana"
+      ],
+      "correta": 2,
+      "justificativa": "Jonas ficou três dias e três noites dentro da barriga do grande peixe. Durante esse tempo, ele orou a Deus pedindo perdão e prometendo obedecer."
+    },
+    {
+      "pergunta": "O que Jonas fez dentro do peixe?",
+      "opcoes": [
+        "Dormiu o tempo todo",
+        "Ficou com raiva",
+        "Orou e pediu perdão a Deus",
+        "Tentou escapar"
+      ],
+      "correta": 2,
+      "justificativa": "Dentro do peixe, Jonas orou a Deus clamando por ajuda e se arrependendo. Ele disse: 'Me perdoa, Senhor, vou obedecer!' Quando nos arrependemos de coração, Deus sempre nos perdoa."
+    },
+    {
+      "pergunta": "Como Jonas saiu de dentro do peixe?",
+      "opcoes": [
+        "Cortou a barriga do peixe",
+        "Nadou para fora",
+        "O peixe o vomitou na praia",
+        "Outros pescadores o salvaram"
+      ],
+      "correta": 2,
+      "justificativa": "Deus falou ao peixe, e este vomitou Jonas em terra seca! Deus usou o grande peixe para salvar Jonas e lhe dar uma segunda chance de obedecer."
+    },
+    {
+      "pergunta": "O que aconteceu quando Jonas pregou em Nínive?",
+      "opcoes": [
+        "O povo não acreditou nele",
+        "Apenas algumas pessoas se arrependeram",
+        "Todo o povo se arrependeu",
+        "O povo expulsou Jonas da cidade"
+      ],
+      "correta": 2,
+      "justificativa": "Todo mundo em Nínive se arrependeu! Do rei até o povo mais simples, todos mudaram de vida e pediram perdão a Deus. Foi incrível como Deus tocou o coração de todos!"
+    },
+    {
+      "pergunta": "Como Jonas se sentiu quando Deus perdoou o povo de Nínive?",
+      "opcoes": [
+        "Muito feliz",
+        "Chateado e com raiva",
+        "Surpreso mas contente",
+        "Indiferente"
+      ],
+      "correta": 1,
+      "justificativa": "Jonas ficou chateado porque Deus perdoou Nínive. Ele não entendia ainda que o amor de Deus é para todos, não apenas para algumas pessoas. Deus teve que ensinar Jonas sobre Sua misericórdia."
+    },
+    {
+      "pergunta": "Qual é a principal lição que aprendemos com a história de Jonas?",
+      "opcoes": [
+        "Devemos sempre viajar de barco",
+        "Não podemos fugir de Deus e Seu amor é para todos",
+        "É perigoso nadar no mar",
+        "Devemos ter medo de peixes grandes"
+      ],
+      "correta": 1,
+      "justificativa": "A história de Jonas nos ensina que não podemos fugir de Deus, que Ele sempre nos dá segunda chance quando nos arrependemos, e que o amor de Deus é para todas as pessoas do mundo!"
+    },
+    {
+      "pergunta": "Jesus mencionou Jonas por quê?",
+      "opcoes": [
+        "Porque gostava de histórias de peixes",
+        "Para comparar os três dias de Jonas no peixe com Sua ressurreição",
+        "Porque queria ensinar sobre navegação",
+        "Para falar sobre tempestades"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus disse que assim como Jonas ficou três dias no grande peixe, Ele ficaria três dias no túmulo antes de ressuscitar! A história de Jonas aponta para Jesus e Sua vitória sobre a morte."
+    }
+  ]
+}

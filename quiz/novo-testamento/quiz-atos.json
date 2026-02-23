@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "O que aconteceu no dia de Pentecostes quando o Espírito Santo desceu sobre os discípulos?",
+      "opcoes": [
+        "Apareceram línguas de fogo sobre eles",
+        "Começou a chover muito forte",
+        "Os discípulos ficaram com sono",
+        "Eles saíram correndo com medo"
+      ],
+      "correta": 0,
+      "justificativa": "No dia de Pentecostes, línguas de fogo apareceram sobre os discípulos e eles ficaram cheios do poder do Espírito Santo, recebendo coragem para pregar!"
+    },
+    {
+      "pergunta": "Quantas pessoas se converteram no primeiro sermão de Pedro no dia de Pentecostes?",
+      "opcoes": [
+        "1.000 pessoas",
+        "500 pessoas",
+        "3.000 pessoas",
+        "100 pessoas"
+      ],
+      "correta": 2,
+      "justificativa": "Foi incrível! 3.000 pessoas creram em Jesus e foram batizadas no primeiro dia da igreja. Foi o maior batismo coletivo da história!"
+    },
+    {
+      "pergunta": "Quem era Paulo antes de se converter a Cristo?",
+      "opcoes": [
+        "Um pescador que seguia Jesus",
+        "Um perseguidor dos cristãos",
+        "Um carpinteiro como Jesus",
+        "Um soldado romano"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo perseguia os cristãos antes de Jesus aparecer para ele no caminho para Damasco. Depois se tornou o maior missionário da história!"
+    },
+    {
+      "pergunta": "Qual era a profissão de Pedro antes de seguir Jesus?",
+      "opcoes": [
+        "Carpinteiro",
+        "Pescador",
+        "Soldado",
+        "Pastor de ovelhas"
+      ],
+      "correta": 1,
+      "justificativa": "Pedro era um pescador corajoso que se tornou um 'pescador de homens', pregando com ousadia sobre Jesus depois de receber o Espírito Santo!"
+    },
+    {
+      "pergunta": "O que Jesus prometeu aos discípulos antes de subir ao céu?",
+      "opcoes": [
+        "Que voltaria no mesmo dia",
+        "Que enviaria o Espírito Santo",
+        "Que eles ficariam ricos",
+        "Que nunca mais teriam problemas"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus prometeu enviar o Espírito Santo para dar poder aos discípulos para serem suas testemunhas em todo o mundo!"
+    },
+    {
+      "pergunta": "Quantas viagens missionárias Paulo fez para levar o evangelho ao mundo?",
+      "opcoes": [
+        "Uma viagem",
+        "Duas viagens",
+        "Três viagens",
+        "Cinco viagens"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo fez três grandes viagens missionárias, viajando mais de 16.000 quilômetros para levar Jesus às nações!"
+    },
+    {
+      "pergunta": "Quem foi o primeiro mártir (pessoa que morreu por Jesus) mencionado em Atos?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "Estêvão",
+        "João"
+      ],
+      "correta": 2,
+      "justificativa": "Estêvão foi o primeiro mártir cristão. Ele pregou com coragem e mesmo sendo perseguido, perdoou seus inimigos como Jesus ensinou!"
+    },
+    {
+      "pergunta": "Segundo Atos 1:8, até onde os discípulos deveriam levar o evangelho?",
+      "opcoes": [
+        "Apenas em Jerusalém",
+        "Só para os judeus",
+        "Até os confins da terra",
+        "Apenas nas cidades grandes"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus disse que o evangelho deveria ir de Jerusalém até os confins da terra! O amor de Deus é para todas as pessoas do mundo!"
+    },
+    {
+      "pergunta": "O que o Espírito Santo deu aos discípulos para pregarem o evangelho?",
+      "opcoes": [
+        "Dinheiro e riquezas",
+        "Coragem e poder",
+        "Uma casa grande",
+        "Comida para todos"
+      ],
+      "correta": 1,
+      "justificativa": "O Espírito Santo encheu os discípulos de coragem e poder! O mesmo Espírito está disponível para nos ajudar hoje a falar de Jesus!"
+    },
+    {
+      "pergunta": "Qual é a principal mensagem do livro de Atos?",
+      "opcoes": [
+        "Como ficar rico seguindo Jesus",
+        "Como o Espírito Santo capacitou a igreja a crescer",
+        "Como evitar todos os problemas da vida",
+        "Como ser famoso pregando"
+      ],
+      "correta": 1,
+      "justificativa": "Atos mostra como o Espírito Santo deu poder à igreja primitiva para crescer e levar Jesus ao mundo inteiro, mesmo enfrentando dificuldades!"
+    }
+  ]
+}

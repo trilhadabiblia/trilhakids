@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o personagem principal do livro de 1 Crônicas?",
+      "opcoes": [
+        "Rei Salomão",
+        "Rei Davi",
+        "Moisés",
+        "Abraão"
+      ],
+      "correta": 1,
+      "justificativa": "O rei Davi é o personagem principal de 1 Crônicas. Ele é mostrado como um homem que ama a Deus de todo coração e prepara tudo para a construção do templo!"
+    },
+    {
+      "pergunta": "De acordo com o livro, desde quem até quem a história é contada?",
+      "opcoes": [
+        "De Noé até Salomão",
+        "De Abraão até Davi",
+        "De Adão até Davi",
+        "De Moisés até Salomão"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de 1 Crônicas reconta a história desde Adão até o reinado de Davi, mostrando como Deus cuidou de cada geração com fidelidade!"
+    },
+    {
+      "pergunta": "O que o rei Davi preparou, mesmo sabendo que não seria ele quem construiria?",
+      "opcoes": [
+        "Um palácio",
+        "O templo de Deus",
+        "Uma cidade",
+        "Um jardim"
+      ],
+      "correta": 1,
+      "justificativa": "Davi preparou tudo para a construção do templo de Deus com ouro, prata e bronze, mesmo sabendo que seria seu filho Salomão quem o construiria. Que exemplo de dedicação!"
+    },
+    {
+      "pergunta": "Com quais instrumentos o povo adorava a Deus segundo 1 Crônicas?",
+      "opcoes": [
+        "Violão, piano e flauta",
+        "Harpas, címbalos e liras",
+        "Tambores e trombetas",
+        "Apenas com a voz"
+      ],
+      "correta": 1,
+      "justificativa": "Davi organizou músicos com harpas, címbalos e liras para adorar a Deus com muita alegria! Deus ama quando O adoramos com todo nosso coração!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de 1 Crônicas?",
+      "opcoes": [
+        "25 capítulos",
+        "27 capítulos",
+        "29 capítulos",
+        "31 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de 1 Crônicas tem 29 capítulos cheios de história, fé e adoração a Deus! Cada detalhe mostra o cuidado de Deus com seu povo!"
+    },
+    {
+      "pergunta": "Qual é o primeiro segredo de 1 Crônicas mencionado no resumo?",
+      "opcoes": [
+        "Preparar com Amor",
+        "A História Não Se Esquece",
+        "Adoração com Alegria",
+        "Servir com Fidelidade"
+      ],
+      "correta": 1,
+      "justificativa": "O primeiro segredo é 'A História Não Se Esquece'. Desde Adão até Davi, cada nome tem valor e Deus cuida de cada um com imenso amor!"
+    },
+    {
+      "pergunta": "Quem construiria o templo que Davi preparou?",
+      "opcoes": [
+        "O próprio Davi",
+        "Seu filho Salomão",
+        "Os levitas",
+        "Todo o povo junto"
+      ],
+      "correta": 1,
+      "justificativa": "Seria Salomão, filho de Davi, quem construiria o templo. Davi mostrou amor ao preparar tudo, mesmo sabendo que outro faria a construção!"
+    },
+    {
+      "pergunta": "Qual é o versículo mencionado sobre Davi preparar o templo?",
+      "opcoes": [
+        "1 Crônicas 22:5",
+        "1 Crônicas 25:1-7",
+        "1 Crônicas 1-9",
+        "1 Crônicas 15:16"
+      ],
+      "correta": 0,
+      "justificativa": "1 Crônicas 22:5 fala sobre como Davi preparou o templo com dedicação, alegria e amor, trabalhando com ouro, prata e bronze!"
+    },
+    {
+      "pergunta": "Segundo o livro, qual deve ser o centro da vida do povo de Deus?",
+      "opcoes": [
+        "Trabalhar muito",
+        "Adorar a Deus",
+        "Construir casas",
+        "Plantar jardins"
+      ],
+      "correta": 1,
+      "justificativa": "Adorar a Deus é o centro da vida do Seu povo! O livro ensina que devemos servir ao Senhor com alegria e todo nosso coração!"
+    },
+    {
+      "pergunta": "Qual é a principal lição sobre a fidelidade de Deus em 1 Crônicas?",
+      "opcoes": [
+        "Deus só cuida dos reis",
+        "Deus cuida de cada geração",
+        "Deus só se preocupa com o templo",
+        "Deus só ama os músicos"
+      ],
+      "correta": 1,
+      "justificativa": "A grande lição é que Deus cuida de cada geração do seu povo! Ele é fiel e cumpre todas as suas promessas, desde o começo até hoje!"
+    }
+  ]
+}

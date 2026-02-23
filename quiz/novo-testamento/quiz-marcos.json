@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é a principal característica de Jesus no livro de Marcos?",
+      "opcoes": [
+        "Jesus como rei",
+        "Jesus como servo poderoso",
+        "Jesus como professor",
+        "Jesus como criança"
+      ],
+      "correta": 1,
+      "justificativa": "Marcos apresenta Jesus como o Servo poderoso de Deus, sempre em ação fazendo o bem e servindo às pessoas!"
+    },
+    {
+      "pergunta": "De acordo com Marcos 10:45, por que Jesus veio?",
+      "opcoes": [
+        "Para ser servido pelos outros",
+        "Para servir e dar sua vida",
+        "Para ser um rei poderoso",
+        "Para ensinar apenas"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus disse que não veio para ser servido, mas para servir e dar sua vida em resgate por muitos!"
+    },
+    {
+      "pergunta": "Que palavra aparece mais de 40 vezes em Marcos, mostrando que Jesus estava sempre em ação?",
+      "opcoes": [
+        "Rapidamente",
+        "Imediatamente",
+        "Devagar",
+        "Calmamente"
+      ],
+      "correta": 1,
+      "justificativa": "A palavra 'imediatamente' aparece mais de 40 vezes, mostrando que Jesus nunca parava de fazer o bem!"
+    },
+    {
+      "pergunta": "O que Jesus fez quando viu pessoas doentes, segundo Marcos 1:41?",
+      "opcoes": [
+        "Ficou com medo",
+        "Teve compaixão e as tocou",
+        "Fugiu delas",
+        "Pediu ajuda"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus teve compaixão dos doentes e os tocou para curá-los, mostrando Seu amor em ação!"
+    },
+    {
+      "pergunta": "Segundo Marcos 4:39-41, o que Jesus fez durante uma tempestade no mar?",
+      "opcoes": [
+        "Ficou com medo",
+        "Pulou no mar",
+        "Ordenou que o vento parasse",
+        "Chorou muito"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus mostrou Seu poder sobre a natureza ordenando que o vento e as ondas se acalmassem!"
+    },
+    {
+      "pergunta": "Quem eram os discípulos mais próximos de Jesus mencionados em Marcos?",
+      "opcoes": [
+        "Pedro, João e Tiago",
+        "Paulo, Lucas e Mateus",
+        "José, Maria e Ana",
+        "Davi, Samuel e Moisés"
+      ],
+      "correta": 0,
+      "justificativa": "Pedro, João e Tiago foram alguns dos discípulos que seguiram Jesus de perto e aprenderam a servir como Ele!"
+    },
+    {
+      "pergunta": "O livro de Marcos é conhecido por ser:",
+      "opcoes": [
+        "O mais longo evangelho",
+        "Cheio de parábolas",
+        "O evangelho de ação e milagres",
+        "Focado apenas nos ensinamentos"
+      ],
+      "correta": 2,
+      "justificativa": "Marcos é conhecido como o evangelho de ação, mostrando Jesus sempre em movimento fazendo milagres!"
+    },
+    {
+      "pergunta": "Como termina a história de Jesus em Marcos?",
+      "opcoes": [
+        "Jesus fica velho",
+        "Jesus morre na cruz e ressuscita",
+        "Jesus vai embora para sempre",
+        "Jesus para de fazer milagres"
+      ],
+      "correta": 1,
+      "justificativa": "O livro termina mostrando Jesus dando Sua vida na cruz e ressuscitando, completando Sua missão de nos salvar!"
+    },
+    {
+      "pergunta": "Qual é a principal lição que Marcos nos ensina sobre servir?",
+      "opcoes": [
+        "Servir é para os fracos",
+        "A verdadeira grandeza está em servir",
+        "Só adultos devem servir",
+        "Servir não é importante"
+      ],
+      "correta": 1,
+      "justificativa": "Marcos nos ensina que a verdadeira grandeza está em servir aos outros, seguindo o exemplo de Jesus!"
+    },
+    {
+      "pergunta": "O que podemos aprender sobre o amor através do livro de Marcos?",
+      "opcoes": [
+        "Amor é só falar bonito",
+        "Amor é demonstrado através de ações",
+        "Amor não é importante",
+        "Amor é só para família"
+      ],
+      "correta": 1,
+      "justificativa": "Marcos nos mostra que o verdadeiro amor não é só falar, mas demonstrar através de ações, como Jesus fez!"
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cartas de Paulo - Quiz da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-violet-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-violet-700 to-purple-800 backdrop-blur-xl border-b border-violet-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center">
+        <div class="hidden md:block">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">✉️ CARTAS DE PAULO</h1>
+          <p class="text-violet-100 text-sm md:text-base">As epístolas do apóstolo às igrejas e líderes</p>
+        </div>
+        <div class="md:hidden">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">✉️ CARTAS DE PAULO</h1>
+          <p class="text-violet-100 text-sm md:text-base">As epístolas do apóstolo às igrejas e líderes</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- Hero Section -->
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        📬 Os Treze Cartas Paulinas
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Paulo escreveu cartas cheias de doutrina, encorajamento e instrução para igrejas e líderes espalhados pelo mundo romano, moldando a fé cristã para sempre.
+      </p>
+    </section>
+
+    <!-- Livros Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+
+      <!-- Romanos -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-romanos.html')">
+        <div class="bg-gradient-to-br from-blue-600 to-indigo-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">📖</div>
+          <h3 class="font-bold text-white mb-2">Romanos</h3>
+          <p class="text-sm text-blue-100">O Evangelho em Detalhes</p>
+        </div>
+      </div>
+
+      <!-- 1 Coríntios -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-1corintios.html')">
+        <div class="bg-gradient-to-br from-pink-600 to-rose-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💝</div>
+          <h3 class="font-bold text-white mb-2">1 Coríntios</h3>
+          <p class="text-sm text-pink-100">Amor e Unidade</p>
+        </div>
+      </div>
+
+      <!-- 2 Coríntios -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-2corintios.html')">
+        <div class="bg-gradient-to-br from-orange-600 to-amber-700 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💪</div>
+          <h3 class="font-bold text-white mb-2">2 Coríntios</h3>
+          <p class="text-sm text-orange-100">Força na Fraqueza</p>
+        </div>
+      </div>
+
+      <!-- Gálatas -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-galatas.html')">
+        <div class="bg-gradient-to-br from-green-500 to-emerald-700 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-green-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🆓</div>
+          <h3 class="font-bold text-white mb-2">Gálatas</h3>
+          <p class="text-sm text-green-100">Liberdade em Cristo</p>
+        </div>
+      </div>
+
+      <!-- Efésios -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-efesios.html')">
+        <div class="bg-gradient-to-br from-cyan-600 to-teal-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">⛪</div>
+          <h3 class="font-bold text-white mb-2">Efésios</h3>
+          <p class="text-sm text-cyan-100">A Igreja de Cristo</p>
+        </div>
+      </div>
+
+      <!-- Filipenses -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-filipenses.html')">
+        <div class="bg-gradient-to-br from-yellow-500 to-yellow-700 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">😊</div>
+          <h3 class="font-bold text-white mb-2">Filipenses</h3>
+          <p class="text-sm text-yellow-100">Alegria em Tudo</p>
+        </div>
+      </div>
+
+      <!-- Colossenses -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-colossenses.html')">
+        <div class="bg-gradient-to-br from-violet-600 to-purple-900 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-violet-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">👑</div>
+          <h3 class="font-bold text-white mb-2">Colossenses</h3>
+          <p class="text-sm text-violet-100">Cristo é Tudo</p>
+        </div>
+      </div>
+
+      <!-- 1 Tessalonicenses -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-1tessalonicenses.html')">
+        <div class="bg-gradient-to-br from-sky-500 to-blue-700 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🌟</div>
+          <h3 class="font-bold text-white mb-2">1 Tessalonicenses</h3>
+          <p class="text-sm text-sky-100">Volta de Jesus</p>
+        </div>
+      </div>
+
+      <!-- 2 Tessalonicenses -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-2tessalonicenses.html')">
+        <div class="bg-gradient-to-br from-indigo-500 to-indigo-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">⏰</div>
+          <h3 class="font-bold text-white mb-2">2 Tessalonicenses</h3>
+          <p class="text-sm text-indigo-100">Aguardando o Senhor</p>
+        </div>
+      </div>
+
+      <!-- 1 Timóteo -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-1timoteo.html')">
+        <div class="bg-gradient-to-br from-teal-600 to-green-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🎓</div>
+          <h3 class="font-bold text-white mb-2">1 Timóteo</h3>
+          <p class="text-sm text-teal-100">Liderança na Igreja</p>
+        </div>
+      </div>
+
+      <!-- 2 Timóteo -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-2timoteo.html')">
+        <div class="bg-gradient-to-br from-red-600 to-rose-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🔥</div>
+          <h3 class="font-bold text-white mb-2">2 Timóteo</h3>
+          <p class="text-sm text-red-100">Guardando a Fé</p>
+        </div>
+      </div>
+
+      <!-- Tito -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-tito.html')">
+        <div class="bg-gradient-to-br from-stone-500 to-stone-700 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-stone-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🏛️</div>
+          <h3 class="font-bold text-white mb-2">Tito</h3>
+          <p class="text-sm text-stone-100">Boas Obras</p>
+        </div>
+      </div>
+
+      <!-- Filemom -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-filemom.html')">
+        <div class="bg-gradient-to-br from-amber-500 to-orange-700 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🤝</div>
+          <h3 class="font-bold text-white mb-2">Filemom</h3>
+          <p class="text-sm text-amber-100">Perdão e Reconciliação</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-violet-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para criança</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+
+      sidebar.classList.toggle('menu-open');
+      sidebar.classList.toggle('menu-closed');
+      overlay.classList.toggle('overlay-show');
+      overlay.classList.toggle('overlay-hide');
+    }
+
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('menu-open');
+        sidebar.classList.add('menu-closed');
+        overlay.classList.remove('overlay-show');
+        overlay.classList.add('overlay-hide');
+      }
+    });
+  </script>
+  <script src="/menu.js"></script>
+  <script src="./gamificacao.js"></script>
+</body>
+
+</html>

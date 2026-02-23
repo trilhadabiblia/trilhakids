@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era o nome da jovem judia que se tornou rainha da Pérsia?",
+      "opcoes": [
+        "Rute",
+        "Ester",
+        "Débora",
+        "Ana"
+      ],
+      "correta": 1,
+      "justificativa": "Ester era uma jovem judia simples que Deus escolheu para ser rainha e salvar seu povo!"
+    },
+    {
+      "pergunta": "Quem era o primo sábio de Ester que a orientou e protegeu?",
+      "opcoes": [
+        "Hamã",
+        "Mordecai",
+        "Assuero",
+        "Bigta"
+      ],
+      "correta": 1,
+      "justificativa": "Mordecai era o primo de Ester que a criou como filha e sempre a aconselhou com sabedoria."
+    },
+    {
+      "pergunta": "Qual era o nome do vilão que tramou destruir todos os judeus?",
+      "opcoes": [
+        "Mordecai",
+        "Assuero",
+        "Hamã",
+        "Bigta"
+      ],
+      "correta": 2,
+      "justificativa": "Hamã era o vilão orgulhoso que odiava os judeus e fez um plano terrível contra eles."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Ester?",
+      "opcoes": [
+        "8 capítulos",
+        "12 capítulos",
+        "10 capítulos",
+        "15 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Ester tem 10 capítulos cheios de suspense, coragem e vitória!"
+    },
+    {
+      "pergunta": "O que Ester fez antes de ir falar com o rei sobre o plano de Hamã?",
+      "opcoes": [
+        "Dormiu muito",
+        "Jejuou e orou",
+        "Fugiu da cidade",
+        "Comprou roupas novas"
+      ],
+      "correta": 1,
+      "justificativa": "Ester jejuou e orou para se fortalecer e confiar em Deus antes de tomar essa decisão corajosa!"
+    },
+    {
+      "pergunta": "Por que era perigoso para Ester ir falar com o rei sem ser chamada?",
+      "opcoes": [
+        "O rei estava doente",
+        "Era contra a lei e podia morrer",
+        "O palácio estava fechado",
+        "Era muito longe"
+      ],
+      "correta": 1,
+      "justificativa": "Era uma lei do reino que ninguém podia se aproximar do rei sem ser convidado, sob pena de morte!"
+    },
+    {
+      "pergunta": "Qual é a curiosidade mais interessante sobre o livro de Ester?",
+      "opcoes": [
+        "É o menor livro da Bíblia",
+        "O nome de Deus não aparece no texto",
+        "Só tem mulheres como personagens",
+        "Foi escrito por uma criança"
+      ],
+      "correta": 1,
+      "justificativa": "Mesmo sem o nome de Deus aparecer, podemos ver claramente que Ele estava cuidando de tudo!"
+    },
+    {
+      "pergunta": "Complete o versículo famoso: 'Quem sabe se não foi para um momento como este que você chegou à posição de ____?'",
+      "opcoes": [
+        "princesa",
+        "rainha",
+        "líder",
+        "guerreira"
+      ],
+      "correta": 1,
+      "justificativa": "Este versículo de Ester 4:14 mostra que Deus tinha um propósito especial para Ester ser rainha!"
+    },
+    {
+      "pergunta": "Qual é o primeiro segredo que aprendemos com Ester?",
+      "opcoes": [
+        "Deus usa pessoas comuns para coisas extraordinárias",
+        "É importante ser rico",
+        "Devemos ter medo sempre",
+        "Só adultos podem ajudar"
+      ],
+      "correta": 0,
+      "justificativa": "Deus pode usar qualquer pessoa, não importa a idade ou origem, para fazer coisas incríveis!"
+    },
+    {
+      "pergunta": "O que a história de Ester nos ensina sobre coragem?",
+      "opcoes": [
+        "Coragem é não ter medo nunca",
+        "Coragem é ser mais forte que todos",
+        "Coragem é confiar em Deus mesmo tendo medo",
+        "Coragem é fazer tudo sozinho"
+      ],
+      "correta": 2,
+      "justificativa": "Verdadeira coragem é confiar em Deus e fazer o que é certo, mesmo quando sentimos medo!"
+    }
+  ]
+}

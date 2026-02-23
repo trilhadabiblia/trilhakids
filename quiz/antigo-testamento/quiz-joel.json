@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era o nome do profeta que escreveu o livro que estudamos?",
+      "opcoes": [
+        "Jonas",
+        "Joel",
+        "José",
+        "João"
+      ],
+      "correta": 1,
+      "justificativa": "Joel foi o profeta corajoso que Deus usou para alertar o povo sobre suas escolhas erradas e anunciar grandes promessas!"
+    },
+    {
+      "pergunta": "Que tipo de praga destruiu as plantações de Judá no livro de Joel?",
+      "opcoes": [
+        "Pulgões",
+        "Gafanhotos",
+        "Formigas",
+        "Abelhas"
+      ],
+      "correta": 1,
+      "justificativa": "Uma terrível praga de gafanhotos destruiu todas as plantações. Joel usou isso para mostrar que o pecado também destrói nossas vidas."
+    },
+    {
+      "pergunta": "Segundo Joel, o que Deus queria que o povo rasgasse?",
+      "opcoes": [
+        "Suas roupas",
+        "Seus papéis",
+        "Seus corações",
+        "Suas sandálias"
+      ],
+      "correta": 2,
+      "justificativa": "Joel chamou o povo a rasgar seus corações (não suas roupas!) e voltar para Deus com sinceridade. Isso significa se arrepender de verdade!"
+    },
+    {
+      "pergunta": "O que Deus prometeu derramar sobre todas as pessoas?",
+      "opcoes": [
+        "Chuva",
+        "Seu Espírito Santo",
+        "Comida",
+        "Ouro"
+      ],
+      "correta": 1,
+      "justificativa": "Joel profetizou que Deus derramaria Seu Espírito sobre todas as pessoas - jovens, idosos, homens e mulheres!"
+    },
+    {
+      "pergunta": "Como Joel é conhecido? Ele é o profeta do...",
+      "opcoes": [
+        "Arrependimento e da Restauração",
+        "Amor e da Paz",
+        "Milagres e Cura",
+        "Sabedoria e Força"
+      ],
+      "correta": 0,
+      "justificativa": "Joel é conhecido como o Profeta do Arrependimento e da Restauração porque chamou o povo ao arrependimento e anunciou que Deus restauraria tudo!"
+    },
+    {
+      "pergunta": "Quantos segredos principais aprendemos no livro de Joel?",
+      "opcoes": [
+        "Dois",
+        "Quatro",
+        "Três",
+        "Cinco"
+      ],
+      "correta": 2,
+      "justificativa": "Aprendemos três segredos: A Praga que Ensina, A Promessa do Espírito e A Grande Restauração!"
+    },
+    {
+      "pergunta": "Em que livro da Bíblia a profecia de Joel sobre o Espírito Santo se cumpriu?",
+      "opcoes": [
+        "Mateus",
+        "Marcos",
+        "Lucas",
+        "Atos"
+      ],
+      "correta": 3,
+      "justificativa": "A profecia de Joel se cumpriu no livro de Atos, no dia de Pentecostes, quando o Espírito Santo desceu sobre os discípulos!"
+    },
+    {
+      "pergunta": "O que Joel ensinou sobre quando voltamos para Deus de coração sincero?",
+      "opcoes": [
+        "Deus fica bravo conosco",
+        "Deus nos ignora",
+        "Deus restaura tudo que foi perdido",
+        "Deus nos castiga mais"
+      ],
+      "correta": 2,
+      "justificativa": "Joel nos ensina uma verdade maravilhosa: quando voltamos para Deus de coração sincero, Ele restaura tudo o que foi perdido!"
+    },
+    {
+      "pergunta": "Qual apóstolo citou a profecia de Joel no dia de Pentecostes?",
+      "opcoes": [
+        "Paulo",
+        "Pedro",
+        "João",
+        "Tiago"
+      ],
+      "correta": 1,
+      "justificativa": "O apóstolo Pedro citou a profecia de Joel quando o Espírito Santo desceu sobre os discípulos no dia de Pentecostes!"
+    },
+    {
+      "pergunta": "Segundo Joel, nunca é tarde demais para quê?",
+      "opcoes": [
+        "Plantar gafanhotos",
+        "Se arrepender e voltar para Deus",
+        "Destruir as plantações",
+        "Ficar com raiva"
+      ],
+      "correta": 1,
+      "justificativa": "A mensagem de Joel mostra que nunca é tarde demais para se arrepender e voltar para Deus. Ele sempre está esperando de braços abertos!"
+    }
+  ]
+}

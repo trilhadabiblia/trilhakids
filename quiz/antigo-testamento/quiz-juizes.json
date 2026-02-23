@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "O que acontecia quando o povo de Israel clamava com fervor no livro de Juízes?",
+      "opcoes": [
+        "Deus enviava um libertador",
+        "Eles eram castigados",
+        "Nada acontecia",
+        "Os inimigos ficavam mais fortes"
+      ],
+      "correta": 0,
+      "justificativa": "Quando o povo clamava com fervor, Deus sempre enviava um libertador para ajudá-los, mostrando Seu amor e cuidado."
+    },
+    {
+      "pergunta": "Quais são três juízes famosos mencionados no material?",
+      "opcoes": [
+        "Moisés, Josué e Davi",
+        "Débora, Gideão e Sansão",
+        "Pedro, Paulo e João",
+        "Abraão, Isaque e Jacó"
+      ],
+      "correta": 1,
+      "justificativa": "Débora, Gideão e Sansão foram três grandes heróis da fé que Deus levantou como juízes para libertar Seu povo."
+    },
+    {
+      "pergunta": "O que representa o 'Ciclo da Obediência' no livro de Juízes?",
+      "opcoes": [
+        "O povo sempre obedecia a Deus",
+        "O povo esquecia, chorava, Deus salvava, mas voltavam a esquecer",
+        "Deus punia e nunca perdoava",
+        "Os inimigos sempre venciam"
+      ],
+      "correta": 1,
+      "justificativa": "O ciclo mostra que o povo esquecia de Deus, sofria, chorava, Deus os salvava, mas logo voltavam a esquecer, precisando aprender a obedecer."
+    },
+    {
+      "pergunta": "Segundo o livro de Juízes, de onde vem a verdadeira força?",
+      "opcoes": [
+        "Dos músculos grandes",
+        "De comer muito",
+        "De confiar em Deus de todo coração",
+        "De treinar muito"
+      ],
+      "correta": 2,
+      "justificativa": "A força real não está nos músculos, mas em confiar em Deus de todo coração. Com Deus ao lado, até os pequeninos vencem!"
+    },
+    {
+      "pergunta": "Quem eram os Juízes na Bíblia?",
+      "opcoes": [
+        "Apenas homens corajosos",
+        "Líderes que Deus levantava para proteger o povo",
+        "Pessoas más",
+        "Somente mulheres"
+      ],
+      "correta": 1,
+      "justificativa": "Os Juízes eram líderes corajosos que Deus levantava para proteger o povo e ajudá-lo a vencer os inimigos, incluindo homens e mulheres."
+    },
+    {
+      "pergunta": "O que acontecia com a força de Sansão quando ele desobedecia a Deus?",
+      "opcoes": [
+        "Ficava mais forte",
+        "Perdia a força",
+        "Nada mudava",
+        "Ganhava poderes especiais"
+      ],
+      "correta": 1,
+      "justificativa": "Sansão perdia a força quando não obedecia a Deus, ensinando que a obediência a Deus nos deixa verdadeiramente fortes."
+    },
+    {
+      "pergunta": "Qual é uma das principais lições do livro de Juízes?",
+      "opcoes": [
+        "Deus abandona quem erra",
+        "Apenas pessoas perfeitas podem ser usadas por Deus",
+        "Deus pode usar qualquer pessoa disposta a confiar Nele",
+        "Só os fortes podem servir a Deus"
+      ],
+      "correta": 2,
+      "justificativa": "Deus pode usar qualquer pessoa disposta a confiar Nele para fazer grandes coisas, não importa se é pequena ou imperfeita."
+    },
+    {
+      "pergunta": "Como Deus reagia quando Seu povo errava no livro de Juízes?",
+      "opcoes": [
+        "Desistia deles para sempre",
+        "Nunca os perdoava",
+        "Nunca desistia e sempre oferecia ajuda quando clamavam",
+        "Os punia sem misericórdia"
+      ],
+      "correta": 2,
+      "justificativa": "Mesmo quando o povo errava, Deus nunca desistia dele e sempre enviava libertadores quando clamavam, mostrando Seu amor eterno."
+    },
+    {
+      "pergunta": "Qual versículo bíblico está relacionado ao terceiro segredo sobre a força vir de Deus?",
+      "opcoes": [
+        "Juízes 2:16",
+        "Juízes 2:18-19",
+        "Juízes 6:12-14",
+        "Juízes 1:1"
+      ],
+      "correta": 2,
+      "justificativa": "Juízes 6:12-14 está relacionado ao terceiro segredo, mostrando que não importa se somos pequenos, pois a força vem de Deus."
+    },
+    {
+      "pergunta": "Qual era o propósito principal do livro de Juízes?",
+      "opcoes": [
+        "Contar histórias de guerra",
+        "Ensinar sobre coragem, fé e mostrar que Deus nunca abandona Seu povo",
+        "Falar sobre reis",
+        "Ensinar sobre sacrifícios"
+      ],
+      "correta": 1,
+      "justificativa": "O livro ensina sobre coragem, confiança em Deus e mostra que Ele nunca abandona Seu povo, podendo usar qualquer pessoa para fazer grandes coisas."
+    }
+  ]
+}

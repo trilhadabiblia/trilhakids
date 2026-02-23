@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de 1 Coríntios?",
+      "opcoes": [
+        "Pedro",
+        "João",
+        "Paulo",
+        "Tiago"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo foi o apóstolo que escreveu esta carta especial para ajudar os cristãos de Corinto a resolverem seus problemas e viverem melhor juntos!"
+    },
+    {
+      "pergunta": "Para qual grupo de pessoas Paulo escreveu a carta de 1 Coríntios?",
+      "opcoes": [
+        "A igreja de Jerusalém",
+        "A igreja de Corinto",
+        "A igreja de Roma",
+        "A igreja de Éfeso"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreveu para a igreja de Corinto, que era uma igreja cheia de pessoas diferentes que precisavam aprender a se amar e viver em paz."
+    },
+    {
+      "pergunta": "Segundo 1 Coríntios 13, qual é a maior virtude de todas?",
+      "opcoes": [
+        "A esperança",
+        "A fé",
+        "O amor",
+        "A sabedoria"
+      ],
+      "correta": 2,
+      "justificativa": "A Bíblia ensina que 'o maior destes é o amor' (1 Coríntios 13:13). O amor é o maior dom de todos e transforma tudo!"
+    },
+    {
+      "pergunta": "Complete o versículo: 'O amor é _______, o amor é _______'",
+      "opcoes": [
+        "forte, poderoso",
+        "paciente, bondoso",
+        "grande, eterno",
+        "puro, santo"
+      ],
+      "correta": 1,
+      "justificativa": "1 Coríntios 13:4 diz: 'O amor é paciente, o amor é bondoso'. Esse versículo nos ensina como é o amor verdadeiro de Deus!"
+    },
+    {
+      "pergunta": "Por que Deus dá dons especiais às pessoas?",
+      "opcoes": [
+        "Para elas se tornarem famosas",
+        "Para servir aos outros",
+        "Para ganhar dinheiro",
+        "Para competir entre si"
+      ],
+      "correta": 1,
+      "justificativa": "Deus dá dons especiais a cada pessoa para servir aos outros com alegria e mostrar Seu amor. Nossos talentos devem ser usados para ajudar!"
+    },
+    {
+      "pergunta": "O que Paulo ensinou sobre brigas na igreja?",
+      "opcoes": [
+        "Que é normal brigar às vezes",
+        "Que não deve haver brigas, todos devem ser amigos",
+        "Que só os adultos podem brigar",
+        "Que as brigas fortalecem a igreja"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensinou que não deve haver brigas na igreja e que todos devem viver unidos em amor. A unidade em Cristo nos torna mais fortes!"
+    },
+    {
+      "pergunta": "Qual capítulo de 1 Coríntios é conhecido como o 'Capítulo do Amor'?",
+      "opcoes": [
+        "Capítulo 11",
+        "Capítulo 12",
+        "Capítulo 13",
+        "Capítulo 14"
+      ],
+      "correta": 2,
+      "justificativa": "O capítulo 13 é chamado de 'Capítulo do Amor' e é um dos textos mais conhecidos da Bíblia! Ele ensina como é o amor verdadeiro."
+    },
+    {
+      "pergunta": "Segundo 1 Coríntios, como devemos usar nossos talentos?",
+      "opcoes": [
+        "Apenas para nós mesmos",
+        "Para impressionar os outros",
+        "Para o bem fazer e a glória de Deus",
+        "Para ganhar prêmios"
+      ],
+      "correta": 2,
+      "justificativa": "Devemos usar nossos talentos para o bem fazer e para que as pessoas vejam a glória de Deus através de nós. Assim servimos com amor!"
+    },
+    {
+      "pergunta": "O que Paulo queria que acontecesse com a igreja de Corinto?",
+      "opcoes": [
+        "Que ficasse rica",
+        "Que crescesse em número",
+        "Que se tornasse mais amorosa e unida",
+        "Que construísse um prédio maior"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo queria que a igreja se tornasse mais forte, mais amorosa e mais unida, vivendo como Jesus ensinou, em paz e harmonia!"
+    },
+    {
+      "pergunta": "Qual é o principal ensinamento sobre o corpo de Cristo em 1 Coríntios?",
+      "opcoes": [
+        "Cada pessoa deve trabalhar sozinha",
+        "Somos um só corpo com muitos membros unidos",
+        "Só os adultos fazem parte do corpo",
+        "O corpo tem apenas uma parte importante"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensina que somos um só corpo com muitos membros unidos, onde cada pessoa é importante e todos são bem-vindos. Juntos somos fortes!"
+    }
+  ]
+}

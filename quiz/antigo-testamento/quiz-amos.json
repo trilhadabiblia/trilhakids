@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era a profissão de Amós antes de Deus chamá-lo para ser profeta?",
+      "opcoes": [
+        "Pastor de ovelhas e cuidador de figueiras",
+        "Sacerdote no templo",
+        "Soldado do rei",
+        "Comerciante da cidade"
+      ],
+      "correta": 0,
+      "justificativa": "Amós era um simples pastor de ovelhas e cuidava de figueiras em Tecoa. Isso mostra que Deus pode usar qualquer pessoa, independente da profissão!"
+    },
+    {
+      "pergunta": "Qual é o versículo famoso de Amós que fala sobre justiça correndo como um rio?",
+      "opcoes": [
+        "Amós 3:8",
+        "Amós 5:24",
+        "Amós 7:14",
+        "Amós 1:1"
+      ],
+      "correta": 1,
+      "justificativa": "Amós 5:24 diz: 'Corra a justiça como um rio caudaloso, e a retidão como riacho poderoso!' Este versículo mostra que Deus quer justiça verdadeira."
+    },
+    {
+      "pergunta": "De acordo com o livro, quais eram os três segredos de Amós?",
+      "opcoes": [
+        "Orar, jejuar e ofertar",
+        "Deus chama quem Ele quer, justiça é o coração de Deus, coragem para falar a verdade",
+        "Ser rico, famoso e poderoso",
+        "Estudar, trabalhar e descansar"
+      ],
+      "correta": 1,
+      "justificativa": "Os três segredos são: Deus chama quem Ele quer (mesmo um pastor), justiça é o coração de Deus, e precisamos ter coragem para falar a verdade!"
+    },
+    {
+      "pergunta": "Para qual reino Amós foi enviado para pregar?",
+      "opcoes": [
+        "Reino do Sul (Judá)",
+        "Reino do Norte (Israel)",
+        "Reino do Egito",
+        "Reino da Babilônia"
+      ],
+      "correta": 1,
+      "justificativa": "Amós foi enviado ao reino do norte (Israel) para denunciar as injustiças e chamar o povo ao arrependimento."
+    },
+    {
+      "pergunta": "O que Deus mais queria do povo segundo a mensagem de Amós?",
+      "opcoes": [
+        "Apenas rituais religiosos e ofertas",
+        "Somente orações no templo",
+        "Justiça verdadeira e amor ao próximo",
+        "Construir templos maiores"
+      ],
+      "correta": 2,
+      "justificativa": "Deus queria que o povo vivesse com justiça verdadeira, tratando os outros com amor e não apenas fazendo rituais religiosos vazios."
+    },
+    {
+      "pergunta": "Que tipo de trabalho especial Amós fazia com os figos?",
+      "opcoes": [
+        "Plantava figueiras novas",
+        "Perfurava figos para amadurecê-los",
+        "Vendia figos no mercado",
+        "Fazia doces com figos"
+      ],
+      "correta": 1,
+      "justificativa": "Amós era um 'boieiro de sicômoros' - ele perfurava figos para amadurecê-los! Era um trabalho simples, mas Deus o escolheu para uma missão importante."
+    },
+    {
+      "pergunta": "Qual era o principal problema do povo de Israel que Amós denunciou?",
+      "opcoes": [
+        "Não construíam templos",
+        "Eram pobres demais",
+        "Oprimiam os pobres e praticavam injustiças",
+        "Não sabiam ler a Bíblia"
+      ],
+      "correta": 2,
+      "justificativa": "O povo era rico, mas oprimia os pobres, praticava injustiças nos tribunais e vivia de forma egoísta, esquecendo-se de Deus e do próximo."
+    },
+    {
+      "pergunta": "O que Amós nos ensina sobre quem Deus pode usar para Sua obra?",
+      "opcoes": [
+        "Apenas pessoas muito estudadas",
+        "Somente sacerdotes e reis",
+        "Qualquer pessoa disposta a obedecer",
+        "Apenas pessoas ricas e famosas"
+      ],
+      "correta": 2,
+      "justificativa": "Amós mostra que Deus pode usar qualquer pessoa - não importa a profissão ou origem - desde que tenha um coração disposto a obedecer e servir!"
+    },
+    {
+      "pergunta": "Segundo Amós, como devemos demonstrar nossa fé verdadeira em Deus?",
+      "opcoes": [
+        "Apenas indo à igreja aos domingos",
+        "Através de ações justas e amor ao próximo",
+        "Somente cantando hinos",
+        "Decorando versículos da Bíblia"
+      ],
+      "correta": 1,
+      "justificativa": "A verdadeira fé se manifesta em ações concretas de justiça, amor e cuidado com as pessoas, especialmente os necessitados."
+    },
+    {
+      "pergunta": "Qual versículo mostra que Amós teve coragem de falar mesmo sendo perseguido?",
+      "opcoes": [
+        "Amós 3:8",
+        "Amós 5:24",
+        "Amós 1:1",
+        "Amós 7:14-15"
+      ],
+      "correta": 0,
+      "justificativa": "Amós 3:8 mostra que quando Deus fala, o profeta deve ter coragem para proclamar, mesmo enfrentando oposição. Devemos ser corajosos para defender o que é certo!"
+    }
+  ]
+}

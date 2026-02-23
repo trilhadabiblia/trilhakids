@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outras Cartas - Quiz da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-teal-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-teal-700 to-cyan-700 backdrop-blur-xl border-b border-teal-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center">
+        <div class="hidden md:block">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">📨 OUTRAS CARTAS</h1>
+          <p class="text-teal-100 text-sm md:text-base">Epístolas gerais do Novo Testamento</p>
+        </div>
+        <div class="md:hidden">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">📨 OUTRAS CARTAS</h1>
+          <p class="text-teal-100 text-sm md:text-base">Epístolas gerais do Novo Testamento</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- Hero Section -->
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        📜 As Oito Epístolas Gerais
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        Escritas por apóstolos como Pedro, João, Tiago e Judas, essas cartas foram enviadas às igrejas com ensinamentos práticos, alertas e encorajamento para viver a fé no dia a dia.
+      </p>
+    </section>
+
+    <!-- Livros Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+
+      <!-- Hebreus -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-hebreus.html')">
+        <div class="bg-gradient-to-br from-amber-600 to-yellow-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-amber-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">✝️</div>
+          <h3 class="font-bold text-white mb-2">Hebreus</h3>
+          <p class="text-sm text-amber-100">Jesus é Superior</p>
+        </div>
+      </div>
+
+      <!-- Tiago -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-tiago.html')">
+        <div class="bg-gradient-to-br from-lime-600 to-green-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-lime-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🛠️</div>
+          <h3 class="font-bold text-white mb-2">Tiago</h3>
+          <p class="text-sm text-lime-100">Fé com Ação</p>
+        </div>
+      </div>
+
+      <!-- 1 Pedro -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-1pedro.html')">
+        <div class="bg-gradient-to-br from-sky-500 to-blue-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-sky-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💎</div>
+          <h3 class="font-bold text-white mb-2">1 Pedro</h3>
+          <p class="text-sm text-sky-100">Esperança Viva</p>
+        </div>
+      </div>
+
+      <!-- 2 Pedro -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-2pedro.html')">
+        <div class="bg-gradient-to-br from-indigo-600 to-blue-900 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🛡️</div>
+          <h3 class="font-bold text-white mb-2">2 Pedro</h3>
+          <p class="text-sm text-indigo-100">Crescer na Graça</p>
+        </div>
+      </div>
+
+      <!-- 1 João -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-1joao.html')">
+        <div class="bg-gradient-to-br from-pink-600 to-rose-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-pink-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💝</div>
+          <h3 class="font-bold text-white mb-2">1 João</h3>
+          <p class="text-sm text-pink-100">Deus é Amor</p>
+        </div>
+      </div>
+
+      <!-- 2 João -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-2joao.html')">
+        <div class="bg-gradient-to-br from-fuchsia-600 to-purple-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-fuchsia-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">💌</div>
+          <h3 class="font-bold text-white mb-2">2 João</h3>
+          <p class="text-sm text-fuchsia-100">Ande no Amor</p>
+        </div>
+      </div>
+
+      <!-- 3 João -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-3joao.html')">
+        <div class="bg-gradient-to-br from-teal-500 to-cyan-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-teal-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">🤝</div>
+          <h3 class="font-bold text-white mb-2">3 João</h3>
+          <p class="text-sm text-teal-100">Hospitalidade</p>
+        </div>
+      </div>
+
+      <!-- Judas -->
+      <div class="group cursor-pointer" onclick="irPara('quiz-judas.html')">
+        <div class="bg-gradient-to-br from-red-700 to-slate-800 rounded-xl p-6 text-center hover:shadow-lg hover:shadow-red-500/30 transition-all duration-300 hover:scale-105">
+          <div class="text-4xl mb-3">⚔️</div>
+          <h3 class="font-bold text-white mb-2">Judas</h3>
+          <p class="text-sm text-red-100">Defenda a Fé</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-teal-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para criança</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+
+      sidebar.classList.toggle('menu-open');
+      sidebar.classList.toggle('menu-closed');
+      overlay.classList.toggle('overlay-show');
+      overlay.classList.toggle('overlay-hide');
+    }
+
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('menu-open');
+        sidebar.classList.add('menu-closed');
+        overlay.classList.remove('overlay-show');
+        overlay.classList.add('overlay-hide');
+      }
+    });
+  </script>
+  <script src="/menu.js"></script>
+  <script src="./gamificacao.js"></script>
+</body>
+
+</html>

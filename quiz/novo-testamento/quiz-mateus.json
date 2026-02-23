@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Segundo o livro de Mateus, qual é o nome do bebê que nasceu para ser nosso Salvador?",
+      "opcoes": [
+        "João",
+        "Pedro",
+        "Jesus",
+        "Mateus"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus é o nome do bebê que nasceu para ser nosso Salvador! O anjo disse a José que Ele salvaria as pessoas dos seus pecados."
+    },
+    {
+      "pergunta": "Quantos discípulos especiais Jesus escolheu para serem seus amigos mais próximos?",
+      "opcoes": [
+        "10 discípulos",
+        "12 discípulos",
+        "15 discípulos",
+        "20 discípulos"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus escolheu 12 discípulos especiais para serem seus amigos mais próximos e aprenderem com Ele sobre o Reino de Deus!"
+    },
+    {
+      "pergunta": "Qual era a profissão de Mateus antes de seguir Jesus?",
+      "opcoes": [
+        "Pescador",
+        "Carpinteiro",
+        "Cobrador de impostos",
+        "Pastor de ovelhas"
+      ],
+      "correta": 2,
+      "justificativa": "Mateus era cobrador de impostos! Mas quando Jesus o chamou, ele deixou tudo para trás para seguir o Mestre e depois escreveu este evangelho."
+    },
+    {
+      "pergunta": "Em que cidade Jesus nasceu, conforme relatado por Mateus?",
+      "opcoes": [
+        "Jerusalém",
+        "Nazaré",
+        "Belém",
+        "Cafarnaum"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus nasceu em Belém, exatamente como os profetas antigos haviam prometido que aconteceria com o Rei especial!"
+    },
+    {
+      "pergunta": "Quem preparou o caminho para Jesus, anunciando que o Rei estava chegando?",
+      "opcoes": [
+        "Pedro",
+        "João Batista",
+        "José",
+        "Mateus"
+      ],
+      "correta": 1,
+      "justificativa": "João Batista, primo de Jesus, foi quem preparou o caminho anunciando que o Rei prometido estava chegando!"
+    },
+    {
+      "pergunta": "Como Jesus gostava de ensinar sobre o Reino de Deus?",
+      "opcoes": [
+        "Através de parábolas e histórias",
+        "Apenas cantando",
+        "Somente orando",
+        "Escrevendo livros"
+      ],
+      "correta": 0,
+      "justificativa": "Jesus adorava ensinar através de parábolas - histórias especiais que ajudavam as pessoas a entender melhor sobre o Reino de Deus!"
+    },
+    {
+      "pergunta": "O que aconteceu com Jesus no terceiro dia depois de Sua morte na cruz?",
+      "opcoes": [
+        "Ele continuou morto",
+        "Ele ressuscitou e venceu a morte",
+        "Ele foi embora para sempre",
+        "Ele virou um anjo"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus ressuscitou ao terceiro dia, vencendo a morte! Esta é a notícia mais maravilhosa - Ele está vivo e é nosso Rei para sempre!"
+    },
+    {
+      "pergunta": "Segundo Mateus, quantas vezes o Antigo Testamento foi citado para mostrar que Jesus cumpriu as profecias?",
+      "opcoes": [
+        "Mais de 30 vezes",
+        "Mais de 60 vezes",
+        "Apenas 10 vezes",
+        "Mais de 100 vezes"
+      ],
+      "correta": 1,
+      "justificativa": "Mateus citou o Antigo Testamento mais de 60 vezes para provar que Jesus é realmente o Rei prometido que cumpriu todas as profecias!"
+    },
+    {
+      "pergunta": "Qual é a grande missão que Jesus deu aos seus discípulos no final do livro de Mateus?",
+      "opcoes": [
+        "Ficar sempre no mesmo lugar",
+        "Contar ao mundo sobre Jesus",
+        "Construir uma igreja grande",
+        "Guardar segredo sobre Jesus"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus nos chamou para sermos seus mensageiros, contando ao mundo inteiro sobre Seu amor! Essa é nossa missão especial como seus discípulos."
+    },
+    {
+      "pergunta": "Que tipo de Reino Jesus veio estabelecer na Terra?",
+      "opcoes": [
+        "Um reino com castelos e coroas",
+        "Um reino de guerra e poder",
+        "Um reino de amor, paz e perdão",
+        "Um reino apenas para adultos"
+      ],
+      "correta": 2,
+      "justificativa": "O Reino de Jesus não é como os reinos terrenos - é um reino especial de amor, paz, perdão e bem eterno, onde todos podem fazer parte!"
+    }
+  ]
+}

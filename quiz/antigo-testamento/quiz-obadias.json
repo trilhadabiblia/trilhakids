@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é a característica especial do livro de Obadias?",
+      "opcoes": [
+        "É o livro mais longo da Bíblia",
+        "É o livro mais curto do Antigo Testamento",
+        "É o livro mais difícil de ler",
+        "É o livro com mais personagens"
+      ],
+      "correta": 1,
+      "justificativa": "Obadias é o livro mais curto do Antigo Testamento, com apenas 21 versículos! Isso mostra que não é o tamanho que importa, mas a mensagem poderosa que ele traz."
+    },
+    {
+      "pergunta": "O que significa o nome 'Obadias'?",
+      "opcoes": [
+        "Guerreiro de Deus",
+        "Servo do Senhor",
+        "Profeta corajoso",
+        "Mensageiro real"
+      ],
+      "correta": 1,
+      "justificativa": "O nome Obadias significa 'servo do Senhor'. Ele foi um profeta fiel que serviu a Deus com coragem, trazendo Sua mensagem mesmo sendo difícil."
+    },
+    {
+      "pergunta": "Qual nação recebeu a mensagem de julgamento no livro de Obadias?",
+      "opcoes": [
+        "Babilônia",
+        "Egito",
+        "Edom",
+        "Filístia"
+      ],
+      "correta": 2,
+      "justificativa": "Edom foi a nação que recebeu a mensagem de julgamento. Eles eram descendentes de Esaú e tinham se orgulhado muito, além de maltratar o povo de Judá."
+    },
+    {
+      "pergunta": "Qual era o primeiro grande problema de Edom mencionado por Obadias?",
+      "opcoes": [
+        "Eram muito pobres",
+        "Eram muito orgulhosos",
+        "Eram muito fracos",
+        "Eram muito pequenos"
+      ],
+      "correta": 1,
+      "justificativa": "O orgulho foi o grande problema de Edom. Eles pensavam que eram invencíveis por morar nas montanhas altas, mas Deus mostrou que ninguém é maior que Ele!"
+    },
+    {
+      "pergunta": "Como Edom reagiu quando Judá estava sofrendo?",
+      "opcoes": [
+        "Ajudaram com comida",
+        "Ficaram tristes e oraram",
+        "Riram e ajudaram os inimigos",
+        "Fugiram com medo"
+      ],
+      "correta": 2,
+      "justificativa": "Edom fez algo muito ruim: quando Judá (seus irmãos) estava sofrendo, eles riram da situação e ainda ajudaram os inimigos! Isso deixou Deus muito triste."
+    },
+    {
+      "pergunta": "Quantos versículos tem o livro de Obadias?",
+      "opcoes": [
+        "15 versículos",
+        "21 versículos",
+        "30 versículos",
+        "25 versículos"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Obadias tem exatamente 21 versículos! É pequeno em tamanho, mas gigante em ensinamentos sobre a justiça e o amor de Deus."
+    },
+    {
+      "pergunta": "Qual é a primeira lição importante que aprendemos com Obadias?",
+      "opcoes": [
+        "A riqueza traz felicidade",
+        "O orgulho traz queda",
+        "A força vence tudo",
+        "O poder é importante"
+      ],
+      "correta": 1,
+      "justificativa": "A primeira grande lição é que 'o orgulho traz queda'. Edom se achava invencível, mas Deus mostrou que a humildade é sempre melhor que o orgulho."
+    },
+    {
+      "pergunta": "O que Deus prometeu no final do livro de Obadias?",
+      "opcoes": [
+        "Que todos ficariam ricos",
+        "Que não haveria mais guerras",
+        "Que o Reino seria do Senhor",
+        "Que todos seriam reis"
+      ],
+      "correta": 2,
+      "justificativa": "Deus prometeu que 'o Reino seria do Senhor'! Isso significa que no final, Deus vence, Sua justiça reina, e Ele cuida de todos que confiam Nele."
+    },
+    {
+      "pergunta": "Edom era descendente de qual personagem bíblico?",
+      "opcoes": [
+        "Jacó",
+        "Esaú",
+        "Abraão",
+        "Isaque"
+      ],
+      "correta": 1,
+      "justificativa": "Edom era descendente de Esaú, que era irmão de Jacó. Por isso era ainda mais triste eles maltratarem Judá, pois eram como família!"
+    },
+    {
+      "pergunta": "Qual a segunda lição importante que Obadias ensina?",
+      "opcoes": [
+        "Deus às vezes não vê o que fazemos",
+        "Deus vê tudo e é justo",
+        "Deus não se importa com outras nações",
+        "Deus só ama algumas pessoas"
+      ],
+      "correta": 1,
+      "justificativa": "A segunda lição é que 'Deus vê tudo e é justo'. Ele viu como Edom tratou mal Seu povo e mostrou que nenhuma injustiça passa despercebida por Ele."
+    }
+  ]
+}

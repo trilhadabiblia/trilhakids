@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era o nome da sogra de Rute?",
+      "opcoes": [
+        "Ana",
+        "Noemi",
+        "Sara",
+        "Rebeca"
+      ],
+      "correta": 1,
+      "justificativa": "Noemi era a sogra de Rute. Rute demonstrou grande amor e fidelidade ao decidir ficar com Noemi mesmo depois que seu marido morreu."
+    },
+    {
+      "pergunta": "O que Rute disse para Noemi quando ela quis voltar para sua terra?",
+      "opcoes": [
+        "Tchau, boa sorte!",
+        "Vou ficar aqui mesmo",
+        "Onde você for, eu vou também",
+        "Nos vemos depois"
+      ],
+      "correta": 2,
+      "justificativa": "Rute disse 'Onde você for, eu vou também' (Rute 1:16-17), mostrando sua fidelidade e amor verdadeiro por Noemi. Esta é uma das frases mais bonitas sobre amizade na Bíblia!"
+    },
+    {
+      "pergunta": "Onde Rute trabalhava para conseguir comida?",
+      "opcoes": [
+        "Na padaria",
+        "No campo de trigo",
+        "Na feira",
+        "Em casa"
+      ],
+      "correta": 1,
+      "justificativa": "Rute trabalhava duro no campo de trigo para conseguir comida para ela e Noemi. Seu trabalho e dedicação mostraram sua fé e amor pelo próximo."
+    },
+    {
+      "pergunta": "Qual era o nome do homem bondoso que se casou com Rute?",
+      "opcoes": [
+        "Davi",
+        "Boaz",
+        "Samuel",
+        "José"
+      ],
+      "correta": 1,
+      "justificativa": "Boaz era um homem gentil e bondoso que se casou com Rute. Deus usou Boaz para abençoar Rute por sua fidelidade e trabalho duro."
+    },
+    {
+      "pergunta": "Como se chamava o filho de Rute e Boaz?",
+      "opcoes": [
+        "Davi",
+        "Salomão",
+        "Obede",
+        "Isaí"
+      ],
+      "correta": 2,
+      "justificativa": "O filho de Rute e Boaz se chamava Obede. Ele se tornou avô do rei Davi, fazendo parte da família que levaria a Jesus!"
+    },
+    {
+      "pergunta": "Rute era de qual povo?",
+      "opcoes": [
+        "Israelita",
+        "Egípcia",
+        "Moabita",
+        "Filisteia"
+      ],
+      "correta": 2,
+      "justificativa": "Rute era moabita, ou seja, de outro povo. Isso mostra que Deus ama e cuida de pessoas de todas as nações que O buscam com fé."
+    },
+    {
+      "pergunta": "Qual é o primeiro segredo de Rute mencionado na história?",
+      "opcoes": [
+        "Trabalho duro",
+        "Amizade verdadeira",
+        "Ser rica",
+        "Ser bonita"
+      ],
+      "correta": 1,
+      "justificativa": "O primeiro segredo de Rute é a amizade verdadeira. Ela não deixou Noemi sozinha e mostrou o que é ser uma amiga de verdade, mesmo nos momentos difíceis."
+    },
+    {
+      "pergunta": "Por que Rute é importante na história que leva a Jesus?",
+      "opcoes": [
+        "Ela era prima de Jesus",
+        "Ela foi mãe de Jesus",
+        "Ela faz parte da família de Jesus",
+        "Ela ensinou Jesus"
+      ],
+      "correta": 2,
+      "justificativa": "Rute é importante porque faz parte da família que leva a Jesus. Seu filho Obede foi avô do rei Davi, e Jesus nasceu da família de Davi!"
+    },
+    {
+      "pergunta": "O que o livro de Rute nos ensina principalmente?",
+      "opcoes": [
+        "Como plantar trigo",
+        "Fidelidade, amizade e que Deus cuida de nós",
+        "Como ser rico",
+        "Como ser rei"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Rute nos ensina sobre fidelidade, amizade verdadeira e como Deus cuida das pessoas que confiam nEle. São lições muito importantes para nossa vida!"
+    },
+    {
+      "pergunta": "Segundo a história, Deus viu o quê em Rute?",
+      "opcoes": [
+        "Sua beleza",
+        "Sua riqueza",
+        "Sua fé e seu coração",
+        "Suas roupas bonitas"
+      ],
+      "correta": 2,
+      "justificativa": "Deus viu a fé e o coração bondoso de Rute. Por isso Ele enviou Boaz como uma bênção para ela. Deus sempre olha para nosso coração e nossa fé!"
+    }
+  ]
+}

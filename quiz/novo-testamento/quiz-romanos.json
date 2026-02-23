@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta aos Romanos?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "João",
+        "Lucas"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo, o apóstolo corajoso, escreveu esta carta especial para ensinar os cristãos de Roma sobre o amor de Deus!"
+    },
+    {
+      "pergunta": "Segundo Romanos 3:23, o que aconteceu com todas as pessoas?",
+      "opcoes": [
+        "Todas são perfeitas",
+        "Todas pecaram",
+        "Todas são ricas",
+        "Todas moram em Roma"
+      ],
+      "correta": 1,
+      "justificativa": "A Bíblia ensina que 'todos pecaram', mas a boa notícia é que Deus nos ama mesmo assim e quer nos ajudar!"
+    },
+    {
+      "pergunta": "Como somos salvos, segundo o livro de Romanos?",
+      "opcoes": [
+        "Por fazer boas obras",
+        "Pela fé em Jesus",
+        "Por ser rico",
+        "Por morar em Roma"
+      ],
+      "correta": 1,
+      "justificativa": "A salvação é um presente gratuito de Deus! Somos salvos pela fé em Jesus, não por nossas obras."
+    },
+    {
+      "pergunta": "Para qual cidade Paulo escreveu esta carta?",
+      "opcoes": [
+        "Jerusalém",
+        "Atenas",
+        "Roma",
+        "Corinto"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo escreveu para os cristãos que moravam em Roma, a capital do império romano!"
+    },
+    {
+      "pergunta": "O que acontece quando Jesus entra no nosso coração?",
+      "opcoes": [
+        "Ficamos tristes",
+        "Nos tornamos pessoas novas",
+        "Perdemos os amigos",
+        "Ficamos doentes"
+      ],
+      "correta": 1,
+      "justificativa": "Quando Jesus entra no coração, há transformação! Nos tornamos novas criaturas, cheias de amor e alegria!"
+    },
+    {
+      "pergunta": "Qual é o primeiro segredo de Romanos?",
+      "opcoes": [
+        "Todos são perfeitos",
+        "Todos precisam de salvação",
+        "Todos são ricos",
+        "Todos moram em Roma"
+      ],
+      "correta": 1,
+      "justificativa": "O primeiro segredo é que todos nós precisamos de salvação, porque todos pecaram, mas Deus nos ama muito!"
+    },
+    {
+      "pergunta": "Como Paulo conhecia os cristãos de Roma quando escreveu a carta?",
+      "opcoes": [
+        "Ele morava lá",
+        "Ele não os conhecia pessoalmente ainda",
+        "Eles eram sua família",
+        "Ele estudou com eles"
+      ],
+      "correta": 1,
+      "justificativa": "Que incrível! Paulo escreveu esta carta antes de conhecer pessoalmente os cristãos de Roma, mas tinha um grande amor por eles!"
+    },
+    {
+      "pergunta": "A salvação é um presente que nós:",
+      "opcoes": [
+        "Precisamos comprar",
+        "Precisamos merecer",
+        "Ganhamos de graça pela fé",
+        "Só ganhamos sendo perfeitos"
+      ],
+      "correta": 2,
+      "justificativa": "A salvação é um presente gratuito de Deus! Não precisamos fazer nada para merecer, apenas crer em Jesus!"
+    },
+    {
+      "pergunta": "O que Paulo queria mostrar com esta carta?",
+      "opcoes": [
+        "Como ser rico",
+        "Como a graça de Deus transforma vidas",
+        "Como viajar pelo mundo",
+        "Como escrever cartas"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo queria mostrar como a graça de Deus tem o poder incrível de transformar completamente nossa vida!"
+    },
+    {
+      "pergunta": "Qual é o terceiro segredo de Romanos?",
+      "opcoes": [
+        "Vida antiga em Cristo",
+        "Nova vida em Cristo",
+        "Vida triste em Cristo",
+        "Vida difícil em Cristo"
+      ],
+      "correta": 1,
+      "justificativa": "O terceiro segredo é a nova vida em Cristo! Quando Jesus entra no coração, vivemos em amor e liberdade!"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Segundo João 8:12, Jesus disse: 'Eu sou a _______ do mundo'",
+      "opcoes": [
+        "estrela",
+        "luz",
+        "água",
+        "pedra"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus disse 'Eu sou a luz do mundo'. Isso significa que Ele veio para iluminar nossa vida e nos guiar no caminho certo!"
+    },
+    {
+      "pergunta": "Qual foi o primeiro milagre que Jesus fez no livro de João?",
+      "opcoes": [
+        "Curou um cego",
+        "Transformou água em vinho",
+        "Ressuscitou Lázaro",
+        "Multiplicou os pães"
+      ],
+      "correta": 1,
+      "justificativa": "O primeiro milagre de Jesus foi transformar água em vinho em uma festa de casamento. Isso mostrou o poder divino de Jesus!"
+    },
+    {
+      "pergunta": "Complete o versículo mais famoso de João 3:16: 'Porque Deus amou o _______ de tal maneira...'",
+      "opcoes": [
+        "céu",
+        "mundo",
+        "mar",
+        "templo"
+      ],
+      "correta": 1,
+      "justificativa": "João 3:16 diz que 'Deus amou o mundo de tal maneira'. Este versículo mostra o grande amor de Deus por todas as pessoas!"
+    },
+    {
+      "pergunta": "Quantos sinais (milagres) especiais João escreveu no seu evangelho?",
+      "opcoes": [
+        "cinco",
+        "seis",
+        "sete",
+        "oito"
+      ],
+      "correta": 2,
+      "justificativa": "João escreveu sobre sete sinais especiais de Jesus para mostrar que Ele é realmente o Filho de Deus!"
+    },
+    {
+      "pergunta": "Quem era o amigo de Jesus que ele ressuscitou dos mortos?",
+      "opcoes": [
+        "Pedro",
+        "João",
+        "Lázaro",
+        "Nicodemos"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus ressuscitou seu amigo Lázaro, mostrando que Ele tem poder sobre a morte. Que milagre incrível!"
+    },
+    {
+      "pergunta": "Qual era o nome do homem que visitou Jesus à noite para fazer perguntas?",
+      "opcoes": [
+        "Nicodemos",
+        "Pedro",
+        "André",
+        "Tomé"
+      ],
+      "correta": 0,
+      "justificativa": "Nicodemos visitou Jesus à noite e Jesus lhe ensinou sobre nascer de novo. Ele queria aprender mais sobre Jesus!"
+    },
+    {
+      "pergunta": "Segundo João, no princípio era o _______, e o _______ estava com Deus:",
+      "opcoes": [
+        "Amor",
+        "Verbo",
+        "Espírito",
+        "Anjo"
+      ],
+      "correta": 1,
+      "justificativa": "João 1:1 diz 'No princípio era o Verbo'. O Verbo é Jesus, que sempre existiu com Deus Pai desde o início de tudo!"
+    },
+    {
+      "pergunta": "Por que João escreveu seu evangelho?",
+      "opcoes": [
+        "Para contar histórias",
+        "Para ensinar matemática",
+        "Para que creamos que Jesus é o Cristo",
+        "Para falar sobre animais"
+      ],
+      "correta": 2,
+      "justificativa": "João escreveu para que creamos que Jesus é o Cristo, o Filho de Deus, e tenhamos vida eterna em Seu nome!"
+    },
+    {
+      "pergunta": "Quais eram as irmãs que eram amigas especiais de Jesus?",
+      "opcoes": [
+        "Ana e Isabel",
+        "Rute e Ester",
+        "Maria e Marta",
+        "Sara e Rebeca"
+      ],
+      "correta": 2,
+      "justificativa": "Maria e Marta eram irmãs que amavam Jesus e O recebiam em sua casa. Elas eram muito especiais para Ele!"
+    },
+    {
+      "pergunta": "Qual milagre Jesus fez quando havia muitas pessoas com fome?",
+      "opcoes": [
+        "Fez chover comida",
+        "Multiplicou pães e peixes",
+        "Transformou pedras em pão",
+        "Chamou anjos para trazer comida"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus multiplicou cinco pães e dois peixes para alimentar milhares de pessoas! Isso mostrou Seu amor e cuidado por todos!"
+    }
+  ]
+}

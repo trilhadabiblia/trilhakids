@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem foi o líder que conduziu o povo de Israel para a Terra Prometida?",
+      "opcoes": [
+        "Moisés",
+        "Josué",
+        "Davi",
+        "Abraão"
+      ],
+      "correta": 1,
+      "justificativa": "Josué foi escolhido por Deus para liderar o povo depois da morte de Moisés e conduzi-los à Terra Prometida!"
+    },
+    {
+      "pergunta": "O que significa o nome 'Josué'?",
+      "opcoes": [
+        "O forte guerreiro",
+        "O Senhor salva",
+        "O líder sábio",
+        "O homem corajoso"
+      ],
+      "correta": 1,
+      "justificativa": "O nome Josué significa 'O Senhor salva', lembrando-nos de Jesus, nosso Salvador!"
+    },
+    {
+      "pergunta": "Como o povo de Israel atravessou o rio Jordão?",
+      "opcoes": [
+        "Nadando",
+        "De barco",
+        "As águas se abriram milagrosamente",
+        "Por uma ponte"
+      ],
+      "correta": 2,
+      "justificativa": "Deus fez um milagre e abriu as águas do rio Jordão para que o povo pudesse atravessar em terra seca!"
+    },
+    {
+      "pergunta": "Quantos dias o povo marchou ao redor de Jericó antes dos muros caírem?",
+      "opcoes": [
+        "3 dias",
+        "5 dias",
+        "7 dias",
+        "10 dias"
+      ],
+      "correta": 2,
+      "justificativa": "O povo marchou ao redor de Jericó por 7 dias, seguindo as instruções de Deus, antes dos muros caírem!"
+    },
+    {
+      "pergunta": "O que fez os muros de Jericó caírem?",
+      "opcoes": [
+        "Máquinas de guerra",
+        "O grito do povo e as trombetas",
+        "Terremotos",
+        "Catapultas"
+      ],
+      "correta": 1,
+      "justificativa": "Os muros caíram quando o povo gritou e as trombetas tocaram, mostrando o poder de Deus através da obediência!"
+    },
+    {
+      "pergunta": "Qual foi o milagre que Josué pediu a Deus durante uma batalha?",
+      "opcoes": [
+        "Que chovesse fogo",
+        "Que o sol parasse no céu",
+        "Que o mar se abrisse",
+        "Que aparecesse um anjo"
+      ],
+      "correta": 1,
+      "justificativa": "Josué pediu a Deus que o sol parasse no céu para ter mais tempo de batalha, e Deus atendeu seu pedido!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Josué?",
+      "opcoes": [
+        "20 capítulos",
+        "22 capítulos",
+        "24 capítulos",
+        "26 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Josué tem 24 capítulos cheios de aventuras emocionantes sobre a conquista da Terra Prometida!"
+    },
+    {
+      "pergunta": "Qual versículo famoso Josué falou sobre servir ao Senhor?",
+      "opcoes": [
+        "Josué 1:9",
+        "Josué 6:20",
+        "Josué 24:15",
+        "Josué 10:12"
+      ],
+      "correta": 2,
+      "justificativa": "Em Josué 24:15, ele disse: 'Eu e minha casa serviremos ao Senhor', mostrando sua decisão de seguir a Deus!"
+    },
+    {
+      "pergunta": "Antes de ser líder, Josué foi assistente de quem?",
+      "opcoes": [
+        "Abraão",
+        "Davi",
+        "Moisés",
+        "Salomão"
+      ],
+      "correta": 2,
+      "justificativa": "Josué foi assistente de Moisés e aprendeu muito com ele antes de se tornar o líder do povo de Israel!"
+    },
+    {
+      "pergunta": "Qual era o nome da terra que Deus prometeu dar ao povo de Israel?",
+      "opcoes": [
+        "Egito",
+        "Babilônia",
+        "Canaã",
+        "Assíria"
+      ],
+      "correta": 2,
+      "justificativa": "Canaã era o nome da Terra Prometida, o lugar especial que Deus havia prometido a Abraão e seus descendentes!"
+    }
+  ]
+}

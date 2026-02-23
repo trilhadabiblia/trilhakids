@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era a profissão de Miqueias?",
+      "opcoes": [
+        "Rei",
+        "Profeta",
+        "Sacerdote",
+        "Soldado"
+      ],
+      "correta": 1,
+      "justificativa": "Miqueias era um profeta corajoso que não tinha medo de falar a verdade, especialmente em defesa dos pobres e oprimidos."
+    },
+    {
+      "pergunta": "O que significa o nome Miqueias?",
+      "opcoes": [
+        "Deus é grande",
+        "Quem é como o Senhor?",
+        "Servo de Deus",
+        "Mensageiro do céu"
+      ],
+      "correta": 1,
+      "justificativa": "O nome Miqueias significa 'Quem é como o Senhor?', mostrando que Deus é único e incomparável."
+    },
+    {
+      "pergunta": "Segundo Miqueias 6:8, quais são as três coisas que Deus requer de nós?",
+      "opcoes": [
+        "Orar, jejuar e dar ofertas",
+        "Praticar justiça, amar a bondade e andar humildemente com Deus",
+        "Ler a Bíblia, cantar e evangelizar",
+        "Ir à igreja, obedecer aos pais e estudar"
+      ],
+      "correta": 1,
+      "justificativa": "Este versículo é como uma receita divina que nos ensina exatamente o que Deus espera: justiça, bondade e humildade."
+    },
+    {
+      "pergunta": "Em qual cidade Miqueias profetizou que o Salvador nasceria?",
+      "opcoes": [
+        "Jerusalém",
+        "Nazaré",
+        "Belém",
+        "Cafarnaum"
+      ],
+      "correta": 2,
+      "justificativa": "Miqueias profetizou que em Belém nasceria o Salvador, e essa profecia se cumpriu perfeitamente com Jesus, cerca de 700 anos depois!"
+    },
+    {
+      "pergunta": "Por que Miqueias criticava os líderes de Israel e Judá?",
+      "opcoes": [
+        "Porque não pagavam impostos",
+        "Porque eram pobres",
+        "Porque maltratavam os pobres e não seguiam as leis de Deus",
+        "Porque não sabiam ler"
+      ],
+      "correta": 2,
+      "justificativa": "Miqueias era corajoso e denunciava os líderes que eram cruéis com os pobres, roubavam suas terras e não seguiam as leis de Deus."
+    },
+    {
+      "pergunta": "Quantos anos ANTES de Jesus nascer Miqueias fez a profecia sobre Belém?",
+      "opcoes": [
+        "100 anos",
+        "300 anos",
+        "500 anos",
+        "700 anos"
+      ],
+      "correta": 3,
+      "justificativa": "É incrível! Miqueias profetizou o local exato onde Jesus nasceria cerca de 700 anos antes, mostrando que Deus planeja tudo com antecedência."
+    },
+    {
+      "pergunta": "Onde Miqueias vivia?",
+      "opcoes": [
+        "Na cidade grande",
+        "No campo",
+        "No palácio",
+        "No templo"
+      ],
+      "correta": 1,
+      "justificativa": "Miqueias era um profeta que vivia no campo, mas isso não o impediu de falar corajosamente a verdade aos poderosos da cidade."
+    },
+    {
+      "pergunta": "Qual é o equilíbrio perfeito que o livro de Miqueias mostra sobre Deus?",
+      "opcoes": [
+        "Poder e sabedoria",
+        "Justiça e misericórdia",
+        "Amor e bondade",
+        "Força e proteção"
+      ],
+      "correta": 1,
+      "justificativa": "O livro mostra que Deus é perfeitamente justo (não tolera o mal) e misericordioso (oferece perdão e nova chance para quem se arrepende)."
+    },
+    {
+      "pergunta": "Quando os magos perguntaram ao rei Herodes onde nasceria o Rei dos Judeus, qual profecia os sacerdotes citaram?",
+      "opcoes": [
+        "Isaías 9:6",
+        "Miqueias 5:2",
+        "Jeremias 1:5",
+        "Daniel 2:44"
+      ],
+      "correta": 1,
+      "justificativa": "Os sacerdotes citaram Miqueias 5:2, a profecia sobre Belém, mostrando como as palavras de Miqueias eram conhecidas e importantes."
+    },
+    {
+      "pergunta": "Qual dos símbolos representa o primeiro segredo de Miqueias?",
+      "opcoes": [
+        "Uma estrela",
+        "Um coração",
+        "Uma balança",
+        "Uma coroa"
+      ],
+      "correta": 2,
+      "justificativa": "A balança da justiça representa o primeiro segredo de Miqueias, lembrando que Deus não gosta de ver os fortes fazendo mal aos pequeninos."
+    }
+  ]
+}

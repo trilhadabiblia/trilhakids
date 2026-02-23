@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem foi Oséias no livro da Bíblia?",
+      "opcoes": [
+        "Um rei de Israel",
+        "Um profeta fiel de Deus",
+        "Um soldado corajoso",
+        "Um comerciante rico"
+      ],
+      "correta": 1,
+      "justificativa": "Oséias foi um profeta que obedeceu a Deus mesmo quando foi difícil, mostrando o amor fiel de Deus através de sua própria vida."
+    },
+    {
+      "pergunta": "Como se chamava a esposa de Oséias?",
+      "opcoes": [
+        "Maria",
+        "Ana",
+        "Gômer",
+        "Sara"
+      ],
+      "correta": 2,
+      "justificativa": "Gômer era a esposa de Oséias que representava o povo de Israel que se afastou de Deus, mas foi buscada de volta com amor."
+    },
+    {
+      "pergunta": "O que Gômer representa na história de Oséias?",
+      "opcoes": [
+        "O amor de Deus",
+        "O povo de Israel",
+        "Os profetas",
+        "Os reis"
+      ],
+      "correta": 1,
+      "justificativa": "Gômer representa o povo de Israel que abandonou a Deus, mostrando como mesmo assim Deus continua nos amando e nos perdoando."
+    },
+    {
+      "pergunta": "Qual é o principal ensinamento do livro de Oséias?",
+      "opcoes": [
+        "Ser sempre obediente",
+        "O amor incondicional de Deus",
+        "A importância da riqueza",
+        "Como ser um bom líder"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Oséias nos ensina sobre o amor incondicional de Deus, que nos ama e perdoa mesmo quando erramos."
+    },
+    {
+      "pergunta": "Segundo Oséias 14:4, o que Deus promete fazer?",
+      "opcoes": [
+        "Dar riquezas",
+        "Curar da infidelidade e amar de livre vontade",
+        "Construir um templo",
+        "Enviar chuva"
+      ],
+      "correta": 1,
+      "justificativa": "Este versículo mostra a promessa maravilhosa de Deus de nos curar quando erramos e nos amar sem condições."
+    },
+    {
+      "pergunta": "O que aconteceu quando Gômer se afastou de Oséias?",
+      "opcoes": [
+        "Oséias desistiu dela",
+        "Oséias ficou muito bravo",
+        "Oséias a buscou e trouxe de volta",
+        "Oséias se mudou para longe"
+      ],
+      "correta": 2,
+      "justificativa": "Assim como Oséias buscou Gômer de volta, Deus sempre nos busca quando nos afastamos dele, mostrando Seu amor que nunca desiste."
+    },
+    {
+      "pergunta": "Qual versículo nos convida a voltar para Deus?",
+      "opcoes": [
+        "Oséias 6:1 - 'Venham, voltemos para o Senhor'",
+        "Oséias 1:1",
+        "Oséias 10:5",
+        "Oséias 13:2"
+      ],
+      "correta": 0,
+      "justificativa": "Este versículo nos lembra que sempre podemos voltar para Deus, que nos recebe com braços abertos e amor."
+    },
+    {
+      "pergunta": "Por que a história de Oséias é chamada de 'parábola viva'?",
+      "opcoes": [
+        "Porque aconteceu em um sonho",
+        "Porque Oséias VIVEU a mensagem do amor de Deus",
+        "Porque foi inventada",
+        "Porque durou muito tempo"
+      ],
+      "correta": 1,
+      "justificativa": "Oséias não apenas pregou sobre o amor de Deus, ele viveu essa mensagem todos os dias através de sua própria experiência."
+    },
+    {
+      "pergunta": "Segundo os ensinamentos de Oséias, o que acontece quando nos arrependemos?",
+      "opcoes": [
+        "Ficamos tristes para sempre",
+        "Deus fica bravo",
+        "Deus transforma tristeza em canção",
+        "Temos que esperar muito tempo"
+      ],
+      "correta": 2,
+      "justificativa": "O arrependimento traz restauração e alegria! Deus transforma nossa tristeza em canção quando voltamos para Ele."
+    },
+    {
+      "pergunta": "Qual é a característica mais importante do amor de Deus mostrada em Oséias?",
+      "opcoes": [
+        "Ele só ama quem é perfeito",
+        "Ele desiste facilmente",
+        "Ele nunca desiste e sempre perdoa",
+        "Ele ama apenas algumas pessoas"
+      ],
+      "correta": 2,
+      "justificativa": "O amor de Deus é fiel e nunca muda! Ele sempre nos perdoa e nos dá novas chances, não importa quantas vezes erremos."
+    }
+  ]
+}

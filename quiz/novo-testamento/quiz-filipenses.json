@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Onde Paulo estava quando escreveu a carta aos Filipenses?",
+      "opcoes": [
+        "Em casa descansando",
+        "Na prisão em Roma",
+        "Viajando de navio",
+        "Visitando os filipenses"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreveu esta carta alegre enquanto estava preso em Roma, mostrando que a verdadeira alegria vem de Jesus!"
+    },
+    {
+      "pergunta": "Quantas vezes Paulo fala sobre alegria na carta aos Filipenses?",
+      "opcoes": [
+        "5 vezes",
+        "10 vezes",
+        "Mais de 15 vezes",
+        "2 vezes"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo menciona alegria mais de 15 vezes, por isso Filipenses é chamada de 'A Carta da Alegria'!"
+    },
+    {
+      "pergunta": "Complete o versículo: 'Tudo posso naquele que me...'",
+      "opcoes": [
+        "protege",
+        "fortalece",
+        "abraça",
+        "ensina"
+      ],
+      "correta": 1,
+      "justificativa": "Este é um dos versículos mais famosos! 'Tudo posso naquele que me fortalece' nos lembra que Jesus nos dá força para tudo!"
+    },
+    {
+      "pergunta": "Qual foi a primeira igreja que Paulo fundou na Europa?",
+      "opcoes": [
+        "A igreja de Roma",
+        "A igreja de Corinto",
+        "A igreja de Filipos",
+        "A igreja de Atenas"
+      ],
+      "correta": 2,
+      "justificativa": "A igreja de Filipos foi muito especial para Paulo por ser a primeira na Europa e eram muito generosos!"
+    },
+    {
+      "pergunta": "Segundo Filipenses 4:4, o que devemos fazer sempre no Senhor?",
+      "opcoes": [
+        "Cantar",
+        "Alegrar-nos",
+        "Estudar",
+        "Trabalhar"
+      ],
+      "correta": 1,
+      "justificativa": "'Alegrem-se sempre no Senhor!' Este versículo nos ensina que podemos ter alegria constante em Jesus!"
+    },
+    {
+      "pergunta": "O que Jesus fez para nos ensinar sobre humildade?",
+      "opcoes": [
+        "Construiu uma grande casa",
+        "Sendo Deus, se fez servo",
+        "Ficou no céu",
+        "Mandou anjos nos ajudar"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus nos deu o maior exemplo de humildade: sendo Deus, se tornou servo para nos salvar!"
+    },
+    {
+      "pergunta": "Como os cristãos de Filipos ajudavam Paulo?",
+      "opcoes": [
+        "Só orando por ele",
+        "Enviando presentes e orações",
+        "Visitando a prisão",
+        "Escrevendo cartas"
+      ],
+      "correta": 1,
+      "justificativa": "Os filipenses eram muito generosos! Eles enviavam presentes e orações para ajudar Paulo em suas viagens missionárias!"
+    },
+    {
+      "pergunta": "Quais são os três segredos de Filipenses?",
+      "opcoes": [
+        "Alegria, Força e Humildade",
+        "Oração, Jejum e Leitura",
+        "Fé, Esperança e Amor",
+        "Paz, Sabedoria e Coragem"
+      ],
+      "correta": 0,
+      "justificativa": "Os três segredos são: Alegria em qualquer lugar, Força em Cristo e Humildade como Jesus!"
+    },
+    {
+      "pergunta": "De onde vem a verdadeira alegria segundo Filipenses?",
+      "opcoes": [
+        "De brinquedos e jogos",
+        "De muito dinheiro",
+        "De Jesus Cristo",
+        "De muitos amigos"
+      ],
+      "correta": 2,
+      "justificativa": "A verdadeira alegria não vem de coisas materiais, mas de Jesus! Por isso podemos ser alegres em qualquer situação!"
+    },
+    {
+      "pergunta": "O que Paulo ensinou sobre como devemos tratar os outros?",
+      "opcoes": [
+        "Pensar só em nós mesmos",
+        "Pensar nos outros antes de nós",
+        "Ignorar quem precisa",
+        "Ser sempre o primeiro"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensinou: 'Nada façam por egoísmo, mas com humildade' - devemos pensar nos outros primeiro, como Jesus fez!"
+    }
+  ]
+}

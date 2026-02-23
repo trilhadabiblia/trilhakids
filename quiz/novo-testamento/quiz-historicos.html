@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atos dos Apóstolos - Quiz da Bíblia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gradient-to-br from-slate-900 via-orange-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <header
+    class="bg-gradient-to-r from-orange-600 to-red-700 backdrop-blur-xl border-b border-orange-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+      <div class="flex items-center justify-center">
+        <div class="hidden md:block">
+          <h1 class="text-4xl font-black text-white drop-shadow-lg">🔥 HISTÓRICO — NOVO TESTAMENTO</h1>
+          <p class="text-orange-100 text-sm md:text-base">A expansão da Igreja pelo mundo</p>
+        </div>
+        <div class="md:hidden">
+          <h1 class="text-2xl font-black text-white drop-shadow-lg">🔥 HISTÓRICO — NT</h1>
+          <p class="text-orange-100 text-sm md:text-base">A expansão da Igreja pelo mundo</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-7xl mx-auto px-4 py-12">
+
+    <!-- Hero Section -->
+    <section class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-black text-white mb-4">
+        🌍 Atos dos Apóstolos
+      </h2>
+      <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+        O livro de Atos narra o nascimento da Igreja, a descida do Espírito Santo e a missão dos apóstolos levando o Evangelho de Jerusalém até os confins da terra.
+      </p>
+    </section>
+
+    <!-- Livro único centralizado -->
+    <div class="flex justify-center mb-12">
+      <div class="group cursor-pointer w-full max-w-sm" onclick="irPara('quiz-atos.html')">
+        <div
+          class="bg-gradient-to-br from-orange-500 to-red-700 rounded-2xl p-12 text-center hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 hover:scale-105">
+          <div class="text-7xl mb-6">🕊️</div>
+          <h3 class="font-black text-white text-2xl mb-3">Atos dos Apóstolos</h3>
+          <p class="text-orange-100 text-base">O Espírito Santo e a Igreja</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curiosidade -->
+    <section class="max-w-2xl mx-auto">
+      <div class="bg-white/5 border border-orange-400/20 rounded-xl p-6 text-center">
+        <p class="text-orange-300 font-semibold text-sm uppercase tracking-widest mb-2">Você sabia?</p>
+        <p class="text-gray-300 text-base">
+          Atos foi escrito pelo mesmo autor de Lucas — o médico e historiador <strong class="text-white">Lucas</strong> — e é a continuação direta do seu Evangelho, narrando tudo o que Jesus continuou a fazer por meio do Espírito Santo.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-orange-500/30 p-6 text-center text-gray-400">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para criança</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+
+      sidebar.classList.toggle('menu-open');
+      sidebar.classList.toggle('menu-closed');
+      overlay.classList.toggle('overlay-show');
+      overlay.classList.toggle('overlay-hide');
+    }
+
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+
+    document.querySelectorAll('#sidebar a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+
+      if (window.innerWidth >= 768) {
+        sidebar.classList.remove('menu-open');
+        sidebar.classList.add('menu-closed');
+        overlay.classList.remove('overlay-show');
+        overlay.classList.add('overlay-hide');
+      }
+    });
+  </script>
+  <script src="/menu.js"></script>
+  <script src="./gamificacao.js"></script>
+</body>
+
+</html>

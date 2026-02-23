@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "O que significa o nome 'Malaquias'?",
+      "opcoes": [
+        "Meu Rei",
+        "Meu Mensageiro",
+        "Meu Amigo",
+        "Meu Pastor"
+      ],
+      "correta": 1,
+      "justificativa": "Malaquias significa 'Meu Mensageiro'! Ele foi o mensageiro especial que Deus enviou para entregar Sua última mensagem no Antigo Testamento."
+    },
+    {
+      "pergunta": "Qual era o principal problema do povo de Israel no tempo de Malaquias?",
+      "opcoes": [
+        "Eles não sabiam ler",
+        "Eles ofereciam sacrifícios ruins e tinham corações frios",
+        "Eles não tinham templo",
+        "Eles moravam longe de Jerusalém"
+      ],
+      "correta": 1,
+      "justificativa": "O povo estava oferecendo animais doentes e defeituosos como sacrifícios, era como dar sobras para Deus! Seus corações estavam frios e distantes do Senhor."
+    },
+    {
+      "pergunta": "Quantos segredos principais Malaquias nos ensina?",
+      "opcoes": [
+        "Dois",
+        "Quatro",
+        "Três",
+        "Cinco"
+      ],
+      "correta": 2,
+      "justificativa": "Malaquias nos ensina três segredos importantes: o coração sincero, o dízimo da bênção e que o mensageiro vem!"
+    },
+    {
+      "pergunta": "Segundo Malaquias 3:10, o que acontece quando trazemos nossos dízimos ao Senhor?",
+      "opcoes": [
+        "As janelas do céu se abrem e bênçãos caem",
+        "Ficamos mais ricos",
+        "Ganhamos presentes",
+        "Viramos famosos"
+      ],
+      "correta": 0,
+      "justificativa": "Deus promete abrir as janelas do céu e derramar bênçãos sem medida! Não é sobre dinheiro, é sobre confiar que Deus sempre vai nos cuidar."
+    },
+    {
+      "pergunta": "Por quantos anos houve silêncio profético depois de Malaquias?",
+      "opcoes": [
+        "100 anos",
+        "200 anos",
+        "300 anos",
+        "400 anos"
+      ],
+      "correta": 3,
+      "justificativa": "Depois de Malaquias, Deus ficou 400 anos sem enviar nenhum profeta! Esse silêncio só foi quebrado quando João Batista nasceu, como Malaquias havia profetizado."
+    },
+    {
+      "pergunta": "Quem foi o mensageiro especial que Malaquias profetizou que viria?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "João Batista",
+        "Moisés"
+      ],
+      "correta": 2,
+      "justificativa": "Malaquias profetizou sobre João Batista, que prepararia o caminho para Jesus! João foi como um anunciador especial: 'Preparem-se! O Rei está chegando!'"
+    },
+    {
+      "pergunta": "O que Deus quer mais de nós, segundo o primeiro segredo de Malaquias?",
+      "opcoes": [
+        "Dinheiro",
+        "Presentes caros",
+        "Corações sinceros e obedientes",
+        "Roupas bonitas"
+      ],
+      "correta": 2,
+      "justificativa": "Deus não quer apenas presentes, Ele quer corações obedientes! Não adianta fingir adoração, Deus vê dentro do nosso coração e quer que sejamos verdadeiros."
+    },
+    {
+      "pergunta": "Malaquias é considerado a ponte entre quais duas partes da Bíblia?",
+      "opcoes": [
+        "Gênesis e Êxodo",
+        "Antigo e Novo Testamento",
+        "Salmos e Provérbios",
+        "Mateus e Marcos"
+      ],
+      "correta": 1,
+      "justificativa": "Malaquias é a ponte entre o Antigo e o Novo Testamento! Ele fecha o Antigo Testamento mas aponta para Jesus, preparando a chegada do Salvador."
+    },
+    {
+      "pergunta": "Qual era a posição de Malaquias entre os profetas do Antigo Testamento?",
+      "opcoes": [
+        "O primeiro",
+        "O último",
+        "Um do meio",
+        "Não era profeta"
+      ],
+      "correta": 1,
+      "justificativa": "Malaquias foi o último profeta do Antigo Testamento! Como um carteiro especial, ele entregou a última mensagem de Deus antes dos 400 anos de silêncio."
+    },
+    {
+      "pergunta": "Segundo Malaquias, que tipo de sacrifícios o povo estava oferecendo a Deus?",
+      "opcoes": [
+        "Os melhores animais",
+        "Animais doentes e defeituosos",
+        "Frutas e vegetais",
+        "Ouro e prata"
+      ],
+      "correta": 1,
+      "justificativa": "O povo estava oferecendo animais doentes e defeituosos! Era como dar um presente quebrado para alguém que você ama. Deus merece sempre o nosso melhor!"
+    }
+  ]
+}

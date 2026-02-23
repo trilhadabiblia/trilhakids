@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quando Deus chamou Samuel no templo, o que ele respondeu?",
+      "opcoes": [
+        "Não posso te ouvir",
+        "Fala, Senhor, teu servo te escuta",
+        "Estou com sono",
+        "Vou chamar Eli"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel mostrou uma atitude de humildade e prontidão para ouvir a Deus, dizendo 'Fala, Senhor, teu servo te escuta'. Esta é a atitude que devemos ter quando Deus fala conosco!"
+    },
+    {
+      "pergunta": "Por que Deus escolheu Davi em vez de seus irmãos mais velhos?",
+      "opcoes": [
+        "Porque era o mais alto",
+        "Porque era o mais forte",
+        "Porque tinha um coração fiel a Deus",
+        "Porque era o mais velho"
+      ],
+      "correta": 2,
+      "justificativa": "Deus não olha a aparência externa, mas sim o coração! Davi tinha um coração que amava e obedecia a Deus, por isso foi escolhido para ser rei."
+    },
+    {
+      "pergunta": "Com que armas Davi derrotou o gigante Golias?",
+      "opcoes": [
+        "Espada e escudo",
+        "Lança e armadura",
+        "Funda e uma pedra",
+        "Arco e flecha"
+      ],
+      "correta": 2,
+      "justificativa": "Davi usou apenas uma funda e uma pedra, mas sua verdadeira força vinha da fé em Deus! Isso mostra que com Deus ao nosso lado, podemos vencer qualquer desafio."
+    },
+    {
+      "pergunta": "Quem foi o primeiro rei de Israel mencionado em 1 Samuel?",
+      "opcoes": [
+        "Davi",
+        "Saul",
+        "Samuel",
+        "Salomão"
+      ],
+      "correta": 1,
+      "justificativa": "Saul foi o primeiro rei de Israel. Samuel o ungiu como rei quando o povo pediu por um rei para governá-los."
+    },
+    {
+      "pergunta": "O que Samuel fazia quando era criança no templo?",
+      "opcoes": [
+        "Brincava o dia todo",
+        "Servia a Deus e ajudava Eli",
+        "Dormia muito",
+        "Fugia para casa"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel, mesmo sendo criança, servia a Deus no templo e ajudava o sacerdote Eli. Isso nos ensina que crianças também podem servir a Deus!"
+    },
+    {
+      "pergunta": "Segundo 1 Samuel 16:7, o que Deus vê quando olha para as pessoas?",
+      "opcoes": [
+        "A altura",
+        "A beleza",
+        "O coração",
+        "A força"
+      ],
+      "correta": 2,
+      "justificativa": "A Bíblia diz que 'o homem vê o exterior, mas o Senhor vê o coração'. Deus se importa mais com nossos sentimentos, nossa fé e nosso amor por Ele."
+    },
+    {
+      "pergunta": "Qual era a profissão de Davi antes de se tornar rei?",
+      "opcoes": [
+        "Soldado",
+        "Pastor de ovelhas",
+        "Construtor",
+        "Pescador"
+      ],
+      "correta": 1,
+      "justificativa": "Davi cuidava das ovelhas de seu pai. Como pastor, ele aprendeu a proteger e cuidar, qualidades importantes que o ajudaram a ser um bom rei!"
+    },
+    {
+      "pergunta": "Por que o povo de Israel tinha medo de lutar contra Golias?",
+      "opcoes": [
+        "Era muito pequeno",
+        "Era muito inteligente",
+        "Era um gigante muito alto e forte",
+        "Era muito rápido"
+      ],
+      "correta": 2,
+      "justificativa": "Golias era um gigante filisteu muito alto e forte que assustava todo o exército de Israel. Mas Davi não teve medo porque confiava em Deus!"
+    },
+    {
+      "pergunta": "Complete a frase que Davi disse a Golias: 'O Senhor não necessita de...'",
+      "opcoes": [
+        "comida nem água",
+        "ouro nem prata",
+        "espada nem lança para salvar",
+        "cavalos nem carros"
+      ],
+      "correta": 2,
+      "justificativa": "Davi declarou que Deus não precisa de armas para dar a vitória! Isso nos ensina que o poder de Deus é maior que qualquer força humana."
+    },
+    {
+      "pergunta": "Qual é uma das principais lições que aprendemos com a história de Samuel quando criança?",
+      "opcoes": [
+        "Crianças não podem servir a Deus",
+        "Só adultos ouvem a voz de Deus",
+        "Deus pode usar crianças para fazer coisas grandes",
+        "É melhor não orar"
+      ],
+      "correta": 2,
+      "justificativa": "A história de Samuel nos ensina que Deus pode usar qualquer pessoa, inclusive crianças, para fazer coisas importantes! Você também pode servir a Deus na sua idade!"
+    }
+  ]
+}

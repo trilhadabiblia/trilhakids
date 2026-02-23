@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual foi a profissão de Davi antes de se tornar rei?",
+      "opcoes": [
+        "Soldado",
+        "Pastor de ovelhas",
+        "Construtor",
+        "Pescador"
+      ],
+      "correta": 1,
+      "justificativa": "Davi era pastor de ovelhas antes de ser rei. Essa experiência o ensinou a cuidar e proteger, qualidades importantes para um bom líder!"
+    },
+    {
+      "pergunta": "Segundo o texto, o que Deus olha quando escolhe uma pessoa?",
+      "opcoes": [
+        "A aparência",
+        "A riqueza",
+        "O coração",
+        "A força"
+      ],
+      "correta": 2,
+      "justificativa": "A Bíblia diz que 'o Senhor olha o coração'. Deus se importa mais com nossos sentimentos e intenções do que com nossa aparência!"
+    },
+    {
+      "pergunta": "Qual gigante Davi derrotou quando ainda era jovem?",
+      "opcoes": [
+        "Golias",
+        "Sansão",
+        "Absalão",
+        "Saul"
+      ],
+      "correta": 0,
+      "justificativa": "Davi derrotou o gigante Golias com apenas uma pedra e uma funda, mostrando que com Deus somos mais fortes que qualquer problema!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de 2 Samuel?",
+      "opcoes": [
+        "20 capítulos",
+        "22 capítulos",
+        "24 capítulos",
+        "26 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de 2 Samuel tem 24 capítulos cheios de histórias incríveis sobre a vida do rei Davi e suas aventuras!"
+    },
+    {
+      "pergunta": "Qual cidade importante Davi conquistou para ser sua capital?",
+      "opcoes": [
+        "Belém",
+        "Nazaré",
+        "Jerusalém",
+        "Jericó"
+      ],
+      "correta": 2,
+      "justificativa": "Davi conquistou Jerusalém e a transformou na capital de seu reino. Até hoje Jerusalém é uma cidade muito importante!"
+    },
+    {
+      "pergunta": "O que Davi fazia quando estava feliz ou triste?",
+      "opcoes": [
+        "Dormia muito",
+        "Comia doces",
+        "Louvava a Deus",
+        "Brigava com todos"
+      ],
+      "correta": 2,
+      "justificativa": "Davi sempre louvava a Deus, seja nos momentos bons ou difíceis. Ele nos ensina que devemos sempre conversar com Deus através da oração e do louvor!"
+    },
+    {
+      "pergunta": "Qual é o versículo que mostra o pedido de Davi por um coração limpo?",
+      "opcoes": [
+        "Salmo 23:1",
+        "Salmo 51:10",
+        "Salmo 1:1",
+        "Salmo 100:1"
+      ],
+      "correta": 1,
+      "justificativa": "No Salmo 51:10, Davi pede: 'Cria em mim um coração puro, ó Deus'. Isso mostra como ele queria estar sempre bem com Deus!"
+    },
+    {
+      "pergunta": "O que acontece quando nos arrependemos sinceramente dos nossos erros?",
+      "opcoes": [
+        "Deus fica bravo",
+        "Deus nos ignora",
+        "Deus nos perdoa",
+        "Deus nos castiga"
+      ],
+      "correta": 2,
+      "justificativa": "Quando nos arrependemos de verdade, Deus nos perdoa completamente! Seu amor é maior que todos os nossos erros."
+    },
+    {
+      "pergunta": "Qual instrumento musical Davi tocava para louvar a Deus?",
+      "opcoes": [
+        "Flauta",
+        "Tambor",
+        "Harpa",
+        "Trombeta"
+      ],
+      "correta": 2,
+      "justificativa": "Davi tocava harpa e compunha lindas canções para Deus. Muitos dos Salmos que temos na Bíblia foram escritos por ele!"
+    },
+    {
+      "pergunta": "Qual é a principal lição que 2 Samuel nos ensina sobre os erros?",
+      "opcoes": [
+        "Devemos escondê-los",
+        "Nunca devemos falar sobre eles",
+        "Devemos nos arrepender e pedir perdão",
+        "Devemos culpar outras pessoas"
+      ],
+      "correta": 2,
+      "justificativa": "A vida de Davi nos ensina que quando erramos, devemos nos arrepender sinceramente e pedir perdão a Deus. Ele sempre nos dá uma nova chance!"
+    }
+  ]
+}

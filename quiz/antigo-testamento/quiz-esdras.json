@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual rei Deus tocou o coração para libertar o povo israelita?",
+      "opcoes": [
+        "Rei Nabucodonosor",
+        "Rei Ciro da Pérsia",
+        "Rei Davi",
+        "Rei Salomão"
+      ],
+      "correta": 1,
+      "justificativa": "Deus tocou o coração do rei Ciro da Pérsia, que permitiu que o povo voltasse para Jerusalém. Isso mostra que Deus pode usar qualquer pessoa para cumprir Seus planos!"
+    },
+    {
+      "pergunta": "O que o povo reconstruiu quando voltou para Jerusalém?",
+      "opcoes": [
+        "Um castelo",
+        "O templo",
+        "Uma escola",
+        "Um palácio"
+      ],
+      "correta": 1,
+      "justificativa": "O povo reconstruiu o templo que havia sido destruído. Isso representava um novo começo na adoração a Deus e mostrava que Ele sempre dá uma nova chance!"
+    },
+    {
+      "pergunta": "Qual era a profissão de Esdras?",
+      "opcoes": [
+        "Soldado",
+        "Carpinteiro",
+        "Escriba e sacerdote",
+        "Rei"
+      ],
+      "correta": 2,
+      "justificativa": "Esdras era escriba e sacerdote. Ele amava estudar a Palavra de Deus e ensinar o povo. Era como um super professor da Bíblia!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Esdras?",
+      "opcoes": [
+        "8 capítulos",
+        "12 capítulos",
+        "10 capítulos",
+        "15 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Esdras tem 10 capítulos cheios de histórias sobre restauração e renovação, mostrando como Deus restaura a vida do Seu povo."
+    },
+    {
+      "pergunta": "Segundo Esdras 7:10, a que Esdras havia dedicado sua vida?",
+      "opcoes": [
+        "A construir casas",
+        "Ao estudo e ensino da lei do Senhor",
+        "A fazer comércio",
+        "A treinar soldados"
+      ],
+      "correta": 1,
+      "justificativa": "Esdras dedicou sua vida ao estudo, obediência e ensino da Palavra de Deus. Ele nos ensina que devemos estudar a Bíblia para conhecer melhor a Deus!"
+    },
+    {
+      "pergunta": "Por que o povo israelita estava em terra estranha no início do livro?",
+      "opcoes": [
+        "Porque foram passear",
+        "Por causa do pecado",
+        "Porque queriam conhecer outros lugares",
+        "Porque o rei mandou"
+      ],
+      "correta": 1,
+      "justificativa": "O povo estava longe de casa por causa do pecado, mas Deus não desistiu deles! Isso nos ensina que mesmo quando erramos, Deus nos ama e quer nos dar uma nova chance."
+    },
+    {
+      "pergunta": "Qual é um dos principais ensinamentos do livro de Esdras?",
+      "opcoes": [
+        "Deus nunca perdoa",
+        "Só pessoas perfeitas podem servir a Deus",
+        "Deus sempre dá uma nova chance",
+        "É impossível recomeçar"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Esdras nos ensina que Deus sempre dá uma nova chance! Não importa o que aconteceu no passado, podemos recomeçar e reconstruir nossa vida com Deus."
+    },
+    {
+      "pergunta": "O que aconteceu quando Esdras leu e explicou a Palavra de Deus para o povo?",
+      "opcoes": [
+        "O povo ficou com sono",
+        "Todos entenderam o que Deus tinha falado",
+        "Ninguém prestou atenção",
+        "O povo foi embora"
+      ],
+      "correta": 1,
+      "justificativa": "Quando Esdras explicou a Palavra com cuidado, todos entenderam! Isso mostra que a Bíblia transforma vidas quando a estudamos e obedecemos seus ensinamentos."
+    },
+    {
+      "pergunta": "Além do templo físico, o que mais precisava ser reconstruído segundo o livro?",
+      "opcoes": [
+        "As casas do povo",
+        "O coração voltado para Deus",
+        "As muralhas da cidade",
+        "Os palácios dos reis"
+      ],
+      "correta": 1,
+      "justificativa": "O livro ensina que precisamos reconstruir não só o templo, mas também o coração, voltando-o para o Senhor. Nossa vida espiritual também precisa de restauração!"
+    },
+    {
+      "pergunta": "O que o rei Ciro não era, mas mesmo assim Deus o usou?",
+      "opcoes": [
+        "Ele não era jovem",
+        "Ele não conhecia o Deus vivo",
+        "Ele não era rico",
+        "Ele não era poderoso"
+      ],
+      "correta": 1,
+      "justificativa": "O rei Ciro nem conhecia o Deus vivo, mas mesmo assim Deus tocou seu coração! Isso nos ensina que Deus pode usar qualquer pessoa para fazer Sua vontade e abrir portas que ninguém pode fechar."
+    }
+  ]
+}

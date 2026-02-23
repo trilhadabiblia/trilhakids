@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "O que o rei Salomão pediu a Deus quando se tornou rei?",
+      "opcoes": [
+        "Muito ouro e riquezas",
+        "Sabedoria para governar bem",
+        "Um exército poderoso",
+        "Um palácio gigante"
+      ],
+      "correta": 1,
+      "justificativa": "Salomão pediu sabedoria para governar o povo com justiça. Deus ficou tão feliz com esse pedido que também lhe deu riquezas e honra!"
+    },
+    {
+      "pergunta": "O que Salomão construiu para adorar a Deus?",
+      "opcoes": [
+        "Uma grande cidade",
+        "O Templo do Senhor",
+        "Um jardim bonito",
+        "Uma torre alta"
+      ],
+      "correta": 1,
+      "justificativa": "Salomão construiu o Templo do Senhor em Jerusalém, um lugar sagrado e glorioso onde o povo poderia adorar a Deus!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de 1 Reis?",
+      "opcoes": [
+        "20 capítulos",
+        "25 capítulos",
+        "22 capítulos",
+        "18 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de 1 Reis tem 22 capítulos cheios de histórias incríveis sobre sabedoria, fidelidade e as aventuras do povo de Deus!"
+    },
+    {
+      "pergunta": "Em quantos reinos o reino de Israel se dividiu?",
+      "opcoes": [
+        "3 reinos",
+        "4 reinos",
+        "2 reinos",
+        "5 reinos"
+      ],
+      "correta": 2,
+      "justificativa": "O reino se dividiu em 2 partes: Reino do Norte (Israel) e Reino do Sul (Judá). Isso aconteceu porque os reis se afastaram de Deus!"
+    },
+    {
+      "pergunta": "Qual profeta importante aparece no livro de 1 Reis?",
+      "opcoes": [
+        "Moisés",
+        "Daniel",
+        "Elias",
+        "Jonas"
+      ],
+      "correta": 2,
+      "justificativa": "O profeta Elias é um dos personagens importantes de 1 Reis. Ele era corajoso e sempre falava a palavra de Deus ao povo!"
+    },
+    {
+      "pergunta": "Por que Deus ficou feliz com o pedido de Salomão?",
+      "opcoes": [
+        "Porque ele pediu poder",
+        "Porque seu coração era sincero e queria ajudar o povo",
+        "Porque ele era rico",
+        "Porque ele era forte"
+      ],
+      "correta": 1,
+      "justificativa": "Deus viu que Salomão tinha um coração sincero e queria sabedoria para cuidar bem do povo, não para benefício próprio!"
+    },
+    {
+      "pergunta": "Segundo 1 Reis, o que traz bênção para nossa vida?",
+      "opcoes": [
+        "Ter muito dinheiro",
+        "Ser famoso",
+        "Obedecer a Deus",
+        "Ter muitos amigos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro ensina que obedecer a Deus e seguir Seus mandamentos é o que traz verdadeira bênção e felicidade para nossa vida!"
+    },
+    {
+      "pergunta": "Salomão ficou conhecido como o homem mais _____ do mundo:",
+      "opcoes": [
+        "Rico",
+        "Forte",
+        "Sábio",
+        "Alto"
+      ],
+      "correta": 2,
+      "justificativa": "Salomão ficou famoso por sua sabedoria! Reis e rainhas vinham de lugares muito distantes só para ouvir sua sabedoria!"
+    },
+    {
+      "pergunta": "Qual é a lição principal que 1 Reis ensina sobre liderança?",
+      "opcoes": [
+        "Líderes devem ser ricos",
+        "Líderes devem amar o Senhor e seguir Seus caminhos",
+        "Líderes devem ser famosos",
+        "Líderes devem ter palácios grandes"
+      ],
+      "correta": 1,
+      "justificativa": "1 Reis mostra que os melhores líderes são aqueles que amam a Deus e obedecem Seus mandamentos, buscando o bem do povo!"
+    },
+    {
+      "pergunta": "Qual é o maior tesouro segundo os ensinamentos de 1 Reis?",
+      "opcoes": [
+        "Ouro e prata",
+        "Sabedoria e fidelidade a Deus",
+        "Casas bonitas",
+        "Roupas caras"
+      ],
+      "correta": 1,
+      "justificativa": "1 Reis ensina que a sabedoria de Deus e ser fiel a Ele são mais valiosos que qualquer riqueza material. Esse é o verdadeiro tesouro!"
+    }
+  ]
+}

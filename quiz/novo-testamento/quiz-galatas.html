@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Gálatas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .float-animation {
+      animation: float 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - GÁLATAS</h1>
+        <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Quiz Container -->
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    
+    <!-- Tela Inicial -->
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre Gálatas te esperam!</p>
+        
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50">
+          Começar Quiz 🚀
+        </button>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6">
+          <div class="text-4xl mb-2">❓</div>
+          <div class="text-3xl font-bold text-blue-300 mb-2">10</div>
+          <p class="text-gray-300">Perguntas</p>
+        </div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6">
+          <div class="text-4xl mb-2">⭐</div>
+          <div class="text-3xl font-bold text-yellow-300 mb-2">10</div>
+          <p class="text-gray-300">Pontos cada</p>
+        </div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6">
+          <div class="text-4xl mb-2">🏆</div>
+          <div class="text-3xl font-bold text-purple-300 mb-2">100</div>
+          <p class="text-gray-300">Pontos máximos</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tela do Quiz -->
+    <div id="quiz-screen" class="hidden">
+      <!-- Progress Bar -->
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold text-sm md:text-base">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg md:text-xl"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+
+      <!-- Pergunta -->
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8"></h3>
+
+        <div id="options-container" class="space-y-3 md:space-y-4">
+          <!-- Opções serão inseridas aqui -->
+        </div>
+      </div>
+
+      <!-- Feedback -->
+      <div id="feedback" class="hidden bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200 text-base md:text-lg"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg md:text-xl font-bold py-3 md:py-4 rounded-full hover:scale-105 transition-all duration-300">
+          Próxima Pergunta →
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de Resultado -->
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 md:p-8 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg md:text-xl opacity-90">de 100 pontos</div>
+        </div>
+
+        <p id="result-message" class="text-xl md:text-2xl text-gray-200 mb-8"></p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-3 md:py-4 px-8 rounded-full hover:scale-105 transition-all duration-300">
+            🔄 Tentar Novamente
+          </button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg md:text-xl font-bold py-3 md:py-4 px-8 rounded-full hover:scale-105 transition-all duration-300">
+            ← Voltar
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+
+  <script>
+    // Dados do Quiz
+    const quizData = {
+  "questoes": [
+    {
+      "pergunta": "Qual é o nome do apóstolo que escreveu a carta aos Gálatas?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "João",
+        "Tiago"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo foi o apóstolo corajoso que escreveu esta carta para ensinar os cristãos da Galácia sobre a verdadeira salvação pela fé em Jesus."
+    },
+    {
+      "pergunta": "Segundo Gálatas, como somos salvos?",
+      "opcoes": [
+        "Seguindo muitas regras",
+        "Pela fé em Jesus",
+        "Fazendo boas obras",
+        "Indo sempre à igreja"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensinou que somos salvos pela fé em Jesus, não por seguir regras ou fazer obras. É um presente de Deus!"
+    },
+    {
+      "pergunta": "Complete o versículo: 'Para a liberdade foi que Cristo nos...'",
+      "opcoes": [
+        "ensinou",
+        "libertou",
+        "chamou",
+        "escolheu"
+      ],
+      "correta": 1,
+      "justificativa": "Este é um versículo muito importante em Gálatas 5:1 que nos lembra que Jesus nos deu verdadeira liberdade!"
+    },
+    {
+      "pergunta": "Quais são os três primeiros frutos do Espírito mencionados em Gálatas?",
+      "opcoes": [
+        "Paz, bondade, fé",
+        "Amor, alegria, paz",
+        "Paciência, mansidão, amor",
+        "Alegria, bondade, paciência"
+      ],
+      "correta": 1,
+      "justificativa": "Em Gálatas 5:22, Paulo lista os frutos do Espírito começando com amor, alegria e paz - qualidades lindas que Deus desenvolve em nós!"
+    },
+    {
+      "pergunta": "Por que Paulo escreveu a carta aos Gálatas?",
+      "opcoes": [
+        "Para contar histórias",
+        "Para corrigir falsos ensinamentos",
+        "Para pedir dinheiro",
+        "Para marcar uma visita"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo estava preocupado porque falsos mestres estavam confundindo os cristãos, dizendo que precisavam seguir regras antigas para serem salvos."
+    },
+    {
+      "pergunta": "O que significa 'salvação pela graça'?",
+      "opcoes": [
+        "Precisamos merecer o amor de Deus",
+        "É um presente gratuito de Deus",
+        "Temos que pagar por nossa salvação",
+        "Só pessoas especiais podem ser salvas"
+      ],
+      "correta": 1,
+      "justificativa": "Graça significa que a salvação é um presente de Deus! Não precisamos fazer nada para merecer - Ele nos ama de graça!"
+    },
+    {
+      "pergunta": "Quantos anos tem aproximadamente a carta de Gálatas?",
+      "opcoes": [
+        "500 anos",
+        "1000 anos",
+        "Quase 2000 anos",
+        "100 anos"
+      ],
+      "correta": 2,
+      "justificativa": "A carta foi escrita por volta do ano 48-49 d.C., então tem quase 2000 anos! E ainda nos ensina coisas importantes hoje!"
+    },
+    {
+      "pergunta": "Em Cristo, o que todos nós somos?",
+      "opcoes": [
+        "Servos",
+        "Uma família de filhos de Deus",
+        "Estranhos",
+        "Visitantes"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensinou que pela fé em Jesus, todos somos filhos amados de Deus e formamos uma grande família, não importa quem somos!"
+    },
+    {
+      "pergunta": "Qual era o problema dos cristãos da Galácia?",
+      "opcoes": [
+        "Não tinham Bíblia",
+        "Estavam confusos sobre a salvação",
+        "Não queriam orar",
+        "Brigavam muito"
+      ],
+      "correta": 1,
+      "justificativa": "Os gálatas estavam confusos porque falsos mestres diziam que precisavam seguir regras antigas para serem salvos, mas isso não era verdade!"
+    },
+    {
+      "pergunta": "Segundo Gálatas, quem pode ser filho de Deus?",
+      "opcoes": [
+        "Só pessoas muito boas",
+        "Só adultos",
+        "Todos que creem em Jesus",
+        "Só quem segue muitas regras"
+      ],
+      "correta": 2,
+      "justificativa": "Que notícia maravilhosa! Qualquer pessoa que crê em Jesus com o coração pode ser filho amado de Deus - isso inclui você!"
+    }
+  ]
+};
+
+    let currentQuestion = 0;
+    let score = 0;
+    let answered = false;
+
+    function startQuiz() {
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      answered = false;
+      const q = quizData.questoes[currentQuestion];
+      
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / 10 * 100) + '%';
+      
+      const optionsContainer = document.getElementById('options-container');
+      optionsContainer.innerHTML = '';
+      
+      q.opcoes.forEach((opcao, index) => {
+        const button = document.createElement('button');
+        button.className = 'w-full text-left p-4 md:p-6 rounded-2xl border-2 border-gray-300 hover:border-purple-500 hover:bg-purple-50 transition-all duration-300 text-gray-800 font-semibold text-base md:text-lg';
+        button.textContent = opcao;
+        button.onclick = () => checkAnswer(index);
+        optionsContainer.appendChild(button);
+      });
+      
+      document.getElementById('feedback').classList.add('hidden');
+    }
+
+    function checkAnswer(selected) {
+      if (answered) return;
+      answered = true;
+      
+      const q = quizData.questoes[currentQuestion];
+      const buttons = document.querySelectorAll('#options-container button');
+      
+      buttons.forEach((btn, index) => {
+        btn.disabled = true;
+        if (index === q.correta) {
+          btn.classList.add('border-green-500', 'bg-green-100');
+        } else if (index === selected && selected !== q.correta) {
+          btn.classList.add('border-red-500', 'bg-red-100');
+        }
+      });
+      
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      
+      if (isCorrect) {
+        score += 10;
+        document.getElementById('score').textContent = score;
+        feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8';
+        document.getElementById('feedback-icon').textContent = '✅';
+        document.getElementById('feedback-title').textContent = 'Muito bem!';
+      } else {
+        feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8';
+        document.getElementById('feedback-icon').textContent = '❌';
+        document.getElementById('feedback-title').textContent = 'Quase lá!';
+      }
+      
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.questoes.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      
+      document.getElementById('final-score').textContent = score;
+      
+      let emoji, message;
+      if (score === 100) {
+        emoji = '🏆';
+        message = 'PERFEITO! Você é um expert em Gálatas!';
+      } else if (score >= 80) {
+        emoji = '🌟';
+        message = 'Excelente! Você conhece muito bem Gálatas!';
+      } else if (score >= 60) {
+        emoji = '😊';
+        message = 'Muito bom! Continue estudando Gálatas!';
+      } else if (score >= 40) {
+        emoji = '📖';
+        message = 'Bom trabalho! Revise Gálatas para melhorar!';
+      } else {
+        emoji = '💪';
+        message = 'Continue praticando! Gálatas é fascinante!';
+      }
+      
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      document.getElementById('score').textContent = '0';
+      document.getElementById('result-screen').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+    }
+  </script>
+
+</body>
+</html>
