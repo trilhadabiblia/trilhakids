@@ -13,7 +13,7 @@ app.post("/api/quiz", async (req, res) => {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
-                        "x-api-key": "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",
+                        "x-api-key": "APY_KEY_HERE",
                         "anthropic-version": "2023-06-01",
                     },
                     body: JSON.stringify({
