@@ -215,26 +215,65 @@
             <div class="progress-segment" data-index="2"></div>
         </div>
 
-        <!-- Reel 0: Missões -->
-        <div class="reel active" data-index="0" data-theme="reforma">
-            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
-                <div class="theme-icon">🌎</div>
+        <!-- Reel 0: 1 Samuel -->
+        <div class="reel" data-index="0" data-theme="1samuel">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900">
+                <div class="theme-icon">👑</div>
             </div>
 
             <div class="video-container" id="video-container-0">
                 <video id="video-0" controls preload="none">
-                    <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
+                    <source src="kidiscipulos/videos/1samuel.mp4" type="video/mp4">
                 </video>
                 <button class="close-video" onclick="closeVideo(0)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
 
-            <div class="video-container" id="video-container-0">
-                <video id="video-0" controls preload="none">
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">SAMUEL</h3>
+                <p class="text-sm opacity-80">Exemplo de Obediência</p>
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(0)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('samuel')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('1samuel')"
+                        class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
+                    </button>
+                </div>
+            </div>
+        </div>   
+
+        <!-- Reel 1: Missões -->
+        <div class="reel active" data-index="1" data-theme="reforma">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
+                <div class="theme-icon">🌎</div>
+            </div>
+
+            <div class="video-container" id="video-container-1">
+                <video id="video-1" controls preload="none">
                     <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
                 </video>
-                <button class="close-video" onclick="closeVideo(0)">
+                <button class="close-video" onclick="closeVideo(1)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="video-container" id="video-container-1">
+                <video id="video-1" controls preload="none">
+                    <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(1)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -244,7 +283,7 @@
                 <p class="text-sm opacity-80">A Tripla Missão: Orar, Contribuir e Ir</p>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(0)"
+                    <button onclick="playVideo(1)"
                         class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
@@ -263,17 +302,17 @@
             </div>
         </div>
 
-        <!-- Reel 1: Reforma Protestante -->
-        <div class="reel active" data-index="0" data-theme="reforma">
+        <!-- Reel 2: Reforma Protestante -->
+        <div class="reel active" data-index="2" data-theme="reforma">
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-purple-600 to-purple-900">
                 <div class="theme-icon">⛪</div>
             </div>
 
-            <div class="video-container" id="video-container-0">
-                <video id="video-0" controls preload="none">
-                    <source src="kidiscipulos/videos/missoes.mp4" type="video/mp4">
+            <div class="video-container" id="video-container-2">
+                <video id="video-2" controls preload="none">
+                    <source src="kidiscipulos/videos/reforma.mp4" type="video/mp4">
                 </video>
-                <button class="close-video" onclick="closeVideo(0)">
+                <button class="close-video" onclick="closeVideo(2)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -282,7 +321,7 @@
                 <video id="video-0" controls preload="none">
                     <source src="kidiscipulos/videos/reforma.mp4" type="video/mp4">
                 </video>
-                <button class="close-video" onclick="closeVideo(0)">
+                <button class="close-video" onclick="closeVideo(2)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -292,7 +331,7 @@
                 <p class="text-sm opacity-80">Conheça a história da Reforma</p>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(0)"
+                    <button onclick="playVideo(2)"
                         class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
@@ -311,17 +350,17 @@
             </div>
         </div>
 
-        <!-- Reel 2: Halloween -->
-        <div class="reel" data-index="1" data-theme="halloween">
+        <!-- Reel 3: Halloween -->
+        <div class="reel" data-index="3" data-theme="halloween">
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-orange-600 to-orange-900">
                 <div class="theme-icon">🚫</div>
             </div>
 
-            <div class="video-container" id="video-container-1">
-                <video id="video-1" controls preload="none">
+            <div class="video-container" id="video-container-3">
+                <video id="video-3" controls preload="none">
                     <source src="kidiscipulos/videos/halloween.mp4" type="video/mp4">
                 </video>
-                <button class="close-video" onclick="closeVideo(1)">
+                <button class="close-video" onclick="closeVideo(3)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -331,7 +370,7 @@
                 <p class="text-sm opacity-80">Entenda a posição cristã</p>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(1)"
+                    <button onclick="playVideo(3)"
                         class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
@@ -350,17 +389,17 @@
             </div>
         </div>
 
-        <!-- Reel 3: Diaconato -->
-        <div class="reel" data-index="2" data-theme="diaconato">
+        <!-- Reel 4: Diaconato -->
+        <div class="reel" data-index="4" data-theme="diaconato">
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-900">
                 <div class="theme-icon">⭐</div>
             </div>
 
-            <div class="video-container" id="video-container-2">
-                <video id="video-2" controls preload="none">
+            <div class="video-container" id="video-container-4">
+                <video id="video-4" controls preload="none">
                     <source src="kidiscipulos/videos/diaconato.mp4" type="video/mp4">
                 </video>
-                <button class="close-video" onclick="closeVideo(2)">
+                <button class="close-video" onclick="closeVideo(4)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -370,7 +409,7 @@
                 <p class="text-sm opacity-80">Aprenda sobre o diaconato</p>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(2)"
+                    <button onclick="playVideo(4)"
                         class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
@@ -389,17 +428,17 @@
             </div>
         </div>
 
-        <!-- Reel 4: Carnaval -->
-        <div class="reel" data-index="4" data-theme="carnaval">
+        <!-- Reel 5: Carnaval -->
+        <div class="reel" data-index="5" data-theme="carnaval">
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900">
                 <div class="theme-icon">🎉</div>
             </div>
 
-            <div class="video-container" id="video-container-3">
-                <video id="video-3" controls preload="none">
+            <div class="video-container" id="video-container-5">
+                <video id="video-5" controls preload="none">
                     <source src="kidiscipulos/videos/carnaval.mp4" type="video/mp4">
                 </video>
-                <button class="close-video" onclick="closeVideo(2)">
+                <button class="close-video" onclick="closeVideo(5)">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
@@ -409,7 +448,7 @@
                 <p class="text-sm opacity-80">A armadilha do Carnaval</p>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(4)"
+                    <button onclick="playVideo(5)"
                         class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
@@ -427,45 +466,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Reel 5: 1 Samuel -->
-        <div class="reel" data-index="5" data-theme="1samuel">
-            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900">
-                <div class="theme-icon">👑</div>
-            </div>
-
-            <div class="video-container" id="video-container-3">
-                <video id="video-3" controls preload="none">
-                    <source src="kidiscipulos/videos/1samuel.mp4" type="video/mp4">
-                </video>
-                <button class="close-video" onclick="closeVideo(2)">
-                    <i class="fas fa-times"></i>
-                </button>
-            </div>
-
-            <div class="overlay">
-                <h3 class="text-3xl font-bold">OBEDIÊNCIA</h3>
-                <p class="text-sm opacity-80">Samuel: Exemplo de Obediência</p>
-
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(5)"
-                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
-                        <i class="fas fa-play"></i>
-                        Ver Vídeo
-                    </button>
-                    <button onclick="showSlides('1samuel')"
-                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
-                        <i class="fas fa-images"></i>
-                        Slides
-                    </button>
-                    <button onclick="startQuiz('1samuel')"
-                        class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
-                        <i class="fas fa-question-circle"></i>
-                        Quiz
-                    </button>
-                </div>
-            </div>
-        </div>        
 
         <button class="nav-button prev">
             <i class="fas fa-chevron-left"></i>
@@ -606,6 +606,7 @@
 
         // Configuração dos slides (adicione os nomes dos arquivos em ordem)
         const slideFiles = {
+            samuel: ['1samuel_3_10.png' ,'00_1samuel.png', '01_1samuel.png', '02_1samuel.png', '03_1samuel.png', '04_1samuel.png', '05_1samuel.png', '06_1samuel.png', '07_1samuel.png', '08_1samuel.png', '09_1samuel.png', '10_1samuel.png', '11_1samuel.png', '12_1samuel.png', '13_1samuel.png'],
             reforma: ['reforma_img01.jpg', 'reforma_img02.jpg', 'reforma_img03.jpg', 'reforma_img04.jpg', 'reforma_img05.jpg', 'reforma_img06.jpg', 'reforma_img07.jpg', 'reforma_img08.jpg', 'reforma_img09.jpg', 'reforma_img10.jpg', 'reforma_img11.jpg', 'reforma_img12.jpg', 'reforma_img13.jpg', 'reforma_img14.jpg', 'reforma_img15.jpg'],
             halloween: ['halloween_nao_img01.jpg', 'halloween_nao_img02.jpg', 'halloween_nao_img03.jpg', 'halloween_nao_img04.jpg', 'halloween_nao_img05.jpg', 'halloween_nao_img06.jpg', 'halloween_nao_img07.jpg', 'halloween_nao_img08.jpg', 'halloween_nao_img09.jpg', 'halloween_nao_img10.jpg', 'halloween_nao_img11.jpg'],
             diaconato: ['diaconato_img01.jpg', 'diaconato_img02.jpg', 'diaconato_img03.jpg', 'diaconato_img04.jpg', 'diaconato_img05.jpg'],
