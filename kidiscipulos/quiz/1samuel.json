@@ -1,0 +1,224 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem era o sacerdote que o menino Samuel ajudava no templo?",
+      "opcoes": [
+        "Davi",
+        "Eli",
+        "Salomão",
+        "Saul"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel começou a servir no templo ajudando o sacerdote Eli [1], [2]."
+    },
+    {
+      "pergunta": "Qual é a referência bíblica principal desta história?",
+      "opcoes": [
+        "Gênesis 1:1",
+        "Êxodo 20:1-10",
+        "1 Samuel 3:1-10",
+        "Salmos 23"
+      ],
+      "correta": 2,
+      "justificativa": "A história de Samuel ouvindo a voz de Deus está registrada em 1 Samuel 3:1-10 [1]."
+    },
+    {
+      "pergunta": "Quem dedicou Samuel a Deus desde que ele era pequeno?",
+      "opcoes": [
+        "Sua mãe, Ana",
+        "O sacerdote Eli",
+        "O rei de Israel",
+        "Seu pai, Elcana"
+      ],
+      "correta": 0,
+      "justificativa": "Samuel foi dedicado a Deus por sua mãe, Ana [2]."
+    },
+    {
+      "pergunta": "Quais eram algumas das tarefas de Samuel no templo?",
+      "opcoes": [
+        "Construir muros e portões",
+        "Cuidar dos animais do campo",
+        "Varrer o chão e acender as lâmpadas",
+        "Apenas dormir e descansar"
+      ],
+      "correta": 2,
+      "justificativa": "Samuel ajudava no templo varrendo o chão, acendendo as lâmpadas e cuidando dos objetos [2]."
+    },
+    {
+      "pergunta": "Como Samuel realizava suas tarefas no templo?",
+      "opcoes": [
+        "Com muita preguiça",
+        "Com muito capricho",
+        "De má vontade",
+        "Apenas quando Eli mandava"
+      ],
+      "correta": 1,
+      "justificativa": "O material destaca que Samuel fazia tudo com muito capricho [2]."
+    },
+    {
+      "pergunta": "O que aconteceu certa noite enquanto Samuel dormia?",
+      "opcoes": [
+        "O templo pegou fogo",
+        "Ele teve um pesadelo",
+        "Ele ouviu uma voz chamando seu nome",
+        "Eli o acordou para trabalhar"
+      ],
+      "correta": 2,
+      "justificativa": "Certa noite, Samuel ouviu uma voz chamando: 'Samuel! Samuel!' [2]."
+    },
+    {
+      "pergunta": "Quem Samuel pensou que o estava chamando inicialmente?",
+      "opcoes": [
+        "Sua mãe",
+        "O sacerdote Eli",
+        "Um anjo",
+        "Outro menino"
+      ],
+      "correta": 1,
+      "justificativa": "Ao ouvir a voz, ele correu até Eli pensando que o sacerdote o havia chamado [1], [2]."
+    },
+    {
+      "pergunta": "Quantas vezes Samuel correu até Eli antes de o sacerdote perceber que era Deus quem chamava?",
+      "opcoes": [
+        "Uma vez",
+        "Duas vezes",
+        "Três vezes",
+        "Cinco vezes"
+      ],
+      "correta": 2,
+      "justificativa": "Isso aconteceu três vezes antes de Eli perceber que era o Senhor [3]."
+    },
+    {
+      "pergunta": "Qual foi a instrução de Eli para Samuel na terceira vez?",
+      "opcoes": [
+        "Dizer: 'Não me chame mais, quero dormir'",
+        "Ignorar a voz e continuar dormindo",
+        "Dizer: 'Fala, Senhor, pois o teu servo está ouvindo'",
+        "Sair correndo para fora do templo"
+      ],
+      "correta": 2,
+      "justificativa": "Eli explicou que, se ouvisse a voz novamente, ele deveria dizer: 'Fala, Senhor, pois o teu servo está ouvindo' [3]."
+    },
+    {
+      "pergunta": "Qual foi a reação de Samuel quando ouviu a voz de Deus pela quarta vez?",
+      "opcoes": [
+        "Ficou com muito medo e chorou",
+        "Respondeu com confiança a frase que Eli ensinou",
+        "Voltou a correr para o quarto de Eli",
+        "Ficou em silêncio e não disse nada"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel respondeu com confiança: 'Fala, Senhor, pois o teu servo está ouvindo' [3], [4]."
+    },
+    {
+      "pergunta": "O que Samuel se tornou quando cresceu devido à sua obediência?",
+      "opcoes": [
+        "Um guerreiro famoso",
+        "Um grande profeta e líder",
+        "Um simples carpinteiro",
+        "Um rei de Israel"
+      ],
+      "correta": 1,
+      "justificativa": "Por ouvir e obedecer a Deus, Samuel se tornou um grande profeta e líder [1], [4]."
+    },
+    {
+      "pergunta": "Segundo o texto, o que Deus valoriza em quem O serve?",
+      "opcoes": [
+        "Apenas a idade avançada",
+        "A riqueza e o dinheiro",
+        "Quem obedece de coração",
+        "A força física"
+      ],
+      "correta": 2,
+      "justificativa": "As fontes afirmam que Deus valoriza quem obedece de coração, não importa a idade [1]."
+    },
+    {
+      "pergunta": "Qual foi o resultado da vida de Samuel para o povo de Israel?",
+      "opcoes": [
+        "Muitas guerras e tristeza",
+        "Bênçãos para todo o povo",
+        "O povo esqueceu de Deus",
+        "Não houve mudança nenhuma"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel trouxe bênçãos para todo o povo de Israel através de sua liderança [1]."
+    },
+    {
+      "pergunta": "O que as crianças podem aprender com a história de Samuel?",
+      "opcoes": [
+        "Que crianças não podem ouvir Deus",
+        "Que devem obedecer apenas quando alguém está vendo",
+        "Que podem ouvir Deus e obedecer pais e professores",
+        "Que servir no templo era chato"
+      ],
+      "correta": 2,
+      "justificativa": "As crianças podem aprender a ouvir Deus, obedecer pais e professores e fazer o bem [4], [5]."
+    },
+    {
+      "pergunta": "O que Deus confiou a Samuel após ele responder ao chamado?",
+      "opcoes": [
+        "Tesouros em ouro e prata",
+        "Mensagens importantes",
+        "A chave de um palácio",
+        "Um exército para comandar"
+      ],
+      "correta": 1,
+      "justificativa": "Naquele momento, Deus falou com Samuel e confiou a ele mensagens importantes [4]."
+    },
+    {
+      "pergunta": "Como Eli se sentia quando Samuel o acordava?",
+      "opcoes": [
+        "Muito bravo",
+        "Feliz e disposto",
+        "Sonolento",
+        "Assustado"
+      ],
+      "correta": 2,
+      "justificativa": "Eli respondia de forma sonolenta nas primeiras vezes que Samuel o chamava [3]."
+    },
+    {
+      "pergunta": "Samuel obedecia a Deus apenas quando era visto pelos outros?",
+      "opcoes": [
+        "Sim, ele gostava de aparecer",
+        "Não, ele fazia o certo mesmo quando ninguém via",
+        "Ele só obedecia a Eli",
+        "O texto não fala sobre isso"
+      ],
+      "correta": 1,
+      "justificativa": "A conclusão enfatiza que as crianças devem fazer o que é certo mesmo quando ninguém vê, como Samuel [5]."
+    },
+    {
+      "pergunta": "A idade de Samuel o impediu de ser usado por Deus?",
+      "opcoes": [
+        "Sim, ele teve que esperar ser adulto",
+        "Não, Deus usa vidas independentemente da idade",
+        "Sim, Deus só fala com sacerdotes velhos",
+        "Não, mas ele não podia ser profeta sendo criança"
+      ],
+      "correta": 1,
+      "justificativa": "O texto afirma que Deus usa a vida das crianças para coisas maravilhosas e valoriza a obediência sem importar a idade [1], [4]."
+    },
+    {
+      "pergunta": "Qual era a característica marcante do coração de Samuel?",
+      "opcoes": [
+        "Coração orgulhoso",
+        "Coração obediente",
+        "Coração distraído",
+        "Coração medroso"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel sempre fazia o que era certo porque seu coração era obediente [4]."
+    },
+    {
+      "pergunta": "Onde Samuel morava durante sua infância?",
+      "opcoes": [
+        "Em um palácio com o rei",
+        "No templo, ajudando Eli",
+        "Em uma tenda no deserto",
+        "Na casa de seus avós"
+      ],
+      "correta": 1,
+      "justificativa": "Samuel morava no templo e ajudava o sacerdote Eli todos os dias [2]."
+    }
+  ]
+}

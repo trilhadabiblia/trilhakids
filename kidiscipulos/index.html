@@ -390,7 +390,7 @@
         </div>
 
         <!-- Reel 4: Carnaval -->
-        <div class="reel" data-index="3" data-theme="carnaval">
+        <div class="reel" data-index="4" data-theme="carnaval">
             <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900">
                 <div class="theme-icon">🎉</div>
             </div>
@@ -409,7 +409,7 @@
                 <p class="text-sm opacity-80">A armadilha do Carnaval</p>
 
                 <div class="flex flex-wrap gap-2 mt-4">
-                    <button onclick="playVideo(3)"
+                    <button onclick="playVideo(4)"
                         class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
                         <i class="fas fa-play"></i>
                         Ver Vídeo
@@ -427,6 +427,45 @@
                 </div>
             </div>
         </div>
+
+        <!-- Reel 5: 1 Samuel -->
+        <div class="reel" data-index="5" data-theme="1samuel">
+            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-red-600 to-red-900">
+                <div class="theme-icon">👑</div>
+            </div>
+
+            <div class="video-container" id="video-container-3">
+                <video id="video-3" controls preload="none">
+                    <source src="kidiscipulos/videos/1samuel.mp4" type="video/mp4">
+                </video>
+                <button class="close-video" onclick="closeVideo(2)">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="overlay">
+                <h3 class="text-3xl font-bold">OBEDIÊNCIA</h3>
+                <p class="text-sm opacity-80">Samuel: Exemplo de Obediência</p>
+
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button onclick="playVideo(5)"
+                        class="flex items-center gap-2 bg-white text-black px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-play"></i>
+                        Ver Vídeo
+                    </button>
+                    <button onclick="showSlides('1samuel')"
+                        class="flex items-center gap-2 bg-white/20 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-images"></i>
+                        Slides
+                    </button>
+                    <button onclick="startQuiz('1samuel')"
+                        class="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold hover-scale">
+                        <i class="fas fa-question-circle"></i>
+                        Quiz
+                    </button>
+                </div>
+            </div>
+        </div>        
 
         <button class="nav-button prev">
             <i class="fas fa-chevron-left"></i>
