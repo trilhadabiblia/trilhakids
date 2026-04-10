@@ -1,0 +1,224 @@
+{
+  "questoes": [
+    {
+      "pergunta": "O que significa a palavra grega 'Apokalypsis', que dá nome ao livro de Apocalipse?",
+      "opcoes": [
+        "Fim do mundo",
+        "Revelação ou desvendamento",
+        "Juízo final",
+        "Esconderijo"
+      ],
+      "correta": 1,
+      "justificativa": "O nome 'Apocalipse' vem do grego 'apokalypsis', que significa 'revelação' ou 'desvendamento' [1], [2]."
+    },
+    {
+      "pergunta": "Quem é o autor do livro de Apocalipse, segundo as fontes?",
+      "opcoes": [
+        "Apóstolo Paulo",
+        "Apóstolo Pedro",
+        "Apóstolo João",
+        "O profeta Amós"
+      ],
+      "correta": 2,
+      "justificativa": "O autor de Apocalipse é o apóstolo João, que recebeu a revelação enquanto estava preso [3]."
+    },
+    {
+      "pergunta": "Onde o apóstolo João estava quando recebeu a revelação do Apocalipse?",
+      "opcoes": [
+        "Em Jerusalém",
+        "Na Ilha de Patmos",
+        "Em Roma",
+        "Em Éfeso"
+      ],
+      "correta": 1,
+      "justificativa": "João estava preso na ilha de Patmos quando recebeu a revelação sobre o que aconteceria no futuro [3]."
+    },
+    {
+      "pergunta": "Para quantas igrejas da Ásia Menor o livro foi especificamente direcionado?",
+      "opcoes": [
+        "Três",
+        "Sete",
+        "Doze",
+        "Dez"
+      ],
+      "correta": 1,
+      "justificativa": "O livro foi escrito para os cristãos das sete igrejas da Ásia Menor [1], [4]."
+    },
+    {
+      "pergunta": "Qual é o versículo chave que afirma que Deus revela seus segredos aos profetas?",
+      "opcoes": [
+        "Apocalipse 1:1",
+        "João 3:16",
+        "Amós 3:7",
+        "II Timóteo 3:16"
+      ],
+      "correta": 2,
+      "justificativa": "O versículo citado na lição é Amós 3:7: 'Certamente o senhor DEUS não fará nada sem ter revelado seu segredo aos seus servos, os profetas' [5], [6]."
+    },
+    {
+      "pergunta": "Quantos capítulos possui o livro de Apocalipse e qual sua posição na Bíblia?",
+      "opcoes": [
+        "22 capítulos e é o 66º livro",
+        "21 capítulos e é o 60º livro",
+        "28 capítulos e é o último livro",
+        "12 capítulos e é o 66º livro"
+      ],
+      "correta": 0,
+      "justificativa": "O livro de Apocalipse contém 22 capítulos e é o 66º livro da Bíblia [2]."
+    },
+    {
+      "pergunta": "Qual igreja foi elogiada por seu trabalho árduo, mas criticada por abandonar o 'primeiro amor'?",
+      "opcoes": [
+        "Esmirna",
+        "Pérgamo",
+        "Éfeso",
+        "Sardes"
+      ],
+      "correta": 2,
+      "justificativa": "A igreja de Éfeso foi elogiada pela perseverança, mas criticada por abandonar o primeiro amor [7]."
+    },
+    {
+      "pergunta": "Quais igrejas NÃO receberam nenhuma crítica de Jesus nas cartas?",
+      "opcoes": [
+        "Éfeso e Esmirna",
+        "Esmirna e Filadélfia",
+        "Filadélfia e Laodiceia",
+        "Tiatira e Sardes"
+      ],
+      "correta": 1,
+      "justificativa": "As igrejas de Esmirna e Filadélfia são as duas que não receberam críticas [8], [9], [4]."
+    },
+    {
+      "pergunta": "Qual igreja vivia em uma cidade considerada 'o trono de Satanás'?",
+      "opcoes": [
+        "Pérgamo",
+        "Tiatira",
+        "Sardes",
+        "Esmirna"
+      ],
+      "correta": 0,
+      "justificativa": "Pérgamo era uma cidade com muitos templos pagãos, considerada o trono de Satanás [8]."
+    },
+    {
+      "pergunta": "A igreja de Laodiceia foi severamente criticada por qual motivo?",
+      "opcoes": [
+        "Por ser perseguida",
+        "Por seguir a Jezabel",
+        "Por ser morna espiritualmente",
+        "Por ser pobre materialmente"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus critica a igreja de Laodiceia por ser morna, nem fria nem quente, e por confiar em suas riquezas [10]."
+    },
+    {
+      "pergunta": "Qual era o contexto da cidade de Esmirna?",
+      "opcoes": [
+        "Cidade pobre e sem importância",
+        "Cidade rica, mas com igreja que enfrentava pobreza e perseguição",
+        "Cidade famosa pelos seus terremotos",
+        "Cidade portuária com templo à Ártemis"
+      ],
+      "correta": 1,
+      "justificativa": "Esmirna era uma cidade rica, mas a igreja enfrentava perseguição e pobreza, sendo rica espiritualmente [7]."
+    },
+    {
+      "pergunta": "A qual igreja Jesus prometeu dar o 'maná escondido' e uma 'pedra branca'?",
+      "opcoes": [
+        "Filadélfia",
+        "Éfeso",
+        "Pérgamo",
+        "Tiatira"
+      ],
+      "correta": 2,
+      "justificativa": "A promessa para os vencedores de Pérgamo inclui o maná escondido e uma pedra branca com um novo nome [11]."
+    },
+    {
+      "pergunta": "Qual igreja tolerava uma mulher chamada Jezabel, que seduzia os servos à imoralidade?",
+      "opcoes": [
+        "Tiatira",
+        "Sardes",
+        "Laodiceia",
+        "Pérgamo"
+      ],
+      "correta": 0,
+      "justificativa": "A igreja de Tiatira era criticada por tolerar a profetisa Jezabel [11]."
+    },
+    {
+      "pergunta": "A igreja de Sardes recebeu qual diagnóstico espiritual de Jesus?",
+      "opcoes": [
+        "Que era muito forte",
+        "Que estava morta, embora parecesse viva",
+        "Que era fiel até a morte",
+        "Que era cheia de boas obras"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus criticou a igreja de Sardes por estar viva apenas em nome, mas estar morta espiritualmente [12]."
+    },
+    {
+      "pergunta": "Qual igreja recebeu a promessa de ser protegida da 'hora da provação' que viria sobre o mundo?",
+      "opcoes": [
+        "Éfeso",
+        "Filadélfia",
+        "Sardes",
+        "Laodiceia"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus promete proteger a igreja de Filadélfia da hora da provação devido à sua fidelidade [9]."
+    },
+    {
+      "pergunta": "O que Jesus aconselhou a igreja de Laodiceia a comprar para ver claramente?",
+      "opcoes": [
+        "Óculos",
+        "Colírio",
+        "Ouro refinado",
+        "Vestes brancas"
+      ],
+      "correta": 1,
+      "justificativa": "Jesus aconselha Laodiceia a comprar colírio para que pudessem ver claramente [10], [13]."
+    },
+    {
+      "pergunta": "Segundo o objetivo da lição, por que não devemos ter medo ao ler o Apocalipse?",
+      "opcoes": [
+        "Porque as coisas ruins não vão acontecer",
+        "Porque Jesus tem o total controle da história e da Igreja",
+        "Porque o livro é apenas simbólico",
+        "Porque os inimigos não existem"
+      ],
+      "correta": 1,
+      "justificativa": "O objetivo é mostrar que não há motivo para medo, pois Jesus tem o total controle da Igreja e da história [5], [6]."
+    },
+    {
+      "pergunta": "Em qual país atual se localizava a região das sete igrejas (Ásia Menor)?",
+      "opcoes": [
+        "Grécia",
+        "Israel",
+        "Turquia",
+        "Egito"
+      ],
+      "correta": 2,
+      "justificativa": "As sete igrejas localizavam-se na Ásia Menor, região que corresponde à atual Turquia [14], [15]."
+    },
+    {
+      "pergunta": "Qual igreja NÃO recebeu nenhum elogio de Jesus?",
+      "opcoes": [
+        "Sardes",
+        "Tiatira",
+        "Laodiceia",
+        "Éfeso"
+      ],
+      "correta": 2,
+      "justificativa": "A igreja de Laodiceia foi a única que não recebeu elogios [10], [4]."
+    },
+    {
+      "pergunta": "Qual o período aproximado em que o livro de Apocalipse foi escrito?",
+      "opcoes": [
+        "100 a 150 d.C.",
+        "66 a 95 d.C.",
+        "33 a 40 d.C.",
+        "No ano 0"
+      ],
+      "correta": 1,
+      "justificativa": "Não se sabe ao certo a data, mas foi aproximadamente entre 66 à 95 d.C. [2]."
+    }
+  ]
+}

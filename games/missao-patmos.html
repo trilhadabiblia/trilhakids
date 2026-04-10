@@ -1,0 +1,2518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Missão Patmos — TrilhoKids</title>
+<style>
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --ocean1: #1a6b9a; --ocean2: #0e4d72; --sky: #87ceeb;
+  --sand: #c8a84b; --sand2: #e8c97a; --land: #5a9e4a; --land2: #7abf5a;
+  --gold: #f5c518; --gold2: #ffa500;
+  --btn-orange: #e8640a; --btn-orange2: #ff8c2a;
+  --btn-green: #2e8b3a; --btn-green2: #45a854;
+  --btn-red: #c0392b; --btn-red2: #e74c3c;
+  --btn-purple: #6c3483; --btn-purple2: #8e44ad;
+  --panel-bg: rgba(20,50,90,0.88);
+  --panel-border: rgba(245,197,24,0.6);
+  --text-light: #f0e6c8; --text-gold: #f5c518;
+  --node-size: 68px;
+  --r: 14px;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--ocean2);
+  color: var(--text-light);
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+}
+button { font-family: inherit; cursor: pointer; border: none; }
+input { font-family: inherit; }
+
+/* ============================================================
+   SCREENS
+============================================================ */
+.screen { display: none; min-height: 100vh; flex-direction: column; }
+.screen.active { display: flex; }
+
+/* ============================================================
+   SCREEN: SPLASH
+============================================================ */
+#scr-splash {
+  background: linear-gradient(160deg, #0e2a45 0%, #1a5c8a 50%, #0e3d5c 100%);
+  align-items: center; justify-content: center;
+  text-align: center; padding: 30px 20px;
+  position: relative; overflow: hidden;
+}
+#scr-splash::before {
+  content: '';
+  position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+  width: 160%; height: 55%;
+  background: radial-gradient(ellipse 50% 100% at 50% 100%, #4a8a38 0%, #3a7a28 40%, transparent 70%);
+  pointer-events: none;
+}
+.splash-ship { font-size: 4rem; animation: ship-bob 3s ease-in-out infinite; margin-bottom: 10px; position:relative; z-index:2; }
+@keyframes ship-bob { 0%,100%{transform:translateY(0) rotate(-2deg);} 50%{transform:translateY(-12px) rotate(2deg);} }
+.splash-logo {
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
+  font-weight: 900;
+  letter-spacing: 3px;
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold2) 50%, var(--sand2) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(2px 3px 4px rgba(0,0,0,0.6));
+  position: relative; z-index:2;
+}
+.splash-sub { font-size: 1rem; color: #b0d0e8; margin: 6px 0 4px; position:relative; z-index:2; }
+.splash-sub2 { font-size: 0.85rem; color: rgba(200,210,220,0.7); margin-bottom: 30px; position:relative; z-index:2; }
+.splash-waves { font-size: 1.6rem; letter-spacing: 8px; margin: 16px 0; position:relative; z-index:2; }
+
+/* ============================================================
+   SCREEN: NAME INPUT
+============================================================ */
+#scr-name {
+  background: linear-gradient(160deg, #1a5c8a 0%, #1a3a60 100%);
+  align-items: center; justify-content: center; padding: 30px 20px;
+}
+.card {
+  background: rgba(10,30,60,0.92);
+  border: 2px solid var(--panel-border);
+  border-radius: var(--r);
+  padding: 32px 28px;
+  width: 100%; max-width: 400px;
+  text-align: center;
+}
+.card h2 { font-size: 1.5rem; color: var(--text-gold); margin-bottom: 8px; }
+.card p { color: #aac0d8; font-size: 0.95rem; margin-bottom: 20px; line-height:1.5; }
+.input-field {
+  width: 100%; padding: 14px 18px;
+  background: rgba(255,255,255,0.08);
+  border: 2px solid rgba(245,197,24,0.4);
+  border-radius: 50px; color: white;
+  font-size: 1.1rem; text-align: center; outline: none;
+  margin-bottom: 18px;
+  transition: border-color 0.2s;
+}
+.input-field::placeholder { color: rgba(255,255,255,0.3); }
+.input-field:focus { border-color: var(--gold); }
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 13px 28px; border-radius: 50px;
+  font-size: 1rem; font-weight: 700;
+  transition: transform 0.15s, box-shadow 0.15s;
+  text-decoration: none;
+}
+.btn:hover { transform: scale(1.04); }
+.btn:active { transform: scale(0.97); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #1a2a10; box-shadow: 0 4px 18px rgba(245,197,24,0.4);
+}
+.btn-orange {
+  background: linear-gradient(135deg, var(--btn-orange), var(--btn-orange2));
+  color: white; box-shadow: 0 4px 18px rgba(232,100,10,0.35);
+}
+.btn-green {
+  background: linear-gradient(135deg, var(--btn-green), var(--btn-green2));
+  color: white; box-shadow: 0 4px 18px rgba(46,139,58,0.35);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.65);
+}
+.btn-full { width: 100%; }
+.btn-sm { padding: 8px 18px; font-size: 0.85rem; }
+
+/* ============================================================
+   HUD (top bar, used on map + challenge)
+============================================================ */
+.hud {
+  display: flex; align-items: center; gap: 12px;
+  background: linear-gradient(90deg, #0c2a45, #0e3d5c, #0c2a45);
+  border-bottom: 3px solid var(--gold);
+  padding: 10px 16px;
+  position: sticky; top: 0; z-index: 200;
+  width: 100%;
+}
+.hud-logo {
+  font-size: 0.75rem; font-weight: 900; letter-spacing: 1px;
+  color: var(--gold); line-height: 1.1;
+  white-space: nowrap;
+}
+.hud-logo span { display: block; font-size: 0.6rem; color: #aac0d8; font-weight: 400; }
+.hud-spacer { flex: 1; }
+.hud-badge {
+  display: flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(245,197,24,0.3);
+  border-radius: 50px; padding: 5px 12px;
+  font-size: 0.85rem; font-weight: 700;
+}
+.hud-avatar {
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(135deg, #f0a040, #d07020);
+  border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+}
+
+/* ============================================================
+   SCREEN: MAP
+============================================================ */
+#scr-map {
+  background: linear-gradient(180deg, #87ceeb 0%, #5cb3d4 25%, var(--ocean1) 65%, var(--ocean2) 100%);
+  min-height: 100vh;
+}
+.map-layout {
+  display: grid;
+  grid-template-columns: 190px 1fr 190px;
+  grid-template-rows: 1fr auto;
+  gap: 0;
+  flex: 1;
+}
+@media (max-width: 700px) {
+  .map-layout { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .map-sidebar-left, .map-sidebar-right { display: none; }
+}
+.map-sidebar-left, .map-sidebar-right {
+  padding: 14px 12px;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.map-panel {
+  background: var(--panel-bg);
+  border: 1.5px solid var(--panel-border);
+  border-radius: var(--r);
+  padding: 14px;
+}
+.map-panel h4 {
+  font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--text-gold); border-bottom: 1px solid rgba(245,197,24,0.3);
+  padding-bottom: 6px; margin-bottom: 10px;
+}
+.map-panel p { font-size: 0.8rem; color: #aac8e0; line-height: 1.6; }
+.how-to-list { list-style: none; }
+.how-to-list li { font-size: 0.8rem; color: #aac8e0; padding: 4px 0; display: flex; gap: 6px; align-items: flex-start; }
+.how-to-list li::before { content: attr(data-n); color: var(--gold); font-weight: 700; min-width: 16px; }
+.hint-btn {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  background: rgba(255,215,0,0.12); border: 1px solid rgba(255,215,0,0.4);
+  border-radius: 50px; padding: 7px 12px;
+  font-size: 0.78rem; color: var(--gold); cursor: pointer;
+  transition: background 0.2s;
+}
+.hint-btn:hover { background: rgba(255,215,0,0.22); }
+
+/* MAP CENTER */
+.map-center { position: relative; overflow: hidden; }
+.map-island {
+  position: relative; width: 100%; padding-bottom: 10px;
+  min-height: 400px;
+}
+/* island terrain */
+.map-island::before {
+  content: '';
+  position: absolute; top: 20%; left: 15%; right: 15%; bottom: 10%;
+  background: radial-gradient(ellipse 80% 80% at 50% 60%,
+    var(--land2) 0%, var(--land) 35%, #3a6428 60%, transparent 80%);
+  border-radius: 50%;
+  pointer-events: none; z-index: 0;
+}
+.map-island::after {
+  content: '⛵';
+  position: absolute; top: 12%; right: 10%;
+  font-size: 2.5rem; z-index: 1;
+  animation: ship-bob 4s ease-in-out infinite;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.4));
+}
+/* SVG path for trail */
+.trail-svg {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  z-index: 1; pointer-events: none;
+}
+
+/* MAP NODES */
+.node-wrap { position: absolute; z-index: 3; transform: translate(-50%, -50%); }
+.map-node {
+  width: var(--node-size); height: var(--node-size);
+  border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  position: relative; cursor: pointer;
+  border: 4px solid transparent;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.map-node:hover { transform: scale(1.12) !important; }
+.map-node .n-num {
+  font-size: 1.3rem; font-weight: 900; line-height: 1;
+}
+.map-node .n-emoji { font-size: 1.1rem; line-height: 1; }
+.map-node .n-label {
+  position: absolute; top: calc(100% + 6px); left: 50%; transform: translateX(-50%);
+  white-space: nowrap; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.5px;
+  background: rgba(5,20,45,0.85); border-radius: 6px; padding: 3px 6px;
+  color: var(--text-light); text-align: center; line-height: 1.3; max-width: 90px;
+  white-space: normal; pointer-events: none;
+}
+.map-node .n-stars { font-size: 0.6rem; margin-top: 1px; }
+/* node states */
+.node-locked {
+  background: linear-gradient(135deg, #3a4a5a, #2a3a4a);
+  border-color: #4a6a8a; opacity: 0.6; cursor: default;
+}
+.node-unlocked {
+  background: linear-gradient(135deg, #f5d020, #f5a623);
+  border-color: #fff;
+  box-shadow: 0 0 20px rgba(245,197,24,0.6);
+  animation: node-pulse 2s ease-in-out infinite;
+}
+@keyframes node-pulse {
+  0%,100%{ box-shadow: 0 0 15px rgba(245,197,24,0.5); }
+  50%{ box-shadow: 0 0 30px rgba(245,197,24,0.9), 0 0 50px rgba(245,197,24,0.3); }
+}
+.node-completed {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  border-color: #a8e6b8;
+  box-shadow: 0 4px 16px rgba(46,204,113,0.4);
+}
+.node-locked .n-num, .node-locked .n-emoji { filter: grayscale(1); opacity: 0.5; }
+/* start arrow */
+.start-arrow {
+  position: absolute; top: calc(-44px); left: 50%; transform: translateX(-50%);
+  font-size: 1.8rem; animation: bounce-arrow 1s ease-in-out infinite;
+  pointer-events: none; z-index: 5; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+@keyframes bounce-arrow { 0%,100%{transform:translateX(-50%) translateY(0);} 50%{transform:translateX(-50%) translateY(6px);} }
+.start-label {
+  position: absolute; top: calc(-70px); left: 50%; transform: translateX(-50%);
+  background: var(--gold); color: #1a2a10; font-size: 0.7rem; font-weight: 900;
+  padding: 4px 10px; border-radius: 50px; white-space: nowrap;
+  pointer-events: none; z-index: 5;
+}
+
+/* MAP BOTTOM BAR */
+.map-bottom {
+  grid-column: 1 / -1;
+  background: linear-gradient(90deg, #0c2a45, #0e3d5c, #0c2a45);
+  border-top: 2px solid rgba(245,197,24,0.4);
+  display: flex; gap: 0; min-height: 80px;
+}
+.map-bottom-cell {
+  flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 10px 14px; gap: 5px;
+  border-right: 1px solid rgba(245,197,24,0.15);
+}
+.map-bottom-cell:last-child { border-right: none; }
+.map-bottom-cell .bc-title {
+  font-size: 0.68rem; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold); font-weight: 700;
+}
+.items-row { display: flex; gap: 12px; align-items: center; }
+.item-badge {
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  font-size: 0.7rem; color: #aac0d8;
+}
+.item-badge .icon { font-size: 1.3rem; }
+.item-badge .count {
+  background: rgba(245,197,24,0.2); border: 1px solid rgba(245,197,24,0.5);
+  border-radius: 50px; padding: 1px 7px; font-size: 0.65rem;
+  color: var(--gold); font-weight: 700;
+}
+.progress-text { font-size: 0.8rem; color: #aac0d8; text-align: center; }
+.progress-bar-wrap { width: 100%; background: rgba(255,255,255,0.1); border-radius: 50px; overflow: hidden; height: 8px; }
+.progress-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 50px; transition: width 0.5s ease; }
+
+/* ============================================================
+   LEVEL MODAL (intro + challenge overlay)
+============================================================ */
+.modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(5,15,35,0.85); z-index: 500;
+  align-items: center; justify-content: center; padding: 16px;
+}
+.modal-overlay.active { display: flex; }
+.modal-box {
+  background: linear-gradient(160deg, #0e2a45 0%, #0c1e35 100%);
+  border: 2px solid var(--panel-border);
+  border-radius: 20px;
+  width: 100%; max-width: 480px;
+  max-height: 92vh; overflow-y: auto;
+  padding: 24px 22px;
+  position: relative;
+  animation: modal-in 0.3s ease;
+}
+@keyframes modal-in { from{transform:scale(0.85);opacity:0;} to{transform:scale(1);opacity:1;} }
+.modal-close {
+  position: absolute; top: 12px; right: 14px;
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: #aaa; border-radius: 50%; width: 32px; height: 32px;
+  font-size: 1rem; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.15); }
+
+/* Level badge + title */
+.lvl-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  color: #1a2a10; font-size: 0.72rem; font-weight: 900;
+  padding: 4px 14px; border-radius: 50px; letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.lvl-title { font-size: 1.7rem; font-weight: 900; color: white; margin-bottom: 3px; }
+.lvl-theme { color: var(--gold); font-size: 0.9rem; margin-bottom: 16px; }
+.msg-box {
+  background: rgba(255,255,255,0.06); border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0; padding: 14px 16px; margin-bottom: 16px;
+}
+.msg-box .msg-head {
+  font-size: 0.75rem; color: var(--gold); font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.msg-box .msg-text { font-size: 0.9rem; color: #b8d0e8; line-height: 1.7; }
+.challenge-hint {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(245,197,24,0.2);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 20px;
+}
+.challenge-hint .ch-label { font-size: 0.7rem; color: #7a90aa; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.challenge-hint p { font-size: 0.88rem; color: #c8dff0; font-weight: 600; }
+
+/* ============================================================
+   CHALLENGE SCREENS (inside challenge modal/overlay)
+============================================================ */
+#chal-screen {
+  display: none; position: fixed; inset: 0; z-index: 600;
+  flex-direction: column;
+  background: linear-gradient(160deg, #0c2040 0%, #0e3060 100%);
+  overflow-y: auto;
+}
+#chal-screen.active { display: flex; }
+.chal-header {
+  background: linear-gradient(90deg, #0a1a30, #0c2540);
+  border-bottom: 2px solid rgba(245,197,24,0.35);
+  padding: 12px 16px; display: flex; align-items: center; gap: 10px;
+  position: sticky; top: 0; z-index: 10;
+}
+.chal-title { font-size: 1rem; font-weight: 700; color: var(--gold); flex: 1; }
+.chal-body { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 20px 16px; max-width: 540px; margin: 0 auto; width: 100%; }
+
+/* Binary choice */
+.situation-box {
+  background: rgba(255,255,255,0.07); border-radius: 16px;
+  padding: 20px; width: 100%; text-align: center; margin-bottom: 24px;
+}
+.sit-emoji { font-size: 3rem; margin-bottom: 10px; }
+.sit-text { font-size: 1rem; color: #c0d8f0; line-height: 1.7; white-space: pre-line; }
+.choices { display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.choice-btn {
+  width: 100%; padding: 16px 20px; border-radius: 14px;
+  font-size: 0.95rem; font-weight: 600; text-align: left;
+  display: flex; align-items: center; gap: 12px;
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.choice-btn:hover { transform: translateX(4px); }
+.choice-btn.opt-a { background: rgba(255,140,40,0.15); border: 2px solid rgba(255,140,40,0.5); color: #ffc070; }
+.choice-btn.opt-b { background: rgba(80,200,120,0.15); border: 2px solid rgba(80,200,120,0.5); color: #80e8a0; }
+.choice-btn.correct { background: rgba(46,204,113,0.25) !important; border-color: #2ecc71 !important; color: #afffcf !important; animation: pop 0.4s ease; }
+.choice-btn.wrong { background: rgba(231,76,60,0.25) !important; border-color: #e74c3c !important; color: #ffaaaa !important; animation: shake 0.4s ease; }
+@keyframes pop { 0%{transform:scale(1);}50%{transform:scale(1.04);}100%{transform:scale(1);} }
+@keyframes shake { 0%,100%{transform:translateX(0);}25%{transform:translateX(-6px);}75%{transform:translateX(6px);} }
+
+/* Timer bar */
+.timer-wrap { width: 100%; margin-bottom: 12px; }
+.timer-track { width: 100%; height: 10px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.timer-fill { height: 100%; background: linear-gradient(90deg, #2ecc71, #f39c12, #e74c3c); border-radius: 10px; transition: width 0.1s linear; }
+.round-info { display: flex; justify-content: space-between; font-size: 0.8rem; color: #7a90aa; margin-bottom: 6px; }
+
+/* Drag & Drop */
+.drag-pool {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  min-height: 60px; padding: 12px; width: 100%;
+  background: rgba(255,255,255,0.04); border-radius: 14px; margin-bottom: 16px;
+}
+.drag-chip {
+  padding: 8px 14px; border-radius: 50px;
+  background: rgba(255,255,255,0.1); border: 1.5px solid rgba(255,255,255,0.2);
+  font-size: 0.82rem; font-weight: 600; color: var(--text-light);
+  cursor: grab; touch-action: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.drag-chip:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+.drag-chip.selected { outline: 3px solid var(--gold); background: rgba(245,197,24,0.2); }
+.drop-zones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; width: 100%; }
+.drop-zone {
+  min-height: 110px; border-radius: 14px; border: 2px dashed;
+  padding: 12px; transition: all 0.2s;
+}
+.dz-good { border-color: #2ecc71; background: rgba(46,204,113,0.07); }
+.dz-bad { border-color: #e74c3c; background: rgba(231,76,60,0.07); }
+.drop-zone.over { transform: scale(1.02); }
+.dz-good.over { background: rgba(46,204,113,0.18); }
+.dz-bad.over { background: rgba(231,76,60,0.18); }
+.dz-title { font-size: 0.8rem; font-weight: 700; text-align: center; margin-bottom: 8px; }
+.dz-good .dz-title { color: #2ecc71; }
+.dz-bad .dz-title { color: #e74c3c; }
+.dz-items { display: flex; flex-direction: column; gap: 5px; }
+.dz-item { padding: 5px 10px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; text-align: center; }
+.dz-good .dz-item { background: rgba(46,204,113,0.2); color: #afffcf; }
+.dz-bad .dz-item { background: rgba(231,76,60,0.2); color: #ffaaaa; }
+
+/* Avoidance game */
+.avoid-stats { display: flex; justify-content: space-between; width: 100%; margin-bottom: 10px; font-size: 0.85rem; font-weight: 700; }
+.avoid-arena {
+  width: 100%; height: min(380px, 55vw);
+  background: linear-gradient(180deg, #1a4a8a 0%, #1a6aaa 50%, #1a8aaa 100%);
+  border-radius: 16px; position: relative; overflow: hidden; cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.15);
+}
+.float-item {
+  position: absolute;
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.6rem;
+  cursor: pointer;
+  background: rgba(255,255,255,0.13);
+  border: 2px solid rgba(255,255,255,0.28);
+  filter: drop-shadow(1px 2px 4px rgba(0,0,0,0.45));
+  user-select: none; -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* Memory game */
+.mem-info { font-size: 0.85rem; color: #7a90aa; margin-bottom: 12px; width: 100%; text-align: center; }
+.mem-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; width: 100%;
+}
+.mem-card {
+  aspect-ratio: 1; border-radius: 12px; cursor: pointer; perspective: 600px;
+  position: relative;
+}
+.card-inner {
+  width: 100%; height: 100%;
+  transform-style: preserve-3d; transition: transform 0.4s;
+  position: relative;
+}
+.mem-card.flipped .card-inner { transform: rotateY(180deg); }
+.card-f, .card-b {
+  position: absolute; inset: 0; border-radius: 12px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  backface-visibility: hidden; gap: 3px;
+}
+.card-f {
+  background: linear-gradient(135deg, #1a3a6a, #0e2a50);
+  border: 2px solid rgba(245,197,24,0.3);
+  font-size: 1.6rem; color: var(--gold);
+}
+.card-b {
+  background: linear-gradient(135deg, #eef4ff, #d8e8ff);
+  border: 2px solid #aac0e0;
+  transform: rotateY(180deg);
+}
+.card-b .cb-em { font-size: 1.5rem; }
+.card-b .cb-tx { font-size: 0.6rem; font-weight: 700; color: #1a3a6a; text-align: center; line-height: 1.2; }
+.mem-card.matched .card-b { background: linear-gradient(135deg, #d4f5e9, #a8e6c8); border-color: #2ecc71; }
+
+/* Maze */
+.maze-info { font-size: 0.82rem; color: #7a90aa; margin-bottom: 10px; text-align: center; width: 100%; }
+.maze-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.maze-grid {
+  display: grid; gap: 2px; background: #0a1828;
+  padding: 4px; border-radius: 10px;
+  border: 2px solid rgba(245,197,24,0.3);
+}
+.mc {
+  width: clamp(30px, 9vw, 40px); height: clamp(30px, 9vw, 40px);
+  border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+}
+.mc-wall { background: #0a1828; }
+.mc-open { background: #e8d5a0; }
+.mc-player { background: #f5a623; }
+.mc-exit { background: #2ecc71; }
+.maze-dpad {
+  display: grid; grid-template-columns: repeat(3, 48px); gap: 6px;
+}
+.dpad-btn {
+  width: 48px; height: 48px; border-radius: 10px;
+  background: rgba(255,255,255,0.12); border: 1.5px solid rgba(255,255,255,0.2);
+  color: white; font-size: 1.2rem; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s;
+}
+.dpad-btn:hover { background: rgba(255,255,255,0.22); }
+.dpad-btn:active { transform: scale(0.92); }
+.dpad-center { visibility: hidden; }
+
+/* Final choice (level 8) */
+.final-container { text-align: center; }
+.final-verse {
+  background: rgba(255,255,255,0.06); border: 2px solid rgba(245,197,24,0.35);
+  border-radius: 16px; padding: 20px; margin-bottom: 24px; width: 100%;
+}
+.final-verse .fv-emoji { font-size: 2.8rem; margin-bottom: 10px; }
+.final-verse .fv-text { font-size: 0.95rem; color: #b8d0f0; line-height: 1.8; white-space: pre-line; }
+
+/* Sequence game (Patmos) */
+.seq-tiles {
+  display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;
+  width: 100%; margin: 10px 0 20px;
+}
+.seq-tile {
+  padding: 14px 18px; border-radius: 14px; cursor: pointer;
+  font-size: 0.92rem; font-weight: 700; text-align: center;
+  background: rgba(255,255,255,0.1); border: 2px solid rgba(255,255,255,0.25);
+  color: var(--text-light); transition: transform 0.15s, background 0.2s;
+  min-width: 120px; position: relative;
+  touch-action: manipulation;
+}
+.seq-tile:hover { transform: scale(1.05); }
+.seq-tile.seq-done {
+  background: rgba(46,204,113,0.28) !important; border-color: #2ecc71 !important;
+  color: #afffcf !important;
+}
+.seq-tile.seq-wrong { animation: shake 0.4s ease; }
+.seq-tile .seq-num {
+  position: absolute; top: -10px; right: -10px;
+  background: var(--gold); color: #0a1828; border-radius: 50%;
+  width: 24px; height: 24px; font-size: 0.75rem; font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+.seq-progress {
+  font-size: 0.85rem; color: #7a90aa; margin-bottom: 6px; text-align: center; width: 100%;
+}
+.seq-hint {
+  font-size: 0.75rem; color: rgba(180,200,220,0.6); text-align: center;
+  width: 100%; margin-bottom: 16px;
+}
+
+/* Love meter (Éfeso) */
+.lm-meter-wrap {
+  width: 100%; margin-bottom: 18px;
+}
+.lm-label {
+  display: flex; justify-content: space-between; font-size: 0.82rem;
+  color: #e8a0c0; margin-bottom: 5px;
+}
+.lm-track {
+  width: 100%; height: 18px; background: rgba(255,255,255,0.1);
+  border-radius: 50px; overflow: hidden; border: 1px solid rgba(255,100,150,0.3);
+}
+.lm-fill {
+  height: 100%; border-radius: 50px;
+  background: linear-gradient(90deg, #e91e8c, #ff6b9d, #ffb3cc);
+  transition: width 0.5s ease;
+}
+.lm-round-info {
+  display: flex; justify-content: space-between; font-size: 0.8rem;
+  color: #7a90aa; margin-bottom: 10px; width: 100%;
+}
+.lm-opts {
+  display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 6px;
+}
+.lm-opt {
+  padding: 13px 18px; border-radius: 14px; cursor: pointer; font-size: 0.9rem;
+  font-weight: 600; text-align: left; border: 2px solid; transition: transform 0.15s;
+  touch-action: manipulation;
+}
+.lm-opt:hover { transform: translateX(4px); }
+.lm-opt-0 { background: rgba(231,76,60,0.12); border-color: rgba(231,76,60,0.5); color: #ffaaaa; }
+.lm-opt-1 { background: rgba(255,180,50,0.12); border-color: rgba(255,180,50,0.5); color: #ffe0a0; }
+.lm-opt-2 { background: rgba(233,30,140,0.12); border-color: rgba(233,30,140,0.5); color: #ffb3cc; }
+.lm-opt.lm-chosen-good { background: rgba(233,30,140,0.3) !important; border-color: #e91e8c !important; animation: pop 0.4s ease; }
+.lm-opt.lm-chosen-mid  { background: rgba(255,180,50,0.3) !important; border-color: #ffb432 !important; animation: pop 0.4s ease; }
+.lm-opt.lm-chosen-bad  { background: rgba(231,76,60,0.3) !important; border-color: #e74c3c !important; animation: shake 0.4s ease; }
+.lm-hearts { font-size: 1.4rem; letter-spacing: 4px; text-align: center; margin: 4px 0 10px; }
+
+/* Courage gauge (Esmirna) */
+.cg-meter-wrap {
+  width: 100%; margin-bottom: 14px;
+}
+.cg-label {
+  display: flex; justify-content: space-between; font-size: 0.82rem;
+  color: #80c8ff; margin-bottom: 5px;
+}
+.cg-track {
+  width: 100%; height: 18px; background: rgba(255,255,255,0.1);
+  border-radius: 50px; overflow: hidden; border: 1px solid rgba(80,150,255,0.3);
+}
+.cg-fill {
+  height: 100%; border-radius: 50px;
+  background: linear-gradient(90deg, #1565c0, #42a5f5, #00e5ff);
+  transition: width 0.5s ease;
+}
+.cg-round-info {
+  display: flex; justify-content: space-between; font-size: 0.8rem;
+  color: #7a90aa; margin-bottom: 8px; width: 100%;
+}
+.cg-opts {
+  display: flex; flex-direction: column; gap: 10px; width: 100%; margin-top: 6px;
+}
+.cg-opt {
+  padding: 13px 18px; border-radius: 14px; cursor: pointer; font-size: 0.9rem;
+  font-weight: 600; text-align: left; border: 2px solid; transition: transform 0.15s;
+  touch-action: manipulation;
+}
+.cg-opt:hover { transform: translateX(4px); }
+.cg-opt-0 { background: rgba(231,76,60,0.12); border-color: rgba(231,76,60,0.5); color: #ffaaaa; }
+.cg-opt-1 { background: rgba(255,180,50,0.12); border-color: rgba(255,180,50,0.5); color: #ffe0a0; }
+.cg-opt-2 { background: rgba(66,165,245,0.12); border-color: rgba(66,165,245,0.5); color: #aad8ff; }
+.cg-opt.cg-chosen-best { background: rgba(66,165,245,0.3) !important; border-color: #42a5f5 !important; animation: pop 0.4s ease; }
+.cg-opt.cg-chosen-mid  { background: rgba(255,180,50,0.3) !important; border-color: #ffb432 !important; animation: pop 0.4s ease; }
+.cg-opt.cg-chosen-bad  { background: rgba(231,76,60,0.3) !important; border-color: #e74c3c !important; animation: shake 0.4s ease; }
+
+/* Door game (Laodiceia) */
+.door-wrap {
+  display: flex; flex-direction: column; align-items: center; width: 100%;
+}
+.door-scene {
+  perspective: 700px; width: 160px; height: 220px; margin: 10px auto 18px;
+  flex-shrink: 0;
+}
+.door-frame {
+  width: 100%; height: 100%;
+  background: linear-gradient(135deg, #5d3a1a, #8b5e2a);
+  border-radius: 12px 12px 4px 4px;
+  border: 4px solid #3a2010;
+  position: relative; overflow: visible;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+.door-panel {
+  position: absolute; inset: 0; border-radius: 10px 10px 2px 2px;
+  background: linear-gradient(135deg, #7a4a20, #b07030);
+  transform-origin: left center;
+  transform: rotateY(0deg);
+  transition: transform 0.7s ease;
+  backface-visibility: visible;
+  border: 3px solid #5a3010;
+}
+.door-light {
+  position: absolute; inset: 0; border-radius: 10px 10px 2px 2px;
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,200,80,0.9) 0%, rgba(255,120,20,0.5) 50%, transparent 80%);
+  opacity: 0; transition: opacity 0.7s ease;
+  pointer-events: none;
+}
+.door-knob {
+  position: absolute; right: 14px; top: 50%;
+  width: 14px; height: 14px; border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #ffd700, #b8860b);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  transform: translateY(-50%);
+}
+.door-inner-knock {
+  position: absolute; inset: 8px; border-radius: 6px;
+  border: 2px solid rgba(255,200,100,0.25);
+  pointer-events: none;
+}
+.door-pct {
+  font-size: 0.85rem; color: var(--gold); text-align: center;
+  margin-bottom: 10px; font-weight: 700;
+}
+.door-q-info {
+  font-size: 0.8rem; color: #7a90aa; text-align: center; margin-bottom: 8px; width: 100%;
+}
+.door-question {
+  background: rgba(255,255,255,0.07); border-radius: 14px;
+  padding: 16px; width: 100%; text-align: center; margin-bottom: 14px;
+  font-size: 0.97rem; color: #c0d8f0; line-height: 1.6;
+}
+.door-opts {
+  display: flex; flex-direction: column; gap: 10px; width: 100%;
+}
+.door-opt {
+  padding: 13px 18px; border-radius: 14px; cursor: pointer; font-size: 0.9rem;
+  font-weight: 600; text-align: left; border: 2px solid; transition: transform 0.15s;
+  background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.2);
+  color: var(--text-light); touch-action: manipulation;
+}
+.door-opt:hover { transform: translateX(4px); }
+.door-opt.door-correct { background: rgba(46,204,113,0.25) !important; border-color: #2ecc71 !important; color: #afffcf !important; animation: pop 0.4s ease; }
+.door-opt.door-wrong   { background: rgba(231,76,60,0.2) !important; border-color: #e74c3c !important; color: #ffaaaa !important; animation: shake 0.4s ease; }
+
+/* ============================================================
+   RESULT OVERLAY
+============================================================ */
+#result-overlay {
+  display: none; position: fixed; inset: 0; z-index: 700;
+  background: rgba(5,15,35,0.9);
+  align-items: center; justify-content: center; padding: 20px;
+}
+#result-overlay.active { display: flex; }
+.result-card {
+  background: linear-gradient(160deg, #0e2a45, #0c1e35);
+  border: 2px solid var(--panel-border);
+  border-radius: 20px; padding: 32px 28px;
+  text-align: center; width: 100%; max-width: 380px;
+  animation: modal-in 0.3s ease;
+}
+.res-emoji { font-size: 4rem; margin-bottom: 12px; }
+.res-title { font-size: 1.6rem; font-weight: 900; color: white; margin-bottom: 6px; }
+.res-stars { font-size: 2.5rem; margin: 14px 0; letter-spacing: 6px; }
+.res-stars .star { display: inline-block; opacity: 0; transform: scale(0); animation: star-pop 0.5s ease forwards; }
+@keyframes star-pop { 0%{opacity:0;transform:scale(0) rotate(-30deg);}60%{transform:scale(1.3);}100%{opacity:1;transform:scale(1) rotate(0);} }
+.res-msg { font-size: 0.9rem; color: #aac0d8; line-height: 1.6; margin-bottom: 22px; }
+.res-buttons { display: flex; flex-direction: column; gap: 10px; }
+
+/* ============================================================
+   COMPLETION SCREEN
+============================================================ */
+#scr-complete {
+  background: linear-gradient(160deg, #0a1a30 0%, #1a1060 50%, #0e2a45 100%);
+  align-items: center; justify-content: center; padding: 30px 20px; text-align: center;
+}
+.complete-card {
+  background: rgba(10,25,50,0.9);
+  border: 2px solid var(--panel-border);
+  border-radius: 20px; padding: 36px 28px;
+  width: 100%; max-width: 420px;
+}
+.comp-trophy { font-size: 4.5rem; margin-bottom: 10px; animation: float-trophy 3s ease-in-out infinite; }
+@keyframes float-trophy { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+.comp-title { font-size: 2rem; font-weight: 900; color: var(--gold); margin-bottom: 8px; }
+.comp-stars { font-size: 1.8rem; margin-bottom: 18px; }
+.comp-scroll {
+  background: rgba(255,255,255,0.05); border: 2px solid rgba(245,197,24,0.3);
+  border-radius: 14px; padding: 20px; margin-bottom: 20px;
+}
+.comp-scroll .scroll-label { font-size: 0.7rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px; }
+.comp-scroll .scroll-msg { font-size: 1.05rem; color: #d8ecff; line-height: 1.7; font-style: italic; }
+.comp-scroll .scroll-sig { font-size: 0.85rem; color: var(--gold); margin-top: 6px; }
+
+/* ============================================================
+   TOAST FEEDBACK
+============================================================ */
+#toast {
+  position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-60px);
+  padding: 11px 24px; border-radius: 50px;
+  font-weight: 700; font-size: 0.9rem; z-index: 900;
+  transition: transform 0.3s ease;
+  pointer-events: none; white-space: nowrap;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+#toast.show { transform: translateX(-50%) translateY(0); }
+#toast.t-ok { background: #2ecc71; color: white; }
+#toast.t-err { background: #e74c3c; color: white; }
+#toast.t-info { background: var(--gold); color: #1a2a10; }
+
+/* ============================================================
+   CONFETTI
+============================================================ */
+.confetti-wrap { position: fixed; inset: 0; pointer-events: none; z-index: 800; overflow: hidden; }
+.cp { position: absolute; border-radius: 50%; animation: cf-fall linear forwards; }
+@keyframes cf-fall { 0%{transform:translateY(-20px) rotate(0deg);opacity:1;} 100%{transform:translateY(105vh) rotate(720deg);opacity:0;} }
+
+/* ============================================================
+   BOARD GAME (Filadélfia — Portas Abertas)
+============================================================ */
+
+/* Faz chal-body usar largura total quando em modo tabuleiro */
+.chal-body.board-mode {
+  max-width: 100% !important;
+  padding: 8px 6px !important;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.board-wrap { width:100%; display:flex; flex-direction:column; align-items:center; gap:10px; }
+
+/* Dimensões definidas pelo JS via boardResize() */
+.board-grid { display:grid; gap:4px; }
+
+/* ---- Casas ---- */
+.board-sq {
+  border-radius:10px;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  position:relative; overflow:visible;
+  border:2px solid rgba(255,255,255,0.1);
+  background:linear-gradient(145deg,rgba(25,55,110,0.9),rgba(12,30,68,0.95));
+  transition:box-shadow 0.25s;
+}
+/* Ícone principal (centralizado) */
+.board-sq .sq-icon {
+  font-size:1.7em; line-height:1;
+  filter:drop-shadow(0 1px 3px rgba(0,0,0,0.55));
+}
+/* Número da casa (canto inferior-direito) */
+.board-sq .sq-num {
+  position:absolute; bottom:2px; right:4px;
+  font-size:0.55em; font-weight:700; opacity:0.45; line-height:1;
+}
+/* Indicador +N / -N (canto superior-esquerdo) */
+.board-sq .sq-delta {
+  position:absolute; top:2px; left:4px;
+  font-size:0.58em; font-weight:900; line-height:1;
+}
+/* Casas sem ícone: número grande e centralizado */
+.board-sq .sq-plain {
+  font-size:1.25em; font-weight:900; opacity:0.55; line-height:1;
+}
+
+/* Tipos de casa */
+.board-sq.sq-good {
+  background:linear-gradient(145deg,rgba(20,120,60,0.9),rgba(10,80,35,0.95));
+  border-color:rgba(50,210,100,0.6);
+}
+.board-sq.sq-good .sq-delta { color:#7affb0; }
+.board-sq.sq-bad {
+  background:linear-gradient(145deg,rgba(150,25,25,0.9),rgba(100,10,10,0.95));
+  border-color:rgba(230,60,60,0.6);
+}
+.board-sq.sq-bad .sq-delta { color:#ffaaaa; }
+.board-sq.sq-start {
+  background:linear-gradient(145deg,rgba(40,75,190,0.9),rgba(25,50,140,0.95));
+  border-color:rgba(245,197,24,0.75);
+}
+.board-sq.sq-end {
+  background:linear-gradient(145deg,rgba(170,130,10,0.95),rgba(120,90,5,1));
+  border-color:var(--gold);
+  box-shadow:0 0 18px rgba(245,197,24,0.6);
+}
+.board-sq.sq-active {
+  z-index:2;
+  animation:sq-pulse 1.1s ease-in-out infinite;
+}
+@keyframes sq-pulse{
+  0%,100%{ box-shadow:0 0 0 3px var(--gold),0 0 14px rgba(245,197,24,0.55); }
+  50%    { box-shadow:0 0 0 4px var(--gold),0 0 28px rgba(245,197,24,0.95); }
+}
+
+/* Peça do jogador — tamanho em em para escalar com o grid */
+.board-token {
+  position:absolute;
+  font-size:1.95em;
+  top:-0.65em;          /* sobe acima da casa */
+  pointer-events:none; z-index:5;
+  filter:drop-shadow(0 2px 5px rgba(0,0,0,0.7));
+  animation:tok-pop 0.38s ease;
+}
+@keyframes tok-pop{
+  0%  { transform:scale(0.25) translateY(-0.5em); opacity:0; }
+  60% { transform:scale(1.3); }
+  100%{ transform:scale(1);   opacity:1; }
+}
+
+/* ---- Dado ---- */
+.dice-row{ display:flex; align-items:center; gap:22px; justify-content:center; width:100%; }
+.dice{
+  width:76px; height:76px; border-radius:14px;
+  background:white; border:3px solid #2c3e50;
+  display:grid; grid-template-columns:repeat(3,1fr);
+  padding:9px; gap:3px; cursor:pointer;
+  box-shadow:4px 4px 0 #2c3e50,0 0 24px rgba(245,197,24,0.3);
+  transition:transform 0.12s,box-shadow 0.12s;
+  flex-shrink:0;
+}
+.dice:hover:not(.rolling){ transform:scale(1.1) rotate(-5deg); box-shadow:6px 6px 0 #2c3e50; }
+.dice:active:not(.rolling){ transform:scale(0.92); box-shadow:2px 2px 0 #2c3e50; }
+.dice.rolling{ animation:dice-spin 0.72s ease; cursor:not-allowed; pointer-events:none; }
+@keyframes dice-spin{
+  0%  { transform:rotate(0)      scale(1);    }
+  20% { transform:rotate(90deg)  scale(0.7);  }
+  50% { transform:rotate(360deg) scale(1.25); }
+  80% { transform:rotate(630deg) scale(0.87); }
+  100%{ transform:rotate(720deg) scale(1);    }
+}
+.dot{ border-radius:50%; background:#2c3e50; width:100%; aspect-ratio:1;
+      align-self:center; justify-self:center; }
+.dot.empty{ background:transparent; }
+
+.dice-info{ display:flex; flex-direction:column; align-items:center; gap:4px; }
+.dice-num{ font-size:3rem; font-weight:900; color:var(--gold); line-height:1; min-width:44px; text-align:center; }
+.dice-sub{ font-size:0.72rem; color:#7a90aa; text-align:center; }
+
+/* ---- Mensagem de rolagem ---- */
+.roll-msg{
+  background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12);
+  border-radius:12px; padding:11px 16px; text-align:center;
+  font-size:0.9rem; color:#c0d8f0; line-height:1.5;
+  min-height:48px; display:flex; align-items:center; justify-content:center;
+  width:100%; transition:background 0.3s,border-color 0.3s,color 0.3s;
+}
+.roll-msg.msg-good{ background:rgba(46,204,113,0.15); border-color:rgba(46,204,113,0.5); color:#afffcf; }
+.roll-msg.msg-bad { background:rgba(231,76,60,0.15);  border-color:rgba(231,76,60,0.5);  color:#ffaaaa; }
+
+/* ---- Legenda ---- */
+.board-legend{
+  display:flex; gap:14px; font-size:0.72rem; color:#7a90aa;
+  flex-wrap:wrap; justify-content:center;
+}
+.board-legend span{ display:flex; align-items:center; gap:4px; }
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; } ::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); } ::-webkit-scrollbar-thumb { background: rgba(245,197,24,0.4); border-radius: 3px; }
+</style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+<header>
+<div class="text-center mb-8 float">
+	<a href="index.html" class="inline-block mb-4 text-white/80 hover:text-white transition-colors">
+		← Voltar ao Menu
+	</a>
+	<div class="max-w-7xl mx-auto px-4 py-4">
+	  <div class="text-center">
+		<h1 class="text-3xl md:text-4xl font-black text-white drop-shadow-lg mb-2">💌 Missão Patmos</h1>
+		<p class="text-purple-100 text-sm md:text-base">Entregue as 7 Cartas às Igrejas da Ásia!</p>
+		<p class="text-yellow-300 text-xs md:text-sm mt-1" id="instrucao-dispositivo"></p>
+	  </div>
+	</div>
+</div>
+</header>
+
+
+<!-- ========== SPLASH ========== -->
+<div id="scr-splash" class="screen active">
+  <div class="splash-ship">⛵</div>
+  <div class="splash-logo">MISSÃO PATMOS</div>
+  <div class="splash-sub">A Mensagem de Jesus</div>
+  <div class="splash-sub2">Uma aventura pelas 7 Igrejas da Ásia</div>
+  <div class="splash-waves">🌊🏝️🌊</div>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:10px;position:relative;z-index:2">
+    <button class="btn btn-gold" style="font-size:1.1rem;padding:15px 36px" onclick="G.goName()">⚓ Iniciar Missão!</button>
+  </div>
+  <div style="position:relative;z-index:2;margin-top:30px;font-size:0.75rem;color:rgba(200,220,235,0.4)">trilhokids.com.br 📖</div>
+</div>
+
+<!-- ========== NAME INPUT ========== -->
+<div id="scr-name" class="screen">
+  <div style="flex:1;background:linear-gradient(160deg,#0e2a45,#1a4a7a);display:flex;align-items:center;justify-content:center;padding:30px 20px;width:100%">
+    <div class="card">
+      <div style="font-size:3.5rem;margin-bottom:12px">🧒</div>
+      <h2>Qual é o seu nome?</h2>
+      <p>Você vai ajudar João a entregar as cartas de Jesus para as 7 Igrejas da Ásia!</p>
+      <input type="text" class="input-field" id="name-in" placeholder="Digite seu nome..." maxlength="18" autocomplete="off">
+      <button class="btn btn-orange btn-full" onclick="G.startGame()">🚀 Começar Aventura!</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== MAP ========== -->
+<div id="scr-map" class="screen">
+  <div class="hud">
+    <div class="hud-logo">MISSÃO PATMOS <span>TrilhoKids.com.br</span></div>
+    <div class="hud-spacer"></div>
+    <div class="hud-badge">⭐ <span id="h-stars">0</span></div>
+    <div class="hud-badge">❤️ <span id="h-lives">3</span></div>
+    <div class="hud-avatar" id="h-avatar">🧒</div>
+    <div style="font-size:0.78rem;color:var(--text-gold);font-weight:700" id="h-name">Viajante</div>
+  </div>
+
+  <div class="map-layout" style="flex:1">
+    <!-- LEFT SIDEBAR -->
+    <div class="map-sidebar-left">
+      <div class="map-panel">
+        <h4>📖 História</h4>
+        <p>João estava na Ilha de Patmos quando ouviu uma voz como uma trombeta… Era Jesus! Ele deu a João uma missão muito especial!</p>
+      </div>
+      <div class="map-panel">
+        <h4>🎯 Objetivo</h4>
+        <p>Entregue todas as cartas corretamente, complete os desafios e receba uma mensagem especial de Jesus para você!</p>
+      </div>
+    </div>
+
+    <!-- MAP CENTER -->
+    <div class="map-center">
+      <div class="map-island" id="map-island" style="height:380px">
+        <svg class="trail-svg" id="trail-svg" viewBox="0 0 600 380" preserveAspectRatio="none">
+          <defs>
+            <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <polygon points="0 0, 6 3, 0 6" fill="rgba(245,197,24,0.6)"/>
+            </marker>
+          </defs>
+          <path id="trail-path" fill="none" stroke="rgba(245,197,24,0.55)" stroke-width="5"
+            stroke-dasharray="10,6" stroke-linecap="round"/>
+        </svg>
+        <!-- Nodes injected by JS -->
+        <div id="nodes-container"></div>
+      </div>
+
+      <!-- BOTTOM INFO BAR (mobile only) -->
+      <div id="map-progress-mobile" style="padding:10px 14px;font-size:0.78rem;color:#aac0d8;text-align:center;display:none">
+        Cartas: <span id="m-letters">0</span>/7 &nbsp;|&nbsp; ⭐ <span id="m-stars2">0</span>/21
+      </div>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="map-sidebar-right">
+      <div class="map-panel">
+        <h4>📋 Como Jogar</h4>
+        <ul class="how-to-list">
+          <li data-n="1">LEIA a mensagem de cada igreja</li>
+          <li data-n="2">COMPLETE o desafio</li>
+          <li data-n="3">COLETE estrelas</li>
+          <li data-n="4">AVANCE na missão</li>
+          <li data-n="5">RECEBA sua recompensa!</li>
+        </ul>
+        <div class="hint-btn" style="margin-top:10px" onclick="G.showHint()">💡 Dicas</div>
+      </div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="map-bottom">
+      <div class="map-bottom-cell">
+        <div class="bc-title">🏆 Itens Especiais</div>
+        <div class="items-row">
+          <div class="item-badge"><span class="icon">⏭️</span><span class="count" id="it-skip">×2</span><span>Pular</span></div>
+          <div class="item-badge"><span class="icon">❤️</span><span class="count" id="it-life">×2</span><span>Vida Extra</span></div>
+          <div class="item-badge"><span class="icon">💡</span><span class="count" id="it-hint">×2</span><span>Dica</span></div>
+        </div>
+      </div>
+      <div class="map-bottom-cell">
+        <div class="bc-title">🗺️ Sua Jornada</div>
+        <div class="progress-text">Cartas: <b id="prog-letters">0</b>/7 &nbsp; ⭐ <b id="prog-stars">0</b>/21</div>
+        <div class="progress-bar-wrap" style="margin-top:6px">
+          <div class="progress-bar-fill" id="prog-bar" style="width:0%"></div>
+        </div>
+      </div>
+      <div class="map-bottom-cell">
+        <div class="bc-title">🎁 Recompensa Final</div>
+        <div style="font-size:0.75rem;color:#aac0d8;text-align:center;line-height:1.5">
+          Complete todas as missões e descubra a mensagem especial de Jesus para você!
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ========== LEVEL INTRO MODAL ========== -->
+<div class="modal-overlay" id="modal-intro">
+  <div class="modal-box">
+    <button class="modal-close" onclick="G.closeIntro()">✕</button>
+    <div class="lvl-badge" id="intro-badge">Nível 1 — Patmos</div>
+    <div class="lvl-title" id="intro-title">🏝️ Patmos</div>
+    <div class="lvl-theme" id="intro-theme">🎯 Tema: A Missão</div>
+    <div class="msg-box">
+      <div class="msg-head">🎺 Mensagem de Jesus</div>
+      <div class="msg-text" id="intro-msg">...</div>
+    </div>
+    <div class="challenge-hint">
+      <div class="ch-label">🎮 Seu Desafio</div>
+      <p id="intro-chal-desc">...</p>
+    </div>
+    <button class="btn btn-gold btn-full" style="font-size:1.05rem" onclick="G.launchChallenge()">⚔️ Aceitar Desafio!</button>
+  </div>
+</div>
+
+<!-- ========== CHALLENGE SCREEN ========== -->
+<div id="chal-screen">
+  <div class="chal-header">
+    <button class="btn btn-ghost btn-sm" onclick="G.quitChallenge()">← Sair</button>
+    <div class="chal-title" id="chal-title">Missão</div>
+    <div style="font-size:0.82rem;color:#7a90aa">❤️ <span id="ch-lives">3</span> &nbsp; ⭐ <span id="ch-stars">0</span></div>
+  </div>
+  <div class="chal-body" id="chal-body">
+    <!-- Injected by JS -->
+  </div>
+</div>
+
+<!-- ========== RESULT OVERLAY ========== -->
+<div id="result-overlay">
+  <div class="result-card">
+    <div class="res-emoji" id="res-emoji">🎉</div>
+    <div class="res-title" id="res-title">Parabéns!</div>
+    <div class="res-stars" id="res-stars"></div>
+    <div class="res-msg" id="res-msg">Ótimo trabalho!</div>
+    <div class="res-buttons">
+      <button class="btn btn-gold btn-full" id="res-next-btn" onclick="G.afterResult()">Próxima Parada ➡️</button>
+      <button class="btn btn-ghost btn-full" onclick="G.retryLevel()">🔄 Tentar Novamente</button>
+    </div>
+  </div>
+</div>
+
+<!-- ========== COMPLETION ========== -->
+<div id="scr-complete" class="screen">
+  <div class="complete-card">
+    <div class="comp-trophy">🏆</div>
+    <div class="comp-title">Missão Completa!</div>
+    <div class="comp-stars" id="comp-stars">⭐⭐⭐⭐⭐⭐⭐⭐</div>
+    <div class="comp-scroll">
+      <div class="scroll-label">✉️ Mensagem de Jesus para você</div>
+      <div class="scroll-msg" id="comp-msg">"Eu te conheço e estou com você!"</div>
+      <div class="scroll-sig">— Jesus (Apocalipse)</div>
+    </div>
+    <button class="btn btn-gold btn-full" onclick="G.goMap()" style="margin-bottom:10px">🗺️ Ver Conquistas</button>
+    <button class="btn btn-ghost btn-full" onclick="G.resetGame()">🔄 Jogar Novamente</button>
+  </div>
+</div>
+
+<!-- ========== TOAST ========== -->
+<div id="toast"></div>
+
+<script>
+/* ============================================================
+   LEVEL DATA
+============================================================ */
+const LEVELS = [
+  {
+    id:0, name:'Patmos', city:'Ilha de Patmos', theme:'A Visão', emoji:'🏝️',
+    nodePos:{x:10,y:75},
+    message:'João, você está exilado na Ilha de Patmos. Subitamente, uma voz forte como trombeta ressoa atrás de você:\n\n"O que você vê, escreva num livro e mande para as sete igrejas!"\n\nEra Jesus! Você está prestes a receber a missão mais importante da sua vida.',
+    chalDesc:'Monte a mensagem de Jesus tocando as peças na ordem correta!',
+    type:'sequence',
+    data:{
+      tiles:[
+        {text:'✍️ Escreva',          order:0},
+        {text:'o que você vê,',       order:1},
+        {text:'num livro,',           order:2},
+        {text:'e mande',              order:3},
+        {text:'para as 7 igrejas!',   order:4},
+      ]
+    }
+  },
+  {
+    id:1, name:'Éfeso', city:'Igreja de Éfeso', theme:'Amor que Não Desiste', emoji:'❤️',
+    nodePos:{x:22,y:62},
+    message:'"Eu conheço suas obras, seu trabalho e sua perseverança. Mas tenho isto contra você: você abandonou o amor que tinha no começo. Lembre de onde você caiu, arrependa-se e volte a fazer as obras de antes!"\n\n— Jesus para a Igreja de Éfeso',
+    chalDesc:'Encha o Coração de Amor! 5 situações — escolha a atitude mais amorosa.',
+    type:'lovemeter',
+    data:{
+      maxHearts:10,
+      scenarios:[
+        { sit:'Seu amigo está triste e tirou uma nota ruim na escola. Você:',
+          opts:[{t:'😤 Gozar dele pela nota ruim', hearts:0},
+                {t:'😶 Não ligar, cada um cuida do seu...', hearts:1},
+                {t:'💛 Oferecer ajuda e encorajá-lo!', hearts:2}] },
+        { sit:'Há uma criança nova na escola que parece solitária. Você:',
+          opts:[{t:'😒 Ignorar, não preciso de mais amigos', hearts:0},
+                {t:'😐 Dar um "oi" rápido e seguir em frente', hearts:1},
+                {t:'🤝 Chamá-la para brincar junto!', hearts:2}] },
+        { sit:'Você tem sua última barrinha de cereal. Seu colega também está com fome. Você:',
+          opts:[{t:'😋 Comer tudo escondido...', hearts:0},
+                {t:'🙂 Mostrar mas dizer que é a última', hearts:1},
+                {t:'💝 Dividir ao meio com ele!', hearts:2}] },
+        { sit:'Alguém fala algo que te machuca. Você:',
+          opts:[{t:'😡 Devolver no dobro da grosseria!', hearts:0},
+                {t:'😶 Guardar o rancor por dentro...', hearts:1},
+                {t:'🕊️ Perdoar e conversar com calma', hearts:2}] },
+        { sit:'Seu irmão quebrou seu brinquedo favorito sem querer. Você:',
+          opts:[{t:'🤬 Brigar e não deixar ele usar nada seu!', hearts:0},
+                {t:'😟 Ficar chateado em silêncio...', hearts:1},
+                {t:'❤️ Perdoar — acidentes acontecem!', hearts:2}] }
+      ]
+    }
+  },
+  {
+    id:2, name:'Esmirna', city:'Igreja de Esmirna', theme:'Coragem na Tribulação', emoji:'💪',
+    nodePos:{x:34,y:48},
+    message:'"Eu conheço a sua tribulação e a sua pobreza. Não tenha medo do que você vai sofrer. Seja fiel até a morte, e eu te darei a coroa da vida!"\n\n— Jesus para a Igreja de Esmirna',
+    chalDesc:'Encha a Barra de Coragem! 3 opções por situação — escolha a mais corajosa! (12s cada)',
+    type:'courage',
+    data:{
+      scenarios:[
+        { sit:'😂 Colegas riem de você porque você orou antes do lanche. O que você faz?',
+          opts:[{t:'😰 Nunca mais oro em público...', pts:0},
+                {t:'😐 Fico quieto e embaraçado', pts:1},
+                {t:'🙏 Continuo orando com coragem!', pts:2}] },
+        { sit:'🤥 Seu amigo quer que você minta pro professor para não se meter em problema.',
+          opts:[{t:'🤥 Minto para não perder o amigo', pts:0},
+                {t:'😟 Fico quieto e evito o assunto', pts:1},
+                {t:'✅ Digo a verdade com gentileza!', pts:2}] },
+        { sit:'😢 Um colega é excluído no recreio por ser diferente. O que você faz?',
+          opts:[{t:'😶 Passo por alto, não é meu problema', pts:0},
+                {t:'😐 Fico olhando mas sem agir', pts:1},
+                {t:'🤝 Chego junto e o convido para brincar!', pts:2}] },
+        { sit:'😤 Alguém te desafia: "Se você fosse valente, faria algo errado..."',
+          opts:[{t:'😤 Faço pra provar que sou valente...', pts:0},
+                {t:'🤔 Fico na dúvida sem responder', pts:1},
+                {t:'💪 Recuso — isso não é coragem de verdade!', pts:2}] },
+        { sit:'📱 Você vê uma mensagem que ofende Jesus nas redes sociais.',
+          opts:[{t:'👍 Curto e sigo, não quero barraco', pts:0},
+                {t:'😐 Ignoro sem dizer nada', pts:1},
+                {t:'✝️ Respondo com amor e respeito!', pts:2}] },
+        { sit:'🎯 Você pode ajudar alguém zoado, mas tem medo de ser zoado também.',
+          opts:[{t:'😰 Fico com medo e não faço nada', pts:0},
+                {t:'😶 Fico longe mas não participo da zoeira', pts:1},
+                {t:'🦁 Defendo ele com coragem e amor!', pts:2}] }
+      ]
+    }
+  },
+  {
+    id:3, name:'Pérgamo', city:'Igreja de Pérgamo', theme:'Escolhas Importantes', emoji:'⚖️',
+    nodePos:{x:48,y:53},
+    message:'"Eu sei onde você mora — onde Satanás tem seu trono. Mesmo assim, você retém meu nome e não negou minha fé. Mas cuide das suas escolhas — algumas estão te afastando de mim!"\n\n— Jesus para a Igreja de Pérgamo',
+    chalDesc:'Arraste (ou toque) cada item para a categoria correta: BOM ou RUIM.',
+    type:'dragdrop',
+    data:{
+      items:[
+        {t:'🙏 Orar todo dia', c:'good'},
+        {t:'🤝 Ajudar quem precisa', c:'good'},
+        {t:'✅ Dizer a verdade', c:'good'},
+        {t:'💝 Perdoar os outros', c:'good'},
+        {t:'📖 Ler a Bíblia', c:'good'},
+        {t:'🤥 Mentir', c:'bad'},
+        {t:'😡 Brigar à toa', c:'bad'},
+        {t:'💔 Não perdoar', c:'bad'},
+        {t:'😶 Ignorar quem sofre', c:'bad'},
+        {t:'🗣️ Falar mal dos outros', c:'bad'}
+      ]
+    }
+  },
+  {
+    id:4, name:'Tiatira', city:'Igreja de Tiatira', theme:'Fidelidade até o Fim', emoji:'🌟',
+    nodePos:{x:60,y:36},
+    message:'"Eu conheço suas obras, seu amor, sua fé, seu serviço e sua perseverança. Suas últimas obras são maiores que as primeiras. Continue sendo fiel!"\n\n— Jesus para a Igreja de Tiatira',
+    chalDesc:'Clique apenas nas coisas BOAS que aparecem! Evite as ruins! (30 segundos)',
+    type:'avoid',
+    data:{
+      good:['❤️','📖','✝️','⭐','🙏','🤝','😊','🕊️','💛'],
+      bad:['😡','🤥','😤','💔','⚡','😒','🗡️','👿']
+    }
+  },
+  {
+    id:5, name:'Sardes', city:'Igreja de Sardes', theme:'Acorde e Volte para Jesus!', emoji:'👁️',
+    nodePos:{x:70,y:44},
+    message:'"Acorde e fortaleça o que ainda resta, porque está prestes a morrer. Eu não encontrei suas obras perfeitas diante do meu Deus. Lembre o que você recebeu e ouviu. Obedeça e arrependa-se!"\n\n— Jesus para a Igreja de Sardes',
+    chalDesc:'Jogo da memória: encontre os pares corretos! (cidade + tema)',
+    type:'memory',
+    data:{
+      pairs:[
+        {em:'🏝️', tx:'Patmos'},
+        {em:'❤️',  tx:'Éfeso'},
+        {em:'💪',  tx:'Esmirna'},
+        {em:'⚖️',  tx:'Pérgamo'},
+        {em:'🌟',  tx:'Tiatira'},
+        {em:'👁️',  tx:'Sardes'}
+      ]
+    }
+  },
+  {
+    id:6, name:'Filadélfia', city:'Igreja de Filadélfia', theme:'Deus Abre Portas', emoji:'🚪',
+    nodePos:{x:76,y:58},
+    message:'"Olha — coloquei diante de você uma porta aberta que ninguém pode fechar! Você tem pouca força, mas guardou minha palavra e não negou meu nome."\n\n— Jesus para a Igreja de Filadélfia',
+    chalDesc:'Role o dado e percorra o tabuleiro até a Porta Aberta! Cuidado com as casas de punição!',
+    type:'board',
+    data:{}
+  },
+  {
+    id:7, name:'Laodiceia', city:'Igreja de Laodiceia', theme:'Decisão de Verdade', emoji:'🔥',
+    nodePos:{x:87,y:32},
+    message:'"Você não é frio nem quente. Gostaria que você fosse frio ou quente! Porque você é morno, vou cuspir você da minha boca. Seja zeloso e arrependa-te. Eis que estou à porta e bato — se alguém ouvir minha voz e abrir a porta, entrarei!"\n\n— Jesus para a Igreja de Laodiceia',
+    chalDesc:'Abra a Porta para Jesus! Responda 5 perguntas e veja a porta se abrir!',
+    type:'door',
+    data:{
+      questions:[
+        { q:'Jesus está batendo à porta do seu coração. O que você faz?',
+          opts:[{t:'😴 Finjo que não ouço...', ok:false},
+                {t:'🤷 Abro um pouco, quando me convém', ok:false},
+                {t:'🚪 Abro de todo coração!', ok:true}] },
+        { q:'O que significa viver "morno" para Jesus?',
+          opts:[{t:'🌡️ Ter temperatura moderada no corpo', ok:false},
+                {t:'😐 Ser indiferente — nem quente nem frio!', ok:true},
+                {t:'🔥 Ser apaixonado por Jesus', ok:false}] },
+        { q:'Como você age quando ninguém está olhando?',
+          opts:[{t:'😈 Só faço o certo quando alguém vê', ok:false},
+                {t:'🤔 Às vezes sim, às vezes não...', ok:false},
+                {t:'🌟 Faço o certo porque amo Jesus!', ok:true}] },
+        { q:'Jesus diz "compra de mim ouro refinado". O que isso significa?',
+          opts:[{t:'💰 Fazer muitas ofertas na igreja', ok:false},
+                {t:'❤️ Buscar a Jesus de verdade, não riqueza!', ok:true},
+                {t:'🤔 Guardar dinheiro para o céu', ok:false}] },
+        { q:'Qual é a decisão mais importante da sua vida?',
+          opts:[{t:'🎮 Escolher meu jogo favorito', ok:false},
+                {t:'🏆 Me tornar famoso', ok:false},
+                {t:'🔥 Abrir meu coração para Jesus de TODO coração!', ok:true}] }
+      ]
+    }
+  }
+];
+
+/* ============================================================
+   GAME ENGINE
+============================================================ */
+const G = {
+  st: {
+    name:'Viajante', lives:3, stars:0,
+    lvlStars: Array(8).fill(0),
+    lvlDone: Array(8).fill(false),
+    items: {skip:2, life:2, hint:2}
+  },
+  cur: null,   // current level id
+  cSt: {},     // challenge state
+
+  /* ---------- INIT ---------- */
+  init() {
+    const s = localStorage.getItem('mpatmos');
+    if (s) try { Object.assign(this.st, JSON.parse(s)); } catch(e){}
+    document.getElementById('name-in').addEventListener('keydown', e => { if(e.key==='Enter') this.startGame(); });
+    // (teclado reservado para futuras fases)
+  },
+
+  save() { localStorage.setItem('mpatmos', JSON.stringify(this.st)); },
+
+  /* ---------- NAVIGATION ---------- */
+  show(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('scr-'+id).classList.add('active');
+  },
+  goName() { this.show('name'); setTimeout(()=>document.getElementById('name-in').focus(),300); },
+  goMap()  { this.show('map'); setTimeout(()=>{ this.renderMap(); this.updateHUD(); }, 30); },
+  closeIntro() { document.getElementById('modal-intro').classList.remove('active'); },
+
+  /* ---------- GAME START ---------- */
+  startGame() {
+    const n = (document.getElementById('name-in').value||'').trim() || 'Viajante';
+    this.st.name = n;
+    this.save();
+    this.goMap();
+  },
+
+  /* ---------- HUD ---------- */
+  updateHUD() {
+    const s = this.st;
+    document.getElementById('h-name').textContent = s.name;
+    document.getElementById('h-stars').textContent = s.stars;
+    document.getElementById('h-lives').textContent = s.lives;
+    const done = s.lvlDone.filter(Boolean).length;
+    const letters = Math.max(0, done - 1); // Patmos doesn't count as a letter
+    document.getElementById('prog-letters').textContent = Math.min(letters, 7);
+    document.getElementById('prog-stars').textContent = s.stars;
+    document.getElementById('prog-bar').style.width = Math.round(s.stars / 21 * 100) + '%';
+    document.getElementById('it-skip').textContent = '×'+s.items.skip;
+    document.getElementById('it-life').textContent = '×'+s.items.life;
+    document.getElementById('it-hint').textContent = '×'+s.items.hint;
+    // challenge hud
+    document.getElementById('ch-lives').textContent = s.lives;
+    document.getElementById('ch-stars').textContent = s.stars;
+  },
+
+  /* ---------- MAP ---------- */
+  renderMap() {
+    const container = document.getElementById('nodes-container');
+    const svgPath = document.getElementById('trail-path');
+    container.innerHTML = '';
+
+    // Build trail path
+    const pts = LEVELS.map(lv => {
+      const mapEl = document.getElementById('map-island');
+      const W = mapEl ? (mapEl.offsetWidth || 600) : 600;
+      const H = mapEl ? (mapEl.offsetHeight || 380) : 380;
+      return { x: lv.nodePos.x/100 * W, y: lv.nodePos.y/100 * H };
+    });
+
+    let d = `M ${pts[0].x} ${pts[0].y}`;
+    for (let i=1; i<pts.length; i++) {
+      const prev = pts[i-1], cur = pts[i];
+      const cx = (prev.x + cur.x)/2, cy = (prev.y + cur.y)/2;
+      d += ` Q ${cx} ${prev.y} ${cur.x} ${cur.y}`;
+    }
+    svgPath.setAttribute('d', d);
+
+    LEVELS.forEach((lv, i) => {
+      const done = this.st.lvlDone[i];
+      const unlocked = i===0 || this.st.lvlDone[i-1];
+      const stars = this.st.lvlStars[i];
+
+      const mapEl = document.getElementById('map-island');
+      const W = mapEl ? (mapEl.offsetWidth || 600) : 600;
+      const H = mapEl ? (mapEl.offsetHeight || 380) : 380;
+      const px = lv.nodePos.x/100 * W;
+      const py = lv.nodePos.y/100 * H;
+
+      const wrap = document.createElement('div');
+      wrap.className = 'node-wrap';
+      wrap.style.left = px+'px';
+      wrap.style.top  = py+'px';
+
+      const node = document.createElement('div');
+      node.className = 'map-node ' + (done ? 'node-completed' : unlocked ? 'node-unlocked' : 'node-locked');
+
+      const starStr = stars > 0 ? '⭐'.repeat(stars) + '☆'.repeat(3-stars) : '';
+
+      if (!unlocked) {
+        node.innerHTML = `<div class="n-num" style="font-size:1rem">🔒</div><div class="n-label">${lv.name}</div>`;
+      } else {
+        node.innerHTML = `
+          <div class="n-emoji">${lv.emoji}</div>
+          <div class="n-num">${i+1}</div>
+          <div class="n-stars">${starStr}</div>
+          <div class="n-label">${lv.name}<br><span style="opacity:0.75;font-size:0.56rem">${lv.theme}</span></div>
+        `;
+        if (i===0 && !this.st.lvlDone[0]) {
+          const lbl = document.createElement('div');
+          lbl.className = 'start-label';
+          lbl.textContent = '✦ COMEÇAR AQUI!';
+          wrap.appendChild(lbl);
+          const arr = document.createElement('div');
+          arr.className = 'start-arrow';
+          arr.textContent = '👇';
+          wrap.appendChild(arr);
+        }
+        node.onclick = () => this.openLevel(i);
+      }
+
+      wrap.appendChild(node);
+      container.appendChild(wrap);
+    });
+  },
+
+  /* ---------- LEVEL INTRO ---------- */
+  openLevel(id) {
+    this.cur = id;
+    const lv = LEVELS[id];
+    document.getElementById('intro-badge').textContent = `Nível ${id+1} — ${lv.city}`;
+    document.getElementById('intro-title').textContent = `${lv.emoji} ${lv.name}`;
+    document.getElementById('intro-theme').textContent = `🎯 Tema: ${lv.theme}`;
+    document.getElementById('intro-msg').textContent = lv.message;
+    document.getElementById('intro-chal-desc').textContent = lv.chalDesc;
+    document.getElementById('modal-intro').classList.add('active');
+  },
+
+  /* ---------- CHALLENGE LAUNCH ---------- */
+  launchChallenge() {
+    document.getElementById('modal-intro').classList.remove('active');
+    this.cSt = {};
+    const lv = LEVELS[this.cur];
+    document.getElementById('chal-title').textContent = `${lv.emoji} ${lv.name} — ${lv.theme}`;
+    document.getElementById('chal-body').innerHTML = '';
+    document.getElementById('chal-screen').classList.add('active');
+    this.updateHUD();
+
+    switch(lv.type) {
+      case 'sequence':  this.chalSequence(lv);  break;
+      case 'lovemeter': this.chalLoveMeter(lv); break;
+      case 'courage':   this.chalCourage(lv);   break;
+      case 'binary':    this.chalBinary(lv);    break;
+      case 'timed':     this.chalTimed(lv);     break;
+      case 'dragdrop':  this.chalDrag(lv);      break;
+      case 'avoid':     this.chalAvoid(lv);     break;
+      case 'memory':    this.chalMemory(lv);    break;
+      case 'board':     this.chalBoard(lv);     break;
+      case 'door':      this.chalDoor(lv);      break;
+      case 'final':     this.chalFinal(lv);     break;
+    }
+  },
+
+  quitChallenge() {
+    this.clearIntervals();
+    document.getElementById('chal-body').classList.remove('board-mode');
+    document.getElementById('chal-screen').classList.remove('active');
+    this.goMap();
+  },
+
+  clearIntervals() {
+    if (this.cSt.timer) clearInterval(this.cSt.timer);
+    if (this.cSt.spawn) clearInterval(this.cSt.spawn);
+  },
+
+  /* ==========================================================
+     CHALLENGE: SEQUENCE (Patmos)
+  ========================================================== */
+  chalSequence(lv) {
+    const tiles = [...lv.data.tiles].sort(()=>Math.random()-0.5);
+    this.cSt = {tiles, next:0, errors:0};
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="seq-hint">Toque as peças na ordem correta para montar a mensagem!</div>
+      <div class="seq-progress" id="seq-prog">Peça 1 de ${tiles.length}</div>
+      <div class="seq-tiles" id="seq-tiles">
+        ${tiles.map((t,i)=>`
+          <div class="seq-tile" id="seq-${i}" onclick="G.seqTap(${i})">${t.text}</div>
+        `).join('')}
+      </div>
+      <div id="seq-msg" style="min-height:28px;text-align:center;font-size:0.85rem;color:#7a90aa;width:100%"></div>`;
+  },
+
+  seqTap(i) {
+    const s = this.cSt;
+    const tile = s.tiles[i];
+    const el = document.getElementById('seq-'+i);
+    if (!el || el.classList.contains('seq-done')) return;
+    if (tile.order === s.next) {
+      el.classList.add('seq-done');
+      el.innerHTML = el.textContent + `<span class="seq-num">${s.next+1}</span>`;
+      this.sfx('flip');
+      s.next++;
+      const prog = document.getElementById('seq-prog');
+      if (prog) prog.textContent = s.next < s.tiles.length ? `Peça ${s.next+1} de ${s.tiles.length}` : '✅ Mensagem completa!';
+      if (s.next >= s.tiles.length) {
+        const stars = s.errors===0?3:s.errors<=2?2:1;
+        this.sfx('ok');
+        this.toast('✅ Mensagem montada!','t-ok');
+        setTimeout(()=>this.finishLevel(stars), 1600);
+      }
+    } else {
+      s.errors++;
+      el.classList.add('seq-wrong');
+      this.sfx('err');
+      const msg = document.getElementById('seq-msg');
+      if (msg) msg.textContent = '⚠️ Ops! Procure a peça correta... Erros: '+s.errors;
+      setTimeout(()=>el.classList.remove('seq-wrong'), 500);
+    }
+  },
+
+  /* ==========================================================
+     CHALLENGE: LOVE METER (Éfeso)
+  ========================================================== */
+  chalLoveMeter(lv) {
+    this.cSt = {round:0, hearts:0, maxHearts:lv.data.maxHearts};
+    this.lmRender(lv);
+  },
+
+  lmRender(lv) {
+    const s = this.cSt;
+    const sc = lv.data.scenarios;
+    if (s.round >= sc.length) {
+      const pct = s.hearts / s.maxHearts;
+      const stars = pct>=0.8?3:pct>=0.5?2:1;
+      this.sfx('ok');
+      this.toast(`❤️ ${s.hearts}/${s.maxHearts} corações de amor!`, pct>=0.5?'t-ok':'t-err');
+      return setTimeout(()=>this.finishLevel(stars), 1600);
+    }
+    const r = sc[s.round];
+    const pct = s.hearts / s.maxHearts;
+    const heartsDisplay = '❤️'.repeat(s.hearts) + '🤍'.repeat(s.maxHearts - s.hearts);
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="lm-meter-wrap">
+        <div class="lm-label"><span>❤️ Coração de Amor</span><span>${s.hearts}/${s.maxHearts}</span></div>
+        <div class="lm-track"><div class="lm-fill" id="lm-fill" style="width:${pct*100}%"></div></div>
+        <div class="lm-hearts" id="lm-hearts">${heartsDisplay}</div>
+      </div>
+      <div class="lm-round-info">
+        <span>Situação ${s.round+1}/${sc.length}</span>
+        <span>❤️ Acumulados: ${s.hearts}</span>
+      </div>
+      <div class="situation-box"><div class="sit-text">${r.sit}</div></div>
+      <div class="lm-opts">
+        ${r.opts.map((o,i)=>`
+          <button class="lm-opt lm-opt-${o.hearts}" id="lmo-${i}" onclick="G.answerLove(${i})">${o.t}</button>
+        `).join('')}
+      </div>`;
+  },
+
+  answerLove(idx) {
+    const lv = LEVELS[this.cur];
+    const s = this.cSt;
+    const r = lv.data.scenarios[s.round];
+    const opt = r.opts[idx];
+    document.querySelectorAll('.lm-opt').forEach(b=>b.disabled=true);
+    const cls = opt.hearts===2?'lm-chosen-good':opt.hearts===1?'lm-chosen-mid':'lm-chosen-bad';
+    document.getElementById('lmo-'+idx).classList.add(cls);
+    s.hearts = Math.min(s.maxHearts, s.hearts + opt.hearts);
+    const feedbacks = ['💔 Que tal tentar de outra forma?','😊 Legal, mas dá pra amar mais!','💖 Que amor!'];
+    this.sfx(opt.hearts===2?'ok':opt.hearts===1?'flip':'err');
+    this.toast(feedbacks[opt.hearts], opt.hearts===2?'t-ok':'t-err');
+    s.round++;
+    setTimeout(()=>this.lmRender(lv), 1400);
+  },
+
+  /* ==========================================================
+     CHALLENGE: COURAGE GAUGE (Esmirna)
+  ========================================================== */
+  chalCourage(lv) {
+    this.cSt = {round:0, pts:0, maxPts: lv.data.scenarios.length * 2};
+    this.cgRound(lv);
+  },
+
+  cgRound(lv) {
+    const s = this.cSt;
+    const sc = lv.data.scenarios;
+    if (s.round >= sc.length) {
+      const pct = s.pts / s.maxPts;
+      const stars = pct>=0.83?3:pct>=0.5?2:1;
+      this.sfx('ok');
+      this.toast(`💪 ${s.pts}/${s.maxPts} pontos de coragem!`, pct>=0.5?'t-ok':'t-err');
+      return setTimeout(()=>this.finishLevel(stars), 1600);
+    }
+    const r = sc[s.round];
+    const pct = s.pts / s.maxPts;
+    s.timeLeft = 100;
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="cg-meter-wrap">
+        <div class="cg-label"><span>💪 Barra de Coragem</span><span>${s.pts}/${s.maxPts}</span></div>
+        <div class="cg-track"><div class="cg-fill" id="cg-fill" style="width:${pct*100}%"></div></div>
+      </div>
+      <div class="timer-wrap">
+        <div class="cg-round-info">
+          <span>Situação ${s.round+1}/${sc.length}</span>
+          <span>⏱️ <span id="cg-sec">12</span>s</span>
+        </div>
+        <div class="timer-track"><div class="timer-fill" id="cg-tf" style="width:100%"></div></div>
+      </div>
+      <div class="situation-box"><div class="sit-text">${r.sit}</div></div>
+      <div class="cg-opts">
+        ${r.opts.map((o,i)=>`
+          <button class="cg-opt cg-opt-${o.pts}" id="cgo-${i}" onclick="G.answerCourage(${i})">${o.t}</button>
+        `).join('')}
+      </div>`;
+
+    clearInterval(s.timer);
+    s.timer = setInterval(()=>{
+      s.timeLeft -= (100/60);
+      const tf = document.getElementById('cg-tf');
+      const sec = document.getElementById('cg-sec');
+      if (tf) tf.style.width = Math.max(0, s.timeLeft)+'%';
+      if (sec) sec.textContent = Math.max(0, Math.ceil(s.timeLeft * 12 / 100));
+      if (s.timeLeft <= 0) { clearInterval(s.timer); this.answerCourage(-1); }
+    }, 200);
+  },
+
+  answerCourage(idx) {
+    const lv = LEVELS[this.cur];
+    const s = this.cSt;
+    clearInterval(s.timer);
+    document.querySelectorAll('.cg-opt').forEach(b=>b.disabled=true);
+    const r = lv.data.scenarios[s.round];
+    if (idx >= 0) {
+      const opt = r.opts[idx];
+      const cls = opt.pts===2?'cg-chosen-best':opt.pts===1?'cg-chosen-mid':'cg-chosen-bad';
+      document.getElementById('cgo-'+idx).classList.add(cls);
+      s.pts = Math.min(s.maxPts, s.pts + opt.pts);
+      const msgs = ['😰 Não tenha medo!','😊 Quase lá!','💪 Isso é coragem!'];
+      this.sfx(opt.pts===2?'ok':opt.pts===1?'flip':'err');
+      this.toast(msgs[opt.pts], opt.pts===2?'t-ok':'t-err');
+    } else {
+      this.sfx('err'); this.toast('⏰ Tempo esgotado!','t-err');
+    }
+    s.round++;
+    setTimeout(()=>this.cgRound(lv), 1400);
+  },
+
+  /* ==========================================================
+     CHALLENGE: DOOR GAME (Laodiceia)
+  ========================================================== */
+  chalDoor(lv) {
+    this.cSt = {round:0, correct:0};
+    this.doorRound(lv);
+  },
+
+  doorRound(lv) {
+    const s = this.cSt;
+    const qs = lv.data.questions;
+    const openPct = Math.round((s.correct / qs.length) * 100);
+    const openDeg = (s.correct / qs.length) * 78;
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="door-wrap">
+        <div class="door-pct">🚪 Porta aberta: ${openPct}%</div>
+        <div class="door-scene">
+          <div class="door-frame">
+            <div class="door-light" id="door-light" style="opacity:${openPct/120}"></div>
+            <div class="door-panel" id="door-panel" style="transform:perspective(700px) rotateY(-${openDeg}deg)">
+              <div class="door-inner-knock"></div>
+              <div class="door-knob"></div>
+            </div>
+          </div>
+        </div>
+        <div class="door-q-info">Pergunta ${s.round+1}/${qs.length} &nbsp;|&nbsp; ✅ Certas: ${s.correct}</div>
+        <div class="door-question">${qs[s.round].q}</div>
+        <div class="door-opts">
+          ${qs[s.round].opts.map((o,i)=>`
+            <button class="door-opt" id="do-${i}" onclick="G.answerDoor(${i})">${o.t}</button>
+          `).join('')}
+        </div>
+      </div>`;
+  },
+
+  answerDoor(idx) {
+    const lv = LEVELS[this.cur];
+    const s = this.cSt;
+    const q = lv.data.questions[s.round];
+    document.querySelectorAll('.door-opt').forEach(b=>b.disabled=true);
+    const ok = q.opts[idx].ok;
+    document.getElementById('do-'+idx).classList.add(ok?'door-correct':'door-wrong');
+    if (!ok) {
+      const ci = q.opts.findIndex(o=>o.ok);
+      setTimeout(()=>{ const el=document.getElementById('do-'+ci); if(el) el.classList.add('door-correct'); }, 400);
+    }
+    if (ok) s.correct++;
+    this.sfx(ok?'ok':'err');
+    this.toast(ok?'✅ Correto! A porta se abre!':'❌ Não é bem assim...', ok?'t-ok':'t-err');
+    s.round++;
+    if (s.round >= lv.data.questions.length) {
+      const stars = s.correct>=5?3:s.correct>=3?2:1;
+      setTimeout(()=>{
+        // final door animation
+        const panel = document.getElementById('door-panel');
+        const light = document.getElementById('door-light');
+        if (panel) { panel.style.transform = `perspective(700px) rotateY(-${(s.correct/5)*78}deg)`; }
+        if (light) { light.style.opacity = s.correct/5*0.9; }
+        setTimeout(()=>this.finishLevel(stars), 1000);
+      }, 800);
+    } else {
+      setTimeout(()=>this.doorRound(lv), 1400);
+    }
+  },
+
+  /* ==========================================================
+     CHALLENGE: BINARY CHOICE
+  ========================================================== */
+  chalBinary(lv) {
+    const d = lv.data;
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="situation-box">
+        <div class="sit-emoji">${d.emoji}</div>
+        <div class="sit-text">${d.situation}</div>
+      </div>
+      <div class="choices">
+        ${d.opts.map((o,i)=>`
+          <button class="choice-btn ${i===0?'opt-a':'opt-b'}" id="opt-${i}" onclick="G.answerBinary(${i})">
+            ${o.t}
+          </button>`).join('')}
+      </div>`;
+  },
+
+  answerBinary(idx) {
+    const lv = LEVELS[this.cur];
+    const d = lv.data;
+    document.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+    const ok = d.opts[idx].ok;
+    document.getElementById('opt-'+idx).classList.add(ok?'correct':'wrong');
+    if (!ok) {
+      const ci = d.opts.findIndex(o=>o.ok);
+      document.getElementById('opt-'+ci).classList.add('correct');
+    }
+    this.sfx(ok?'ok':'err');
+    this.toast(ok ? '✅ '+d.fbOk : '❌ '+d.fbErr, ok?'t-ok':'t-err');
+    setTimeout(()=>this.finishLevel(ok?3:1), 2200);
+  },
+
+  /* ==========================================================
+     CHALLENGE: TIMED DECISIONS
+  ========================================================== */
+  chalTimed(lv) {
+    this.cSt = {round:0, hits:0};
+    this.timedRound(lv);
+  },
+
+  timedRound(lv) {
+    const s = this.cSt;
+    const rounds = lv.data.rounds;
+    if (s.round >= rounds.length) {
+      const stars = s.hits>=4?3:s.hits>=2?2:1;
+      return this.finishLevel(stars);
+    }
+    const r = rounds[s.round];
+    s.timeLeft = 100;
+
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="timer-wrap">
+        <div class="round-info">
+          <span>Situação ${s.round+1}/${rounds.length}</span>
+          <span>✅ Acertos: ${s.hits}</span>
+        </div>
+        <div class="timer-track"><div class="timer-fill" id="tf" style="width:100%"></div></div>
+      </div>
+      <div class="situation-box"><div class="sit-text" style="font-size:0.95rem">${r.sit}</div></div>
+      <div class="choices">
+        ${r.opts.map((o,i)=>`
+          <button class="choice-btn ${i===0?'opt-a':'opt-b'}" id="tr-${i}" onclick="G.answerTimed(${i})">
+            ${o.t}
+          </button>`).join('')}
+      </div>`;
+
+    clearInterval(s.timer);
+    s.timer = setInterval(()=>{
+      s.timeLeft -= 2;
+      const el = document.getElementById('tf');
+      if (el) el.style.width = s.timeLeft+'%';
+      if (s.timeLeft <= 0) { clearInterval(s.timer); this.answerTimed(-1); }
+    }, 200);
+  },
+
+  answerTimed(idx) {
+    const lv = LEVELS[this.cur];
+    const s = this.cSt;
+    clearInterval(s.timer);
+    document.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+    const r = lv.data.rounds[s.round];
+    const ok = idx>=0 && r.opts[idx].ok;
+    if (ok) { s.hits++; document.getElementById('tr-'+idx).classList.add('correct'); this.sfx('ok'); this.toast('✅ Coragem!','t-ok'); }
+    else {
+      if (idx>=0) document.getElementById('tr-'+idx).classList.add('wrong');
+      const ci = r.opts.findIndex(o=>o.ok);
+      document.getElementById('tr-'+ci).classList.add('correct');
+      this.sfx('err'); this.toast(idx<0?'⏰ Tempo esgotado!':'❌ Tente na próxima!','t-err');
+    }
+    s.round++;
+    setTimeout(()=>this.timedRound(lv), 1500);
+  },
+
+  /* ==========================================================
+     CHALLENGE: DRAG & DROP
+  ========================================================== */
+  chalDrag(lv) {
+    const items = [...lv.data.items].sort(()=>Math.random()-0.5);
+    this.cSt = {items, placed:{}, sel:null};
+
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div style="font-size:0.82rem;color:#7a90aa;text-align:center;margin-bottom:8px;width:100%">
+        Toque num item para selecionar, depois toque na categoria correta
+      </div>
+      <div class="drag-pool" id="dp">
+        ${items.map((it,i)=>`
+          <div class="drag-chip" id="dc-${i}"
+               draggable="true"
+               ondragstart="G.dStart(event,${i})"
+               onclick="G.dTap(${i})">${it.t}</div>`).join('')}
+      </div>
+      <div class="drop-zones">
+        <div class="drop-zone dz-good" id="dz-good"
+             ondragover="event.preventDefault();this.classList.add('over')"
+             ondragleave="this.classList.remove('over')"
+             ondrop="G.dDrop(event,'good')"
+             onclick="G.dZoneTap('good')">
+          <div class="dz-title">👍 BOM</div>
+          <div class="dz-items" id="dz-good-list"></div>
+        </div>
+        <div class="drop-zone dz-bad" id="dz-bad"
+             ondragover="event.preventDefault();this.classList.add('over')"
+             ondragleave="this.classList.remove('over')"
+             ondrop="G.dDrop(event,'bad')"
+             onclick="G.dZoneTap('bad')">
+          <div class="dz-title">👎 RUIM</div>
+          <div class="dz-items" id="dz-bad-list"></div>
+        </div>
+      </div>
+      <div id="dd-check" style="margin-top:16px;text-align:center;display:none">
+        <button class="btn btn-gold" onclick="G.dCheck()">✅ Verificar!</button>
+      </div>`;
+  },
+
+  dStart(e, i) { this.cSt.dragging = i; e.dataTransfer.setData('text/plain', i); },
+  dDrop(e, zone) {
+    e.preventDefault();
+    e.target.closest('.drop-zone').classList.remove('over');
+    this.dPlace(this.cSt.dragging, zone);
+  },
+  dTap(i) {
+    const s = this.cSt;
+    if (s.placed[i] !== undefined) return;
+    if (s.sel === null) {
+      s.sel = i;
+      document.querySelectorAll('.drag-chip').forEach(el=>el.classList.remove('selected'));
+      document.getElementById('dc-'+i).classList.add('selected');
+    } else if (s.sel === i) {
+      s.sel = null;
+      document.getElementById('dc-'+i).classList.remove('selected');
+    }
+  },
+  dZoneTap(zone) {
+    const s = this.cSt;
+    if (s.sel === null) return;
+    this.dPlace(s.sel, zone);
+    s.sel = null;
+  },
+  dPlace(i, zone) {
+    const s = this.cSt;
+    if (i === undefined || s.placed[i] !== undefined) return;
+    s.placed[i] = zone;
+    const el = document.getElementById('dc-'+i);
+    if (el) { el.style.display='none'; el.classList.remove('selected'); }
+    const list = document.getElementById('dz-'+zone+'-list');
+    const d = document.createElement('div');
+    d.className = 'dz-item'; d.textContent = s.items[i].t;  // usa array embaralhado
+    list.appendChild(d);
+    if (Object.keys(s.placed).length === s.items.length)
+      document.getElementById('dd-check').style.display = 'block';
+  },
+  dCheck() {
+    const s = this.cSt;
+    let ok = 0;
+    s.items.forEach((it,i)=>{ if(s.placed[i]===it.c) ok++; });  // itera a lista embaralhada
+    const total = s.items.length;
+    const pct = ok / total;
+    const stars = pct>=0.9?3:pct>=0.6?2:1;
+    this.toast(`✅ ${ok}/${total} corretos!`, pct>=0.6?'t-ok':'t-err');
+    setTimeout(()=>this.finishLevel(stars), 1400);
+  },
+
+  /* ==========================================================
+     CHALLENGE: AVOIDANCE GAME
+  ========================================================== */
+  chalAvoid(lv) {
+    this.cSt = {score:0, errors:0, timeLeft:30, active:true};
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="avoid-stats">
+        <span>🎯 Clicados: <b id="av-score">0</b></span>
+        <span>⏰ <b id="av-time">30</b>s</span>
+        <span>❌ Erros: <b id="av-err">0</b></span>
+      </div>
+      <div class="avoid-arena" id="av-arena"></div>
+      <div style="font-size:0.75rem;color:#7a90aa;margin-top:10px;text-align:center;width:100%">
+        Clique em: ${lv.data.good.join(' ')} &nbsp;|&nbsp; Evite: ${lv.data.bad.join(' ')}
+      </div>`;
+
+    const arena = document.getElementById('av-arena');
+    const {good, bad} = lv.data;
+    const s = this.cSt;
+
+    s.spawn = setInterval(()=>{
+      if (!s.active) return;
+      const isGood = Math.random() > 0.38;
+      const pool = isGood ? good : bad;
+      const em = pool[Math.floor(Math.random()*pool.length)];
+      const item = document.createElement('div');
+      item.className = 'float-item';
+      item.textContent = em;
+
+      // Posiciona horizontalmente dentro da arena, descontando o próprio tamanho (64px)
+      const arenaW = arena.offsetWidth || 320;
+      const arenaH = arena.offsetHeight || 340;
+      item.style.left = (8 + Math.random() * (arenaW - 80)) + 'px';
+      item.style.top  = '-74px';   // começa acima da arena
+      item.style.transform = 'translateY(0px)';
+
+      const duration = 3400 + Math.random() * 1600;
+
+      const onHit = e => {
+        e.preventDefault(); e.stopPropagation();
+        if (item.dataset.hit) return;
+        item.dataset.hit = 1;
+        // Congela na posição visual atual antes de animar saída
+        const cur = window.getComputedStyle(item).transform;
+        item.style.transition = 'opacity 0.22s, transform 0.22s';
+        item.style.transform  = cur + ' scale(1.55)';
+        item.style.opacity = '0';
+        if (isGood) { s.score++; this.sfx('ok'); }
+        else        { s.errors++; this.sfx('err'); }
+        document.getElementById('av-score').textContent = s.score;
+        document.getElementById('av-err').textContent   = s.errors;
+        setTimeout(()=>{ if(item.parentNode) item.remove(); }, 250);
+      };
+      item.addEventListener('click',      onHit);
+      item.addEventListener('touchstart', onHit, {passive:false});
+
+      arena.appendChild(item);
+
+      // Dois frames para garantir que o estado inicial foi pintado antes de iniciar a transição
+      requestAnimationFrame(()=>requestAnimationFrame(()=>{
+        item.style.transition = `transform ${duration}ms linear`;
+        item.style.transform  = `translateY(${arenaH + 80}px)`;
+      }));
+
+      setTimeout(()=>{ if(item.parentNode) item.remove(); }, duration + 300);
+    }, 900);
+
+    s.timer = setInterval(()=>{
+      s.timeLeft--;
+      const el = document.getElementById('av-time');
+      if (el) el.textContent = s.timeLeft;
+      if (s.timeLeft <= 0) {
+        clearInterval(s.timer); clearInterval(s.spawn);
+        s.active = false;
+        const stars = s.score>=10?3:s.score>=6?2:1;
+        this.toast(`🎯 Você clicou ${s.score} itens bons!`, 't-info');
+        setTimeout(()=>this.finishLevel(stars), 1500);
+      }
+    }, 1000);
+  },
+
+  /* ==========================================================
+     CHALLENGE: MEMORY GAME
+  ========================================================== */
+  chalMemory(lv) {
+    const pairs = lv.data.pairs;
+    const cards = [];
+    pairs.forEach((p,i)=>{
+      cards.push({pid:i, type:'em', show:p.em, label:p.tx});
+      cards.push({pid:i, type:'tx', show:p.tx, label:p.em});
+    });
+    cards.sort(()=>Math.random()-0.5);
+    this.cSt = {cards, flipped:[], matched:[], moves:0, lock:false};
+
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="mem-info">🧠 Encontre os pares &nbsp;|&nbsp; Movimentos: <b id="mem-mv">0</b></div>
+      <div class="mem-grid" id="mem-grid">
+        ${cards.map((_,i)=>`
+          <div class="mem-card" id="mc-${i}" onclick="G.memFlip(${i})">
+            <div class="card-inner">
+              <div class="card-f">✝️</div>
+              <div class="card-b">
+                <div class="cb-em">${cards[i].type==='em'?cards[i].show:cards[i].label}</div>
+                <div class="cb-tx">${cards[i].type==='tx'?cards[i].show:''}</div>
+              </div>
+            </div>
+          </div>`).join('')}
+      </div>`;
+  },
+
+  memFlip(i) {
+    const s = this.cSt;
+    if (s.lock || s.flipped.includes(i) || s.matched.includes(s.cards[i].pid)) return;
+    document.getElementById('mc-'+i).classList.add('flipped');
+    s.flipped.push(i);
+    this.sfx('flip');
+    if (s.flipped.length === 2) {
+      s.lock = true; s.moves++;
+      document.getElementById('mem-mv').textContent = s.moves;
+      const [a,b] = s.flipped;
+      const ca = s.cards[a], cb = s.cards[b];
+      if (ca.pid===cb.pid && ca.type!==cb.type) {
+        s.matched.push(ca.pid);
+        document.getElementById('mc-'+a).classList.add('matched');
+        document.getElementById('mc-'+b).classList.add('matched');
+        this.sfx('ok');
+        s.flipped = []; s.lock = false;
+        if (s.matched.length === s.cards.length/2) {
+          const stars = s.moves<=8?3:s.moves<=13?2:1;
+          setTimeout(()=>this.finishLevel(stars), 600);
+        }
+      } else {
+        setTimeout(()=>{
+          document.getElementById('mc-'+a).classList.remove('flipped');
+          document.getElementById('mc-'+b).classList.remove('flipped');
+          s.flipped = []; s.lock = false;
+          this.sfx('err');
+        }, 1000);
+      }
+    }
+  },
+
+  /* ==========================================================
+     CHALLENGE: MAZE
+  ========================================================== */
+  /* ==========================================================
+     CHALLENGE: BOARD GAME (Filadélfia)
+  ========================================================== */
+  chalBoard(lv) {
+    const TOTAL = 24;
+    // Casas especiais: bônus (good) e punição (bad)
+    const SPECIALS = {
+      3:  {type:'bad',  emoji:'😞', msg:'Você mentiu para um amigo... Volte 2 casas!',       move:-2},
+      5:  {type:'good', emoji:'🙏', msg:'Você orou de manhã! Avance 2 casas!',                move:+2},
+      8:  {type:'bad',  emoji:'😡', msg:'Você brigou sem motivo! Volte 2 casas!',             move:-2},
+      10: {type:'good', emoji:'🤝', msg:'Você ajudou alguém em dificuldade! Avance 3 casas!', move:+3},
+      13: {type:'bad',  emoji:'😒', msg:'Você foi egoísta e não compartilhou! Volte 3 casas!',move:-3},
+      15: {type:'good', emoji:'📖', msg:'Você leu a Bíblia hoje! Avance 2 casas!',            move:+2},
+      17: {type:'bad',  emoji:'😤', msg:'Você desobedeceu seus pais! Volte 2 casas!',         move:-2},
+      20: {type:'good', emoji:'🕊️', msg:'Você perdoou de verdade! Avance 3 casas!',           move:+3},
+      22: {type:'bad',  emoji:'😰', msg:'Você desistiu quando ficou difícil! Volte 3 casas!', move:-3},
+    };
+    // Grade em padrão cobra (4 linhas × 6 colunas, leitura de baixo para cima)
+    const GRID = [
+      [24,23,22,21,20,19],
+      [13,14,15,16,17,18],
+      [12,11,10, 9, 8, 7],
+      [ 1, 2, 3, 4, 5, 6],
+    ];
+    // Padrão de pontos do dado [face1..face6] (grade 3×3, 1=ponto, 0=vazio)
+    const FACES = [
+      null,
+      [0,0,0, 0,1,0, 0,0,0],
+      [0,0,1, 0,0,0, 1,0,0],
+      [0,0,1, 0,1,0, 1,0,0],
+      [1,0,1, 0,0,0, 1,0,1],
+      [1,0,1, 0,1,0, 1,0,1],
+      [1,0,1, 1,0,1, 1,0,1],
+    ];
+
+    this.cSt = {pos:1, rolling:false, rolls:0, TOTAL, SPECIALS, GRID, FACES};
+
+    // Ativa layout full-width
+    const body = document.getElementById('chal-body');
+    body.classList.add('board-mode');
+    body.innerHTML = `
+      <div class="board-wrap">
+
+        <div style="display:flex;justify-content:space-between;align-items:center;width:100%;font-size:0.82rem;color:#7a90aa;padding:0 2px">
+          <span>🚪 Chegue à casa <b style="color:var(--gold)">24</b>!</span>
+          <span>🎲 Jogadas: <b id="b-rolls" style="color:var(--gold)">0</b></span>
+        </div>
+
+        <div class="board-grid" id="board-grid"></div>
+
+        <div class="board-legend">
+          <span><span style="width:11px;height:11px;border-radius:3px;background:rgba(20,120,60,0.9);border:1px solid #3ed278;display:inline-block"></span> Bônus ✅</span>
+          <span><span style="width:11px;height:11px;border-radius:3px;background:rgba(150,25,25,0.9);border:1px solid #e03c3c;display:inline-block"></span> Punição ⚠️</span>
+          <span>⛵ Você</span>
+        </div>
+
+        <div class="roll-msg" id="roll-msg">🎲 Clique no dado para jogar!</div>
+
+        <div class="dice-row">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+            <div class="dice" id="b-dice" onclick="G.rollDice()">
+              ${FACES[1].map(d=>`<div class="dot ${d?'':'empty'}"></div>`).join('')}
+            </div>
+            <div class="dice-sub">Clique para rolar!</div>
+          </div>
+          <div class="dice-info">
+            <div class="dice-num" id="b-num">—</div>
+            <div class="dice-sub">você tirou</div>
+          </div>
+        </div>
+
+      </div>`;
+
+    this.boardDraw();
+    // Calcula tamanho máximo das casas após o DOM renderizar
+    requestAnimationFrame(() => this.boardResize());
+  },
+
+  boardResize() {
+    const grid = document.getElementById('board-grid');
+    const body = document.getElementById('chal-body');
+    if (!grid || !body) return;
+
+    const COLS = 6, ROWS = 4, GAP = 4;
+
+    // Espaço disponível (largura do chal-body menos padding interno)
+    const availW = body.offsetWidth - 12;
+    // Altura disponível (viewport menos header do desafio ~58px e controles ~160px)
+    const availH = window.innerHeight - 58 - 190;
+
+    const cellW = Math.floor((availW - GAP * (COLS - 1)) / COLS);
+    const cellH = Math.floor((availH - GAP * (ROWS - 1)) / ROWS);
+    const cell  = Math.max(52, Math.min(cellW, cellH));
+
+    grid.style.gridTemplateColumns = `repeat(${COLS}, ${cell}px)`;
+    grid.style.gridTemplateRows    = `repeat(${ROWS}, ${cell}px)`;
+    // Escala todos os elementos internos proporcionalmente
+    grid.style.fontSize = Math.round(cell * 0.21) + 'px';
+  },
+
+  boardDraw() {
+    const s = this.cSt;
+    const grid = document.getElementById('board-grid');
+    if (!grid) return;
+    // Guarda dimensões definidas pelo boardResize antes de limpar
+    const savedCols = grid.style.gridTemplateColumns;
+    const savedRows = grid.style.gridTemplateRows;
+    const savedFs   = grid.style.fontSize;
+    grid.innerHTML  = '';
+    if (savedCols) { grid.style.gridTemplateColumns = savedCols;
+                     grid.style.gridTemplateRows    = savedRows;
+                     grid.style.fontSize            = savedFs; }
+
+    s.GRID.forEach(row => {
+      row.forEach(sq => {
+        const sp      = s.SPECIALS[sq];
+        const isEnd   = sq === s.TOTAL;
+        const isStart = sq === 1;
+        const isHere  = sq === s.pos;
+
+        const div = document.createElement('div');
+        div.className = 'board-sq'
+          + (isStart             ? ' sq-start' : '')
+          + (isEnd               ? ' sq-end'   : '')
+          + (sp?.type === 'good' ? ' sq-good'  : '')
+          + (sp?.type === 'bad'  ? ' sq-bad'   : '')
+          + (isHere              ? ' sq-active': '');
+
+        if (isEnd || isStart || sp) {
+          // Casa com ícone: ícone grande centralizado + número no canto
+          const icon  = isEnd ? '🚪' : isStart ? '🏁' : sp.emoji;
+          const delta = sp ? `<span class="sq-delta">${sp.move > 0 ? '+'+sp.move : sp.move}</span>` : '';
+          div.innerHTML = `${delta}<span class="sq-icon">${icon}</span><span class="sq-num">${sq}</span>`;
+        } else {
+          // Casa normal: número grande e centralizado
+          div.innerHTML = `<span class="sq-plain">${sq}</span>`;
+        }
+
+        if (isHere) {
+          const tok = document.createElement('span');
+          tok.className = 'board-token';
+          tok.textContent = '⛵';
+          div.appendChild(tok);
+        }
+        grid.appendChild(div);
+      });
+    });
+  },
+
+  rollDice() {
+    const s = this.cSt;
+    if (s.rolling) return;
+    s.rolling = true;
+    s.rolls++;
+    document.getElementById('b-rolls').textContent = s.rolls;
+
+    const diceEl = document.getElementById('b-dice');
+    diceEl.classList.add('rolling');
+    this.sfx('flip');
+
+    // Anima faces aleatórias durante o giro
+    let tick = 0;
+    const anim = setInterval(() => {
+      const tmp = 1 + Math.floor(Math.random() * 6);
+      diceEl.innerHTML = s.FACES[tmp].map(d=>`<div class="dot ${d?'':'empty'}"></div>`).join('');
+      tick++;
+      if (tick >= 10) {
+        clearInterval(anim);
+        const val = 1 + Math.floor(Math.random() * 6);
+        diceEl.innerHTML = s.FACES[val].map(d=>`<div class="dot ${d?'':'empty'}"></div>`).join('');
+        diceEl.classList.remove('rolling');
+        document.getElementById('b-num').textContent = val;
+        this.setRollMsg(`🎲 Você tirou ${val}! Avançando...`, '');
+        this.sfx('ok');
+        setTimeout(() => this.boardMove(val), 450);
+      }
+    }, 75);
+  },
+
+  setRollMsg(txt, cls='') {
+    const el = document.getElementById('roll-msg');
+    if (!el) return;
+    el.textContent = txt;
+    el.className   = 'roll-msg' + (cls ? ' ' + cls : '');
+  },
+
+  async boardMove(steps) {
+    const s = this.cSt;
+    const delay = ms => new Promise(r => setTimeout(r, ms));
+
+    // Move passo a passo
+    for (let i = 0; i < steps; i++) {
+      await delay(260);
+      s.pos = Math.min(s.TOTAL, s.pos + 1);
+      this.boardDraw();
+      this.sfx('flip');
+      if (s.pos >= s.TOTAL) break;
+    }
+
+    await delay(380);
+
+    // Verifica casa especial (só se não chegou ao fim)
+    const sp = s.SPECIALS[s.pos];
+    if (sp && s.pos < s.TOTAL) {
+      this.setRollMsg(sp.emoji + ' ' + sp.msg, sp.type === 'good' ? 'msg-good' : 'msg-bad');
+      this.sfx(sp.type === 'good' ? 'ok' : 'err');
+
+      if (sp.move !== 0) {
+        await delay(1500);
+        const dir = sp.move > 0 ? 1 : -1;
+        const abs = Math.abs(sp.move);
+        for (let i = 0; i < abs; i++) {
+          await delay(240);
+          s.pos = Math.max(1, Math.min(s.TOTAL, s.pos + dir));
+          this.boardDraw();
+          this.sfx('flip');
+        }
+      }
+      await delay(700);
+    }
+
+    // Chegou ao fim?
+    if (s.pos >= s.TOTAL) {
+      this.setRollMsg('🚪 A Porta Aberta! Você chegou! Jesus abre caminhos!', 'msg-good');
+      this.sfx('fanfare');
+      this.confetti();
+      const stars = s.rolls <= 6 ? 3 : s.rolls <= 11 ? 2 : 1;
+      setTimeout(() => this.finishLevel(stars), 1400);
+    } else {
+      this.setRollMsg(`Casa ${s.pos} de ${s.TOTAL} — Role o dado novamente!`, '');
+      s.rolling = false;
+    }
+  },
+
+  /* ==========================================================
+     CHALLENGE: FINAL CHOICE (level 8)
+  ========================================================== */
+  chalFinal(lv) {
+    const d = lv.data;
+    const body = document.getElementById('chal-body');
+    body.innerHTML = `
+      <div class="final-verse">
+        <div class="fv-emoji">${d.emoji}</div>
+        <div class="fv-text">${d.verse}</div>
+      </div>
+      <div class="choices">
+        ${d.opts.map((o,i)=>`
+          <button class="choice-btn ${i===0?'opt-a':'opt-b'}" style="font-size:1rem;padding:18px 20px"
+                  id="fo-${i}" onclick="G.answerFinal(${i})">${o.t}</button>`).join('')}
+      </div>`;
+  },
+
+  answerFinal(idx) {
+    const lv = LEVELS[this.cur];
+    const d = lv.data;
+    document.querySelectorAll('.choice-btn').forEach(b=>b.disabled=true);
+    const ok = d.opts[idx].ok;
+    document.getElementById('fo-'+idx).classList.add(ok?'correct':'wrong');
+    if (!ok) { const ci=d.opts.findIndex(o=>o.ok); document.getElementById('fo-'+ci).classList.add('correct'); }
+    this.sfx(ok?'fanfare':'err');
+    this.toast(ok?'🔥 '+d.fbOk:'❌ '+d.fbErr, ok?'t-ok':'t-err');
+    setTimeout(()=>this.finishLevel(ok?3:1), 2500);
+  },
+
+  /* ==========================================================
+     LEVEL FINISH & RESULTS
+  ========================================================== */
+  finishLevel(stars) {
+    this.clearIntervals();
+    document.getElementById('chal-body').classList.remove('board-mode');
+    const id = this.cur;
+    const prev = this.st.lvlStars[id];
+    if (stars > prev) {
+      this.st.stars += (stars - prev);
+      this.st.lvlStars[id] = stars;
+    }
+    this.st.lvlDone[id] = true;
+    this.save();
+    document.getElementById('chal-screen').classList.remove('active');
+    this.showResult(id, stars);
+  },
+
+  showResult(id, stars) {
+    const msgs = [
+      'Continue tentando! Cada tentativa te deixa mais forte! 💪',
+      'Muito bem! Você está crescendo! 🌟',
+      'Perfeito! Jesus viu seu esforço! 🏆'
+    ];
+    const emojis = ['😊','🌟','🏆'];
+    const titles = ['Bom trabalho!','Muito bem!','Perfeito!'];
+
+    document.getElementById('res-emoji').textContent = emojis[stars-1]||'😊';
+    document.getElementById('res-title').textContent = titles[stars-1]||titles[0];
+    document.getElementById('res-msg').textContent = msgs[stars-1]||msgs[0];
+
+    const sc = document.getElementById('res-stars');
+    sc.innerHTML = '';
+    for(let i=0;i<3;i++){
+      const s=document.createElement('span');
+      s.className='star'; s.textContent=i<stars?'⭐':'☆';
+      s.style.animationDelay=(i*0.3)+'s';
+      sc.appendChild(s);
+    }
+
+    const allDone = this.st.lvlDone.every(Boolean);
+    const btn = document.getElementById('res-next-btn');
+    if (allDone && id===7) { btn.textContent='🏆 Ver Recompensa!'; }
+    else if (id<7) { btn.textContent='Próxima Parada ➡️'; }
+    else { btn.textContent='🗺️ Ver Mapa'; }
+
+    document.getElementById('result-overlay').classList.add('active');
+    if (stars >= 2) this.confetti();
+    if (stars === 3) this.sfx('fanfare'); else this.sfx('ok');
+  },
+
+  afterResult() {
+    document.getElementById('result-overlay').classList.remove('active');
+    const id = this.cur;
+    const allDone = this.st.lvlDone.every(Boolean);
+    if (allDone && id===7) { this.showCompletion(); return; }
+    this.goMap();
+    if (id < 7 && this.st.lvlDone[id]) setTimeout(()=>this.openLevel(id+1), 600);
+  },
+
+  retryLevel() {
+    document.getElementById('result-overlay').classList.remove('active');
+    this.launchChallenge();
+  },
+
+  showCompletion() {
+    const total = this.st.stars;
+    const pct = total/21;
+    const msgs = [
+      '"Qui tem ouvidos, ouça o que o Espírito diz às igrejas!"',
+      '"Eu te conheço e estou com você em todos os momentos!"',
+      '"Eis que estou à porta e bato. Se alguém abrir, entrarei e jantarei com ele!"'
+    ];
+    const msg = pct>=0.85?msgs[2]:pct>=0.5?msgs[1]:msgs[0];
+    document.getElementById('comp-stars').textContent='⭐'.repeat(Math.min(8,this.st.lvlDone.filter(Boolean).length));
+    document.getElementById('comp-msg').textContent = msg;
+    this.show('complete');
+    this.confetti(true);
+  },
+
+  resetGame() {
+    if (!confirm('Recomeçar do zero?')) return;
+    this.st = {name:this.st.name, lives:3, stars:0, lvlStars:Array(8).fill(0), lvlDone:Array(8).fill(false), items:{skip:2,life:2,hint:2}};
+    this.save();
+    this.goMap();
+  },
+
+  showHint() {
+    this.toast('💡 Dica: leia bem a mensagem de Jesus antes de cada desafio!','t-info');
+  },
+
+  /* ==========================================================
+     UTILS
+  ========================================================== */
+  toast(msg, cls='t-info') {
+    const el = document.getElementById('toast');
+    el.textContent = msg;
+    el.className = cls;
+    el.classList.add('show');
+    clearTimeout(el._t);
+    el._t = setTimeout(()=>el.classList.remove('show'), 3000);
+  },
+
+  confetti(big=false) {
+    const colors=['#f5c518','#e8640a','#2ecc71','#e74c3c','#9b59b6','#3498db','#1abc9c'];
+    const wrap = document.createElement('div');
+    wrap.className = 'confetti-wrap';
+    document.body.appendChild(wrap);
+    const n = big?80:35;
+    for(let i=0;i<n;i++){
+      const p=document.createElement('div');
+      p.className='cp';
+      const sz=6+Math.random()*10;
+      p.style.cssText=`left:${Math.random()*100}%;width:${sz}px;height:${sz}px;background:${colors[Math.floor(Math.random()*colors.length)]};animation-duration:${1.5+Math.random()*2}s;animation-delay:${Math.random()*0.8}s;border-radius:${Math.random()>0.5?'50%':'3px'}`;
+      wrap.appendChild(p);
+    }
+    setTimeout(()=>wrap.remove(), big?4500:3000);
+  },
+
+  sfx(type) {
+    try {
+      const ctx = new (window.AudioContext||window.webkitAudioContext)();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.connect(gain); gain.connect(ctx.destination);
+      gain.gain.setValueAtTime(0.09, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+0.6);
+      switch(type){
+        case 'ok':
+          osc.frequency.setValueAtTime(523,ctx.currentTime);
+          osc.frequency.setValueAtTime(659,ctx.currentTime+0.1);
+          osc.frequency.setValueAtTime(784,ctx.currentTime+0.2);
+          break;
+        case 'err':
+          osc.type='sawtooth';
+          osc.frequency.setValueAtTime(220,ctx.currentTime);
+          osc.frequency.setValueAtTime(160,ctx.currentTime+0.18);
+          gain.gain.setValueAtTime(0.06,ctx.currentTime);
+          break;
+        case 'fanfare':
+          osc.frequency.setValueAtTime(523,ctx.currentTime);
+          osc.frequency.setValueAtTime(659,ctx.currentTime+0.15);
+          osc.frequency.setValueAtTime(784,ctx.currentTime+0.3);
+          osc.frequency.setValueAtTime(1047,ctx.currentTime+0.45);
+          gain.gain.setValueAtTime(0.13,ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.2);
+          break;
+        case 'flip':
+          osc.frequency.setValueAtTime(440,ctx.currentTime);
+          gain.gain.setValueAtTime(0.04,ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.1);
+          break;
+        case 'wall':
+          osc.type='square';
+          osc.frequency.setValueAtTime(180,ctx.currentTime);
+          gain.gain.setValueAtTime(0.05,ctx.currentTime);
+          gain.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.12);
+          break;
+      }
+      osc.start(); osc.stop(ctx.currentTime+1.5);
+    } catch(e){}
+  }
+};
+
+window.addEventListener('load', ()=>{ G.init(); });
+
+// Re-render nodes on resize
+window.addEventListener('resize', ()=>{
+  if (document.getElementById('scr-map').classList.contains('active')) G.renderMap();
+});
+</script>
+</body>
+</html>
