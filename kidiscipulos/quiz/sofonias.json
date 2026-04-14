@@ -1,7 +1,7 @@
 {
     "questoes": [
         {
-            "pergunta": "Quais são os dois profetas que servem como guias na jornada 'The Change Blueprint'?",
+            "pergunta": "Quais são os dois profetas que servem como guias na jornada que acabamos de ver?",
             "opcoes": [
                 "Isaías e Jeremias",
                 "Sofonias e Ageu",
@@ -9,7 +9,7 @@
                 "Amós e Jonas"
             ],
             "correta": 1,
-            "justificativa": "Os profetas Sofonias e Ageu são apresentados como os guias que ajudam a limpar o caminho e a construir algo maravilhoso para Deus [1]."
+            "justificativa": "Os profetas Sofonias e Ageu são apresentados como os guias que ajudam a limpar o caminho e a construir algo maravilhoso para Deus."
         },
         {
             "pergunta": "Sofonias é conhecido como o profeta de qual linhagem?",
@@ -20,7 +20,7 @@
                 "Linhagem de Pastores"
             ],
             "correta": 2,
-            "justificativa": "Sofonias era descendente do rei Ezequias, sendo chamado de 'Profeta de Sangue Real' [2]."
+            "justificativa": "Sofonias era descendente do rei Ezequias, sendo chamado de 'Profeta de Sangue Real'."
         },
         {
             "pergunta": "Segundo Sofonias, o que é mais importante do que títulos ou origens?",
@@ -31,7 +31,7 @@
                 "O tamanho da nossa casa"
             ],
             "correta": 1,
-            "justificativa": "Sofonias ensinou que o que realmente importa é o estado do nosso coração, e não o nosso título [2]."
+            "justificativa": "Sofonias ensinou que o que realmente importa é o estado do nosso coração, e não o nosso título."
         },
         {
             "pergunta": "Qual parábola é usada para explicar por que Deus traz a correção ou o 'Dia do Senhor'?",
@@ -42,7 +42,7 @@
                 "Um agricultor plantando sementes"
             ],
             "correta": 1,
-            "justificativa": "A correção de Deus é comparada a um pai que avisa sobre um buraco na estrada para proteger o filho, pois Deus nos ama [3]."
+            "justificativa": "A correção de Deus é comparada a um pai que avisa sobre um buraco na estrada para proteger o filho, pois Deus nos ama."
         },
         {
             "pergunta": "Qual é a atitude necessária para chegarmos perto de Deus, segundo os segredos de Sofonias?",
@@ -53,7 +53,7 @@
                 "Fama e inteligência"
             ],
             "correta": 2,
-            "justificativa": "Não chegamos perto de Deus com orgulho, mas sendo mansos e reconhecendo nossos erros (humildade) [3]."
+            "justificativa": "Não chegamos perto de Deus com orgulho, mas sendo mansos e reconhecendo nossos erros (humildade)."
         },
         {
             "pergunta": "O que Deus promete fazer depois que limpamos o nosso coração?",
@@ -64,7 +64,7 @@
                 "Construir muros altos"
             ],
             "correta": 2,
-            "justificativa": "A promessa é que, após a limpeza do coração, Deus restaurará tudo e cantará de alegria por causa de nós [3, 4]."
+            "justificativa": "A promessa é que, após a limpeza do coração, Deus restaurará tudo e cantará de alegria por causa de nós."
         },
         {
             "pergunta": "Quando o povo voltou para casa, qual era o problema que o profeta Ageu encontrou?",
@@ -75,7 +75,7 @@
                 "As estradas estavam bloqueadas"
             ],
             "correta": 1,
-            "justificativa": "O povo estava focado em seu próprio conforto, construindo casas luxuosas enquanto o Templo de Deus estava abandonado [5]."
+            "justificativa": "O povo estava focado em seu próprio conforto, construindo casas luxuosas enquanto o Templo de Deus estava abandonado."
         },
         {
             "pergunta": "Quem era o líder/governador que fazia parte do 'Time da Reconstrução' com Ageu?",
@@ -86,7 +86,7 @@
                 "Neemias"
             ],
             "correta": 2,
-            "justificativa": "Zorobabel foi o líder determinado que guiou o trabalho de reconstrução com fé [6]."
+            "justificativa": "Zorobabel foi o líder determinado que guiou o trabalho de reconstrução com fé."
         },
         {
             "pergunta": "Qual era a função de Josué no 'Time da Reconstrução'?",
@@ -97,7 +97,7 @@
                 "Carpinteiro-chefe"
             ],
             "correta": 0,
-            "justificativa": "Josué era o sacerdote que cuidou da adoração e da parte espiritual durante a reconstrução [6]."
+            "justificativa": "Josué era o sacerdote que cuidou da adoração e da parte espiritual durante a reconstrução."
         },
         {
             "pergunta": "Qual é a principal lição de unir as mensagens de Sofonias e Ageu?",
@@ -108,7 +108,7 @@
                 "Que não precisamos de guias"
             ],
             "correta": 1,
-            "justificativa": "Sofonias ajuda a limpar o 'lado de dentro' e Ageu ajuda a construir o 'lado de fora'. Sem o coração limpo, a construção fica vazia [7]."
+            "justificativa": "Sofonias ajuda a limpar o 'lado de dentro' e Ageu ajuda a construir o 'lado de fora'. Sem o coração limpo, a construção fica vazia."
         },
         {
             "pergunta": "Quanto tempo o povo demorou para começar a trabalhar após ouvir a mensagem de Ageu?",
@@ -119,7 +119,7 @@
                 "100 dias"
             ],
             "correta": 1,
-            "justificativa": "Uma curiosidade é que o povo não enrolou e começou a trabalhar duro apenas 23 dias depois da mensagem [8]."
+            "justificativa": "Uma curiosidade é que o povo não enrolou e começou a trabalhar duro apenas 23 dias depois da mensagem."
         },
         {
             "pergunta": "Qual foi a promessa de Deus sobre a 'última casa' (o novo templo)?",
@@ -130,7 +130,7 @@
                 "Que nunca ficaria pronta"
             ],
             "correta": 1,
-            "justificativa": "Deus prometeu que a glória da última casa seria maior que a da primeira, trazendo mais paz e brilho [8, 9]."
+            "justificativa": "Deus prometeu que a glória da última casa seria maior que a da primeira, trazendo mais paz e brilho."
         },
         {
             "pergunta": "De acordo com Ageu 2:4, por que o povo deveria ter coragem para trabalhar?",
@@ -141,7 +141,7 @@
                 "Porque o rei mandou"
             ],
             "correta": 2,
-            "justificativa": "O encorajamento para o trabalho vem da promessa de Deus: 'Pois eu estou com vocês, declara o Senhor dos Exércitos' [4, 9]."
+            "justificativa": "O encorajamento para o trabalho vem da promessa de Deus: 'Pois eu estou com vocês, declara o Senhor dos Exércitos'."
         },
         {
             "pergunta": "No 'Checklist do Pequeno Construtor', o que significa ser humilde?",
@@ -152,7 +152,7 @@
                 "Esconder-se das outras pessoas"
             ],
             "correta": 1,
-            "justificativa": "Ser humilde no plano de ação significa reconhecer falhas e buscar a ajuda de Deus para a transformação interior [4]."
+            "justificativa": "Ser humilde no plano de ação significa reconhecer falhas e buscar a ajuda de Deus para a transformação interior."
         },
         {
             "pergunta": "Qual versículo de Sofonias fala que Deus renovará o povo com Seu amor?",
@@ -163,7 +163,7 @@
                 "Sofonias 3:1"
             ],
             "correta": 2,
-            "justificativa": "Sofonias 3:17 destaca que Deus se regozijará no Seu povo e o renovará com Seu amor [10]."
+            "justificativa": "Sofonias 3:17 destaca que Deus se regozijará no Seu povo e o renovará com Seu amor."
         },
         {
             "pergunta": "O que Ageu desafiou o povo a refletir nos versículos 1:5 e 1:7?",
@@ -174,7 +174,7 @@
                 "Sobre a velocidade do vento"
             ],
             "correta": 1,
-            "justificativa": "Ageu chama o povo à reflexão com a frase: 'Vejam aonde os seus caminhos os levaram' ou 'Considerai os vossos caminhos' [9]."
+            "justificativa": "Ageu chama o povo à reflexão com a frase: 'Vejam aonde os seus caminhos os levaram' ou 'Considerai os vossos caminhos'."
         },
         {
             "pergunta": "Onde o povo deveria buscar madeira para reconstruir o templo, segundo Ageu 1:8?",
@@ -185,7 +185,7 @@
                 "Comprando de outros países"
             ],
             "correta": 2,
-            "justificativa": "A ordem de ação em Ageu 1:8 diz: 'Vão até o monte, tragam madeira e reconstruam o templo' [9]."
+            "justificativa": "A ordem de ação em Ageu 1:8 diz: 'Vão até o monte, tragam madeira e reconstruam o templo'."
         },
         {
             "pergunta": "O 'Banquete da Alegria' mencionado na jornada é resultado de quê?",
@@ -196,7 +196,7 @@
                 "De uma viagem para longe"
             ],
             "correta": 1,
-            "justificativa": "O arrependimento e o trabalho dedicado abrem espaço para o festival de paz e a alegria da restauração [4, 8]."
+            "justificativa": "O arrependimento e o trabalho dedicado abrem espaço para o festival de paz e a alegria da restauração."
         },
         {
             "pergunta": "Qual é a promessa estabelecida no lugar da reconstrução, segundo Ageu 2:9?",
@@ -207,7 +207,7 @@
                 "Guerra"
             ],
             "correta": 0,
-            "justificativa": "O versículo diz que, além da glória, Deus estabeleceria a paz naquele lugar [9]."
+            "justificativa": "O versículo diz que, além da glória, Deus estabeleceria a paz naquele lugar."
         },
         {
             "pergunta": "Qual é o 'Desafio Final' para o pequeno construtor?",
@@ -218,7 +218,7 @@
                 "Construir uma casa de madeira"
             ],
             "correta": 0,
-            "justificativa": "O objetivo final é a aplicação prática: escolher uma lição para transformar o 'templo' que é o próprio coração [10]."
+            "justificativa": "O objetivo final é a aplicação prática: escolher uma lição para transformar o 'templo' que é o próprio coração."
         }
     ]
 }
