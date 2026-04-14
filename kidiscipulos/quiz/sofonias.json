@@ -1,0 +1,224 @@
+{
+    "questoes": [
+        {
+            "pergunta": "Quais são os dois profetas que servem como guias na jornada 'The Change Blueprint'?",
+            "opcoes": [
+                "Isaías e Jeremias",
+                "Sofonias e Ageu",
+                "Daniel e Ezequiel",
+                "Amós e Jonas"
+            ],
+            "correta": 1,
+            "justificativa": "Os profetas Sofonias e Ageu são apresentados como os guias que ajudam a limpar o caminho e a construir algo maravilhoso para Deus [1]."
+        },
+        {
+            "pergunta": "Sofonias é conhecido como o profeta de qual linhagem?",
+            "opcoes": [
+                "Linhagem de Sacerdotes",
+                "Linhagem de Pescadores",
+                "Linhagem de Sangue Real",
+                "Linhagem de Pastores"
+            ],
+            "correta": 2,
+            "justificativa": "Sofonias era descendente do rei Ezequias, sendo chamado de 'Profeta de Sangue Real' [2]."
+        },
+        {
+            "pergunta": "Segundo Sofonias, o que é mais importante do que títulos ou origens?",
+            "opcoes": [
+                "A quantidade de ouro que temos",
+                "O estado do nosso coração",
+                "As roupas que vestimos",
+                "O tamanho da nossa casa"
+            ],
+            "correta": 1,
+            "justificativa": "Sofonias ensinou que o que realmente importa é o estado do nosso coração, e não o nosso título [2]."
+        },
+        {
+            "pergunta": "Qual parábola é usada para explicar por que Deus traz a correção ou o 'Dia do Senhor'?",
+            "opcoes": [
+                "Um mestre ensinando a ler",
+                "Um pai avisando um filho sobre um buraco na estrada",
+                "Um capitão guiando um navio no mar",
+                "Um agricultor plantando sementes"
+            ],
+            "correta": 1,
+            "justificativa": "A correção de Deus é comparada a um pai que avisa sobre um buraco na estrada para proteger o filho, pois Deus nos ama [3]."
+        },
+        {
+            "pergunta": "Qual é a atitude necessária para chegarmos perto de Deus, segundo os segredos de Sofonias?",
+            "opcoes": [
+                "Orgulho e força",
+                "Riqueza e poder",
+                "Humildade e mansidão",
+                "Fama e inteligência"
+            ],
+            "correta": 2,
+            "justificativa": "Não chegamos perto de Deus com orgulho, mas sendo mansos e reconhecendo nossos erros (humildade) [3]."
+        },
+        {
+            "pergunta": "O que Deus promete fazer depois que limpamos o nosso coração?",
+            "opcoes": [
+                "Ficar em silêncio",
+                "Nos dar apenas ouro",
+                "Cantar de alegria sobre nós",
+                "Construir muros altos"
+            ],
+            "correta": 2,
+            "justificativa": "A promessa é que, após a limpeza do coração, Deus restaurará tudo e cantará de alegria por causa de nós [3, 4]."
+        },
+        {
+            "pergunta": "Quando o povo voltou para casa, qual era o problema que o profeta Ageu encontrou?",
+            "opcoes": [
+                "Não havia comida na cidade",
+                "As pessoas estavam construindo casas luxuosas e deixando o Templo em ruínas",
+                "As pessoas esqueceram como trabalhar",
+                "As estradas estavam bloqueadas"
+            ],
+            "correta": 1,
+            "justificativa": "O povo estava focado em seu próprio conforto, construindo casas luxuosas enquanto o Templo de Deus estava abandonado [5]."
+        },
+        {
+            "pergunta": "Quem era o líder/governador que fazia parte do 'Time da Reconstrução' com Ageu?",
+            "opcoes": [
+                "Davi",
+                "Salomão",
+                "Zorobabel",
+                "Neemias"
+            ],
+            "correta": 2,
+            "justificativa": "Zorobabel foi o líder determinado que guiou o trabalho de reconstrução com fé [6]."
+        },
+        {
+            "pergunta": "Qual era a função de Josué no 'Time da Reconstrução'?",
+            "opcoes": [
+                "Sacerdote responsável pelo coração espiritual do povo",
+                "Cozinheiro do grupo",
+                "Soldado de guarda",
+                "Carpinteiro-chefe"
+            ],
+            "correta": 0,
+            "justificativa": "Josué era o sacerdote que cuidou da adoração e da parte espiritual durante a reconstrução [6]."
+        },
+        {
+            "pergunta": "Qual é a principal lição de unir as mensagens de Sofonias e Ageu?",
+            "opcoes": [
+                "Que só o trabalho importa",
+                "Que devemos limpar o lado de dentro (coração) para construir o lado de fora (ações)",
+                "Que a construção deve ser feita apenas com pedras preciosas",
+                "Que não precisamos de guias"
+            ],
+            "correta": 1,
+            "justificativa": "Sofonias ajuda a limpar o 'lado de dentro' e Ageu ajuda a construir o 'lado de fora'. Sem o coração limpo, a construção fica vazia [7]."
+        },
+        {
+            "pergunta": "Quanto tempo o povo demorou para começar a trabalhar após ouvir a mensagem de Ageu?",
+            "opcoes": [
+                "Um ano",
+                "23 dias",
+                "40 dias",
+                "100 dias"
+            ],
+            "correta": 1,
+            "justificativa": "Uma curiosidade é que o povo não enrolou e começou a trabalhar duro apenas 23 dias depois da mensagem [8]."
+        },
+        {
+            "pergunta": "Qual foi a promessa de Deus sobre a 'última casa' (o novo templo)?",
+            "opcoes": [
+                "Que seria menor que a primeira",
+                "Que a sua glória seria maior que a da primeira",
+                "Que seria feita de prata",
+                "Que nunca ficaria pronta"
+            ],
+            "correta": 1,
+            "justificativa": "Deus prometeu que a glória da última casa seria maior que a da primeira, trazendo mais paz e brilho [8, 9]."
+        },
+        {
+            "pergunta": "De acordo com Ageu 2:4, por que o povo deveria ter coragem para trabalhar?",
+            "opcoes": [
+                "Porque eles eram muito fortes",
+                "Porque tinham muitas ferramentas",
+                "Porque Deus prometeu: 'Eu estou com vocês'",
+                "Porque o rei mandou"
+            ],
+            "correta": 2,
+            "justificativa": "O encorajamento para o trabalho vem da promessa de Deus: 'Pois eu estou com vocês, declara o Senhor dos Exércitos' [4, 9]."
+        },
+        {
+            "pergunta": "No 'Checklist do Pequeno Construtor', o que significa ser humilde?",
+            "opcoes": [
+                "Falar baixo o tempo todo",
+                "Reconhecer os erros e pedir ajuda a Deus para limpar o coração",
+                "Não ter nenhuma ferramenta",
+                "Esconder-se das outras pessoas"
+            ],
+            "correta": 1,
+            "justificativa": "Ser humilde no plano de ação significa reconhecer falhas e buscar a ajuda de Deus para a transformação interior [4]."
+        },
+        {
+            "pergunta": "Qual versículo de Sofonias fala que Deus renovará o povo com Seu amor?",
+            "opcoes": [
+                "Sofonias 1:1",
+                "Sofonias 2:3",
+                "Sofonias 3:17",
+                "Sofonias 3:1"
+            ],
+            "correta": 2,
+            "justificativa": "Sofonias 3:17 destaca que Deus se regozijará no Seu povo e o renovará com Seu amor [10]."
+        },
+        {
+            "pergunta": "O que Ageu desafiou o povo a refletir nos versículos 1:5 e 1:7?",
+            "opcoes": [
+                "Sobre o clima da região",
+                "Sobre onde os seus caminhos os levaram (considerai os vossos caminhos)",
+                "Sobre a cor das pedras do templo",
+                "Sobre a velocidade do vento"
+            ],
+            "correta": 1,
+            "justificativa": "Ageu chama o povo à reflexão com a frase: 'Vejam aonde os seus caminhos os levaram' ou 'Considerai os vossos caminhos' [9]."
+        },
+        {
+            "pergunta": "Onde o povo deveria buscar madeira para reconstruir o templo, segundo Ageu 1:8?",
+            "opcoes": [
+                "No mercado da cidade",
+                "No deserto",
+                "Indo até o monte",
+                "Comprando de outros países"
+            ],
+            "correta": 2,
+            "justificativa": "A ordem de ação em Ageu 1:8 diz: 'Vão até o monte, tragam madeira e reconstruam o templo' [9]."
+        },
+        {
+            "pergunta": "O 'Banquete da Alegria' mencionado na jornada é resultado de quê?",
+            "opcoes": [
+                "Apenas de sorte",
+                "Do trabalho duro e do arrependimento",
+                "De encontrar um mapa físico",
+                "De uma viagem para longe"
+            ],
+            "correta": 1,
+            "justificativa": "O arrependimento e o trabalho dedicado abrem espaço para o festival de paz e a alegria da restauração [4, 8]."
+        },
+        {
+            "pergunta": "Qual é a promessa estabelecida no lugar da reconstrução, segundo Ageu 2:9?",
+            "opcoes": [
+                "Paz",
+                "Confusão",
+                "Dúvida",
+                "Guerra"
+            ],
+            "correta": 0,
+            "justificativa": "O versículo diz que, além da glória, Deus estabeleceria a paz naquele lugar [9]."
+        },
+        {
+            "pergunta": "Qual é o 'Desafio Final' para o pequeno construtor?",
+            "opcoes": [
+                "Escolher uma lição e colocá-la em prática no coração hoje",
+                "Desenhar um mapa",
+                "Decorar todos os versículos",
+                "Construir uma casa de madeira"
+            ],
+            "correta": 0,
+            "justificativa": "O objetivo final é a aplicação prática: escolher uma lição para transformar o 'templo' que é o próprio coração [10]."
+        }
+    ]
+}
