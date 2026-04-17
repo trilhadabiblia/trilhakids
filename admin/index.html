@@ -55,6 +55,10 @@
         class="tab-btn flex-shrink-0 px-5 py-3 rounded-t-xl border border-purple-500/30 text-sm font-bold text-gray-300 transition-all">
         👦 Alunos & QR
       </button>
+      <button onclick="mudarAba('leads')" id="tab-leads"
+        class="tab-btn flex-shrink-0 px-5 py-3 rounded-t-xl border border-purple-500/30 text-sm font-bold text-gray-300 transition-all">
+        📋 Leads
+      </button>
     </div>
   </header>
 
@@ -273,6 +277,68 @@
       </div>
     </div>
 
+    <!-- ── ABA: Leads ─────────────────────── -->
+    <div id="sec-leads" class="secao fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-black text-purple-300">📋 Leads — Demonstrações Agendadas</h2>
+        <div class="flex gap-2">
+          <select id="leads-filtro-status" onchange="carregarLeads()"
+            class="bg-slate-700 border border-purple-500/30 text-white text-sm rounded-xl px-3 py-2 outline-none">
+            <option value="">Todos</option>
+            <option value="novo">Novos</option>
+            <option value="contatado">Contatados</option>
+            <option value="convertido">Convertidos</option>
+            <option value="descartado">Descartados</option>
+          </select>
+          <button onclick="carregarLeads()"
+            class="bg-purple-700/40 hover:bg-purple-700/70 text-purple-200 px-4 py-2 rounded-xl text-sm font-bold transition-all">
+            🔄 Atualizar
+          </button>
+        </div>
+      </div>
+
+      <!-- Resumo -->
+      <div class="grid grid-cols-4 gap-4 mb-6">
+        <div class="bg-slate-800/60 border border-purple-500/20 rounded-2xl p-4 text-center">
+          <div class="text-3xl font-black text-white" id="leads-total">0</div>
+          <p class="text-xs text-gray-400 mt-1">Total</p>
+        </div>
+        <div class="bg-slate-800/60 border border-blue-500/20 rounded-2xl p-4 text-center">
+          <div class="text-3xl font-black text-blue-300" id="leads-novos">0</div>
+          <p class="text-xs text-gray-400 mt-1">Novos</p>
+        </div>
+        <div class="bg-slate-800/60 border border-yellow-500/20 rounded-2xl p-4 text-center">
+          <div class="text-3xl font-black text-yellow-300" id="leads-contatados">0</div>
+          <p class="text-xs text-gray-400 mt-1">Contatados</p>
+        </div>
+        <div class="bg-slate-800/60 border border-green-500/20 rounded-2xl p-4 text-center">
+          <div class="text-3xl font-black text-green-300" id="leads-convertidos">0</div>
+          <p class="text-xs text-gray-400 mt-1">Convertidos</p>
+        </div>
+      </div>
+
+      <!-- Tabela -->
+      <div class="bg-slate-800/60 border border-purple-500/20 rounded-2xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-purple-500/20 text-purple-300 text-xs uppercase tracking-wider">
+                <th class="py-4 px-4 text-left">Nome</th>
+                <th class="py-4 px-4 text-left">E-mail</th>
+                <th class="py-4 px-4 text-center">Tipo</th>
+                <th class="py-4 px-4 text-center">Data preferencial</th>
+                <th class="py-4 px-4 text-left">Mensagem</th>
+                <th class="py-4 px-4 text-center">Status</th>
+                <th class="py-4 px-4 text-center">Recebido em</th>
+              </tr>
+            </thead>
+            <tbody id="leads-tbody"></tbody>
+          </table>
+        </div>
+        <p id="leads-vazio" class="hidden text-center text-gray-500 py-10">Nenhum lead encontrado.</p>
+      </div>
+    </div>
+
   </main>
 
   <!-- ═══ MODAL: QR Code ═══════════════════════ -->
@@ -439,13 +505,83 @@
 
     // ── Abas ─────────────────────────────────
     function mudarAba(aba) {
-      ['instituicoes','professores','turmas','alunos'].forEach(a => {
+      ['instituicoes','professores','turmas','alunos','leads'].forEach(a => {
         document.getElementById(`sec-${a}`).classList.remove('ativa');
         document.getElementById(`tab-${a}`).classList.remove('ativo');
       });
       document.getElementById(`sec-${aba}`).classList.add('ativa');
       document.getElementById(`tab-${aba}`).classList.add('ativo');
       if (aba === 'alunos') carregarAlunos();
+      if (aba === 'leads')  carregarLeads();
+    }
+
+    // ── Leads ────────────────────────────────
+    const STATUS_LEAD = {
+      novo:       { label: 'Novo',       cor: 'bg-blue-500/20 text-blue-300 border-blue-500/30' },
+      contatado:  { label: 'Contatado',  cor: 'bg-yellow-500/20 text-yellow-300 border-yellow-500/30' },
+      convertido: { label: 'Convertido', cor: 'bg-green-500/20 text-green-300 border-green-500/30' },
+      descartado: { label: 'Descartado', cor: 'bg-gray-500/20 text-gray-400 border-gray-500/30' },
+    };
+
+    async function carregarLeads() {
+      const status = document.getElementById('leads-filtro-status')?.value || '';
+      const url    = status ? `leads.php?status=${status}` : 'leads.php';
+      const data   = await apiAuth(url);
+      if (!data.ok) return;
+
+      const leads = data.dados.leads || [];
+      document.getElementById('leads-total').textContent      = data.dados.total;
+      document.getElementById('leads-novos').textContent      = leads.filter(l => l.status === 'novo').length;
+      document.getElementById('leads-contatados').textContent = leads.filter(l => l.status === 'contatado').length;
+      document.getElementById('leads-convertidos').textContent= leads.filter(l => l.status === 'convertido').length;
+
+      const tbody = document.getElementById('leads-tbody');
+      const vazio = document.getElementById('leads-vazio');
+      tbody.innerHTML = '';
+
+      if (leads.length === 0) { vazio.classList.remove('hidden'); return; }
+      vazio.classList.add('hidden');
+
+      leads.forEach(l => {
+        const st   = STATUS_LEAD[l.status] || STATUS_LEAD.novo;
+        const data = l.criado_em
+          ? new Date(l.criado_em).toLocaleDateString('pt-BR')
+          : '—';
+        const dataPref = l.data_preferencial
+          ? new Date(l.data_preferencial + 'T12:00:00').toLocaleDateString('pt-BR')
+          : '—';
+
+        const tr = document.createElement('tr');
+        tr.className = 'border-b border-purple-500/10 hover:bg-purple-500/5 transition-colors';
+        tr.innerHTML = `
+          <td class="py-3 px-4 text-white font-semibold">${l.nome}</td>
+          <td class="py-3 px-4">
+            <a href="mailto:${l.email}" class="text-purple-300 hover:text-purple-200 transition-colors">${l.email}</a>
+          </td>
+          <td class="py-3 px-4 text-center">
+            <span class="text-lg">${l.tipo === 'igreja' ? '🏛️' : '🎓'}</span>
+            <span class="text-gray-400 text-xs ml-1">${l.tipo === 'igreja' ? 'Igreja' : 'Escola'}</span>
+          </td>
+          <td class="py-3 px-4 text-center text-gray-300 text-sm">${dataPref}</td>
+          <td class="py-3 px-4 text-gray-400 text-sm max-w-xs truncate">${l.mensagem || '—'}</td>
+          <td class="py-3 px-4 text-center">
+            <select onchange="atualizarStatusLead(${l.id}, this.value)"
+              class="text-xs font-bold px-2 py-1 rounded-lg border ${st.cor} bg-transparent outline-none cursor-pointer">
+              <option value="novo"       ${l.status==='novo'       ?'selected':''}>Novo</option>
+              <option value="contatado"  ${l.status==='contatado'  ?'selected':''}>Contatado</option>
+              <option value="convertido" ${l.status==='convertido' ?'selected':''}>Convertido</option>
+              <option value="descartado" ${l.status==='descartado' ?'selected':''}>Descartado</option>
+            </select>
+          </td>
+          <td class="py-3 px-4 text-center text-gray-500 text-xs">${data}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function atualizarStatusLead(id, status) {
+      await apiAuth('leads.php', { method: 'PUT', body: JSON.stringify({ id, status }) });
+      carregarLeads();
     }
 
     function toggleForm(id) {

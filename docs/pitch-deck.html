@@ -708,7 +708,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════ -->
-<!-- SLIDE 10 — COMO FUNCIONA NA PRÁTICA            -->
+<!-- SLIDE 11 — COMO FUNCIONA NA PRÁTICA            -->
 <!-- ══════════════════════════════════════════════ -->
 <section class="slide bg-flow" id="slide-10">
   <div class="stars"></div>
@@ -745,7 +745,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════ -->
-<!-- SLIDE 11 — PACOTES                             -->
+<!-- SLIDE 12 — PACOTES                             -->
 <!-- ══════════════════════════════════════════════ -->
 <section class="slide bg-packages" id="slide-11">
   <div class="stars"></div>
@@ -799,7 +799,7 @@
 </section>
 
 <!-- ══════════════════════════════════════════════ -->
-<!-- SLIDE 12 — FECHAMENTO                          -->
+<!-- SLIDE 13 — FECHAMENTO                          -->
 <!-- ══════════════════════════════════════════════ -->
 <section class="slide bg-close" id="slide-12">
   <div class="stars"></div>
@@ -849,6 +849,119 @@
 </section>
 
 <!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE CTA — AGENDE SUA DEMONSTRAÇÃO            -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide" style="background:linear-gradient(135deg,#0a0818 0%,#1e1b4b 50%,#0f0a1e 100%)" id="slide-cta">
+  <div class="stars"></div>
+  <div class="orb w-96 h-96 bg-violet-700 top-[-5rem] right-[-5rem]"></div>
+  <div class="orb w-80 h-80 bg-indigo-800 bottom-[-4rem] left-[-4rem]"></div>
+
+  <div class="content flex flex-col items-center justify-center flex-1 px-6 py-14 w-full">
+    <div class="w-full max-w-xl">
+
+      <!-- Header -->
+      <div class="text-center mb-8">
+        <div class="text-5xl mb-4 float">🚀</div>
+        <div class="pill mb-4">Próximo Passo</div>
+        <h2 class="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">
+          Agende sua demonstração
+        </h2>
+        <p class="text-purple-200 text-base">
+          Gratuita, sem compromisso. Mostramos o portal funcionando com uma turma real.
+        </p>
+      </div>
+
+      <!-- Formulário -->
+      <div id="cta-form-wrap">
+        <form id="cta-form" class="space-y-4" onsubmit="enviarLead(event)">
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2 sm:col-span-1">
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wide block mb-1.5">Nome</label>
+              <input id="lead-nome" type="text" required placeholder="Seu nome completo"
+                class="w-full bg-white/5 border border-white/10 focus:border-violet-500 text-white placeholder-gray-600
+                       rounded-xl px-4 py-3 outline-none transition-colors text-sm" />
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wide block mb-1.5">E-mail</label>
+              <input id="lead-email" type="email" required placeholder="seu@email.com.br"
+                class="w-full bg-white/5 border border-white/10 focus:border-violet-500 text-white placeholder-gray-600
+                       rounded-xl px-4 py-3 outline-none transition-colors text-sm" />
+            </div>
+          </div>
+
+          <div>
+            <label class="text-gray-400 text-xs font-bold uppercase tracking-wide block mb-2">Tipo de instituição</label>
+            <div class="grid grid-cols-2 gap-3">
+              <label id="tipo-igreja-label"
+                class="cursor-pointer border border-white/10 rounded-xl p-4 flex items-center gap-3 transition-all hover:border-violet-500"
+                onclick="selecionarTipo('igreja')">
+                <span class="text-2xl">🏛️</span>
+                <div>
+                  <div class="text-white font-bold text-sm">Igreja</div>
+                  <div class="text-gray-500 text-xs">Ministério infantil</div>
+                </div>
+              </label>
+              <label id="tipo-escola-label"
+                class="cursor-pointer border border-white/10 rounded-xl p-4 flex items-center gap-3 transition-all hover:border-violet-500"
+                onclick="selecionarTipo('escola')">
+                <span class="text-2xl">🎓</span>
+                <div>
+                  <div class="text-white font-bold text-sm">Escola Cristã</div>
+                  <div class="text-gray-500 text-xs">Ensino Religioso</div>
+                </div>
+              </label>
+            </div>
+            <input type="hidden" id="lead-tipo" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2 sm:col-span-1">
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wide block mb-1.5">Data preferencial</label>
+              <input id="lead-data" type="date"
+                class="w-full bg-white/5 border border-white/10 focus:border-violet-500 text-white
+                       rounded-xl px-4 py-3 outline-none transition-colors text-sm [color-scheme:dark]" />
+            </div>
+            <div class="col-span-2 sm:col-span-1">
+              <label class="text-gray-400 text-xs font-bold uppercase tracking-wide block mb-1.5">Mensagem <span class="text-gray-600 normal-case font-normal">(opcional)</span></label>
+              <input id="lead-mensagem" type="text" placeholder="Quantas crianças, turmas..."
+                class="w-full bg-white/5 border border-white/10 focus:border-violet-500 text-white placeholder-gray-600
+                       rounded-xl px-4 py-3 outline-none transition-colors text-sm" />
+            </div>
+          </div>
+
+          <p id="cta-erro" class="text-red-400 text-sm hidden"></p>
+
+          <button type="submit" id="cta-btn"
+            class="w-full bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500
+                   text-white font-black text-base py-4 rounded-xl transition-all hover:scale-[1.02]
+                   disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-violet-900/40">
+            ✨ Quero agendar minha demonstração gratuita
+          </button>
+
+          <p class="text-center text-gray-600 text-xs">
+            Sem spam. Entraremos em contato em até 24h.
+          </p>
+        </form>
+      </div>
+
+      <!-- Sucesso -->
+      <div id="cta-sucesso" class="hidden text-center py-4">
+        <div class="text-7xl mb-5">🎉</div>
+        <h3 class="text-3xl font-black text-white mb-3">Recebemos seu contato!</h3>
+        <p class="text-purple-200 text-base mb-6">
+          Entraremos em contato em até 24h para confirmar sua demonstração. Até logo!
+        </p>
+        <div class="card inline-block px-6 py-3" style="border-color:rgba(139,92,246,.4)">
+          <p class="text-gray-400 text-sm italic">Trilho Kids — Cada lição, uma aventura. Cada versículo, uma conquista.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
 <!-- NAVEGAÇÃO                                       -->
 <!-- ══════════════════════════════════════════════ -->
 <button class="nav-btn nav-prev" onclick="navegar(-1)" id="btn-prev">← Anterior</button>
@@ -872,7 +985,83 @@
 
   function navegar(dir) { mostrarSlide(atual + dir); }
 
+  // ── CTA Form ──────────────────────────────
+  const LEADS_API = (() => {
+    const h = location.hostname;
+    return (h === 'localhost' || h === '127.0.0.1')
+      ? 'http://localhost:8080'
+      : 'https://cafecomhomensdedeus.com.br/trilhokids/api';
+  })();
+
+  let tipoSelecionado = '';
+
+  function selecionarTipo(tipo) {
+    tipoSelecionado = tipo;
+    document.getElementById('lead-tipo').value = tipo;
+    const labels = { igreja: 'tipo-igreja-label', escola: 'tipo-escola-label' };
+    Object.entries(labels).forEach(([t, id]) => {
+      const el = document.getElementById(id);
+      if (t === tipo) {
+        el.style.borderColor = 'rgba(139,92,246,.8)';
+        el.style.background  = 'rgba(139,92,246,.12)';
+      } else {
+        el.style.borderColor = 'rgba(255,255,255,.1)';
+        el.style.background  = '';
+      }
+    });
+  }
+
+  async function enviarLead(e) {
+    e.preventDefault();
+    const btn  = document.getElementById('cta-btn');
+    const erro = document.getElementById('cta-erro');
+    erro.classList.add('hidden');
+
+    const nome     = document.getElementById('lead-nome').value.trim();
+    const email    = document.getElementById('lead-email').value.trim();
+    const tipo     = tipoSelecionado;
+    const data     = document.getElementById('lead-data').value;
+    const mensagem = document.getElementById('lead-mensagem').value.trim();
+
+    if (!tipo) {
+      erro.textContent = 'Selecione o tipo de instituição.';
+      erro.classList.remove('hidden');
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+
+    try {
+      const res  = await fetch(`${LEADS_API}/leads.php`, {
+        method:  'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body:    JSON.stringify({ nome, email, tipo, mensagem, data_preferencial: data || null }),
+      });
+      const data_ = await res.json();
+
+      if (!data_.ok && !data_.dados?.ja_cadastrado) {
+        erro.textContent = data_.erro || 'Erro ao enviar. Tente novamente.';
+        erro.classList.remove('hidden');
+        btn.disabled = false;
+        btn.textContent = '✨ Quero agendar minha demonstração gratuita';
+        return;
+      }
+
+      document.getElementById('cta-form-wrap').classList.add('hidden');
+      document.getElementById('cta-sucesso').classList.remove('hidden');
+
+    } catch {
+      erro.textContent = 'Erro de conexão. Verifique sua internet e tente novamente.';
+      erro.classList.remove('hidden');
+      btn.disabled = false;
+      btn.textContent = '✨ Quero agendar minha demonstração gratuita';
+    }
+  }
+
   document.addEventListener('keydown', e => {
+    const tag = document.activeElement?.tagName;
+    if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); navegar(1); }
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    { e.preventDefault(); navegar(-1); }
   });
