@@ -69,7 +69,7 @@ function injetarHTML() {
       <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:1rem;">
         <div style="background:linear-gradient(135deg,#1e1b4b,#0f172a);
                     border:2px solid rgba(139,92,246,.5);border-radius:1.5rem;
-                    padding:2rem;width:100%;max-width:540px;box-shadow:0 25px 60px rgba(0,0,0,.7);">
+                    padding:2rem;width:100%;max-width:480px;box-shadow:0 25px 60px rgba(0,0,0,.7);">
 
           <!-- Conteúdo: muda conforme o modo -->
           <div id="pk-conteudo"></div>
@@ -123,29 +123,90 @@ window.abrirModalPerfil = abrirModal;
 function renderConteudoSessao() {
   const nome = trilhoGame.getPerfilAtivo();
   return `
-    <div style="text-align:center;padding:1rem 0;">
-      <div style="font-size:3.5rem;margin-bottom:.75rem;">⚔️</div>
-      <h2 style="color:white;font-size:1.5rem;font-weight:900;margin:0 0 .25rem;">
-        Olá, ${nome}!
-      </h2>
-      <p style="color:#9ca3af;font-size:.9rem;margin:0 0 2rem;">O que deseja fazer?</p>
-      <div style="display:flex;flex-direction:column;gap:.75rem;">
-        <a href="/progresso.html"
-          style="display:block;background:linear-gradient(135deg,#5b21b6,#4c1d95);
-                 color:white;font-weight:700;font-size:1rem;padding:.9rem;
-                 border-radius:1rem;text-decoration:none;transition:opacity .2s;"
-          onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
-          📊 Ver meu progresso
-        </a>
-        <button onclick="encerrarSessao()"
-          style="background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.4);
-                 color:#fca5a5;font-weight:700;font-size:1rem;padding:.9rem;
-                 border-radius:1rem;cursor:pointer;transition:background .2s;"
-          onmouseover="this.style.background='rgba(239,68,68,.3)'"
-          onmouseout="this.style.background='rgba(239,68,68,.15)'">
-          🚪 Encerrar sessão
-        </button>
+    <div style="padding:.5rem 0;">
+
+      <!-- Cabeçalho -->
+      <div style="text-align:center;margin-bottom:1.5rem;">
+        <div style="font-size:3rem;margin-bottom:.5rem;">⚔️</div>
+        <h2 style="color:white;font-size:1.4rem;font-weight:900;margin:0 0 .2rem;">Olá, ${nome}!</h2>
+        <p style="color:#9ca3af;font-size:.85rem;margin:0;">Para onde você quer ir?</p>
       </div>
+
+      <!-- Atalhos principais -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-bottom:1rem;">
+
+        <a href="/quiz.html" style="text-decoration:none;">
+          <div style="background:linear-gradient(135deg,#1d4ed8,#0891b2);
+                      border-radius:1rem;padding:1rem .75rem;text-align:center;
+                      transition:opacity .2s;cursor:pointer;"
+               onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+            <div style="font-size:2rem;margin-bottom:.35rem;">🎯</div>
+            <div style="color:white;font-weight:800;font-size:.9rem;">Quiz Bíblico</div>
+            <div style="color:#bae6fd;font-size:.75rem;margin-top:.2rem;">Responder perguntas</div>
+          </div>
+        </a>
+
+        <a href="/progresso.html" style="text-decoration:none;">
+          <div style="background:linear-gradient(135deg,#5b21b6,#7c3aed);
+                      border-radius:1rem;padding:1rem .75rem;text-align:center;
+                      transition:opacity .2s;cursor:pointer;"
+               onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+            <div style="font-size:2rem;margin-bottom:.35rem;">🏆</div>
+            <div style="color:white;font-weight:800;font-size:.9rem;">Meu Progresso</div>
+            <div style="color:#ddd6fe;font-size:.75rem;margin-top:.2rem;">Pontos e badges</div>
+          </div>
+        </a>
+
+        <a href="/personagens/origens.html" style="text-decoration:none;">
+          <div style="background:linear-gradient(135deg,#065f46,#16a34a);
+                      border-radius:1rem;padding:1rem .75rem;text-align:center;
+                      transition:opacity .2s;cursor:pointer;"
+               onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+            <div style="font-size:2rem;margin-bottom:.35rem;">🌱</div>
+            <div style="color:white;font-weight:800;font-size:.9rem;">Origens</div>
+            <div style="color:#bbf7d0;font-size:.75rem;margin-top:.2rem;">Adão, Eva e família</div>
+          </div>
+        </a>
+
+        <a href="/personagens/patriarcas.html" style="text-decoration:none;">
+          <div style="background:linear-gradient(135deg,#78350f,#d97706);
+                      border-radius:1rem;padding:1rem .75rem;text-align:center;
+                      transition:opacity .2s;cursor:pointer;"
+               onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+            <div style="font-size:2rem;margin-bottom:.35rem;">🌾</div>
+            <div style="color:white;font-weight:800;font-size:.9rem;">Patriarcas</div>
+            <div style="color:#fde68a;font-size:.75rem;margin-top:.2rem;">Abraão, Jacó e José</div>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Heróis — linha inteira -->
+      <a href="/personagens/herois.html" style="text-decoration:none;display:block;margin-bottom:1rem;">
+        <div style="background:linear-gradient(135deg,#4c1d95,#be123c);
+                    border-radius:1rem;padding:.9rem 1rem;
+                    display:flex;align-items:center;gap:.75rem;
+                    transition:opacity .2s;cursor:pointer;"
+             onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+          <span style="font-size:2rem;">⚔️</span>
+          <div>
+            <div style="color:white;font-weight:800;font-size:.95rem;">Heróis da Fé</div>
+            <div style="color:#f9a8d4;font-size:.78rem;">Juízes, libertadores e guerreiros de Deus</div>
+          </div>
+          <span style="margin-left:auto;color:#e879f9;font-size:1.1rem;">→</span>
+        </div>
+      </a>
+
+      <!-- Encerrar sessão -->
+      <button onclick="encerrarSessao()"
+        style="width:100%;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.35);
+               color:#fca5a5;font-weight:700;font-size:.9rem;padding:.75rem;
+               border-radius:1rem;cursor:pointer;transition:background .2s;"
+        onmouseover="this.style.background='rgba(239,68,68,.25)'"
+        onmouseout="this.style.background='rgba(239,68,68,.12)'">
+        🚪 Encerrar sessão
+      </button>
+
     </div>
   `;
 }
