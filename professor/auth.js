@@ -36,6 +36,7 @@ async function apiAuth(endpoint, options = {}) {
       'Content-Type': 'application/json',
       ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
     },
+    cache: 'no-store',
     ...options,
   });
   return res.json();

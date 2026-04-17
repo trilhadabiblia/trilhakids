@@ -587,8 +587,8 @@
 
       try {
         const [resProg, resHist] = await Promise.all([
-          fetch(`${PROF_API}/progresso.php?nome=${encodeURIComponent(nome)}`).then(r => r.json()),
-          fetch(`${PROF_API}/historia.php?nome=${encodeURIComponent(nome)}&limit=10`).then(r => r.json()),
+          fetch(`${PROF_API}/progresso.php?nome=${encodeURIComponent(nome)}`, { cache: 'no-store' }).then(r => r.json()),
+          fetch(`${PROF_API}/historia.php?nome=${encodeURIComponent(nome)}&limit=10`, { cache: 'no-store' }).then(r => r.json()),
         ]);
 
         if (!resProg.ok) throw new Error(resProg.erro || 'Perfil não encontrado.');

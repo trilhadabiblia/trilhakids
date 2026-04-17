@@ -80,6 +80,7 @@ class TrilhoKidsGame {
     try {
       const res = await fetch(`${TRILHO_API}/${endpoint}`, {
         headers: { 'Content-Type': 'application/json' },
+        cache: 'no-store',
         ...options,
       });
       return await res.json();

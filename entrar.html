@@ -70,7 +70,7 @@
       }
 
       try {
-        const res  = await fetch(`${API}/entrar.php?token=${encodeURIComponent(token)}`);
+        const res  = await fetch(`${API}/entrar.php?token=${encodeURIComponent(token)}`, { cache: 'no-store' });
         const data = await res.json();
 
         if (!data.ok) {
