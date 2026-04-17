@@ -1,0 +1,15 @@
+{
+  "name": "Trilho Kids",
+  "short_name": "Trilho Kids",
+  "description": "Portal bíblico gamificado para crianças",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0818",
+  "theme_color": "#7c3aed",
+  "orientation": "portrait-primary",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/web-app-manifest-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/web-app-manifest-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

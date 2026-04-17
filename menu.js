@@ -52,6 +52,45 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.body.appendChild(perfilScript);
     }
 
+    // ── PWA: manifest + favicons + meta tags ─
+    if (!document.querySelector('link[rel="manifest"]')) {
+      const links = [
+        { rel: 'manifest',           href: '/manifest.json' },
+        { rel: 'icon',               href: '/favicon.ico',        type: 'image/x-icon' },
+        { rel: 'icon',               href: '/favicon.svg',        type: 'image/svg+xml' },
+        { rel: 'icon',               href: '/favicon-96x96.png',  type: 'image/png', sizes: '96x96' },
+        { rel: 'apple-touch-icon',   href: '/apple-touch-icon.png' },
+      ];
+      links.forEach(l => {
+        const el = document.createElement('link');
+        Object.entries(l).forEach(([k, v]) => el.setAttribute(k, v));
+        document.head.appendChild(el);
+      });
+    }
+    if (!document.querySelector('meta[name="theme-color"]')) {
+      const meta = document.createElement('meta');
+      meta.name    = 'theme-color';
+      meta.content = '#7c3aed';
+      document.head.appendChild(meta);
+    }
+    if (!document.querySelector('meta[name="apple-mobile-web-app-capable"]')) {
+      const tags = [
+        { name: 'apple-mobile-web-app-capable',          content: 'yes' },
+        { name: 'apple-mobile-web-app-status-bar-style', content: 'black-translucent' },
+        { name: 'apple-mobile-web-app-title',            content: 'Trilho Kids' },
+      ];
+      tags.forEach(t => {
+        const m = document.createElement('meta');
+        m.name = t.name; m.content = t.content;
+        document.head.appendChild(m);
+      });
+    }
+
+    // ── PWA: registra Service Worker ────────
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
   } catch (error) {
     console.error("Erro ao carregar o menu:", error);
   }
