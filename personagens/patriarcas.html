@@ -140,7 +140,7 @@
 		// Criação dos cards dinamicamente
 		function criarCarta(personagem) {
 			return `
-    <article class="group cursor-pointer" onclick="toggleCard(${personagem.id})" aria-expanded="false">
+    <article class="group cursor-pointer" onclick="toggleCard(${personagem.id}, '${personagem.nome}')" aria-expanded="false">
       <div class="bg-gradient-to-br from-stone-800 to-stone-900 rounded-2xl border-2 border-amber-800/40 hover:border-amber-600 shadow-2xl overflow-hidden transition-all duration-300 hover:shadow-amber-700/30 hover:shadow-2xl">
         
         <!-- Cabeçalho -->
@@ -203,7 +203,7 @@
 
 
 		// Alternar exibição dos cards
-		function toggleCard(id) {
+		function toggleCard(id, nome) {
 			const content = document.getElementById(`content-${id}`);
 			const icon = document.querySelector(`.toggle-icon-${id}`);
 			const article = content.closest('article');
@@ -211,6 +211,9 @@
 			content.classList.toggle('hidden');
 			icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(180deg)';
 			article.setAttribute('aria-expanded', !expanded);
+			if (!expanded && nome && typeof trilhoGame !== 'undefined') {
+				trilhoGame.visitarHeroi(nome);
+			}
 		}
 
 		// Modal

@@ -249,22 +249,21 @@
       }
     }
 
-    // Carregar estatísticas (se houver sistema de gamificação)
-    function carregarEstatisticas() {
+    // Carregar estatísticas do perfil ativo
+    async function carregarEstatisticas() {
       try {
-        // Verifica se há dados salvos
-        const quizzesCompletos = localStorage.getItem('quizzes-completos') || 0;
-        const pontosTotais = localStorage.getItem('pontos-totais') || 0;
-        
-        document.getElementById('quizzes-completos').textContent = quizzesCompletos;
-        document.getElementById('total-pontos').textContent = pontosTotais;
+        if (typeof trilhoGame === 'undefined' || !trilhoGame.getPerfilAtivo()) return;
+        const stats = await trilhoGame.getEstatisticas();
+        if (!stats) return;
+        document.getElementById('quizzes-completos').textContent = stats.quizzesCompletos;
+        document.getElementById('total-pontos').textContent = stats.pontos;
       } catch (error) {
         console.log('Sistema de estatísticas não disponível');
       }
     }
 
-    // Carregar ao iniciar
-    carregarEstatisticas();
+    // Carregar após DOM pronto (aguarda gamificacao.js inicializar)
+    document.addEventListener('DOMContentLoaded', () => setTimeout(carregarEstatisticas, 300));
 
     // Efeito de hover nos cards
     document.querySelectorAll('.category-card').forEach(card => {
@@ -285,6 +284,7 @@
       }
     });
   </script>
+  <script src="/gamificacao.js"></script>
   <script src="/menu.js"></script>
 </body>
 </html>

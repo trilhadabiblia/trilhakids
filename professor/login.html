@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Trilho Kids</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen flex items-center justify-center font-sans p-4">
+
+  <div class="w-full max-w-md">
+
+    <!-- Logo -->
+    <div class="text-center mb-10">
+      <div class="text-7xl mb-4">📖</div>
+      <h1 class="text-3xl font-black text-white mb-1">Trilho Kids</h1>
+      <p class="text-purple-300">Área do Professor</p>
+    </div>
+
+    <!-- Card -->
+    <div class="bg-slate-800/80 border border-purple-500/30 rounded-3xl p-8 shadow-2xl">
+      <h2 class="text-xl font-black text-white mb-6 text-center">Entrar na conta</h2>
+
+      <form id="form-login" onsubmit="fazerLogin(event)" class="space-y-5">
+
+        <div>
+          <label class="block text-gray-300 font-semibold text-sm mb-2">E-mail</label>
+          <input type="email" id="email" required autocomplete="email"
+            placeholder="professor@email.com"
+            class="w-full bg-slate-700 border border-purple-500/30 focus:border-purple-400
+                   rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none
+                   transition-colors text-base" />
+        </div>
+
+        <div>
+          <label class="block text-gray-300 font-semibold text-sm mb-2">Senha</label>
+          <div class="relative">
+            <input type="password" id="senha" required autocomplete="current-password"
+              placeholder="••••••••"
+              class="w-full bg-slate-700 border border-purple-500/30 focus:border-purple-400
+                     rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none
+                     transition-colors text-base pr-12" />
+            <button type="button" onclick="toggleSenha()"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition-colors text-lg">
+              👁️
+            </button>
+          </div>
+        </div>
+
+        <p id="erro-login" class="text-red-400 text-sm hidden"></p>
+
+        <button type="submit" id="btn-login"
+          class="w-full bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700
+                 hover:to-violet-700 text-white py-4 rounded-xl font-black text-lg
+                 transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed">
+          Entrar
+        </button>
+
+      </form>
+
+    </div>
+
+    <p class="text-center text-gray-500 text-sm mt-6">
+      <a href="/index.html" class="hover:text-gray-300 transition-colors">← Voltar ao portal</a>
+    </p>
+  </div>
+
+  <script src="/professor/auth.js"></script>
+  <script>
+    // Se já logado, redireciona
+    if (Auth.getToken()) {
+      window.location.href = Auth.isAdmin()
+        ? '/admin/index.html'
+        : '/professor/dashboard.html';
+    }
+
+    function toggleSenha() {
+      const input = document.getElementById('senha');
+      input.type = input.type === 'password' ? 'text' : 'password';
+    }
+
+    async function fazerLogin(e) {
+      e.preventDefault();
+      const btn  = document.getElementById('btn-login');
+      const erro = document.getElementById('erro-login');
+      erro.classList.add('hidden');
+      btn.disabled = true;
+      btn.textContent = 'Entrando...';
+
+      const email = document.getElementById('email').value.trim();
+      const senha = document.getElementById('senha').value;
+
+      try {
+        const data = await apiAuth('auth.php', {
+          method: 'POST',
+          body: JSON.stringify({ email, senha }),
+        });
+
+        if (!data.ok) {
+          erro.textContent = data.erro || 'Erro ao fazer login.';
+          erro.classList.remove('hidden');
+          return;
+        }
+
+        Auth.salvar(data.dados.token, data.dados.professor);
+
+        window.location.href = data.dados.professor.is_admin
+          ? '/admin/index.html'
+          : '/professor/dashboard.html';
+
+      } catch {
+        erro.textContent = 'Erro de conexão. Verifique sua internet.';
+        erro.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Entrar';
+      }
+    }
+  </script>
+</body>
+</html>

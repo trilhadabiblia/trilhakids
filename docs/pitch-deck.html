@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilho Kids — Pitch Deck</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: 'Inter', sans-serif; background: #0a0818; }
+
+    .slide {
+      display: none;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide.active { display: flex; flex-direction: column; }
+
+    /* Fundo animado estrelado */
+    .stars {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse at 20% 50%, rgba(109,40,217,.15) 0%, transparent 60%),
+                  radial-gradient(ellipse at 80% 20%, rgba(124,58,237,.1) 0%, transparent 50%),
+                  radial-gradient(ellipse at 60% 80%, rgba(79,70,229,.12) 0%, transparent 50%);
+    }
+    .content { position: relative; z-index: 10; }
+
+    /* Gradientes de fundo por slide */
+    .bg-cover   { background: linear-gradient(135deg, #0a0818 0%, #1e1b4b 50%, #0f0a1e 100%); }
+    .bg-problem { background: linear-gradient(135deg, #1a0a0a 0%, #2d1515 50%, #0f0820 100%); }
+    .bg-what    { background: linear-gradient(135deg, #0a1020 0%, #0f172a 40%, #1e1b4b 100%); }
+    .bg-apostila{ background: linear-gradient(135deg, #0d1117 0%, #1a2744 50%, #0f1620 100%); }
+    .bg-portal  { background: linear-gradient(135deg, #050d20 0%, #0e1e40 50%, #1a0e3a 100%); }
+    .bg-game    { background: linear-gradient(135deg, #0a0e1a 0%, #1e1040 50%, #2d1060 100%); }
+    .bg-church  { background: linear-gradient(135deg, #0a1a10 0%, #102820 50%, #1a1040 100%); }
+    .bg-school  { background: linear-gradient(135deg, #101a08 0%, #1c2a10 50%, #0e1a30 100%); }
+    .bg-diff    { background: linear-gradient(135deg, #0a0818 0%, #1a0e30 40%, #0e1820 100%); }
+    .bg-flow    { background: linear-gradient(135deg, #080e1c 0%, #10183a 50%, #1a0e3a 100%); }
+    .bg-packages{ background: linear-gradient(135deg, #0a1a0a 0%, #0e2010 40%, #1a1040 100%); }
+    .bg-close   { background: linear-gradient(135deg, #0a0818 0%, #1e1b4b 50%, #0f0a1e 100%); }
+
+    /* Navegação */
+    .nav-btn {
+      position: fixed; bottom: 2rem; z-index: 100;
+      background: rgba(139,92,246,.2); border: 1px solid rgba(139,92,246,.4);
+      color: #a78bfa; border-radius: 9999px; padding: .6rem 1.4rem;
+      font-size: .9rem; font-weight: 700; cursor: pointer;
+      transition: all .2s; backdrop-filter: blur(8px);
+    }
+    .nav-btn:hover { background: rgba(139,92,246,.4); color: white; }
+    .nav-prev { left: 2rem; }
+    .nav-next { right: 2rem; }
+    .slide-counter {
+      position: fixed; bottom: 2.15rem; left: 50%; transform: translateX(-50%);
+      z-index: 100; color: rgba(167,139,250,.5); font-size: .8rem; font-weight: 600;
+    }
+
+    /* Decorações */
+    .orb {
+      position: absolute; border-radius: 9999px;
+      filter: blur(80px); opacity: .25; pointer-events: none;
+    }
+
+    /* Pill tag */
+    .pill {
+      display: inline-block;
+      background: rgba(139,92,246,.2); border: 1px solid rgba(139,92,246,.4);
+      color: #a78bfa; border-radius: 9999px; padding: .25rem .9rem;
+      font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+    }
+
+    /* Cards */
+    .card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 1.25rem; padding: 1.5rem;
+      transition: border-color .2s;
+    }
+    .card:hover { border-color: rgba(139,92,246,.4); }
+
+    /* Tabela diff */
+    .diff-table th { color: #a78bfa; font-size: .7rem; text-transform: uppercase; letter-spacing: .08em; padding: .6rem 1rem; text-align: left; border-bottom: 1px solid rgba(139,92,246,.2); }
+    .diff-table td { padding: .7rem 1rem; font-size: .85rem; border-bottom: 1px solid rgba(255,255,255,.05); }
+    .diff-table tr:last-child td { border-bottom: none; }
+    .diff-bad  { color: #9ca3af; }
+    .diff-good { color: #86efac; font-weight: 600; }
+
+    /* Flow step */
+    .flow-step {
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .flow-num {
+      flex-shrink: 0; width: 2rem; height: 2rem;
+      background: linear-gradient(135deg, #7c3aed, #4f46e5);
+      border-radius: 9999px; display: flex; align-items: center; justify-content: center;
+      font-weight: 900; font-size: .85rem; color: white;
+    }
+    .flow-line {
+      width: 2px; height: 1.2rem; background: rgba(139,92,246,.3);
+      margin-left: .95rem;
+    }
+
+    /* Badge chip */
+    .badge-chip {
+      display: inline-flex; align-items: center; gap: .35rem;
+      background: rgba(245,158,11,.1); border: 1px solid rgba(245,158,11,.3);
+      color: #fcd34d; border-radius: 9999px; padding: .3rem .8rem;
+      font-size: .8rem; font-weight: 700;
+    }
+
+    /* Level chip */
+    .level-chip {
+      display: inline-block;
+      background: rgba(139,92,246,.15); border: 1px solid rgba(139,92,246,.35);
+      color: #c4b5fd; border-radius: .5rem; padding: .2rem .65rem;
+      font-size: .75rem; font-weight: 700;
+    }
+
+    /* QR mock */
+    .qr-mock {
+      width: 90px; height: 90px;
+      background: white; border-radius: .75rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.5rem; box-shadow: 0 0 30px rgba(139,92,246,.4);
+    }
+
+    /* Checkmark list */
+    .check-item { display: flex; align-items: flex-start; gap: .6rem; margin-bottom: .6rem; }
+    .check-icon { flex-shrink: 0; width: 1.3rem; height: 1.3rem; background: rgba(134,239,172,.2); border: 1px solid rgba(134,239,172,.4); border-radius: 9999px; display: flex; align-items: center; justify-content: center; margin-top: .05rem; font-size: .65rem; color: #86efac; }
+
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+    .float { animation: float 4s ease-in-out infinite; }
+    @keyframes pulse-slow { 0%,100%{opacity:.6} 50%{opacity:1} }
+    .pulse-slow { animation: pulse-slow 3s ease-in-out infinite; }
+
+    @media print {
+      .nav-btn, .slide-counter { display: none !important; }
+      .slide { page-break-after: always; display: flex !important; min-height: 100vh; }
+    }
+    @media (max-width: 640px) {
+      .nav-btn { padding: .5rem 1rem; font-size: .8rem; bottom: 1rem; }
+      .nav-prev { left: 1rem; }
+      .nav-next { right: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 1 — CAPA                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide active bg-cover" id="slide-1">
+  <div class="stars"></div>
+  <div class="orb w-96 h-96 bg-violet-600 top-[-6rem] right-[-6rem]"></div>
+  <div class="orb w-72 h-72 bg-indigo-600 bottom-[-4rem] left-[-4rem]"></div>
+
+  <div class="content flex flex-col items-center justify-center flex-1 text-center px-8 py-16">
+    <div class="float text-7xl md:text-9xl mb-6">🗺️</div>
+    <div class="pill mb-6">Portal Bíblico Gamificado</div>
+    <h1 class="text-5xl md:text-7xl font-black text-white mb-4 leading-tight">
+      Trilho <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-purple-300">Kids</span>
+    </h1>
+    <p class="text-xl md:text-2xl text-purple-200 font-semibold mb-2">
+      Ensino Bíblico que Engaja, Diverte e Acompanha
+    </p>
+    <p class="text-gray-400 mt-4 text-base max-w-lg">
+      Para igrejas, ministérios infantis e escolas cristãs que querem transformar o aprendizado bíblico em uma jornada inesquecível.
+    </p>
+    <div class="flex gap-4 mt-10 flex-wrap justify-center">
+      <div class="card px-6 py-3 text-center">
+        <div class="text-2xl font-black text-violet-300">66</div>
+        <div class="text-xs text-gray-400 mt-0.5">Livros da Bíblia</div>
+      </div>
+      <div class="card px-6 py-3 text-center">
+        <div class="text-2xl font-black text-yellow-300">30+</div>
+        <div class="text-xs text-gray-400 mt-0.5">Badges</div>
+      </div>
+      <div class="card px-6 py-3 text-center">
+        <div class="text-2xl font-black text-green-300">10</div>
+        <div class="text-xs text-gray-400 mt-0.5">Níveis</div>
+      </div>
+      <div class="card px-6 py-3 text-center">
+        <div class="text-2xl font-black text-blue-300">22+</div>
+        <div class="text-xs text-gray-400 mt-0.5">Personagens</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 2 — O PROBLEMA                           -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-problem" id="slide-2">
+  <div class="stars"></div>
+  <div class="orb w-80 h-80 bg-red-900 top-[-4rem] right-[-4rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6" style="background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.3);color:#fca5a5;">O Desafio</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+      Todo ministério infantil enfrenta os mesmos desafios
+    </h2>
+    <p class="text-xl text-gray-300 italic mb-10 border-l-4 border-red-500 pl-5">
+      "As crianças adoram o celular. A gente quer que elas amem a Bíblia.<br class="hidden md:block"> Por que não unir os dois?"
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="card flex gap-4 items-start" style="border-color:rgba(239,68,68,.2);background:rgba(239,68,68,.06)">
+        <div class="text-3xl">📵</div>
+        <div>
+          <h3 class="text-white font-bold mb-1">Engajamento</h3>
+          <p class="text-gray-400 text-sm">Como manter a atenção das crianças em um mundo de telas e redes sociais?</p>
+        </div>
+      </div>
+      <div class="card flex gap-4 items-start" style="border-color:rgba(239,68,68,.2);background:rgba(239,68,68,.06)">
+        <div class="text-3xl">⏳</div>
+        <div>
+          <h3 class="text-white font-bold mb-1">Continuidade</h3>
+          <p class="text-gray-400 text-sm">O aprendizado termina quando a aula termina? O que acontece na semana?</p>
+        </div>
+      </div>
+      <div class="card flex gap-4 items-start" style="border-color:rgba(239,68,68,.2);background:rgba(239,68,68,.06)">
+        <div class="text-3xl">🔍</div>
+        <div>
+          <h3 class="text-white font-bold mb-1">Acompanhamento</h3>
+          <p class="text-gray-400 text-sm">O professor sabe o que cada criança aprendeu de verdade?</p>
+        </div>
+      </div>
+      <div class="card flex gap-4 items-start" style="border-color:rgba(239,68,68,.2);background:rgba(239,68,68,.06)">
+        <div class="text-3xl">🎯</div>
+        <div>
+          <h3 class="text-white font-bold mb-1">Motivação</h3>
+          <p class="text-gray-400 text-sm">Como recompensar o esforço, a dedicação e o estudo da Palavra?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 3 — O QUE É O TRILHO KIDS                -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-what" id="slide-3">
+  <div class="stars"></div>
+  <div class="orb w-96 h-96 bg-indigo-700 bottom-[-6rem] right-[-6rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6">A Solução</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">
+      Um ecossistema completo de aprendizado bíblico
+    </h2>
+    <p class="text-gray-300 mb-10 text-lg">Para crianças de 6 a 12 anos. Não é só um site — é impresso e digital trabalhando juntos.</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card text-center" style="border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.06)">
+        <div class="text-5xl mb-4">📚</div>
+        <h3 class="text-yellow-300 font-black text-lg mb-2">Material Impresso</h3>
+        <ul class="text-gray-400 text-sm space-y-1.5 text-left">
+          <li>✦ Apostila do Professor</li>
+          <li>✦ Plano de aula anual completo</li>
+          <li>✦ Apostila do Aluno</li>
+          <li>✦ QR Codes em cada lição</li>
+        </ul>
+      </div>
+      <div class="card text-center" style="border-color:rgba(139,92,246,.4);background:rgba(139,92,246,.08)">
+        <div class="text-5xl mb-4">📱</div>
+        <h3 class="text-violet-300 font-black text-lg mb-2">Portal Digital</h3>
+        <ul class="text-gray-400 text-sm space-y-1.5 text-left">
+          <li>✦ 66 livros da Bíblia</li>
+          <li>✦ 66 quizzes interativos</li>
+          <li>✦ Personagens bíblicos</li>
+          <li>✦ Gamificação completa</li>
+        </ul>
+      </div>
+      <div class="card text-center" style="border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.06)">
+        <div class="text-5xl mb-4">👩‍🏫</div>
+        <h3 class="text-emerald-300 font-black text-lg mb-2">Painel do Professor</h3>
+        <ul class="text-gray-400 text-sm space-y-1.5 text-left">
+          <li>✦ Dashboard em tempo real</li>
+          <li>✦ Progresso individual</li>
+          <li>✦ Pontos e presença</li>
+          <li>✦ QR Codes imprimíveis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 4 — AS APOSTILAS E OS QR CODES           -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-apostila" id="slide-4">
+  <div class="stars"></div>
+  <div class="orb w-72 h-72 bg-blue-800 top-[-3rem] left-[-3rem]"></div>
+  <div class="orb w-64 h-64 bg-violet-800 bottom-[-3rem] right-[-3rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6" style="background:rgba(59,130,246,.15);border-color:rgba(59,130,246,.3);color:#93c5fd;">Material Impresso</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-3 leading-tight">
+      A apostila que conecta o papel à tela
+    </h2>
+    <p class="text-gray-300 mb-8 text-lg">Cada lição da apostila do aluno tem <strong class="text-white">dois QR Codes impressos</strong> que transformam o caderno em uma porta de entrada digital.</p>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <div class="card flex gap-5 items-center" style="border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.07)">
+        <div class="qr-mock flex-shrink-0">📖</div>
+        <div>
+          <h3 class="text-blue-300 font-black text-lg mb-1">QR da Lição</h3>
+          <p class="text-gray-300 text-sm">Abre o livro bíblico daquela lição no portal — com resumo visual, ilustrações, curiosidades e versículos-chave.</p>
+        </div>
+      </div>
+      <div class="card flex gap-5 items-center" style="border-color:rgba(134,239,172,.3);background:rgba(134,239,172,.05)">
+        <div class="qr-mock flex-shrink-0" style="box-shadow:0 0 30px rgba(52,211,153,.4)">🎯</div>
+        <div>
+          <h3 class="text-green-300 font-black text-lg mb-1">QR do Quiz</h3>
+          <p class="text-gray-300 text-sm">Abre o quiz com 10 perguntas sobre o conteúdo estudado — resultado salvo automaticamente no perfil da criança.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card text-center" style="border-color:rgba(167,139,250,.3);background:rgba(167,139,250,.06)">
+      <p class="text-purple-200 text-base md:text-lg font-semibold">
+        O caderno vira uma porta de entrada para o mundo digital —<br class="hidden md:block">
+        e o digital reforça o que foi aprendido no caderno.
+      </p>
+    </div>
+
+    <div class="mt-6 grid grid-cols-2 gap-4">
+      <div class="card" style="background:rgba(251,191,36,.05);border-color:rgba(251,191,36,.2)">
+        <div class="font-black text-yellow-300 mb-1">Apostila do Professor</div>
+        <p class="text-gray-400 text-sm">Plano de aula anual semana a semana, com objetivos pedagógicos e bíblicos, dinâmicas e perguntas para discussão.</p>
+      </div>
+      <div class="card" style="background:rgba(251,191,36,.05);border-color:rgba(251,191,36,.2)">
+        <div class="font-black text-yellow-300 mb-1">Apostila do Aluno</div>
+        <p class="text-gray-400 text-sm">Conteúdo da lição, espaços para atividades e os dois QR Codes que ligam ao portal digital da lição correspondente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 5 — O PORTAL DIGITAL                     -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-portal" id="slide-5">
+  <div class="stars"></div>
+  <div class="orb w-96 h-96 bg-indigo-800 top-0 right-[-5rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6">Portal Digital</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+      Toda a Bíblia na palma da mão
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div>
+        <h3 class="text-violet-300 font-black mb-3 text-lg">📖 66 Livros Navegáveis</h3>
+        <div class="flex flex-wrap gap-1.5 mb-5">
+          <span class="level-chip">Pentateuco</span>
+          <span class="level-chip">Históricos</span>
+          <span class="level-chip">Poéticos</span>
+          <span class="level-chip">Profetas Maiores</span>
+          <span class="level-chip">Profetas Menores</span>
+          <span class="level-chip">Evangelhos</span>
+          <span class="level-chip">Atos</span>
+          <span class="level-chip">Cartas de Paulo</span>
+          <span class="level-chip">Outras Cartas</span>
+          <span class="level-chip">Apocalipse</span>
+        </div>
+        <p class="text-gray-400 text-sm">Cada livro: resumo visual, ilustrações, versículo central, curiosidades e personagens principais.</p>
+      </div>
+
+      <div>
+        <h3 class="text-blue-300 font-black mb-3 text-lg">⚔️ Personagens Bíblicos</h3>
+        <p class="text-gray-400 text-sm mb-4">Cards interativos com história, características, pontos fortes e fracos — humanizando os heróis da fé para as crianças.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge-chip" style="background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.3);color:#6ee7b7">🌍 Origens • 5 personagens</span>
+          <span class="badge-chip" style="background:rgba(96,165,250,.1);border-color:rgba(96,165,250,.3);color:#93c5fd">🧭 Patriarcas • 3 personagens</span>
+          <span class="badge-chip" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#c4b5fd">⚔️ Heróis • 14 personagens</span>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="text-green-300 font-black mb-3 text-lg">🎯 66 Quizzes</h3>
+        <p class="text-gray-400 text-sm">10 perguntas por livro • Feedback com justificativa bíblica • Pontuação automática • Bônus por desempenho</p>
+      </div>
+
+      <div>
+        <h3 class="text-yellow-300 font-black mb-3 text-lg">🏆 Página de Progresso</h3>
+        <p class="text-gray-400 text-sm">A criança vê pontos, nível, barra de progresso, livros visitados, badges conquistadas com detalhes e histórico de atividades.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 6 — GAMIFICAÇÃO                          -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-game" id="slide-6">
+  <div class="stars"></div>
+  <div class="orb w-80 h-80 bg-purple-800 bottom-[-4rem] left-[-4rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-4" style="background:rgba(168,85,247,.2);border-color:rgba(168,85,247,.4);color:#d8b4fe;">Gamificação</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">O motor do engajamento</h2>
+    <p class="text-purple-200 italic mb-8 text-lg">"O que um jogo tem que uma aula não tem? Recompensa imediata, progressão visível e a sensação de conquista."</p>
+
+    <div class="grid md:grid-cols-3 gap-5">
+      <div class="card" style="border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.05)">
+        <div class="text-3xl mb-3">⭐</div>
+        <h3 class="text-yellow-300 font-black mb-3">Pontos</h3>
+        <div class="space-y-1.5 text-sm text-gray-300">
+          <div class="flex justify-between"><span>Visitar livro</span><span class="text-yellow-300 font-bold">+10</span></div>
+          <div class="flex justify-between"><span>Descobrir personagem</span><span class="text-yellow-300 font-bold">+5</span></div>
+          <div class="flex justify-between"><span>Acerto no quiz</span><span class="text-yellow-300 font-bold">+10</span></div>
+          <div class="flex justify-between"><span>Quiz 70%+</span><span class="text-yellow-300 font-bold">+10 bônus</span></div>
+          <div class="flex justify-between"><span>Quiz perfeito</span><span class="text-yellow-300 font-bold">+50 bônus</span></div>
+          <div class="flex justify-between"><span>Professor (presença...)</span><span class="text-yellow-300 font-bold">variável</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(139,92,246,.4);background:rgba(139,92,246,.08)">
+        <div class="text-3xl mb-3">🎖️</div>
+        <h3 class="text-violet-300 font-black mb-3">10 Níveis</h3>
+        <div class="space-y-1 text-sm">
+          <div class="flex gap-2 flex-wrap">
+            <span class="level-chip" style="background:rgba(156,163,175,.1);border-color:rgba(156,163,175,.2);color:#9ca3af">Iniciante</span>
+            <span class="level-chip" style="color:#86efac">Explorador</span>
+            <span class="level-chip" style="color:#93c5fd">Aventureiro</span>
+            <span class="level-chip" style="color:#c4b5fd">Discípulo</span>
+            <span class="level-chip" style="color:#fcd34d">Herói da Fé</span>
+            <span class="level-chip" style="color:#fb923c">Guardião</span>
+            <span class="level-chip" style="color:#f9a8d4">Sábio</span>
+            <span class="level-chip" style="color:#f87171">Profeta</span>
+            <span class="level-chip" style="color:#67e8f9">Apóstolo</span>
+            <span class="level-chip" style="color:#fcd34d;background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.4)">👑 Lenda</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.06)">
+        <div class="text-3xl mb-3">🏅</div>
+        <h3 class="text-amber-300 font-black mb-3">30+ Badges</h3>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="badge-chip text-xs">📜 Guardião do Pentateuco</span>
+          <span class="badge-chip text-xs">✝️ Seguidor de Jesus</span>
+          <span class="badge-chip text-xs">🏆 Mestre do Quiz</span>
+          <span class="badge-chip text-xs">🐋 Amigo de Jonas</span>
+          <span class="badge-chip text-xs">👸 Corajosa como Ester</span>
+          <span class="badge-chip text-xs">💎 Diamante</span>
+          <span class="badge-chip text-xs">👑 Lenda</span>
+          <span class="badge-chip text-xs" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#c4b5fd">+ 23 outras...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mt-5 flex items-center gap-4" style="border-color:rgba(134,239,172,.3);background:rgba(134,239,172,.05)">
+      <div class="text-4xl flex-shrink-0">📲</div>
+      <p class="text-green-200 font-semibold">
+        <strong class="text-white">QR Code pessoal:</strong> escaneou → entrou → progresso salvo automaticamente em qualquer dispositivo. Sem senha, sem cadastro manual.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 7 — PARA MINISTÉRIOS                     -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-church" id="slide-7">
+  <div class="stars"></div>
+  <div class="orb w-80 h-80 bg-emerald-900 top-[-3rem] right-[-3rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6" style="background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25);color:#6ee7b7;">Para Igrejas e Ministérios</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+      Tudo que o ministério precisa, num só lugar
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-4">
+      <div>
+        <h3 class="text-emerald-300 font-bold mb-3 flex items-center gap-2"><span class="text-xl">🏛️</span> Para a Igreja</h3>
+        <div class="space-y-2.5">
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Sistema pronto para usar — sem TI</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Plano anual cobre toda a Bíblia</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Presença registrada via pontos</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Aprendizado continua em casa</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Progresso visível para os pais</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-blue-300 font-bold mb-3 flex items-center gap-2"><span class="text-xl">👩‍🏫</span> Para o Professor</h3>
+        <div class="space-y-2.5">
+          <div class="check-item"><div class="check-icon" style="background:rgba(96,165,250,.2);border-color:rgba(96,165,250,.4);color:#93c5fd">✓</div><p class="text-gray-300 text-sm">Dashboard com ranking em tempo real</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(96,165,250,.2);border-color:rgba(96,165,250,.4);color:#93c5fd">✓</div><p class="text-gray-300 text-sm">Progresso individual por aluno (📊)</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(96,165,250,.2);border-color:rgba(96,165,250,.4);color:#93c5fd">✓</div><p class="text-gray-300 text-sm">Pontos em 2 cliques (presença, versículo...)</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(96,165,250,.2);border-color:rgba(96,165,250,.4);color:#93c5fd">✓</div><p class="text-gray-300 text-sm">QR Codes imprimíveis direto do painel</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(96,165,250,.2);border-color:rgba(96,165,250,.4);color:#93c5fd">✓</div><p class="text-gray-300 text-sm">Sem necessidade de conhecimento técnico</p></div>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-violet-300 font-bold mb-3 flex items-center gap-2"><span class="text-xl">⚙️</span> Para o Ministério</h3>
+        <div class="space-y-2.5">
+          <div class="check-item"><div class="check-icon" style="background:rgba(167,139,250,.2);border-color:rgba(167,139,250,.4);color:#c4b5fd">✓</div><p class="text-gray-300 text-sm">Dados reais de aprendizado</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(167,139,250,.2);border-color:rgba(167,139,250,.4);color:#c4b5fd">✓</div><p class="text-gray-300 text-sm">Motivação sustentável o ano todo</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(167,139,250,.2);border-color:rgba(167,139,250,.4);color:#c4b5fd">✓</div><p class="text-gray-300 text-sm">Múltiplos professores por turma</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(167,139,250,.2);border-color:rgba(167,139,250,.4);color:#c4b5fd">✓</div><p class="text-gray-300 text-sm">Calendário de escalas integrado</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(167,139,250,.2);border-color:rgba(167,139,250,.4);color:#c4b5fd">✓</div><p class="text-gray-300 text-sm">De 10 a centenas de crianças</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 8 — PARA ESCOLAS CRISTÃS                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-school" id="slide-8">
+  <div class="stars"></div>
+  <div class="orb w-72 h-72 bg-lime-900 bottom-[-3rem] right-[-3rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6" style="background:rgba(163,230,53,.1);border-color:rgba(163,230,53,.25);color:#bef264;">Para Escolas Cristãs</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-4 leading-tight">
+      Ensino Religioso reinventado
+    </h2>
+    <p class="text-gray-300 mb-8 text-lg">O Trilho Kids é igualmente poderoso no contexto escolar — plataforma segura, avaliação gamificada e conteúdo padronizado.</p>
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <div class="card flex gap-4" style="border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.05)">
+        <div class="text-3xl flex-shrink-0">📐</div>
+        <div>
+          <h3 class="text-lime-300 font-bold mb-1">Integração com Ensino Religioso</h3>
+          <p class="text-gray-400 text-sm">Plano anual cobre toda a Bíblia de forma progressiva. Alinhado ao calendário escolar.</p>
+        </div>
+      </div>
+      <div class="card flex gap-4" style="border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.05)">
+        <div class="text-3xl flex-shrink-0">🔒</div>
+        <div>
+          <h3 class="text-lime-300 font-bold mb-1">Plataforma 100% Segura</h3>
+          <p class="text-gray-400 text-sm">As crianças acessam apenas conteúdo bíblico. Sem redes sociais ou distrações.</p>
+        </div>
+      </div>
+      <div class="card flex gap-4" style="border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.05)">
+        <div class="text-3xl flex-shrink-0">🎯</div>
+        <div>
+          <h3 class="text-lime-300 font-bold mb-1">Avaliação Gamificada</h3>
+          <p class="text-gray-400 text-sm">Quizzes substituem provas tradicionais com a mesma eficácia — e muito mais engajamento.</p>
+        </div>
+      </div>
+      <div class="card flex gap-4" style="border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.05)">
+        <div class="text-3xl flex-shrink-0">📊</div>
+        <div>
+          <h3 class="text-lime-300 font-bold mb-1">Relatório por Turma</h3>
+          <p class="text-gray-400 text-sm">O professor acompanha desempenho coletivo e individual para composição de notas e relatórios.</p>
+        </div>
+      </div>
+      <div class="card flex gap-4" style="border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.05)">
+        <div class="text-3xl flex-shrink-0">📚</div>
+        <div>
+          <h3 class="text-lime-300 font-bold mb-1">Apostilas Padronizadas</h3>
+          <p class="text-gray-400 text-sm">Uniformizam o ensino em diferentes turmas e professores da mesma instituição.</p>
+        </div>
+      </div>
+      <div class="card flex gap-4" style="border-color:rgba(163,230,53,.2);background:rgba(163,230,53,.05)">
+        <div class="text-3xl flex-shrink-0">💻</div>
+        <div>
+          <h3 class="text-lime-300 font-bold mb-1">Qualquer Dispositivo</h3>
+          <p class="text-gray-400 text-sm">Celular pessoal, tablet ou computador da escola. Funciona em qualquer navegador.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 9 — BNCC                                 -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide" style="background:linear-gradient(135deg,#080e18 0%,#0e1a2e 50%,#12102a 100%)" id="slide-9-bncc">
+  <div class="stars"></div>
+  <div class="orb w-80 h-80 bg-sky-900 top-[-3rem] right-[-3rem]"></div>
+  <div class="orb w-64 h-64 bg-indigo-900 bottom-[-3rem] left-[-3rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-14 max-w-5xl mx-auto w-full">
+    <div class="pill mb-5" style="background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.3);color:#7dd3fc;">Currículo Nacional</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-2 leading-tight">
+      Alinhado à BNCC e à Educação Infantil
+    </h2>
+    <p class="text-gray-300 mb-8 text-base max-w-2xl">
+      O Trilho Kids foi desenvolvido em consonância com a <strong class="text-white">Base Nacional Comum Curricular</strong>, contemplando competências gerais, campos de experiência da Educação Infantil e o componente de <strong class="text-white">Ensino Religioso</strong> do Ensino Fundamental.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-4 mb-5">
+
+      <div class="card" style="border-color:rgba(56,189,248,.3);background:rgba(56,189,248,.06)">
+        <div class="text-3xl mb-3">🌱</div>
+        <h3 class="text-sky-300 font-black mb-3 text-sm uppercase tracking-wide">Educação Infantil — Campos de Experiência</h3>
+        <div class="space-y-1.5 text-sm text-gray-300">
+          <div class="flex gap-2"><span class="text-sky-400 flex-shrink-0">✦</span><span><strong class="text-white">O eu, o outro e o nós</strong> — identidade, valores e convivência</span></div>
+          <div class="flex gap-2"><span class="text-sky-400 flex-shrink-0">✦</span><span><strong class="text-white">Escuta, fala e imaginação</strong> — narrativas bíblicas e linguagem oral</span></div>
+          <div class="flex gap-2"><span class="text-sky-400 flex-shrink-0">✦</span><span><strong class="text-white">Traços, sons, cores e formas</strong> — expressão por meio de imagens e histórias</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(167,139,250,.35);background:rgba(167,139,250,.06)">
+        <div class="text-3xl mb-3">📘</div>
+        <h3 class="text-violet-300 font-black mb-3 text-sm uppercase tracking-wide">Competências Gerais da BNCC</h3>
+        <div class="space-y-1.5 text-sm text-gray-300">
+          <div class="flex gap-2"><span class="text-violet-400 flex-shrink-0">✦</span><span><strong class="text-white">Conhecimento</strong> — compreensão do universo bíblico e histórico</span></div>
+          <div class="flex gap-2"><span class="text-violet-400 flex-shrink-0">✦</span><span><strong class="text-white">Pensamento crítico</strong> — quizzes estimulam reflexão e raciocínio</span></div>
+          <div class="flex gap-2"><span class="text-violet-400 flex-shrink-0">✦</span><span><strong class="text-white">Cultura digital</strong> — uso ético e pedagógico da tecnologia</span></div>
+          <div class="flex gap-2"><span class="text-violet-400 flex-shrink-0">✦</span><span><strong class="text-white">Autoconhecimento</strong> — progresso visível e metas pessoais</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(251,191,36,.3);background:rgba(251,191,36,.05)">
+        <div class="text-3xl mb-3">✝️</div>
+        <h3 class="text-yellow-300 font-black mb-3 text-sm uppercase tracking-wide">Ensino Religioso — BNCC EF</h3>
+        <div class="space-y-1.5 text-sm text-gray-300">
+          <div class="flex gap-2"><span class="text-yellow-400 flex-shrink-0">✦</span><span><strong class="text-white">Identidades e alteridades</strong> — diversidade de personagens e culturas bíblicas</span></div>
+          <div class="flex gap-2"><span class="text-yellow-400 flex-shrink-0">✦</span><span><strong class="text-white">Manifestações religiosas</strong> — narrativas, símbolos e tradições do texto sagrado</span></div>
+          <div class="flex gap-2"><span class="text-yellow-400 flex-shrink-0">✦</span><span><strong class="text-white">Vida e ética</strong> — valores morais e espirituais presentes em cada lição</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="card flex gap-3 items-start" style="border-color:rgba(134,239,172,.25);background:rgba(134,239,172,.04)">
+        <div class="text-2xl flex-shrink-0">🧠</div>
+        <div>
+          <h4 class="text-emerald-300 font-bold text-sm mb-0.5">Desenvolvimento Socioemocional</h4>
+          <p class="text-gray-400 text-sm">Os personagens bíblicos apresentam virtudes, conflitos e superações — base para discussões sobre empatia, coragem, responsabilidade e fé.</p>
+        </div>
+      </div>
+      <div class="card flex gap-3 items-start" style="border-color:rgba(134,239,172,.25);background:rgba(134,239,172,.04)">
+        <div class="text-2xl flex-shrink-0">📋</div>
+        <div>
+          <h4 class="text-emerald-300 font-bold text-sm mb-0.5">Plano de Aula com Objetivos Pedagógicos</h4>
+          <p class="text-gray-400 text-sm">A apostila do professor inclui objetivos de aprendizagem alinhados à BNCC para cada lição, facilitando o planejamento docente e registros institucionais.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 10 — O DIFERENCIAL                       -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-diff" id="slide-9">
+  <div class="stars"></div>
+  <div class="orb w-80 h-80 bg-violet-900 top-[-3rem] right-[-3rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6">Por que Trilho Kids?</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+      A diferença é visível
+    </h2>
+
+    <div class="card overflow-hidden p-0" style="border-color:rgba(139,92,246,.3)">
+      <table class="w-full diff-table">
+        <thead>
+          <tr style="background:rgba(139,92,246,.15)">
+            <th>Aspecto</th>
+            <th>Solução Tradicional</th>
+            <th style="color:#86efac">Trilho Kids</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-white font-semibold">Material</td>
+            <td class="diff-bad">Folheto semanal avulso</td>
+            <td class="diff-good">Apostila anual integrada com digital</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,.02)">
+            <td class="text-white font-semibold">Engajamento</td>
+            <td class="diff-bad">Depende 100% do professor</td>
+            <td class="diff-good">Gamificação autônoma, 24h/dia</td>
+          </tr>
+          <tr>
+            <td class="text-white font-semibold">Acompanhamento</td>
+            <td class="diff-bad">Lembrança do professor</td>
+            <td class="diff-good">Dashboard com dados reais</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,.02)">
+            <td class="text-white font-semibold">Progresso</td>
+            <td class="diff-bad">Invisível</td>
+            <td class="diff-good">Visualizado em tempo real</td>
+          </tr>
+          <tr>
+            <td class="text-white font-semibold">Fora da aula</td>
+            <td class="diff-bad">Sem recurso</td>
+            <td class="diff-good">Portal acessível pelo celular</td>
+          </tr>
+          <tr style="background:rgba(255,255,255,.02)">
+            <td class="text-white font-semibold">Professores</td>
+            <td class="diff-bad">Comunicação manual</td>
+            <td class="diff-good">Escalas e calendário integrados</td>
+          </tr>
+          <tr>
+            <td class="text-white font-semibold">Reconhecimento</td>
+            <td class="diff-bad">Verbal e pontual</td>
+            <td class="diff-good">Badges e níveis permanentes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 10 — COMO FUNCIONA NA PRÁTICA            -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-flow" id="slide-10">
+  <div class="stars"></div>
+  <div class="orb w-72 h-72 bg-indigo-800 bottom-[-3rem] left-[-3rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6">Jornada Completa</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">
+      Como funciona na prática
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-x-12 gap-y-1">
+      <div>
+        <div class="flow-step"><div class="flow-num">1</div><div class="pt-0.5"><span class="text-white font-bold">Igreja / escola adquire o pacote</span><p class="text-gray-400 text-sm mt-0.5">Configuração completa incluída</p></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-num">2</div><div class="pt-0.5"><span class="text-white font-bold">Apostilas são distribuídas</span><p class="text-gray-400 text-sm mt-0.5">Professor e alunos com seus materiais</p></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-num">3</div><div class="pt-0.5"><span class="text-white font-bold">Admin cadastra turmas e alunos</span><p class="text-gray-400 text-sm mt-0.5">Painel administrativo intuitivo</p></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-num">4</div><div class="pt-0.5"><span class="text-white font-bold">QR Codes impressos e entregues</span><p class="text-gray-400 text-sm mt-0.5">Colados na apostila ou como crachás</p></div></div>
+        <div class="flow-line md:hidden"></div>
+      </div>
+      <div>
+        <div class="flow-step"><div class="flow-num">5</div><div class="pt-0.5"><span class="text-white font-bold">Aula: escaneou o QR da lição</span><p class="text-gray-400 text-sm mt-0.5">Criança lê o livro no portal e ganha pontos</p></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-num">6</div><div class="pt-0.5"><span class="text-white font-bold">Escaneou o QR do quiz</span><p class="text-gray-400 text-sm mt-0.5">10 perguntas → resultado salvo automaticamente</p></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-num">7</div><div class="pt-0.5"><span class="text-white font-bold">Professor vê tudo no dashboard</span><p class="text-gray-400 text-sm mt-0.5">Ranking, progresso, presença — em tempo real</p></div></div>
+        <div class="flow-line"></div>
+        <div class="flow-step"><div class="flow-num">8</div><div class="pt-0.5"><span class="text-white font-bold">Criança sobe de nível, conquista badges</span><p class="text-gray-400 text-sm mt-0.5">Pais acompanham, família se envolve</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 11 — PACOTES                             -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-packages" id="slide-11">
+  <div class="stars"></div>
+  <div class="orb w-72 h-72 bg-green-900 top-[-3rem] left-[-3rem]"></div>
+  <div class="orb w-64 h-64 bg-violet-900 bottom-[-2rem] right-[-2rem]"></div>
+
+  <div class="content flex flex-col justify-center flex-1 px-8 md:px-20 py-16 max-w-5xl mx-auto w-full">
+    <div class="pill mb-6" style="background:rgba(134,239,172,.1);border-color:rgba(134,239,172,.25);color:#86efac;">Proposta de Valor</div>
+    <h2 class="text-4xl md:text-5xl font-black text-white mb-8 leading-tight">O que está incluído</h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="card" style="border-color:rgba(139,92,246,.4);background:rgba(139,92,246,.06)">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="text-4xl">🏛️</div>
+          <div>
+            <h3 class="text-violet-300 font-black text-xl">Pacote Ministério</h3>
+            <p class="text-gray-400 text-sm">Igreja / Ministério Infantil</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Portal digital completo — 66 livros + quizzes + personagens</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Apostila do Professor com plano de aula anual</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Apostilas dos alunos com QR Codes integrados</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Cadastro de turmas e alunos</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Dashboard do professor</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Gamificação completa (pontos, níveis, 30+ badges)</p></div>
+          <div class="check-item"><div class="check-icon">✓</div><p class="text-gray-300 text-sm">Suporte para implantação</p></div>
+        </div>
+      </div>
+
+      <div class="card" style="border-color:rgba(134,239,172,.4);background:rgba(134,239,172,.06)">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="text-4xl">🎓</div>
+          <div>
+            <h3 class="text-emerald-300 font-black text-xl">Pacote Escola Cristã</h3>
+            <p class="text-gray-400 text-sm">Inclui tudo do Ministério, mais:</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,172,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Tudo do Pacote Ministério</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,172,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Multi-turmas e multi-professores</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,172,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Relatório por turma para avaliação</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,172,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Calendário de escalas de professores</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,172,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Papel titular/auxiliar por turma</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,172,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Painel administrativo completo</p></div>
+          <div class="check-item"><div class="check-icon" style="background:rgba(134,239,172,.2);border-color:rgba(134,239,174,.4);color:#86efac">✓</div><p class="text-gray-300 text-sm">Suporte e treinamento expandido</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- SLIDE 12 — FECHAMENTO                          -->
+<!-- ══════════════════════════════════════════════ -->
+<section class="slide bg-close" id="slide-12">
+  <div class="stars"></div>
+  <div class="orb w-96 h-96 bg-violet-700 top-[-5rem] right-[-5rem]"></div>
+  <div class="orb w-80 h-80 bg-indigo-700 bottom-[-4rem] left-[-4rem]"></div>
+
+  <div class="content flex flex-col items-center justify-center flex-1 text-center px-8 py-16 max-w-4xl mx-auto">
+    <div class="float text-6xl mb-6">✨</div>
+
+    <p class="text-xl md:text-2xl text-purple-200 italic mb-8 max-w-2xl leading-relaxed border-l-4 border-violet-500 pl-6 text-left">
+      "Você quer que as crianças do seu ministério terminem o ano sabendo algumas histórias — ou quer que elas terminem o ano tendo <strong class="text-white">explorado toda a Bíblia</strong>, conquistado níveis e badges, com um registro real de tudo o que aprenderam?"
+    </p>
+
+    <p class="text-gray-300 text-lg mb-10 max-w-xl">
+      O Trilho Kids não substitui o professor.<br>
+      <strong class="text-white text-xl">Multiplica o impacto do professor.</strong>
+    </p>
+
+    <h3 class="text-2xl font-black text-white mb-6">Próximos Passos</h3>
+    <div class="grid md:grid-cols-4 gap-4 w-full mb-10">
+      <div class="card text-center">
+        <div class="text-3xl mb-2">🖥️</div>
+        <h4 class="text-violet-300 font-bold text-sm mb-1">Demonstração</h4>
+        <p class="text-gray-500 text-xs">Portal ao vivo com turma real</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-3xl mb-2">🆓</div>
+        <h4 class="text-violet-300 font-bold text-sm mb-1">Piloto Gratuito</h4>
+        <p class="text-gray-500 text-xs">30 dias com uma turma</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-3xl mb-2">🚀</div>
+        <h4 class="text-violet-300 font-bold text-sm mb-1">Implantação</h4>
+        <p class="text-gray-500 text-xs">Cadastramos tudo, treinamos a equipe</p>
+      </div>
+      <div class="card text-center">
+        <div class="text-3xl mb-2">🤝</div>
+        <h4 class="text-violet-300 font-bold text-sm mb-1">Suporte</h4>
+        <p class="text-gray-500 text-xs">Contínuo e evolutivo</p>
+      </div>
+    </div>
+
+    <div class="text-gray-500 text-sm italic mt-4">
+      Trilho Kids — Cada lição, uma aventura. Cada versículo, uma conquista.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════ -->
+<!-- NAVEGAÇÃO                                       -->
+<!-- ══════════════════════════════════════════════ -->
+<button class="nav-btn nav-prev" onclick="navegar(-1)" id="btn-prev">← Anterior</button>
+<div class="slide-counter" id="counter">1 / 12</div>
+<button class="nav-btn nav-next" onclick="navegar(1)" id="btn-next">Próximo →</button>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const total  = slides.length;
+  let atual    = 0;
+
+  function mostrarSlide(n) {
+    slides[atual].classList.remove('active');
+    atual = (n + total) % total;
+    slides[atual].classList.add('active');
+    document.getElementById('counter').textContent = `${atual + 1} / ${total}`;
+    document.getElementById('btn-prev').style.opacity = atual === 0 ? '.3' : '1';
+    document.getElementById('btn-next').textContent   = atual === total - 1 ? '⟳ Recomeçar' : 'Próximo →';
+    window.scrollTo(0, 0);
+  }
+
+  function navegar(dir) { mostrarSlide(atual + dir); }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); navegar(1); }
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')                    { e.preventDefault(); navegar(-1); }
+  });
+
+  // Touch swipe
+  let tx = 0;
+  document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - tx;
+    if (Math.abs(dx) > 50) navegar(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  mostrarSlide(0);
+</script>
+
+</body>
+</html>

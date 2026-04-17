@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador — Trilho Kids</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tab-btn.ativo { background:rgba(139,92,246,.3); color:white; border-color:rgba(139,92,246,.6); }
+    .secao { display:none; }
+    .secao.ativa { display:block; }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+    .fade-in { animation: fadeIn .25s ease; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-violet-800 to-purple-800 border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">⚙️</span>
+        <div>
+          <h1 class="text-xl font-black text-white">Painel Admin</h1>
+          <p class="text-purple-300 text-xs" id="admin-nome"></p>
+        </div>
+      </div>
+      <div class="flex gap-3">
+        <a href="/professor/dashboard.html"
+          class="bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-all hidden md:block">
+          📊 Dashboard
+        </a>
+        <button onclick="logout()"
+          class="bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-all">
+          Sair
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="max-w-7xl mx-auto px-4 pb-0 flex gap-2 overflow-x-auto">
+      <button onclick="mudarAba('instituicoes')" id="tab-instituicoes"
+        class="tab-btn ativo flex-shrink-0 px-5 py-3 rounded-t-xl border border-purple-500/30 text-sm font-bold text-gray-300 transition-all">
+        🏛️ Instituições
+      </button>
+      <button onclick="mudarAba('professores')" id="tab-professores"
+        class="tab-btn flex-shrink-0 px-5 py-3 rounded-t-xl border border-purple-500/30 text-sm font-bold text-gray-300 transition-all">
+        👩‍🏫 Professores
+      </button>
+      <button onclick="mudarAba('turmas')" id="tab-turmas"
+        class="tab-btn flex-shrink-0 px-5 py-3 rounded-t-xl border border-purple-500/30 text-sm font-bold text-gray-300 transition-all">
+        🏫 Turmas
+      </button>
+      <button onclick="mudarAba('alunos')" id="tab-alunos"
+        class="tab-btn flex-shrink-0 px-5 py-3 rounded-t-xl border border-purple-500/30 text-sm font-bold text-gray-300 transition-all">
+        👦 Alunos & QR
+      </button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+
+    <!-- ── ABA: Instituições ─────────────── -->
+    <div id="sec-instituicoes" class="secao ativa fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-black text-purple-300">🏛️ Instituições</h2>
+        <button onclick="toggleForm('form-instituicao')"
+          class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all">
+          + Nova
+        </button>
+      </div>
+
+      <div id="form-instituicao" class="hidden mb-6 bg-slate-800/70 border border-purple-500/30 rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-white mb-4">Nova Instituição</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Nome *</label>
+            <input id="inst-nome" placeholder="IBP — Igreja Batista do Povo"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Tipo</label>
+            <select id="inst-tipo" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+              <option value="igreja">Igreja</option>
+              <option value="escola">Escola</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Cidade</label>
+            <input id="inst-cidade" placeholder="São Paulo"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+        </div>
+        <div class="flex gap-3 mt-4">
+          <button onclick="salvarInstituicao()"
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Salvar
+          </button>
+          <button onclick="toggleForm('form-instituicao')"
+            class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Cancelar
+          </button>
+        </div>
+        <p id="inst-erro" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+
+      <div id="lista-instituicoes" class="grid md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+    </div>
+
+    <!-- ── ABA: Professores ──────────────── -->
+    <div id="sec-professores" class="secao fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-black text-purple-300">👩‍🏫 Professores</h2>
+        <button onclick="toggleForm('form-professor')"
+          class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all">
+          + Novo
+        </button>
+      </div>
+
+      <div id="form-professor" class="hidden mb-6 bg-slate-800/70 border border-purple-500/30 rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-white mb-4">Novo Professor</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Nome *</label>
+            <input id="prof-nome-i" placeholder="Ana Lima"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">E-mail *</label>
+            <input id="prof-email-i" type="email" placeholder="ana@email.com"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Senha *</label>
+            <input id="prof-senha-i" type="password" placeholder="Mín. 6 caracteres"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Instituição</label>
+            <select id="prof-inst-i" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+              <option value="">— Selecione —</option>
+            </select>
+          </div>
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="prof-admin-i" class="w-4 h-4 accent-purple-500" />
+            <label for="prof-admin-i" class="text-sm text-gray-300">Administrador</label>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-4">
+          <button onclick="salvarProfessor()"
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Salvar
+          </button>
+          <button onclick="toggleForm('form-professor')"
+            class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Cancelar
+          </button>
+        </div>
+        <p id="prof-erro" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+
+      <div id="lista-professores" class="space-y-3"></div>
+    </div>
+
+    <!-- ── ABA: Turmas ───────────────────── -->
+    <div id="sec-turmas" class="secao fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-black text-purple-300">🏫 Turmas</h2>
+        <button onclick="toggleForm('form-turma')"
+          class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all">
+          + Nova
+        </button>
+      </div>
+
+      <div id="form-turma" class="hidden mb-6 bg-slate-800/70 border border-purple-500/30 rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-white mb-4">Nova Turma</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Nome da Turma *</label>
+            <input id="turma-nome-i" placeholder="Turma Júnior 2025"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Instituição *</label>
+            <select id="turma-inst-i" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+              <option value="">— Selecione —</option>
+            </select>
+          </div>
+        </div>
+        <p class="text-gray-500 text-xs mt-3">Após criar a turma, vincule os professores usando o botão "Equipe".</p>
+        <div class="flex gap-3 mt-4">
+          <button onclick="salvarTurma()"
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Salvar
+          </button>
+          <button onclick="toggleForm('form-turma')"
+            class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Cancelar
+          </button>
+        </div>
+        <p id="turma-erro" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+
+      <div id="lista-turmas" class="space-y-4"></div>
+    </div>
+
+    <!-- ── ABA: Alunos & QR ──────────────── -->
+    <div id="sec-alunos" class="secao fade-in">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="text-2xl font-black text-purple-300">👦 Alunos & QR Codes</h2>
+        <button onclick="toggleForm('form-aluno')"
+          class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all">
+          + Novo Aluno
+        </button>
+      </div>
+
+      <div id="form-aluno" class="hidden mb-6 bg-slate-800/70 border border-purple-500/30 rounded-2xl p-6">
+        <h3 class="text-lg font-bold text-white mb-4">Novo Aluno</h3>
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Nome do Aluno *</label>
+            <input id="aluno-nome-i" placeholder="Maria Silva"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Turma</label>
+            <select id="aluno-turma-i" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+              <option value="">— Sem turma —</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-4">
+          <button onclick="salvarAluno()"
+            class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Criar Aluno
+          </button>
+          <button onclick="toggleForm('form-aluno')"
+            class="bg-slate-700 hover:bg-slate-600 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
+            Cancelar
+          </button>
+        </div>
+        <p id="aluno-erro" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+
+      <!-- Filtro por turma -->
+      <div class="flex gap-4 mb-4">
+        <select id="filtro-turma-alunos" onchange="carregarAlunos(this.value)"
+          class="bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-2 text-sm outline-none">
+          <option value="">Todos os alunos</option>
+        </select>
+        <input id="filtro-nome-aluno" oninput="filtrarTabelaAlunos()" placeholder="Buscar por nome..."
+          class="bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-2 text-sm outline-none focus:border-purple-400 transition-colors flex-1" />
+      </div>
+
+      <div class="bg-slate-800/60 border border-purple-500/20 rounded-2xl overflow-hidden shadow-xl">
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-purple-500/20 text-purple-300 text-xs uppercase">
+                <th class="py-4 px-4 text-left">Aluno</th>
+                <th class="py-4 px-4 text-left">Turma</th>
+                <th class="py-4 px-4 text-center">Pontos</th>
+                <th class="py-4 px-4 text-center">QR Code</th>
+                <th class="py-4 px-4 text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-alunos"></tbody>
+          </table>
+        </div>
+        <p id="sem-alunos-admin" class="text-center text-gray-500 py-8 hidden">
+          Nenhum aluno encontrado.
+        </p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ═══ MODAL: QR Code ═══════════════════════ -->
+  <div id="modal-qr" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-8 w-full max-w-sm shadow-2xl text-center">
+      <h3 class="text-2xl font-black text-white mb-1">QR Code</h3>
+      <p class="text-purple-300 text-sm mb-4">Aluno: <strong id="qr-nome" class="text-white"></strong></p>
+      <div id="qr-canvas" class="flex justify-center mb-3"></div>
+      <p id="qr-url" class="text-xs text-gray-500 break-all mb-6"></p>
+      <div class="flex gap-3">
+        <button onclick="document.getElementById('modal-qr').classList.add('hidden')"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Fechar
+        </button>
+        <button onclick="imprimirQR()"
+          class="flex-1 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700
+                 text-white py-3 rounded-xl font-bold transition-all">
+          🖨️ Imprimir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: Equipe da Turma ══════════════ -->
+  <div id="modal-equipe" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-blue-500/40 rounded-3xl p-6 w-full max-w-lg shadow-2xl">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <h3 class="text-xl font-black text-white">👩‍🏫 Equipe</h3>
+          <p class="text-blue-300 text-sm" id="equipe-turma-nome"></p>
+        </div>
+        <button onclick="fecharModal('modal-equipe')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+
+      <!-- Lista de professores vinculados -->
+      <div id="equipe-lista" class="space-y-2 mb-5 max-h-56 overflow-y-auto"></div>
+
+      <!-- Formulário para adicionar -->
+      <div class="border-t border-slate-700 pt-4">
+        <p class="text-gray-400 text-sm font-semibold mb-3">Adicionar professor</p>
+        <div class="flex gap-3 flex-wrap">
+          <select id="equipe-prof-sel"
+            class="flex-1 min-w-0 bg-slate-700 border border-blue-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none">
+            <option value="">— Selecione —</option>
+          </select>
+          <select id="equipe-papel-sel"
+            class="bg-slate-700 border border-blue-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none">
+            <option value="titular">Titular</option>
+            <option value="auxiliar">Auxiliar</option>
+          </select>
+          <button onclick="adicionarProfEquipe()"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all flex-shrink-0">
+            + Adicionar
+          </button>
+        </div>
+        <p id="equipe-erro" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: Calendário da Turma ══════════ -->
+  <div id="modal-calendario" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-green-500/40 rounded-3xl p-6 w-full max-w-2xl shadow-2xl max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between mb-4 flex-shrink-0">
+        <div>
+          <h3 class="text-xl font-black text-white">📅 Calendário</h3>
+          <p class="text-green-300 text-sm" id="cal-turma-nome"></p>
+        </div>
+        <button onclick="fecharModal('modal-calendario')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+
+      <!-- Navegação de mês -->
+      <div class="flex items-center justify-between mb-4 flex-shrink-0">
+        <button onclick="navegarMes(-1)"
+          class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm font-bold transition-all">
+          ‹ Anterior
+        </button>
+        <span id="cal-mes-titulo" class="text-white font-black text-lg"></span>
+        <button onclick="navegarMes(1)"
+          class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-xl text-sm font-bold transition-all">
+          Próximo ›
+        </button>
+      </div>
+
+      <!-- Lista de entradas -->
+      <div id="cal-lista" class="flex-1 overflow-y-auto space-y-2 mb-4 min-h-[120px]"></div>
+
+      <!-- Formulário de nova entrada -->
+      <div class="border-t border-slate-700 pt-4 flex-shrink-0">
+        <button onclick="toggleForm('cal-form')"
+          class="text-green-400 hover:text-green-300 text-sm font-bold mb-3 transition-colors">
+          + Adicionar escala
+        </button>
+        <div id="cal-form" class="hidden">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-3">
+            <div class="col-span-2 md:col-span-1">
+              <label class="text-xs text-gray-400 mb-1 block">Data *</label>
+              <input type="date" id="cal-data"
+                class="w-full bg-slate-700 border border-green-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none" />
+            </div>
+            <div class="col-span-2">
+              <label class="text-xs text-gray-400 mb-1 block">Professor *</label>
+              <select id="cal-prof-sel"
+                class="w-full bg-slate-700 border border-green-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none">
+                <option value="">— Selecione —</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 mb-1 block">Início</label>
+              <input type="time" id="cal-hora-inicio"
+                class="w-full bg-slate-700 border border-green-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none" />
+            </div>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-3">
+            <div>
+              <label class="text-xs text-gray-400 mb-1 block">Término</label>
+              <input type="time" id="cal-hora-fim"
+                class="w-full bg-slate-700 border border-green-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none" />
+            </div>
+            <div>
+              <label class="text-xs text-gray-400 mb-1 block">Observação</label>
+              <input type="text" id="cal-obs" maxlength="100" placeholder="Ex: Aula especial..."
+                class="w-full bg-slate-700 border border-green-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none" />
+            </div>
+          </div>
+          <div class="flex gap-3 items-center">
+            <button onclick="salvarEscala()"
+              class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl font-bold text-sm transition-all">
+              Salvar
+            </button>
+            <button onclick="toggleForm('cal-form')"
+              class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2 rounded-xl font-bold text-sm transition-all">
+              Cancelar
+            </button>
+            <p id="cal-erro" class="text-red-400 text-sm hidden"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="/professor/auth.js"></script>
+  <script>
+    if (!checkAuth(true)) throw new Error('redirect');
+
+    const prof = Auth.getProf();
+    document.getElementById('admin-nome').textContent = prof.nome;
+
+    // ── Cache de dados ────────────────────────
+    let _instituicoes = [];
+    let _professores  = [];
+    let _turmas       = [];
+    let _alunos       = [];
+
+    // Estado dos modais de turma
+    let _equipeTurmaId   = 0;
+    let _equipeTurmaNome = '';
+    let _equipeProfs     = [];    // professores já vinculados à turma
+    let _calTurmaId      = 0;
+    let _calTurmaNome    = '';
+    let _calMes          = '';    // YYYY-MM
+    let _calTurmaProfs   = [];    // professores da turma para o select do calendário
+
+    // ── Abas ─────────────────────────────────
+    function mudarAba(aba) {
+      ['instituicoes','professores','turmas','alunos'].forEach(a => {
+        document.getElementById(`sec-${a}`).classList.remove('ativa');
+        document.getElementById(`tab-${a}`).classList.remove('ativo');
+      });
+      document.getElementById(`sec-${aba}`).classList.add('ativa');
+      document.getElementById(`tab-${aba}`).classList.add('ativo');
+      if (aba === 'alunos') carregarAlunos();
+    }
+
+    function toggleForm(id) {
+      document.getElementById(id).classList.toggle('hidden');
+    }
+
+    function fecharModal(id) {
+      document.getElementById(id).classList.add('hidden');
+    }
+
+    // ── Carregar dados iniciais ───────────────
+    window.addEventListener('DOMContentLoaded', async () => {
+      await Promise.all([carregarInstituicoes(), carregarProfessores(), carregarTurmas()]);
+    });
+
+    // ── INSTITUIÇÕES ─────────────────────────
+    async function carregarInstituicoes() {
+      const d = await apiAuth('instituicoes.php');
+      if (!d.ok) return;
+      _instituicoes = d.dados;
+      renderInstituicoes();
+      preencherSelects();
+    }
+
+    function renderInstituicoes() {
+      const el = document.getElementById('lista-instituicoes');
+      el.innerHTML = _instituicoes.length === 0
+        ? '<p class="text-gray-500 col-span-3">Nenhuma instituição cadastrada.</p>'
+        : _instituicoes.map(i => `
+          <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="font-black text-white text-lg">${i.nome}</p>
+                <p class="text-gray-400 text-sm">${i.tipo === 'igreja' ? '⛪ Igreja' : '🏫 Escola'} · ${i.cidade || '—'}</p>
+                <p class="text-purple-300 text-xs mt-1">${i.total_turmas} turma(s)</p>
+              </div>
+              <button onclick="removerInstituicao(${i.id})"
+                class="text-red-400 hover:text-red-300 text-sm transition-colors" title="Remover">✕</button>
+            </div>
+          </div>`).join('');
+    }
+
+    async function salvarInstituicao() {
+      const nome   = document.getElementById('inst-nome').value.trim();
+      const tipo   = document.getElementById('inst-tipo').value;
+      const cidade = document.getElementById('inst-cidade').value.trim();
+      const erro   = document.getElementById('inst-erro');
+      erro.classList.add('hidden');
+      if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('instituicoes.php', {
+        method: 'POST', body: JSON.stringify({ nome, tipo, cidade }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      document.getElementById('inst-nome').value = '';
+      document.getElementById('inst-cidade').value = '';
+      toggleForm('form-instituicao');
+      await carregarInstituicoes();
+    }
+
+    async function removerInstituicao(id) {
+      if (!confirm('Remover esta instituição?')) return;
+      const d = await apiAuth('instituicoes.php', { method:'DELETE', body: JSON.stringify({ id }) });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarInstituicoes();
+    }
+
+    // ── PROFESSORES ──────────────────────────
+    async function carregarProfessores() {
+      const d = await apiAuth('professores.php');
+      if (!d.ok) return;
+      _professores = d.dados;
+      renderProfessores();
+      preencherSelects();
+    }
+
+    function renderProfessores() {
+      const el = document.getElementById('lista-professores');
+      el.innerHTML = _professores.length === 0
+        ? '<p class="text-gray-500">Nenhum professor cadastrado.</p>'
+        : _professores.map(p => `
+          <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5 flex items-center justify-between gap-4">
+            <div>
+              <p class="font-black text-white">${p.nome}
+                ${p.is_admin ? '<span class="text-xs bg-purple-600/40 text-purple-300 px-2 py-0.5 rounded-full ml-2">admin</span>' : ''}
+                ${!p.ativo ? '<span class="text-xs bg-red-600/40 text-red-300 px-2 py-0.5 rounded-full ml-2">inativo</span>' : ''}
+              </p>
+              <p class="text-gray-400 text-sm">${p.email}</p>
+              <p class="text-purple-300 text-xs">${p.instituicao || '—'} · ${p.total_turmas} turma(s)</p>
+            </div>
+            <div class="flex gap-2 flex-shrink-0">
+              <button onclick="toggleAtivoProfessor(${p.id}, ${p.ativo})"
+                class="text-xs ${p.ativo ? 'bg-red-600/30 hover:bg-red-600/60 text-red-300' : 'bg-green-600/30 hover:bg-green-600/60 text-green-300'}
+                       px-3 py-1 rounded-lg font-bold transition-all">
+                ${p.ativo ? 'Desativar' : 'Ativar'}
+              </button>
+            </div>
+          </div>`).join('');
+    }
+
+    async function salvarProfessor() {
+      const nome     = document.getElementById('prof-nome-i').value.trim();
+      const email    = document.getElementById('prof-email-i').value.trim();
+      const senha    = document.getElementById('prof-senha-i').value;
+      const inst_id  = document.getElementById('prof-inst-i').value || null;
+      const is_admin = document.getElementById('prof-admin-i').checked;
+      const erro     = document.getElementById('prof-erro');
+      erro.classList.add('hidden');
+
+      const d = await apiAuth('professores.php', {
+        method: 'POST',
+        body: JSON.stringify({ nome, email, senha, instituicao_id: inst_id, is_admin }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      ['prof-nome-i','prof-email-i','prof-senha-i'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('prof-admin-i').checked = false;
+      toggleForm('form-professor');
+      await carregarProfessores();
+    }
+
+    async function toggleAtivoProfessor(id, ativo) {
+      const d = await apiAuth('professores.php', {
+        method: 'PATCH', body: JSON.stringify({ id, ativo: !ativo }),
+      });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarProfessores();
+    }
+
+    // ── TURMAS ───────────────────────────────
+    async function carregarTurmas() {
+      const d = await apiAuth('turmas.php');
+      if (!d.ok) return;
+      _turmas = d.dados;
+      renderTurmas();
+      preencherSelects();
+    }
+
+    function renderTurmas() {
+      const el = document.getElementById('lista-turmas');
+      if (_turmas.length === 0) {
+        el.innerHTML = '<p class="text-gray-500">Nenhuma turma cadastrada.</p>';
+        return;
+      }
+      el.innerHTML = _turmas.map(t => {
+        const profs = (t.professores || []);
+        const profsStr = profs.length
+          ? profs.map(p => `${p.nome}<span class="text-gray-500"> (${p.papel})</span>`).join(', ')
+          : '<span class="text-gray-500 italic">Sem professores</span>';
+
+        return `
+          <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5">
+            <div class="flex items-start justify-between gap-4">
+              <div class="min-w-0">
+                <p class="font-black text-white text-lg">${t.nome}</p>
+                <p class="text-gray-400 text-sm">${t.instituicao}</p>
+                <p class="text-purple-300 text-xs mt-1">${profsStr}</p>
+                <p class="text-gray-500 text-xs">${t.total_alunos} aluno(s)</p>
+              </div>
+              <div class="flex flex-col gap-2 flex-shrink-0">
+                <button onclick="abrirEquipe(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
+                  class="text-xs bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  👩‍🏫 Equipe
+                </button>
+                <button onclick="abrirCalendario(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
+                  class="text-xs bg-green-600/30 hover:bg-green-600/60 text-green-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  📅 Calendário
+                </button>
+                <button onclick="desativarTurma(${t.id})"
+                  class="text-xs bg-red-600/30 hover:bg-red-600/60 text-red-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  Desativar
+                </button>
+              </div>
+            </div>
+          </div>`;
+      }).join('');
+    }
+
+    async function salvarTurma() {
+      const nome    = document.getElementById('turma-nome-i').value.trim();
+      const inst_id = parseInt(document.getElementById('turma-inst-i').value);
+      const erro    = document.getElementById('turma-erro');
+      erro.classList.add('hidden');
+      if (!nome)    { erro.textContent = 'Nome obrigatório.';        erro.classList.remove('hidden'); return; }
+      if (!inst_id) { erro.textContent = 'Selecione a instituição.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('turmas.php', {
+        method: 'POST', body: JSON.stringify({ nome, instituicao_id: inst_id }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      document.getElementById('turma-nome-i').value = '';
+      toggleForm('form-turma');
+      await carregarTurmas();
+    }
+
+    async function desativarTurma(id) {
+      if (!confirm('Desativar esta turma?')) return;
+      const d = await apiAuth('turmas.php', { method:'DELETE', body: JSON.stringify({ id }) });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarTurmas();
+    }
+
+    // ── EQUIPE DA TURMA ──────────────────────
+    async function abrirEquipe(turmaId, turmaNome) {
+      _equipeTurmaId   = turmaId;
+      _equipeTurmaNome = turmaNome;
+      document.getElementById('equipe-turma-nome').textContent = turmaNome;
+      document.getElementById('equipe-erro').classList.add('hidden');
+      document.getElementById('modal-equipe').classList.remove('hidden');
+      await carregarEquipe();
+    }
+
+    async function carregarEquipe() {
+      const d = await apiAuth(`turma_professores.php?turma_id=${_equipeTurmaId}`);
+      if (!d.ok) return;
+      _equipeProfs = d.dados;
+      renderEquipe();
+      atualizarSelectEquipe();
+    }
+
+    function renderEquipe() {
+      const el = document.getElementById('equipe-lista');
+      if (_equipeProfs.length === 0) {
+        el.innerHTML = '<p class="text-gray-500 text-sm">Nenhum professor vinculado ainda.</p>';
+        return;
+      }
+      el.innerHTML = _equipeProfs.map(p => `
+        <div class="flex items-center justify-between bg-slate-700/50 rounded-xl px-4 py-2.5">
+          <div>
+            <span class="text-white font-bold text-sm">${p.nome}</span>
+            <span class="ml-2 text-xs px-2 py-0.5 rounded-full ${p.papel === 'titular'
+              ? 'bg-blue-600/40 text-blue-300'
+              : 'bg-orange-600/40 text-orange-300'}">
+              ${p.papel}
+            </span>
+          </div>
+          <button onclick="removerProfEquipe(${p.id})"
+            class="text-red-400 hover:text-red-300 text-sm transition-colors ml-4">✕</button>
+        </div>`).join('');
+    }
+
+    function atualizarSelectEquipe() {
+      const vinculadosIds = new Set(_equipeProfs.map(p => p.id));
+      const sel = document.getElementById('equipe-prof-sel');
+      sel.innerHTML = '<option value="">— Selecione —</option>' +
+        _professores
+          .filter(p => !vinculadosIds.has(p.id))
+          .map(p => `<option value="${p.id}">${p.nome}</option>`).join('');
+    }
+
+    async function adicionarProfEquipe() {
+      const professor_id = parseInt(document.getElementById('equipe-prof-sel').value);
+      const papel        = document.getElementById('equipe-papel-sel').value;
+      const erro         = document.getElementById('equipe-erro');
+      erro.classList.add('hidden');
+      if (!professor_id) { erro.textContent = 'Selecione um professor.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('turma_professores.php', {
+        method: 'POST',
+        body: JSON.stringify({ turma_id: _equipeTurmaId, professor_id, papel }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      await carregarEquipe();
+      await carregarTurmas();
+    }
+
+    async function removerProfEquipe(professor_id) {
+      if (!confirm('Remover este professor da turma?')) return;
+      const d = await apiAuth('turma_professores.php', {
+        method: 'DELETE',
+        body: JSON.stringify({ turma_id: _equipeTurmaId, professor_id }),
+      });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarEquipe();
+      await carregarTurmas();
+    }
+
+    // ── CALENDÁRIO DA TURMA ──────────────────
+    async function abrirCalendario(turmaId, turmaNome) {
+      _calTurmaId   = turmaId;
+      _calTurmaNome = turmaNome;
+      // Mês atual
+      const hoje = new Date();
+      _calMes = `${hoje.getFullYear()}-${String(hoje.getMonth() + 1).padStart(2, '0')}`;
+      document.getElementById('cal-turma-nome').textContent = turmaNome;
+      document.getElementById('modal-calendario').classList.remove('hidden');
+      document.getElementById('cal-form').classList.add('hidden');
+
+      // Pré-popula o select de data com o mês atual
+      document.getElementById('cal-data').value = hoje.toISOString().split('T')[0];
+
+      // Carrega professores da turma para o select do calendário
+      const eq = await apiAuth(`turma_professores.php?turma_id=${turmaId}`);
+      _calTurmaProfs = eq.ok ? eq.dados : [];
+      const selCal = document.getElementById('cal-prof-sel');
+      selCal.innerHTML = '<option value="">— Selecione —</option>' +
+        _calTurmaProfs.map(p => `<option value="${p.id}">${p.nome} (${p.papel})</option>`).join('');
+
+      await carregarCalendario();
+    }
+
+    async function carregarCalendario() {
+      atualizarTituloMes();
+      const d = await apiAuth(`calendario.php?turma_id=${_calTurmaId}&mes=${_calMes}`);
+      renderCalendario(d.ok ? d.dados : []);
+    }
+
+    function atualizarTituloMes() {
+      const [ano, mes] = _calMes.split('-');
+      const nomes = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+                     'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+      document.getElementById('cal-mes-titulo').textContent = `${nomes[parseInt(mes) - 1]} ${ano}`;
+    }
+
+    async function navegarMes(delta) {
+      const [ano, mes] = _calMes.split('-').map(Number);
+      const d = new Date(ano, mes - 1 + delta, 1);
+      _calMes = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`;
+      await carregarCalendario();
+    }
+
+    function renderCalendario(entradas) {
+      const el = document.getElementById('cal-lista');
+      if (entradas.length === 0) {
+        el.innerHTML = '<p class="text-gray-500 text-sm text-center py-4">Nenhuma escala neste mês.</p>';
+        return;
+      }
+      const diasSemana = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+      el.innerHTML = entradas.map(e => {
+        const dt  = new Date(e.data + 'T00:00:00');
+        const dia = `${String(dt.getDate()).padStart(2,'0')}/${String(dt.getMonth()+1).padStart(2,'0')}`;
+        const dow = diasSemana[dt.getDay()];
+        const hora = e.hora_inicio
+          ? ` · ${e.hora_inicio.slice(0,5)}${e.hora_fim ? '–' + e.hora_fim.slice(0,5) : ''}`
+          : '';
+        const obs = e.observacao ? ` · <span class="text-gray-400">${e.observacao}</span>` : '';
+        const papel = e.papel
+          ? `<span class="text-xs px-1.5 py-0.5 rounded-full ml-1 ${e.papel === 'titular'
+              ? 'bg-blue-600/40 text-blue-300'
+              : 'bg-orange-600/40 text-orange-300'}">${e.papel}</span>`
+          : '';
+
+        return `
+          <div class="flex items-center justify-between bg-slate-700/50 rounded-xl px-4 py-2.5 gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="text-center flex-shrink-0">
+                <div class="text-white font-black text-sm">${dia}</div>
+                <div class="text-gray-400 text-xs">${dow}</div>
+              </div>
+              <div class="min-w-0">
+                <span class="text-white font-bold text-sm">${e.professor_nome}</span>${papel}
+                <span class="text-purple-300 text-xs">${hora}</span>${obs}
+              </div>
+            </div>
+            <button onclick="removerEscala(${e.id})"
+              class="text-red-400 hover:text-red-300 text-sm transition-colors flex-shrink-0">✕</button>
+          </div>`;
+      }).join('');
+    }
+
+    async function salvarEscala() {
+      const data         = document.getElementById('cal-data').value;
+      const professor_id = parseInt(document.getElementById('cal-prof-sel').value);
+      const hora_inicio  = document.getElementById('cal-hora-inicio').value || null;
+      const hora_fim     = document.getElementById('cal-hora-fim').value    || null;
+      const observacao   = document.getElementById('cal-obs').value.trim()  || null;
+      const erro         = document.getElementById('cal-erro');
+      erro.classList.add('hidden');
+
+      if (!data)         { erro.textContent = 'Data obrigatória.';          erro.classList.remove('hidden'); return; }
+      if (!professor_id) { erro.textContent = 'Selecione um professor.';    erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('calendario.php', {
+        method: 'POST',
+        body: JSON.stringify({ turma_id: _calTurmaId, professor_id, data, hora_inicio, hora_fim, observacao }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      // Atualiza o mês do calendário para o mês da data inserida
+      _calMes = data.slice(0, 7);
+      document.getElementById('cal-form').classList.add('hidden');
+      await carregarCalendario();
+    }
+
+    async function removerEscala(id) {
+      if (!confirm('Remover esta entrada da escala?')) return;
+      const d = await apiAuth('calendario.php', { method:'DELETE', body: JSON.stringify({ id }) });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarCalendario();
+    }
+
+    // ── ALUNOS ───────────────────────────────
+    async function carregarAlunos(turma_id = '') {
+      const url = turma_id ? `perfis.php?turma_id=${turma_id}` : 'perfis.php';
+      const d   = await apiAuth(url);
+      if (!d.ok) return;
+      _alunos = d.dados;
+      renderTabelaAlunos(_alunos);
+    }
+
+    function renderTabelaAlunos(alunos) {
+      const tbody = document.getElementById('tbody-alunos');
+      const vazio = document.getElementById('sem-alunos-admin');
+      tbody.innerHTML = '';
+      if (alunos.length === 0) { vazio.classList.remove('hidden'); return; }
+      vazio.classList.add('hidden');
+
+      const turmaMap = {};
+      _turmas.forEach(t => turmaMap[t.id] = t.nome);
+
+      alunos.forEach(a => {
+        const turma = a.turma_id ? (turmaMap[a.turma_id] ?? '—') : '—';
+        const tr = document.createElement('tr');
+        tr.className = 'border-b border-purple-500/10 hover:bg-purple-500/5 transition-colors';
+        tr.innerHTML = `
+          <td class="py-3 px-4 font-bold text-white">${a.nome}</td>
+          <td class="py-3 px-4 text-gray-400 text-sm">${turma}</td>
+          <td class="py-3 px-4 text-center text-yellow-300 font-bold">${a.pontos ?? 0}</td>
+          <td class="py-3 px-4 text-center">
+            ${a.token_qr
+              ? `<button onclick="mostrarQR('${a.token_qr}','${a.nome.replace(/'/g,'&apos;')}')"
+                   class="bg-purple-600/30 hover:bg-purple-600/60 text-purple-300 px-3 py-1 rounded-lg text-xs font-bold transition-all">
+                   📲 Ver QR
+                 </button>`
+              : '<span class="text-gray-600 text-xs">—</span>'}
+          </td>
+          <td class="py-3 px-4 text-center">
+            <button onclick="removerAluno('${a.nome.replace(/'/g,'&apos;')}')"
+              class="bg-red-600/30 hover:bg-red-600/60 text-red-300 px-2 py-1 rounded-lg text-xs font-bold transition-all">
+              Remover
+            </button>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filtrarTabelaAlunos() {
+      const q = document.getElementById('filtro-nome-aluno').value.toLowerCase();
+      renderTabelaAlunos(_alunos.filter(a => a.nome.toLowerCase().includes(q)));
+    }
+
+    async function salvarAluno() {
+      const nome     = document.getElementById('aluno-nome-i').value.trim();
+      const turma_id = parseInt(document.getElementById('aluno-turma-i').value) || null;
+      const erro     = document.getElementById('aluno-erro');
+      erro.classList.add('hidden');
+      if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('perfis.php', {
+        method: 'POST', body: JSON.stringify({ nome, turma_id }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      document.getElementById('aluno-nome-i').value = '';
+      toggleForm('form-aluno');
+
+      if (d.dados.token_qr) mostrarQR(d.dados.token_qr, nome);
+      await carregarAlunos(document.getElementById('filtro-turma-alunos').value);
+    }
+
+    async function removerAluno(nome) {
+      if (!confirm(`Remover o aluno "${nome}"? Esta ação apaga todo o progresso!`)) return;
+      const d = await apiAuth('perfis.php', { method:'DELETE', body: JSON.stringify({ nome }) });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarAlunos(document.getElementById('filtro-turma-alunos').value);
+    }
+
+    // ── QR Code ───────────────────────────────
+    function mostrarQR(token, nome) {
+      const base = location.origin;
+      const url  = `${base}/entrar#token=${token}`;
+      document.getElementById('qr-nome').textContent = nome;
+      document.getElementById('qr-url').textContent  = url;
+
+      const container = document.getElementById('qr-canvas');
+      container.innerHTML = '';
+      const canvas = document.createElement('canvas');
+      container.appendChild(canvas);
+      QRCode.toCanvas(canvas, url, { width: 200, margin: 2 });
+
+      document.getElementById('modal-qr').classList.remove('hidden');
+    }
+
+    function imprimirQR() {
+      const nome   = document.getElementById('qr-nome').textContent;
+      const url    = document.getElementById('qr-url').textContent;
+      const canvas = document.querySelector('#qr-canvas canvas');
+      const img    = canvas?.toDataURL('image/png') ?? '';
+
+      const win = window.open('', '_blank');
+      win.document.write(`<html><head><title>QR - ${nome}</title>
+        <style>body{display:flex;flex-direction:column;align-items:center;justify-content:center;
+        min-height:100vh;font-family:sans-serif;text-align:center;}
+        img{width:220px;margin:1rem 0;}</style></head>
+        <body>
+          <h2>🌟 Trilho Kids</h2>
+          <p style="color:#7c3aed;font-weight:bold;font-size:1.1rem;">${nome}</p>
+          <img src="${img}" />
+          <p style="color:#888;font-size:.8rem;max-width:240px;word-break:break-all;">${url}</p>
+          <script>window.print();window.close();<\/script>
+        </body></html>`);
+    }
+
+    // ── Preenche selects com dados carregados ─
+    function preencherSelects() {
+      // Select de instituição em professor form
+      document.getElementById('prof-inst-i').innerHTML =
+        '<option value="">— Selecione —</option>' +
+        _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
+
+      // Select de instituição em turma form
+      document.getElementById('turma-inst-i').innerHTML =
+        '<option value="">— Selecione —</option>' +
+        _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
+
+      // Select de turma em aluno form
+      document.getElementById('aluno-turma-i').innerHTML =
+        '<option value="">— Sem turma —</option>' +
+        _turmas.map(t => `<option value="${t.id}">${t.nome} (${t.instituicao})</option>`).join('');
+
+      // Filtro de turma na listagem de alunos
+      document.getElementById('filtro-turma-alunos').innerHTML =
+        '<option value="">Todos os alunos</option>' +
+        _turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+    }
+  </script>
+</body>
+</html>

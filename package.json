@@ -2,7 +2,7 @@
   "name": "Trilho Kids",
   "version": "1.0.0",
   "scripts": {
-    "start": "serve ."
+    "start": "serve . -c ./serve.json"
   },
   "devDependencies": {
     "serve": "^14.2.5"

@@ -329,6 +329,14 @@
       
       document.getElementById('final-score').textContent = score;
       
+      // Salvar progresso no backend
+      if (typeof trilhoGame !== 'undefined') {
+        const acertos = Math.round(score / 10);
+        const total = quizData.questoes.length;
+        const nomeQuiz = document.title.replace('Quiz - ', '').replace('Quiz ', '');
+        trilhoGame.completarQuiz(nomeQuiz, acertos, total);
+      }
+      
       let emoji, message;
       if (score === 100) {
         emoji = '🏆';
@@ -360,5 +368,8 @@
     }
   </script>
 
+
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
 </body>
 </html>

@@ -1,14 +1,24 @@
 // ============================================
 // SISTEMA DE GAMIFICAÇÃO — TRILHO KIDS v3.0
-// API: cafecomhomensdedeus.com.br/trilhokids/api
 // ============================================
 
-const TRILHO_API = 'https://cafecomhomensdedeus.com.br/trilhokids/api';
+// Em desenvolvimento local (Docker), aponta para localhost:8080.
+// Em produção, aponta para o servidor cPanel.
+const TRILHO_API = (() => {
+  const h = window.location.hostname;
+  if (h === 'localhost' || h === '127.0.0.1') {
+    return 'http://localhost:8080';
+  }
+  return 'https://cafecomhomensdedeus.com.br/trilhokids/api';
+})();
 
 class TrilhoKidsGame {
   constructor() {
-    // Perfil ativo em memória (+ sessionStorage como cache leve)
-    this._perfilAtivo = sessionStorage.getItem('trilho_perfil') || null;
+    // Perfil ativo em memória (+ localStorage para persistir entre sessões)
+    this._perfilAtivo = localStorage.getItem('trilho_perfil') || null;
+    // 'qr' = aluno autenticado via QR Code (usa API)
+    // 'local' = visitante sem conta (sem API, sem progresso no servidor)
+    this._perfilTipo  = localStorage.getItem('trilho_perfil_tipo') || 'local';
     this._cache       = null; // dados do perfil em memória
     this.senhaAdmin   = 'trilho2025';
 
@@ -35,18 +45,38 @@ class TrilhoKidsGame {
 
   getPerfilAtivo() { return this._perfilAtivo; }
 
+  // Chamado apenas pelo entrar.html após autenticação via QR Code.
   setPerfilAtivo(nome) {
     this._perfilAtivo = nome;
+    this._perfilTipo  = 'qr';
     this._cache = null;
-    if (nome) sessionStorage.setItem('trilho_perfil', nome);
-    else      sessionStorage.removeItem('trilho_perfil');
+    if (nome) {
+      localStorage.setItem('trilho_perfil',      nome);
+      localStorage.setItem('trilho_perfil_tipo', 'qr');
+    } else {
+      localStorage.removeItem('trilho_perfil');
+      localStorage.removeItem('trilho_perfil_tipo');
+    }
   }
+
+  // Cria perfil local sem API — para visitantes sem QR Code.
+  setPerfilLocal(nome) {
+    this._perfilAtivo = nome;
+    this._perfilTipo  = 'local';
+    this._cache = null;
+    localStorage.setItem('trilho_perfil',      nome);
+    localStorage.setItem('trilho_perfil_tipo', 'local');
+  }
+
+  isPerfilQR() { return this._perfilTipo === 'qr'; }
 
   // ============================================
   // HELPERS DE API
   // ============================================
 
   async _fetch(endpoint, options = {}) {
+    // Perfil local: sem acesso à API
+    if (this._perfilTipo === 'local') return { ok: false, erro: 'Modo visitante.' };
     try {
       const res = await fetch(`${TRILHO_API}/${endpoint}`, {
         headers: { 'Content-Type': 'application/json' },

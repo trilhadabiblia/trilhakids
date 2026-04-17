@@ -45,6 +45,13 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.body.appendChild(newScript);
     });
 
+    // Injeta seletor de perfil (gamificacao.js deve estar carregado antes)
+    if (!document.getElementById('perfil-sistema')) {
+      const perfilScript = document.createElement('script');
+      perfilScript.src = '/perfil.js';
+      document.body.appendChild(perfilScript);
+    }
+
   } catch (error) {
     console.error("Erro ao carregar o menu:", error);
   }

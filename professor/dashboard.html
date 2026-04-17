@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Trilho Kids</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .tabela-aluno:hover { background: rgba(139,92,246,.12); }
+    @keyframes fadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+    .fade-in { animation: fadeIn .3s ease forwards; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-violet-700 to-purple-700 border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="text-3xl">📊</span>
+        <div>
+          <h1 class="text-xl font-black text-white leading-tight">Dashboard</h1>
+          <p id="info-turma-header" class="text-purple-200 text-xs"></p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Seletor de turma (se tiver mais de uma) -->
+        <select id="sel-turma" onchange="carregarTurma(this.value)"
+          class="bg-slate-700/80 border border-purple-400/30 text-white rounded-lg px-3 py-2 text-sm outline-none hidden">
+        </select>
+        <span id="prof-nome" class="text-purple-200 text-sm hidden md:block"></span>
+        <button onclick="logout()"
+          class="bg-white/10 hover:bg-white/20 text-white px-3 py-2 rounded-lg text-sm font-semibold transition-all">
+          Sair
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-8">
+
+    <!-- Loading -->
+    <div id="loading" class="text-center py-20">
+      <div class="text-6xl mb-4 animate-bounce">⏳</div>
+      <p class="text-purple-200 text-lg">Carregando dados da turma...</p>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div id="conteudo" class="hidden fade-in">
+
+      <!-- Plantão de hoje -->
+      <div id="plantao-hoje" class="hidden mb-6">
+        <div class="bg-slate-800/60 border border-blue-500/30 rounded-2xl px-5 py-4 flex items-center gap-4">
+          <span class="text-3xl flex-shrink-0">📅</span>
+          <div>
+            <p class="text-blue-300 text-xs font-semibold uppercase tracking-wider">Plantão de hoje</p>
+            <p id="plantao-hoje-texto" class="text-white font-bold text-sm"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards de resumo -->
+      <section class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+        <div class="bg-gradient-to-br from-purple-600 to-violet-700 rounded-2xl p-5 text-center shadow-xl">
+          <div class="text-4xl font-black text-white mb-1" id="res-alunos">0</div>
+          <p class="text-purple-200 text-sm font-semibold">Alunos</p>
+        </div>
+        <div class="bg-gradient-to-br from-yellow-500 to-amber-600 rounded-2xl p-5 text-center shadow-xl">
+          <div class="text-4xl font-black text-white mb-1" id="res-media">0</div>
+          <p class="text-yellow-100 text-sm font-semibold">Média pts</p>
+        </div>
+        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-2xl p-5 text-center shadow-xl">
+          <div class="text-4xl font-black text-white mb-1" id="res-quizzes">0</div>
+          <p class="text-blue-100 text-sm font-semibold">Quizzes</p>
+        </div>
+        <div class="bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl p-5 text-center shadow-xl">
+          <div class="text-4xl font-black text-white mb-1" id="res-livros">0</div>
+          <p class="text-green-100 text-sm font-semibold">Livros</p>
+        </div>
+        <div class="bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl p-5 text-center shadow-xl col-span-2 md:col-span-1">
+          <div class="text-4xl font-black text-white mb-1" id="res-badges">0</div>
+          <p class="text-pink-100 text-sm font-semibold">Badges</p>
+        </div>
+      </section>
+
+      <!-- Tabela de alunos -->
+      <section class="mb-8">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-2xl font-black text-purple-300">🏆 Ranking da Turma</h2>
+          <input id="filtro" oninput="filtrarAlunos()" placeholder="Buscar aluno..."
+            class="bg-slate-700 border border-purple-500/30 text-white placeholder-gray-500
+                   rounded-xl px-4 py-2 text-sm outline-none focus:border-purple-400 transition-colors w-48" />
+        </div>
+
+        <div class="bg-slate-800/60 border border-purple-500/20 rounded-2xl overflow-hidden shadow-xl">
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-purple-500/20 text-purple-300 text-xs uppercase tracking-wider">
+                  <th class="py-4 px-4 text-left">#</th>
+                  <th class="py-4 px-4 text-left">Aluno</th>
+                  <th class="py-4 px-4 text-center">Nível</th>
+                  <th class="py-4 px-4 text-center">Pontos</th>
+                  <th class="py-4 px-4 text-center">Livros</th>
+                  <th class="py-4 px-4 text-center">Quizzes</th>
+                  <th class="py-4 px-4 text-center">Badges</th>
+                  <th class="py-4 px-4 text-center">Última ativ.</th>
+                  <th class="py-4 px-4 text-center">Ações</th>
+                </tr>
+              </thead>
+              <tbody id="tabela-alunos"></tbody>
+            </table>
+          </div>
+          <p id="sem-alunos" class="text-center text-gray-500 py-10 hidden">
+            Nenhum aluno nesta turma ainda.
+          </p>
+        </div>
+      </section>
+
+      <!-- Atividades recentes -->
+      <section>
+        <h2 class="text-2xl font-black text-purple-300 mb-4">📜 Atividades Recentes da Turma</h2>
+        <div class="bg-slate-800/60 border border-purple-500/20 rounded-2xl p-6 shadow-xl">
+          <div id="lista-atividades" class="space-y-2 max-h-80 overflow-y-auto"></div>
+          <p id="sem-atividades" class="text-center text-gray-500 py-6 hidden">
+            Nenhuma atividade registrada ainda.
+          </p>
+        </div>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Modal: Dar Pontos -->
+  <div id="modal-pontos" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-8 w-full max-w-md shadow-2xl">
+      <h3 class="text-2xl font-black text-white mb-1">🏅 Dar Pontos</h3>
+      <p class="text-purple-300 text-sm mb-6">Aluno: <strong id="mp-nome-aluno" class="text-white"></strong></p>
+
+      <input type="hidden" id="mp-perfil-id" />
+
+      <div class="space-y-4">
+        <div>
+          <label class="text-gray-300 text-sm font-semibold block mb-2">Motivo</label>
+          <select id="mp-motivo"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+            <option value="Presença">Presença (+10 pts)</option>
+            <option value="Participação">Participação (+5 pts)</option>
+            <option value="Trouxe a Bíblia">Trouxe a Bíblia (+5 pts)</option>
+            <option value="Versículo decorado">Versículo decorado (+10 pts)</option>
+            <option value="Ajudou um colega">Ajudou um colega (+5 pts)</option>
+            <option value="Atividade especial">Atividade especial (+20 pts)</option>
+            <option value="Explorador do Mês">Explorador do Mês (+30 pts)</option>
+            <option value="Coragem">Coragem (+10 pts)</option>
+            <option value="outro">Outro (personalizado)</option>
+          </select>
+        </div>
+
+        <div id="wrap-motivo-custom" class="hidden">
+          <label class="text-gray-300 text-sm font-semibold block mb-2">Descreva o motivo</label>
+          <input type="text" id="mp-motivo-custom" maxlength="80" placeholder="Ex: Decorou o Salmo 23..."
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none
+                   focus:border-purple-400 transition-colors" />
+        </div>
+
+        <div>
+          <label class="text-gray-300 text-sm font-semibold block mb-2">Quantidade de pontos</label>
+          <input type="number" id="mp-qtd" value="10" min="1" max="200"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none
+                   focus:border-purple-400 transition-colors" />
+        </div>
+
+        <p id="mp-erro" class="text-red-400 text-sm hidden"></p>
+      </div>
+
+      <div class="flex gap-3 mt-6">
+        <button onclick="fecharModalPontos()"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Cancelar
+        </button>
+        <button id="mp-btn" onclick="confirmarPontos()"
+          class="flex-1 bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700
+                 text-white py-3 rounded-xl font-bold transition-all disabled:opacity-60">
+          ✅ Confirmar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: QR Code -->
+  <div id="modal-qr" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-8 w-full max-w-sm shadow-2xl text-center">
+      <h3 class="text-2xl font-black text-white mb-1">QR Code</h3>
+      <p class="text-purple-300 text-sm mb-6">Aluno: <strong id="qr-nome" class="text-white"></strong></p>
+      <div id="qr-canvas" class="flex justify-center mb-4"></div>
+      <p id="qr-url" class="text-xs text-gray-500 break-all mb-6"></p>
+      <div class="flex gap-3">
+        <button onclick="document.getElementById('modal-qr').classList.add('hidden')"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Fechar
+        </button>
+        <button onclick="imprimirQR()"
+          class="flex-1 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700
+                 text-white py-3 rounded-xl font-bold transition-all">
+          🖨️ Imprimir
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Progresso Individual do Aluno -->
+  <div id="modal-prog-aluno" class="hidden fixed inset-0 bg-black/80 z-50 overflow-y-auto"
+       onclick="if(event.target===this)fecharProgressoAluno()">
+    <div class="min-h-screen flex items-start justify-center p-4 py-8">
+      <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-purple-500/40 rounded-3xl w-full max-w-lg shadow-2xl">
+
+        <!-- Header -->
+        <div class="bg-gradient-to-r from-violet-700 to-purple-700 rounded-t-3xl p-6 flex items-center justify-between">
+          <div>
+            <p class="text-purple-200 text-sm mb-1">Progresso do aluno</p>
+            <h3 id="pa-nome" class="text-2xl font-black text-white"></h3>
+            <p id="pa-nivel" class="text-yellow-300 font-bold text-sm mt-1"></p>
+          </div>
+          <button onclick="fecharProgressoAluno()" class="text-white/60 hover:text-white text-2xl leading-none">✕</button>
+        </div>
+
+        <!-- Loading -->
+        <div id="pa-loading" class="p-10 text-center">
+          <div class="text-4xl mb-3 animate-bounce">⏳</div>
+          <p class="text-gray-400">Carregando...</p>
+        </div>
+
+        <!-- Conteúdo -->
+        <div id="pa-conteudo" class="hidden p-6 space-y-6">
+
+          <!-- Stats grid -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-xl p-3 text-center">
+              <div class="text-2xl font-black text-yellow-300" id="pa-pontos">0</div>
+              <p class="text-xs text-gray-400 mt-1">Pontos</p>
+            </div>
+            <div class="bg-blue-500/10 border border-blue-500/30 rounded-xl p-3 text-center">
+              <div class="text-2xl font-black text-blue-300" id="pa-livros">0</div>
+              <p class="text-xs text-gray-400 mt-1">Livros</p>
+            </div>
+            <div class="bg-purple-500/10 border border-purple-500/30 rounded-xl p-3 text-center">
+              <div class="text-2xl font-black text-purple-300" id="pa-herois">0</div>
+              <p class="text-xs text-gray-400 mt-1">Personagens</p>
+            </div>
+            <div class="bg-green-500/10 border border-green-500/30 rounded-xl p-3 text-center">
+              <div class="text-2xl font-black text-green-300" id="pa-quizzes">0</div>
+              <p class="text-xs text-gray-400 mt-1">Quizzes</p>
+            </div>
+            <div class="bg-pink-500/10 border border-pink-500/30 rounded-xl p-3 text-center">
+              <div class="text-2xl font-black text-pink-300" id="pa-perfeitos">0</div>
+              <p class="text-xs text-gray-400 mt-1">100%</p>
+            </div>
+            <div class="bg-amber-500/10 border border-amber-500/30 rounded-xl p-3 text-center">
+              <div class="text-2xl font-black text-amber-300" id="pa-badges">0</div>
+              <p class="text-xs text-gray-400 mt-1">Badges</p>
+            </div>
+          </div>
+
+          <!-- Badges -->
+          <div>
+            <h4 class="text-sm font-black text-purple-300 uppercase tracking-wider mb-3">🏅 Badges Conquistadas</h4>
+            <div id="pa-badges-lista" class="flex flex-wrap gap-2"></div>
+            <p id="pa-sem-badges" class="hidden text-xs text-gray-500 italic">Nenhuma badge ainda.</p>
+          </div>
+
+          <!-- Histórico -->
+          <div>
+            <h4 class="text-sm font-black text-purple-300 uppercase tracking-wider mb-3">📜 Atividades Recentes</h4>
+            <div id="pa-historia" class="space-y-2 max-h-56 overflow-y-auto"></div>
+            <p id="pa-sem-historia" class="hidden text-xs text-gray-500 italic">Nenhuma atividade ainda.</p>
+          </div>
+
+        </div>
+
+        <!-- Erro -->
+        <div id="pa-erro" class="hidden p-10 text-center">
+          <div class="text-4xl mb-3">😕</div>
+          <p id="pa-erro-msg" class="text-gray-400"></p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="/professor/auth.js"></script>
+  <script>
+    // ── Guard de autenticação ─────────────────
+    if (!checkAuth()) throw new Error('redirect');
+
+    const prof = Auth.getProf();
+    document.getElementById('prof-nome').textContent = prof.nome;
+    document.getElementById('prof-nome').classList.remove('hidden');
+
+    let dadosTurma = null;
+    let alunosFiltrados = [];
+
+    // ── Inicializa ────────────────────────────
+    window.addEventListener('DOMContentLoaded', async () => {
+      const turmas = prof.turmas || [];
+
+      if (turmas.length === 0) {
+        document.getElementById('loading').innerHTML = `
+          <div class="text-6xl mb-4">📭</div>
+          <p class="text-gray-300 text-lg">Você ainda não tem turmas atribuídas.</p>
+          <p class="text-gray-500 text-sm mt-2">Fale com o administrador.</p>`;
+        return;
+      }
+
+      if (turmas.length > 1) {
+        const sel = document.getElementById('sel-turma');
+        sel.classList.remove('hidden');
+        turmas.forEach(t => {
+          const opt = document.createElement('option');
+          opt.value = t.id;
+          opt.textContent = t.nome;
+          sel.appendChild(opt);
+        });
+      }
+
+      await carregarTurma(turmas[0].id);
+    });
+
+    // ── Carrega dados da turma ────────────────
+    async function carregarTurma(turma_id) {
+      document.getElementById('loading').classList.remove('hidden');
+      document.getElementById('conteudo').classList.add('hidden');
+
+      const data = await apiAuth(`dashboard.php?turma_id=${turma_id}`);
+
+      document.getElementById('loading').classList.add('hidden');
+
+      if (!data.ok) {
+        alert('Erro: ' + (data.erro || 'Não foi possível carregar a turma.'));
+        return;
+      }
+
+      dadosTurma = data.dados;
+      renderizarDashboard(dadosTurma);
+      document.getElementById('conteudo').classList.remove('hidden');
+    }
+
+    // ── Renderiza dashboard ───────────────────
+    function renderizarDashboard(d) {
+      // Header
+      document.getElementById('info-turma-header').textContent =
+        `${d.turma.turma} · ${d.turma.instituicao}`;
+
+      // Resumo
+      document.getElementById('res-alunos').textContent  = d.resumo.total_alunos;
+      document.getElementById('res-media').textContent   = d.resumo.media_pontos;
+      document.getElementById('res-quizzes').textContent = d.resumo.total_quizzes;
+      document.getElementById('res-livros').textContent  = d.resumo.total_livros;
+      document.getElementById('res-badges').textContent  = d.resumo.total_badges;
+
+      // Plantão de hoje
+      const plantao = d.plantao_hoje || [];
+      const plantaoEl    = document.getElementById('plantao-hoje');
+      const plantaoTexto = document.getElementById('plantao-hoje-texto');
+      if (plantao.length > 0) {
+        plantaoTexto.textContent = plantao.map(p => {
+          const hora = p.hora_inicio
+            ? ` · ${p.hora_inicio.slice(0,5)}${p.hora_fim ? '–' + p.hora_fim.slice(0,5) : ''}`
+            : '';
+          const papel = p.papel ? ` (${p.papel})` : '';
+          const obs = p.observacao ? ` — ${p.observacao}` : '';
+          return `${p.professor_nome}${papel}${hora}${obs}`;
+        }).join(' | ');
+        plantaoEl.classList.remove('hidden');
+      } else {
+        plantaoEl.classList.add('hidden');
+      }
+
+      // Alunos
+      alunosFiltrados = d.alunos;
+      renderizarTabela(d.alunos);
+
+      // Atividades
+      const lista = document.getElementById('lista-atividades');
+      lista.innerHTML = '';
+      if (d.atividades.length === 0) {
+        document.getElementById('sem-atividades').classList.remove('hidden');
+      } else {
+        const icones = { livro:'📖', heroi:'⚔️', quiz:'🎯', pontos:'⭐', manual:'🏅' };
+        d.atividades.forEach(ev => {
+          const data = new Date(ev.criado_em).toLocaleString('pt-BR', {
+            day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit'
+          });
+          const el = document.createElement('div');
+          el.className = 'flex items-center gap-3 py-2 px-3 rounded-xl hover:bg-slate-700/50 transition-colors';
+          el.innerHTML = `
+            <span class="text-xl flex-shrink-0">${icones[ev.tipo] || '📌'}</span>
+            <div class="flex-1 min-w-0">
+              <span class="text-purple-300 font-bold text-sm">${ev.aluno}</span>
+              <span class="text-gray-300 text-sm"> · ${ev.motivo}</span>
+            </div>
+            <div class="text-right flex-shrink-0">
+              ${ev.quantidade > 0 ? `<div class="text-yellow-300 font-bold text-xs">+${ev.quantidade} pts</div>` : ''}
+              <div class="text-gray-500 text-xs">${data}</div>
+            </div>`;
+          lista.appendChild(el);
+        });
+      }
+    }
+
+    // ── Tabela de alunos ─────────────────────
+    function renderizarTabela(alunos) {
+      const tbody = document.getElementById('tabela-alunos');
+      const vazio = document.getElementById('sem-alunos');
+      tbody.innerHTML = '';
+
+      if (alunos.length === 0) {
+        vazio.classList.remove('hidden');
+        return;
+      }
+      vazio.classList.add('hidden');
+
+      const MEDALHAS = ['🥇','🥈','🥉'];
+      const NIVEL_COR = {
+        'Iniciante':'text-gray-400', 'Explorador':'text-green-400',
+        'Aventureiro':'text-blue-400','Discípulo':'text-purple-400',
+        'Herói da Fé':'text-yellow-400','Guardião':'text-orange-400',
+        'Sábio':'text-pink-400','Profeta':'text-red-400',
+        'Apóstolo':'text-cyan-400','Lenda':'text-amber-300',
+      };
+
+      alunos.forEach((a, i) => {
+        const medal = MEDALHAS[i] ?? `${i+1}`;
+        const ult   = a.ultima_atividade
+          ? new Date(a.ultima_atividade).toLocaleDateString('pt-BR')
+          : '—';
+        const corNivel = NIVEL_COR[a.nome_nivel] ?? 'text-gray-300';
+
+        const tr = document.createElement('tr');
+        tr.className = 'tabela-aluno border-b border-purple-500/10 transition-colors cursor-pointer';
+        tr.innerHTML = `
+          <td class="py-3 px-4 text-center font-bold text-lg">${medal}</td>
+          <td class="py-3 px-4">
+            <div class="font-bold text-white">${a.nome}</div>
+          </td>
+          <td class="py-3 px-4 text-center">
+            <span class="${corNivel} text-xs font-bold">${a.nome_nivel}</span>
+          </td>
+          <td class="py-3 px-4 text-center font-black text-yellow-300">${a.pontos}</td>
+          <td class="py-3 px-4 text-center text-blue-300">${a.livros_visitados}</td>
+          <td class="py-3 px-4 text-center text-green-300">${a.quizzes_completos}</td>
+          <td class="py-3 px-4 text-center text-amber-300">${a.badges}</td>
+          <td class="py-3 px-4 text-center text-gray-400 text-xs">${ult}</td>
+          <td class="py-3 px-4 text-center">
+            <div class="flex items-center justify-center gap-2">
+              <button onclick="abrirProgressoAluno('${a.nome.replace(/'/g,'&apos;')}')"
+                class="bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-2 py-1 rounded-lg text-xs font-bold transition-all"
+                title="Ver progresso">
+                📊
+              </button>
+              <button onclick="abrirModalPontos(${a.id}, '${a.nome.replace(/'/g,'&apos;')}')"
+                class="bg-green-600/30 hover:bg-green-600/60 text-green-300 px-2 py-1 rounded-lg text-xs font-bold transition-all"
+                title="Dar pontos">
+                +pts
+              </button>
+              <button onclick="mostrarQR('${a.token_qr}', '${a.nome.replace(/'/g,'&apos;')}')"
+                class="bg-purple-600/30 hover:bg-purple-600/60 text-purple-300 px-2 py-1 rounded-lg text-xs font-bold transition-all"
+                title="Ver QR Code">
+                QR
+              </button>
+            </div>
+          </td>`;
+        tbody.appendChild(tr);
+      });
+    }
+
+    // ── Filtro de alunos ─────────────────────
+    function filtrarAlunos() {
+      const q = document.getElementById('filtro').value.toLowerCase();
+      const filtrado = dadosTurma.alunos.filter(a => a.nome.toLowerCase().includes(q));
+      renderizarTabela(filtrado);
+    }
+
+    // ── Modal: Pontos ────────────────────────
+    function abrirModalPontos(perfilId, nome) {
+      document.getElementById('mp-perfil-id').value = perfilId;
+      document.getElementById('mp-nome-aluno').textContent = nome;
+      document.getElementById('mp-erro').classList.add('hidden');
+      document.getElementById('mp-motivo').value = 'Presença';
+      document.getElementById('mp-qtd').value = 10;
+      document.getElementById('wrap-motivo-custom').classList.add('hidden');
+      document.getElementById('modal-pontos').classList.remove('hidden');
+    }
+
+    document.getElementById('mp-motivo').addEventListener('change', function() {
+      const wrap = document.getElementById('wrap-motivo-custom');
+      wrap.classList.toggle('hidden', this.value !== 'outro');
+      const qtdMap = {
+        'Presença':10,'Participação':5,'Trouxe a Bíblia':5,
+        'Versículo decorado':10,'Ajudou um colega':5,
+        'Atividade especial':20,'Explorador do Mês':30,'Coragem':10,
+      };
+      if (qtdMap[this.value]) document.getElementById('mp-qtd').value = qtdMap[this.value];
+    });
+
+    function fecharModalPontos() {
+      document.getElementById('modal-pontos').classList.add('hidden');
+    }
+
+    async function confirmarPontos() {
+      const btn       = document.getElementById('mp-btn');
+      const erro      = document.getElementById('mp-erro');
+      const perfilId  = parseInt(document.getElementById('mp-perfil-id').value);
+      const motivoSel = document.getElementById('mp-motivo').value;
+      const motivo    = motivoSel === 'outro'
+        ? document.getElementById('mp-motivo-custom').value.trim()
+        : motivoSel;
+      const quantidade= parseInt(document.getElementById('mp-qtd').value);
+
+      erro.classList.add('hidden');
+      if (!motivo) { erro.textContent = 'Informe o motivo.'; erro.classList.remove('hidden'); return; }
+      if (!quantidade || quantidade < 1 || quantidade > 200) {
+        erro.textContent = 'Quantidade entre 1 e 200.'; erro.classList.remove('hidden'); return;
+      }
+
+      btn.disabled = true; btn.textContent = 'Enviando...';
+
+      const data = await apiAuth('pontos.php', {
+        method: 'POST',
+        body: JSON.stringify({ perfil_id: perfilId, motivo, quantidade }),
+      });
+
+      btn.disabled = false; btn.textContent = '✅ Confirmar';
+
+      if (!data.ok) {
+        erro.textContent = data.erro || 'Erro ao salvar.';
+        erro.classList.remove('hidden');
+        return;
+      }
+
+      fecharModalPontos();
+      // Recarrega a turma atual
+      const turmaId = document.getElementById('sel-turma').value
+        || dadosTurma?.turma?.id
+        || prof.turmas[0]?.id;
+      await carregarTurma(turmaId);
+    }
+
+    // ── Modal: QR Code ───────────────────────
+    function mostrarQR(token, nome) {
+      const base = location.origin;
+      const url  = `${base}/entrar#token=${token}`;
+
+      document.getElementById('qr-nome').textContent = nome;
+      document.getElementById('qr-url').textContent  = url;
+
+      const container = document.getElementById('qr-canvas');
+      container.innerHTML = '';
+      const canvas = document.createElement('canvas');
+      container.appendChild(canvas);
+
+      QRCode.toCanvas(canvas, url, { width: 200, margin: 2 }, err => {
+        if (err) console.error(err);
+      });
+
+      document.getElementById('modal-qr').classList.remove('hidden');
+    }
+
+    // ── Progresso Individual ─────────────────
+    const ICONES_TIPO_PROF = {
+      livro:  { icone: '📖', cor: 'text-blue-300' },
+      heroi:  { icone: '⚔️', cor: 'text-purple-300' },
+      quiz:   { icone: '🎯', cor: 'text-green-300' },
+      pontos: { icone: '⭐', cor: 'text-yellow-300' },
+      manual: { icone: '🏅', cor: 'text-amber-300' },
+    };
+
+    async function abrirProgressoAluno(nome) {
+      const modal = document.getElementById('modal-prog-aluno');
+      document.getElementById('pa-nome').textContent = nome;
+      document.getElementById('pa-nivel').textContent = '';
+      document.getElementById('pa-loading').classList.remove('hidden');
+      document.getElementById('pa-conteudo').classList.add('hidden');
+      document.getElementById('pa-erro').classList.add('hidden');
+      modal.classList.remove('hidden');
+
+      try {
+        const [resProg, resHist] = await Promise.all([
+          fetch(`${PROF_API}/progresso.php?nome=${encodeURIComponent(nome)}`).then(r => r.json()),
+          fetch(`${PROF_API}/historia.php?nome=${encodeURIComponent(nome)}&limit=10`).then(r => r.json()),
+        ]);
+
+        if (!resProg.ok) throw new Error(resProg.erro || 'Perfil não encontrado.');
+
+        const prog = resProg.dados;
+        const hist = resHist.ok ? (resHist.dados?.eventos || []) : [];
+
+        // Header
+        document.getElementById('pa-nivel').textContent =
+          `Nível ${prog.nivel} — ${prog.nome_nivel}`;
+
+        // Stats
+        document.getElementById('pa-pontos').textContent   = prog.pontos;
+        document.getElementById('pa-livros').textContent   = (prog.livros_visitados || []).length;
+        document.getElementById('pa-herois').textContent   = (prog.herois_visitados || []).length;
+        document.getElementById('pa-quizzes').textContent  = (prog.quizzes_completos || []).length;
+        document.getElementById('pa-perfeitos').textContent = (prog.quizzes_completos || []).filter(q => q.percentual === 100).length;
+        document.getElementById('pa-badges').textContent   = (prog.badges || []).length;
+
+        // Badges
+        const badgesLista = document.getElementById('pa-badges-lista');
+        const semBadges   = document.getElementById('pa-sem-badges');
+        badgesLista.innerHTML = '';
+        const badges = prog.badges || [];
+        if (badges.length === 0) {
+          semBadges.classList.remove('hidden');
+        } else {
+          semBadges.classList.add('hidden');
+          badges.forEach(b => {
+            const icone = b.nome.split(' ')[0];
+            const span  = document.createElement('span');
+            span.title  = b.nome + ' — ' + (b.descricao || '');
+            span.className = 'inline-flex items-center gap-1 bg-yellow-500/20 border border-yellow-500/40 text-yellow-200 text-xs font-bold px-2 py-1 rounded-full';
+            span.textContent = `${icone} ${b.nome.slice(b.nome.indexOf(' ') + 1)}`;
+            badgesLista.appendChild(span);
+          });
+        }
+
+        // Histórico
+        const historiaEl = document.getElementById('pa-historia');
+        const semHist    = document.getElementById('pa-sem-historia');
+        historiaEl.innerHTML = '';
+        if (hist.length === 0) {
+          semHist.classList.remove('hidden');
+        } else {
+          semHist.classList.add('hidden');
+          hist.forEach(item => {
+            const { icone, cor } = ICONES_TIPO_PROF[item.tipo] || { icone: '📌', cor: 'text-gray-300' };
+            const data = new Date(item.criado_em).toLocaleString('pt-BR', {
+              day: '2-digit', month: '2-digit',
+              hour: '2-digit', minute: '2-digit',
+            });
+            const el = document.createElement('div');
+            el.className = 'bg-slate-700/50 rounded-lg p-3 flex items-center gap-3';
+            el.innerHTML = `
+              <div class="text-2xl flex-shrink-0">${icone}</div>
+              <div class="flex-1 min-w-0">
+                <p class="${cor} font-semibold text-sm truncate">${item.motivo || '—'}</p>
+                <p class="text-xs text-gray-500 mt-0.5">${data}</p>
+              </div>
+              ${item.quantidade > 0 ? `<div class="text-yellow-300 font-bold text-xs flex-shrink-0">+${item.quantidade} pts</div>` : ''}
+            `;
+            historiaEl.appendChild(el);
+          });
+        }
+
+        document.getElementById('pa-loading').classList.add('hidden');
+        document.getElementById('pa-conteudo').classList.remove('hidden');
+
+      } catch (err) {
+        document.getElementById('pa-loading').classList.add('hidden');
+        document.getElementById('pa-erro-msg').textContent = err.message || 'Erro ao carregar progresso.';
+        document.getElementById('pa-erro').classList.remove('hidden');
+      }
+    }
+
+    function fecharProgressoAluno() {
+      document.getElementById('modal-prog-aluno').classList.add('hidden');
+    }
+
+    function imprimirQR() {
+      const nome   = document.getElementById('qr-nome').textContent;
+      const url    = document.getElementById('qr-url').textContent;
+      const canvas = document.querySelector('#qr-canvas canvas');
+      const img    = canvas?.toDataURL('image/png') ?? '';
+
+      const win = window.open('', '_blank');
+      win.document.write(`
+        <html><head><title>QR Code - ${nome}</title>
+        <style>body{display:flex;flex-direction:column;align-items:center;justify-content:center;
+        min-height:100vh;font-family:sans-serif;text-align:center;}
+        img{width:220px;margin:1rem 0;} p{color:#555;font-size:.85rem;word-break:break-all;max-width:240px;}
+        h2{margin:0;font-size:1.2rem;}</style></head>
+        <body>
+          <h2>🌟 Trilho Kids</h2>
+          <p style="color:#7c3aed;font-weight:bold;font-size:1rem;">${nome}</p>
+          <img src="${img}" />
+          <p>${url}</p>
+          <script>window.print();window.close();<\/script>
+        </body></html>`);
+    }
+  </script>
+</body>
+</html>

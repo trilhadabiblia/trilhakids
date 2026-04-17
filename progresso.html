@@ -93,9 +93,9 @@
     <!-- Estatísticas Detalhadas -->
     <section class="grid md:grid-cols-2 gap-6 mb-12">
       <div class="bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border border-blue-500/30 rounded-2xl p-6">
-        <h3 class="text-2xl font-bold text-blue-300 mb-4">⚔️ Heróis Descobertos</h3>
+        <h3 class="text-2xl font-bold text-blue-300 mb-4">⚔️ Personagens Descobertos</h3>
         <div class="text-5xl font-black text-white text-center mb-2" id="stat-herois">0</div>
-        <p class="text-center text-gray-300">de 14 Juízes</p>
+        <p class="text-center text-gray-300">de 22 Personagens</p>
         <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden mt-4">
           <div class="bg-gradient-to-r from-blue-600 to-cyan-600 h-full transition-all duration-500" id="barra-herois" style="width: 0%"></div>
         </div>
@@ -107,130 +107,176 @@
       </div>
     </section>
 
-    <!-- Botão Reset -->
+    <!-- Perfil -->
     <section class="text-center">
-      <button onclick="resetarTudo()" class="bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-700 hover:to-rose-700 text-white px-6 py-3 rounded-lg font-bold transition-all">
-        🔄 Resetar Progresso
+      <button onclick="abrirModalPerfil()" class="bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-700 hover:to-purple-800 text-white px-6 py-3 rounded-lg font-bold transition-all">
+        ⚔️ Meu Perfil
       </button>
     </section>
 
   </main>
+
+  <!-- Modal: Detalhe do Badge -->
+  <div id="modal-badge" class="hidden fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+       onclick="if(event.target===this)fecharModalBadge()">
+    <div class="bg-gradient-to-br from-slate-800 to-slate-900 border border-yellow-500/40 rounded-3xl p-8 w-full max-w-sm shadow-2xl text-center">
+      <div id="mb-icone" class="text-8xl mb-4 leading-none"></div>
+      <div id="mb-categoria" class="text-xs font-bold uppercase tracking-widest text-yellow-400 mb-2"></div>
+      <h3 id="mb-nome" class="text-2xl font-black text-white mb-3"></h3>
+      <p id="mb-descricao" class="text-gray-300 text-base leading-relaxed mb-4"></p>
+      <p id="mb-data" class="text-xs text-gray-500 mb-6"></p>
+      <button onclick="fecharModalBadge()"
+        class="bg-gradient-to-r from-yellow-500 to-amber-500 text-white font-black px-8 py-3 rounded-full hover:scale-105 transition-all">
+        Fechar
+      </button>
+    </div>
+  </div>
 
   <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400">
     <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
     <p class="text-sm">Continue explorando para desbloquear mais conquistas!</p>
   </footer>
 
-  <script src="../gamificacao.js"></script>
+  <script src="./gamificacao.js"></script>
   <script>
-    function toggleMenu() {
-      const sidebar = document.getElementById('sidebar');
-      const overlay = document.getElementById('overlay');
-      sidebar.classList.toggle('menu-open');
-      sidebar.classList.toggle('menu-closed');
-      overlay.classList.toggle('overlay-show');
-      overlay.classList.toggle('overlay-hide');
+    const ICONES_TIPO = {
+      livro:  { icone: '📖', cor: 'text-blue-300' },
+      heroi:  { icone: '⚔️', cor: 'text-purple-300' },
+      quiz:   { icone: '🎯', cor: 'text-green-300' },
+      pontos: { icone: '⭐', cor: 'text-yellow-300' },
+      manual: { icone: '🏅', cor: 'text-amber-300' },
+    };
+
+    function mostrarSemPerfil() {
+      document.querySelector('main').innerHTML = `
+        <div class="flex flex-col items-center justify-center min-h-64 text-center py-20">
+          <div class="text-7xl mb-6">🎮</div>
+          <h2 class="text-2xl font-black text-white mb-3">Nenhum perfil selecionado</h2>
+          <p class="text-gray-400 mb-8">Escolha quem está jogando para ver o progresso.</p>
+          <button onclick="abrirModalPerfil()"
+            class="bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-700 hover:to-purple-800 text-white px-8 py-4 rounded-full font-black text-lg transition-all hover:scale-105">
+            🎮 Selecionar Perfil
+          </button>
+        </div>`;
     }
 
-    function resetarTudo() {
-      trilhoGame.resetarProgresso();
-    }
+    window.addEventListener('DOMContentLoaded', async () => {
+      // Aguarda trilhoGame estar disponível
+      let t = 0;
+      while (typeof trilhoGame === 'undefined' && t++ < 50) {
+        await new Promise(r => setTimeout(r, 100));
+      }
+      if (typeof trilhoGame === 'undefined') return;
 
-    // Carregar dados ao abrir a página
-    window.addEventListener('DOMContentLoaded', () => {
-      const stats = trilhoGame.getEstatisticas();
-      const badges = trilhoGame.getBadges();
-      const historia = trilhoGame.getHistoria();
+      const perfil = trilhoGame.getPerfilAtivo();
+      if (!perfil) { mostrarSemPerfil(); return; }
 
-      // Atualizar estatísticas principais
-      document.getElementById('stat-pontos').textContent = stats.pontos;
-      document.getElementById('stat-nivel').textContent = stats.nivel;
+      // Atualiza título com o nome do jogador
+      document.querySelector('header p').textContent = `Progresso de ${perfil}`;
+
+      const [stats, badges, historia] = await Promise.all([
+        trilhoGame.getEstatisticas(),
+        trilhoGame.getBadgesConquistadas(),
+        trilhoGame.getHistoria(25),
+      ]);
+
+      if (!stats) { mostrarSemPerfil(); return; }
+
+      // ── Estatísticas principais ──────────────
+      document.getElementById('stat-pontos').textContent    = stats.pontos;
+      document.getElementById('stat-nivel').textContent     = stats.nivel;
       document.getElementById('stat-nome-nivel').textContent = stats.nomeNivel;
-      document.getElementById('stat-livros').textContent = stats.livrosVisitados;
-      document.getElementById('stat-badges').textContent = stats.badges;
-      document.getElementById('stat-herois').textContent = stats.heroisVisitados;
-      document.getElementById('stat-quizzes').textContent = stats.quizzesCompletos;
+      document.getElementById('stat-livros').textContent    = stats.livrosVisitados;
+      document.getElementById('stat-badges').textContent    = stats.badges;
+      document.getElementById('stat-herois').textContent    = stats.heroisVisitados;
+      document.getElementById('stat-quizzes').textContent   = stats.quizzesCompletos;
 
-      // Progresso para próximo nível
-      document.getElementById('pontos-atuais').textContent = stats.pontos;
+      // ── Barra de nível ───────────────────────
+      document.getElementById('pontos-atuais').textContent       = stats.pontos;
       document.getElementById('proximo-nivel-pontos').textContent = stats.proximoNivel.pontos;
-      document.getElementById('pontos-faltam').textContent = stats.proximoNivel.faltam;
-      
-      const percentualNivel = ((stats.pontos / stats.proximoNivel.pontos) * 100).toFixed(0);
-      document.getElementById('barra-progresso-nivel').style.width = percentualNivel + '%';
+      document.getElementById('pontos-faltam').textContent       = stats.proximoNivel.faltam;
+      const pctNivel = stats.proximoNivel.pontos > 0
+        ? Math.min(100, Math.round((stats.pontos / stats.proximoNivel.pontos) * 100))
+        : 100;
+      document.getElementById('barra-progresso-nivel').style.width = pctNivel + '%';
 
-      // Barra de heróis
-      const percentualHerois = ((stats.heroisVisitados / 14) * 100).toFixed(0);
-      document.getElementById('barra-herois').style.width = percentualHerois + '%';
+      // ── Barra de heróis ──────────────────────
+      const pctHerois = Math.min(100, Math.round((stats.heroisVisitados / 22) * 100));
+      document.getElementById('barra-herois').style.width = pctHerois + '%';
 
-      // Renderizar badges
+      // ── Badges conquistadas ──────────────────
       const badgesContainer = document.getElementById('badges-container');
-      if (badges.length === 0) {
+      if (!badges || badges.length === 0) {
         document.getElementById('sem-badges').classList.remove('hidden');
       } else {
         badges.forEach(badge => {
-          const badgeEl = document.createElement('div');
-          badgeEl.className = 'badge-item bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl p-6 text-center shadow-lg';
-          badgeEl.innerHTML = `
-            <div class="text-5xl mb-3">${badge.nome.split(' ')[0]}</div>
-            <h3 class="font-bold text-white mb-2">${badge.nome.substring(2)}</h3>
+          const icone = badge.nome.split(' ')[0];
+          const nome  = badge.nome.slice(badge.nome.indexOf(' ') + 1);
+          const el = document.createElement('div');
+          el.className = 'badge-item bg-gradient-to-br from-yellow-500 to-amber-500 rounded-xl p-6 text-center shadow-lg cursor-pointer hover:scale-105 transition-transform';
+          el.title = 'Clique para ver detalhes';
+          el.innerHTML = `
+            <div class="text-5xl mb-3">${icone}</div>
+            <h3 class="font-bold text-white mb-2">${nome}</h3>
             <p class="text-xs text-yellow-100">${badge.descricao || ''}</p>
           `;
-          badgesContainer.appendChild(badgeEl);
+          el.onclick = () => abrirModalBadge(badge);
+          badgesContainer.appendChild(el);
         });
       }
 
-      // Renderizar histórico
+      // ── Histórico de atividades ──────────────
       const historiaContainer = document.getElementById('historia-container');
-      if (historia.length === 0) {
+      if (!historia || historia.length === 0) {
         document.getElementById('sem-historia').classList.remove('hidden');
       } else {
-        historia.slice(0, 20).forEach(item => {
-          const itemEl = document.createElement('div');
-          itemEl.className = 'bg-slate-700/50 rounded-lg p-4 flex items-center gap-4 hover:bg-slate-700 transition-colors';
-          
-          let icone = '📌';
-          let texto = '';
-          let cor = 'text-gray-300';
-          
-          if (item.tipo === 'livro') {
-            icone = '📖';
-            texto = `Visitou o livro: ${item.nome}`;
-            cor = 'text-blue-300';
-          } else if (item.tipo === 'heroi') {
-            icone = '⚔️';
-            texto = `Descobriu o herói: ${item.nome}`;
-            cor = 'text-purple-300';
-          } else if (item.tipo === 'quiz') {
-            icone = '🎯';
-            texto = `Quiz ${item.nome}: ${item.acertos}/${item.total} (${item.percentual.toFixed(0)}%)`;
-            cor = 'text-green-300';
-          } else if (item.tipo === 'pontos') {
-            icone = '⭐';
-            texto = item.motivo;
-            cor = 'text-yellow-300';
-          }
-          
-          const dataFormatada = new Date(item.data).toLocaleString('pt-BR', {
-            day: '2-digit',
-            month: '2-digit',
-            hour: '2-digit',
-            minute: '2-digit'
+        historia.forEach(item => {
+          const { icone, cor } = ICONES_TIPO[item.tipo] || { icone: '📌', cor: 'text-gray-300' };
+          const data = new Date(item.criado_em).toLocaleString('pt-BR', {
+            day: '2-digit', month: '2-digit',
+            hour: '2-digit', minute: '2-digit',
           });
-          
-          itemEl.innerHTML = `
+          const el = document.createElement('div');
+          el.className = 'bg-slate-700/50 rounded-lg p-4 flex items-center gap-4 hover:bg-slate-700 transition-colors';
+          el.innerHTML = `
             <div class="text-3xl flex-shrink-0">${icone}</div>
             <div class="flex-1">
-              <p class="${cor} font-semibold">${texto}</p>
-              <p class="text-xs text-gray-500 mt-1">${dataFormatada}</p>
+              <p class="${cor} font-semibold">${item.motivo || '—'}</p>
+              <p class="text-xs text-gray-500 mt-1">${data}</p>
             </div>
+            ${item.quantidade > 0 ? `<div class="text-yellow-300 font-bold text-sm">+${item.quantidade} pts</div>` : ''}
           `;
-          historiaContainer.appendChild(itemEl);
+          historiaContainer.appendChild(el);
         });
       }
     });
+
+    const CATEGORIA_LABEL = {
+      secao:      'Seção Bíblica',
+      desempenho: 'Desempenho',
+      pontos:     'Pontuação',
+      especial:   'Especial',
+    };
+
+    function abrirModalBadge(badge) {
+      const icone = badge.nome.split(' ')[0];
+      const nome  = badge.nome.slice(badge.nome.indexOf(' ') + 1);
+      const cat   = CATEGORIA_LABEL[badge.categoria] || badge.categoria || '';
+      const data  = badge.data
+        ? 'Conquistada em ' + new Date(badge.data).toLocaleDateString('pt-BR', { day:'2-digit', month:'long', year:'numeric' })
+        : '';
+      document.getElementById('mb-icone').textContent     = icone;
+      document.getElementById('mb-nome').textContent      = nome;
+      document.getElementById('mb-categoria').textContent = cat;
+      document.getElementById('mb-descricao').textContent = badge.descricao || '';
+      document.getElementById('mb-data').textContent      = data;
+      document.getElementById('modal-badge').classList.remove('hidden');
+    }
+
+    function fecharModalBadge() {
+      document.getElementById('modal-badge').classList.add('hidden');
+    }
   </script>
-  <script src="./gamificacao.js"></script>
   <script src="/menu.js"></script>
 
 </body>
