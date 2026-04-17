@@ -4,7 +4,12 @@
     { "src": "**", "use": "@vercel/static" }
   ],
   "routes": [
-    { "src": "/entrar", "dest": "/entrar.html" },
+    { "src": "/entrar",                        "dest": "/entrar.html" },
+    { "src": "/novotestamento/evangelhos",     "dest": "/novotestamento/evangelhos.html" },
+    { "src": "/novotestamento/historico",      "dest": "/novotestamento/historico.html" },
+    { "src": "/novotestamento/cartasdepaulo",  "dest": "/novotestamento/cartasdepaulo.html" },
+    { "src": "/novotestamento/outrascartas",   "dest": "/novotestamento/outrascartas.html" },
+    { "src": "/novotestamento/profetico",      "dest": "/novotestamento/profetico.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
 }
