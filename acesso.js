@@ -2,9 +2,16 @@
 // ACESSO — TRILHO KIDS
 // Guard de acesso progressivo para páginas de livros.
 // Injeta overlay imediatamente; remove após verificação assíncrona.
+// Expõe window.acessoLiberadoPromise para gamificacao.js não pontuar livros bloqueados.
 // ============================================
 (function () {
   'use strict';
+
+  // Promise exposta globalmente — gamificacao.js aguarda antes de pontuar
+  var _resolveAcesso;
+  window.acessoLiberadoPromise = new Promise(function (resolve) {
+    _resolveAcesso = resolve;
+  });
 
   const TRILHO_API = (function () {
     const h = location.hostname;
@@ -55,23 +62,33 @@
     return null;
   }
 
+  function liberar() {
+    _resolveAcesso(true);
+    overlay.remove();
+  }
+
+  function bloquear(nomeLivro, proximoEm) {
+    _resolveAcesso(false);
+    mostrarBloqueio(nomeLivro, proximoEm);
+  }
+
   async function verificar() {
     // Aguarda LIVROS_CANONICOS (carregado por livros.js via menu.js)
     const livros = await esperarLivros();
-    if (!livros) { overlay.remove(); return; }
+    if (!livros) { liberar(); return; }
 
     const pasta = detectarPasta();
-    if (!pasta) { overlay.remove(); return; } // não é página de livro
+    if (!pasta) { liberar(); return; } // não é página de livro
 
     const livro = livros.find(function (l) { return l.pasta === pasta; });
-    if (!livro) { overlay.remove(); return; }
+    if (!livro) { liberar(); return; }
 
     // Visitante local = sem restrição
     const tipo = localStorage.getItem('trilho_perfil_tipo');
-    if (tipo === 'local' || tipo === null) { overlay.remove(); return; }
+    if (tipo === 'local' || tipo === null) { liberar(); return; }
 
     const nome = localStorage.getItem('trilho_perfil');
-    if (!nome) { overlay.remove(); return; }
+    if (!nome) { liberar(); return; }
 
     try {
       const url = TRILHO_API + '/acesso.php?nome=' + encodeURIComponent(nome) +
@@ -80,12 +97,12 @@
       const data = await resp.json();
 
       if (!data.ok || data.dados.acesso) {
-        overlay.remove();
+        liberar();
       } else {
-        mostrarBloqueio(livro.nome, data.dados.proximo_em);
+        bloquear(livro.nome, data.dados.proximo_em);
       }
     } catch (_) {
-      overlay.remove(); // falha de rede → fail open
+      liberar(); // falha de rede → fail open
     }
   }
 

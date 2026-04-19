@@ -193,6 +193,11 @@ class TrilhoKidsGame {
   // ============================================
 
   async visitarLivro(nomeLivro) {
+    // Aguarda confirmação de acesso antes de pontuar (evita pontuar livro bloqueado)
+    if (window.acessoLiberadoPromise !== undefined) {
+      const ok = await window.acessoLiberadoPromise;
+      if (!ok) return;
+    }
     const data = await this.getData();
     if (!data) return;
 
