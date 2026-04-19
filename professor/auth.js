@@ -25,7 +25,8 @@ const Auth = {
     localStorage.removeItem('tk_prof_token');
     localStorage.removeItem('tk_prof_data');
   },
-  isAdmin() { return !!this.getProf()?.is_admin; },
+  isAdmin()             { return !!this.getProf()?.is_admin; },
+  isAdminOrResponsavel(){ return !!(this.getProf()?.is_admin || this.getProf()?.is_responsavel); },
 };
 
 // ── Fetch autenticado ────────────────────────

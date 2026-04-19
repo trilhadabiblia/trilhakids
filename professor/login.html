@@ -69,7 +69,7 @@
   <script>
     // Se já logado, redireciona
     if (Auth.getToken()) {
-      window.location.href = Auth.isAdmin()
+      window.location.href = Auth.isAdminOrResponsavel()
         ? '/admin/index.html'
         : '/professor/dashboard.html';
     }
@@ -104,9 +104,11 @@
 
         Auth.salvar(data.dados.token, data.dados.professor);
 
-        window.location.href = data.dados.professor.is_admin
-          ? '/admin/index.html'
-          : '/professor/dashboard.html';
+        // Usa o redirect calculado pela API (admin ou responsável → painel admin)
+        window.location.href = data.dados.redirect
+          ?? (data.dados.professor.is_admin || data.dados.professor.is_responsavel
+              ? '/admin/index.html'
+              : '/professor/dashboard.html');
 
       } catch {
         erro.textContent = 'Erro de conexão. Verifique sua internet.';
