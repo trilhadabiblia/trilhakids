@@ -51,7 +51,8 @@ function checkAuth(requireAdmin = false) {
     window.location.href = '/professor/login.html';
     return false;
   }
-  if (requireAdmin && !prof.is_admin) {
+  // Admin ou responsável de instituição podem acessar o painel admin
+  if (requireAdmin && !prof.is_admin && !prof.is_responsavel) {
     window.location.href = '/professor/dashboard.html';
     return false;
   }

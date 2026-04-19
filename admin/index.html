@@ -149,6 +149,10 @@
             <input type="checkbox" id="prof-admin-i" class="w-4 h-4 accent-purple-500" />
             <label for="prof-admin-i" class="text-sm text-gray-300">Administrador</label>
           </div>
+          <div class="flex items-center gap-3">
+            <input type="checkbox" id="prof-responsavel-i" class="w-4 h-4 accent-blue-500" />
+            <label for="prof-responsavel-i" class="text-sm text-gray-300">Responsável pela instituição</label>
+          </div>
         </div>
         <div class="flex gap-3 mt-4">
           <button onclick="salvarProfessor()"
@@ -184,11 +188,21 @@
             <input id="turma-nome-i" placeholder="Turma Júnior 2025"
               class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
           </div>
-          <div>
+          <div id="wrap-turma-inst-i">
             <label class="text-sm text-gray-300 mb-1 block">Instituição *</label>
             <select id="turma-inst-i" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
               <option value="">— Selecione —</option>
             </select>
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Idade mínima</label>
+            <input id="turma-idade-ini-i" type="number" min="0" max="30" placeholder="ex: 6"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Idade máxima</label>
+            <input id="turma-idade-fim-i" type="number" min="0" max="30" placeholder="ex: 12"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
           </div>
         </div>
         <p class="text-gray-500 text-xs mt-3">Após criar a turma, vincule os professores usando o botão "Equipe".</p>
@@ -228,11 +242,33 @@
           </div>
           <div>
             <label class="text-sm text-gray-300 mb-1 block">Turma</label>
-            <select id="aluno-turma-i" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+            <select id="aluno-turma-i" onchange="verificarIdadeParaTurma('aluno-turma-i','aluno-nasc-i','aluno-aviso-idade')"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
               <option value="">— Sem turma —</option>
             </select>
           </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Data de nascimento</label>
+            <input id="aluno-nasc-i" type="date" onchange="verificarIdadeParaTurma('aluno-turma-i','aluno-nasc-i','aluno-aviso-idade')"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Nome do responsável</label>
+            <input id="aluno-resp-nome-i" placeholder="João Silva"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">Telefone do responsável</label>
+            <input id="aluno-resp-tel-i" placeholder="(11) 99999-9999"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div>
+            <label class="text-sm text-gray-300 mb-1 block">E-mail do responsável</label>
+            <input id="aluno-resp-email-i" type="email" placeholder="joao@email.com"
+              class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
         </div>
+        <p id="aluno-aviso-idade" class="hidden text-amber-400 text-sm mt-2 font-semibold"></p>
         <div class="flex gap-3 mt-4">
           <button onclick="salvarAluno()"
             class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-xl font-bold text-sm transition-all">
@@ -263,8 +299,9 @@
               <tr class="border-b border-purple-500/20 text-purple-300 text-xs uppercase">
                 <th class="py-4 px-4 text-left">Aluno</th>
                 <th class="py-4 px-4 text-left">Turma</th>
+                <th class="py-4 px-4 text-left hidden md:table-cell">Responsável</th>
                 <th class="py-4 px-4 text-center">Pontos</th>
-                <th class="py-4 px-4 text-center">QR Code</th>
+                <th class="py-4 px-4 text-center">QR</th>
                 <th class="py-4 px-4 text-center">Ações</th>
               </tr>
             </thead>
@@ -340,6 +377,164 @@
     </div>
 
   </main>
+
+  <!-- ═══ MODAL: Editar Instituição ══════════ -->
+  <div id="modal-editar-inst" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-6 w-full max-w-xl shadow-2xl">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="text-xl font-black text-white">✏️ Editar Instituição</h3>
+        <button onclick="fecharModal('modal-editar-inst')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+      <input type="hidden" id="edit-inst-id" />
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Nome *</label>
+          <input id="edit-inst-nome"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Tipo</label>
+          <select id="edit-inst-tipo" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+            <option value="igreja">Igreja</option>
+            <option value="escola">Escola</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Cidade</label>
+          <input id="edit-inst-cidade"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Responsável</label>
+          <input id="edit-inst-responsavel" placeholder="Nome do responsável"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Telefone</label>
+          <input id="edit-inst-telefone" placeholder="(11) 99999-9999"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">E-mail</label>
+          <input id="edit-inst-email" type="email" placeholder="contato@igreja.com"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+      </div>
+      <p id="edit-inst-erro" class="text-red-400 text-sm mt-3 hidden"></p>
+      <div class="flex gap-3 mt-5">
+        <button onclick="salvarEdicaoInstituicao()"
+          class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition-all">
+          Salvar
+        </button>
+        <button onclick="fecharModal('modal-editar-inst')"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: Editar Turma ═════════════════ -->
+  <div id="modal-editar-turma" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-6 w-full max-w-xl shadow-2xl">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="text-xl font-black text-white">✏️ Editar Turma</h3>
+        <button onclick="fecharModal('modal-editar-turma')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+      <input type="hidden" id="edit-turma-id" />
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Nome da Turma *</label>
+          <input id="edit-turma-nome"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div id="wrap-edit-turma-inst">
+          <label class="text-sm text-gray-300 mb-1 block">Instituição *</label>
+          <select id="edit-turma-inst" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+            <option value="">— Selecione —</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Idade mínima</label>
+          <input id="edit-turma-idade-ini" type="number" min="0" max="30" placeholder="ex: 6"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Idade máxima</label>
+          <input id="edit-turma-idade-fim" type="number" min="0" max="30" placeholder="ex: 12"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+      </div>
+      <p id="edit-turma-erro" class="text-red-400 text-sm mt-3 hidden"></p>
+      <div class="flex gap-3 mt-5">
+        <button onclick="salvarEdicaoTurma()"
+          class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition-all">
+          Salvar
+        </button>
+        <button onclick="fecharModal('modal-editar-turma')"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ MODAL: Editar Aluno ═════════════════ -->
+  <div id="modal-editar-aluno" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-6 w-full max-w-xl shadow-2xl max-h-[92vh] overflow-y-auto">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="text-xl font-black text-white">✏️ Editar Aluno</h3>
+        <button onclick="fecharModal('modal-editar-aluno')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+      <input type="hidden" id="edit-aluno-id" />
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Nome do Aluno *</label>
+          <input id="edit-aluno-nome"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Turma</label>
+          <select id="edit-aluno-turma" onchange="verificarIdadeParaTurma('edit-aluno-turma','edit-aluno-nasc','edit-aluno-aviso-idade')"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+            <option value="">— Sem turma —</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Data de nascimento</label>
+          <input id="edit-aluno-nasc" type="date" onchange="verificarIdadeParaTurma('edit-aluno-turma','edit-aluno-nasc','edit-aluno-aviso-idade')"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Nome do responsável</label>
+          <input id="edit-aluno-resp-nome" placeholder="João Silva"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Telefone do responsável</label>
+          <input id="edit-aluno-resp-tel" placeholder="(11) 99999-9999"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">E-mail do responsável</label>
+          <input id="edit-aluno-resp-email" type="email" placeholder="joao@email.com"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+      </div>
+      <p id="edit-aluno-aviso-idade" class="hidden text-amber-400 text-sm mt-2 font-semibold"></p>
+      <p id="edit-aluno-erro" class="text-red-400 text-sm mt-3 hidden"></p>
+      <div class="flex gap-3 mt-5">
+        <button onclick="salvarEdicaoAluno()"
+          class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition-all">
+          Salvar
+        </button>
+        <button onclick="fecharModal('modal-editar-aluno')"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- ═══ MODAL: QR Code ═══════════════════════ -->
   <div id="modal-qr" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
@@ -488,6 +683,25 @@
     const prof = Auth.getProf();
     document.getElementById('admin-nome').textContent = prof.nome;
 
+    // ── Papel do usuário logado ───────────────
+    const _isAdmin       = !!prof.is_admin;
+    const _isResponsavel = !!prof.is_responsavel;
+    const _scopeInstId   = prof.instituicao_id ?? null;
+
+    // Oculta aba Leads para quem não é admin puro
+    if (!_isAdmin) {
+      document.getElementById('tab-leads').style.display = 'none';
+    }
+    // Admin sem instituição: oculta select de instituição no form de turma (preenche via scope)
+    if (_isResponsavel && !_isAdmin) {
+      const wrapInstT = document.getElementById('wrap-turma-inst-i');
+      if (wrapInstT) wrapInstT.style.display = 'none';
+      const wrapInstP = document.getElementById('prof-inst-i')?.closest('div');
+      if (wrapInstP) wrapInstP.style.display = 'none';
+      // Oculta botão + Nova Instituição para responsável
+      document.querySelector('button[onclick*="toggleForm(\'form-instituicao\')"]')?.style.setProperty('display','none');
+    }
+
     // ── Cache de dados ────────────────────────
     let _instituicoes = [];
     let _professores  = [];
@@ -610,18 +824,26 @@
       const el = document.getElementById('lista-instituicoes');
       el.innerHTML = _instituicoes.length === 0
         ? '<p class="text-gray-500 col-span-3">Nenhuma instituição cadastrada.</p>'
-        : _instituicoes.map(i => `
+        : _instituicoes.map(i => {
+          const resp = i.responsavel ? `<p class="text-blue-300 text-xs mt-1">👤 ${i.responsavel}${i.telefone ? ' · ' + i.telefone : ''}</p>` : '';
+          return `
           <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5">
             <div class="flex items-start justify-between">
-              <div>
+              <div class="min-w-0 mr-2">
                 <p class="font-black text-white text-lg">${i.nome}</p>
                 <p class="text-gray-400 text-sm">${i.tipo === 'igreja' ? '⛪ Igreja' : '🏫 Escola'} · ${i.cidade || '—'}</p>
                 <p class="text-purple-300 text-xs mt-1">${i.total_turmas} turma(s)</p>
+                ${resp}
               </div>
-              <button onclick="removerInstituicao(${i.id})"
-                class="text-red-400 hover:text-red-300 text-sm transition-colors" title="Remover">✕</button>
+              <div class="flex gap-2 flex-shrink-0">
+                <button onclick="abrirEditarInstituicao(${i.id})"
+                  class="text-blue-400 hover:text-blue-200 bg-blue-600/20 hover:bg-blue-600/40 px-2 py-1 rounded-lg text-xs font-bold transition-all" title="Editar">✏️</button>
+                ${_isAdmin ? `<button onclick="removerInstituicao(${i.id})"
+                  class="text-red-400 hover:text-red-300 bg-red-600/20 hover:bg-red-600/40 px-2 py-1 rounded-lg text-xs font-bold transition-all" title="Remover">✕</button>` : ''}
+              </div>
             </div>
-          </div>`).join('');
+          </div>`;
+        }).join('');
     }
 
     async function salvarInstituicao() {
@@ -667,8 +889,9 @@
           <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5 flex items-center justify-between gap-4">
             <div>
               <p class="font-black text-white">${p.nome}
-                ${p.is_admin ? '<span class="text-xs bg-purple-600/40 text-purple-300 px-2 py-0.5 rounded-full ml-2">admin</span>' : ''}
-                ${!p.ativo ? '<span class="text-xs bg-red-600/40 text-red-300 px-2 py-0.5 rounded-full ml-2">inativo</span>' : ''}
+                ${p.is_admin       ? '<span class="text-xs bg-purple-600/40 text-purple-300 px-2 py-0.5 rounded-full ml-1">admin</span>' : ''}
+                ${p.is_responsavel ? '<span class="text-xs bg-blue-600/40 text-blue-300 px-2 py-0.5 rounded-full ml-1">responsável</span>' : ''}
+                ${!p.ativo         ? '<span class="text-xs bg-red-600/40 text-red-300 px-2 py-0.5 rounded-full ml-1">inativo</span>' : ''}
               </p>
               <p class="text-gray-400 text-sm">${p.email}</p>
               <p class="text-purple-300 text-xs">${p.instituicao || '—'} · ${p.total_turmas} turma(s)</p>
@@ -684,22 +907,24 @@
     }
 
     async function salvarProfessor() {
-      const nome     = document.getElementById('prof-nome-i').value.trim();
-      const email    = document.getElementById('prof-email-i').value.trim();
-      const senha    = document.getElementById('prof-senha-i').value;
-      const inst_id  = document.getElementById('prof-inst-i').value || null;
-      const is_admin = document.getElementById('prof-admin-i').checked;
-      const erro     = document.getElementById('prof-erro');
+      const nome           = document.getElementById('prof-nome-i').value.trim();
+      const email          = document.getElementById('prof-email-i').value.trim();
+      const senha          = document.getElementById('prof-senha-i').value;
+      const inst_id        = document.getElementById('prof-inst-i').value || null;
+      const is_admin       = document.getElementById('prof-admin-i').checked;
+      const is_responsavel = document.getElementById('prof-responsavel-i').checked;
+      const erro           = document.getElementById('prof-erro');
       erro.classList.add('hidden');
 
       const d = await apiAuth('professores.php', {
         method: 'POST',
-        body: JSON.stringify({ nome, email, senha, instituicao_id: inst_id, is_admin }),
+        body: JSON.stringify({ nome, email, senha, instituicao_id: inst_id, is_admin, is_responsavel }),
       });
       if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
 
       ['prof-nome-i','prof-email-i','prof-senha-i'].forEach(id => document.getElementById(id).value = '');
-      document.getElementById('prof-admin-i').checked = false;
+      document.getElementById('prof-admin-i').checked       = false;
+      document.getElementById('prof-responsavel-i').checked = false;
       toggleForm('form-professor');
       await carregarProfessores();
     }
@@ -732,17 +957,24 @@
         const profsStr = profs.length
           ? profs.map(p => `${p.nome}<span class="text-gray-500"> (${p.papel})</span>`).join(', ')
           : '<span class="text-gray-500 italic">Sem professores</span>';
+        const faixaEtaria = (t.idade_inicial != null && t.idade_final != null)
+          ? `<span class="text-green-400 text-xs ml-2">${t.idade_inicial}–${t.idade_final} anos</span>`
+          : '';
 
         return `
           <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5">
             <div class="flex items-start justify-between gap-4">
               <div class="min-w-0">
-                <p class="font-black text-white text-lg">${t.nome}</p>
+                <p class="font-black text-white text-lg">${t.nome}${faixaEtaria}</p>
                 <p class="text-gray-400 text-sm">${t.instituicao}</p>
                 <p class="text-purple-300 text-xs mt-1">${profsStr}</p>
                 <p class="text-gray-500 text-xs">${t.total_alunos} aluno(s)</p>
               </div>
               <div class="flex flex-col gap-2 flex-shrink-0">
+                <button onclick="abrirEditarTurma(${t.id})"
+                  class="text-xs bg-purple-600/30 hover:bg-purple-600/60 text-purple-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  ✏️ Editar
+                </button>
                 <button onclick="abrirEquipe(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
                   class="text-xs bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   👩‍🏫 Equipe
@@ -763,18 +995,26 @@
 
     async function salvarTurma() {
       const nome    = document.getElementById('turma-nome-i').value.trim();
-      const inst_id = parseInt(document.getElementById('turma-inst-i').value);
+      const inst_id = _isResponsavel ? _scopeInstId : parseInt(document.getElementById('turma-inst-i').value);
+      const idadeI  = document.getElementById('turma-idade-ini-i').value;
+      const idadeF  = document.getElementById('turma-idade-fim-i').value;
       const erro    = document.getElementById('turma-erro');
       erro.classList.add('hidden');
       if (!nome)    { erro.textContent = 'Nome obrigatório.';        erro.classList.remove('hidden'); return; }
       if (!inst_id) { erro.textContent = 'Selecione a instituição.'; erro.classList.remove('hidden'); return; }
 
       const d = await apiAuth('turmas.php', {
-        method: 'POST', body: JSON.stringify({ nome, instituicao_id: inst_id }),
+        method: 'POST', body: JSON.stringify({
+          nome, instituicao_id: inst_id,
+          idade_inicial: idadeI !== '' ? parseInt(idadeI) : null,
+          idade_final:   idadeF !== '' ? parseInt(idadeF) : null,
+        }),
       });
       if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
 
-      document.getElementById('turma-nome-i').value = '';
+      document.getElementById('turma-nome-i').value      = '';
+      document.getElementById('turma-idade-ini-i').value = '';
+      document.getElementById('turma-idade-fim-i').value = '';
       toggleForm('form-turma');
       await carregarTurmas();
     }
@@ -997,25 +1237,39 @@
 
       alunos.forEach(a => {
         const turma = a.turma_id ? (turmaMap[a.turma_id] ?? '—') : '—';
+        const nascFormatado = a.data_nascimento
+          ? new Date(a.data_nascimento + 'T12:00:00').toLocaleDateString('pt-BR')
+          : '';
+        const respInfo = a.nome_responsavel
+          ? `<span class="text-gray-400 text-xs">${a.nome_responsavel}${nascFormatado ? ' · ' + nascFormatado : ''}</span>`
+          : `<span class="text-gray-600 text-xs">${nascFormatado || '—'}</span>`;
+
         const tr = document.createElement('tr');
         tr.className = 'border-b border-purple-500/10 hover:bg-purple-500/5 transition-colors';
         tr.innerHTML = `
           <td class="py-3 px-4 font-bold text-white">${a.nome}</td>
           <td class="py-3 px-4 text-gray-400 text-sm">${turma}</td>
+          <td class="py-3 px-4 hidden md:table-cell">${respInfo}</td>
           <td class="py-3 px-4 text-center text-yellow-300 font-bold">${a.pontos ?? 0}</td>
           <td class="py-3 px-4 text-center">
             ${a.token_qr
               ? `<button onclick="mostrarQR('${a.token_qr}','${a.nome.replace(/'/g,'&apos;')}')"
                    class="bg-purple-600/30 hover:bg-purple-600/60 text-purple-300 px-3 py-1 rounded-lg text-xs font-bold transition-all">
-                   📲 Ver QR
+                   📲
                  </button>`
               : '<span class="text-gray-600 text-xs">—</span>'}
           </td>
           <td class="py-3 px-4 text-center">
-            <button onclick="removerAluno('${a.nome.replace(/'/g,'&apos;')}')"
-              class="bg-red-600/30 hover:bg-red-600/60 text-red-300 px-2 py-1 rounded-lg text-xs font-bold transition-all">
-              Remover
-            </button>
+            <div class="flex gap-1 justify-center">
+              <button onclick="abrirEditarAluno(${JSON.stringify(a).replace(/"/g,'&quot;')})"
+                class="bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-2 py-1 rounded-lg text-xs font-bold transition-all">
+                ✏️
+              </button>
+              <button onclick="removerAluno('${a.nome.replace(/'/g,'&apos;')}')"
+                class="bg-red-600/30 hover:bg-red-600/60 text-red-300 px-2 py-1 rounded-lg text-xs font-bold transition-all">
+                ✕
+              </button>
+            </div>
           </td>`;
         tbody.appendChild(tr);
       });
@@ -1027,18 +1281,28 @@
     }
 
     async function salvarAluno() {
-      const nome     = document.getElementById('aluno-nome-i').value.trim();
-      const turma_id = parseInt(document.getElementById('aluno-turma-i').value) || null;
-      const erro     = document.getElementById('aluno-erro');
+      const nome                 = document.getElementById('aluno-nome-i').value.trim();
+      const turma_id             = parseInt(document.getElementById('aluno-turma-i').value) || null;
+      const data_nascimento      = document.getElementById('aluno-nasc-i').value || null;
+      const nome_responsavel     = document.getElementById('aluno-resp-nome-i').value.trim();
+      const telefone_responsavel = document.getElementById('aluno-resp-tel-i').value.trim();
+      const email_responsavel    = document.getElementById('aluno-resp-email-i').value.trim();
+      const erro                 = document.getElementById('aluno-erro');
       erro.classList.add('hidden');
       if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
 
       const d = await apiAuth('perfis.php', {
-        method: 'POST', body: JSON.stringify({ nome, turma_id }),
+        method: 'POST', body: JSON.stringify({
+          nome, turma_id, data_nascimento,
+          nome_responsavel, telefone_responsavel, email_responsavel,
+        }),
       });
       if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
 
-      document.getElementById('aluno-nome-i').value = '';
+      ['aluno-nome-i','aluno-nasc-i','aluno-resp-nome-i','aluno-resp-tel-i','aluno-resp-email-i']
+        .forEach(id => { document.getElementById(id).value = ''; });
+      document.getElementById('aluno-turma-i').value = '';
+      document.getElementById('aluno-aviso-idade').classList.add('hidden');
       toggleForm('form-aluno');
 
       if (d.dados.token_qr) mostrarQR(d.dados.token_qr, nome);
@@ -1096,19 +1360,186 @@
         _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
 
       // Select de instituição em turma form
-      document.getElementById('turma-inst-i').innerHTML =
-        '<option value="">— Selecione —</option>' +
-        _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
+      const selectTurmaInst = document.getElementById('turma-inst-i');
+      if (selectTurmaInst) {
+        selectTurmaInst.innerHTML =
+          '<option value="">— Selecione —</option>' +
+          _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
+      }
 
       // Select de turma em aluno form
-      document.getElementById('aluno-turma-i').innerHTML =
-        '<option value="">— Sem turma —</option>' +
+      const turmaOpts = '<option value="">— Sem turma —</option>' +
         _turmas.map(t => `<option value="${t.id}">${t.nome} (${t.instituicao})</option>`).join('');
+      document.getElementById('aluno-turma-i').innerHTML  = turmaOpts;
+      document.getElementById('edit-aluno-turma').innerHTML = turmaOpts;
+
+      // Select de instituição em modal editar turma
+      const editTurmaInst = document.getElementById('edit-turma-inst');
+      if (editTurmaInst) {
+        editTurmaInst.innerHTML =
+          '<option value="">— Selecione —</option>' +
+          _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
+      }
 
       // Filtro de turma na listagem de alunos
       document.getElementById('filtro-turma-alunos').innerHTML =
         '<option value="">Todos os alunos</option>' +
         _turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+    }
+
+    // ── EDITAR INSTITUIÇÃO ────────────────────
+    function abrirEditarInstituicao(id) {
+      const i = _instituicoes.find(x => x.id == id);
+      if (!i) return;
+      document.getElementById('edit-inst-id').value          = i.id;
+      document.getElementById('edit-inst-nome').value        = i.nome;
+      document.getElementById('edit-inst-tipo').value        = i.tipo;
+      document.getElementById('edit-inst-cidade').value      = i.cidade       || '';
+      document.getElementById('edit-inst-responsavel').value = i.responsavel  || '';
+      document.getElementById('edit-inst-telefone').value    = i.telefone     || '';
+      document.getElementById('edit-inst-email').value       = i.email        || '';
+      document.getElementById('edit-inst-erro').classList.add('hidden');
+      document.getElementById('modal-editar-inst').classList.remove('hidden');
+    }
+
+    async function salvarEdicaoInstituicao() {
+      const id          = parseInt(document.getElementById('edit-inst-id').value);
+      const nome        = document.getElementById('edit-inst-nome').value.trim();
+      const tipo        = document.getElementById('edit-inst-tipo').value;
+      const cidade      = document.getElementById('edit-inst-cidade').value.trim();
+      const responsavel = document.getElementById('edit-inst-responsavel').value.trim();
+      const telefone    = document.getElementById('edit-inst-telefone').value.trim();
+      const email       = document.getElementById('edit-inst-email').value.trim();
+      const erro        = document.getElementById('edit-inst-erro');
+      erro.classList.add('hidden');
+
+      if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('instituicoes.php', {
+        method: 'PUT', body: JSON.stringify({ id, nome, tipo, cidade, responsavel, telefone, email }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      fecharModal('modal-editar-inst');
+      await carregarInstituicoes();
+    }
+
+    // ── EDITAR TURMA ──────────────────────────
+    function abrirEditarTurma(id) {
+      const t = _turmas.find(x => x.id == id);
+      if (!t) return;
+      document.getElementById('edit-turma-id').value         = t.id;
+      document.getElementById('edit-turma-nome').value       = t.nome;
+      document.getElementById('edit-turma-inst').value       = t.instituicao_id ?? '';
+      document.getElementById('edit-turma-idade-ini').value  = t.idade_inicial ?? '';
+      document.getElementById('edit-turma-idade-fim').value  = t.idade_final   ?? '';
+      document.getElementById('edit-turma-erro').classList.add('hidden');
+
+      // Oculta select de inst para responsável
+      const wrapInst = document.getElementById('wrap-edit-turma-inst');
+      if (_isResponsavel && !_isAdmin && wrapInst) wrapInst.style.display = 'none';
+
+      document.getElementById('modal-editar-turma').classList.remove('hidden');
+    }
+
+    async function salvarEdicaoTurma() {
+      const id      = parseInt(document.getElementById('edit-turma-id').value);
+      const nome    = document.getElementById('edit-turma-nome').value.trim();
+      const inst_id = _isResponsavel ? _scopeInstId : parseInt(document.getElementById('edit-turma-inst').value);
+      const idadeI  = document.getElementById('edit-turma-idade-ini').value;
+      const idadeF  = document.getElementById('edit-turma-idade-fim').value;
+      const erro    = document.getElementById('edit-turma-erro');
+      erro.classList.add('hidden');
+
+      if (!nome)    { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
+      if (!inst_id) { erro.textContent = 'Selecione a instituição.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('turmas.php', {
+        method: 'PUT', body: JSON.stringify({
+          id, nome, instituicao_id: inst_id,
+          idade_inicial: idadeI !== '' ? parseInt(idadeI) : null,
+          idade_final:   idadeF !== '' ? parseInt(idadeF) : null,
+        }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      fecharModal('modal-editar-turma');
+      await carregarTurmas();
+    }
+
+    // ── EDITAR ALUNO ──────────────────────────
+    function abrirEditarAluno(a) {
+      // Pode receber objeto ou ID
+      if (typeof a !== 'object') a = _alunos.find(x => x.id == a);
+      if (!a) return;
+      document.getElementById('edit-aluno-id').value          = a.id;
+      document.getElementById('edit-aluno-nome').value        = a.nome;
+      document.getElementById('edit-aluno-turma').value       = a.turma_id ?? '';
+      document.getElementById('edit-aluno-nasc').value        = a.data_nascimento      || '';
+      document.getElementById('edit-aluno-resp-nome').value   = a.nome_responsavel     || '';
+      document.getElementById('edit-aluno-resp-tel').value    = a.telefone_responsavel || '';
+      document.getElementById('edit-aluno-resp-email').value  = a.email_responsavel    || '';
+      document.getElementById('edit-aluno-aviso-idade').classList.add('hidden');
+      document.getElementById('edit-aluno-erro').classList.add('hidden');
+      document.getElementById('modal-editar-aluno').classList.remove('hidden');
+    }
+
+    async function salvarEdicaoAluno() {
+      const id                   = parseInt(document.getElementById('edit-aluno-id').value);
+      const nome                 = document.getElementById('edit-aluno-nome').value.trim();
+      const turma_id             = parseInt(document.getElementById('edit-aluno-turma').value) || null;
+      const data_nascimento      = document.getElementById('edit-aluno-nasc').value || null;
+      const nome_responsavel     = document.getElementById('edit-aluno-resp-nome').value.trim();
+      const telefone_responsavel = document.getElementById('edit-aluno-resp-tel').value.trim();
+      const email_responsavel    = document.getElementById('edit-aluno-resp-email').value.trim();
+      const erro                 = document.getElementById('edit-aluno-erro');
+      erro.classList.add('hidden');
+
+      if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('perfis.php', {
+        method: 'PUT', body: JSON.stringify({
+          id, nome, turma_id, data_nascimento,
+          nome_responsavel, telefone_responsavel, email_responsavel,
+        }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      fecharModal('modal-editar-aluno');
+      await carregarAlunos(document.getElementById('filtro-turma-alunos').value);
+    }
+
+    // ── Validação de idade para turma ─────────
+    function calcularIdade(dataNasc) {
+      if (!dataNasc) return null;
+      const hoje  = new Date();
+      const nasc  = new Date(dataNasc + 'T12:00:00');
+      let idade = hoje.getFullYear() - nasc.getFullYear();
+      if (hoje.getMonth() < nasc.getMonth() ||
+         (hoje.getMonth() === nasc.getMonth() && hoje.getDate() < nasc.getDate())) {
+        idade--;
+      }
+      return idade;
+    }
+
+    function verificarIdadeParaTurma(selectTurmaId, inputNascId, avisoId) {
+      const aviso    = document.getElementById(avisoId);
+      const turmaId  = parseInt(document.getElementById(selectTurmaId).value) || null;
+      const dataNasc = document.getElementById(inputNascId).value;
+
+      aviso.classList.add('hidden');
+      if (!turmaId || !dataNasc) return;
+
+      const turma = _turmas.find(t => t.id === turmaId);
+      if (!turma || turma.idade_inicial == null || turma.idade_final == null) return;
+
+      const idade = calcularIdade(dataNasc);
+      if (idade === null) return;
+
+      if (idade < turma.idade_inicial || idade > turma.idade_final) {
+        aviso.textContent = `⚠️ Aluno com ${idade} anos está fora da faixa etária desta turma (${turma.idade_inicial}–${turma.idade_final} anos).`;
+        aviso.classList.remove('hidden');
+      }
     }
   </script>
 </body>
