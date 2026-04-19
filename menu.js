@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  // Cria a promise de controle de acesso ANTES do primeiro await,
+  // garantindo que gamificacao.js a encontre antes de qualquer visitarLivro().
+  if (window.acessoLiberadoPromise === undefined) {
+    window.acessoLiberadoPromise = new Promise(function (resolve) {
+      window._resolveAcessoKids = resolve;
+    });
+  }
+
   try {
     // Caminho relativo: uma pasta acima do HTML (ex: /juizes/index.html → /menu.html)
     const response = await fetch("../menu.html");

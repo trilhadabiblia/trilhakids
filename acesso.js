@@ -7,11 +7,14 @@
 (function () {
   'use strict';
 
-  // Promise exposta globalmente — gamificacao.js aguarda antes de pontuar
-  var _resolveAcesso;
-  window.acessoLiberadoPromise = new Promise(function (resolve) {
-    _resolveAcesso = resolve;
-  });
+  // Usa a promise criada sincronicamente pelo menu.js.
+  // Fallback: cria aqui caso acesso.js seja carregado fora do menu.js.
+  if (window.acessoLiberadoPromise === undefined) {
+    window.acessoLiberadoPromise = new Promise(function (resolve) {
+      window._resolveAcessoKids = resolve;
+    });
+  }
+  var _resolveAcesso = window._resolveAcessoKids || function () {};
 
   const TRILHO_API = (function () {
     const h = location.hostname;
