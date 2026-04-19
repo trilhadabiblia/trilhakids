@@ -378,6 +378,59 @@
 
   </main>
 
+  <!-- ═══ MODAL: Editar Professor ════════════ -->
+  <div id="modal-editar-prof" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-6 w-full max-w-xl shadow-2xl">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="text-xl font-black text-white">✏️ Editar Professor</h3>
+        <button onclick="fecharModal('modal-editar-prof')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+      <input type="hidden" id="edit-prof-id" />
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Nome *</label>
+          <input id="edit-prof-nome"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">E-mail *</label>
+          <input id="edit-prof-email" type="email"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div>
+          <label class="text-sm text-gray-300 mb-1 block">Nova senha <span class="text-gray-500 font-normal">(deixe em branco para manter)</span></label>
+          <input id="edit-prof-senha" type="password" placeholder="Mín. 6 caracteres"
+            class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div id="wrap-edit-prof-inst">
+          <label class="text-sm text-gray-300 mb-1 block">Instituição</label>
+          <select id="edit-prof-inst" class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none">
+            <option value="">— Nenhuma —</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-3" id="wrap-edit-prof-admin">
+          <input type="checkbox" id="edit-prof-admin" class="w-4 h-4 accent-purple-500" />
+          <label for="edit-prof-admin" class="text-sm text-gray-300">Administrador</label>
+        </div>
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id="edit-prof-responsavel" class="w-4 h-4 accent-blue-500" />
+          <label for="edit-prof-responsavel" class="text-sm text-gray-300">Responsável pela instituição</label>
+        </div>
+      </div>
+      <p id="edit-prof-erro" class="text-red-400 text-sm mt-3 hidden"></p>
+      <div class="flex gap-3 mt-5">
+        <button onclick="salvarEdicaoProfessor()"
+          class="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition-all">
+          Salvar
+        </button>
+        <button onclick="fecharModal('modal-editar-prof')"
+          class="flex-1 bg-slate-700 hover:bg-slate-600 text-white py-3 rounded-xl font-bold transition-all">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ MODAL: Editar Instituição ══════════ -->
   <div id="modal-editar-inst" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
     <div class="bg-slate-800 border border-purple-500/40 rounded-3xl p-6 w-full max-w-xl shadow-2xl">
@@ -897,6 +950,10 @@
               <p class="text-purple-300 text-xs">${p.instituicao || '—'} · ${p.total_turmas} turma(s)</p>
             </div>
             <div class="flex gap-2 flex-shrink-0">
+              <button onclick="abrirEditarProfessor(${JSON.stringify(p).replace(/"/g,'&quot;')})"
+                class="text-xs bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-3 py-1 rounded-lg font-bold transition-all">
+                ✏️ Editar
+              </button>
               <button onclick="toggleAtivoProfessor(${p.id}, ${p.ativo})"
                 class="text-xs ${p.ativo ? 'bg-red-600/30 hover:bg-red-600/60 text-red-300' : 'bg-green-600/30 hover:bg-green-600/60 text-green-300'}
                        px-3 py-1 rounded-lg font-bold transition-all">
@@ -1381,10 +1438,81 @@
           _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
       }
 
+      // Select de instituição em modal editar professor
+      const editProfInst = document.getElementById('edit-prof-inst');
+      if (editProfInst) {
+        editProfInst.innerHTML =
+          '<option value="">— Nenhuma —</option>' +
+          _instituicoes.map(i => `<option value="${i.id}">${i.nome}</option>`).join('');
+      }
+
       // Filtro de turma na listagem de alunos
       document.getElementById('filtro-turma-alunos').innerHTML =
         '<option value="">Todos os alunos</option>' +
         _turmas.map(t => `<option value="${t.id}">${t.nome}</option>`).join('');
+    }
+
+    // ── EDITAR PROFESSOR ──────────────────────
+    function abrirEditarProfessor(p) {
+      if (typeof p !== 'object') p = _professores.find(x => x.id == p);
+      if (!p) return;
+
+      document.getElementById('edit-prof-id').value          = p.id;
+      document.getElementById('edit-prof-nome').value        = p.nome;
+      document.getElementById('edit-prof-email').value       = p.email;
+      document.getElementById('edit-prof-senha').value       = '';
+      document.getElementById('edit-prof-inst').value        = p.instituicao_id ?? '';
+      document.getElementById('edit-prof-admin').checked     = !!p.is_admin;
+      document.getElementById('edit-prof-responsavel').checked = !!p.is_responsavel;
+      document.getElementById('edit-prof-erro').classList.add('hidden');
+
+      // Responsável não pode alterar a instituição nem promover admins
+      const wrapInst  = document.getElementById('wrap-edit-prof-inst');
+      const wrapAdmin = document.getElementById('wrap-edit-prof-admin');
+      if (_isResponsavel && !_isAdmin) {
+        if (wrapInst)  wrapInst.style.display  = 'none';
+        if (wrapAdmin) wrapAdmin.style.display  = 'none';
+      } else {
+        if (wrapInst)  wrapInst.style.display  = '';
+        if (wrapAdmin) wrapAdmin.style.display  = '';
+      }
+
+      document.getElementById('modal-editar-prof').classList.remove('hidden');
+    }
+
+    async function salvarEdicaoProfessor() {
+      const id           = parseInt(document.getElementById('edit-prof-id').value);
+      const nome         = document.getElementById('edit-prof-nome').value.trim();
+      const email        = document.getElementById('edit-prof-email').value.trim();
+      const senha        = document.getElementById('edit-prof-senha').value;
+      const inst_id      = document.getElementById('edit-prof-inst').value || null;
+      const is_admin     = document.getElementById('edit-prof-admin').checked;
+      const is_responsavel = document.getElementById('edit-prof-responsavel').checked;
+      const erro         = document.getElementById('edit-prof-erro');
+      erro.classList.add('hidden');
+
+      if (!nome)  { erro.textContent = 'Nome obrigatório.';    erro.classList.remove('hidden'); return; }
+      if (!email) { erro.textContent = 'E-mail obrigatório.';  erro.classList.remove('hidden'); return; }
+      if (senha && senha.length < 6) {
+        erro.textContent = 'Senha deve ter ao menos 6 caracteres.';
+        erro.classList.remove('hidden');
+        return;
+      }
+
+      const payload = { id, nome, email, is_responsavel };
+      if (senha)    payload.senha          = senha;
+      if (!_isResponsavel) {
+        payload.instituicao_id = inst_id ? parseInt(inst_id) : null;
+        payload.is_admin       = is_admin;
+      }
+
+      const d = await apiAuth('professores.php', {
+        method: 'PATCH', body: JSON.stringify(payload),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      fecharModal('modal-editar-prof');
+      await carregarProfessores();
     }
 
     // ── EDITAR INSTITUIÇÃO ────────────────────
