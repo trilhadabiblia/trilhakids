@@ -52,6 +52,22 @@ document.addEventListener("DOMContentLoaded", async () => {
       document.body.appendChild(perfilScript);
     }
 
+    // Injeta livros.js → acesso.js (guard de acesso progressivo)
+    if (!document.getElementById('livros-canonicos')) {
+      const livrosScript = document.createElement('script');
+      livrosScript.id  = 'livros-canonicos';
+      livrosScript.src = '/livros.js';
+      livrosScript.onload = function () {
+        if (!document.getElementById('acesso-sistema')) {
+          const acessoScript = document.createElement('script');
+          acessoScript.id  = 'acesso-sistema';
+          acessoScript.src = '/acesso.js';
+          document.body.appendChild(acessoScript);
+        }
+      };
+      document.body.appendChild(livrosScript);
+    }
+
     // ── PWA: manifest + favicons + meta tags ─
     if (!document.querySelector('link[rel="manifest"]')) {
       const links = [
