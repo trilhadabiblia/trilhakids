@@ -1275,7 +1275,7 @@
 
     // ── ALUNOS ───────────────────────────────
     async function carregarAlunos(turma_id = '') {
-      const url = turma_id ? `perfis.php?turma_id=${turma_id}` : 'perfis.php';
+      const url = turma_id ? `perfis.php?turma_id=${turma_id}` : 'perfis.php?admin=1';
       const d   = await apiAuth(url);
       if (!d.ok) return;
       _alunos = d.dados;
