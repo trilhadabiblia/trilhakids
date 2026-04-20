@@ -16,14 +16,26 @@ autenticar();
 
 if ($method === 'GET') {
     $turma_id = (int)($_GET['turma_id'] ?? 0);
-    $mes      = preg_match('/^\d{4}-\d{2}$/', $_GET['mes'] ?? '') ? $_GET['mes'] : date('Y-m');
-
     if (!$turma_id) responder(false, null, 'turma_id obrigatório.', 422);
+
+    // Modo livros: retorna todos os livros agendados da turma sem filtro de mês
+    if (isset($_GET['apenas_livros'])) {
+        $stmt = $db->prepare("
+            SELECT c.id, c.data, c.livro_ordem
+            FROM calendario_turmas c
+            WHERE c.turma_id = ? AND c.livro_ordem IS NOT NULL
+            ORDER BY c.data ASC, c.id ASC
+        ");
+        $stmt->execute([$turma_id]);
+        responder(true, $stmt->fetchAll());
+    }
+
+    $mes = preg_match('/^\d{4}-\d{2}$/', $_GET['mes'] ?? '') ? $_GET['mes'] : date('Y-m');
 
     $stmt = $db->prepare("
         SELECT c.id, c.data, c.hora_inicio, c.hora_fim, c.observacao,
                pr.id AS professor_id, pr.nome AS professor_nome,
-               tp.papel
+               tp.papel, c.livro_ordem
         FROM calendario_turmas c
         JOIN professores pr ON pr.id = c.professor_id
         LEFT JOIN turma_professores tp ON tp.turma_id = c.turma_id AND tp.professor_id = c.professor_id
@@ -56,6 +68,17 @@ if ($method === 'POST') {
         $hora_inicio ?: null, $hora_fim ?: null, $observacao ?: null,
     ]);
     responder(true, ['id' => (int)$db->lastInsertId()], status: 201);
+}
+
+if ($method === 'PATCH') {
+    $b    = body();
+    $id   = (int)($b['id'] ?? 0);
+    $data = $b['data'] ?? '';
+    if (!$id)   responder(false, null, 'ID obrigatório.', 422);
+    if (!$data) responder(false, null, 'data obrigatória.', 422);
+
+    $db->prepare("UPDATE calendario_turmas SET data = ? WHERE id = ?")->execute([$data, $id]);
+    responder(true, ['id' => $id]);
 }
 
 if ($method === 'DELETE') {

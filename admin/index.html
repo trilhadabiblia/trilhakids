@@ -647,6 +647,47 @@
     </div>
   </div>
 
+  <!-- ═══ MODAL: Livros da Turma ══════════ -->
+  <div id="modal-livros" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-indigo-500/40 rounded-3xl p-6 w-full max-w-lg shadow-2xl max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between mb-4 flex-shrink-0">
+        <div>
+          <h3 class="text-xl font-black text-white">📚 Livros</h3>
+          <p class="text-indigo-300 text-sm" id="livros-turma-nome"></p>
+        </div>
+        <button onclick="fecharModal('modal-livros')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+
+      <p class="text-gray-500 text-xs mb-3 flex-shrink-0">Arraste para reordenar. A data de acesso é trocada entre os itens.</p>
+
+      <!-- Lista drag-and-drop -->
+      <div id="livros-lista" class="flex-1 overflow-y-auto space-y-2 mb-4 min-h-[100px]"></div>
+
+      <!-- Formulário de adição -->
+      <div class="border-t border-slate-700 pt-4 flex-shrink-0">
+        <div class="mb-2">
+          <select id="livros-sel"
+            class="w-full bg-slate-700 border border-indigo-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none">
+            <option value="">— Selecione um livro —</option>
+          </select>
+        </div>
+        <div class="flex gap-2 items-center flex-wrap">
+          <input type="date" id="livros-data"
+            class="bg-slate-700 border border-indigo-500/30 text-white rounded-xl px-3 py-2 text-sm outline-none" />
+          <button onclick="adicionarLivroComData()"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all">
+            + Com data
+          </button>
+          <button onclick="adicionarLivroAgora()"
+            class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-xl font-bold text-sm transition-all">
+            ⚡ Liberar agora
+          </button>
+        </div>
+        <p id="livros-erro" class="text-red-400 text-sm mt-2 hidden"></p>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ MODAL: Calendário da Turma ══════════ -->
   <div id="modal-calendario" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
     <div class="bg-slate-800 border border-green-500/40 rounded-3xl p-6 w-full max-w-2xl shadow-2xl max-h-[90vh] flex flex-col">
@@ -770,6 +811,10 @@
     let _alunos       = [];
 
     // Estado dos modais de turma
+    let _livrosTurmaId   = 0;
+    let _livrosTurmaNome = '';
+    let _livrosData      = [];
+    let _dragSrcIdx      = null;
     let _equipeTurmaId   = 0;
     let _equipeTurmaNome = '';
     let _equipeProfs     = [];    // professores já vinculados à turma
@@ -1044,6 +1089,10 @@
                   class="text-xs bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   👩‍🏫 Equipe
                 </button>
+                <button onclick="abrirLivrosTurma(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
+                  class="text-xs bg-indigo-600/30 hover:bg-indigo-600/60 text-indigo-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  📚 Livros
+                </button>
                 <button onclick="abrirCalendario(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
                   class="text-xs bg-green-600/30 hover:bg-green-600/60 text-green-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   📅 Calendário
@@ -1165,6 +1214,141 @@
       if (!d.ok) { alert(d.erro); return; }
       await carregarEquipe();
       await carregarTurmas();
+    }
+
+    // ── LIVROS DA TURMA ─────────────────────
+    async function abrirLivrosTurma(turmaId, turmaNome) {
+      _livrosTurmaId   = turmaId;
+      _livrosTurmaNome = turmaNome;
+      document.getElementById('livros-turma-nome').textContent = turmaNome;
+      document.getElementById('livros-erro').classList.add('hidden');
+      document.getElementById('livros-data').value = new Date().toISOString().split('T')[0];
+
+      const sel = document.getElementById('livros-sel');
+      sel.innerHTML = '<option value="">— Selecione um livro —</option>';
+      if (window.LIVROS_CANONICOS) {
+        window.LIVROS_CANONICOS.forEach(l => {
+          const opt = document.createElement('option');
+          opt.value = l.ordem;
+          opt.textContent = `${l.ordem}. ${l.nome}`;
+          sel.appendChild(opt);
+        });
+      }
+
+      document.getElementById('modal-livros').classList.remove('hidden');
+      await carregarLivrosTurma();
+    }
+
+    async function carregarLivrosTurma() {
+      const d = await apiAuth(`calendario.php?turma_id=${_livrosTurmaId}&apenas_livros=1`);
+      _livrosData = d.ok ? d.dados : [];
+      renderLivrosTurma();
+    }
+
+    function renderLivrosTurma() {
+      const el  = document.getElementById('livros-lista');
+      const hoje = new Date().toISOString().split('T')[0];
+
+      if (_livrosData.length === 0) {
+        el.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">Nenhum livro liberado ainda.</p>';
+        return;
+      }
+
+      el.innerHTML = _livrosData.map((item, idx) => {
+        const dt      = new Date(item.data + 'T12:00:00');
+        const dataFmt = dt.toLocaleDateString('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric' });
+        const liberado = item.data <= hoje;
+        const livroNome = window.LIVROS_CANONICOS
+          ? (window.LIVROS_CANONICOS.find(l => l.ordem === item.livro_ordem)?.nome ?? `Livro ${item.livro_ordem}`)
+          : `Livro ${item.livro_ordem}`;
+        const badge = liberado
+          ? `<span class="text-xs bg-green-600/30 text-green-300 px-1.5 py-0.5 rounded-full flex-shrink-0">✓ Liberado</span>`
+          : `<span class="text-xs bg-yellow-600/30 text-yellow-300 px-1.5 py-0.5 rounded-full flex-shrink-0">⏳ ${dataFmt}</span>`;
+
+        return `<div class="flex items-center gap-2 bg-slate-700/50 hover:bg-slate-700/80 rounded-xl px-3 py-2.5 cursor-grab select-none transition-colors"
+                     draggable="true"
+                     ondragstart="livrosDragStart(event,${idx})"
+                     ondragover="livrosDragOver(event)"
+                     ondrop="livrosDrop(event,${idx})"
+                     ondragend="livrosDragEnd(event)">
+          <span class="text-gray-600 text-xs font-mono w-5 text-center flex-shrink-0">${idx + 1}</span>
+          <span class="text-gray-400 text-base flex-shrink-0" title="Arraste para reordenar">⠿</span>
+          <span class="text-white font-bold text-sm flex-1 min-w-0 truncate">${livroNome}</span>
+          ${badge}
+          <button onclick="removerLivroTurma(${item.id})"
+            class="text-red-400 hover:text-red-300 text-sm transition-colors flex-shrink-0 ml-1" title="Remover">✕</button>
+        </div>`;
+      }).join('');
+    }
+
+    function livrosDragStart(e, idx) {
+      _dragSrcIdx = idx;
+      e.currentTarget.style.opacity = '0.4';
+      e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function livrosDragOver(e) {
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+    }
+
+    function livrosDragEnd(e) {
+      e.currentTarget.style.opacity = '';
+    }
+
+    async function livrosDrop(e, targetIdx) {
+      e.preventDefault();
+      if (_dragSrcIdx === null || _dragSrcIdx === targetIdx) { _dragSrcIdx = null; return; }
+
+      const src = _livrosData[_dragSrcIdx];
+      const tgt = _livrosData[targetIdx];
+      _dragSrcIdx = null;
+
+      await Promise.all([
+        apiAuth('calendario.php', { method: 'PATCH', body: JSON.stringify({ id: src.id, data: tgt.data }) }),
+        apiAuth('calendario.php', { method: 'PATCH', body: JSON.stringify({ id: tgt.id, data: src.data }) }),
+      ]);
+      await carregarLivrosTurma();
+    }
+
+    async function adicionarLivroComData() {
+      const dataVal  = document.getElementById('livros-data').value;
+      const erro     = document.getElementById('livros-erro');
+      erro.classList.add('hidden');
+      if (!dataVal) { erro.textContent = 'Informe a data.'; erro.classList.remove('hidden'); return; }
+      await _salvarLivroTurma(dataVal);
+    }
+
+    async function adicionarLivroAgora() {
+      await _salvarLivroTurma(new Date().toISOString().split('T')[0]);
+    }
+
+    async function _salvarLivroTurma(data) {
+      const ordemVal = document.getElementById('livros-sel').value;
+      const erro     = document.getElementById('livros-erro');
+      erro.classList.add('hidden');
+      if (!ordemVal) { erro.textContent = 'Selecione um livro.'; erro.classList.remove('hidden'); return; }
+
+      const d = await apiAuth('calendario.php', {
+        method: 'POST',
+        body: JSON.stringify({
+          turma_id:    _livrosTurmaId,
+          professor_id: prof.id,
+          data,
+          livro_ordem: parseInt(ordemVal),
+        }),
+      });
+      if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
+
+      document.getElementById('livros-sel').value = '';
+      await carregarLivrosTurma();
+    }
+
+    async function removerLivroTurma(id) {
+      if (!confirm('Remover este livro da turma?')) return;
+      const d = await apiAuth('calendario.php', { method: 'DELETE', body: JSON.stringify({ id }) });
+      if (!d.ok) { alert(d.erro); return; }
+      await carregarLivrosTurma();
     }
 
     // ── CALENDÁRIO DA TURMA ──────────────────
