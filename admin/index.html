@@ -1593,20 +1593,13 @@
       doc.text('Escaneie para entrar', qrX + qrSize / 2, y + H - 4, { align: 'center' });
     }
 
-    function _loadImgBase64(url) {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.onload = () => {
-          const canvas = document.createElement('canvas');
-          canvas.width  = img.naturalWidth;
-          canvas.height = img.naturalHeight;
-          canvas.getContext('2d').drawImage(img, 0, 0);
-          resolve(canvas.toDataURL('image/jpeg'));
-        };
-        img.onerror = reject;
-        img.src = url;
-      });
+    async function _loadImgBase64(url) {
+      // Extrai o path relativo: .../uploads/fotos/aluno/xxx.jpg → fotos/aluno/xxx.jpg
+      const m = url.match(/\/uploads\/(fotos\/(?:aluno|professor)\/[^?#]+)/i);
+      if (!m) throw new Error('URL de foto inválida');
+      const d = await apiAuth(`img.php?path=${encodeURIComponent(m[1])}`);
+      if (!d.ok) throw new Error(d.erro || 'Foto não encontrada');
+      return d.dados.b64;
     }
 
     function _placeholderFoto(doc, nome, x, y, w, h) {
