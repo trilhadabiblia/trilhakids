@@ -1624,11 +1624,23 @@
       payload.observacao  = observacao;
       payload.livro_ordem = livro_ordem;
 
+      btn.textContent = 'Salvando…';
+      btn.disabled = true;
+
       const d = await apiAuth('calendario.php', { method: 'PATCH', body: JSON.stringify(payload) });
-      if (!d.ok) { alert(d.erro); return; }
+      if (!d.ok) {
+        btn.textContent = 'Salvar';
+        btn.disabled = false;
+        alert(d.erro);
+        return;
+      }
+
+      btn.textContent = '✓ Salvo!';
+      btn.classList.replace('bg-blue-600', 'bg-green-600');
+      btn.classList.replace('hover:bg-blue-700', 'hover:bg-green-700');
 
       if (data) _calMes = data.slice(0, 7);
-      await carregarCalendario();
+      setTimeout(() => carregarCalendario(), 600);
     }
 
     async function salvarEscala() {
