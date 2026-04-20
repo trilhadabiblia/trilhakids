@@ -153,6 +153,26 @@
             <input type="checkbox" id="prof-responsavel-i" class="w-4 h-4 accent-blue-500" />
             <label for="prof-responsavel-i" class="text-sm text-gray-300">Responsável pela instituição</label>
           </div>
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-300 mb-1 block">Foto</label>
+            <div class="flex items-center gap-3">
+              <div class="w-14 h-14 rounded-full overflow-hidden bg-slate-600 flex items-center justify-center flex-shrink-0 border-2 border-slate-500">
+                <img id="prof-i-foto-img" class="hidden w-full h-full object-cover" />
+                <span id="prof-i-foto-ini" class="text-2xl">📷</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label class="cursor-pointer bg-slate-600 hover:bg-slate-500 text-white text-xs px-3 py-1.5 rounded-lg font-bold transition-all inline-block">
+                  Escolher foto
+                  <input type="file" accept="image/*" class="hidden"
+                    onchange="uploadFoto('professor', this, 'prof-i-foto-img', 'prof-i-foto-ini', 'prof-i-foto-url', 'prof-i-foto-remover')" />
+                </label>
+                <button type="button" id="prof-i-foto-remover"
+                  onclick="removerFoto('prof-i-foto-img','prof-i-foto-ini','prof-i-foto-url','prof-i-foto-remover')"
+                  class="hidden text-red-400 hover:text-red-300 text-xs text-left transition-colors">✕ Remover foto</button>
+              </div>
+              <input type="hidden" id="prof-i-foto-url" />
+            </div>
+          </div>
         </div>
         <div class="flex gap-3 mt-4">
           <button onclick="salvarProfessor()"
@@ -266,6 +286,26 @@
             <label class="text-sm text-gray-300 mb-1 block">E-mail do responsável</label>
             <input id="aluno-resp-email-i" type="email" placeholder="joao@email.com"
               class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="text-sm text-gray-300 mb-1 block">Foto do aluno</label>
+            <div class="flex items-center gap-3">
+              <div class="w-14 h-14 rounded-full overflow-hidden bg-slate-600 flex items-center justify-center flex-shrink-0 border-2 border-slate-500">
+                <img id="aluno-i-foto-img" class="hidden w-full h-full object-cover" />
+                <span id="aluno-i-foto-ini" class="text-2xl">📷</span>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <label class="cursor-pointer bg-slate-600 hover:bg-slate-500 text-white text-xs px-3 py-1.5 rounded-lg font-bold transition-all inline-block">
+                  Escolher foto
+                  <input type="file" accept="image/*" class="hidden"
+                    onchange="uploadFoto('aluno', this, 'aluno-i-foto-img', 'aluno-i-foto-ini', 'aluno-i-foto-url', 'aluno-i-foto-remover')" />
+                </label>
+                <button type="button" id="aluno-i-foto-remover"
+                  onclick="removerFoto('aluno-i-foto-img','aluno-i-foto-ini','aluno-i-foto-url','aluno-i-foto-remover')"
+                  class="hidden text-red-400 hover:text-red-300 text-xs text-left transition-colors">✕ Remover foto</button>
+              </div>
+              <input type="hidden" id="aluno-i-foto-url" />
+            </div>
           </div>
         </div>
         <p id="aluno-aviso-idade" class="hidden text-amber-400 text-sm mt-2 font-semibold"></p>
@@ -415,6 +455,26 @@
         <div class="flex items-center gap-3">
           <input type="checkbox" id="edit-prof-responsavel" class="w-4 h-4 accent-blue-500" />
           <label for="edit-prof-responsavel" class="text-sm text-gray-300">Responsável pela instituição</label>
+        </div>
+        <div class="md:col-span-2">
+          <label class="text-sm text-gray-300 mb-1 block">Foto</label>
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 rounded-full overflow-hidden bg-slate-600 flex items-center justify-center flex-shrink-0 border-2 border-slate-500">
+              <img id="edit-prof-foto-img" class="hidden w-full h-full object-cover" />
+              <span id="edit-prof-foto-ini" class="text-2xl">📷</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="cursor-pointer bg-slate-600 hover:bg-slate-500 text-white text-xs px-3 py-1.5 rounded-lg font-bold transition-all inline-block">
+                Trocar foto
+                <input type="file" accept="image/*" class="hidden"
+                  onchange="uploadFoto('professor', this, 'edit-prof-foto-img', 'edit-prof-foto-ini', 'edit-prof-foto-url', 'edit-prof-foto-remover')" />
+              </label>
+              <button type="button" id="edit-prof-foto-remover"
+                onclick="removerFoto('edit-prof-foto-img','edit-prof-foto-ini','edit-prof-foto-url','edit-prof-foto-remover')"
+                class="hidden text-red-400 hover:text-red-300 text-xs text-left transition-colors">✕ Remover foto</button>
+            </div>
+            <input type="hidden" id="edit-prof-foto-url" />
+          </div>
         </div>
       </div>
       <p id="edit-prof-erro" class="text-red-400 text-sm mt-3 hidden"></p>
@@ -572,6 +632,26 @@
           <label class="text-sm text-gray-300 mb-1 block">E-mail do responsável</label>
           <input id="edit-aluno-resp-email" type="email" placeholder="joao@email.com"
             class="w-full bg-slate-700 border border-purple-500/30 text-white rounded-xl px-4 py-3 outline-none focus:border-purple-400 text-sm" />
+        </div>
+        <div class="md:col-span-2">
+          <label class="text-sm text-gray-300 mb-1 block">Foto do aluno</label>
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 rounded-full overflow-hidden bg-slate-600 flex items-center justify-center flex-shrink-0 border-2 border-slate-500">
+              <img id="edit-aluno-foto-img" class="hidden w-full h-full object-cover" />
+              <span id="edit-aluno-foto-ini" class="text-2xl">📷</span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label class="cursor-pointer bg-slate-600 hover:bg-slate-500 text-white text-xs px-3 py-1.5 rounded-lg font-bold transition-all inline-block">
+                Trocar foto
+                <input type="file" accept="image/*" class="hidden"
+                  onchange="uploadFoto('aluno', this, 'edit-aluno-foto-img', 'edit-aluno-foto-ini', 'edit-aluno-foto-url', 'edit-aluno-foto-remover')" />
+              </label>
+              <button type="button" id="edit-aluno-foto-remover"
+                onclick="removerFoto('edit-aluno-foto-img','edit-aluno-foto-ini','edit-aluno-foto-url','edit-aluno-foto-remover')"
+                class="hidden text-red-400 hover:text-red-300 text-xs text-left transition-colors">✕ Remover foto</button>
+            </div>
+            <input type="hidden" id="edit-aluno-foto-url" />
+          </div>
         </div>
       </div>
       <p id="edit-aluno-aviso-idade" class="hidden text-amber-400 text-sm mt-2 font-semibold"></p>
@@ -1048,9 +1128,15 @@
       const el = document.getElementById('lista-professores');
       el.innerHTML = _professores.length === 0
         ? '<p class="text-gray-500">Nenhum professor cadastrado.</p>'
-        : _professores.map(p => `
+        : _professores.map(p => {
+          const avatar = p.foto_url
+            ? `<img src="${p.foto_url}" class="w-11 h-11 rounded-full object-cover flex-shrink-0 border-2 border-purple-500/40" />`
+            : `<div class="w-11 h-11 rounded-full bg-purple-600/40 flex items-center justify-center text-sm font-black text-white flex-shrink-0">${p.nome[0]}</div>`;
+          return `
           <div class="bg-slate-800/70 border border-purple-500/20 rounded-2xl p-5 flex items-center justify-between gap-4">
-            <div>
+            <div class="flex items-center gap-3 min-w-0">
+              ${avatar}
+              <div class="min-w-0">
               <p class="font-black text-white">${p.nome}
                 ${p.is_admin       ? '<span class="text-xs bg-purple-600/40 text-purple-300 px-2 py-0.5 rounded-full ml-1">admin</span>' : ''}
                 ${p.is_responsavel ? '<span class="text-xs bg-blue-600/40 text-blue-300 px-2 py-0.5 rounded-full ml-1">responsável</span>' : ''}
@@ -1058,6 +1144,7 @@
               </p>
               <p class="text-gray-400 text-sm">${p.email}</p>
               <p class="text-purple-300 text-xs">${p.instituicao || '—'} · ${p.total_turmas} turma(s)</p>
+              </div>
             </div>
             <div class="flex gap-2 flex-shrink-0">
               <button onclick="abrirEditarProfessor(${JSON.stringify(p).replace(/"/g,'&quot;')})"
@@ -1070,7 +1157,8 @@
                 ${p.ativo ? 'Desativar' : 'Ativar'}
               </button>
             </div>
-          </div>`).join('');
+          </div>`;
+        }).join('');
     }
 
     async function salvarProfessor() {
@@ -1083,15 +1171,17 @@
       const erro           = document.getElementById('prof-erro');
       erro.classList.add('hidden');
 
+      const foto_url = document.getElementById('prof-i-foto-url').value || null;
       const d = await apiAuth('professores.php', {
         method: 'POST',
-        body: JSON.stringify({ nome, email, senha, instituicao_id: inst_id, is_admin, is_responsavel }),
+        body: JSON.stringify({ nome, email, senha, instituicao_id: inst_id, is_admin, is_responsavel, foto_url }),
       });
       if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
 
       ['prof-nome-i','prof-email-i','prof-senha-i'].forEach(id => document.getElementById(id).value = '');
       document.getElementById('prof-admin-i').checked       = false;
       document.getElementById('prof-responsavel-i').checked = false;
+      removerFoto('prof-i-foto-img','prof-i-foto-ini','prof-i-foto-url','prof-i-foto-remover');
       toggleForm('form-professor');
       await carregarProfessores();
     }
@@ -1277,6 +1367,62 @@
       await carregarTurmas();
     }
 
+    // ── UPLOAD DE FOTO ──────────────────────
+    async function uploadFoto(tipo, input, imgId, iniId, urlId, removerId) {
+      const file = input.files[0];
+      if (!file) return;
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('tipo', tipo);
+      const token = Auth.getToken();
+      let data;
+      try {
+        const res = await fetch(`${PROF_API}/upload.php`, {
+          method: 'POST',
+          headers: token ? { Authorization: `Bearer ${token}` } : {},
+          body: formData,
+        });
+        data = await res.json();
+      } catch (_) {
+        alert('Erro de conexão ao enviar foto.');
+        return;
+      }
+      if (!data.ok) { alert('Erro no upload: ' + data.erro); return; }
+      const url = data.dados.url;
+      document.getElementById(urlId).value = url;
+      const img = document.getElementById(imgId);
+      img.src = url;
+      img.classList.remove('hidden');
+      document.getElementById(iniId).classList.add('hidden');
+      document.getElementById(removerId)?.classList.remove('hidden');
+      input.value = '';
+    }
+
+    function removerFoto(imgId, iniId, urlId, removerId) {
+      document.getElementById(urlId).value = '';
+      const img = document.getElementById(imgId);
+      img.src = '';
+      img.classList.add('hidden');
+      document.getElementById(iniId).classList.remove('hidden');
+      document.getElementById(removerId)?.classList.add('hidden');
+    }
+
+    function _setFotoWidget(imgId, iniId, urlId, removerId, url) {
+      document.getElementById(urlId).value = url || '';
+      const img = document.getElementById(imgId);
+      if (url) {
+        img.src = url;
+        img.classList.remove('hidden');
+        document.getElementById(iniId).classList.add('hidden');
+        document.getElementById(removerId)?.classList.remove('hidden');
+      } else {
+        img.src = '';
+        img.classList.add('hidden');
+        document.getElementById(iniId).classList.remove('hidden');
+        document.getElementById(removerId)?.classList.add('hidden');
+      }
+    }
+
     // ── CRACHÁS ─────────────────────────────
     async function abrirCrachas(turmaId, turmaNome) {
       _crachasTurmaId   = turmaId;
@@ -1398,7 +1544,16 @@
       doc.text('TRILHO KIDS', x + W / 2, y + 6.5, { align: 'center' });
 
       // Foto / placeholder
-      _placeholderFoto(doc, aluno.nome, x + 5, y + 13, 22, 32);
+      if (aluno.foto_url) {
+        try {
+          const imgData = await _loadImgBase64(aluno.foto_url);
+          doc.addImage(imgData, 'JPEG', x + 5, y + 13, 22, 32);
+        } catch (_) {
+          _placeholderFoto(doc, aluno.nome, x + 5, y + 13, 22, 32);
+        }
+      } else {
+        _placeholderFoto(doc, aluno.nome, x + 5, y + 13, 22, 32);
+      }
 
       // Nome
       doc.setFont('helvetica', 'bold');
@@ -1436,6 +1591,22 @@
       doc.setFontSize(5);
       doc.setTextColor(100, 116, 139);
       doc.text('Escaneie para entrar', qrX + qrSize / 2, y + H - 4, { align: 'center' });
+    }
+
+    function _loadImgBase64(url) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => {
+          const canvas = document.createElement('canvas');
+          canvas.width  = img.naturalWidth;
+          canvas.height = img.naturalHeight;
+          canvas.getContext('2d').drawImage(img, 0, 0);
+          resolve(canvas.toDataURL('image/jpeg'));
+        };
+        img.onerror = reject;
+        img.src = url;
+      });
     }
 
     function _placeholderFoto(doc, nome, x, y, w, h) {
@@ -1928,10 +2099,19 @@
           ? `<span class="text-gray-400 text-xs">${a.nome_responsavel}${nascFormatado ? ' · ' + nascFormatado : ''}</span>`
           : `<span class="text-gray-600 text-xs">${nascFormatado || '—'}</span>`;
 
+        const avatar = a.foto_url
+          ? `<img src="${a.foto_url}" class="w-8 h-8 rounded-full object-cover inline-block border border-purple-500/30" />`
+          : `<div class="w-8 h-8 rounded-full bg-purple-600/40 inline-flex items-center justify-center text-xs font-black text-white">${a.nome[0]}</div>`;
+
         const tr = document.createElement('tr');
         tr.className = 'border-b border-purple-500/10 hover:bg-purple-500/5 transition-colors';
         tr.innerHTML = `
-          <td class="py-3 px-4 font-bold text-white">${a.nome}</td>
+          <td class="py-3 px-4">
+            <div class="flex items-center gap-2">
+              ${avatar}
+              <span class="font-bold text-white">${a.nome}</span>
+            </div>
+          </td>
           <td class="py-3 px-4 text-gray-400 text-sm">${turma}</td>
           <td class="py-3 px-4 hidden md:table-cell">${respInfo}</td>
           <td class="py-3 px-4 text-center text-yellow-300 font-bold">${a.pontos ?? 0}</td>
@@ -1975,10 +2155,11 @@
       erro.classList.add('hidden');
       if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
 
+      const foto_url = document.getElementById('aluno-i-foto-url').value || null;
       const d = await apiAuth('perfis.php', {
         method: 'POST', body: JSON.stringify({
           nome, turma_id, data_nascimento,
-          nome_responsavel, telefone_responsavel, email_responsavel,
+          nome_responsavel, telefone_responsavel, email_responsavel, foto_url,
         }),
       });
       if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
@@ -2092,6 +2273,7 @@
       document.getElementById('edit-prof-admin').checked     = !!p.is_admin;
       document.getElementById('edit-prof-responsavel').checked = !!p.is_responsavel;
       document.getElementById('edit-prof-erro').classList.add('hidden');
+      _setFotoWidget('edit-prof-foto-img','edit-prof-foto-ini','edit-prof-foto-url','edit-prof-foto-remover', p.foto_url);
 
       // Responsável não pode alterar a instituição nem promover admins
       const wrapInst  = document.getElementById('wrap-edit-prof-inst');
@@ -2126,7 +2308,8 @@
         return;
       }
 
-      const payload = { id, nome, email, is_responsavel };
+      const foto_url = document.getElementById('edit-prof-foto-url').value || null;
+      const payload = { id, nome, email, is_responsavel, foto_url };
       if (senha)    payload.senha          = senha;
       if (!_isResponsavel) {
         payload.instituicao_id = inst_id ? parseInt(inst_id) : null;
@@ -2236,6 +2419,7 @@
       document.getElementById('edit-aluno-resp-email').value  = a.email_responsavel    || '';
       document.getElementById('edit-aluno-aviso-idade').classList.add('hidden');
       document.getElementById('edit-aluno-erro').classList.add('hidden');
+      _setFotoWidget('edit-aluno-foto-img','edit-aluno-foto-ini','edit-aluno-foto-url','edit-aluno-foto-remover', a.foto_url);
       document.getElementById('modal-editar-aluno').classList.remove('hidden');
     }
 
@@ -2252,10 +2436,11 @@
 
       if (!nome) { erro.textContent = 'Nome obrigatório.'; erro.classList.remove('hidden'); return; }
 
+      const foto_url = document.getElementById('edit-aluno-foto-url').value || null;
       const d = await apiAuth('perfis.php', {
         method: 'PUT', body: JSON.stringify({
           id, nome, turma_id, data_nascimento,
-          nome_responsavel, telefone_responsavel, email_responsavel,
+          nome_responsavel, telefone_responsavel, email_responsavel, foto_url,
         }),
       });
       if (!d.ok) { erro.textContent = d.erro; erro.classList.remove('hidden'); return; }
