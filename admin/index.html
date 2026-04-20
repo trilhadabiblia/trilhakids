@@ -647,6 +647,44 @@
     </div>
   </div>
 
+  <!-- ═══ MODAL: Crachás da Turma ══════════ -->
+  <div id="modal-crachas" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-pink-500/40 rounded-3xl p-6 w-full max-w-md shadow-2xl max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between mb-4 flex-shrink-0">
+        <div>
+          <h3 class="text-xl font-black text-white">🪪 Crachás</h3>
+          <p class="text-pink-300 text-sm" id="crachas-turma-nome"></p>
+        </div>
+        <button onclick="fecharModal('modal-crachas')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+
+      <!-- Selecionar todos -->
+      <div class="flex items-center gap-3 mb-3 pb-3 border-b border-slate-700 flex-shrink-0">
+        <label class="flex items-center gap-2 cursor-pointer select-none">
+          <input type="checkbox" id="cb-todos" onchange="toggleTodosCrachas(this.checked)"
+            class="w-4 h-4 rounded accent-pink-500" />
+          <span class="text-white font-bold text-sm">Selecionar todos</span>
+        </label>
+        <span id="crachas-contagem" class="text-gray-400 text-xs ml-auto"></span>
+      </div>
+
+      <!-- Lista de alunos -->
+      <div id="crachas-lista" class="flex-1 overflow-y-auto space-y-0.5 mb-4 min-h-[100px]"></div>
+
+      <!-- Ações -->
+      <div class="border-t border-slate-700 pt-4 flex gap-3 flex-shrink-0">
+        <button onclick="gerarPDFCrachas()" id="btn-gerar-pdf"
+          class="flex-1 bg-pink-600 hover:bg-pink-700 text-white py-2.5 rounded-xl font-bold text-sm transition-all">
+          📄 Gerar PDF
+        </button>
+        <button onclick="fecharModal('modal-crachas')"
+          class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all">
+          Fechar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ MODAL: Livros da Turma ══════════ -->
   <div id="modal-livros" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
     <div class="bg-slate-800 border border-indigo-500/40 rounded-3xl p-6 w-full max-w-lg shadow-2xl max-h-[90vh] flex flex-col">
@@ -789,6 +827,7 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
   <script src="/livros.js"></script>
   <script src="/professor/auth.js"></script>
   <script>
@@ -823,6 +862,9 @@
     let _alunos       = [];
 
     // Estado dos modais de turma
+    let _crachasTurmaId   = 0;
+    let _crachasTurmaNome = '';
+    let _crachasAlunos    = [];
     let _livrosTurmaId   = 0;
     let _livrosTurmaNome = '';
     let _livrosData      = [];
@@ -1104,6 +1146,10 @@
                   class="text-xs bg-blue-600/30 hover:bg-blue-600/60 text-blue-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   👩‍🏫 Equipe
                 </button>
+                <button onclick="abrirCrachas(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
+                  class="text-xs bg-pink-600/30 hover:bg-pink-600/60 text-pink-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  🪪 Crachás
+                </button>
                 <button onclick="abrirLivrosTurma(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
                   class="text-xs bg-indigo-600/30 hover:bg-indigo-600/60 text-indigo-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   📚 Livros
@@ -1229,6 +1275,184 @@
       if (!d.ok) { alert(d.erro); return; }
       await carregarEquipe();
       await carregarTurmas();
+    }
+
+    // ── CRACHÁS ─────────────────────────────
+    async function abrirCrachas(turmaId, turmaNome) {
+      _crachasTurmaId   = turmaId;
+      _crachasTurmaNome = turmaNome;
+      document.getElementById('crachas-turma-nome').textContent = turmaNome;
+      document.getElementById('modal-crachas').classList.remove('hidden');
+      const btn = document.getElementById('btn-gerar-pdf');
+      btn.textContent = '📄 Gerar PDF';
+      btn.disabled = false;
+      btn.className = 'flex-1 bg-pink-600 hover:bg-pink-700 text-white py-2.5 rounded-xl font-bold text-sm transition-all';
+
+      const d = await apiAuth(`perfis.php?turma_id=${turmaId}`);
+      _crachasAlunos = d.ok ? d.dados : [];
+      renderListaCrachas();
+    }
+
+    function renderListaCrachas() {
+      const el = document.getElementById('crachas-lista');
+      if (_crachasAlunos.length === 0) {
+        el.innerHTML = '<p class="text-gray-500 text-sm text-center py-6">Nenhum aluno nesta turma.</p>';
+        document.getElementById('crachas-contagem').textContent = '';
+        return;
+      }
+      el.innerHTML = _crachasAlunos.map((a, i) => `
+        <label class="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-700/50 cursor-pointer select-none transition-colors">
+          <input type="checkbox" id="cb-aluno-${i}" checked onchange="atualizarContagemCrachas()"
+            class="w-4 h-4 rounded accent-pink-500 flex-shrink-0" />
+          <span class="text-white text-sm font-semibold flex-1">${a.nome}</span>
+          <span class="text-yellow-300 text-xs">${a.pontos ?? 0} pts</span>
+        </label>`).join('');
+      document.getElementById('cb-todos').checked = true;
+      document.getElementById('cb-todos').indeterminate = false;
+      atualizarContagemCrachas();
+    }
+
+    function toggleTodosCrachas(checked) {
+      _crachasAlunos.forEach((_, i) => {
+        const cb = document.getElementById(`cb-aluno-${i}`);
+        if (cb) cb.checked = checked;
+      });
+      atualizarContagemCrachas();
+    }
+
+    function atualizarContagemCrachas() {
+      const total = _crachasAlunos.length;
+      const sel   = _crachasAlunos.filter((_, i) => document.getElementById(`cb-aluno-${i}`)?.checked).length;
+      document.getElementById('crachas-contagem').textContent = `${sel} de ${total}`;
+      const cbTodos = document.getElementById('cb-todos');
+      cbTodos.checked       = sel === total;
+      cbTodos.indeterminate = sel > 0 && sel < total;
+    }
+
+    async function gerarPDFCrachas() {
+      const selecionados = _crachasAlunos.filter((_, i) => document.getElementById(`cb-aluno-${i}`)?.checked);
+      if (selecionados.length === 0) { alert('Selecione ao menos um aluno.'); return; }
+
+      const btn = document.getElementById('btn-gerar-pdf');
+      btn.textContent = '⏳ Gerando…';
+      btn.disabled    = true;
+
+      try {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+
+        // Layout: 2 crachás por linha × 4 por página, separados por 3mm
+        const bW = 100, bH = 70, gap = 3, cols = 2, rows = 4;
+        const mX = (210 - cols * bW - (cols - 1) * gap) / 2;
+        const mY = (297 - rows * bH - (rows - 1) * gap) / 2;
+
+        const turma    = _turmas.find(t => t.id === _crachasTurmaId);
+        const inst     = turma ? _instituicoes.find(i => i.id === turma.instituicao_id) : null;
+        const instNome = inst?.nome  || '';
+        const tNome    = turma?.nome || _crachasTurmaNome;
+
+        for (let i = 0; i < selecionados.length; i++) {
+          const col = i % cols;
+          const row = Math.floor(i / cols) % rows;
+          if (i > 0 && col === 0 && row === 0) doc.addPage();
+          const x = mX + col * (bW + gap);
+          const y = mY + row * (bH + gap);
+          await _desenharCracha(doc, selecionados[i], x, y, instNome, tNome);
+        }
+
+        const slug = _crachasTurmaNome.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
+        doc.save(`crachas-${slug}.pdf`);
+
+        btn.textContent = '✓ PDF gerado!';
+        btn.className   = 'flex-1 bg-green-600 hover:bg-green-700 text-white py-2.5 rounded-xl font-bold text-sm transition-all';
+        setTimeout(() => {
+          btn.textContent = '📄 Gerar PDF';
+          btn.className   = 'flex-1 bg-pink-600 hover:bg-pink-700 text-white py-2.5 rounded-xl font-bold text-sm transition-all';
+          btn.disabled    = false;
+        }, 2500);
+      } catch (err) {
+        console.error('Erro ao gerar PDF:', err);
+        alert('Erro ao gerar PDF. Verifique o console.');
+        btn.textContent = '📄 Gerar PDF';
+        btn.disabled    = false;
+      }
+    }
+
+    async function _desenharCracha(doc, aluno, x, y, instNome, turmaNome) {
+      const W = 100, H = 70;
+
+      // Fundo escuro com borda roxa
+      doc.setFillColor(15, 23, 42);
+      doc.setDrawColor(124, 58, 237);
+      doc.setLineWidth(0.4);
+      doc.roundedRect(x, y, W, H, 2.5, 2.5, 'FD');
+
+      // Barra superior roxa
+      doc.setFillColor(109, 40, 217);
+      doc.roundedRect(x, y, W, 9.5, 2.5, 2.5, 'F');
+      doc.rect(x, y + 5, W, 4.5, 'F'); // retifica canto inferior da barra
+
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(6.5);
+      doc.setTextColor(255, 255, 255);
+      doc.text('TRILHO KIDS', x + W / 2, y + 6.5, { align: 'center' });
+
+      // Foto / placeholder
+      _placeholderFoto(doc, aluno.nome, x + 5, y + 13, 22, 32);
+
+      // Nome
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(9.5);
+      doc.setTextColor(255, 255, 255);
+      const nomeLinhas = doc.splitTextToSize(aluno.nome, 60);
+      doc.text(nomeLinhas.slice(0, 2), x + 31, y + 21);
+
+      // Instituição
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(7);
+      doc.setTextColor(167, 139, 250);
+      doc.text(doc.splitTextToSize(instNome, 60)[0] || '', x + 31, y + 30);
+
+      // Turma
+      doc.setTextColor(148, 163, 184);
+      doc.text(turmaNome, x + 31, y + 37);
+
+      // Linha divisória
+      doc.setDrawColor(55, 65, 81);
+      doc.setLineWidth(0.2);
+      doc.line(x + 5, y + H - 11, x + W - 5, y + H - 11);
+
+      // QR Code
+      const qrUrl  = `${location.origin}/entrar#token=${aluno.token_qr}`;
+      const qrData = await QRCode.toDataURL(qrUrl, { width: 128, margin: 1 });
+      const qrSize = 22;
+      const qrX    = x + W - qrSize - 5;
+      const qrY    = y + H - qrSize - 12;
+      doc.setFillColor(255, 255, 255);
+      doc.roundedRect(qrX - 1, qrY - 1, qrSize + 2, qrSize + 2, 1, 1, 'F');
+      doc.addImage(qrData, 'PNG', qrX, qrY, qrSize, qrSize);
+
+      // Legenda QR
+      doc.setFontSize(5);
+      doc.setTextColor(100, 116, 139);
+      doc.text('Escaneie para entrar', qrX + qrSize / 2, y + H - 4, { align: 'center' });
+    }
+
+    function _placeholderFoto(doc, nome, x, y, w, h) {
+      const paleta = [
+        [124,58,237],[16,185,129],[245,158,11],
+        [239,68,68], [59,130,246],[236,72,153],
+        [20,184,166],[249,115,22],
+      ];
+      const cor = paleta[nome.charCodeAt(0) % paleta.length];
+      doc.setFillColor(...cor);
+      doc.roundedRect(x, y, w, h, 2, 2, 'F');
+
+      const iniciais = nome.trim().split(/\s+/).slice(0, 2).map(n => n[0]?.toUpperCase() ?? '').join('');
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(13);
+      doc.setTextColor(255, 255, 255);
+      doc.text(iniciais, x + w / 2, y + h / 2 + 2.5, { align: 'center' });
     }
 
     // ── LIVROS DA TURMA ─────────────────────
