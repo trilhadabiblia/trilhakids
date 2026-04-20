@@ -1,28 +1,28 @@
 <?php
-// ============================================
+// ================================================
 // INSTITUIÇÕES — TRILHO KIDS API
-// ============================================
-// GET    → lista (admin: todas; responsavel: só a sua)
-// POST   → cria (admin only)
-// PUT    → atualiza (admin: qualquer; responsavel: só a sua)
-// DELETE → remove (admin only)
+// ================================================
+// GET    /instituicoes.php          → lista (admin: todas; responsável: só a sua)
+// POST   /instituicoes.php          → cria (admin)
+// PUT    /instituicoes.php {id,...} → atualiza (admin: qualquer; responsável: só a sua)
+// DELETE /instituicoes.php {id}     → remove (admin)
 
 require_once 'cors.php';
 require_once 'config.php';
-require_once 'jwt.php';
+require_once 'auth_middleware.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-$db     = getDB();
-$prof   = autenticar();
 
-// ── GET ──────────────────────────────────────
+// ── GET: Lista ───────────────────────────────
 if ($method === 'GET') {
-    $scope = scopeInstituicao($prof);
+    $payload = requireAdminOrResponsavel();
+    $scope   = scopeInstituicao($payload);
+    $db      = getDB();
 
     if ($scope !== null) {
-        // Responsável: retorna apenas a própria instituição
         $stmt = $db->prepare("
-            SELECT i.*,
+            SELECT i.id, i.nome, i.tipo, i.cidade,
+                   i.responsavel, i.telefone, i.email, i.criado_em,
                    COUNT(DISTINCT t.id) AS total_turmas
             FROM instituicoes i
             LEFT JOIN turmas t ON t.instituicao_id = i.id AND t.ativo = 1
@@ -32,7 +32,8 @@ if ($method === 'GET') {
         $stmt->execute([$scope]);
     } else {
         $stmt = $db->query("
-            SELECT i.*,
+            SELECT i.id, i.nome, i.tipo, i.cidade,
+                   i.responsavel, i.telefone, i.email, i.criado_em,
                    COUNT(DISTINCT t.id) AS total_turmas
             FROM instituicoes i
             LEFT JOIN turmas t ON t.instituicao_id = i.id AND t.ativo = 1
@@ -40,80 +41,81 @@ if ($method === 'GET') {
             ORDER BY i.nome
         ");
     }
-
     responder(true, $stmt->fetchAll());
 }
 
-// ── POST: cria ────────────────────────────────
+// ── POST: Cria ───────────────────────────────
 if ($method === 'POST') {
-    exigirAdmin($prof);
+    requireAdmin();
+    $body   = body();
+    $nome   = sanitize($body['nome']   ?? '');
+    $tipo   = in_array($body['tipo'] ?? '', ['igreja','escola']) ? $body['tipo'] : 'igreja';
+    $cidade = sanitize($body['cidade'] ?? '');
 
-    $b      = body();
-    $nome   = sanitize($b['nome']   ?? '');
-    $tipo   = in_array($b['tipo'] ?? '', ['igreja','escola']) ? $b['tipo'] : 'igreja';
-    $cidade = sanitize($b['cidade'] ?? '');
+    if (mb_strlen($nome) < 3) {
+        responder(false, null, 'Nome deve ter pelo menos 3 caracteres.', 422);
+    }
 
-    if (!$nome) responder(false, null, 'Nome obrigatório.', 422);
-
-    $stmt = $db->prepare("
-        INSERT INTO instituicoes (nome, tipo, cidade) VALUES (?, ?, ?)
-    ");
+    $db   = getDB();
+    $stmt = $db->prepare("INSERT INTO instituicoes (nome, tipo, cidade) VALUES (?, ?, ?)");
     $stmt->execute([$nome, $tipo, $cidade ?: null]);
-    $id = $db->lastInsertId();
 
-    responder(true, ['id' => (int)$id, 'nome' => $nome, 'tipo' => $tipo, 'cidade' => $cidade], status: 201);
+    responder(true, [
+        'id'     => (int) $db->lastInsertId(),
+        'nome'   => $nome,
+        'tipo'   => $tipo,
+        'cidade' => $cidade,
+    ], status: 201);
 }
 
-// ── PUT: atualiza ─────────────────────────────
+// ── PUT: Atualiza ────────────────────────────
 if ($method === 'PUT') {
-    $b    = body();
-    $id   = (int)($b['id'] ?? 0);
-    $scope = scopeInstituicao($prof);
+    $payload = requireAdminOrResponsavel();
+    $scope   = scopeInstituicao($payload);
+    $body    = body();
+    $id      = (int)($body['id'] ?? 0);
 
     if (!$id) responder(false, null, 'ID obrigatório.', 422);
-    // Responsável só pode editar a própria instituição
     if ($scope !== null && $scope !== $id) {
         responder(false, null, 'Sem permissão para editar esta instituição.', 403);
     }
 
-    $nome       = sanitize($b['nome']        ?? '');
-    $tipo       = in_array($b['tipo'] ?? '', ['igreja','escola']) ? $b['tipo'] : 'igreja';
-    $cidade     = sanitize($b['cidade']      ?? '');
-    $responsavel= sanitize($b['responsavel'] ?? '');
-    $telefone   = sanitize($b['telefone']    ?? '');
-    $email      = sanitize($b['email']       ?? '');
+    $nome        = sanitize($body['nome']        ?? '');
+    $tipo        = in_array($body['tipo'] ?? '', ['igreja','escola']) ? $body['tipo'] : 'igreja';
+    $cidade      = sanitize($body['cidade']      ?? '');
+    $responsavel = sanitize($body['responsavel'] ?? '');
+    $telefone    = sanitize($body['telefone']    ?? '');
+    $email       = sanitize($body['email']       ?? '');
 
-    if (!$nome) responder(false, null, 'Nome obrigatório.', 422);
+    if (mb_strlen($nome) < 3) responder(false, null, 'Nome deve ter pelo menos 3 caracteres.', 422);
 
-    $stmt = $db->prepare("
+    $db = getDB();
+    $db->prepare("
         UPDATE instituicoes
         SET nome = ?, tipo = ?, cidade = ?,
             responsavel = ?, telefone = ?, email = ?
         WHERE id = ?
-    ");
-    $stmt->execute([
+    ")->execute([
         $nome, $tipo, $cidade ?: null,
         $responsavel ?: null, $telefone ?: null, $email ?: null,
         $id,
     ]);
 
-    if ($stmt->rowCount() === 0) responder(false, null, 'Instituição não encontrada.', 404);
-
-    responder(true, ['id' => $id, 'nome' => $nome]);
+    responder(true, ['atualizado' => $id]);
 }
 
-// ── DELETE: remove ────────────────────────────
+// ── DELETE: Remove ───────────────────────────
 if ($method === 'DELETE') {
-    exigirAdmin($prof);
-
-    $id = (int)(body()['id'] ?? 0);
+    requireAdmin();
+    $body = body();
+    $id   = (int)($body['id'] ?? 0);
     if (!$id) responder(false, null, 'ID obrigatório.', 422);
 
+    $db   = getDB();
     $stmt = $db->prepare("DELETE FROM instituicoes WHERE id = ?");
     $stmt->execute([$id]);
 
     if ($stmt->rowCount() === 0) responder(false, null, 'Instituição não encontrada.', 404);
-
     responder(true, ['removido' => $id]);
 }
 

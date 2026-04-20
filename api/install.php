@@ -1,25 +1,35 @@
 <?php
-// ============================================
+// ================================================
 // INSTALL — TRILHO KIDS API
-// ============================================
-// ⚠️  Rode UMA VEZ após o deploy e depois APAGUE este arquivo!
-// Acesse: cafecomhomensdedeus.com.br/trilhokids/api/install.php
+// ================================================
+// Use este arquivo APENAS em produção (cPanel).
+// Em Docker, o banco é criado automaticamente
+// pelo arquivo mysql/init.sql.
+//
+// ⚠️  APAGUE este arquivo após executar!
+// Acesse: https://seu-dominio.com/trilhokids/api/install.php
 
 require_once 'config.php';
+
+// Bloqueia acesso em ambiente Docker (DB_HOST = db)
+if (getenv('DB_HOST') === 'db') {
+    die('<pre style="color:orange;padding:20px">
+⚠️  Este script é para produção (cPanel).
+Em Docker, o banco já é criado automaticamente pelo init.sql.
+</pre>');
+}
 
 try {
     $db = getDB();
 
-    // ── 1. Perfis ────────────────────────────
     $db->exec("
         CREATE TABLE IF NOT EXISTS perfis (
             id         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             nome       VARCHAR(100) NOT NULL UNIQUE,
             criado_em  DATETIME DEFAULT CURRENT_TIMESTAMP
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     ");
 
-    // ── 2. Progresso ─────────────────────────
     $db->exec("
         CREATE TABLE IF NOT EXISTS progresso (
             id               INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -33,10 +43,9 @@ try {
             atualizado_em    DATETIME DEFAULT CURRENT_TIMESTAMP
                              ON UPDATE CURRENT_TIMESTAMP,
             FOREIGN KEY (perfil_id) REFERENCES perfis(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     ");
 
-    // ── 3. Quizzes ───────────────────────────
     $db->exec("
         CREATE TABLE IF NOT EXISTS quizzes (
             id         INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -47,10 +56,9 @@ try {
             percentual TINYINT UNSIGNED NOT NULL,
             criado_em  DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (perfil_id) REFERENCES perfis(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     ");
 
-    // ── 4. Histórico ─────────────────────────
     $db->exec("
         CREATE TABLE IF NOT EXISTS historia (
             id          INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -62,21 +70,15 @@ try {
             lancado_por VARCHAR(50) DEFAULT 'sistema',
             criado_em   DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (perfil_id) REFERENCES perfis(id) ON DELETE CASCADE
-        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
     ");
 
-    echo '<pre style="font-family:monospace;padding:20px">';
+    echo '<pre style="font-family:monospace;padding:20px;background:#0f0;color:#000">';
     echo "✅ Tabelas criadas com sucesso!\n\n";
-    echo "  • perfis\n";
-    echo "  • progresso\n";
-    echo "  • quizzes\n";
-    echo "  • historia\n\n";
+    echo "  • perfis\n  • progresso\n  • quizzes\n  • historia\n\n";
     echo "⚠️  APAGUE este arquivo (install.php) agora!\n";
     echo '</pre>';
 
 } catch (PDOException $e) {
-    echo '<pre style="color:red;padding:20px">';
-    echo "❌ Erro ao criar tabelas:\n";
-    echo $e->getMessage();
-    echo '</pre>';
+    echo '<pre style="color:red;padding:20px">❌ Erro: ' . $e->getMessage() . '</pre>';
 }

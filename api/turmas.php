@@ -1,138 +1,152 @@
 <?php
-// ============================================
+// ================================================
 // TURMAS — TRILHO KIDS API
-// ============================================
-// GET    → lista com professores e total de alunos
-// POST   → cria
-// PUT    → atualiza (nome, inst, idades)
-// DELETE → desativa
+// ================================================
+// GET    /turmas.php              → lista com professores e total de alunos
+// POST   /turmas.php              → cria (admin ou responsável)
+// PUT    /turmas.php {id,...}     → atualiza nome/idades/inst (admin ou responsável)
+// PATCH  /turmas.php {id,ativo}   → ativa/desativa (admin)
+// DELETE /turmas.php {id}         → soft-delete (admin ou responsável)
 
 require_once 'cors.php';
 require_once 'config.php';
-require_once 'jwt.php';
+require_once 'auth_middleware.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
-$db     = getDB();
-$prof   = autenticar();
 
-// ── GET ──────────────────────────────────────
+// ── GET: Lista turmas ────────────────────────
 if ($method === 'GET') {
-    $scope = scopeInstituicao($prof);
-    $where = $scope !== null ? 'WHERE t.instituicao_id = ? AND t.ativo = 1' : 'WHERE t.ativo = 1';
+    $payload = requireAdminOrResponsavel();
+    $scope   = scopeInstituicao($payload);
+    $db      = getDB();
+
+    $where  = 't.ativo = 1';
+    $params = [];
+
+    if ($scope !== null) {
+        $where   .= ' AND t.instituicao_id = ?';
+        $params[] = $scope;
+    } elseif (!$payload['is_admin']) {
+        // Professor regular: só as turmas em que está vinculado
+        $where   .= ' AND t.id IN (SELECT turma_id FROM turma_professores WHERE professor_id = ?)';
+        $params[] = $payload['professor_id'];
+    }
 
     $stmt = $db->prepare("
         SELECT t.id, t.nome, t.instituicao_id, t.idade_inicial, t.idade_final,
-               i.nome AS instituicao,
-               COUNT(DISTINCT p.id) AS total_alunos
+               t.ativo, t.criado_em, i.nome AS instituicao,
+               COUNT(DISTINCT pf.id) AS total_alunos,
+               (SELECT JSON_ARRAYAGG(JSON_OBJECT('id', p2.id, 'nome', p2.nome, 'papel', tp2.papel))
+                FROM turma_professores tp2
+                JOIN professores p2 ON p2.id = tp2.professor_id
+                WHERE tp2.turma_id = t.id) AS professores
         FROM turmas t
         JOIN instituicoes i ON i.id = t.instituicao_id
-        LEFT JOIN perfis p ON p.turma_id = t.id
-        $where
+        LEFT JOIN perfis pf ON pf.turma_id = t.id
+        WHERE $where
         GROUP BY t.id
         ORDER BY i.nome, t.nome
     ");
-    $scope !== null ? $stmt->execute([$scope]) : $stmt->execute();
-    $turmas = $stmt->fetchAll();
+    $stmt->execute($params);
+    $rows = $stmt->fetchAll();
 
-    // Carrega professores de cada turma
-    $ids = array_column($turmas, 'id');
-    $profsMap = [];
-    if ($ids) {
-        $in   = implode(',', array_fill(0, count($ids), '?'));
-        $stmtP = $db->prepare("
-            SELECT tp.turma_id, pr.id, pr.nome, tp.papel
-            FROM turma_professores tp
-            JOIN professores pr ON pr.id = tp.professor_id
-            WHERE tp.turma_id IN ($in)
-            ORDER BY pr.nome
-        ");
-        $stmtP->execute($ids);
-        foreach ($stmtP->fetchAll() as $row) {
-            $profsMap[$row['turma_id']][] = [
-                'id'    => (int)$row['id'],
-                'nome'  => $row['nome'],
-                'papel' => $row['papel'],
-            ];
-        }
+    foreach ($rows as &$r) {
+        $r['id']           = (int) $r['id'];
+        $r['total_alunos'] = (int) $r['total_alunos'];
+        $r['ativo']        = (bool) $r['ativo'];
+        $r['professores']  = $r['professores'] ? json_decode($r['professores'], true) : [];
+        $r['idade_inicial']= $r['idade_inicial'] !== null ? (int)$r['idade_inicial'] : null;
+        $r['idade_final']  = $r['idade_final']   !== null ? (int)$r['idade_final']   : null;
     }
-
-    foreach ($turmas as &$t) {
-        $t['id']          = (int)$t['id'];
-        $t['total_alunos']= (int)$t['total_alunos'];
-        $t['professores'] = $profsMap[$t['id']] ?? [];
-        $t['idade_inicial']= $t['idade_inicial'] !== null ? (int)$t['idade_inicial'] : null;
-        $t['idade_final']  = $t['idade_final']   !== null ? (int)$t['idade_final']   : null;
-    }
-    responder(true, $turmas);
+    responder(true, $rows);
 }
 
-// ── POST: cria ────────────────────────────────
+// ── POST: Cria turma ─────────────────────────
 if ($method === 'POST') {
-    $b      = body();
-    $scope  = scopeInstituicao($prof);
-    $nome   = sanitize($b['nome'] ?? '');
-    $inst_id= $scope ?? (int)($b['instituicao_id'] ?? 0);
-    $idadeI = isset($b['idade_inicial']) && $b['idade_inicial'] !== '' ? (int)$b['idade_inicial'] : null;
-    $idadeF = isset($b['idade_final'])   && $b['idade_final']   !== '' ? (int)$b['idade_final']   : null;
+    $payload        = requireAdminOrResponsavel();
+    $scope          = scopeInstituicao($payload);
+    $body           = body();
+    $nome           = sanitize($body['nome'] ?? '');
+    $instituicao_id = $scope ?? (int)($body['instituicao_id'] ?? 0);
+    $idadeI         = isset($body['idade_inicial']) && $body['idade_inicial'] !== '' ? (int)$body['idade_inicial'] : null;
+    $idadeF         = isset($body['idade_final'])   && $body['idade_final']   !== '' ? (int)$body['idade_final']   : null;
 
-    if (!$nome)    responder(false, null, 'Nome obrigatório.', 422);
-    if (!$inst_id) responder(false, null, 'Instituição obrigatória.', 422);
+    if (mb_strlen($nome) < 3) responder(false, null, 'Nome deve ter pelo menos 3 caracteres.', 422);
+    if (!$instituicao_id)     responder(false, null, 'instituicao_id obrigatório.', 422);
 
-    $stmt = $db->prepare("
-        INSERT INTO turmas (nome, instituicao_id, idade_inicial, idade_final)
-        VALUES (?, ?, ?, ?)
-    ");
-    $stmt->execute([$nome, $inst_id, $idadeI, $idadeF]);
-    responder(true, ['id' => (int)$db->lastInsertId(), 'nome' => $nome], status: 201);
+    $db   = getDB();
+    $stmt = $db->prepare("INSERT INTO turmas (nome, instituicao_id, idade_inicial, idade_final) VALUES (?, ?, ?, ?)");
+    $stmt->execute([$nome, $instituicao_id, $idadeI, $idadeF]);
+
+    responder(true, ['id' => (int) $db->lastInsertId(), 'nome' => $nome], status: 201);
 }
 
-// ── PUT: atualiza ─────────────────────────────
+// ── PUT: Atualiza turma ──────────────────────
 if ($method === 'PUT') {
-    $b    = body();
-    $id   = (int)($b['id'] ?? 0);
-    $scope= scopeInstituicao($prof);
+    $payload = requireAdminOrResponsavel();
+    $scope   = scopeInstituicao($payload);
+    $body    = body();
+    $id      = (int)($body['id'] ?? 0);
 
     if (!$id) responder(false, null, 'ID obrigatório.', 422);
 
-    // Responsável só pode editar turmas da própria instituição
     if ($scope !== null) {
-        $chk = $db->prepare("SELECT id FROM turmas WHERE id = ? AND instituicao_id = ?");
+        $chk = getDB()->prepare("SELECT id FROM turmas WHERE id = ? AND instituicao_id = ?");
         $chk->execute([$id, $scope]);
-        if (!$chk->fetch()) responder(false, null, 'Sem permissão.', 403);
+        if (!$chk->fetch()) responder(false, null, 'Sem permissão para editar esta turma.', 403);
     }
 
-    $nome   = sanitize($b['nome'] ?? '');
-    $inst_id= $scope ?? (int)($b['instituicao_id'] ?? 0);
-    $idadeI = isset($b['idade_inicial']) && $b['idade_inicial'] !== '' ? (int)$b['idade_inicial'] : null;
-    $idadeF = isset($b['idade_final'])   && $b['idade_final']   !== '' ? (int)$b['idade_final']   : null;
+    $nome           = sanitize($body['nome'] ?? '');
+    $instituicao_id = $scope ?? (int)($body['instituicao_id'] ?? 0);
+    $idadeI         = isset($body['idade_inicial']) && $body['idade_inicial'] !== '' ? (int)$body['idade_inicial'] : null;
+    $idadeF         = isset($body['idade_final'])   && $body['idade_final']   !== '' ? (int)$body['idade_final']   : null;
 
-    if (!$nome)    responder(false, null, 'Nome obrigatório.', 422);
-    if (!$inst_id) responder(false, null, 'Instituição obrigatória.', 422);
+    if (mb_strlen($nome) < 3) responder(false, null, 'Nome deve ter pelo menos 3 caracteres.', 422);
+    if (!$instituicao_id)     responder(false, null, 'instituicao_id obrigatório.', 422);
 
-    $stmt = $db->prepare("
-        UPDATE turmas
-        SET nome = ?, instituicao_id = ?, idade_inicial = ?, idade_final = ?
+    getDB()->prepare("
+        UPDATE turmas SET nome = ?, instituicao_id = ?, idade_inicial = ?, idade_final = ?
         WHERE id = ?
-    ");
-    $stmt->execute([$nome, $inst_id, $idadeI, $idadeF, $id]);
+    ")->execute([$nome, $instituicao_id, $idadeI, $idadeF, $id]);
 
-    responder(true, ['id' => $id, 'nome' => $nome]);
+    responder(true, ['atualizado' => $id]);
 }
 
-// ── DELETE: desativa ──────────────────────────
-if ($method === 'DELETE') {
-    $id    = (int)(body()['id'] ?? 0);
-    $scope = scopeInstituicao($prof);
+// ── PATCH: Ativa/desativa ───────��─────────────
+if ($method === 'PATCH') {
+    requireAdmin();
+    $body = body();
+    $id   = (int)($body['id'] ?? 0);
+    if (!$id) responder(false, null, 'ID obrigatório.', 422);
 
+    $sets = [];
+    $vals = [];
+    if (!empty($body['nome']))  { $sets[] = 'nome = ?';  $vals[] = sanitize($body['nome']); }
+    if (isset($body['ativo']))  { $sets[] = 'ativo = ?'; $vals[] = $body['ativo'] ? 1 : 0; }
+    if (empty($sets)) responder(false, null, 'Nenhum campo para atualizar.', 422);
+
+    $vals[] = $id;
+    getDB()->prepare("UPDATE turmas SET " . implode(', ', $sets) . " WHERE id = ?")->execute($vals);
+    responder(true, ['atualizado' => $id]);
+}
+
+// ── DELETE: Soft-delete ────────────────────────
+if ($method === 'DELETE') {
+    $payload = requireAdminOrResponsavel();
+    $scope   = scopeInstituicao($payload);
+    $body    = body();
+    $id      = (int)($body['id'] ?? 0);
     if (!$id) responder(false, null, 'ID obrigatório.', 422);
 
     if ($scope !== null) {
-        $chk = $db->prepare("SELECT id FROM turmas WHERE id = ? AND instituicao_id = ?");
+        $chk = getDB()->prepare("SELECT id FROM turmas WHERE id = ? AND instituicao_id = ?");
         $chk->execute([$id, $scope]);
         if (!$chk->fetch()) responder(false, null, 'Sem permissão.', 403);
     }
 
-    $db->prepare("UPDATE turmas SET ativo = 0 WHERE id = ?")->execute([$id]);
+    $stmt = getDB()->prepare("UPDATE turmas SET ativo = 0 WHERE id = ?");
+    $stmt->execute([$id]);
+    if ($stmt->rowCount() === 0) responder(false, null, 'Turma não encontrada.', 404);
     responder(true, ['desativado' => $id]);
 }
 

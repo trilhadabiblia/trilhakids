@@ -1,8 +1,9 @@
 <?php
-// ============================================
-// ENTRAR (QR Code) — TRILHO KIDS API
-// ============================================
-// GET ?token=XXXX → valida token e retorna dados do aluno
+// ================================================
+// QR CODE LOGIN — TRILHO KIDS API
+// ================================================
+// GET /entrar.php?token=xxx
+// → Retorna dados do aluno para auto-login no frontend
 
 require_once 'cors.php';
 require_once 'config.php';
@@ -12,30 +13,25 @@ if ($_SERVER['REQUEST_METHOD'] !== 'GET') {
 }
 
 $token = sanitize($_GET['token'] ?? '');
-if (strlen($token) < 8) {
-    responder(false, null, 'Token inválido.', 422);
-}
+if (!$token) responder(false, null, 'Token obrigatório.', 422);
 
 $db   = getDB();
 $stmt = $db->prepare("
-    SELECT p.id, p.nome, p.token_qr,
-           t.id AS turma_id, t.nome AS turma_nome,
-           i.nome AS instituicao_nome
+    SELECT p.nome, p.token_qr, t.nome AS turma, i.nome AS instituicao
     FROM perfis p
-    LEFT JOIN turmas t      ON t.id = p.turma_id
+    LEFT JOIN turmas t    ON t.id = p.turma_id
     LEFT JOIN instituicoes i ON i.id = t.instituicao_id
     WHERE p.token_qr = ?
-    LIMIT 1
 ");
 $stmt->execute([$token]);
 $aluno = $stmt->fetch();
 
 if (!$aluno) {
-    responder(false, null, 'Token não encontrado. Contate o professor.', 404);
+    responder(false, null, 'QR Code inválido ou expirado.', 404);
 }
 
 responder(true, [
-    'nome'        => $aluno['nome'],
-    'turma'       => $aluno['turma_nome'],
-    'instituicao' => $aluno['instituicao_nome'],
+    'nome'         => $aluno['nome'],
+    'turma'        => $aluno['turma'],
+    'instituicao'  => $aluno['instituicao'],
 ]);

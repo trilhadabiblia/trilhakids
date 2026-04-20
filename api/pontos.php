@@ -1,93 +1,85 @@
 <?php
-// ============================================
+// ================================================
 // PONTOS MANUAIS (PROFESSOR) — TRILHO KIDS API
-// ============================================
+// ================================================
 // POST /pontos.php
-// Body: { nome, quantidade, motivo, senha }
+// Body: { perfil_id, quantidade, motivo }
+// Requer: Bearer token de professor ou admin
 //
-// Motivos válidos (sistema oficial TrilhoKids):
-//   Presença              +10
-//   Participação          +5
-//   Realizou o quiz       +10
-//   Acertou 70%+ no quiz  +10
-//   Trouxe a Bíblia       +5
-//   Versículo decorado    +10
-//   Ajudou um colega      +5
-//   Atividade especial    +20
-//   Explorador do Mês     +30  (badge mensal)
-//   Leitor Consistente    +20  (badge mensal)
-//   Coragem               +10  (badge mensal)
-//   Destaque da Bondade   +10  (badge mensal)
+// O professor só pode pontuar alunos da sua turma.
+// O admin pode pontuar qualquer aluno.
+//
+// Motivos sugeridos:
+//   Presença           +10   Participação         +5
+//   Trouxe a Bíblia    +5    Versículo decorado   +10
+//   Ajudou um colega   +5    Atividade especial   +20
+//   Explorador do Mês  +30   Coragem              +10
 
 require_once 'cors.php';
 require_once 'config.php';
+require_once 'auth_middleware.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     responder(false, null, 'Método não permitido.', 405);
 }
 
-$body = body();
+$body      = body();
+$perfil_id = (int)($body['perfil_id'] ?? 0);
+$motivo    = sanitize($body['motivo']  ?? '');
+$quantidade= (int)($body['quantidade'] ?? 0);
 
-// ── Validações ───────────────────────────────
-$nome      = sanitize($body['nome']      ?? '');
-$motivo    = sanitize($body['motivo']    ?? '');
-$senha     = $body['senha']              ?? '';
-$quantidade= (int)($body['quantidade']   ?? 0);
+if (!$perfil_id)               responder(false, null, 'perfil_id obrigatório.', 422);
+if ($quantidade < 1 || $quantidade > 200) responder(false, null, 'Quantidade: 1 a 200.', 422);
+if (!$motivo)                  responder(false, null, 'Motivo obrigatório.', 422);
 
-if ($senha !== SENHA_ADMIN) {
-    responder(false, null, 'Senha incorreta.', 403);
-}
-if (!$nome) {
-    responder(false, null, 'Campo "nome" obrigatório.', 422);
-}
-if ($quantidade <= 0 || $quantidade > 200) {
-    responder(false, null, 'Quantidade deve ser entre 1 e 200.', 422);
-}
-if (!$motivo) {
-    responder(false, null, 'Campo "motivo" obrigatório.', 422);
-}
+// Valida autenticação e permissão sobre o aluno
+$payload = requireDonoDaTurma(getDB(), $perfil_id);
 
-// ── Busca perfil ─────────────────────────────
-$db   = getDB();
-$stmt = $db->prepare("SELECT id FROM perfis WHERE nome = ?");
-$stmt->execute([$nome]);
-$perfil = $stmt->fetch();
+$db  = getDB();
 
-if (!$perfil) {
-    responder(false, null, "Aluno \"$nome\" não encontrado.", 404);
-}
-$pid = $perfil['id'];
+// ── Busca nome do aluno ──────────────────────
+$stmt = $db->prepare("SELECT nome FROM perfis WHERE id = ?");
+$stmt->execute([$perfil_id]);
+$aluno = $stmt->fetch();
+if (!$aluno) responder(false, null, 'Aluno não encontrado.', 404);
 
-// ── Atualiza pontos ──────────────────────────
+// ── Adiciona pontos ──────────────────────────
 $db->prepare("UPDATE progresso SET pontos = pontos + ? WHERE perfil_id = ?")
-   ->execute([$quantidade, $pid]);
+   ->execute([$quantidade, $perfil_id]);
 
-// ── Verifica novo nível ──────────────────────
+// ── Recalcula nível ──────────────────────────
 $stmt = $db->prepare("SELECT pontos FROM progresso WHERE perfil_id = ?");
-$stmt->execute([$pid]);
-$pontosAtuais = (int)$stmt->fetchColumn();
+$stmt->execute([$perfil_id]);
+$pontosAtuais = (int) $stmt->fetchColumn();
 
 $niveis = [
-    [1,'Iniciante',0],[2,'Explorador',100],[3,'Aventureiro',300],
-    [4,'Discípulo',600],[5,'Herói da Fé',1000],[6,'Guardião',1500],
-    [7,'Sábio',2500],[8,'Profeta',4000],[9,'Apóstolo',6000],[10,'Lenda',10000]
+    [1,'Iniciante',0],    [2,'Explorador',100],
+    [3,'Aventureiro',300],[4,'Discípulo',600],
+    [5,'Herói da Fé',1000],[6,'Guardião',1500],
+    [7,'Sábio',2500],     [8,'Profeta',4000],
+    [9,'Apóstolo',6000],  [10,'Lenda',10000],
 ];
-$nivelAtual = [1,'Iniciante'];
+$nivelAtual = $niveis[0];
 foreach ($niveis as $n) {
     if ($pontosAtuais >= $n[2]) $nivelAtual = $n;
 }
+
 $db->prepare("UPDATE progresso SET nivel = ?, nome_nivel = ? WHERE perfil_id = ?")
-   ->execute([$nivelAtual[0], $nivelAtual[1], $pid]);
+   ->execute([$nivelAtual[0], $nivelAtual[1], $perfil_id]);
 
 // ── Registra no histórico ────────────────────
 $db->prepare("
     INSERT INTO historia (perfil_id, tipo, quantidade, motivo, lancado_por)
-    VALUES (?, 'manual', ?, ?, 'professor')
-")->execute([$pid, $quantidade, $motivo]);
+    VALUES (?, 'manual', ?, ?, ?)
+")->execute([
+    $perfil_id,
+    $quantidade,
+    $motivo,
+    $payload['nome'] ?? 'professor',
+]);
 
-// ── Retorna progresso atualizado ─────────────
 responder(true, [
-    'aluno'         => $nome,
+    'aluno'         => $aluno['nome'],
     'pontos_ganhos' => $quantidade,
     'motivo'        => $motivo,
     'pontos_total'  => $pontosAtuais,

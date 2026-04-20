@@ -1,0 +1,23 @@
+# ================================================
+# TRILHO KIDS API — Configurações Apache
+# ================================================
+
+# Bloqueia listagem de diretórios
+Options -Indexes
+
+# Bloqueia acesso direto ao config.php
+<Files "config.php">
+    Require all denied
+</Files>
+
+# Bloqueia acesso direto ao cors.php
+<Files "cors.php">
+    Require all denied
+</Files>
+
+# Segurança: oculta versão do PHP
+Header unset X-Powered-By
+Header always unset X-Powered-By
+
+# Cache para preflight CORS
+Header always set Access-Control-Max-Age "86400"
