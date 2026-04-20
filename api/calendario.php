@@ -117,10 +117,23 @@ if ($method === 'PATCH') {
     if ($data !== null && !preg_match('/^\d{4}-\d{2}-\d{2}$/', $data))
         responder(false, null, 'Data inválida. Use YYYY-MM-DD.', 422);
 
+    $hora_inicio  = array_key_exists('hora_inicio', $body)  ? (sanitize($body['hora_inicio'])  ?: null) : false;
+    $hora_fim     = array_key_exists('hora_fim',    $body)  ? (sanitize($body['hora_fim'])     ?: null) : false;
+    $observacao   = array_key_exists('observacao',  $body)  ? (sanitize($body['observacao'])   ?: null) : false;
+    $livro_ordem  = array_key_exists('livro_ordem', $body)
+                    ? (($body['livro_ordem'] !== null && $body['livro_ordem'] !== '') ? (int)$body['livro_ordem'] : null)
+                    : false;
+
     $sets = [];
     $vals = [];
-    if ($data !== null)         { $sets[] = 'data = ?';         $vals[] = $data; }
-    if ($professor_id !== null) { $sets[] = 'professor_id = ?'; $vals[] = $professor_id; }
+    if ($data !== null)            { $sets[] = 'data = ?';         $vals[] = $data; }
+    if ($professor_id !== null)    { $sets[] = 'professor_id = ?'; $vals[] = $professor_id; }
+    if ($hora_inicio !== false)    { $sets[] = 'hora_inicio = ?';  $vals[] = $hora_inicio; }
+    if ($hora_fim     !== false)   { $sets[] = 'hora_fim = ?';     $vals[] = $hora_fim; }
+    if ($observacao   !== false)   { $sets[] = 'observacao = ?';   $vals[] = $observacao; }
+    if ($livro_ordem  !== false)   { $sets[] = 'livro_ordem = ?';  $vals[] = $livro_ordem; }
+
+    if (!$sets) responder(false, null, 'Nenhum campo para atualizar.', 422);
     $vals[] = $id;
 
     getDB()->prepare("UPDATE calendario_turmas SET " . implode(', ', $sets) . " WHERE id = ?")->execute($vals);
