@@ -765,6 +765,199 @@
     </div>
   </div>
 
+  <!-- ═══ MODAL: Layout do Crachá ══════════ -->
+  <div id="modal-layout-cracha" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+    <div class="bg-slate-800 border border-amber-500/30 rounded-2xl w-full max-w-5xl max-h-[92vh] flex flex-col shadow-2xl">
+
+      <!-- Cabeçalho do modal -->
+      <div class="flex items-center justify-between p-5 border-b border-amber-500/20 flex-shrink-0">
+        <div>
+          <h3 class="text-xl font-black text-white">🎨 Layout do Crachá</h3>
+          <p class="text-amber-300 text-sm" id="layout-turma-nome"></p>
+        </div>
+        <button onclick="fecharModal('modal-layout-cracha')" class="text-gray-400 hover:text-white text-2xl leading-none">✕</button>
+      </div>
+
+      <!-- Corpo: controles | preview -->
+      <div class="flex flex-col md:flex-row flex-1 min-h-0">
+
+        <!-- Coluna esquerda: configurações -->
+        <div class="flex-1 overflow-y-auto p-5 space-y-5 border-r border-amber-500/10">
+
+          <!-- Cabeçalho do crachá -->
+          <section>
+            <h4 class="text-xs font-black text-amber-300 uppercase tracking-widest mb-3">Cabeçalho</h4>
+            <div class="grid grid-cols-2 gap-3 mb-3">
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Fundo</label>
+                <input type="color" id="lc-header-bg" value="#6d28d9" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Cor do texto</label>
+                <input type="color" id="lc-header-fc" value="#ffffff" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Texto do título</label>
+                <input id="lc-header-title" type="text" value="TRILHO KIDS" maxlength="30" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none focus:border-amber-400" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Tamanho título (pt)</label>
+                <input id="lc-fs-header" type="number" value="6.5" min="4" max="14" step="0.5" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Corpo do crachá -->
+          <section>
+            <h4 class="text-xs font-black text-amber-300 uppercase tracking-widest mb-3">Corpo</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Fundo do crachá</label>
+                <input type="color" id="lc-badge-bg" value="#0f172a" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Borda</label>
+                <input type="color" id="lc-badge-border" value="#7c3aed" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Nome do aluno</label>
+                <input type="color" id="lc-name-fc" value="#ffffff" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Instituição</label>
+                <input type="color" id="lc-inst-fc" value="#a78bfa" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Turma</label>
+                <input type="color" id="lc-turma-fc" value="#94a3b8" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Legenda QR</label>
+                <input type="color" id="lc-qrlabel-fc" value="#64748b" oninput="onLayoutChange()"
+                  class="w-full h-10 rounded-lg cursor-pointer border border-slate-600 bg-slate-700 p-1" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Tipografia -->
+          <section>
+            <h4 class="text-xs font-black text-amber-300 uppercase tracking-widest mb-3">Tamanhos de Fonte (pt)</h4>
+            <div class="grid grid-cols-2 gap-3">
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Nome do aluno</label>
+                <input id="lc-fs-name" type="number" value="9.5" min="5" max="20" step="0.5" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Instituição</label>
+                <input id="lc-fs-inst" type="number" value="7" min="4" max="14" step="0.5" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Turma</label>
+                <input id="lc-fs-turma" type="number" value="7" min="4" max="14" step="0.5" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Legenda QR</label>
+                <input id="lc-fs-qrlabel" type="number" value="5" min="3" max="10" step="0.5" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Logo -->
+          <section>
+            <h4 class="text-xs font-black text-amber-300 uppercase tracking-widest mb-3">Logo</h4>
+            <div class="flex items-center gap-3 mb-3 flex-wrap">
+              <label class="bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg text-sm font-bold cursor-pointer transition-all flex-shrink-0">
+                📁 Carregar imagem
+                <input type="file" accept="image/*" class="hidden" onchange="handleLogoUpload(event)" />
+              </label>
+              <img id="lc-logo-preview" src="" alt="logo preview"
+                class="hidden h-10 max-w-[120px] rounded-lg border border-amber-500/30 object-contain bg-white/5 px-1" />
+              <button id="lc-logo-remove" onclick="removerLogo()"
+                class="hidden text-xs text-red-400 hover:text-red-300 font-bold px-2 py-1 rounded-lg hover:bg-red-900/30 transition-all">
+                ✕ Remover
+              </button>
+            </div>
+            <p class="text-gray-600 text-xs mb-3">Recomendado: PNG com fundo transparente, até 200 KB</p>
+            <div class="grid grid-cols-3 gap-3">
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Posição</label>
+                <select id="lc-logo-pos" onchange="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none">
+                  <option value="none">Sem logo</option>
+                  <option value="header-left">Cabeç. esquerda</option>
+                  <option value="header-center">Cabeç. centro</option>
+                  <option value="header-right">Cabeç. direita</option>
+                </select>
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Largura (mm)</label>
+                <input id="lc-logo-width" type="number" value="20" min="5" max="90" step="1" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+              <div>
+                <label class="text-xs text-gray-400 mb-1 block">Altura (mm)</label>
+                <input id="lc-logo-height" type="number" value="8" min="2" max="40" step="1" oninput="onLayoutChange()"
+                  class="w-full bg-slate-700 border border-slate-600 text-white rounded-lg px-3 py-2 text-sm outline-none" />
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Coluna direita: preview + import/export -->
+        <div class="md:w-80 p-5 flex flex-col items-center gap-4 flex-shrink-0 overflow-y-auto bg-slate-900/30">
+          <p class="text-gray-400 text-xs font-black uppercase tracking-widest self-start">Pré-visualização</p>
+          <canvas id="canvas-preview-cracha" width="300" height="210"
+            class="rounded-xl border border-amber-500/20 shadow-lg w-full max-w-xs"></canvas>
+          <p class="text-gray-600 text-xs text-center -mt-2">Proporção real: 100 × 70 mm</p>
+
+          <div class="w-full pt-3 border-t border-amber-500/10 space-y-2">
+            <p class="text-gray-500 text-xs font-black uppercase tracking-widest mb-2">Arquivo de configuração</p>
+            <button onclick="exportarLayoutCracha()"
+              class="w-full bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg text-xs font-bold transition-all">
+              ⬇️ Exportar JSON
+            </button>
+            <label class="block w-full text-center bg-slate-700 hover:bg-slate-600 text-white py-2 rounded-lg text-xs font-bold transition-all cursor-pointer">
+              ⬆️ Importar JSON
+              <input type="file" accept=".json" class="hidden" onchange="importarLayoutCracha(event)" />
+            </label>
+            <button onclick="resetarLayoutCracha()"
+              class="w-full bg-red-900/30 hover:bg-red-900/60 text-red-400 py-2 rounded-lg text-xs font-bold transition-all">
+              ↺ Resetar para padrão
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé -->
+      <div class="flex justify-end gap-3 p-5 border-t border-amber-500/20 flex-shrink-0">
+        <button onclick="fecharModal('modal-layout-cracha')"
+          class="bg-slate-700 hover:bg-slate-600 text-white px-5 py-2.5 rounded-xl font-bold text-sm transition-all">
+          Cancelar
+        </button>
+        <button id="btn-salvar-layout" onclick="salvarLayoutCracha()"
+          class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-xl font-bold text-sm transition-all">
+          Salvar
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- ═══ MODAL: Livros da Turma ══════════ -->
   <div id="modal-livros" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
     <div class="bg-slate-800 border border-indigo-500/40 rounded-3xl p-6 w-full max-w-lg shadow-2xl max-h-[90vh] flex flex-col">
@@ -1240,6 +1433,10 @@
                   class="text-xs bg-pink-600/30 hover:bg-pink-600/60 text-pink-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   🪪 Crachás
                 </button>
+                <button onclick="abrirLayoutCracha(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
+                  class="text-xs bg-amber-600/30 hover:bg-amber-600/60 text-amber-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
+                  🎨 Layout
+                </button>
                 <button onclick="abrirLivrosTurma(${t.id}, '${t.nome.replace(/'/g,'&apos;')}')"
                   class="text-xs bg-indigo-600/30 hover:bg-indigo-600/60 text-indigo-300 px-3 py-1.5 rounded-lg font-bold transition-all text-center">
                   📚 Livros
@@ -1496,6 +1693,7 @@
         const inst     = turma ? _instituicoes.find(i => i.id === turma.instituicao_id) : null;
         const instNome = inst?.nome  || '';
         const tNome    = turma?.nome || _crachasTurmaNome;
+        const cfg      = carregarLayoutCracha(_crachasTurmaId);
 
         for (let i = 0; i < selecionados.length; i++) {
           const col = i % cols;
@@ -1503,7 +1701,7 @@
           if (i > 0 && col === 0 && row === 0) doc.addPage();
           const x = mX + col * (bW + gap);
           const y = mY + row * (bH + gap);
-          await _desenharCracha(doc, selecionados[i], x, y, instNome, tNome);
+          await _desenharCracha(doc, selecionados[i], x, y, instNome, tNome, cfg);
         }
 
         const slug = _crachasTurmaNome.normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
@@ -1524,24 +1722,55 @@
       }
     }
 
-    async function _desenharCracha(doc, aluno, x, y, instNome, turmaNome) {
+    async function _desenharCracha(doc, aluno, x, y, instNome, turmaNome, cfg) {
+      cfg = cfg || { ..._LAYOUT_DEFAULT };
       const W = 100, H = 70;
 
-      // Fundo escuro com borda roxa
-      doc.setFillColor(15, 23, 42);
-      doc.setDrawColor(124, 58, 237);
+      // Fundo + borda
+      doc.setFillColor(..._hexToRgb(cfg.badgeBg));
+      doc.setDrawColor(..._hexToRgb(cfg.badgeBorderColor));
       doc.setLineWidth(0.4);
       doc.roundedRect(x, y, W, H, 2.5, 2.5, 'FD');
 
-      // Barra superior roxa
-      doc.setFillColor(109, 40, 217);
+      // Barra do cabeçalho
+      doc.setFillColor(..._hexToRgb(cfg.headerBg));
       doc.roundedRect(x, y, W, 9.5, 2.5, 2.5, 'F');
-      doc.rect(x, y + 5, W, 4.5, 'F'); // retifica canto inferior da barra
+      doc.rect(x, y + 5, W, 4.5, 'F');
 
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(6.5);
-      doc.setTextColor(255, 255, 255);
-      doc.text('TRILHO KIDS', x + W / 2, y + 6.5, { align: 'center' });
+      // Logo ou título no cabeçalho
+      if (cfg.logo_url && cfg.logoPos !== 'none') {
+        try {
+          const logoB64 = await _fetchImgBase64(cfg.logo_url);
+          const fmt = logoB64.startsWith('data:image/png') ? 'PNG' : 'JPEG';
+          const lW = cfg.logoWidth, lH = cfg.logoHeight;
+          const lY = y + (9.5 - lH) / 2;
+          let lX;
+          if (cfg.logoPos === 'header-left')        { lX = x + 3; }
+          else if (cfg.logoPos === 'header-center') { lX = x + (W - lW) / 2; }
+          else                                       { lX = x + W - lW - 3; }
+          doc.addImage(logoB64, fmt, lX, lY, lW, lH);
+          if (cfg.logoPos !== 'header-center' && cfg.headerTitle) {
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(cfg.fontSizeHeader);
+            doc.setTextColor(..._hexToRgb(cfg.headerFontColor));
+            const cx = cfg.logoPos === 'header-left'
+              ? x + (3 + lW + W) / 2
+              : x + (W - lW - 3) / 2;
+            doc.text(cfg.headerTitle, cx, y + 6.5, { align: 'center' });
+          }
+        } catch (_logoErr) {
+          // Falha no carregamento da logo — renderiza só o título
+          doc.setFont('helvetica', 'bold');
+          doc.setFontSize(cfg.fontSizeHeader);
+          doc.setTextColor(..._hexToRgb(cfg.headerFontColor));
+          doc.text(cfg.headerTitle, x + W / 2, y + 6.5, { align: 'center' });
+        }
+      } else {
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(cfg.fontSizeHeader);
+        doc.setTextColor(..._hexToRgb(cfg.headerFontColor));
+        doc.text(cfg.headerTitle, x + W / 2, y + 6.5, { align: 'center' });
+      }
 
       // Foto / placeholder
       if (aluno.foto_url) {
@@ -1557,19 +1786,20 @@
 
       // Nome
       doc.setFont('helvetica', 'bold');
-      doc.setFontSize(9.5);
-      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(cfg.fontSizeName);
+      doc.setTextColor(..._hexToRgb(cfg.nameFontColor));
       const nomeLinhas = doc.splitTextToSize(aluno.nome, 60);
       doc.text(nomeLinhas.slice(0, 2), x + 31, y + 21);
 
       // Instituição
       doc.setFont('helvetica', 'normal');
-      doc.setFontSize(7);
-      doc.setTextColor(167, 139, 250);
+      doc.setFontSize(cfg.fontSizeInst);
+      doc.setTextColor(..._hexToRgb(cfg.instFontColor));
       doc.text(doc.splitTextToSize(instNome, 60)[0] || '', x + 31, y + 30);
 
       // Turma
-      doc.setTextColor(148, 163, 184);
+      doc.setFontSize(cfg.fontSizeTurma);
+      doc.setTextColor(..._hexToRgb(cfg.turmFontColor));
       doc.text(turmaNome, x + 31, y + 37);
 
       // Linha divisória
@@ -1588,8 +1818,8 @@
       doc.addImage(qrData, 'PNG', qrX, qrY, qrSize, qrSize);
 
       // Legenda QR
-      doc.setFontSize(5);
-      doc.setTextColor(100, 116, 139);
+      doc.setFontSize(cfg.fontSizeQrLabel);
+      doc.setTextColor(..._hexToRgb(cfg.qrLabelColor));
       doc.text('Escaneie para entrar', qrX + qrSize / 2, y + H - 4, { align: 'center' });
     }
 
@@ -2474,6 +2704,330 @@
         aviso.classList.remove('hidden');
       }
     }
+
+    // ── LAYOUT DO CRACHÁ ──────────────────────────────────────────────────
+    const _LAYOUT_DEFAULT = {
+      headerBg:        '#6d28d9',
+      headerFontColor: '#ffffff',
+      badgeBg:         '#0f172a',
+      badgeBorderColor:'#7c3aed',
+      nameFontColor:   '#ffffff',
+      instFontColor:   '#a78bfa',
+      turmFontColor:   '#94a3b8',
+      qrLabelColor:    '#64748b',
+      fontSizeHeader:  6.5,
+      fontSizeName:    9.5,
+      fontSizeInst:    7,
+      fontSizeTurma:   7,
+      fontSizeQrLabel: 5,
+      headerTitle:     'TRILHO KIDS',
+      logo_url:        null,   // URL da logo no servidor (não base64)
+      logoPos:         'none',
+      logoWidth:       20,
+      logoHeight:      8,
+    };
+
+    let _layoutTurmaId   = 0;
+    let _layoutTurmaNome = '';
+    let _layoutCrachaAtual = { ..._LAYOUT_DEFAULT };
+    let _layoutLogoImg     = null;   // Image() ephemero para preview/PDF
+
+    function _hexToRgb(hex) {
+      const h = hex.replace('#','');
+      return [parseInt(h.substr(0,2),16), parseInt(h.substr(2,2),16), parseInt(h.substr(4,2),16)];
+    }
+
+    function carregarLayoutCracha(turmaId) {
+      const t = _turmas.find(t => t.id === turmaId);
+      return t?.layout_cracha ? { ..._LAYOUT_DEFAULT, ...t.layout_cracha } : { ..._LAYOUT_DEFAULT };
+    }
+
+    function abrirLayoutCracha(turmaId, turmaNome) {
+      _layoutTurmaId   = turmaId;
+      _layoutTurmaNome = turmaNome;
+      document.getElementById('layout-turma-nome').textContent = turmaNome;
+      _layoutCrachaAtual = carregarLayoutCracha(turmaId);
+      if (_layoutCrachaAtual.logo_url) {
+        _layoutLogoImg = new Image();
+        _layoutLogoImg.src = _layoutCrachaAtual.logo_url;
+      } else {
+        _layoutLogoImg = null;
+      }
+      _preencherFormLayout();
+      document.getElementById('modal-layout-cracha').classList.remove('hidden');
+      setTimeout(renderPreviewLayoutCracha, 60);
+    }
+
+    function _fset(id, val) { const el = document.getElementById(id); if (el) el.value = val; }
+
+    function _preencherFormLayout() {
+      const c = _layoutCrachaAtual;
+      _fset('lc-header-bg',    c.headerBg);
+      _fset('lc-header-fc',    c.headerFontColor);
+      _fset('lc-badge-bg',     c.badgeBg);
+      _fset('lc-badge-border', c.badgeBorderColor);
+      _fset('lc-name-fc',      c.nameFontColor);
+      _fset('lc-inst-fc',      c.instFontColor);
+      _fset('lc-turma-fc',     c.turmFontColor);
+      _fset('lc-qrlabel-fc',   c.qrLabelColor);
+      _fset('lc-fs-header',    c.fontSizeHeader);
+      _fset('lc-fs-name',      c.fontSizeName);
+      _fset('lc-fs-inst',      c.fontSizeInst);
+      _fset('lc-fs-turma',     c.fontSizeTurma);
+      _fset('lc-fs-qrlabel',   c.fontSizeQrLabel);
+      _fset('lc-header-title', c.headerTitle);
+      _fset('lc-logo-pos',     c.logoPos);
+      _fset('lc-logo-width',   c.logoWidth);
+      _fset('lc-logo-height',  c.logoHeight);
+      const prev   = document.getElementById('lc-logo-preview');
+      const remBtn = document.getElementById('lc-logo-remove');
+      if (c.logo_url) { prev.src = c.logo_url; prev.classList.remove('hidden'); remBtn.classList.remove('hidden'); }
+      else            { prev.classList.add('hidden'); remBtn.classList.add('hidden'); }
+    }
+
+    function _lerFormLayout() {
+      const g = id => document.getElementById(id)?.value ?? '';
+      Object.assign(_layoutCrachaAtual, {
+        headerBg:        g('lc-header-bg'),
+        headerFontColor: g('lc-header-fc'),
+        badgeBg:         g('lc-badge-bg'),
+        badgeBorderColor:g('lc-badge-border'),
+        nameFontColor:   g('lc-name-fc'),
+        instFontColor:   g('lc-inst-fc'),
+        turmFontColor:   g('lc-turma-fc'),
+        qrLabelColor:    g('lc-qrlabel-fc'),
+        fontSizeHeader:  parseFloat(g('lc-fs-header'))  || 6.5,
+        fontSizeName:    parseFloat(g('lc-fs-name'))    || 9.5,
+        fontSizeInst:    parseFloat(g('lc-fs-inst'))    || 7,
+        fontSizeTurma:   parseFloat(g('lc-fs-turma'))   || 7,
+        fontSizeQrLabel: parseFloat(g('lc-fs-qrlabel')) || 5,
+        headerTitle:     g('lc-header-title') || 'TRILHO KIDS',
+        logoPos:         g('lc-logo-pos'),
+        logoWidth:       parseFloat(g('lc-logo-width'))  || 20,
+        logoHeight:      parseFloat(g('lc-logo-height')) || 8,
+      });
+      // logo_url é mantido separado (modificado por upload/remoção, não por input de form)
+    }
+
+    function onLayoutChange() { _lerFormLayout(); renderPreviewLayoutCracha(); }
+
+    async function salvarLayoutCracha() {
+      _lerFormLayout();
+      const btn = document.getElementById('btn-salvar-layout');
+      const origTxt = btn.textContent;
+      const origCls = btn.className;
+      btn.disabled = true;
+      btn.textContent = '⏳ Salvando…';
+
+      const d = await apiAuth('turmas.php', {
+        method: 'PATCH',
+        body: JSON.stringify({ id: _layoutTurmaId, layout_cracha: _layoutCrachaAtual }),
+      });
+
+      btn.disabled = false;
+      if (!d.ok) {
+        alert('Erro ao salvar: ' + (d.erro || 'falha na API'));
+        btn.textContent = origTxt;
+        return;
+      }
+
+      // Atualiza cache local para que carregarLayoutCracha reflita o novo estado
+      const t = _turmas.find(t => t.id === _layoutTurmaId);
+      if (t) t.layout_cracha = JSON.parse(JSON.stringify(_layoutCrachaAtual));
+
+      btn.textContent = '✓ Salvo!';
+      btn.className   = origCls.replace('bg-purple-600','bg-green-600').replace('hover:bg-purple-700','hover:bg-green-700');
+      setTimeout(() => { btn.textContent = origTxt; btn.className = origCls; }, 1800);
+    }
+
+    function resetarLayoutCracha() {
+      if (!confirm('Resetar layout para o padrão?')) return;
+      _layoutCrachaAtual = { ..._LAYOUT_DEFAULT };
+      _layoutLogoImg = null;
+      _preencherFormLayout();
+      renderPreviewLayoutCracha();
+    }
+
+    function exportarLayoutCracha() {
+      _lerFormLayout();
+      const blob = new Blob([JSON.stringify(_layoutCrachaAtual, null, 2)], { type: 'application/json' });
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      const slug = _layoutTurmaNome.normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-zA-Z0-9]/g,'-').toLowerCase();
+      a.href = url; a.download = `layout-cracha-${slug}.json`;
+      a.click(); URL.revokeObjectURL(url);
+    }
+
+    function importarLayoutCracha(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        try {
+          const data = JSON.parse(e.target.result);
+          _layoutCrachaAtual = { ..._LAYOUT_DEFAULT, ...data };
+          if (_layoutCrachaAtual.logo_url) {
+            _layoutLogoImg = new Image();
+            _layoutLogoImg.onload = renderPreviewLayoutCracha;
+            _layoutLogoImg.src = _layoutCrachaAtual.logo_url;
+          } else { _layoutLogoImg = null; }
+          _preencherFormLayout();
+          renderPreviewLayoutCracha();
+        } catch { alert('Arquivo JSON inválido.'); }
+        event.target.value = '';
+      };
+      reader.readAsText(file);
+    }
+
+    async function handleLogoUpload(event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      event.target.value = '';
+
+      const prev   = document.getElementById('lc-logo-preview');
+      const remBtn = document.getElementById('lc-logo-remove');
+      prev.style.opacity = '0.4';
+
+      const formData = new FormData();
+      formData.append('file', file);
+      formData.append('tipo', 'logo');
+
+      try {
+        const res = await fetch(`${PROF_API}/upload.php`, {
+          method: 'POST',
+          headers: { 'Authorization': `Bearer ${Auth.getToken()}` },
+          body: formData,
+        });
+        const d = await res.json();
+        if (!d.ok) { alert('Erro no upload: ' + (d.erro || 'falha')); prev.style.opacity = '1'; return; }
+
+        _layoutCrachaAtual.logo_url = d.dados.url;
+        prev.src = d.dados.url;
+        prev.style.opacity = '1';
+        prev.classList.remove('hidden');
+        remBtn.classList.remove('hidden');
+
+        _layoutLogoImg = new Image();
+        _layoutLogoImg.onload = renderPreviewLayoutCracha;
+        _layoutLogoImg.src = d.dados.url;
+      } catch (err) {
+        alert('Erro ao enviar logo: ' + err.message);
+        prev.style.opacity = '1';
+      }
+    }
+
+    function removerLogo() {
+      _layoutCrachaAtual.logo_url = null;
+      _layoutLogoImg = null;
+      document.getElementById('lc-logo-preview').classList.add('hidden');
+      document.getElementById('lc-logo-remove').classList.add('hidden');
+      renderPreviewLayoutCracha();
+    }
+
+    async function _fetchImgBase64(url) {
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      const blob = await resp.blob();
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload  = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    }
+
+    function _rrPath(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x+r,y); ctx.lineTo(x+w-r,y);
+      ctx.quadraticCurveTo(x+w,y,x+w,y+r); ctx.lineTo(x+w,y+h-r);
+      ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h); ctx.lineTo(x+r,y+h);
+      ctx.quadraticCurveTo(x,y+h,x,y+h-r); ctx.lineTo(x,y+r);
+      ctx.quadraticCurveTo(x,y,x+r,y); ctx.closePath();
+    }
+
+    function renderPreviewLayoutCracha() {
+      const cfg = _layoutCrachaAtual;
+      const canvas = document.getElementById('canvas-preview-cracha');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      const S = 3;           // px/mm — canvas 300px = 100mm
+      const W = 300, H = 210;
+      const toPx = pt => Math.max(6, Math.round(pt * 25.4 / 72 * S));
+
+      ctx.clearRect(0, 0, W, H);
+
+      // Fundo + borda
+      _rrPath(ctx, 0, 0, W, H, 2.5*S);
+      ctx.fillStyle = cfg.badgeBg; ctx.fill();
+      ctx.strokeStyle = cfg.badgeBorderColor; ctx.lineWidth = 0.4*S; ctx.stroke();
+
+      // Cabeçalho
+      ctx.fillStyle = cfg.headerBg;
+      _rrPath(ctx, 0, 0, W, 9.5*S, 2.5*S); ctx.fill();
+      ctx.fillRect(0, 5*S, W, 4.5*S);
+
+      // Logo / título
+      const logoOk = cfg.logo_url && cfg.logoPos !== 'none' && _layoutLogoImg?.complete && _layoutLogoImg.naturalWidth > 0;
+      if (logoOk) {
+        const lW = cfg.logoWidth*S, lH = cfg.logoHeight*S;
+        const lY = (9.5*S - lH) / 2;
+        const lX = cfg.logoPos === 'header-left' ? 3*S : cfg.logoPos === 'header-center' ? (W-lW)/2 : W-lW-3*S;
+        ctx.drawImage(_layoutLogoImg, lX, lY, lW, lH);
+        if (cfg.logoPos !== 'header-center' && cfg.headerTitle) {
+          ctx.fillStyle = cfg.headerFontColor;
+          ctx.font = `bold ${toPx(cfg.fontSizeHeader)}px sans-serif`;
+          ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+          const cx = cfg.logoPos === 'header-left' ? (lX+lW+W)/2 : (W-lW-3*S)/2;
+          ctx.fillText(cfg.headerTitle, cx, 4.75*S);
+        }
+      } else {
+        ctx.fillStyle = cfg.headerFontColor;
+        ctx.font = `bold ${toPx(cfg.fontSizeHeader)}px sans-serif`;
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText(cfg.headerTitle, W/2, 4.75*S);
+      }
+
+      // Foto (placeholder)
+      const pX=5*S, pY=13*S, pW=22*S, pH=32*S;
+      ctx.fillStyle = '#7c3aed';
+      _rrPath(ctx, pX, pY, pW, pH, 2*S); ctx.fill();
+      ctx.fillStyle='#fff'; ctx.font=`bold ${toPx(13)}px sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('AB', pX+pW/2, pY+pH/2);
+
+      // Campos de texto
+      ctx.textBaseline = 'alphabetic'; ctx.textAlign = 'left';
+      ctx.fillStyle = cfg.nameFontColor;
+      ctx.font = `bold ${toPx(cfg.fontSizeName)}px sans-serif`;
+      ctx.fillText('Nome do Aluno', 31*S, 21*S);
+
+      ctx.fillStyle = cfg.instFontColor;
+      ctx.font = `${toPx(cfg.fontSizeInst)}px sans-serif`;
+      ctx.fillText('Instituição', 31*S, 30*S);
+
+      ctx.fillStyle = cfg.turmFontColor;
+      ctx.font = `${toPx(cfg.fontSizeTurma)}px sans-serif`;
+      ctx.fillText('Turma', 31*S, 37*S);
+
+      // Linha divisória
+      ctx.strokeStyle='#374151'; ctx.lineWidth=0.2*S;
+      ctx.beginPath(); ctx.moveTo(5*S,H-11*S); ctx.lineTo(W-5*S,H-11*S); ctx.stroke();
+
+      // QR (placeholder)
+      const qrSz=22*S, qrX=W-qrSz-5*S, qrY=H-qrSz-12*S;
+      ctx.fillStyle='#fff'; _rrPath(ctx,qrX-S,qrY-S,qrSz+2*S,qrSz+2*S,S); ctx.fill();
+      ctx.fillStyle='#1e293b'; ctx.fillRect(qrX,qrY,qrSz,qrSz);
+      ctx.fillStyle='#fff'; ctx.font=`bold ${toPx(8)}px sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('QR', qrX+qrSz/2, qrY+qrSz/2);
+
+      // Legenda QR
+      ctx.fillStyle=cfg.qrLabelColor;
+      ctx.font=`${toPx(cfg.fontSizeQrLabel)}px sans-serif`;
+      ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+      ctx.fillText('Escaneie para entrar', qrX+qrSz/2, H-4*S);
+    }
+
   </script>
 </body>
 </html>

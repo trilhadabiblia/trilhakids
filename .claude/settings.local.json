@@ -6,7 +6,8 @@
       "Bash(docker cp *)",
       "Bash(docker exec *)",
       "Bash(python -m json.tool)",
-      "Bash(curl -si \"http://localhost:3000/entrar.html?token=27722464fa498d8f\")"
+      "Bash(curl -si \"http://localhost:3000/entrar.html?token=27722464fa498d8f\")",
+      "Bash(node *)"
     ]
   }
 }
