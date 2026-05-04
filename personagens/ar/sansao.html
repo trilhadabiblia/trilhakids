@@ -127,7 +127,7 @@
   <div style="font-size:3.5rem;margin-bottom:1rem">⚙️</div>
   <h2 id="setup-title" style="color:white;font-size:1.4rem;font-weight:900;margin-bottom:.5rem">Um passo antes de usar</h2>
   <p id="setup-msg" style="color:#a78bfa;font-size:.9rem;max-width:320px;line-height:1.6;margin-bottom:.5rem">
-    O arquivo de rastreamento <code style="color:#fbbf24">targets/sansao.mind</code> ainda não foi gerado.
+    O arquivo de rastreamento <code style="color:#fbbf24">targets/miro.mind</code> ainda não foi gerado.
     É uma etapa única, leva ~30 segundos.
   </p>
   <p id="setup-status" style="color:#6b7280;font-size:.75rem;margin-bottom:1rem"></p>
@@ -135,7 +135,7 @@
     <li>Acesse <strong style="color:white">hiukim.github.io/mind-ar-js-doc/tools/compile</strong></li>
     <li>Clique em <em>Upload Images</em> e envie <code style="color:#fbbf24">personagens/img/sansao.png</code></li>
     <li>Clique em <em>Start</em> e baixe o arquivo <code style="color:#fbbf24">.mind</code></li>
-    <li>Renomeie para <code style="color:#fbbf24">sansao.mind</code> e coloque em <code style="color:#fbbf24">personagens/ar/targets/</code></li>
+    <li>Renomeie para <code style="color:#fbbf24">miro.mind</code> e coloque em <code style="color:#fbbf24">personagens/ar/targets/</code></li>
     <li>Reabra esta página</li>
   </ol>
   <a href="../herois.html"
@@ -170,7 +170,7 @@
 <!-- ── A-Frame AR ───────────────────────────────── -->
 <a-scene
   id="ar-scene"
-  mindar-image="imageTargetSrc: ./targets/sansao.mind; autoStart: false; uiLoading: no; uiScanning: no; uiError: no;"
+  mindar-image="imageTargetSrc: ./targets/miro.mind; autoStart: false; uiLoading: no; uiScanning: no; uiError: no;"
   color-space="sRGB"
   renderer="colorManagement: true; logarithmicDepthBuffer: true;"
   vr-mode-ui="enabled: false"
@@ -335,7 +335,7 @@
     const setup = document.getElementById('setup');
     document.getElementById('setup-title').textContent = 'Erro ao carregar AR';
     document.getElementById('setup-msg').textContent =
-      'O arquivo targets/sansao.mind existe mas não pôde ser carregado. Gere-o novamente.';
+      'O arquivo targets/miro.mind existe mas não pôde ser carregado. Gere-o novamente.';
     const statusEl = document.getElementById('setup-status');
     if (statusEl) statusEl.textContent = `(${e.detail || 'arError'})`;
     setup.classList.add('visible');
