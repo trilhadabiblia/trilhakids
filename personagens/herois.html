@@ -230,7 +230,8 @@
 				versiculo: "O Espírito do Senhor se apossou de Sansão, e ele rasgou o leão como quem rasga um cabrito.",
 				referencia: "Juízes 14:6",
 				curiosidade: "Seu poder estava no cabelo nunca cortado (voto de nazireu). Dalila o traiu descobrindo o segredo.",
-				cor: "from-orange-500 to-red-500"
+				cor: "from-orange-500 to-red-500",
+				ar: "ar/sansao.html"
 			},
 			{
 				id: 13,
@@ -346,6 +347,15 @@
                 </div>
                 <p class="text-gray-100 pl-8">${heroi.curiosidade}</p>
               </div>
+
+              ${heroi.ar ? `
+              <!-- Botão AR -->
+              <a href="${heroi.ar}" onclick="event.stopPropagation()"
+                 class="flex items-center justify-center gap-2 w-full py-3 rounded-xl font-black text-sm
+                        bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500
+                        text-white transition-all hover:scale-[1.02] shadow-lg shadow-violet-900/40">
+                📷 Ver em Realidade Aumentada
+              </a>` : ''}
             </div>
           </div>
         </div>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Sansão AR — Trilho Kids</title>
+
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #000; overflow: hidden; font-family: 'Inter', 'Helvetica Neue', sans-serif; }
+
+    /* ── Loading ───────────────────────────────── */
+    #loading {
+      position: fixed; inset: 0; z-index: 1000;
+      background: #0a0818;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      transition: opacity .5s ease;
+    }
+    #loading.hide { opacity: 0; pointer-events: none; }
+
+    #loading-bar-track {
+      width: 200px; height: 5px;
+      background: rgba(255,255,255,.1);
+      border-radius: 9999px; overflow: hidden;
+      margin-top: 1.5rem;
+    }
+    #loading-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(to right, #7c3aed, #4f46e5);
+      border-radius: 9999px;
+      transition: width .3s ease;
+    }
+
+    /* ── Setup screen (antes de ter o .mind) ───── */
+    #setup {
+      position: fixed; inset: 0; z-index: 1000;
+      background: #0a0818;
+      display: none;
+      flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2rem; text-align: center;
+    }
+    #setup.visible { display: flex; }
+
+    /* ── HUD ───────────────────────────────────── */
+    #hud {
+      position: fixed; inset: 0; z-index: 50;
+      pointer-events: none;
+    }
+
+    #back-btn {
+      position: fixed; top: 1rem; left: 1rem; z-index: 200;
+      background: rgba(0,0,0,.6); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 9999px; padding: .5rem 1.1rem;
+      color: white; font-size: .85rem; font-weight: 700;
+      text-decoration: none; backdrop-filter: blur(8px);
+      pointer-events: all;
+    }
+
+    #scan-hint {
+      position: fixed; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      z-index: 200;
+      background: rgba(0,0,0,.72); border: 1px solid rgba(139,92,246,.5);
+      border-radius: 9999px; padding: .75rem 1.5rem;
+      color: white; font-size: .9rem; font-weight: 600;
+      white-space: nowrap; backdrop-filter: blur(10px);
+      transition: opacity .4s ease;
+    }
+    #scan-hint.hide { opacity: 0; pointer-events: none; }
+
+    /* Cantos do frame de scanning */
+    #scan-frame {
+      position: fixed; top: 50%; left: 50%;
+      transform: translate(-50%, -55%);
+      width: 210px; height: 210px;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+    #scan-frame.hide { opacity: 0; }
+
+    #scan-frame::before, #scan-frame::after,
+    #scan-frame .corner-bl, #scan-frame .corner-br {
+      content: ''; position: absolute;
+      width: 36px; height: 36px;
+      border-color: rgba(139,92,246,.9);
+      border-style: solid;
+    }
+    #scan-frame::before  { top:0; left:0;  border-width:3px 0 0 3px; border-radius:5px 0 0 0; }
+    #scan-frame::after   { top:0; right:0; border-width:3px 3px 0 0; border-radius:0 5px 0 0; }
+    #scan-frame .corner-bl { bottom:0; left:0;  border-width:0 0 3px 3px; border-radius:0 0 0 5px; }
+    #scan-frame .corner-br { bottom:0; right:0; border-width:0 3px 3px 0; border-radius:0 0 5px 0; }
+
+    @keyframes scan-sweep {
+      0%   { top: 4px; opacity: 1; }
+      90%  { opacity: 1; }
+      100% { top: calc(100% - 4px); opacity: 0; }
+    }
+    #scan-line {
+      position: absolute; left: 6%; right: 6%; height: 2px;
+      background: linear-gradient(to right, transparent, rgba(139,92,246,.9), transparent);
+      animation: scan-sweep 2.2s ease-in-out infinite;
+    }
+
+    /* Badge conquistado (HUD) */
+    #badge-toast {
+      position: fixed; top: 1rem; right: 1rem; z-index: 200;
+      background: rgba(20,83,45,.9); border: 1px solid rgba(134,239,172,.5);
+      border-radius: .85rem; padding: .6rem 1rem;
+      color: #86efac; font-size: .85rem; font-weight: 700;
+      opacity: 0; transform: translateX(120%);
+      transition: opacity .4s ease, transform .4s ease;
+      pointer-events: none;
+    }
+    #badge-toast.show {
+      opacity: 1; transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Setup: .mind ainda não gerado ───────────── -->
+<div id="setup">
+  <div style="font-size:3.5rem;margin-bottom:1rem">⚙️</div>
+  <h2 style="color:white;font-size:1.4rem;font-weight:900;margin-bottom:.5rem">Um passo antes de usar</h2>
+  <p style="color:#a78bfa;font-size:.9rem;max-width:320px;line-height:1.6;margin-bottom:1.5rem">
+    O arquivo de rastreamento <code style="color:#fbbf24">targets/sansao.mind</code> ainda não foi gerado.
+    É uma etapa única, leva ~30 segundos.
+  </p>
+  <ol style="color:#cbd5e1;font-size:.85rem;text-align:left;max-width:320px;line-height:2;margin-bottom:1.5rem">
+    <li>Acesse <strong style="color:white">hiukim.github.io/mind-ar-js-doc/tools/compile</strong></li>
+    <li>Clique em <em>Upload Images</em> e envie <code style="color:#fbbf24">personagens/img/sansao.png</code></li>
+    <li>Clique em <em>Start</em> e baixe o arquivo <code style="color:#fbbf24">.mind</code></li>
+    <li>Renomeie para <code style="color:#fbbf24">sansao.mind</code> e coloque em <code style="color:#fbbf24">personagens/ar/targets/</code></li>
+    <li>Reabra esta página</li>
+  </ol>
+  <a href="../herois.html"
+     style="background:rgba(139,92,246,.2);border:1px solid rgba(139,92,246,.4);
+            color:#c4b5fd;border-radius:9999px;padding:.6rem 1.4rem;
+            font-weight:700;font-size:.9rem;text-decoration:none">
+    ← Voltar aos Heróis
+  </a>
+</div>
+
+<!-- ── Loading ──────────────────────────────────── -->
+<div id="loading">
+  <div style="font-size:4rem;margin-bottom:.75rem">🗺️</div>
+  <h2 style="color:white;font-size:1.4rem;font-weight:900;margin-bottom:.25rem">Trilho Kids AR</h2>
+  <p id="loading-msg" style="color:#a78bfa;font-size:.875rem">Iniciando câmera...</p>
+  <div id="loading-bar-track"><div id="loading-bar"></div></div>
+</div>
+
+<!-- ── HUD ─────────────────────────────────────── -->
+<a href="../herois.html" id="back-btn">← Heróis</a>
+
+<div id="scan-hint">📷 Aponte para a imagem de <strong>Sansão</strong></div>
+
+<div id="scan-frame">
+  <div class="corner-bl"></div>
+  <div class="corner-br"></div>
+  <div id="scan-line"></div>
+</div>
+
+<div id="badge-toast">🏅 +5 pts — Herói descoberto!</div>
+
+<!-- ── A-Frame AR ───────────────────────────────── -->
+<a-scene
+  id="ar-scene"
+  mindar-image="imageTargetSrc: ./targets/sansao.mind; autoStart: false; uiLoading: no; uiScanning: no; uiError: no;"
+  color-space="sRGB"
+  renderer="colorManagement: true; logarithmicDepthBuffer: true;"
+  vr-mode-ui="enabled: false"
+  device-orientation-permission-ui="enabled: false">
+
+  <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+  <!-- Target 0: retrato de Sansão -->
+  <a-entity mindar-image-target="targetIndex: 0" id="target0">
+
+    <!-- Card: borda glow -->
+    <a-plane position="0 0.78 -0.003" width="0.96" height="0.88"
+             color="#7c3aed" opacity="0.25"
+             animation="property: opacity; from: 0; to: 0.25; dur: 400; startEvents: animateIn">
+    </a-plane>
+
+    <!-- Card: fundo -->
+    <a-plane id="card-bg" position="0 0.78 -0.001" width="0.92" height="0.84"
+             color="#0a0818" opacity="0">
+    </a-plane>
+
+    <!-- Barra laranja superior -->
+    <a-plane position="0 1.205 0.001" width="0.92" height="0.028"
+             color="#f97316" opacity="0"
+             id="bar-top">
+    </a-plane>
+
+    <!-- Nome -->
+    <a-text id="txt-nome"
+            value="SANSAO" position="0 1.13 0.002"
+            align="center" color="#fbbf24"
+            width="2.0" opacity="0">
+    </a-text>
+
+    <!-- Função -->
+    <a-text id="txt-func"
+            value="Juiz e Guerreiro Libertador" position="0 1.03 0.002"
+            align="center" color="#c4b5fd"
+            width="1.5" opacity="0">
+    </a-text>
+
+    <!-- Divisor 1 -->
+    <a-plane position="0 0.975 0.002" width="0.72" height="0.005"
+             color="#7c3aed" opacity="0" id="div1">
+    </a-plane>
+
+    <!-- Versículo -->
+    <a-text id="txt-versiculo"
+            value="O Espirito do Senhor\nse apossou de Sansao,\ne ele rasgou o leao."
+            position="0 0.875 0.002"
+            align="center" color="#e2e8f0"
+            width="1.35" line-height="40" opacity="0">
+    </a-text>
+
+    <!-- Referência -->
+    <a-text id="txt-ref"
+            value="Juizes 14:6" position="0 0.73 0.002"
+            align="center" color="#a78bfa"
+            width="1.2" opacity="0">
+    </a-text>
+
+    <!-- Divisor 2 -->
+    <a-plane position="0 0.685 0.002" width="0.65" height="0.004"
+             color="#374151" opacity="0" id="div2">
+    </a-plane>
+
+    <!-- Poder label -->
+    <a-text id="txt-poder-label"
+            value="PODER ESPECIAL" position="0 0.63 0.002"
+            align="center" color="#f59e0b"
+            width="1.2" opacity="0">
+    </a-text>
+
+    <!-- Poder valor -->
+    <a-text id="txt-poder"
+            value="Forca sobrenatural de Deus" position="0 0.575 0.002"
+            align="center" color="#fde68a"
+            width="1.4" opacity="0">
+    </a-text>
+
+    <!-- Badge chip fundo -->
+    <a-plane position="0 0.49 0.002" width="0.72" height="0.072"
+             color="#14532d" opacity="0" id="badge-bg">
+    </a-plane>
+
+    <!-- Badge texto -->
+    <a-text id="txt-badge"
+            value="+5 pontos conquistados!" position="0 0.49 0.003"
+            align="center" color="#86efac"
+            width="1.3" opacity="0">
+    </a-text>
+
+  </a-entity>
+</a-scene>
+
+<script>
+  const TARGETS_URL = './targets/sansao.mind';
+  const scene       = document.getElementById('ar-scene');
+  const loading     = document.getElementById('loading');
+  const loadingMsg  = document.getElementById('loading-msg');
+  const scanHint    = document.getElementById('scan-hint');
+  const scanFrame   = document.getElementById('scan-frame');
+  const badgeToast  = document.getElementById('badge-toast');
+
+  // ── Verifica se o .mind existe antes de tudo ──────────────────
+  fetch(TARGETS_URL, { method: 'HEAD' })
+    .then(r => {
+      if (!r.ok) throw new Error('not found');
+    })
+    .catch(() => {
+      loading.classList.add('hide');
+      document.getElementById('setup').classList.add('visible');
+    });
+
+  // ── Progresso de loading ─────────────────────────────────────
+  let barPct = 0;
+  const barEl = document.getElementById('loading-bar');
+  const barInterval = setInterval(() => {
+    barPct = Math.min(barPct + Math.random() * 12, 88);
+    barEl.style.width = barPct + '%';
+  }, 250);
+
+  // ── AR pronto ────────────────────────────────────────────────
+  scene.addEventListener('arReady', () => {
+    clearInterval(barInterval);
+    barEl.style.width = '100%';
+    loadingMsg.textContent = 'Pronto!';
+    setTimeout(() => loading.classList.add('hide'), 600);
+  });
+
+  // ── Target encontrado ────────────────────────────────────────
+  const target0 = document.getElementById('target0');
+
+  target0.addEventListener('targetFound', () => {
+    scanHint.classList.add('hide');
+    scanFrame.classList.add('hide');
+    revealCard();
+
+    // Gamificação
+    if (window.trilhoGame) trilhoGame.visitarHeroi('Sansão');
+
+    // Toast de badge
+    setTimeout(() => {
+      badgeToast.classList.add('show');
+      setTimeout(() => badgeToast.classList.remove('show'), 3000);
+    }, 600);
+  });
+
+  target0.addEventListener('targetLost', () => {
+    scanHint.classList.remove('hide');
+    scanFrame.classList.remove('hide');
+    hideCard();
+  });
+
+  // ── Animação do card (fade por elemento, escalonado) ─────────
+  const cardElements = [
+    'card-bg', 'bar-top', 'txt-nome', 'txt-func', 'div1',
+    'txt-versiculo', 'txt-ref', 'div2',
+    'txt-poder-label', 'txt-poder', 'badge-bg', 'txt-badge'
+  ];
+
+  function revealCard() {
+    cardElements.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      setTimeout(() => {
+        const isPlane = el.tagName.toLowerCase() === 'a-plane';
+        const targetOpacity = id === 'card-bg' ? '0.93'
+                            : id.startsWith('div') ? '1'
+                            : isPlane ? (id === 'bar-top' ? '1' : id === 'badge-bg' ? '0.85' : '0.25')
+                            : '1';
+        el.setAttribute('animation__in',
+          `property: opacity; from: 0; to: ${targetOpacity}; dur: 300; easing: easeOutQuad`
+        );
+      }, i * 40);
+    });
+  }
+
+  function hideCard() {
+    cardElements.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.setAttribute('animation__out',
+        'property: opacity; to: 0; dur: 200; easing: easeInQuad'
+      );
+    });
+  }
+
+  // ── Inicia AR após cena carregar ─────────────────────────────
+  scene.addEventListener('loaded', () => {
+    const sys = scene.systems['mindar-image-system'];
+    if (sys) {
+      loadingMsg.textContent = 'Acessando câmera...';
+      sys.start();
+    }
+  });
+</script>
+
+</body>
+</html>
