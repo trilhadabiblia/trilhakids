@@ -125,11 +125,12 @@
 <!-- ── Setup: .mind ainda não gerado ───────────── -->
 <div id="setup">
   <div style="font-size:3.5rem;margin-bottom:1rem">⚙️</div>
-  <h2 style="color:white;font-size:1.4rem;font-weight:900;margin-bottom:.5rem">Um passo antes de usar</h2>
-  <p style="color:#a78bfa;font-size:.9rem;max-width:320px;line-height:1.6;margin-bottom:1.5rem">
+  <h2 id="setup-title" style="color:white;font-size:1.4rem;font-weight:900;margin-bottom:.5rem">Um passo antes de usar</h2>
+  <p id="setup-msg" style="color:#a78bfa;font-size:.9rem;max-width:320px;line-height:1.6;margin-bottom:.5rem">
     O arquivo de rastreamento <code style="color:#fbbf24">targets/sansao.mind</code> ainda não foi gerado.
     É uma etapa única, leva ~30 segundos.
   </p>
+  <p id="setup-status" style="color:#6b7280;font-size:.75rem;margin-bottom:1rem"></p>
   <ol style="color:#cbd5e1;font-size:.85rem;text-align:left;max-width:320px;line-height:2;margin-bottom:1.5rem">
     <li>Acesse <strong style="color:white">hiukim.github.io/mind-ar-js-doc/tools/compile</strong></li>
     <li>Clique em <em>Upload Images</em> e envie <code style="color:#fbbf24">personagens/img/sansao.png</code></li>
@@ -274,15 +275,42 @@
   const scanFrame   = document.getElementById('scan-frame');
   const badgeToast  = document.getElementById('badge-toast');
 
-  // ── Verifica se o .mind existe antes de tudo ──────────────────
-  fetch(TARGETS_URL, { method: 'HEAD' })
+  // ── Coordena fetch + loaded sem corrida ───────────────────────
+  // Ambos precisam estar prontos antes de sys.start()
+  let sceneReady = false;
+  let mindReady  = false;
+
+  function tryStartAR() {
+    if (!sceneReady || !mindReady) return;
+    const sys = scene.systems['mindar-image-system'];
+    if (sys) {
+      loadingMsg.textContent = 'Acessando câmera...';
+      sys.start();
+    }
+  }
+
+  // 1. Confirma que o .mind existe (GET real para evitar falso 200 em CDN)
+  fetch(TARGETS_URL)
     .then(r => {
-      if (!r.ok) throw new Error('not found');
+      if (!r.ok) throw new Error(r.status);
+      mindReady = true;
+      tryStartAR();
     })
-    .catch(() => {
+    .catch(err => {
+      clearInterval(barInterval);
       loading.classList.add('hide');
-      document.getElementById('setup').classList.add('visible');
+      const setup = document.getElementById('setup');
+      setup.classList.add('visible');
+      // Coloca status no setup para facilitar debug
+      const statusEl = document.getElementById('setup-status');
+      if (statusEl) statusEl.textContent = `(erro: ${err.message || 'arquivo não encontrado'})`;
     });
+
+  // 2. A-Frame carregado
+  scene.addEventListener('loaded', () => {
+    sceneReady = true;
+    tryStartAR();
+  });
 
   // ── Progresso de loading ─────────────────────────────────────
   let barPct = 0;
@@ -300,6 +328,19 @@
     setTimeout(() => loading.classList.add('hide'), 600);
   });
 
+  // ── Erro do MindAR (ex: .mind corrompido) ────────────────────
+  scene.addEventListener('arError', e => {
+    clearInterval(barInterval);
+    loading.classList.add('hide');
+    const setup = document.getElementById('setup');
+    document.getElementById('setup-title').textContent = 'Erro ao carregar AR';
+    document.getElementById('setup-msg').textContent =
+      'O arquivo targets/sansao.mind existe mas não pôde ser carregado. Gere-o novamente.';
+    const statusEl = document.getElementById('setup-status');
+    if (statusEl) statusEl.textContent = `(${e.detail || 'arError'})`;
+    setup.classList.add('visible');
+  });
+
   // ── Target encontrado ────────────────────────────────────────
   const target0 = document.getElementById('target0');
 
@@ -308,10 +349,8 @@
     scanFrame.classList.add('hide');
     revealCard();
 
-    // Gamificação
     if (window.trilhoGame) trilhoGame.visitarHeroi('Sansão');
 
-    // Toast de badge
     setTimeout(() => {
       badgeToast.classList.add('show');
       setTimeout(() => badgeToast.classList.remove('show'), 3000);
@@ -324,7 +363,7 @@
     hideCard();
   });
 
-  // ── Animação do card (fade por elemento, escalonado) ─────────
+  // ── Animação do card ─────────────────────────────────────────
   const cardElements = [
     'card-bg', 'bar-top', 'txt-nome', 'txt-func', 'div1',
     'txt-versiculo', 'txt-ref', 'div2',
@@ -336,11 +375,11 @@
       const el = document.getElementById(id);
       if (!el) return;
       setTimeout(() => {
-        const isPlane = el.tagName.toLowerCase() === 'a-plane';
         const targetOpacity = id === 'card-bg' ? '0.93'
                             : id.startsWith('div') ? '1'
-                            : isPlane ? (id === 'bar-top' ? '1' : id === 'badge-bg' ? '0.85' : '0.25')
-                            : '1';
+                            : id === 'bar-top' ? '1'
+                            : id === 'badge-bg' ? '0.85'
+                            : id.startsWith('txt') ? '1' : '0.25';
         el.setAttribute('animation__in',
           `property: opacity; from: 0; to: ${targetOpacity}; dur: 300; easing: easeOutQuad`
         );
@@ -357,15 +396,6 @@
       );
     });
   }
-
-  // ── Inicia AR após cena carregar ─────────────────────────────
-  scene.addEventListener('loaded', () => {
-    const sys = scene.systems['mindar-image-system'];
-    if (sys) {
-      loadingMsg.textContent = 'Acessando câmera...';
-      sys.start();
-    }
-  });
 </script>
 
 </body>
