@@ -272,7 +272,7 @@
             <!-- Header Clicável -->
             <div class="bg-gradient-to-r ${heroi.cor} p-6 flex items-center justify-between hover:opacity-90 transition-opacity">
               <div class="flex items-center gap-4">
-                <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModal('${heroi.img}', '${heroi.nome}')">
+                <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModalImagem('${heroi.img}', '${heroi.nome}')">
                   <img 
                     src="${heroi.img}" 
                     alt="${heroi.nome}"
@@ -363,7 +363,7 @@
 			}
 		}
 
-		function abrirModal(src, nome) {
+		function abrirModalImagem(src, nome) {
 			document.getElementById('modal-imagem').classList.remove('hidden');
 			document.getElementById('modal-imagem-src').src = src;
 			document.getElementById('modal-titulo').textContent = nome;

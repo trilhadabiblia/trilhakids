@@ -146,7 +146,7 @@
         <!-- Cabeçalho -->
         <header class="bg-gradient-to-r ${personagem.cor || 'from-amber-700 to-yellow-800'} p-6 flex items-center justify-between hover:opacity-90 transition-opacity">
           <div class="flex items-center gap-4">
-            <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModal('${personagem.img}', '${personagem.nome}')">
+            <div class="flex-shrink-0 w-32 h-32 bg-white/10 backdrop-blur rounded-xl overflow-hidden flex items-center justify-center cursor-pointer hover:scale-105 transition-transform" onclick="abrirModalImagem('${personagem.img}', '${personagem.nome}')">
               <img src="${personagem.img}" alt="${personagem.nome}" loading="lazy" class="w-full h-full object-contain p-2"/>
             </div>
             <div>
@@ -217,7 +217,7 @@
 		}
 
 		// Modal
-		function abrirModal(src, nome) {
+		function abrirModalImagem(src, nome) {
 			const modal = document.getElementById('modal-imagem');
 			modal.classList.remove('hidden');
 			modal.setAttribute('aria-hidden', 'false');
