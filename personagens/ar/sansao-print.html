@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sansão — Cartão AR para Impressão</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f3f4f6;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-start;
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    .instructions {
+      max-width: 520px; text-align: center;
+      margin-bottom: 2rem;
+      background: white; border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid #e5e7eb;
+    }
+    .instructions h2 { font-size: 1rem; font-weight: 900; color: #1f2937; margin-bottom: .5rem; }
+    .instructions ol  { text-align: left; color: #4b5563; font-size: .85rem; line-height: 2; padding-left: 1.25rem; }
+    .instructions .badge {
+      display: inline-block;
+      background: #7c3aed; color: white;
+      font-size: .7rem; font-weight: 700;
+      padding: .2rem .6rem; border-radius: 9999px;
+      margin-bottom: .75rem;
+    }
+
+    /* ── CARTÃO AR ─────────────────────────────────── */
+    .ar-card {
+      width: 148mm; /* A6 landscape-ish */
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.18);
+      position: relative;
+    }
+
+    /* Faixa superior com padrão geométrico (features para tracking) */
+    .card-header {
+      background: #7c2d12;
+      padding: 12px 14px 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Padrão de losangos — gera features visuais */
+    .card-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg,
+          rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 2px,
+          transparent 2px, transparent 12px),
+        repeating-linear-gradient(-45deg,
+          rgba(255,255,255,.07) 0px, rgba(255,255,255,.07) 2px,
+          transparent 2px, transparent 12px);
+    }
+    .card-header-inner {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .card-header-text .nome {
+      font-size: 1.5rem; font-weight: 900;
+      color: #fbbf24; line-height: 1;
+      letter-spacing: -.5px;
+    }
+    .card-header-text .funcao {
+      font-size: .7rem; color: rgba(255,255,255,.8);
+      font-weight: 600; margin-top: 3px;
+      text-transform: uppercase; letter-spacing: .06em;
+    }
+    .card-header-text .tribo {
+      font-size: .65rem; color: rgba(251,191,36,.7);
+      margin-top: 2px;
+    }
+    /* Escudo decorativo no canto */
+    .shield {
+      position: absolute; right: 12px; top: 8px;
+      width: 32px; height: 32px;
+      background: rgba(251,191,36,.15);
+      border: 2px solid rgba(251,191,36,.4);
+      border-radius: 4px 4px 50% 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+
+    /* Corpo do cartão */
+    .card-body {
+      display: flex; gap: 0;
+    }
+
+    /* Lado esquerdo: imagem com moldura e micro-padrão */
+    .card-img-col {
+      width: 80px; flex-shrink: 0;
+      background: linear-gradient(180deg, #1c1917 0%, #292524 100%);
+      position: relative; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    /* Padrão de pontos no fundo da imagem (features) */
+    .card-img-col::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(251,191,36,.12) 1px, transparent 1px);
+      background-size: 8px 8px;
+    }
+    .card-img-col img {
+      width: 72px; height: 72px;
+      object-fit: contain;
+      position: relative; z-index: 1;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,.5));
+    }
+
+    /* Lado direito: conteúdo */
+    .card-content {
+      flex: 1; padding: 10px 12px;
+      display: flex; flex-direction: column; gap: 7px;
+    }
+
+    .versiculo-box {
+      background: #fef3c7;
+      border-left: 3px solid #f59e0b;
+      border-radius: 0 6px 6px 0;
+      padding: 6px 8px;
+    }
+    .versiculo-box .texto {
+      font-size: .64rem; color: #78350f;
+      font-style: italic; line-height: 1.5;
+    }
+    .versiculo-box .ref {
+      font-size: .6rem; color: #92400e;
+      font-weight: 700; margin-top: 2px;
+    }
+
+    .poder-box {
+      display: flex; gap: 6px; align-items: flex-start;
+    }
+    .poder-icon {
+      font-size: .85rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .poder-label {
+      font-size: .58rem; font-weight: 900;
+      color: #b45309; text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .poder-valor {
+      font-size: .63rem; color: #374151; margin-top: 1px; line-height: 1.4;
+    }
+
+    /* Barra de stats (features geométricas) */
+    .stats-row {
+      display: flex; gap: 4px;
+    }
+    .stat-item {
+      flex: 1; background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 4px; padding: 4px 3px;
+      text-align: center;
+    }
+    .stat-item .label { font-size: .5rem; color: #9ca3af; text-transform: uppercase; letter-spacing: .04em; }
+    .stat-item .value { font-size: .7rem; font-weight: 900; color: #1f2937; }
+
+    /* Faixa inferior com qr hint e padrão */
+    .card-footer {
+      background: #1c1917;
+      padding: 6px 12px;
+      display: flex; align-items: center; justify-content: space-between;
+      position: relative; overflow: hidden;
+    }
+    .card-footer::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(
+        90deg, rgba(251,191,36,.05) 0px, rgba(251,191,36,.05) 1px,
+        transparent 1px, transparent 10px
+      );
+    }
+    .card-footer .brand {
+      font-size: .6rem; font-weight: 900;
+      color: rgba(251,191,36,.7);
+      letter-spacing: .1em; text-transform: uppercase;
+      position: relative; z-index: 1;
+    }
+    .card-footer .ar-hint {
+      font-size: .58rem; color: rgba(255,255,255,.4);
+      position: relative; z-index: 1;
+    }
+
+    /* Borda lateral decorativa (canto a canto, mais features) */
+    .card-border-left {
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 5px;
+      background: repeating-linear-gradient(
+        180deg,
+        #f97316 0px, #f97316 6px,
+        #7c2d12 6px, #7c2d12 12px
+      );
+    }
+
+    /* ── Botão de impressão ──────────────────────── */
+    .print-btn {
+      margin-top: 1.5rem;
+      background: #7c3aed; color: white;
+      border: none; border-radius: 9999px;
+      padding: .75rem 2rem; font-size: .9rem;
+      font-weight: 700; cursor: pointer;
+      font-family: inherit;
+    }
+    .print-btn:hover { background: #6d28d9; }
+
+    .next-step {
+      margin-top: 1rem;
+      font-size: .8rem; color: #6b7280;
+      text-align: center; max-width: 400px;
+    }
+
+    @media print {
+      body { background: white; padding: 0; justify-content: flex-start; }
+      .instructions, .print-btn, .next-step { display: none !important; }
+      .ar-card {
+        box-shadow: none;
+        margin: 10mm auto;
+        width: 160mm;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="instructions">
+  <span class="badge">Passo a passo</span>
+  <h2>Como usar este cartão AR</h2>
+  <ol>
+    <li>Imprima esta página (botão abaixo)</li>
+    <li>Acesse <strong>hiukim.github.io/mind-ar-js-doc/tools/compile</strong></li>
+    <li>Faça Print Screen / screenshot <strong>desta página</strong> e envie ao compilador</li>
+    <li>Baixe o <code>.mind</code>, renomeie para <code>sansao.mind</code></li>
+    <li>Suba em <code>personagens/ar/targets/sansao.mind</code></li>
+    <li>Abra <code>ar/sansao.html</code> e aponte para o cartão impresso</li>
+  </ol>
+</div>
+
+<!-- ── CARTÃO AR ─────────────────────────────────── -->
+<div class="ar-card" id="card">
+  <div class="card-border-left"></div>
+
+  <!-- Header -->
+  <div class="card-header">
+    <div class="card-header-inner">
+      <div class="card-header-text">
+        <div class="nome">SANSÃO</div>
+        <div class="funcao">Juiz e Guerreiro Libertador</div>
+        <div class="tribo">⚔️ Tribo de Dã &nbsp;•&nbsp; 20 anos de liderança</div>
+      </div>
+    </div>
+    <div class="shield">⚔️</div>
+  </div>
+
+  <!-- Body -->
+  <div class="card-body">
+
+    <!-- Imagem -->
+    <div class="card-img-col">
+      <img src="../img/sansao.png" alt="Sansão">
+    </div>
+
+    <!-- Conteúdo -->
+    <div class="card-content">
+
+      <div class="versiculo-box">
+        <div class="texto">"O Espírito do Senhor se apossou de Sansão, e ele rasgou o leão como quem rasga um cabrito."</div>
+        <div class="ref">Juízes 14:6</div>
+      </div>
+
+      <div class="poder-box">
+        <div class="poder-icon">⚡</div>
+        <div>
+          <div class="poder-label">Poder Especial</div>
+          <div class="poder-valor">Força sobrenatural concedida por Deus</div>
+        </div>
+      </div>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="label">Força</div>
+          <div class="value">★★★★★</div>
+        </div>
+        <div class="stat-item">
+          <div class="label">Coragem</div>
+          <div class="value">★★★★☆</div>
+        </div>
+        <div class="stat-item">
+          <div class="label">Sabedoria</div>
+          <div class="value">★★☆☆☆</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="card-footer">
+    <div class="brand">Trilho Kids</div>
+    <div class="ar-hint">📷 Escaneie para ver em AR</div>
+  </div>
+
+</div>
+
+<button class="print-btn" onclick="window.print()">🖨️ Imprimir cartão</button>
+
+<p class="next-step">
+  Após imprimir, use <strong>este cartão inteiro</strong> como imagem-alvo no compilador MindAR —
+  não só a foto do personagem. O cartão tem muito mais detalhes visuais para o rastreamento funcionar.
+</p>
+
+</body>
+</html>
