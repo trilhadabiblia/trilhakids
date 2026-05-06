@@ -1,0 +1,5 @@
+AddType model/gltf-binary .glb
+AddType model/gltf+json .gltf
+
+# Permite CORS para o A-Frame carregar os modelos
+Header set Access-Control-Allow-Origin "*"
