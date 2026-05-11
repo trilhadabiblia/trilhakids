@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,10 +32,10 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🌊</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 mx-2">
-                    LIVRO DE ÊXODO
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700 mx-2">
+                    ÊXODO
                 </span>
-                <span>✨</span>
+                <span>🔥</span>
             </h1>
             <p class="text-xl text-gray-600 font-semibold">A Grande Libertação — Um Resumo Visual para Crianças</p>
         </div>
@@ -42,44 +43,44 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-exodo" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-yellow-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-orange-600">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
                 🌟 Os Três Segredos de Êxodo 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🔓 Primeiro Segredo: Deus Liberta!</h3>
+
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🔓 Primeiro Segredo: Deus Liberta!</h3>
                     <p class="italic">
                         Quando o povo clamou, Deus ouviu,<br>
                         Do Egito escuro, a liberdade surgiu!<br>
                         Com pragas e poder, o mar se abriu,<br>
                         E o povo de Deus, livre, sorriu!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3">📖 "Ouvi o clamor do meu povo" - Êxodo 3:7</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Êxodo 3:7 — "Tenho visto a aflição do meu povo... e ouvi o seu clamor."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">📜 Segundo Segredo: Obedecer é Amar!</h3>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">📜 Segundo Segredo: Obedecer é Amar!</h3>
                     <p class="italic">
                         No Monte Sinai, a lei foi dada,<br>
                         Dez mandamentos, bússola sagrada!<br>
                         Amar a Deus e ao próximo também,<br>
                         É o caminho que nos faz tão bem!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3">📖 "Guarda os meus mandamentos e vive" - Êxodo 20:1-17</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Êxodo 20:2 — "Eu sou o Senhor teu Deus, que te tirei da terra do Egito."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">⛺ Terceiro Segredo: Deus Está Perto!</h3>
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">⛺ Terceiro Segredo: Deus Quer Morar Perto!</h3>
                     <p class="italic">
                         O Tabernáculo foi construído com amor,<br>
                         Para que Deus habitasse em esplendor!<br>
                         Ele quer estar sempre ao nosso lado,<br>
                         Nosso amigo, protetor e amado!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3">📖 "Farão um santuário para mim, e habitarei no meio deles" - Êxodo 25:8</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Êxodo 25:8 — "Farão um santuário para mim, e habitarei no meio deles."</p>
                 </div>
 
             </div>
@@ -96,199 +97,307 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            👥 Quem são os Personagens Principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-orange-700 to-red-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar no Coração
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">🌟 Moisés - O Libertador</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Moisés é o personagem principal! Ele foi escolhido por Deus para libertar o povo de Israel da escravidão no Egito. 
-                        Mesmo sendo criado no palácio do Faraó, Deus o chamou para uma missão especial: guiar Seu povo para a liberdade!
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-orange-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "O Senhor pelejará por vós, e vós vos calareis."
+                </p>
+                <p class="text-orange-200 font-bold text-xl mb-6">— Êxodo 14:14</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🌊 <span class="font-bold">O que isso significa?</span> O exército do Faraó vinha atrás, o Mar Vermelho estava na frente — e Deus disse: "Eu vou lutar por vocês, não precisam entrar em pânico!" Quando as situações parecem impossíveis, você pode confiar: Deus está no controle. Às vezes, o maior ato de fé é simplesmente ficar quieto e deixar Deus agir!
                     </p>
-                    <div class="mt-4 space-y-2">
-                        <p class="text-gray-600">🔥 <strong>Encontro especial:</strong> Sarça ardente</p>
-                        <p class="text-gray-600">📜 <strong>Recebeu:</strong> Os Dez Mandamentos</p>
-                        <p class="text-gray-600">🌊 <strong>Milagre:</strong> Abriu o Mar Vermelho</p>
-                    </div>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📝 Copie no caderno</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">🗣️ Diga em voz alta</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📌 Coloque na parede</span>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="exodo-quem-e.png" alt="Moisés" class="w-full h-auto rounded-xl shadow-lg">
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="exodo-quem-e.png" alt="Personagens de Êxodo" class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🔥 Moisés — O Libertador</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Criado no palácio do Faraó, fugiu para o deserto e lá Deus o encontrou numa sarça em chamas. Ele resistiu, duvidou, mas foi e conduziu 600 mil homens (mais as mulheres e crianças!) para fora do Egito!
+                    </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 Ex 3:10 — "Agora pois vem, e te enviarei ao Faraó, para que tires o meu povo, os filhos de Israel, do Egito."</p>
+                </div>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">👑 Faraó — O Rei que Disse Não</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O rei mais poderoso do mundo na época teimou em não deixar o povo ir. Precisou de 10 pragas devastadoras para finalmente ceder — e mesmo assim, foi atrás deles! O orgulho tem um preço muito alto.
+                    </p>
+                    <p class="text-sm text-red-700 font-semibold mt-2">📖 Ex 5:2 — "Quem é o Senhor, para que eu lhe obedeça... Não conheço o Senhor."</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">🥁 Miriam — A Profetisa que Celebrou</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Irmã de Moisés, ela o salvou quando bebê ao colocá-lo no rio. Depois da travessia do Mar Vermelho, ela liderou as mulheres com pandeiros e dança em louvor a Deus — a primeira celebração de culto!
+                    </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Ex 15:21 — "Cantai ao Senhor, pois magnificamente triunfou; lançou ao mar o cavalo e o seu cavaleiro."</p>
+                </div>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">🌟 Deus — "EU SOU O QUE SOU"</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Em Êxodo, Deus revela Seu nome mais sagrado: YHWH — "EU SOU". Ele não é um deus distante; é o Deus que está presente, que vê, que ouve, que age. Ele aparece em fogo, nuvem e trovão!
+                    </p>
+                    <p class="text-sm text-red-600 font-semibold mt-2">📖 Ex 3:14 — "EU SOU O QUE SOU... Assim dirás aos filhos de Israel: EU SOU me enviou a vós."</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-red-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
             📖 O Que o Livro Conta?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-1">
-                <img src="exodo-o-que-conta.png" alt="História de Êxodo" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-4">🌊 A Grande Jornada da Libertação</h3>
-                    <div class="space-y-4 text-lg text-gray-700">
-                        <p>
-                            <strong class="text-yellow-600">🏛️ A Escravidão:</strong> O povo de Israel estava escravizado no Egito, fazendo tijolos e sofrendo muito.
-                        </p>
-                        <p>
-                            <strong class="text-yellow-600">⚡ As 10 Pragas:</strong> Deus enviou pragas poderosas para convencer o Faraó a libertar Seu povo!
-                        </p>
-                        <p>
-                            <strong class="text-yellow-600">🌊 O Mar Vermelho:</strong> Deus abriu o mar e o povo atravessou em terra seca - que milagre incrível!
-                        </p>
-                        <p>
-                            <strong class="text-yellow-600">⛰️ Monte Sinai:</strong> Deus deu os Dez Mandamentos para ensinar como viver de forma que agrada a Ele.
-                        </p>
-                        <p class="text-gray-600 italic mt-4">📚 O livro tem 40 capítulos cheios de aventuras e milagres!</p>
-                    </div>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">⛓️ A Escravidão e o Chamado</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Israel estava escravizado há 400 anos. Deus ouviu o clamor do povo e chamou Moisés na sarça ardente. A missão parecia impossível — mas Deus prometeu: "Eu estarei contigo!"
+                    </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 Ex 3:12 — "E disse Deus: Certamente eu serei contigo."</p>
                 </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">⚡ As 10 Pragas e a Páscoa</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Cada praga derrubava um deus egípcio — Deus mostrava que era o único Deus verdadeiro! A décima praga foi a mais séria: a morte dos primogênitos. O sangue do cordeiro na porta protegia quem cresse.
+                    </p>
+                    <p class="text-sm text-red-700 font-semibold mt-2">📖 Ex 12:13 — "O sangue será o sinal... e passarei por alto." (origem da Páscoa!)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-3">🌊 O Mar Vermelho e o Deserto</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O mar se abriu, o povo atravessou em terra seca! No deserto, Deus enviou maná do céu todo dia, água da pedra e conduziu o povo com nuvem de dia e fogo à noite — nunca sozinhos!
+                    </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Ex 16:4 — "Eis que farei chover pão do céu para vós."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-600 mb-3">📜 Os 10 Mandamentos e o Tabernáculo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        No Monte Sinai, entre trovões e relâmpagos, Deus deu as leis para Seu povo viver bem. E depois deu as instruções detalhadas do Tabernáculo — porque Ele queria morar no meio do povo!
+                    </p>
+                    <p class="text-sm text-red-600 font-semibold mt-2">📖 Ex 20:3 — "Não terás outros deuses diante de mim."</p>
+                </div>
+            </div>
+            <div>
+                <img src="exodo-o-que-conta.png" alt="O que Êxodo conta" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            ⭐ Por Que é Importante?
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
+            ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="space-y-6">
-                    <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                        <h3 class="text-xl font-bold text-yellow-700 mb-2">👂 Deus Ouve Nosso Clamor</h3>
-                        <p class="text-gray-700">
-                            Quando o povo clamou por ajuda, Deus ouviu! Isso nos ensina que Deus sempre escuta quando oramos e pedimos Sua ajuda.
-                        </p>
-                    </div>
-                    <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
-                        <h3 class="text-xl font-bold text-amber-700 mb-2">🔓 Liberdade e Confiança</h3>
-                        <p class="text-gray-700">
-                            Êxodo ensina sobre liberdade verdadeira e como confiar em Deus mesmo quando o caminho parece impossível!
-                        </p>
-                    </div>
-                    <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                        <h3 class="text-xl font-bold text-yellow-700 mb-2">❤️ Deus Quer Estar Perto</h3>
-                        <p class="text-gray-700">
-                            O Tabernáculo mostra que Deus deseja habitar no meio do Seu povo. Ele quer estar perto de nós!
-                        </p>
-                    </div>
-                </div>
+            <div>
+                <img src="exodo-por-que-importante.png" alt="Importância de Êxodo" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2">
-                <img src="exodo-por-que-importante.png" alt="Importância de Êxodo" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">👂 Deus Ouve o Clamor dos Sofredores</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Israel gemia há 400 anos — e Deus ouviu! Isso nos ensina que nenhum sofrimento passa despercebido por Deus. Quando você chora ou pede ajuda, Ele escuta. Sempre.
+                    </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 Ex 3:7 — "Tenho visto a aflição do meu povo... e ouvi o seu clamor por causa dos seus exatores."</p>
+                </div>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">🐑 O Cordeiro que Aponta para Jesus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O sangue do cordeiro na porta protegia os israelitas da morte. Séculos depois, Jesus — o Cordeiro de Deus — deu Seu sangue para nos proteger para sempre. A Páscoa de Êxodo aponta direto para a cruz!
+                    </p>
+                    <p class="text-sm text-red-700 font-semibold mt-2">📖 Ex 12:13 — "Quando eu vir o sangue, passarei por alto."</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-3">🧭 Deus Guia Quem Confia Nele</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Nuvem de dia, fogo à noite — Deus foi na frente o tempo todo! Você nunca está sozinho no seu caminho. Quando você não sabe para onde ir, Deus conhece o destino e vai guiar seus passos.
+                    </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Ex 13:21 — "O Senhor ia adiante deles... em coluna de nuvem... e em coluna de fogo."</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-red-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
             🎯 Propósito do Livro
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-1">
-                <img src="exodo-proposito.png" alt="Propósito de Êxodo" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-6">🌟 O Grande Propósito de Êxodo</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">🔓</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-800">Mostrar que Deus Liberta</h4>
-                                <p class="text-gray-600">Deus tem poder para nos libertar de qualquer situação difícil!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">🧭</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-800">Deus Guia Seu Povo</h4>
-                                <p class="text-gray-600">Com nuvem de dia e coluna de fogo à noite, Deus mostrou o caminho!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">💝</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-800">Deus Cuida de Nós</h4>
-                                <p class="text-gray-600">Maná do céu, água da rocha - Deus provê tudo que precisamos!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">✨</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-gray-800">Obediência Traz Bênção</h4>
-                                <p class="text-gray-600">Seguir os mandamentos de Deus nos traz vida abundante e feliz!</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🔓 Revelar o Deus que Liberta</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Êxodo mostra quem Deus é de verdade: Ele vê a opressão, ouve o clamor e age com poder para libertar. Todo o Novo Testamento usa Êxodo como imagem da salvação que Jesus traz.
+                    </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 Ex 6:6 — "Eu sou o Senhor, e vos tirarei dos trabalhos forçados do Egito."</p>
                 </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-red-600">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">📜 Ensinar Como Viver com Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os 10 Mandamentos não foram dados para escravizar — foram dados a um povo já livre! São o manual de como uma família de Deus vive bem: amando a Deus e ao próximo.
+                    </p>
+                    <p class="text-sm text-red-700 font-semibold mt-2">📖 Ex 20:2 — "Eu sou o Senhor teu Deus, que te tirei..." — Deus lembra: sou eu quem libertou primeiro!</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-3">⛺ Mostrar que Deus Quer Morar Conosco</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O Tabernáculo ocupou metade do livro de Êxodo porque esse era o coração do projeto de Deus: habitar no meio do Seu povo. Isso se cumpre plenamente em Jesus — "o Verbo se fez carne e habitou entre nós"!
+                    </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Ex 40:34 — "Então a nuvem cobriu a tenda da congregação, e a glória do Senhor encheu o tabernáculo."</p>
+                </div>
+            </div>
+            <div>
+                <img src="exodo-proposito.png" alt="Propósito de Êxodo" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-yellow-100 to-amber-100 p-8 rounded-2xl border-4 border-yellow-400">
-                    <div class="text-center mb-6">
-                        <span class="text-6xl">🚪</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-yellow-700 mb-4 text-center">O Significado de "Êxodo"</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-6">
-                        A palavra <strong class="text-yellow-600">"Êxodo"</strong> significa <strong class="text-amber-600">"SAÍDA"</strong>!
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="exodo-curiosidade.png" alt="Curiosidade sobre Êxodo" class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl border-4 border-orange-300">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🚪</span>
+                        "Êxodo" = Saída!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A palavra vem do grego e significa <span class="font-bold text-orange-700">"saída"</span>. Mas não foi só sair do Egito — foi sair da escravidão para a liberdade, das trevas para a luz. É exatamente o que Jesus faz por cada pessoa que crê nEle!
                     </p>
-                    <div class="bg-white p-6 rounded-xl">
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Foi a grande <strong>saída do povo de Israel</strong> da escravidão no Egito rumo à <strong class="text-yellow-600">Terra Prometida</strong>! 
-                            Uma jornada incrível de liberdade, aventura e milagres! 🌟
-                        </p>
-                    </div>
-                    <div class="mt-6 text-center">
-                        <p class="text-gray-600 italic">
-                            🗺️ Do Egito → Mar Vermelho → Deserto → Monte Sinai → Terra Prometida!
-                        </p>
-                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl border-4 border-red-300">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">⚡</span>
+                        Cada Praga Derrubou um Deus!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Os egípcios tinham deus do Nilo (virou sangue), deusa rã (praga de rãs), deus sol (escuridão)... Cada uma das 10 pragas foi uma resposta direta a um deus egípcio. Deus estava mostrando: <span class="font-bold text-red-700">"Eu sou o único Deus verdadeiro!"</span>
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl border-4 border-orange-300">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🍞</span>
+                        Maná por 40 Anos!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Deus enviou maná — pão do céu — <span class="font-bold text-orange-700">todos os dias por 40 anos</span> no deserto. Só parou quando entraram na Terra Prometida. Isso deu de comer para mais de 2 milhões de pessoas! Deus é o melhor provedor que existe.
+                    </p>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="exodo-curiosidade.png" alt="Curiosidade sobre Êxodo" class="w-full h-auto rounded-xl shadow-lg">
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-orange-600">
+                <div class="text-5xl text-center mb-4">🔥</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">O Chamado de Moisés</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Moisés disse: "Quem sou eu para ir?" (Ex 3:11) — ele se achava incapaz. Deus respondeu: "Eu estarei contigo." Quando você sente que não é capaz de fazer algo, o que a resposta de Deus a Moisés te diz?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-red-600">
+                <div class="text-5xl text-center mb-4">🌊</div>
+                <h3 class="text-xl font-bold text-red-700 mb-3 text-center">Mar Vermelho na Sua Vida</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    O povo estava entre o exército do Faraó e o mar — parecia o fim! Deus abriu o mar. Você já teve uma situação que parecia impossível e Deus resolveu de um jeito que você não esperava?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-orange-500">
+                <div class="text-5xl text-center mb-4">📜</div>
+                <h3 class="text-xl font-bold text-orange-600 mb-3 text-center">Os Mandamentos São Bons?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus deu os mandamentos a um povo já liberto — como um presente, não como uma prisão. Como você enxerga as regras que Deus e seus pais te dão: como prisão ou como proteção?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-orange-700 to-red-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-orange-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-orange-200 mb-3">Guarda no Coração</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Êxodo 14:14 e leve com você esta semana. Quando sentir medo ou pressão, leia em voz alta: "O Senhor pelejará por mim!" — e respire fundo, confiando que Deus está agindo.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-red-300 text-center">
+                <div class="text-5xl mb-4">📜</div>
+                <h3 class="text-xl font-bold text-red-200 mb-3">Aprenda os 10 Mandamentos</h3>
+                <p class="text-white leading-relaxed">
+                    Tente memorizar os 10 Mandamentos (Ex 20). Comece pelos primeiros 5 esta semana. Para cada um, pense em um exemplo prático de como você pode viver aquilo no seu dia a dia!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-orange-300 text-center">
+                <div class="text-5xl mb-4">🙏</div>
+                <h3 class="text-xl font-bold text-orange-200 mb-3">Ore Como o Povo Clamou</h3>
+                <p class="text-white leading-relaxed">
+                    Deus ouviu o clamor de Israel (Ex 3:7). Esta semana, reserve um momento para orar honestamente sobre uma coisa difícil na sua vida — como se você estivesse falando com alguém que realmente ouve!
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-4">
+    <section class="no-print text-center bg-gradient-to-r from-orange-600/20 to-red-700/20 border-2 border-orange-600/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../genesis/genesis.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../genesis/genesis.html" class="bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Gênesis
             </a>
-            <a href="../pentateuco.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-800 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Pentateuco
             </a>
-            <a href="../levitico/levitico.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../levitico/levitico.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Levítico ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-yellow-600 to-amber-700 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Êxodo - A Grande Libertação ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    <section class="section bg-gradient-to-r from-orange-600 to-red-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Êxodo — A Grande Libertação ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>
 
     <script src="/menu.js"></script>

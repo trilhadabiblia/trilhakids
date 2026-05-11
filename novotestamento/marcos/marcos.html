@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -54,9 +55,9 @@
                         Jesus não veio para ser servido,<br>
                         Mas para servir com amor infinito!<br>
                         Ele curou, ensinou e libertou,<br>
-                        Mostrando que servir é ser abençoado!<br>
-                        <span class="text-sm font-semibold text-sky-700 mt-2 block">📖 Marcos 10:45</span>
+                        Mostrando que servir é ser abençoado!
                     </p>
+                    <p class="text-sm text-sky-600 mt-3 font-semibold">📖 Marcos 10:45</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-600">
@@ -65,9 +66,9 @@
                         Com uma palavra, o vento parou,<br>
                         Com um toque, o cego enxergou!<br>
                         Jesus fez milagres sem parar,<br>
-                        Mostrando que nada pode O limitar!<br>
-                        <span class="text-sm font-semibold text-blue-700 mt-2 block">📖 Marcos 4:39-41</span>
+                        Mostrando que nada pode O limitar!
                     </p>
+                    <p class="text-sm text-blue-600 mt-3 font-semibold">📖 Marcos 4:39-41</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
@@ -76,9 +77,9 @@
                         Jesus viu os doentes e teve compaixão,<br>
                         Tocou os leprosos com Seu coração!<br>
                         Abraçou as crianças, alimentou multidões,<br>
-                        Ensinando amor através de Suas ações!<br>
-                        <span class="text-sm font-semibold text-sky-700 mt-2 block">📖 Marcos 1:41</span>
+                        Ensinando amor através de Suas ações!
                     </p>
+                    <p class="text-sm text-sky-600 mt-3 font-semibold">📖 Marcos 1:41</p>
                 </div>
             </div>
         </div>
@@ -94,27 +95,65 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-sky-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-sky-700 leading-snug mb-4">
+                    "Porque o Filho do homem não veio para ser servido, mas para servir e dar a sua vida em resgate por muitos."
+                </blockquote>
+                <p class="text-xl font-bold text-blue-600 mb-6">Marcos 10:45</p>
+                <div class="bg-sky-50 rounded-2xl p-4 border-2 border-sky-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Este é o versículo-chave de Marcos! Jesus, sendo o Rei do universo, escolheu agachar-Se para servir e dar a Sua própria vida por você. Servir não é fraqueza — é o maior ato de amor!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-sky-100 text-sky-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            👥 Quem são os personagens principais?
+            👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="marcos-personagem.png" alt="Personagens de Marcos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✨ Jesus Cristo</h3>
-                    <p class="text-gray-700 text-lg">O Servo perfeito de Deus, sempre em movimento fazendo o bem, curando e ensinando com autoridade!</p>
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✨ Jesus — O Servo Poderoso</h3>
+                    <p class="text-gray-700 mb-3">O Filho de Deus sempre em movimento! Em Marcos, Jesus age rapidamente: cura, ensina, expulsa demônios e serve sem parar.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Leia na Bíblia — Marcos 1:11</p>
+                        <p class="text-gray-700 italic">"Tu és o meu Filho amado; em ti me comprazo."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-600">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">👨‍👨‍👦‍👦 Os Discípulos</h3>
-                    <p class="text-gray-700 text-lg">Pedro, João, Tiago e os outros que seguiram Jesus de perto, aprendendo a servir como Ele!</p>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">👨‍👨‍👦‍👦 Pedro, Tiago e João</h3>
+                    <p class="text-gray-700 mb-3">Os três discípulos mais próximos de Jesus. Eles viram o que outros não viram — a transfiguração, o milagre da ressurreição de uma menina e a angústia no Getsêmani.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — Marcos 1:17-18</p>
+                        <p class="text-gray-700 italic">"Vinde após mim... imediatamente, deixando as redes, o seguiram."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🙏 Pessoas Curadas</h3>
-                    <p class="text-gray-700 text-lg">Cegos, surdos, paralíticos e muitos outros que experimentaram o poder transformador de Jesus!</p>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🙏 Os que Foram Curados</h3>
+                    <p class="text-gray-700 mb-3">Um leproso, um paralítico, uma mulher com hemorragia, um cego chamado Bartimeu — cada um encontrou Jesus e teve sua vida completamente transformada!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Leia na Bíblia — Marcos 1:41</p>
+                        <p class="text-gray-700 italic">"Jesus, movido de compaixão, estendeu a mão, tocou-o e disse: Quero; fica limpo!"</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,21 +162,24 @@
     <!-- Seção 2: O que o livro conta? -->
     <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            📖 O que o livro conta?
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-2">⚡ Jesus em Movimento</h3>
-                    <p class="text-gray-700 text-lg">Marcos mostra Jesus sempre ativo! Ele não para: cura doentes, expulsa demônios, ensina multidões e serve a todos!</p>
+                    <p class="text-gray-700 mb-3">Marcos usa a palavra "imediatamente" mais de 40 vezes! Jesus nunca para: batismo, tentação no deserto, chamado dos discípulos, pregação — tudo num ritmo acelerado.</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 Marcos 1:21 — "E logo, no dia de sábado, entrou na sinagoga e ensinava."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">💪 Poder e Compaixão</h3>
-                    <p class="text-gray-700 text-lg">Cada milagre revela o coração de Jesus: Ele tem poder sobre tudo, mas usa esse poder para amar e ajudar!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">💪 Milagres e Poder</h3>
+                    <p class="text-gray-700 mb-3">Jesus acalma uma tempestade, anda sobre as águas, alimenta 5 mil pessoas e ressuscita a filha de Jairo — mostrando que tem poder sobre a natureza, a doença e a morte!</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Marcos 4:39 — "E, levantando-se, repreendeu o vento e disse ao mar: Cala-te, aquieta-te! E cessou o vento, e houve grande bonança."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✝️ Sacrifício e Salvação</h3>
-                    <p class="text-gray-700 text-lg">O livro termina mostrando Jesus dando Sua vida na cruz e ressuscitando, completando Sua missão de salvar!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✝️ Sacrifício e Ressurreição</h3>
+                    <p class="text-gray-700 mb-3">A segunda metade do livro mostra Jesus caminhando conscientemente para a cruz. Ele morre pelos nossos pecados e ressuscita ao terceiro dia — missão cumprida!</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 Marcos 15:39 — "O centurião, que estava ali defronte, vendo que ele expirara assim, disse: Verdadeiramente, este homem era Filho de Deus."</p>
                 </div>
             </div>
             <div>
@@ -149,24 +191,42 @@
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            💡 Por que é importante?
+            💡 Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="marcos-importante.png" alt="Importância de Marcos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🌟 O Verdadeiro Exemplo</h3>
-                    <p class="text-gray-700 text-lg">Marcos ensina que a verdadeira grandeza está em servir aos outros, assim como Jesus fez!</p>
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🌟 O Verdadeiro Exemplo de Servir</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Marcos ensina que a verdadeira grandeza está em servir — não em mandar ou ser famoso. Jesus, o maior de todos, escolheu ser servo!
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Marcos 10:45</p>
+                        <p class="text-gray-700 italic">"O Filho do homem não veio para ser servido, mas para servir e dar a sua vida em resgate por muitos."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-600">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">❤️ Amor em Ação</h3>
-                    <p class="text-gray-700 text-lg">Aprendemos que amar não é só falar, mas fazer! Jesus mostrou amor através de Suas ações!</p>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">❤️ Amor em Ação</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Amar não é só falar — é fazer! Jesus não ficou sentado esperando os doentes virem até Ele; foi até eles, tocou nos excluídos e os acolheu.
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Marcos 1:41</p>
+                        <p class="text-gray-700 italic">"Jesus, movido de compaixão, estendeu a mão e tocou-o."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🙌 Poder para Vencer</h3>
-                    <p class="text-gray-700 text-lg">O livro nos mostra que Jesus tem poder sobre todas as coisas e está sempre pronto para nos ajudar!</p>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🙌 Nada é Impossível para Jesus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Vento, ondas, doenças, morte — Jesus tem poder sobre tudo. Isso nos dá confiança: podemos contar com Ele em qualquer situação!
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Marcos 4:41</p>
+                        <p class="text-gray-700 italic">"Quem é este, que até o vento e o mar lhe obedecem?"</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -175,24 +235,45 @@
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            🎯 Propósito do livro
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🦁 Jesus, o Servo Poderoso</h3>
-                    <p class="text-gray-700 text-lg">Mostrar Jesus como o Servo de Deus que veio para fazer o bem e demonstrar o amor do Pai!</p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-5 order-2 md:order-1">
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-sky-500">
+                    <div class="text-5xl mb-4">🦁</div>
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">Mostrar Jesus como Servo Poderoso</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Marcos escreveu para cristãos romanos que precisavam ver Jesus em ação — não apenas em palavras, mas em poder real e amor concreto.
+                    </p>
+                    <div class="bg-sky-50 p-3 rounded-xl border-l-4 border-sky-400">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Marcos 10:45</p>
+                        <p class="text-gray-700 italic">"O Filho do homem não veio para ser servido, mas para servir."</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">✝️ Missão de Salvação</h3>
-                    <p class="text-gray-700 text-lg">Revelar que Jesus veio para salvar a humanidade através de Sua vida, morte e ressurreição!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">✝️</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">Revelar a Missão de Salvação</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Cada milagre aponta para a grande obra: Jesus deu Sua vida para nos salvar. Marcos dedica quase metade do livro aos últimos dias de Jesus.
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded-xl border-l-4 border-blue-400">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Marcos 8:31</p>
+                        <p class="text-gray-700 italic">"O Filho do homem devia sofrer muito... ser morto e depois de três dias ressuscitar."</p>
+                    </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">👣 Chamado para Seguir</h3>
-                    <p class="text-gray-700 text-lg">Inspirar todos nós a seguir o exemplo de Jesus, servindo aos outros com amor e compaixão!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-sky-500">
+                    <div class="text-5xl mb-4">👣</div>
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">Chamar a Seguir Jesus</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        O livro nos inspira a deixar tudo — como os discípulos largaram as redes — e seguir Jesus com coragem e disposição para servir.
+                    </p>
+                    <div class="bg-sky-50 p-3 rounded-xl border-l-4 border-sky-400">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Marcos 1:17</p>
+                        <p class="text-gray-700 italic">"Vinde após mim, e eu vos farei pescadores de homens."</p>
+                    </div>
                 </div>
             </div>
-            <div>
+            <div class="order-1 md:order-2">
                 <img src="marcos-proposito.png" alt="Propósito de Marcos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
@@ -201,39 +282,119 @@
     <!-- Seção 5: Você sabia? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            🤔 Você sabia?
+            🤔 Você Sabia?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="marcos-curiosidade.png" alt="Curiosidade sobre Marcos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl shadow-lg border-4 border-amber-400">
-                    <div class="text-6xl mb-4 text-center">📚⚡</div>
-                    <h3 class="text-3xl font-bold text-amber-600 mb-4 text-center">Evangelho de Ação!</h3>
-                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
-                        Marcos foi o <span class="font-bold text-amber-600">evangelho mais curto</span> e o <span class="font-bold text-sky-600">primeiro a ser escrito</span>! 
-                    </p>
-                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
-                        É cheio de <span class="font-bold text-blue-600">ação e milagres</span>, perfeito para mostrar Jesus em movimento! 
-                    </p>
-                    <p class="text-gray-700 text-xl leading-relaxed">
-                        A palavra <span class="font-bold text-sky-600">"imediatamente"</span> aparece mais de 40 vezes, mostrando que Jesus nunca parava de fazer o bem! ⚡
-                    </p>
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-3xl shadow-2xl border-4 border-amber-400">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">📚⚡</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-amber-600 mb-6 text-center">Evangelho de Ação!</h3>
+                    <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-amber-600">⚡</strong> Marcos foi o <strong>evangelho mais curto</strong> e provavelmente o <strong>primeiro a ser escrito</strong>!
+                        </p>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-sky-600">🔁</strong> A palavra <strong>"imediatamente"</strong> aparece mais de <strong>40 vezes</strong> — Jesus nunca parava de fazer o bem!
+                        </p>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-blue-600">🦁</strong> Na tradição cristã, Marcos é representado por um <strong>leão</strong>, símbolo de força e serviço corajoso.
+                        </p>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-amber-600">👨</strong> Marcos provavelmente escreveu baseado nas histórias que <strong>Pedro</strong> contava — era quase um secretário do apóstolo!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl border-2 border-sky-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-sky-500">
+                <p class="text-5xl text-center mb-4">⚡</p>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Em Marcos, Jesus age "imediatamente" — sempre pronto para ajudar. <strong>Quando alguém precisa de você, você ajuda logo ou fica esperando?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500">
+                <p class="text-5xl text-center mb-4">🤝</p>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jesus tocou um leproso — alguém que todos evitavam. <strong>Há alguém na sua escola ou vizinhança que se sente excluído e que você pode incluir?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-500">
+                <p class="text-5xl text-center mb-4">🦁</p>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jesus disse que veio para <strong>servir</strong>, não para ser servido. <strong>Por que você acha que servir é tão importante para Jesus?</strong> Você consegue servir alguém hoje?
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-sky-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3">Leia Marcos 1</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>Marcos capítulo 1</strong> em voz alta e conte quantas vezes aparece a palavra "logo" ou "imediatamente". É o capítulo mais cheio de ação da Bíblia!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3">Versículo na Parede</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva num papel colorido: <strong>"Vim para servir! — Marcos 10:45"</strong> e cole no seu quarto para lembrar de servir todos os dias.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🙌</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">Servir "Imediatamente"</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escolha uma tarefa em casa que você normalmente evita — lavar louça, arrumar o quarto, ajudar alguém — e faça <strong>imediatamente</strong>, como Jesus faria!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Navegação -->
     <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <h3 class="text-3xl font-black text-sky-700 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../mateus/mateus.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Mateus
             </a>
             <a href="../index.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros do Novo Testamento
+                📚 Ver Novo Testamento
             </a>
             <a href="../lucas/lucas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Lucas ➡️

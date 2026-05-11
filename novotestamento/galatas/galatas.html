@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Gálatas 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-l-8 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">🎁 Primeiro Segredo: A Graça que Liberta</h3>
                     <p class="italic font-semibold">
@@ -96,29 +97,77 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <blockquote class="versiculo-card border-sky-500 pl-6 mb-6">
+                    <p class="text-2xl font-bold text-gray-800 italic leading-relaxed mb-3">
+                        "Para a liberdade foi que Cristo nos libertou; estai, pois, firmes, e não torneis a sujeitar-vos ao jugo da escravidão."
+                    </p>
+                    <cite class="text-sky-600 font-bold text-lg">— Gálatas 5:1</cite>
+                </blockquote>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Imagine que você estava preso numa jaula. De repente, Jesus abre a porta e diz: "Você é livre!"
+                    Gálatas 5:1 nos lembra que Jesus quebrou todas as correntes — do pecado, da culpa, do medo.
+                    Não precisamos viver mais como escravos. Somos filhos livres de Deus!
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-sky-100 text-sky-700 px-4 py-2 rounded-full font-semibold text-sm">🕊️ Liberdade em Cristo</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm">⛓️‍💥 Correntes Quebradas</span>
+                    <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-semibold text-sm">👑 Filhos de Deus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Personagens Principais -->
     <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
             👥 Quem são os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-8">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border-l-8 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-4">✉️ Paulo, o Apóstolo</h3>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Paulo era um missionário corajoso que amava Jesus e queria que todos conhecessem a verdade do evangelho. 
-                        Ele escreveu esta carta aos cristãos da região da Galácia.
+                <img src="galatas-personagem.png" alt="Paulo e os Gálatas"
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">✉️ Paulo — O Apóstolo Defensor</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo era um missionário corajoso que amava Jesus e queria que todos conhecessem a verdade do evangelho.
+                        Ele escreveu esta carta com urgência para proteger os cristãos da Galácia de falsos ensinamentos.
                     </p>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">⛪ Os Cristãos da Galácia</h3>
-                    <p class="text-lg leading-relaxed text-gray-700">
-                        Eram pessoas que haviam crido em Jesus, mas estavam confusas. Alguns falsos mestres diziam que 
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"O evangelho que preguei não é segundo o homem; porque não o recebi nem aprendi de homem algum, mas por revelação de Jesus Cristo."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— Gálatas 1:11-12</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">⛪ Os Cristãos da Galácia</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Eram pessoas que haviam crido em Jesus, mas estavam confusas. Alguns falsos mestres diziam que
                         precisavam seguir regras antigas para serem salvos. Paulo escreveu para corrigir esse erro!
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Ó gálatas insensatos! Quem vos fascinou a vós, aos quais Jesus Cristo foi tão claramente descrito como crucificado?"</p>
+                        <cite class="text-blue-600 font-bold text-xs">— Gálatas 3:1</cite>
+                    </blockquote>
                 </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="galatas-personagem.png" alt="Paulo e os Gálatas" 
-                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🤝 Barnabé — O Companheiro Fiel</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Barnabé viajou com Paulo na primeira viagem missionária que passou pelas cidades da Galácia.
+                        Juntos pregaram o evangelho e fundaram igrejas na região — por isso Paulo os conhecia tão bem!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...e tendo reconhecido a graça que me havia sido dada, Tiago, Cefas e João... estenderam para mim e para Barnabé a sua destra."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— Gálatas 2:9</cite>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
@@ -130,25 +179,41 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="order-1">
-                <img src="galatas-o-que-conta.png" alt="Salvação pela Fé" 
+                <img src="galatas-o-que-conta.png" alt="Salvação pela Fé"
                     class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
             </div>
-            <div class="order-2">
-                <div class="bg-white p-6 rounded-2xl border-l-8 border-blue-500 shadow-lg">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">🎁 A Mensagem da Graça</h3>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Paulo ensina uma verdade maravilhosa: <strong>a salvação vem pela fé em Jesus, não pelas regras antigas!</strong>
+            <div class="order-2 space-y-4">
+                <div class="bg-white p-6 rounded-2xl border-2 border-sky-200 shadow-md">
+                    <h3 class="text-xl font-bold text-sky-600 mb-3">🎁 A Mensagem da Graça</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensina uma verdade maravilhosa: <strong>a salvação vem pela fé em Jesus, não pelas regras!</strong>
+                        Não precisamos fazer nada para merecer o amor de Deus — Ele nos ama de graça!
                     </p>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Alguns diziam: "Vocês precisam seguir todas as leis do Antigo Testamento para serem salvos!" 
-                        Mas Paulo explicou: "Não! Jesus já fez tudo por nós na cruz!"
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"O homem não é justificado pelas obras da lei, e sim mediante a fé em Jesus Cristo."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— Gálatas 2:16</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-blue-200 shadow-md">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">🍇 O Fruto do Espírito</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Quando o Espírito Santo mora em nós, Ele produz frutos lindos: amor, alegria, paz, paciência,
+                        amabilidade, bondade, fidelidade, mansidão e domínio próprio!
                     </p>
-                    <div class="bg-sky-100 p-4 rounded-lg mt-4">
-                        <p class="text-gray-800 font-semibold">
-                            ✨ Não precisamos fazer nada para merecer o amor de Deus. Ele nos ama de graça! 
-                            Só precisamos crer em Jesus com o coração!
-                        </p>
-                    </div>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Mas o fruto do Espírito é: amor, alegria, paz, longanimidade, benignidade, bondade, fidelidade, mansidão, temperança."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— Gálatas 5:22-23</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-200 shadow-md">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-3">👨‍👩‍👧‍👦 Todos Somos Um em Cristo</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Em Cristo, não importa se você é rico ou pobre, menino ou menina — somos todos iguais e amados por Deus!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Não há judeu nem grego... escravo nem liberto... masculino nem feminino; porque todos vós sois um em Cristo Jesus."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— Gálatas 3:28</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -161,26 +226,52 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border-l-8 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-4">🕊️ Liberdade em Cristo</h3>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Gálatas nos ensina que <strong>em Cristo somos verdadeiramente livres!</strong> Não vivemos mais 
-                        presos tentando seguir um monte de regras para agradar a Deus.
-                    </p>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Jesus já nos libertou! Agora vivemos pelo amor e pelo Espírito Santo que mora em nós.
-                    </p>
-                    <div class="bg-blue-100 p-4 rounded-lg">
-                        <p class="text-gray-800 font-bold text-center">
-                            "Para a liberdade foi que Cristo nos libertou!"<br>
-                            <span class="text-sm">- Gálatas 5:1</span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="galatas-importante.png" alt="Liberdade em Cristo" 
+                <img src="galatas-importante.png" alt="Liberdade em Cristo"
                     class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🕊️</span>
+                        Liberdade em Cristo
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Gálatas nos ensina que em Cristo somos verdadeiramente livres! Não vivemos mais
+                        presos tentando seguir regras para agradar a Deus. Jesus já fez tudo por nós!
+                    </p>
+                    <blockquote class="versiculo-card border-sky-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Para a liberdade foi que Cristo nos libertou; estai, pois, firmes."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— Gálatas 5:1</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">👑</span>
+                        Filhos de Deus pela Fé
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Somos filhos de Deus — não por causa do que fazemos, mas por causa do que Jesus fez!
+                        Isso muda como nos vemos e como tratamos os outros.
+                    </p>
+                    <blockquote class="versiculo-card border-blue-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque todos sois filhos de Deus pela fé em Cristo Jesus."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— Gálatas 3:26</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🍇</span>
+                        Viver pelo Espírito
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        A liberdade que temos não é para fazer o mal — é para amar e servir! O Espírito Santo
+                        nos ajuda a crescer e produzir bons frutos na nossa vida.
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Andai em Espírito, e não cumprireis a concupiscência da carne."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— Gálatas 5:16</cite>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
@@ -192,26 +283,42 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="order-1">
-                <img src="galatas-proposito.png" alt="Evangelho da Graça" 
+                <img src="galatas-proposito.png" alt="Evangelho da Graça"
                     class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
             </div>
-            <div class="order-2">
-                <div class="bg-white p-6 rounded-2xl border-l-8 border-indigo-500 shadow-lg">
-                    <h3 class="text-2xl font-bold text-indigo-600 mb-4">🛡️ Defender o Evangelho da Graça</h3>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Paulo escreveu Gálatas para <strong>defender o verdadeiro evangelho</strong> - a boa notícia de que 
-                        somos salvos pela graça, não pelas obras!
+            <div class="order-2 space-y-4">
+                <div class="bg-white p-6 rounded-2xl border-2 border-sky-200 shadow-md">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🛡️ Defender o Evangelho da Graça</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreveu Gálatas para <strong>defender o verdadeiro evangelho</strong> — a boa notícia de que
+                        somos salvos pela graça, não pelas obras. Só há um evangelho verdadeiro!
                     </p>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">👨‍👩‍👧‍👦 Filhos de Deus pela Fé</h3>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Ele também queria lembrar que <strong>todos são filhos de Deus pela fé em Jesus</strong>. Não importa 
-                        quem você é ou de onde veio - em Cristo, somos todos uma família!
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Se alguém vos pregar evangelho além do que recebestes, seja anátema."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— Gálatas 1:9</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-blue-200 shadow-md">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">👨‍👩‍👧‍👦 Todos São Iguais em Cristo</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo queria lembrar que todos são filhos de Deus pela fé em Jesus. Não importa
+                        quem você é ou de onde veio — em Cristo, somos todos uma família!
                     </p>
-                    <div class="bg-indigo-100 p-4 rounded-lg">
-                        <p class="text-gray-800 font-semibold text-center">
-                            💙 Você é filho amado de Deus!
-                        </p>
-                    </div>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Não há judeu nem grego... porque todos vós sois um em Cristo Jesus."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— Gálatas 3:28</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl border-2 border-indigo-200 shadow-md">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🌱 Não Desistir de Fazer o Bem</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Gálatas termina com um chamado prático: não cansar de fazer o bem! A liberdade
+                        que temos em Cristo nos move a servir uns aos outros com amor.
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Não nos cansemos de fazer o bem, porque a seu tempo ceifaremos, se não desfalecermos."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— Gálatas 6:9</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -222,28 +329,126 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-8">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-8 border-yellow-500">
-                    <h3 class="text-2xl font-bold text-yellow-600 mb-4">✉️ Uma das Primeiras Cartas!</h3>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Gálatas foi <strong>uma das primeiras cartas que Paulo escreveu!</strong> Provavelmente foi escrita 
-                        por volta do ano 48-49 d.C., logo depois de sua primeira viagem missionária.
-                    </p>
-                    <p class="text-lg leading-relaxed text-gray-700 mb-4">
-                        Paulo estava tão preocupado com os cristãos da Galácia que escreveu rapidamente para corrigir 
-                        os falsos ensinamentos antes que se espalhassem!
-                    </p>
-                    <div class="bg-yellow-100 p-4 rounded-lg">
-                        <p class="text-gray-800 font-bold text-center">
-                            📜 Esta carta tem quase 2.000 anos e ainda nos ensina sobre liberdade e graça!
-                        </p>
+                <img src="galatas-curiosidade.png" alt="Curiosidade sobre Gálatas"
+                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">✉️</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-700 mb-2">Uma das Primeiras Cartas!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Gálatas foi <strong>uma das primeiras cartas que Paulo escreveu</strong>, por volta do ano 48-49 d.C.
+                                Ele estava tão preocupado que escreveu rapidamente para corrigir os falsos ensinamentos!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">✍️</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-700 mb-2">Paulo Escreveu com Letras Grandes!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                No final de Gálatas, Paulo diz que escreveu <strong>com letras grandes com sua própria mão</strong>
+                                (Gal 6:11). Provavelmente para mostrar que era ele mesmo — e o quanto era importante!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-2 border-purple-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">📚</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-purple-700 mb-2">A Carta que Mudou a História!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Martinho Lutero, em 1517, leu Gálatas e ficou tão impactado pela mensagem da graça que
+                                ela inspirou a <strong>Reforma Protestante</strong> — uma revolução que mudou o mundo!
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="galatas-curiosidade.png" alt="Primeira Carta de Paulo" 
-                    class="w-full h-auto rounded-xl shadow-xl object-contain hover:scale-105 transition-transform duration-300">
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-sky-400">
+                <div class="text-4xl mb-4 text-center">🕊️</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Liberdade em Cristo</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Gálatas diz que somos livres em Cristo.</strong> Mas isso não é liberdade para fazer o mal —
+                    é liberdade para amar. Como você pode usar sua liberdade para servir e ajudar alguém?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-400">
+                <div class="text-4xl mb-4 text-center">🍇</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Fruto do Espírito</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>O Espírito produz 9 frutos</strong>: amor, alegria, paz, paciência, benignidade, bondade,
+                    fidelidade, mansidão e temperança. Qual desses frutos você mais precisa pedir a Deus para crescer na sua vida?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-indigo-400">
+                <div class="text-4xl mb-4 text-center">👑</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Filho de Deus</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Gálatas 3:26 diz que somos filhos de Deus pela fé.</strong> Como saber que você é filho
+                    amado de Deus muda a forma como você se vê no espelho e como trata as pessoas ao seu redor?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-800 to-indigo-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-sky-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
+                    <span class="text-2xl">🍇</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Escolha Um Fruto</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Leia <strong>Gálatas 5:22-23</strong> e escolha <strong>um fruto do Espírito</strong> para praticar esta semana.
+                    Peça a Deus que o Espírito Santo te ajude a crescer nesse fruto todos os dias!
+                </p>
+                <span class="inline-block mt-3 bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-semibold">📖 Leitura</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
+                    <span class="text-2xl">✍️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Escreva Gál 5:1</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escreva <strong>Gálatas 5:1</strong> em um papel com letras coloridas e decore com correntes quebradas ou uma pomba.
+                    Guarde-o em um lugar especial para lembrar que você é livre em Cristo!
+                </p>
+                <span class="inline-block mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">✏️ Memorização</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-indigo-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
+                    <span class="text-2xl">❤️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Trate Todos como Iguais</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Gálatas diz que em Cristo <strong>todos somos iguais</strong>. Esta semana, inclua alguém que parece
+                    diferente ou excluído. Convide para brincar, sentar junto ou simplesmente sorria!
+                </p>
+                <span class="inline-block mt-3 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">🤝 Ação</span>
             </div>
         </div>
     </section>

@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Jonas 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-teal-50 to-blue-50 p-6 rounded-2xl border-l-4 border-teal-600">
                     <h3 class="text-2xl font-bold text-teal-700 mb-3">🏃‍♂️ Primeiro Segredo: Não Dá Pra Fugir de Deus</h3>
                     <p class="italic text-gray-800">
@@ -102,27 +103,73 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-teal-700 to-blue-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-teal-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-teal-700 leading-snug mb-4">
+                    "A salvação pertence ao Senhor!"
+                </blockquote>
+                <p class="text-xl font-bold text-blue-600 mb-6">Jonas 2:9</p>
+                <div class="bg-teal-50 rounded-2xl p-4 border-2 border-teal-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Dentro do ventre do grande peixe, no lugar mais escuro e assustador que se pode imaginar, Jonas lembrou que só Deus pode salvar. Esta verdade vale para todos nós também!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-cyan-100 text-cyan-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-6 rounded-2xl border-2 border-teal-200">
-                    <h3 class="text-2xl font-bold text-teal-700 mb-4">🏃‍♂️ Jonas - O Profeta Fujão</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-2xl border-2 border-teal-200">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">🏃‍♂️ Jonas - O Profeta Fujão</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
                         Jonas era um profeta que recebeu uma missão especial de Deus: ir até a cidade de Nínive e avisar o povo sobre seus pecados. Mas Jonas tinha medo e não queria ir!
                     </p>
-                    <h3 class="text-2xl font-bold text-blue-700 mb-4">⛵ Os Marinheiros Corajosos</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Homens do mar que encontraram Jonas fugindo. Quando a tempestade veio, eles ficaram com medo, mas aprenderam sobre o Deus verdadeiro!
-                    </p>
-                    <h3 class="text-2xl font-bold text-cyan-700 mb-4">🏛️ O Povo de Nínive</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Uma cidade grande e cheia de pessoas que faziam coisas erradas. Mas quando ouviram a mensagem de Jonas, todos se arrependeram e mudaram de vida!
-                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-teal-500">
+                        <p class="text-sm font-bold text-teal-700 mb-1">📖 Leia na Bíblia — Jonas 1:1-2</p>
+                        <p class="text-gray-700 italic">"Veio a palavra do Senhor a Jonas... Levanta-te, vai à grande cidade de Nínive e clama contra ela."</p>
+                    </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">⛵ Os Marinheiros Corajosos</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Homens do mar que encontraram Jonas fugindo. Quando a tempestade veio, eles ficaram com medo, mas acabaram conhecendo o Deus verdadeiro!
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — Jonas 1:16</p>
+                        <p class="text-gray-700 italic">"Os homens temeram muito ao Senhor, e ofereceram sacrifícios ao Senhor e fizeram votos."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-50 to-teal-50 p-5 rounded-2xl border-2 border-cyan-200">
+                    <h3 class="text-2xl font-bold text-cyan-700 mb-2">🏛️ O Povo de Nínive</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Uma cidade enorme e cheia de pessoas que faziam coisas erradas. Mas quando ouviram a mensagem de Jonas, todos se arrependeram e mudaram de vida!
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-cyan-500">
+                        <p class="text-sm font-bold text-cyan-700 mb-1">📖 Leia na Bíblia — Jonas 3:5</p>
+                        <p class="text-gray-700 italic">"Os habitantes de Nínive creram em Deus, proclamaram um jejum e vestiram panos de saco, desde o maior até o menor."</p>
+                    </div>
+                </div>
+
             </div>
             <div class="order-1 md:order-2">
                 <img src="jonas-personagem.png" alt="Personagens de Jonas" class="w-full h-auto rounded-xl shadow-xl">
@@ -135,23 +182,41 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
             📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="jonas-o-que-conta.png" alt="História de Jonas" class="w-full h-auto rounded-xl shadow-xl">
-            </div>
-            <div class="order-2">
-                <div class="bg-white p-6 rounded-2xl border-2 border-blue-200 shadow-lg">
-                    <h3 class="text-2xl font-bold text-teal-700 mb-4">🌊 A Grande Aventura de Jonas</h3>
-                    <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
-                        <p><strong class="text-teal-600">🏃‍♂️ Capítulo 1:</strong> Jonas tenta fugir de Deus pegando um barco para Tarsis. Mas Deus manda uma tempestade gigante! Os marinheiros jogam Jonas no mar.</p>
-                        
-                        <p><strong class="text-blue-600">🐋 Capítulo 2:</strong> Um grande peixe engole Jonas! Dentro da barriga do peixe, Jonas ora a Deus por três dias e três noites, pedindo perdão.</p>
-                        
-                        <p><strong class="text-cyan-600">📢 Capítulo 3:</strong> O peixe vomita Jonas na praia. Desta vez, Jonas obedece e vai até Nínive pregar. Todo mundo se arrepende!</p>
-                        
-                        <p><strong class="text-teal-700">🌳 Capítulo 4:</strong> Jonas fica chateado porque Deus perdoou Nínive. Deus ensina Jonas sobre Seu amor e misericórdia para todos.</p>
-                    </div>
+                <img src="jonas-o-que-conta.png" alt="História de Jonas" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-teal-200 shadow text-center">
+                    <p class="text-sm font-bold text-teal-700 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Jonas tem apenas <strong>4 capítulos</strong> — você consegue ler o livro inteiro em menos de 15 minutos!</p>
                 </div>
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-teal-700 mb-2">🌊 A Grande Aventura de Jonas</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-teal-500 shadow">
+                    <p class="font-bold text-teal-700 mb-1">🏃‍♂️ Capítulo 1 — A Fuga</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jonas tenta fugir de Deus pegando um barco. Deus manda uma tempestade gigante e os marinheiros jogam Jonas no mar.</p>
+                    <p class="text-sm text-teal-600 italic border-t border-teal-100 pt-2">📖 Jonas 1:4 — "O Senhor, porém, desencadeou sobre o mar um grande vento e houve tão grande tempestade que o navio ameaçava despedaçar-se."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-blue-500 shadow">
+                    <p class="font-bold text-blue-700 mb-1">🐋 Capítulo 2 — A Oração</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Um grande peixe engole Jonas! Dentro da barriga, Jonas ora a Deus por três dias e três noites e pede perdão.</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Jonas 2:1 — "Então Jonas orou ao Senhor seu Deus do ventre do peixe."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-cyan-500 shadow">
+                    <p class="font-bold text-cyan-700 mb-1">📢 Capítulo 3 — A Obediência</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">O peixe cospe Jonas na praia. Desta vez Jonas vai até Nínive pregar. Todo povo se arrepende — do rei ao mais humilde!</p>
+                    <p class="text-sm text-cyan-600 italic border-t border-cyan-100 pt-2">📖 Jonas 3:10 — "Viu Deus o que fizeram, como se converteram do mau caminho; e Deus se arrependeu do mal que tinha dito lhes faria."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-teal-700 shadow">
+                    <p class="font-bold text-teal-800 mb-1">🌳 Capítulo 4 — A Lição</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jonas fica bravo porque Deus perdoou Nínive. Deus usa uma planta e um verme para ensinar Jonas sobre misericórdia e amor.</p>
+                    <p class="text-sm text-teal-700 italic border-t border-teal-200 pt-2">📖 Jonas 4:2 — "Tu és um Deus clemente e misericordioso, tardio em irar-te e transbordante de amor."</p>
+                </div>
+
             </div>
         </div>
     </section>
@@ -161,23 +226,38 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
             ⭐ Por Que é Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-2xl border-2 border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-4">💝 Deus Perdoa a Todos!</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">💝 Deus Perdoa a Todos!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
                         A história de Jonas nos ensina que <strong class="text-teal-600">Deus é misericordioso até com quem parece não merecer</strong>. Nínive era uma cidade muito má, mas quando o povo se arrependeu, Deus os perdoou!
                     </p>
-                    <div class="bg-white p-4 rounded-xl border-l-4 border-teal-500 mb-4">
-                        <p class="text-gray-700 italic">
-                            "Não importa o que você fez de errado, Deus sempre está pronto para perdoar quando você se arrepende de verdade!"
-                        </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Jonas 4:2</p>
+                        <p class="text-gray-700 italic">"Tu és um Deus clemente e misericordioso, tardio em irar-te e transbordante de amor, e que se arrepende de enviar calamidades."</p>
                     </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-cyan-50 to-teal-50 p-5 rounded-2xl border-2 border-cyan-200">
                     <h3 class="text-2xl font-bold text-cyan-700 mb-3">🌍 O Amor de Deus Não Tem Limites</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
                         Jonas aprendeu que Deus não ama apenas o povo de Israel, mas <strong class="text-blue-600">todas as pessoas do mundo inteiro</strong>! Deus quer que todos conheçam Seu amor e sejam salvos.
                     </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-cyan-500">
+                        <p class="text-sm font-bold text-cyan-700 mb-1">📖 Jonas 2:9</p>
+                        <p class="text-gray-700 italic">"A salvação pertence ao Senhor!"</p>
+                    </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-blue-50 p-5 rounded-2xl border-2 border-teal-200">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">🔄 Segunda Chance Para Todos</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jonas errou — tentou fugir de Deus. Nínive errou — vivia em pecado. Mas Deus deu uma segunda chance para os dois! Isso nos mostra que <strong class="text-teal-600">Deus sempre quer nos restaurar</strong>.
+                    </p>
+                </div>
+
             </div>
             <div class="order-1 md:order-2">
                 <img src="jonas-importante.png" alt="Importância de Jonas" class="w-full h-auto rounded-xl shadow-xl">
@@ -188,29 +268,40 @@
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-br from-cyan-50 to-teal-50 p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
-            🎯 Propósito do Livro
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-1">
                 <img src="jonas-proposito.png" alt="Propósito de Jonas" class="w-full h-auto rounded-xl shadow-xl">
             </div>
-            <div class="order-2">
-                <div class="bg-white p-6 rounded-2xl border-2 border-teal-200 shadow-lg">
-                    <h3 class="text-2xl font-bold text-teal-700 mb-4">🙏 Ensinar Sobre Arrependimento</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-teal-200 shadow">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">🙏 Ensinar Sobre Arrependimento</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
                         O livro de Jonas mostra que <strong class="text-teal-600">quando nos arrependemos de verdade, Deus sempre nos perdoa</strong>. Tanto Jonas quanto o povo de Nínive receberam uma segunda chance!
                     </p>
-                    
-                    <h3 class="text-2xl font-bold text-blue-700 mb-4">❤️ Mostrar o Amor Universal de Deus</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Deus não ama apenas alguns, mas <strong class="text-blue-600">todos os povos da Terra</strong>! Ele quer que todos conheçam Seu amor e sejam salvos.
-                    </p>
-
-                    <div class="bg-gradient-to-r from-teal-100 to-blue-100 p-4 rounded-xl border-l-4 border-cyan-500">
-                        <p class="text-gray-700 font-semibold">
-                            🌟 Lição Principal: <span class="text-teal-700">Obedecer a Deus, arrepender-se dos erros e compartilhar o amor de Deus com todos!</span>
-                        </p>
+                    <div class="bg-teal-50 p-3 rounded-xl border-l-4 border-teal-500">
+                        <p class="text-sm font-bold text-teal-700 mb-1">📖 Jonas 3:8-9</p>
+                        <p class="text-gray-700 italic">"Que cada um se converta do seu mau caminho... Quem sabe se Deus voltará atrás e se arrependará?"</p>
                     </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-blue-200 shadow">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">❤️ Mostrar o Amor Universal de Deus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Deus não ama apenas alguns, mas <strong class="text-blue-600">todos os povos da Terra</strong>! Ele quer que todos conheçam Seu amor e sejam salvos — e usa pessoas como Jonas (e como nós!) para levar essa mensagem.
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded-xl border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Jonas 4:11</p>
+                        <p class="text-gray-700 italic">"E eu não me compadeço de Nínive, a grande cidade, em que há mais de cento e vinte mil pessoas?"</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-teal-100 to-blue-100 p-4 rounded-xl border-l-4 border-cyan-500">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-teal-700">Obedecer a Deus, arrepender-se dos erros e compartilhar o amor de Deus com todos!</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -228,7 +319,7 @@
                     <p class="text-lg text-gray-700 leading-relaxed mb-4">
                         Jonas ficou <strong class="text-teal-600">três dias e três noites</strong> dentro do grande peixe antes de ser salvo! Imagine só que aventura incrível!
                     </p>
-                    
+
                     <div class="bg-white p-4 rounded-xl border-l-4 border-blue-500 mb-4">
                         <p class="text-gray-700">
                             🌊 <strong>Curiosidade:</strong> A Bíblia não diz que era uma baleia, mas sim um "grande peixe" preparado especialmente por Deus!
@@ -254,6 +345,79 @@
         </div>
     </section>
 
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-blue-50 to-teal-50 p-8 mb-4 rounded-2xl border-2 border-blue-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-teal-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-teal-500">
+                <p class="text-5xl text-center mb-4">🏃‍♂️</p>
+                <h3 class="text-xl font-bold text-teal-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jonas quis fugir quando Deus pediu algo difícil. <strong>Você já quis desistir de uma tarefa importante?</strong> O que você fez?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500">
+                <p class="text-5xl text-center mb-4">🐋</p>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    No lugar mais escuro e assustador, Jonas se lembrou de Deus e orou. <strong>Quando você está com medo ou triste, o que você faz?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-cyan-500">
+                <p class="text-5xl text-center mb-4">❤️</p>
+                <h3 class="text-xl font-bold text-cyan-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jonas ficou bravo porque Deus perdoou Nínive. <strong>Você acha difícil perdoar alguém que errou muito?</strong> Por que Deus perdoa a todos?
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-teal-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-teal-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-teal-700 mb-3">Leia em Voz Alta</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia o <strong>capítulo 2 de Jonas</strong> em voz alta para alguém da sua família — é a oração que Jonas fez dentro do peixe!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3">Versículo na Parede</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva em um papel colorido: <strong>"A salvação pertence ao Senhor! — Jonas 2:9"</strong> e cole no seu quarto.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🙏</p>
+                <div class="bg-cyan-100 text-cyan-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-cyan-700 mb-3">Ore por Alguém</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Pense em alguém com quem você está chateado. Ore por essa pessoa esta semana, assim como Deus quis que Jonas orasse por Nínive.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Navegação -->
     <section class="no-print text-center bg-gradient-to-r from-teal-600/20 to-blue-600/20 border-2 border-teal-600/30 rounded-2xl p-10 mb-4">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
@@ -273,7 +437,7 @@
     <!-- Rodapé -->
     <section class="section bg-gradient-to-r from-teal-600 to-blue-600 text-white p-8 text-center">
         <h3 class="text-2xl font-black mb-2">✨ Livro de Jonas - Obediência e Misericórdia ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

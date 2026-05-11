@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -26,60 +27,60 @@
     <section class="section bg-white min-h-screen flex flex-col items-center justify-center p-8 mb-4">
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
-                <img src="3-joao-capa.png" alt="Capa: 3 João" id="img-3-joao"
+                <img src="3-joao-capa.png" alt="Capa: 3 João" id="img-3joao"
                     class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🏠</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400 mx-2">
-                    LIVRO DE 3 JOÃO
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500 mx-2">
+                    3 JOÃO
                 </span>
                 <span>💙</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Hospitalidade e Amor — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">Hospitalidade e Amor em Ação — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
-    <div id="modal-3-joao" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-sky-500">
+    <div id="modal-3joao" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-teal-500">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
                 🌟 Os Três Segredos de 3 João 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🏡 Primeiro Segredo: Abra Sua Casa com Amor</h3>
+
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-2xl border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-600 mb-3">🏡 Primeiro Segredo: Abra Sua Casa com Amor</h3>
                     <p class="italic">
                         Gaio abriu sua porta com alegria,<br>
                         Recebeu os missionários todo dia,<br>
                         Com comida, carinho e oração,<br>
-                        Mostrou hospitalidade do coração!<br>
-                        <span class="text-sky-600 font-semibold mt-2 block">— 3 João 1:5-6</span>
+                        Mostrou hospitalidade do coração!
                     </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Amado, procedes fielmente em tudo o que fazes para com os irmãos." (3 João 1:5)</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-3">⚠️ Segundo Segredo: Cuidado com o Orgulho</h3>
+                <div class="bg-gradient-to-r from-cyan-50 to-teal-50 p-6 rounded-2xl border-l-4 border-cyan-500">
+                    <h3 class="text-2xl font-bold text-cyan-600 mb-3">⚠️ Segundo Segredo: Cuidado com o Orgulho</h3>
                     <p class="italic">
                         Diótrefes queria ser o primeiro,<br>
-                        Não ajudava ninguém, só pensava em dinheiro,<br>
+                        Não ajudava ninguém, só pensava no dinheiro,<br>
                         O orgulho fechou seu coração,<br>
-                        Mas Jesus quer humildade e compaixão!<br>
-                        <span class="text-blue-600 font-semibold mt-2 block">— 3 João 1:9-10</span>
+                        Mas Jesus quer humildade e compaixão!
                     </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Diótrefes... ama ser o primeiro entre eles... recusa-se a receber os irmãos." (3 João 1:9-10)</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">✨ Terceiro Segredo: Seja Exemplo do Bem</h3>
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-2xl border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-600 mb-3">✨ Terceiro Segredo: Seja Exemplo do Bem</h3>
                     <p class="italic">
                         João escreveu: "Imite o que é bom",<br>
                         Seja gentil, acolhedor e um amigão,<br>
                         Quem pratica o bem conhece a Deus,<br>
-                        E espalha Seu amor pelos céus!<br>
-                        <span class="text-sky-600 font-semibold mt-2 block">— 3 João 1:11</span>
+                        E espalha Seu amor pelos céus!
                     </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Amado, não imites o mal, mas o bem. Quem pratica o bem é de Deus." (3 João 1:11)</p>
                 </div>
 
             </div>
@@ -88,161 +89,299 @@
 
     <!-- Script Modal -->
     <script>
-        const img = document.getElementById("img-3-joao");
-        const modal = document.getElementById("modal-3-joao");
+        const img = document.getElementById("img-3joao");
+        const modal = document.getElementById("modal-3joao");
         const closeModal = document.getElementById("close-modal");
         img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
         closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-teal-600 to-cyan-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-teal-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Amado, não imites o mal, mas o bem. Quem pratica o bem é de Deus."
+                </p>
+                <p class="text-teal-200 font-bold text-xl mb-6">— 3 João 1:11</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🏠 <span class="font-bold">O que isso significa?</span> João coloca dois personagens diante de nós — Gaio, o acolhedor generoso, e Diótrefes, o orgulhoso que afastava as pessoas. A escolha é nossa: qual dos dois vamos imitar? Praticar o bem não é um sentimento — é uma decisão que tomamos todo dia!
+                    </p>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📝 Copie no caderno</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">🗣️ Diga em voz alta</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📌 Coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Personagens Principais -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-teal-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="3-joao-personagem.png" alt="Personagens de 3 João" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="3-joao-personagem.png" alt="Personagens de 3 João" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">📖 João</h3>
-                    <p class="text-lg text-gray-700">O apóstolo amado que escreveu esta carta cheia de amor e sabedoria para seus amigos.</p>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-600 mb-2">✍️ João — O Ancião</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O apóstolo amado de Jesus escreve esta carta cheia de carinho. Ele se chama "o ancião" — um líder experiente que conhece cada pessoa da comunidade pelo nome!
+                    </p>
+                    <p class="text-sm text-teal-600 font-semibold mt-2">📖 3 Jo 1:1 — "O ancião, ao amado Gaio, a quem amo na verdade."</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">🤗 Gaio</h3>
-                    <p class="text-lg text-gray-700">Um amigo fiel e generoso que abria sua casa para receber missionários com alegria e hospitalidade.</p>
+                <div class="bg-gradient-to-r from-cyan-50 to-teal-50 p-6 rounded-xl border-l-4 border-cyan-500">
+                    <h3 class="text-2xl font-bold text-cyan-600 mb-2">🤗 Gaio — O Acolhedor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Um amigo fiel e generoso que abria sua casa para receber missionários com alegria. João ficou muito feliz ao saber de seu amor e sua hospitalidade!
+                    </p>
+                    <p class="text-sm text-cyan-600 font-semibold mt-2">📖 3 Jo 1:5 — "Amado, procedes fielmente em tudo o que fazes para com os irmãos."</p>
                 </div>
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">😤 Diótrefes</h3>
-                    <p class="text-lg text-gray-700">Um líder orgulhoso que queria ser o primeiro e não ajudava os servos de Deus.</p>
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border-l-4 border-teal-400">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-2">😤 Diótrefes — O Orgulhoso</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Um líder que queria ser o maior e não ajudava os servos de Deus. João o nomeia como exemplo do que NÃO devemos fazer — o orgulho fecha as portas do coração!
+                    </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 3 Jo 1:9 — "Diótrefes... ama ser o primeiro entre eles, não nos recebe."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O Que o Livro Conta -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
-            📚 O Que o Livro Conta?
+    <section class="section bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-cyan-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-1 space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🏠 Hospitalidade Cristã</h3>
-                    <p class="text-lg text-gray-700">João conta como Gaio recebia missionários em sua casa com amor, comida e cuidado.</p>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-600 mb-3">🏠 Hospitalidade Cristã</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João conta como Gaio recebia missionários em sua casa com amor, comida e cuidado. Isso não era simples cortesia — era uma forma de participar da obra do Evangelho!
+                    </p>
+                    <p class="text-sm text-teal-600 font-semibold mt-2">📖 3 Jo 1:8 — "Devemos receber tais pessoas, para sermos cooperadores da verdade."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-3">💖 Bondade e Humildade</h3>
-                    <p class="text-lg text-gray-700">O livro ensina que devemos servir uns aos outros com humildade, sem orgulho.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-cyan-500">
+                    <h3 class="text-2xl font-bold text-cyan-600 mb-3">💖 Bondade e Humildade</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O livro ensina que devemos servir uns aos outros com humildade, sem orgulho. Demétrio é elogiado como exemplo de pessoa que tem boa reputação diante de todos!
+                    </p>
+                    <p class="text-sm text-cyan-600 font-semibold mt-2">📖 3 Jo 1:12 — "De Demétrio todos dão bom testemunho, e a própria verdade."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">⚠️ Exemplo Negativo</h3>
-                    <p class="text-lg text-gray-700">Diótrefes é mostrado como exemplo do que NÃO fazer: ser orgulhoso e egoísta.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-400">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">⚠️ Exemplo Negativo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Diótrefes é mostrado como exemplo do que NÃO fazer: ser orgulhoso, falar mal dos outros e fechar as portas para quem serve a Deus. João diz que vai lidar com isso pessoalmente!
+                    </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 3 Jo 1:10 — "Se eu for aí, lembrarei as obras que ele pratica, falando contra nós com palavras más."</p>
                 </div>
             </div>
-            <div class="order-2">
-                <img src="3-joao-o-que-conta.png" alt="O que 3 João conta" class="w-full h-auto rounded-xl shadow-lg">
+            <div>
+                <img src="3-joao-o-que-conta.png" alt="O que 3 João conta" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por Que É Importante -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-teal-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
             ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="3-joao-importante.png" alt="Importância de 3 João" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="3-joao-importante.png" alt="Importância de 3 João" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🙏 Tratar Bem os Servos de Deus</h3>
-                    <p class="text-lg text-gray-700">Mostra que devemos acolher e ajudar quem trabalha para o Reino de Deus com amor e generosidade.</p>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-600 mb-3">🙏 Tratar Bem os Servos de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Mostra que devemos acolher e ajudar quem trabalha para o Reino de Deus. Quando apoiamos esses missionários, nos tornamos parceiros do Evangelho — mesmo sem sair de casa!
+                    </p>
+                    <p class="text-sm text-teal-600 font-semibold mt-2">📖 3 Jo 1:8 — "Devemos receber tais pessoas, para sermos cooperadores da verdade."</p>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-3">💪 Combater o Orgulho</h3>
-                    <p class="text-lg text-gray-700">Ensina que o orgulho afasta as pessoas de Deus e que devemos ser humildes.</p>
+                <div class="bg-gradient-to-r from-cyan-50 to-teal-50 p-6 rounded-xl border-l-4 border-cyan-500">
+                    <h3 class="text-2xl font-bold text-cyan-600 mb-3">💪 Combater o Orgulho</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Diótrefes nos avisa: o orgulho nos faz fechar os olhos para as necessidades dos outros. Humildade não é fraqueza — é a força que abre portas para o amor de Deus fluir!
+                    </p>
+                    <p class="text-sm text-cyan-600 font-semibold mt-2">📖 3 Jo 1:11 — "Quem pratica o mal não viu a Deus."</p>
                 </div>
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">✨ Ser Exemplo do Bem</h3>
-                    <p class="text-lg text-gray-700">Nos desafia a imitar o que é bom e espalhar o amor de Jesus por onde passamos.</p>
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border-l-4 border-teal-400">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">✨ Ser Exemplo do Bem</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Gaio e Demétrio mostram que ter boa reputação importa — não para nos gloriarmos, mas para que o nome de Deus seja honrado por nossas atitudes. Sua vida é uma carta que as pessoas leem!
+                    </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 3 Jo 1:3 — "Alegrei-me sobremaneira quando os irmãos vieram... dando testemunho da tua verdade."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do Livro -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+    <section class="section bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-cyan-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
             🎯 Propósito do Livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-1 space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🏡 Ensinar Hospitalidade</h3>
-                    <p class="text-lg text-gray-700">Mostrar a importância de abrir nossas casas e corações para ajudar quem serve a Deus.</p>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-500">
+                    <h3 class="text-2xl font-bold text-teal-600 mb-3">🏡 Ensinar Hospitalidade</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Mostrar a importância de abrir nossas casas e corações para ajudar quem serve a Deus. Receber bem um servo do Evangelho é como receber o próprio Jesus!
+                    </p>
+                    <p class="text-sm text-teal-600 font-semibold mt-2">📖 3 Jo 1:6 — "Se os enviares de modo digno de Deus, farás bem."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-3">💖 Acolher com Amor</h3>
-                    <p class="text-lg text-gray-700">Incentivar a bondade, generosidade e o cuidado com os irmãos na fé.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-cyan-500">
+                    <h3 class="text-2xl font-bold text-cyan-600 mb-3">💖 Acolher com Amor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Incentivar a bondade, generosidade e o cuidado com os irmãos na fé — porque Deus cuida de nós e por isso podemos cuidar uns dos outros com alegria!
+                    </p>
+                    <p class="text-sm text-cyan-600 font-semibold mt-2">📖 3 Jo 1:2 — "Amado, desejo que te vá bem em tudo e que sejas são."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🌟 Seguir Bons Exemplos</h3>
-                    <p class="text-lg text-gray-700">Ensinar que devemos imitar pessoas como Gaio, que praticam o bem com alegria.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-400">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">🌟 Seguir Bons Exemplos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ensinar que devemos imitar pessoas como Gaio e Demétrio, que praticam o bem com alegria — e aprender com o exemplo negativo de Diótrefes a não sermos orgulhosos!
+                    </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 3 Jo 1:11 — "Amado, não imites o mal, mas o bem. Quem pratica o bem é de Deus."</p>
                 </div>
             </div>
-            <div class="order-2">
-                <img src="3-joao-proposito.png" alt="Propósito de 3 João" class="w-full h-auto rounded-xl shadow-lg">
+            <div>
+                <img src="3-joao-proposito.png" alt="Propósito de 3 João" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você Sabia -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-400">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-teal-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="3-joao-curiosidade.png" alt="Curiosidade sobre 3 João" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="3-joao-curiosidade.png" alt="Curiosidade sobre 3 João" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-8 rounded-2xl border-4 border-sky-500 shadow-xl">
-                    <div class="text-6xl mb-4 text-center">🏠✨</div>
-                    <h3 class="text-3xl font-black text-sky-600 mb-4 text-center">Hospitalidade Cristã!</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                        João elogia Gaio por receber missionários em sua casa — um exemplo incrível de hospitalidade cristã! 
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-teal-100 to-cyan-100 p-6 rounded-xl border-4 border-teal-300">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📏</span>
+                        Menor Carta da Bíblia!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Com apenas <span class="font-bold text-teal-700">15 versículos</span>, 3 João é provavelmente a menor carta de toda a Bíblia em número de palavras! Mas não deixe o tamanho enganar — ela ensina muito sobre como tratar as pessoas com amor.
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed">
-                        Nos tempos bíblicos, não havia hotéis como hoje. Por isso, abrir a casa para viajantes que pregavam o evangelho era essencial! Gaio fazia isso com alegria, oferecendo comida, descanso e encorajamento. Que exemplo maravilhoso de amor prático! 💙
+                </div>
+                <div class="bg-gradient-to-r from-cyan-100 to-teal-100 p-6 rounded-xl border-4 border-cyan-300">
+                    <h3 class="text-2xl font-bold text-cyan-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🏠</span>
+                        Sem Hotel, Sem Casa
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nos tempos bíblicos, não havia hotéis como hoje. Por isso, abrir a casa para missionários que pregavam o Evangelho era essencial! Gaio fazia isso com alegria — e João diz que ele era um parceiro fiel da obra de Deus.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-teal-100 to-cyan-100 p-6 rounded-xl border-4 border-teal-300">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">✍️</span>
+                        Três Nomes, Três Lições
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Em apenas 15 versículos, João menciona <span class="font-bold text-teal-700">três pessoas</span>: Gaio (o acolhedor), Diótrefes (o orgulhoso) e Demétrio (o de boa reputação). Cada um nos ensina algo diferente — e nos convida a escolher que tipo de pessoa queremos ser!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-teal-50 to-cyan-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-teal-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-cyan-500">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-teal-500">
+                <div class="text-5xl text-center mb-4">🏠</div>
+                <h3 class="text-xl font-bold text-teal-600 mb-3 text-center">Acolhendo com Alegria</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Gaio recebia missionários em sua casa — e João chamou isso de "cooperar com a verdade" (v.8). Como você pode ajudar a obra de Deus onde você está, mesmo sem viajar para longe?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-cyan-500">
+                <div class="text-5xl text-center mb-4">😤</div>
+                <h3 class="text-xl font-bold text-cyan-600 mb-3 text-center">O Perigo do Orgulho</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Diótrefes queria ser o mais importante de tudo. Você já teve esse sentimento — de querer ser o centro das atenções? O que acontece quando o orgulho toma conta do coração?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-teal-400">
+                <div class="text-5xl text-center mb-4">🌟</div>
+                <h3 class="text-xl font-bold text-teal-700 mb-3 text-center">Sua Reputação</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    João diz de Demétrio que "todos dão bom testemunho" dele (v.12). Que tipo de testemunho as pessoas dariam de você? O que você faz que mostra que você é de Deus?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-teal-700 to-cyan-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-teal-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-teal-200 mb-3">Guarda no Coração</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva 3 Jo 1:11 em um papel e cole em algum lugar que você vê todo dia. Cada manhã, pergunte a si mesmo: "Hoje, vou imitar Gaio ou Diótrefes?"
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-cyan-300 text-center">
+                <div class="text-5xl mb-4">🏠</div>
+                <h3 class="text-xl font-bold text-cyan-200 mb-3">Seja Gaio Esta Semana</h3>
+                <p class="text-white leading-relaxed">
+                    Escolha UMA pessoa para acolher de um jeito especial esta semana — pode ser convidar para brincar, compartilhar o lanche, ou ajudar alguém que está se sentindo sozinho.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-teal-300 text-center">
+                <div class="text-5xl mb-4">🌟</div>
+                <h3 class="text-xl font-bold text-teal-200 mb-3">Elogie Alguém</h3>
+                <p class="text-white leading-relaxed">
+                    Assim como João elogiou Gaio e Demétrio, escolha alguém que você admira pelo bem que faz e diga a essa pessoa (ou escreva) o porquê ela é um exemplo para você!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-400/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
+    <section class="no-print text-center bg-gradient-to-r from-teal-500/20 to-cyan-500/20 border-2 border-teal-500/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../2-joao/2-joao.html" class="bg-gradient-to-r from-sky-500 to-blue-400 hover:from-sky-600 hover:to-blue-500 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2joao/2joao.html" class="bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ 2 João
             </a>
-            <a href="../epistolas-gerais.html" class="bg-gradient-to-r from-blue-400 to-sky-500 hover:from-blue-500 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Epístolas Gerais
+            <a href="../outrascartas.html" class="bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-600 hover:to-teal-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Outras Cartas
             </a>
-            <a href="../judas/judas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../judas/judas.html" class="bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Judas ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-sky-500 to-blue-400 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 3 João - Hospitalidade e Amor ✨</h3>
+    <section class="section bg-gradient-to-r from-teal-500 to-cyan-500 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ 3 João — Hospitalidade e Amor em Ação ✨</h3>
         <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
         <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>

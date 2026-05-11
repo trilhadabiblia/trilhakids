@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-blue-700 to-sky-800 hover:from-blue-800 hover:to-sky-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -30,56 +31,56 @@
                     class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-                <span>📘</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
-                    LIVRO DE JOSUÉ
+                <span>⚔️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800 mx-2">
+                    JOSUÉ
                 </span>
-                <span>📘</span>
+                <span>🏆</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Um Líder Corajoso — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">A Conquista da Terra Prometida — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-josue" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-blue-700">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
                 🌟 Os Três Segredos de Josué 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🛡️ Primeiro Segredo: Coragem na Promessa</h3>
-                    <p class="italic text-gray-700 leading-relaxed">
+
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">💪 Primeiro Segredo: Seja Forte e Corajoso!</h3>
+                    <p class="italic">
                         Josué era forte, Josué era fiel,<br>
-                        Deus lhe disse: "Seja corajoso, meu papel!"<br>
+                        Deus lhe disse: "Seja corajoso, esse é teu papel!"<br>
                         Com o povo atravessou o rio Jordão,<br>
-                        Confiando em Deus de todo coração!<br>
-                        <span class="text-sm text-amber-700 font-semibold mt-2 block">📖 Josué 1:9</span>
+                        Confiando em Deus de todo coração!
                     </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Josué 1:9 — "Sê forte e corajoso... porque o Senhor teu Deus estará contigo por onde quer que andares."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-400">
-                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🎺 Segundo Segredo: Obediência que Derruba Muros</h3>
-                    <p class="italic text-gray-700 leading-relaxed">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-700">
+                    <h3 class="text-2xl font-bold text-sky-800 mb-3">🎺 Segundo Segredo: Obediência que Derruba Muros!</h3>
+                    <p class="italic">
                         Jericó tinha muros tão altos assim,<br>
                         Mas Deus tinha um plano desde o fim!<br>
                         Marcharam, tocaram, gritaram com fé,<br>
-                        E os muros caíram aos seus pés!<br>
-                        <span class="text-sm text-yellow-700 font-semibold mt-2 block">📖 Josué 6:20</span>
+                        E os muros caíram aos seus pés!
                     </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Josué 6:20 — "Quando o povo ouviu o sonido da trombeta... os muros caíram."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-400">
-                    <h3 class="text-2xl font-bold text-amber-900 mb-3">✨ Terceiro Segredo: Escolha Servir ao Senhor</h3>
-                    <p class="italic text-gray-700 leading-relaxed">
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">🏠 Terceiro Segredo: Escolha Servir ao Senhor!</h3>
+                    <p class="italic">
                         No final da vida, Josué proclamou:<br>
                         "Escolham hoje a quem vão servir, meu irmão!"<br>
                         "Eu e minha casa serviremos ao Senhor,<br>
-                        Pois Ele é fiel, nosso protetor!"<br>
-                        <span class="text-sm text-amber-800 font-semibold mt-2 block">📖 Josué 24:15</span>
+                        Pois Ele é fiel, nosso protetor!"
                     </p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Josué 24:15 — "Eu e a minha casa serviremos ao Senhor."</p>
                 </div>
 
             </div>
@@ -96,159 +97,300 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem é Josué? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-amber-200">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            ❓ Quem é Josué?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-blue-700 to-sky-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar no Coração
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-blue-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Sê forte e corajoso... porque o Senhor teu Deus estará contigo por onde quer que andares."
+                </p>
+                <p class="text-blue-200 font-bold text-xl mb-6">— Josué 1:9</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        ⚔️ <span class="font-bold">O que isso significa?</span> Deus disse essas palavras para Josué no momento mais assustador da sua vida: Moisés havia morrido e ele tinha que liderar dois milhões de pessoas para conquistar cidades muradas. Coragem não é ausência de medo — é avançar mesmo com medo, sabendo que Deus vai junto!
+                    </p>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📝 Copie no caderno</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">🗣️ Diga em voz alta</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📌 Coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div>
-                <img src="josue-personagem.png" alt="Josué - O Líder Corajoso" class="w-full h-auto rounded-2xl shadow-lg">
+                <img src="josue-personagem.png" alt="Personagens de Josué" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
             <div class="space-y-4">
-                <p class="text-xl leading-relaxed text-gray-700">
-                    <span class="font-bold text-amber-700">Josué foi um líder forte</span> que ajudou o povo de Deus a ir para a <span class="font-bold text-yellow-700">Terra Prometida</span>.
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    Ele foi assistente de <span class="font-bold text-amber-800">Moisés</span> e aprendeu muito com ele. Quando Moisés morreu, Deus escolheu Josué para liderar o povo!
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    O nome Josué significa <span class="font-bold text-yellow-800">"O Senhor salva"</span> — e isso nos lembra de Jesus, nosso Salvador! ✨
-                </p>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">⚔️ Josué — O Líder Corajoso</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ex-espião, ex-assistente de Moisés, agora comandante-chefe de Israel. Seu nome em hebraico — Yehoshua — significa <em>"O Senhor salva"</em>, o mesmo nome de Jesus! Deus o escolheu por sua fé inabalável desde jovem.
+                    </p>
+                    <p class="text-sm text-blue-800 font-semibold mt-2">📖 Js 1:1-2 — "Levanta-te, passa este Jordão, tu e todo este povo, à terra que eu lhes dou."</p>
+                </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-700">
+                    <h3 class="text-2xl font-bold text-sky-800 mb-2">❤️ Raabe — A Fé Onde Menos se Espera</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Moradora de Jericó que escondeu os espiões israelitas e colocou um cordão vermelho na janela como sinal de proteção. Uma mulher de fé extraordinária — e seus descendentes aparecem na genealogia de Jesus!
+                    </p>
+                    <p class="text-sm text-sky-800 font-semibold mt-2">📖 Js 2:11 — "O Senhor, vosso Deus, é Deus em cima nos céus e embaixo na terra."</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">😔 Acã — O Perigo da Desobediência</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Após a vitória de Jericó, Acã escondeu objetos proibidos no seu acampamento. Por causa disso, Israel perdeu a próxima batalha em Ai. Uma lição dolorosa: o pecado escondido afeta toda a comunidade!
+                    </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 Js 7:20 — "Acã respondeu... Pequei contra o Senhor, Deus de Israel."</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-yellow-300">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-amber-800">
-            📖 O que o livro conta?
+    <section class="section bg-gradient-to-br from-blue-50 to-sky-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-sky-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-4 order-2 md:order-1">
-                <p class="text-xl leading-relaxed text-gray-700">
-                    O livro de Josué conta a <span class="font-bold text-amber-700">história emocionante</span> de como o povo de Israel finalmente entrou na Terra Prometida!
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    Com <span class="font-bold text-yellow-700">24 capítulos</span> cheios de aventuras, vemos Josué liderar batalhas, conquistar cidades e dividir a terra entre as tribos de Israel.
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    Há milagres incríveis, como o <span class="font-bold text-amber-800">Rio Jordão se abrindo</span> e as <span class="font-bold text-yellow-800">muralhas de Jericó caindo</span>! 🎺
-                </p>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">🌊 A Travessia do Jordão</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os sacerdotes entraram no rio carregando a Arca da Aliança — e as águas se abriram! O povo atravessou em terra seca, como havia feito no Mar Vermelho. Deus recomeçou a história com o mesmo tipo de milagre!
+                    </p>
+                    <p class="text-sm text-blue-800 font-semibold mt-2">📖 Js 3:17 — "Os sacerdotes... ficaram parados em terra seca... até que todo o povo havia passado."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-700">
+                    <h3 class="text-2xl font-bold text-sky-800 mb-3">🎺 A Queda de Jericó</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A cidade mais fortemente murada da terra. O plano de Deus: marchar em silêncio ao redor por 7 dias, tocar as trombetas e gritar no sétimo dia. Os muros caíram! A vitória mais improvável da história militar foi conquistada pela obediência.
+                    </p>
+                    <p class="text-sm text-sky-800 font-semibold mt-2">📖 Js 6:20 — "O povo soltou um grande grito... os muros caíram, e o povo subiu à cidade."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">☀️ O Sol que Parou</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Na batalha de Gibeão, Josué precisava de mais luz do dia para terminar a vitória. Ele orou e pediu que o sol parasse — e parou! A Bíblia diz que "não houve dia igual antes nem depois" (Js 10:14). Deus controla até o tempo!
+                    </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 Js 10:13 — "O sol parou no meio do céu e não se apressou a pôr-se."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-600">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">🗺️ A Divisão da Terra</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Após as batalhas, Josué dividiu a terra entre as 12 tribos de Israel. Cada família recebeu sua herança — a promessa feita a Abraão há centenas de anos estava cumprida. Josué terminou o que Moisés começou!
+                    </p>
+                    <p class="text-sm text-sky-700 font-semibold mt-2">📖 Js 21:45 — "Não falhou uma só palavra de todas as boas palavras que o Senhor havia falado."</p>
+                </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="josue-o-que-conta.png" alt="As Aventuras de Josué" class="w-full h-auto rounded-2xl shadow-lg">
+            <div>
+                <img src="josue-o-que-conta.png" alt="O que Josué conta" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-amber-300">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            ⭐ Por que é importante?
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div>
-                <img src="josue-importante.png" alt="A Importância do Livro de Josué" class="w-full h-auto rounded-2xl shadow-lg">
+                <img src="josue-importante.png" alt="Importância de Josué" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="space-y-6">
-                <div class="flex items-start space-x-4">
-                    <span class="text-4xl">🟢</span>
-                    <p class="text-xl leading-relaxed text-gray-700">
-                        <span class="font-bold text-amber-700">Mostra como Deus cumpre Suas promessas!</span> Ele prometeu a Abraão uma terra especial, e agora o povo está lá!
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">✅ Deus Cumpriu Promessa de 400 Anos!</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Desde Gênesis 12, Deus prometeu a Abraão uma terra. Em Josué, essa promessa finalmente se cumpre. Cada acre de Canaã era a prova: o que Deus promete, Ele entrega — não importa quanto tempo leve!
                     </p>
+                    <p class="text-sm text-blue-800 font-semibold mt-2">📖 Js 21:45 — "Não falhou uma só palavra de todas as boas palavras que o Senhor havia falado."</p>
                 </div>
-                <div class="flex items-start space-x-4">
-                    <span class="text-4xl">🟢</span>
-                    <p class="text-xl leading-relaxed text-gray-700">
-                        <span class="font-bold text-yellow-700">Ensina sobre confiança em Deus.</span> Quando obedecemos e confiamos, Deus faz coisas incríveis!
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-700">
+                    <h3 class="text-2xl font-bold text-sky-800 mb-3">🏠 Declaração da Casa — Ainda Vale Hoje</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Eu e minha casa serviremos ao Senhor" (Js 24:15) é uma das declarações mais citadas por famílias cristãs até hoje. Josué disse isso já idoso, olhando para trás — e sua escolha moldou o futuro de sua família inteira!
                     </p>
+                    <p class="text-sm text-sky-800 font-semibold mt-2">📖 Js 24:15 — "Eu e a minha casa serviremos ao Senhor."</p>
                 </div>
-                <div class="flex items-start space-x-4">
-                    <span class="text-4xl">🟢</span>
-                    <p class="text-xl leading-relaxed text-gray-700">
-                        <span class="font-bold text-amber-800">Mostra a importância da obediência.</span> Josué e o povo aprenderam que seguir a Deus traz vitória e bênçãos!
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">✝️ Josué É Imagem de Jesus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Josué (Yehoshua) e Jesus têm o mesmo nome! Assim como Josué levou Israel à terra prometida, Jesus leva Seu povo à vida eterna. Josué conquistou com espada; Jesus conquistou com amor na cruz.
                     </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 Js 1:3 — "Todo lugar que pisar a planta do vosso pé, vo-lo darei."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-yellow-400">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-700 to-amber-800">
-            🎯 Propósito do livro
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-sky-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
+            🎯 Propósito do Livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-4 order-2 md:order-1">
-                <p class="text-xl leading-relaxed text-gray-700">
-                    O livro de Josué <span class="font-bold text-amber-700">continua a história</span> que começou com Moisés no deserto.
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    Ele mostra que <span class="font-bold text-yellow-700">Deus é fiel à aliança</span> que fez com Abraão, Isaque e Jacó — Ele sempre cumpre o que promete!
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    Ensina que <span class="font-bold text-amber-800">Canaã (a Terra Prometida)</span> é um lugar especial onde o povo de Deus aprende a viver em obediência e adoração.
-                </p>
-                <p class="text-xl leading-relaxed text-gray-700">
-                    É um livro sobre <span class="font-bold text-yellow-800">coragem, fé e a fidelidade de Deus</span>! 💪
-                </p>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">🏆 Mostrar que a Fé Conquista</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Josué não tinha tanques nem aviões — tinha a presença de Deus e obediência. As batalhas foram ganhas não pela força militar, mas pela fé. O livro inteiro grita: quem anda com Deus não pode ser derrotado!
+                    </p>
+                    <p class="text-sm text-blue-800 font-semibold mt-2">📖 Js 1:5 — "Ninguém te poderá resistir todos os dias da tua vida."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-700">
+                    <h3 class="text-2xl font-bold text-sky-800 mb-3">📖 Guardar e Obedecer a Palavra</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Deus disse a Josué para não se afastar da Lei, meditando nela de dia e de noite. Toda vitória dependia dessa obediência à Palavra. Quando o povo desobedeceu (Acã), a derrota veio imediatamente.
+                    </p>
+                    <p class="text-sm text-sky-800 font-semibold mt-2">📖 Js 1:8 — "Não se aparte da tua boca este livro da lei... então farás prosperar o teu caminho."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">🌍 A Promessa de Abraão Cumprida</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Josué fecha o arco narrativo aberto em Gênesis 12. A terra prometida a Abraão agora pertence aos seus descendentes. A história de Deus não tem pontas soltas — cada promessa chega ao seu cumprimento!
+                    </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 Js 23:14 — "Nem uma só palavra de todas as boas palavras falhou — todas se cumpriram."</p>
+                </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="josue-proposito.png" alt="O Propósito do Livro de Josué" class="w-full h-auto rounded-2xl shadow-lg">
+            <div>
+                <img src="josue-proposito.png" alt="Propósito de Josué" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-8 mb-8 mx-4 border-4 border-amber-200">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            💡 Curiosidade Divertida!
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
+            🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
             <div>
-                <img src="josue-curiosidade.png" alt="Curiosidades sobre Josué" class="w-full h-auto rounded-2xl shadow-lg">
+                <img src="josue-curiosidade.png" alt="Curiosidade sobre Josué" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
             <div class="space-y-6">
-                <div class="bg-amber-100 p-6 rounded-2xl border-2 border-amber-300">
-                    <p class="text-xl leading-relaxed text-gray-700">
-                        🌟 O nome de Josué em hebraico pode significar <span class="font-bold text-amber-800">"Salvador"</span> — isso conecta Josué a Jesus, que também é nosso Salvador! ✨
+                <div class="bg-gradient-to-r from-blue-100 to-sky-100 p-6 rounded-xl border-4 border-blue-300">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">✝️</span>
+                        Josué e Jesus — O Mesmo Nome!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        <span class="font-bold text-blue-700">"Josué"</span> em hebraico é <span class="font-bold text-sky-700">"Yehoshua"</span>, e em grego se torna <span class="font-bold text-blue-700">"Iesous" — Jesus</span>! Os dois têm literalmente o mesmo nome, que significa <em>"O Senhor salva"</em>. Josué salvou o povo fisicamente; Jesus salva espiritualmente para sempre!
                     </p>
                 </div>
-                <div class="bg-yellow-100 p-6 rounded-2xl border-2 border-yellow-300">
-                    <p class="text-xl leading-relaxed text-gray-700">
-                        🎺 As muralhas de Jericó caíram depois que o povo <span class="font-bold text-yellow-800">marchou ao redor da cidade por sete dias</span>, tocou trombetas e gritou bem alto!
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl border-4 border-sky-300">
+                    <h3 class="text-2xl font-bold text-sky-800 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🎺</span>
+                        O Plano Mais Maluco da História!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Nenhum general na história jamais pensaria em conquistar uma cidade murada marchando em silêncio por 6 dias e depois gritando no sétimo! Era um plano que só funcionaria se Deus agisse — e foi exatamente por isso que Deus deu esse plano. A glória era Dele, não dos soldados.
                     </p>
                 </div>
-                <div class="bg-amber-100 p-6 rounded-2xl border-2 border-amber-300">
-                    <p class="text-xl leading-relaxed text-gray-700">
-                        ☀️ Em uma batalha, Josué pediu a Deus que o <span class="font-bold text-amber-800">sol parasse no céu</span> — e Deus atendeu! Que milagre incrível! (Josué 10:12-13)
+                <div class="bg-gradient-to-r from-blue-100 to-sky-100 p-6 rounded-xl border-4 border-blue-300">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">☀️</span>
+                        O Dia Mais Longo da História!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Em Josué 10:13, o sol parou por quase um dia inteiro para que Israel terminasse a batalha. Alguns cientistas da NASA já relataram encontrar em cálculos astronômicos um "dia extra" perdido na história. Será? Deus controla o cosmos!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-blue-50 to-sky-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-blue-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-800">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-700">
+                <div class="text-5xl text-center mb-4">💪</div>
+                <h3 class="text-xl font-bold text-blue-800 mb-3 text-center">Coragem com Medo</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus disse "Sê forte e corajoso" três vezes para Josué — o que mostra que Josué provavelmente estava com medo! Coragem não é não ter medo, é agir mesmo tendo medo. Que situação na sua vida pede esse tipo de coragem?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-sky-700">
+                <div class="text-5xl text-center mb-4">🎺</div>
+                <h3 class="text-xl font-bold text-sky-800 mb-3 text-center">Obedecer Parece Maluco</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Marchar em silêncio por 7 dias deve ter parecido ridículo para os soldados. Já houve uma situação em que Deus te pediu para fazer algo que parecia estranho ou difícil de explicar para os outros? O que aconteceu?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600">
+                <div class="text-5xl text-center mb-4">🏠</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Minha Casa Serve a Quem?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Josué disse: "Eu e minha casa serviremos ao Senhor." Que decisões concretas fazem uma família "servir ao Senhor"? O que você pode fazer para que isso valha na sua casa?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-700 to-sky-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-blue-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-blue-200 mb-3">Guarda no Coração</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Josué 1:9 e cole no seu espelho. Toda manhã, antes de sair, leia em voz alta. Quando vier o medo ou a insegurança, lembre: Deus está contigo por onde quer que andares!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-sky-300 text-center">
+                <div class="text-5xl mb-4">🏠</div>
+                <h3 class="text-xl font-bold text-sky-200 mb-3">Declare com Josué</h3>
+                <p class="text-white leading-relaxed">
+                    Esta semana, diga para sua família (ou escreva em algum lugar na sua casa): "Eu e minha casa serviremos ao Senhor!" Converse com seus pais sobre o que isso significa na prática para vocês.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-blue-300 text-center">
+                <div class="text-5xl mb-4">⚔️</div>
+                <h3 class="text-xl font-bold text-blue-200 mb-3">Enfrente Seu Jericó</h3>
+                <p class="text-white leading-relaxed">
+                    Identifique um "muro" que parece impossível na sua vida — um medo, um hábito ruim, um relacionamento difícil. Ore sobre isso esta semana como Josué marchava: com fé silenciosa, dia após dia, confiando que Deus vai agir!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mx-4 mb-8">
-        <h3 class="text-3xl font-black text-amber-900 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="no-print text-center bg-gradient-to-r from-blue-700/20 to-sky-800/20 border-2 border-blue-700/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../deuteronomio/deuteronomio.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../deuteronomio/deuteronomio.html" class="bg-gradient-to-r from-blue-700 to-sky-800 hover:from-blue-800 hover:to-sky-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Deuteronômio
             </a>
-            <a href="../pentateuco.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros do Pentateuco
+            <a href="../historicos.html" class="bg-gradient-to-r from-sky-800 to-blue-700 hover:from-sky-900 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Livros Históricos
             </a>
-            <a href="../juizes/juizes.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../juizes/juizes.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Juízes ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Josué - Um Líder Corajoso ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    <section class="section bg-gradient-to-r from-blue-700 to-sky-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Josué — A Conquista da Terra Prometida ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>
 
     <script src="/menu.js"></script>

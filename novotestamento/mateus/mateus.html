@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Mateus 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-700 mb-3">👑 Primeiro Segredo: O Rei Prometido Chegou!</h3>
                     <p class="italic">
@@ -96,6 +97,32 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-sky-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-sky-700 leading-snug mb-4">
+                    "Assim brilhe a vossa luz diante dos homens, para que vejam as vossas boas obras e glorifiquem a vosso Pai que está nos céus."
+                </blockquote>
+                <p class="text-xl font-bold text-blue-600 mb-6">Mateus 5:16</p>
+                <div class="bg-sky-50 rounded-2xl p-4 border-2 border-sky-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        No Sermão do Monte, Jesus nos chamou de "luz do mundo". Assim como uma vela ilumina um quarto escuro, nossas boas ações mostram o amor de Deus para todos ao redor!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-sky-100 text-sky-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Personagens Principais -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8">
@@ -103,26 +130,42 @@
                 👥 Quem São os Personagens Principais?
             </span>
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <div>
                 <img src="mateus-personagem.png" alt="Personagens de Mateus" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✨ Jesus</h3>
-                    <p class="text-gray-700">O Rei prometido, o Messias que veio salvar o mundo! Ele ensinou sobre o amor de Deus e fez muitos milagres.</p>
+            <div class="space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✨ Jesus — O Rei dos Reis</h3>
+                    <p class="text-gray-700 mb-3">O Messias prometido! Ele ensinou sobre o amor de Deus, fez milagres incríveis e morreu e ressuscitou para nos salvar.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Leia na Bíblia — Mateus 3:17</p>
+                        <p class="text-gray-700 italic">"Este é o meu Filho amado, em quem me comprazo."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-500">
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-5 rounded-2xl border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-700 mb-2">👨‍👩‍👦 Maria e José</h3>
-                    <p class="text-gray-700">Os pais terrenos de Jesus, que cuidaram Dele com muito amor e obediência a Deus.</p>
+                    <p class="text-gray-700 mb-3">Os pais terrenos de Jesus, que cuidaram Dele com muito amor e obediência a Deus, fugindo até o Egito para protegê-Lo.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — Mateus 1:21</p>
+                        <p class="text-gray-700 italic">"Ela dará à luz um filho, e tu lhe porás o nome de Jesus, porque ele salvará o seu povo dos seus pecados."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🎣 Os Discípulos</h3>
-                    <p class="text-gray-700">Os 12 amigos especiais de Jesus que aprenderam com Ele e ajudaram a espalhar Sua mensagem.</p>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🎣 Os 12 Discípulos</h3>
+                    <p class="text-gray-700 mb-3">Os amigos especiais que Jesus escolheu: pescadores, um cobrador de impostos, e outros! Eles aprenderam com Jesus e espalharam a boa notícia.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Leia na Bíblia — Mateus 4:19</p>
+                        <p class="text-gray-700 italic">"Vinde após mim, e eu vos farei pescadores de homens."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-6 rounded-xl border-l-4 border-blue-500">
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-5 rounded-2xl border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-700 mb-2">💧 João Batista</h3>
-                    <p class="text-gray-700">O primo de Jesus que preparou o caminho anunciando a chegada do Rei!</p>
+                    <p class="text-gray-700 mb-3">O primo de Jesus que preparou o caminho, pregando no deserto e batizando o povo no Rio Jordão.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — Mateus 3:3</p>
+                        <p class="text-gray-700 italic">"Preparai o caminho do Senhor, endireitai as suas veredas."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -135,23 +178,27 @@
                 📖 O Que o Livro Conta?
             </span>
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <div class="space-y-4 order-2 md:order-1">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-700 mb-2">🌟 O Nascimento do Rei</h3>
-                    <p class="text-gray-700">Jesus nasceu em Belém, cumprindo as antigas profecias. Anjos anunciaram e reis vieram adorá-Lo!</p>
+                    <p class="text-gray-700 mb-3">Jesus nasceu em Belém, cumprindo as antigas profecias. Anjos anunciaram e magos vieram de longe para adorá-Lo com presentes.</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 Mateus 1:23 — "Eis que a virgem conceberá e dará à luz um filho, e ele será chamado pelo nome de Emanuel, que traduzido é: Deus conosco."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">✨ Os Ensinamentos</h3>
-                    <p class="text-gray-700">Jesus ensinou sobre o Reino de Deus através de parábolas, sermões e exemplos de vida.</p>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">✨ O Sermão do Monte</h3>
+                    <p class="text-gray-700 mb-3">Jesus subiu numa montanha e ensinou as pessoas sobre como viver no Reino de Deus — as Bem-aventuranças, o Pai-Nosso e muito mais!</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Mateus 5:3 — "Bem-aventurados os pobres em espírito, porque deles é o reino dos céus."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🙏 Milagres e Curas</h3>
-                    <p class="text-gray-700">Jesus curou doentes, alimentou multidões e até ressuscitou mortos, mostrando Seu poder divino!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🙏 Milagres e Parábolas</h3>
+                    <p class="text-gray-700 mb-3">Jesus curou cegos, leprosos e paralíticos, andou sobre as águas e contou histórias lindas (parábolas) para ensinar sobre Deus.</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 Mateus 9:35 — "Jesus percorria todas as cidades e aldeias... pregando o evangelho do reino e curando toda enfermidade."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💝 Morte e Ressurreição</h3>
-                    <p class="text-gray-700">Jesus morreu na cruz pelos nossos pecados, mas ressuscitou ao terceiro dia, vencendo a morte!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💝 Morte, Ressurreição e Grande Comissão</h3>
+                    <p class="text-gray-700 mb-3">Jesus morreu na cruz pelos nossos pecados, ressuscitou ao terceiro dia e antes de subir ao céu nos deu a missão de fazer discípulos em todo o mundo!</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Mateus 28:6 — "Não está aqui, porque ressuscitou, como havia dito. Vinde, vede o lugar onde o Senhor estava."</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
@@ -167,30 +214,40 @@
                 💎 Por Que É Importante?
             </span>
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <div>
                 <img src="mateus-importante.png" alt="Importância de Mateus" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="space-y-6">
-                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4">👑 Jesus é o Rei Prometido!</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Mateus mostra que Jesus não é um rei comum — Ele é o Rei dos reis que Deus prometeu há muito tempo! 
-                        Ele veio trazer o Reino de Deus à Terra, um reino de amor, paz e justiça.
+            <div class="space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">👑 Jesus é o Rei Prometido!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Mateus cita o Antigo Testamento mais de 60 vezes para mostrar que Jesus cumpriu cada promessa que Deus fez há séculos — Ele não chegou de surpresa, Deus já havia avisado!
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Mateus 21:5</p>
+                        <p class="text-gray-700 italic">"Dizei à filha de Sião: Eis aí vem o teu rei, humilde, montado num jumento."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-100 to-sky-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-blue-700 mb-4">💖 Ele Nos Convida a Fazer Parte!</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Jesus não veio apenas para ser admirado de longe — Ele nos convida a fazer parte do Seu Reino! 
-                        Podemos ser cidadãos do Reino de Deus seguindo Seus ensinamentos de amor e obediência.
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">💖 Ele Nos Convida a Fazer Parte!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Jesus não veio apenas para ser admirado — Ele nos chama para descansar nEle e aprender com Ele todos os dias da vida.
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Mateus 11:28</p>
+                        <p class="text-gray-700 italic">"Vinde a mim, todos os que estais cansados e sobrecarregados, e eu vos aliviarei."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4">🌍 Uma Mensagem Para Todos!</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Mateus escreveu para mostrar que Jesus cumpriu todas as promessas antigas e que Sua mensagem é para todas as pessoas, de todos os lugares!
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">🌍 Uma Mensagem Para Todos!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O livro termina com Jesus mandando Seus seguidores levarem a boa notícia a todas as nações — isso inclui você, hoje!
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Mateus 28:19</p>
+                        <p class="text-gray-700 italic">"Ide, portanto, fazei discípulos de todas as nações, batizando-os em nome do Pai, e do Filho, e do Espírito Santo."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -203,28 +260,40 @@
                 🎯 Qual é o Propósito do Livro?
             </span>
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6 order-2 md:order-1">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-sky-500">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+            <div class="space-y-5 order-2 md:order-1">
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-sky-500">
                     <div class="text-5xl mb-4">👑</div>
-                    <h3 class="text-2xl font-bold text-sky-700 mb-3">Apresentar Jesus como Rei</h3>
-                    <p class="text-gray-700 text-lg">
-                        Mateus quer que todos saibam que Jesus é o Rei dos reis, o Messias prometido que veio salvar o mundo!
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">Apresentar Jesus como Messias</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Mateus escreveu para os judeus mostrando que Jesus é o Cristo prometido — Filho de Davi, Filho de Abraão — o Rei que toda a Bíblia anunciava!
                     </p>
+                    <div class="bg-sky-50 p-3 rounded-xl border-l-4 border-sky-400">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Mateus 1:1</p>
+                        <p class="text-gray-700 italic">"Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão."</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-500">
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-blue-500">
                     <div class="text-5xl mb-4">📚</div>
-                    <h3 class="text-2xl font-bold text-blue-700 mb-3">Ensinar Sobre o Reino</h3>
-                    <p class="text-gray-700 text-lg">
-                        O livro nos ensina como viver no Reino de Deus, seguindo os ensinamentos de Jesus sobre amor, perdão e obediência.
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">Ensinar Sobre o Reino de Deus</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        O livro nos ensina como viver no Reino de Deus com amor, perdão, humildade e obediência a Jesus — começando agora!
                     </p>
+                    <div class="bg-blue-50 p-3 rounded-xl border-l-4 border-blue-400">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Mateus 4:17</p>
+                        <p class="text-gray-700 italic">"Arrependei-vos, porque está próximo o reino dos céus."</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-sky-500">
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-sky-500">
                     <div class="text-5xl mb-4">💝</div>
                     <h3 class="text-2xl font-bold text-sky-700 mb-3">Convidar a Seguir Jesus</h3>
-                    <p class="text-gray-700 text-lg">
-                        Mateus nos convida a sermos discípulos de Jesus, aprendendo com Ele e compartilhando Seu amor com o mundo!
+                    <p class="text-gray-700 text-lg mb-3">
+                        Mateus nos convida a sermos discípulos de Jesus, aprendendo com Ele e compartilhando Seu amor com o mundo inteiro!
                     </p>
+                    <div class="bg-sky-50 p-3 rounded-xl border-l-4 border-sky-400">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Mateus 4:19</p>
+                        <p class="text-gray-700 italic">"Vinde após mim, e eu vos farei pescadores de homens."</p>
+                    </div>
                 </div>
             </div>
             <div class="order-1 md:order-2">
@@ -251,22 +320,95 @@
                 <h3 class="text-3xl font-black text-sky-700 mb-6 text-center">De Cobrador a Escritor!</h3>
                 <div class="space-y-4 text-lg text-gray-700 leading-relaxed">
                     <p class="bg-white p-4 rounded-xl shadow">
-                        <strong class="text-sky-600">📝</strong> Mateus era cobrador de impostos — uma profissão muito mal vista na época!
+                        <strong class="text-sky-600">📝</strong> Mateus era cobrador de impostos — uma profissão muito mal vista na época! Todos o odiavam.
                     </p>
                     <p class="bg-white p-4 rounded-xl shadow">
-                        <strong class="text-blue-600">✨</strong> Mas Jesus o chamou para ser Seu discípulo, e ele deixou tudo para seguir o Mestre!
+                        <strong class="text-blue-600">✨</strong> Mas Jesus o chamou para ser Seu discípulo, e ele deixou tudo para seguir o Mestre — sem hesitar!
                     </p>
                     <p class="bg-white p-4 rounded-xl shadow">
-                        <strong class="text-sky-600">📖</strong> Mateus escreveu seu Evangelho especialmente para mostrar aos judeus que Jesus cumpriu todas as profecias antigas!
+                        <strong class="text-sky-600">📖</strong> Ele citou o Antigo Testamento mais de <strong>60 vezes</strong> para provar que Jesus é o Rei prometido há séculos!
                     </p>
                     <p class="bg-white p-4 rounded-xl shadow">
-                        <strong class="text-blue-600">👑</strong> Ele citou o Antigo Testamento mais de 60 vezes para provar que Jesus é o Rei prometido!
+                        <strong class="text-blue-600">👑</strong> Mateus 5-7 contém o <strong>Sermão do Monte</strong> — o maior ensinamento de Jesus registrado na Bíblia!
                     </p>
                 </div>
                 <div class="mt-6 text-center">
                     <p class="text-sky-600 font-bold text-xl">Incrível como Deus transforma vidas! 🌟</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl border-2 border-sky-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-sky-500">
+                <p class="text-5xl text-center mb-4">💰</p>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Mateus era cobrador de impostos e todo mundo o rejeitava, mas Jesus o chamou. <strong>Você acredita que Jesus chama qualquer pessoa, mesmo quem parece diferente?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500">
+                <p class="text-5xl text-center mb-4">⛰️</p>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    No Sermão do Monte, Jesus disse: "brilhe a vossa luz". <strong>O que você pode fazer esta semana para mostrar o amor de Deus para alguém?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-500">
+                <p class="text-5xl text-center mb-4">🌍</p>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jesus mandou fazer discípulos em todas as nações. <strong>Você já contou para alguém da sua escola ou família o que aprendeu sobre Jesus?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-sky-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3">Leia as Bem-aventuranças</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>Mateus 5:1-12</strong> em voz alta para alguém da sua família — são os ensinamentos mais famosos de Jesus!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3">Versículo na Parede</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva num papel colorido: <strong>"Assim brilhe a vossa luz! — Mateus 5:16"</strong> e cole em algum lugar da sua casa.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💡</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">Seja a Luz!</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Faça uma boa ação para alguém hoje — ajude, elogie, sorria. Isso é "brilhar a sua luz" como Jesus ensinou!
+                </p>
+            </div>
+
         </div>
     </section>
 

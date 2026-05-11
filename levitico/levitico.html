@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -32,11 +33,11 @@
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>✨</span>
                 <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700 mx-2">
-                    LIVRO DE LEVÍTICO
+                    LEVÍTICO
                 </span>
                 <span>🕊️</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Santidade e Adoração — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">Sejam Santos Como Eu Sou Santo — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
@@ -48,38 +49,38 @@
                 🌟 Os Três Segredos de Levítico 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Primeiro Segredo: Santidade é Ser Especial</h3>
+
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Primeiro Segredo: Santidade é Ser Especial para Deus</h3>
                     <p class="italic">
                         Deus é santo, puro e bom,<br>
                         E quer que sejamos também, com amor e dom!<br>
                         Ser santo é viver de forma especial,<br>
-                        Obedecendo a Deus, fazendo o que é legal!
+                        Separado para Deus — que coisa legal!
                     </p>
-                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 "Sede santos, porque eu sou santo" - Levítico 11:45</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Levítico 11:45 — "Sede santos, porque eu sou santo."</p>
                 </div>
 
-                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🕊️ Segundo Segredo: Adoração com Respeito</h3>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🕊️ Segundo Segredo: O Perdão Tem um Custo</h3>
                     <p class="italic">
-                        Os sacerdotes cuidavam com atenção,<br>
-                        Do templo sagrado, com dedicação!<br>
-                        Nos ensina que Deus merece reverência,<br>
-                        E nossa adoração com toda excelência!
+                        Os sacrifícios mostravam algo importante,<br>
+                        Que o pecado tem consequência, é relevante!<br>
+                        O sangue do cordeiro apontava para Cristo,<br>
+                        O Cordeiro de Deus que nos trouxe o perdão listo!
                     </p>
-                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 "Guardareis os meus mandamentos" - Levítico 22:31</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Levítico 17:11 — "A vida da carne está no sangue... para fazer expiação pelas vossas almas."</p>
                 </div>
 
-                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">❤️ Terceiro Segredo: Relacionamento Verdadeiro</h3>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">❤️ Terceiro Segredo: Amar o Próximo Já Estava Aqui!</h3>
                     <p class="italic">
-                        Deus não quer apenas regras seguir,<br>
-                        Mas um coração que O ama e quer servir!<br>
-                        Pureza e amor devem andar juntos,<br>
-                        Para com Deus estarmos sempre prontos!
+                        Não é só do Novo Testamento esse ensinamento,<br>
+                        Levítico já diz com pleno contentamento:<br>
+                        "Ama ao próximo como a ti mesmo é o mandamento!"<br>
+                        Jesus repetiu — é o maior fundamento!
                     </p>
-                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 "Amarás o teu próximo como a ti mesmo" - Levítico 19:18</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Levítico 19:18 — "Amarás o teu próximo como a ti mesmo."</p>
                 </div>
 
             </div>
@@ -96,129 +97,275 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-purple-600">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
-            👥 Quem são os Personagens Principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-purple-700 to-indigo-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar no Coração
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="levitico-personagem.png" alt="Personagens de Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-purple-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Amarás o teu próximo como a ti mesmo."
+                </p>
+                <p class="text-purple-200 font-bold text-xl mb-6">— Levítico 19:18</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        ✨ <span class="font-bold">O que isso significa?</span> Este versículo tem mais de 3.000 anos — e Jesus o citou como um dos dois maiores mandamentos da Bíblia! Cuidar do próximo não é novidade do Novo Testamento. Desde Levítico, Deus já ensinava: se você se importa com você mesmo, importe-se assim também com quem está ao seu lado!
+                    </p>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📝 Copie no caderno</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">🗣️ Diga em voz alta</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📌 Coloque na parede</span>
+                </div>
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✨ Deus</h3>
-                    <p class="text-gray-700 text-lg">O personagem principal! Ele ensina Seu povo sobre santidade, pureza e como viver de forma que O agrada.</p>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="levitico-personagem.png" alt="Personagens de Levítico" class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✨ Deus — O Santo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O grande protagonista! Em Levítico, Deus fala mais do que em qualquer outro livro. Cada regra começa com "E o Senhor falou a Moisés". Ele não é um deus distante — está no meio do acampamento, ensinando pessoalmente como viver!
+                    </p>
+                    <p class="text-sm text-purple-700 font-semibold mt-2">📖 Lv 1:1 — "Chamou o Senhor a Moisés, e lhe falou da tenda da congregação."</p>
                 </div>
-                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">📜 Moisés</h3>
-                    <p class="text-gray-700 text-lg">O líder que recebe as instruções de Deus e as ensina ao povo de Israel.</p>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">📜 Moisés — O Mensageiro</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ele recebe todas as leis de Deus e as transmite fielmente ao povo. Em Levítico, Moisés é quase um professor — sentado no Tabernáculo, anotando tudo o que Deus ensinava!
+                    </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Lv 27:34 — "Estes são os mandamentos que o Senhor ordenou a Moisés."</p>
                 </div>
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🕊️ Os Sacerdotes</h3>
-                    <p class="text-gray-700 text-lg">Da tribo de Levi, eles cuidavam do templo e ajudavam o povo a adorar a Deus corretamente.</p>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-2">🕊️ Arão — O Sumo Sacerdote</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Irmão de Moisés e primeiro sumo sacerdote de Israel. Ele entrava no Lugar Santíssimo uma vez por ano — no Dia da Expiação — para pedir perdão pelos pecados de todo o povo. Um trabalho de enorme responsabilidade!
+                    </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Lv 16:2 — "Fala a Arão, teu irmão, que não entre em qualquer tempo no santuário."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-indigo-600">
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-indigo-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-600">
             📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
-                    <h3 class="text-xl font-bold text-purple-700 mb-2">📜 Regras de Santidade</h3>
-                    <p class="text-gray-700">Deus ensinou regras para o povo viver de forma pura e correta, mostrando como ser diferente do mundo.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🔥 As Cinco Ofertas</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os primeiros 7 capítulos ensinam cinco tipos de ofertas: holocausto, cereal, paz, pelo pecado e pela culpa. Cada uma tinha um significado — juntas mostravam que a adoração a Deus é rica, variada e cobre cada área da vida!
+                    </p>
+                    <p class="text-sm text-purple-700 font-semibold mt-2">📖 Lv 1:9 — "Assim o sacerdote queimará tudo no altar... é oferta queimada de aroma agradável ao Senhor."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
-                    <h3 class="text-xl font-bold text-indigo-700 mb-2">🕊️ Sacrifícios e Ofertas</h3>
-                    <p class="text-gray-700">Os sacerdotes ofereciam sacrifícios no templo para perdão dos pecados e adoração a Deus.</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">📅 O Dia da Expiação</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O capítulo 16 é o coração do livro! Uma vez por ano, Arão entrava no Lugar Santíssimo com o sangue de um animal para pedir perdão por todo o povo. E um segundo bode era "carregado" com os pecados e solto no deserto — daí vem a expressão "bode expiatório"!
+                    </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Lv 16:30 — "Neste dia se fará expiação por vós, para vos purificar de todos os vossos pecados."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
-                    <h3 class="text-xl font-bold text-purple-700 mb-2">✨ 27 Capítulos</h3>
-                    <p class="text-gray-700">O livro tem 27 capítulos cheios de instruções sobre como viver uma vida santa e adorar a Deus!</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-3">🌟 O Código de Santidade</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os capítulos 17–26 formam o "Código de Santidade": como tratar os pobres, os estrangeiros, os idosos; honrar os pais; ser honesto nos negócios. São leis surpreendentemente modernas — e tudo começa com "Sede santos!"
+                    </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Lv 19:18 — "Amarás o teu próximo como a ti mesmo. Eu sou o Senhor."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🎉 As Festas Sagradas</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O capítulo 23 lista sete festas anuais: Páscoa, Pães Ázimos, Primícias, Pentecostes, Trombetas, Expiação e Tabernáculos. Cada festa era uma pausa para lembrar o que Deus tinha feito — celebrar faz parte da fé!
+                    </p>
+                    <p class="text-sm text-indigo-600 font-semibold mt-2">📖 Lv 23:2 — "As festas solenemente proclamadas do Senhor... são os meus tempos determinados."</p>
                 </div>
             </div>
             <div>
-                <img src="levitico-o-que-conta.png" alt="O que Levítico conta" class="w-full h-auto rounded-2xl shadow-lg">
+                <img src="levitico-o-que-conta.png" alt="O que Levítico conta" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-purple-600">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-purple-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
-            ⭐ Por Que é Importante?
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="levitico-importante.png" alt="Importância de Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="levitico-importante.png" alt="Importância de Levítico" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Deus é Santo</h3>
-                    <p class="text-gray-700 text-lg">Levítico nos ensina que Deus é completamente puro e perfeito, e Ele deseja que Seu povo também seja santo!</p>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🐑 Aponta para Jesus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Cada sacrifício em Levítico era como um ensaio para o maior ato de todos: Jesus na cruz. O Dia da Expiação, o cordeiro, o bode expiatório — tudo apontava para o Cordeiro de Deus que tira o pecado do mundo!
+                    </p>
+                    <p class="text-sm text-purple-700 font-semibold mt-2">📖 Lv 17:11 — "A vida da carne está no sangue... para fazer expiação pelas vossas almas."</p>
                 </div>
-                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🙏 Respeito à Presença de Deus</h3>
-                    <p class="text-gray-700 text-lg">Aprendemos como respeitar e honrar a presença de Deus em nossas vidas e na adoração.</p>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">✨ Santidade é Para Todos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        "Sede santos" não era só para os sacerdotes — era para todo o povo! Deus quer que cada pessoa — criança, adulto, rico ou pobre — viva de forma especial, separada para Ele, no dia a dia.
+                    </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Lv 19:2 — "Sede santos; porque eu, o Senhor vosso Deus, sou santo."</p>
                 </div>
-                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl shadow-md">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">❤️ Obediência e Reverência</h3>
-                    <p class="text-gray-700 text-lg">O livro mostra que obedecer a Deus com amor e reverência é o caminho para uma vida abençoada!</p>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-3">❤️ Cuidar do Próximo é Adoração</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Levítico 19 mistura leis religiosas e sociais no mesmo capítulo! Deixar comida para os pobres, não mentir, não maltratar o estrangeiro — tudo isso é santidade. Tratar bem as pessoas é uma forma de adorar a Deus.
+                    </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Lv 19:9-10 — "Deixarás as espigas para o pobre e para o estrangeiro."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-indigo-600">
+    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-indigo-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-purple-600">
             🎯 Propósito do Livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-4">✨ Ensinar Santidade</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Estar perto de Deus exige respeito, pureza e amor. Levítico nos mostra como viver de forma que agrada ao coração de Deus!
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🏕️ Ensinar Como Viver Perto de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Israel acabou de sair do Egito — um povo de ex-escravos sem referência de como se relacionar com o Deus santo. Levítico é o manual: como aproximar-se, como adorar, como pedir perdão, como viver junto com Ele no acampamento.
                     </p>
+                    <p class="text-sm text-purple-700 font-semibold mt-2">📖 Lv 26:12 — "Andarei no meio de vós, e serei o vosso Deus, e vós sereis o meu povo."</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-l-8 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">❤️ Relacionamento Verdadeiro</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Deus quer um relacionamento verdadeiro com Seu povo — não apenas seguir regras, mas amar e servir com o coração!
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🎭 Criar um Povo Diferente</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        As nações ao redor tinham costumes cruéis e imorais. Deus queria que Israel fosse diferente — um povo que cuidava dos pobres, fazia justiça, honrava a vida. Uma vitrine do caráter de Deus para o mundo!
                     </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Lv 18:3 — "Não fareis o que se faz na terra do Egito... nem na terra de Canaã."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-3">🌉 Preparar o Caminho para Cristo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O livro de Hebreus no NT explica que todo o sistema de sacrifícios de Levítico era uma "sombra" do que Jesus faria. Levítico não é obsoleto — é o pano de fundo que faz a cruz de Cristo ganhar todo o seu significado!
+                    </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Lv 16:34 — "Isto vos será estatuto perpétuo para fazerdes expiação pelos filhos de Israel."</p>
                 </div>
             </div>
             <div>
-                <img src="levitico-proposito.png" alt="Propósito de Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+                <img src="levitico-proposito.png" alt="Propósito de Levítico" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-t-8 border-purple-600">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-purple-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="levitico-curiosidade.png" alt="Curiosidade sobre Levítico" class="w-full h-auto rounded-2xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="levitico-curiosidade.png" alt="Curiosidade sobre Levítico" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-2xl shadow-lg border-4 border-purple-300">
-                    <h3 class="text-3xl font-bold text-purple-700 mb-4">🕊️ O Nome Especial!</h3>
-                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
-                        O nome <span class="font-bold text-purple-600">"Levítico"</span> vem da tribo de Levi — os ajudantes especiais do templo!
-                    </p>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Os levitas eram responsáveis por cuidar do lugar sagrado onde Deus habitava e ajudar o povo a adorar corretamente. Que trabalho importante! 🌟
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl border-4 border-purple-300">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🐐</span>
+                        O "Bode Expiatório" Vem Daqui!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        No Dia da Expiação, Arão colocava as mãos sobre um bode vivo, "transferindo" os pecados do povo para ele — e o bode era solto no deserto. Daí veio a expressão <span class="font-bold text-purple-700">"bode expiatório"</span> que usamos até hoje para quem é culpado pelo erro dos outros!
                     </p>
                 </div>
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl border-4 border-indigo-300">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">❤️</span>
+                        Jesus Citou Levítico!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quando um escriba perguntou a Jesus qual era o maior mandamento, Ele citou dois versículos. O segundo foi Levítico 19:18 — <span class="font-bold text-indigo-700">"Amarás o teu próximo como a ti mesmo"</span>! Este versículo tem mais de 3.000 anos e continua sendo o coração da vida cristã.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl border-4 border-purple-300">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🎓</span>
+                        O Livro que Crianças Judias Estudam Primeiro!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Na tradição judaica, as crianças começam estudando exatamente Levítico — não Gênesis! O motivo: para conhecer a Deus, primeiro é preciso entender que Ele é santo e que quer que Seu povo seja santo também. Santidade antes de história!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-600">
+                <div class="text-5xl text-center mb-4">✨</div>
+                <h3 class="text-xl font-bold text-purple-700 mb-3 text-center">O Que É Santidade?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Levítico diz "Sede santos como Eu sou santo." Santidade significa ser "separado para Deus". O que isso significa na prática para um estudante hoje — no que você assiste, no que fala, em como trata as pessoas?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-indigo-600">
+                <div class="text-5xl text-center mb-4">🐐</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Carregando Culpa</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    O bode expiatório carregava os pecados do povo para longe. Jesus fez isso por nós na cruz. Como é diferente viver sabendo que seus erros já foram perdoados, em vez de ficar carregando culpa para sempre?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-500">
+                <div class="text-5xl text-center mb-4">❤️</div>
+                <h3 class="text-xl font-bold text-purple-600 mb-3 text-center">Amar Como a Si Mesmo</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    "Amarás o próximo como a ti mesmo" (Lv 19:18). Você se trata bem — come, descansa, cuida de você. Há alguém ao redor que merece o mesmo cuidado que você dedica a si mesmo? Quem seria?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-purple-700 to-indigo-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-purple-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-purple-200 mb-3">Guarda no Coração</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Levítico 19:18 e leve com você. Esta semana, toda vez que alguém te irritar ou magoar, releia o versículo e pergunte: "Estou tratando essa pessoa como gostaria de ser tratado?"
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-indigo-300 text-center">
+                <div class="text-5xl mb-4">🌟</div>
+                <h3 class="text-xl font-bold text-indigo-200 mb-3">Um Ato de Santidade</h3>
+                <p class="text-white leading-relaxed">
+                    Levítico 19 diz para "deixar espigas para os pobres." Escolha um ato concreto de cuidar de alguém que precisa esta semana — dividir, ajudar, defender ou incluir. Isso é santidade em ação!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-purple-300 text-center">
+                <div class="text-5xl mb-4">🙏</div>
+                <h3 class="text-xl font-bold text-purple-200 mb-3">Confesse e Receba Perdão</h3>
+                <p class="text-white leading-relaxed">
+                    Levítico mostra que o perdão de Deus é real e poderoso. Esta semana, ore confessando algo que pesa no seu coração — e receba o perdão que Jesus conquistou. Você não precisa mais carregar esse peso!
+                </p>
             </div>
         </div>
     </section>
@@ -227,13 +374,13 @@
     <section class="section no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../exodo/exodo.html" class="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../exodo/exodo.html" class="bg-gradient-to-r from-purple-600 to-indigo-700 hover:from-purple-700 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Êxodo
             </a>
-            <a href="../pentateuco.html" class="bg-gradient-to-r from-indigo-700 to-purple-600 hover:from-indigo-800 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros do Pentateuco
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-indigo-700 to-purple-600 hover:from-indigo-800 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Pentateuco
             </a>
-            <a href="../numeros/numeros.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../numeros/numeros.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Números ➡️
             </a>
         </div>
@@ -241,8 +388,9 @@
 
     <!-- Rodapé -->
     <section class="section bg-gradient-to-r from-purple-600 to-indigo-700 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Levítico - Santidade e Adoração ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+        <h3 class="text-2xl font-black mb-2">✨ Levítico — Sede Santos Como Eu Sou Santo ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>
 
     <script src="/menu.js"></script>

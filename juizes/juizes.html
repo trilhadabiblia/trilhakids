@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #fff7ed; margin-top: 1rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-red-700 to-orange-800 hover:from-red-800 hover:to-orange-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,7 +32,7 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>⚔️</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-800 mx-2">
                     LIVRO DE JUÍZES
                 </span>
                 <span>🛡️</span>
@@ -42,44 +43,35 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-juizes" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-700">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-800">
                 🌟 Os Três Segredos de Juízes 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🦁 Primeiro Segredo: Deus Levanta Heróis</h3>
-                    <p class="italic">
-                        Quando o povo clamava com fervor,<br>
-                        Deus enviava um libertador!<br>
-                        Débora, Gideão, Sansão também,<br>
-                        Mostraram que Deus cuida muito bem!<br>
-                        <span class="text-sm text-amber-700 font-semibold mt-2 block">📖 Juízes 2:16</span>
-                    </p>
+
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🔄 Primeiro Segredo: O Ciclo se Repete</h3>
+                    <p>Quando o povo esquecia de Deus, sofria as consequências. Quando clamava por ajuda, Deus enviava um libertador! Esse ciclo acontece <strong>7 vezes</strong> no livro — e cada vez Deus estava pronto para restaurar.</p>
+                    <div class="versiculo-card border-red-400 mt-3">
+                        📖 Jz 2:18 — <em>"O Senhor se compadecia deles quando gemiam por causa dos que os oprimiam e angustiavam."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🔄 Segundo Segredo: O Ciclo da Obediência</h3>
-                    <p class="italic">
-                        O povo esquecia, depois chorava,<br>
-                        Deus os salvava e os perdoava!<br>
-                        Mas logo voltavam a se esquecer,<br>
-                        Precisando aprender a obedecer!<br>
-                        <span class="text-sm text-yellow-700 font-semibold mt-2 block">📖 Juízes 2:18-19</span>
-                    </p>
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-700">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">💪 Segundo Segredo: A Força Vem de Deus</h3>
+                    <p>Gideão se escondia com medo, mas Deus o chamou de "homem valente". Com apenas 300 guerreiros, venceu um exército de 135.000! A força real não está nos músculos — está em confiar em Deus.</p>
+                    <div class="versiculo-card border-orange-400 mt-3">
+                        📖 Jz 6:12 — <em>"O Senhor está contigo, homem valente!"</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <h3 class="text-2xl font-bold text-amber-800 mb-3">💪 Terceiro Segredo: A Força Vem de Deus</h3>
-                    <p class="italic">
-                        Não importa se você é pequenino,<br>
-                        Com Deus ao lado, vence o caminho!<br>
-                        A força real não está nos músculos não,<br>
-                        Mas em confiar de todo coração!<br>
-                        <span class="text-sm text-amber-700 font-semibold mt-2 block">📖 Juízes 6:12-14</span>
-                    </p>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🌟 Terceiro Segredo: Deus Usa Pessoas Comuns</h3>
+                    <p>Uma mulher liderou o exército quando os homens hesitavam. Um jovem agricultor se tornou general. Um homem com força sobrenatural mostrou que o pecado enfraquece mais do que qualquer inimigo.</p>
+                    <div class="versiculo-card border-red-400 mt-3">
+                        📖 Jz 4:14 — <em>"Levanta-te, porque este é o dia em que o Senhor entregou Sísara na tua mão!"</em>
+                    </div>
                 </div>
 
             </div>
@@ -96,140 +88,207 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem eram os Juízes? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-amber-700/30">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            ❓ Quem eram os Juízes?
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <img src="juizes-personagem.png" alt="Os Juízes" class="w-full h-auto rounded-2xl shadow-lg">
-            </div>
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <span class="font-bold text-amber-800">🦸‍♂️ Líderes Corajosos:</span> Eles eram líderes que Deus levantava para proteger o povo e ajudá-lo a vencer os inimigos.
-                </p>
-                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <span class="font-bold text-yellow-800">👥 Homens e Mulheres:</span> Alguns eram homens e outros eram mulheres, todos corajosos e escolhidos por Deus!
-                </p>
-                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <span class="font-bold text-amber-800">✨ Heróis da Fé:</span> Débora, Gideão, Sansão e muitos outros mostraram que Deus usa pessoas comuns para fazer coisas extraordinárias!
-                </p>
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-red-700 bg-gradient-to-br from-red-800 to-orange-900 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-3xl font-bold italic mb-6 leading-relaxed">
+                "O Senhor está contigo, homem valente!"
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-orange-200">— Juízes 6:12</p>
+            <p class="text-lg leading-relaxed mb-6 text-orange-100">
+                Gideão estava escondido com medo dos inimigos quando um anjo apareceu com essas palavras. Deus não via Gideão como ele era — via quem ele podia ser com a ajuda divina! Deus faz o mesmo com você.
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🙏</div>
+                    <p class="font-semibold">Quando tiver medo, lembre: Deus te chama de corajoso!</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">⚔️</div>
+                    <p class="font-semibold">A batalha não é sua — é de Deus. Confie Nele!</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🌟</div>
+                    <p class="font-semibold">Com Deus ao teu lado, você é mais forte do que imagina!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-yellow-700/30">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-800 to-amber-700">
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-800">
+            🦸 Personagens Principais
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Débora -->
+            <div class="bg-gradient-to-b from-red-50 to-orange-50 rounded-2xl p-6 shadow-lg border-2 border-red-200 text-center">
+                <img src="justica.png" alt="Débora" class="w-full h-40 object-cover rounded-xl mb-4 shadow">
+                <h3 class="text-xl font-bold text-red-800 mb-2">⚖️ Débora</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">A única juíza mulher de toda a Bíblia hebraica — e também profetisa. Quando Baraque hesitou em ir à batalha, ela liderou o exército pessoalmente e garantiu a vitória!</p>
+                <div class="versiculo-card border-red-400 text-left text-sm">
+                    📖 Jz 4:14 — <em>"Levanta-te, porque este é o dia em que o Senhor entregou Sísara na tua mão!"</em>
+                </div>
+            </div>
+
+            <!-- Gideão -->
+            <div class="bg-gradient-to-b from-orange-50 to-red-50 rounded-2xl p-6 shadow-lg border-2 border-orange-200 text-center">
+                <img src="exercitogideao.png" alt="Gideão" class="w-full h-40 object-cover rounded-xl mb-4 shadow">
+                <h3 class="text-xl font-bold text-orange-800 mb-2">🏺 Gideão</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Estava escondido com medo quando Deus o chamou de "homem valente". Com apenas 300 guerreiros, vasos de barro e tochas, derrotou um exército de 135.000 inimigos!</p>
+                <div class="versiculo-card border-orange-400 text-left text-sm">
+                    📖 Jz 6:12 — <em>"O Senhor está contigo, homem valente!"</em>
+                </div>
+            </div>
+
+            <!-- Sansão -->
+            <div class="bg-gradient-to-b from-red-50 to-orange-50 rounded-2xl p-6 shadow-lg border-2 border-red-200 text-center">
+                <img src="juizsamsao.png" alt="Sansão" class="w-full h-40 object-cover rounded-xl mb-4 shadow">
+                <h3 class="text-xl font-bold text-red-800 mb-2">💪 Sansão</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O juiz mais famoso, com força sobrenatural ligada ao seu cabelo consagrado a Deus. Sua maior fraqueza não era Dalila — era o pecado que o afastava de Deus.</p>
+                <div class="versiculo-card border-red-400 text-left text-sm">
+                    📖 Jz 16:28 — <em>"Senhor Deus, lembra-te de mim e fortalece-me só esta vez!"</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-red-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-800">
             📖 O que o livro conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
-                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <span class="font-bold text-yellow-800">🎯 Histórias de Vitória:</span> Conta histórias de pessoas que confiaram em Deus para vencer dificuldades e batalhas impossíveis!
-                </p>
-                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <span class="font-bold text-amber-800">🔄 O Ciclo:</span> Mostra como o povo esquecia de Deus às vezes, sofria as consequências, mas Ele sempre oferecia ajuda quando clamavam!
-                </p>
-                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <span class="font-bold text-yellow-800">💝 Amor de Deus:</span> Mesmo quando erravam, Deus nunca desistia do Seu povo e sempre enviava libertadores!
-                </p>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-700 shadow">
+                <h3 class="text-xl font-bold text-red-800 mb-3">🔄 O Ciclo que se repete 7 vezes</h3>
+                <p class="text-gray-700 leading-relaxed">O povo se afastava de Deus → era oprimido pelos inimigos → clamava por ajuda → Deus enviava um juiz libertador → o povo vivia em paz → esquecia de Deus novamente. Esse ciclo aparece sete vezes!</p>
+                <div class="versiculo-card border-red-400 text-sm mt-3">
+                    📖 Jz 2:16 — <em>"O Senhor suscitou juízes, os quais os livravam das mãos dos que os saqueavam."</em>
+                </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="juizes-o-que-conta.png" alt="O que o livro conta" class="w-full h-auto rounded-2xl shadow-lg">
+
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-700 shadow">
+                <h3 class="text-xl font-bold text-orange-800 mb-3">🌟 Débora e a Batalha contra Sísara (Jz 4–5)</h3>
+                <p class="text-gray-700 leading-relaxed">Débora, profetisa e juíza, convocou Baraque para batalhar contra Sísara, general de um poderoso exército inimigo. Quando ele hesitou, ela foi junto — e a vitória final ficou com uma mulher!</p>
+                <div class="versiculo-card border-orange-400 text-sm mt-3">
+                    📖 Jz 5:7 — <em>"As aldeias cessaram em Israel até que eu, Débora, me levantei como mãe em Israel."</em>
+                </div>
             </div>
+
+            <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-700 shadow">
+                <h3 class="text-xl font-bold text-red-800 mb-3">🏺 Gideão e os 300 Guerreiros (Jz 6–8)</h3>
+                <p class="text-gray-700 leading-relaxed">Deus mandou Gideão reduzir o exército de 32.000 para apenas 300 homens — para que todo o povo soubesse que a vitória era de Deus, não da força humana. Com vasos de barro, tochas e cornetas, o inimigo fugiu em pânico!</p>
+                <div class="versiculo-card border-red-400 text-sm mt-3">
+                    📖 Jz 7:7 — <em>"Com estes trezentos homens vos salvarei e darei os midianitas nas tuas mãos."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-700 shadow">
+                <h3 class="text-xl font-bold text-orange-800 mb-3">💪 Sansão — Força e Fraqueza (Jz 13–16)</h3>
+                <p class="text-gray-700 leading-relaxed">Sansão nasceu consagrado a Deus como nazireno. Matou um leão com as mãos nuas! Mas o pecado foi enfraquecendo-o. No fim, cego e acorrentado, pediu força a Deus e derrubou o templo dos filisteus — vencendo na morte mais do que em vida.</p>
+                <div class="versiculo-card border-orange-400 text-sm mt-3">
+                    📖 Jz 16:30 — <em>"Morra eu com os filisteus!" — e o templo desabou sobre todos.</em>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-amber-700/30">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            ⭐ Por que é importante?
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-red-100 to-orange-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-red-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-800">
+            💡 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-start mb-8">
             <div>
-                <img src="juizes-importante.png" alt="Por que é importante" class="w-full h-auto rounded-2xl shadow-lg">
+                <img src="juizes-curiosidade.png" alt="Curiosidades de Juízes" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <span class="font-bold text-amber-800">🟢 Líderes de Deus:</span> Mostra que Deus levanta líderes quando precisamos de ajuda e proteção!
-                </p>
-                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <span class="font-bold text-yellow-800">🟢 Vitória em Deus:</span> Mostra que confiar em Deus ajuda a vencer problemas que parecem impossíveis!
-                </p>
-                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <span class="font-bold text-amber-800">🟢 Obediência:</span> Ensina que o povo precisa ouvir e obedecer a Deus para viver bem e em paz!
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white rounded-3xl shadow-2xl p-10 mb-8 border-4 border-yellow-700/30">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-800 to-amber-700">
-            🎯 Propósito do livro
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
-                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <span class="font-bold text-yellow-800">🦁 Coragem e Fé:</span> Ensinar sobre coragem, confiança em Deus e obediência ao Seu chamado!
-                </p>
-                <p class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <span class="font-bold text-amber-800">💖 Amor Eterno:</span> Mostrar que Deus nunca abandona o seu povo, mesmo quando ele erra e se desvia!
-                </p>
-                <p class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-700">
-                    <span class="font-bold text-yellow-800">✨ Transformação:</span> Demonstrar que Deus pode usar qualquer pessoa disposta a confiar Nele para fazer grandes coisas!
-                </p>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="juizes-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-2xl shadow-lg">
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-red-700 shadow-md">
+                    <p class="font-bold text-red-800 mb-1">🔢 O ciclo acontece 7 vezes!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Sete vezes o povo esqueceu de Deus, foi oprimido, clamou e foi libertado. Na Bíblia, 7 é o número da completude — como se Deus estivesse dizendo: "Não importa quantas vezes você caia, Eu estou aqui!"</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-orange-700 shadow-md">
+                    <p class="font-bold text-orange-800 mb-1">⚔️ 300 vs 135.000!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Deus mandou Gideão dispensar 31.700 soldados antes da batalha. Por quê? Para que ninguém pudesse se gabar de ter vencido com força própria. A vitória impossível seria prova do poder de Deus!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-red-700 shadow-md">
+                    <p class="font-bold text-red-800 mb-1">✝️ Sansão prefigura Jesus!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Sansão morreu com os braços abertos, derrubando o templo e vencendo os inimigos na própria morte — assim como Jesus morreu na cruz de braços abertos e venceu o pecado e a morte para sempre!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-gradient-to-r from-amber-100 to-yellow-100 rounded-3xl shadow-2xl p-10 mb-8 border-4 border-amber-700">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            💡 Curiosidade Divertida!
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-800">
+            🤔 Perguntas para Pensar
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <img src="juizes-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-2xl shadow-lg">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-red-50 to-orange-50 rounded-2xl p-6 shadow border-2 border-red-200 text-center">
+                <div class="text-4xl mb-4">🔄</div>
+                <h3 class="text-lg font-bold text-red-800 mb-3">O Ciclo</h3>
+                <p class="text-gray-700 leading-relaxed">Por que o povo de Israel ficava esquecendo de Deus mesmo depois de ser salvo? Você já se esqueceu de agradecer a Deus por algo bom que aconteceu na sua vida?</p>
             </div>
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                <p class="bg-white p-6 rounded-xl border-l-4 border-amber-700 shadow-md">
-                    <span class="font-bold text-amber-800">💪 Sansão e sua Força:</span> Sansão podia ser muito forte porque Deus o ajudava, mas perdia a força quando não obedecia!
-                </p>
-                <p class="bg-white p-6 rounded-xl border-l-4 border-yellow-700 shadow-md">
-                    <span class="font-bold text-yellow-800">🌟 Lição Especial:</span> Isso nos ensina que obedecer a Deus nos deixa fortes de verdade! A força real vem de dentro! 💪
-                </p>
-                <p class="bg-white p-6 rounded-xl border-l-4 border-amber-700 shadow-md">
-                    <span class="font-bold text-amber-800">🎁 Presente de Deus:</span> Quando seguimos a Deus, Ele nos dá força, sabedoria e coragem para vencer qualquer desafio!
-                </p>
+            <div class="bg-gradient-to-b from-orange-50 to-red-50 rounded-2xl p-6 shadow border-2 border-orange-200 text-center">
+                <div class="text-4xl mb-4">💪</div>
+                <h3 class="text-lg font-bold text-orange-800 mb-3">Força Real</h3>
+                <p class="text-gray-700 leading-relaxed">Gideão tinha medo e se achava fraco, mas Deus o chamou de "homem valente". Você acha que Deus pode te usar mesmo quando você se sente pequeno ou com medo?</p>
+            </div>
+            <div class="bg-gradient-to-b from-red-50 to-orange-50 rounded-2xl p-6 shadow border-2 border-red-200 text-center">
+                <div class="text-4xl mb-4">🌟</div>
+                <h3 class="text-lg font-bold text-red-800 mb-3">Heróis Imperfeitos</h3>
+                <p class="text-gray-700 leading-relaxed">Todos os juízes tinham defeitos e fraquezas. O que isso te diz sobre como Deus escolhe as pessoas para fazer coisas grandes?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-red-700 bg-gradient-to-br from-red-800 to-orange-900 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🙏</div>
+                <h3 class="text-xl font-bold mb-3">Quebre o Ciclo</h3>
+                <p class="leading-relaxed">Esta semana, toda vez que Deus te ajudar em algo, pare e agradeça na hora! Não deixe para depois. Quebre o ciclo do esquecimento com gratidão.</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">⚔️</div>
+                <h3 class="text-xl font-bold mb-3">Seja Gideão</h3>
+                <p class="leading-relaxed">Escolha UMA coisa que você tem medo de fazer e peça a Deus coragem para enfrentá-la. Lembre: Deus te chama de "valente" mesmo quando você se sente pequeno!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">📖</div>
+                <h3 class="text-xl font-bold mb-3">Leia e Descubra</h3>
+                <p class="leading-relaxed">Leia a história de Gideão e seus 300 em Juízes 7. Como Deus usou uma estratégia impossível para mostrar que Ele é quem dá a vitória?</p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="section no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-8">
-        <h3 class="text-3xl font-black text-amber-800 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="section no-print text-center bg-gradient-to-r from-red-700/20 to-orange-800/20 border-2 border-red-700/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-red-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../josue/josue.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+            <a href="../josue/josue.html" class="bg-gradient-to-r from-red-700 to-orange-800 hover:from-red-800 hover:to-orange-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Josué
             </a>
-            <a href="../historicos.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+            <a href="../historicos.html" class="bg-gradient-to-r from-orange-800 to-red-700 hover:from-orange-900 hover:to-red-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Livros Históricos
             </a>
-            <a href="../rute/rute.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+            <a href="../rute/rute.html" class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Rute ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Juízes - Heróis da Fé ✨</h3>
+    <section class="section bg-gradient-to-r from-red-700 to-orange-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">⚔️ Livro de Juízes — Heróis da Fé ⚔️</h3>
         <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 

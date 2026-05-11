@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 2 Tessalonicenses 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">⏰ Primeiro Segredo: Jesus Voltará no Tempo Certo</h3>
                     <p class="italic leading-relaxed">
@@ -96,28 +97,77 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <blockquote class="versiculo-card border-sky-500 pl-6 mb-6">
+                    <p class="text-2xl font-bold text-gray-800 italic leading-relaxed mb-3">
+                        "Mas fiel é o Senhor, que vos confirmará e guardará do maligno."
+                    </p>
+                    <cite class="text-sky-600 font-bold text-lg">— 2 Tessalonicenses 3:3</cite>
+                </blockquote>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Quando o mundo parece assustador ou confuso, este versículo é um escudo!
+                    <strong>Fiel é o Senhor</strong> — Deus não falha, não mente, não abandona.
+                    Ele <strong>confirmará</strong> você, ou seja, vai te deixar firme como uma rocha.
+                    E vai te <strong>guardar do mal</strong> — como um pai que protege seu filho com todo o seu amor!
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-sky-100 text-sky-700 px-4 py-2 rounded-full font-semibold text-sm">🛡️ Deus é Fiel</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm">💪 Confirmados por Ele</span>
+                    <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-semibold text-sm">🔒 Guardados do Mal</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div>
-                <img src="2-tessalonicenses-personagem.png" alt="Personagens: Paulo e cristãos de Tessalônica" 
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-8">
+            <div class="order-2 md:order-1">
+                <img src="2-tessalonicenses-personagem.png" alt="Personagens: Paulo e cristãos de Tessalônica"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="space-y-6">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ Paulo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        O apóstolo que escreveu esta segunda carta aos cristãos de Tessalônica. Ele estava preocupado porque alguns estavam confusos sobre a volta de Jesus e outros tinham parado de trabalhar, esperando que Ele voltasse imediatamente.
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">✍️ Paulo — O Apóstolo Zeloso</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreveu esta segunda carta com urgência, preocupado com confusões sobre a volta de Jesus.
+                        Seu coração de pai espiritual não descansava enquanto via seus filhos na fé sendo enganados!
                     </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...para que o nome do nosso Senhor Jesus seja glorificado em vós, e vós nele, segundo a graça do nosso Deus."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Tessalonicenses 1:12</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">⛪ Os Cristãos de Tessalônica</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Os mesmos irmãos que receberam a primeira carta. Alguns estavam sendo perseguidos por causa da fé, outros estavam confusos sobre o fim dos tempos, e alguns tinham parado de trabalhar achando que Jesus voltaria a qualquer momento.
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">🤝 Silas e Timóteo — Co-autores</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Esta carta foi escrita por Paulo junto com Silas e Timóteo — três líderes unidos
+                        pelo mesmo amor pela igreja de Tessalônica. Uma carta de três corações em um!
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Paulo, e Silvano, e Timóteo, à igreja dos tessalonicenses em Deus nosso Pai e no Senhor Jesus Cristo."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Tessalonicenses 1:1</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">⛪ Os Cristãos de Tessalônica</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Enfrentavam perseguição, confusão sobre o fim dos tempos e alguns tinham parado de trabalhar.
+                        Mas Paulo se orgulhava da fé e do amor que cresciam neles apesar de tudo!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...de tal modo que nos gloriamos de vós nas igrejas de Deus, pela vossa paciência e fé em todas as vossas perseguições."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 2 Tessalonicenses 1:4</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -130,21 +180,42 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="space-y-4 order-2 md:order-1">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
-                    <h3 class="text-xl font-bold text-sky-600 mb-2">⏰ Correção Sobre o Fim dos Tempos</h3>
-                    <p class="text-gray-700">Paulo explica que Jesus não voltou ainda e que algumas coisas precisam acontecer antes. Ele corrige os que estavam espalhando boatos dizendo que o Dia do Senhor já tinha chegado.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
+                    <h3 class="text-xl font-bold text-sky-600 mb-3">⏰ Correção Sobre o Fim dos Tempos</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo explica que Jesus não voltou ainda e que algumas coisas precisam acontecer antes.
+                        Ele corrige quem dizia que o "Dia do Senhor" já tinha chegado — e pedia calma!
+                    </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...que não vos perturbeis facilmente em vosso modo de pensar, nem vos alarmeis... como se o dia do Senhor estivesse iminente."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Tessalonicenses 2:2</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-600 mb-2">💪 Encorajamento na Perseguição</h3>
-                    <p class="text-gray-700">Paulo elogia a fé dos tessalonicenses que estavam sofrendo perseguição, e os encoraja a permanecerem firmes, pois Deus é justo e recompensará sua fidelidade.</p>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">💪 Encorajamento na Perseguição</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo elogia a fé dos tessalonicenses que sofriam perseguição e os encoraja: Deus é justo
+                        e dará descanso aos que confiam nele e julgará os que perseguem!
+                    </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...o que é evidência do justo julgamento de Deus, para que sejais julgados dignos do reino de Deus."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Tessalonicenses 1:5</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-500">
-                    <h3 class="text-xl font-bold text-amber-600 mb-2">🛠️ Instrução Para Trabalhar</h3>
-                    <p class="text-gray-700">Paulo repreende os que pararam de trabalhar e estavam vivendo de forma desordenada. Ele ensina: "Se alguém não quer trabalhar, também não coma" (2 Ts 3:10).</p>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-amber-200">
+                    <h3 class="text-xl font-bold text-amber-600 mb-3">🛠️ Instrução Para Trabalhar</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo repreende os que pararam de trabalhar esperando Jesus. A esperança não é desculpa
+                        para a preguiça — devemos trabalhar com responsabilidade enquanto aguardamos!
+                    </p>
+                    <blockquote class="versiculo-card border-amber-400 pl-4 bg-amber-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Se alguém não quiser trabalhar, também não coma."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— 2 Tessalonicenses 3:10</cite>
+                    </blockquote>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="2-tessalonicenses-o-que-conta.png" alt="O que 2 Tessalonicenses conta" 
+                <img src="2-tessalonicenses-o-que-conta.png" alt="O que 2 Tessalonicenses conta"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
@@ -156,28 +227,52 @@
             ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div>
-                <img src="2-tessalonicenses-importante.png" alt="Importância de 2 Tessalonicenses" 
+            <div class="order-2 md:order-1">
+                <img src="2-tessalonicenses-importante.png" alt="Importância de 2 Tessalonicenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="space-y-6">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🔥 Ensina Sobre a Volta de Jesus</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Este livro nos ajuda a entender melhor sobre o retorno de Cristo. Não devemos ficar ansiosos ou confusos, mas viver com esperança, sabendo que Ele voltará no tempo perfeito de Deus!
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🔥</span>
+                        Ensina Sobre a Volta de Jesus
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Nos ajuda a entender o retorno de Cristo com clareza: não devemos ficar ansiosos,
+                        mas viver com esperança tranquila, sabendo que Ele voltará no tempo perfeito de Deus!
                     </p>
+                    <blockquote class="versiculo-card border-sky-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...quando o Senhor Jesus se manifestar desde o céu com os anjos do seu poder."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Tessalonicenses 1:7</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-3">💪 Fortalece Nossa Perseverança</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Ensina a permanecermos firmes na fé, mesmo quando enfrentamos dificuldades e perseguições. Deus é fiel e nos fortalece para continuarmos fazendo o bem até Jesus voltar!
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💪</span>
+                        Fortalece Nossa Perseverança
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Ensina que Deus é completamente fiel — Ele nos confirma e nos guarda do mal.
+                        Podemos permanecer firmes porque não dependemos da nossa própria força!
                     </p>
+                    <blockquote class="versiculo-card border-blue-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Mas fiel é o Senhor, que vos confirmará e guardará do maligno."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Tessalonicenses 3:3</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-amber-600 mb-3">🛠️ Valoriza o Trabalho</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Mostra que enquanto esperamos Jesus voltar, devemos continuar trabalhando, estudando e sendo úteis. A esperança cristã não nos torna preguiçosos, mas mais dedicados!
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🛠️</span>
+                        Valoriza o Trabalho
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Mostra que enquanto esperamos Jesus, devemos continuar trabalhando e fazendo o bem
+                        — a esperança cristã não nos torna preguiçosos, mas mais dedicados!
                     </p>
+                    <blockquote class="versiculo-card border-amber-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...vós, porém, irmãos, não vos canseis de fazer o bem."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— 2 Tessalonicenses 3:13</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -190,27 +285,42 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="space-y-4 order-2 md:order-1">
-                <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">🌟 Fortalecer a Esperança</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo escreveu para fortalecer a esperança dos cristãos na volta de Jesus. Eles não deveriam se desanimar com a demora, mas confiar que Deus cumpre Suas promessas no tempo certo!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreveu para fortalecer a esperança dos cristãos na volta de Jesus. A espera
+                        pode ser longa, mas o próprio Jesus e Deus Pai consolam nossos corações!
                     </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Ora, o nosso Senhor Jesus Cristo... vos consolide e confirme em toda boa obra e palavra."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Tessalonicenses 2:16-17</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-600 mb-3">🛡️ Corrigir Erros de Doutrina</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Alguns estavam ensinando coisas erradas sobre o fim dos tempos. Paulo queria corrigir esses erros e trazer clareza sobre o que realmente acontecerá quando Jesus voltar.
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Alguns ensinavam coisas erradas sobre o fim dos tempos. Paulo pede que os cristãos
+                        fiquem firmes nas tradições que aprenderam — a sã doutrina é nossa âncora!
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Assim, pois, irmãos, estai firmes, e guardai as tradições que vos foram ensinadas."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Tessalonicenses 2:15</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-amber-200">
                     <h3 class="text-2xl font-bold text-amber-600 mb-3">💼 Incentivar a Responsabilidade</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo queria que os cristãos vivessem de forma responsável e trabalhadora enquanto aguardavam a volta de Cristo, e não ficassem ociosos ou dependendo dos outros sem necessidade.
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo queria que os cristãos vivessem de forma responsável, trabalhando em sossego
+                        e comendo o seu próprio pão — sem depender dos outros desnecessariamente.
                     </p>
+                    <blockquote class="versiculo-card border-amber-400 pl-4 bg-amber-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...a esses tais ordenamos e exortamos, em nosso Senhor Jesus Cristo, que trabalhem com sossego."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— 2 Tessalonicenses 3:12</cite>
+                    </blockquote>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="2-tessalonicenses-proposito.png" alt="Propósito de 2 Tessalonicenses" 
+                <img src="2-tessalonicenses-proposito.png" alt="Propósito de 2 Tessalonicenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
@@ -221,27 +331,131 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div>
-                <img src="2-tessalonicenses-curiosidade.png" alt="Curiosidade sobre 2 Tessalonicenses" 
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-8">
+            <div class="order-2 md:order-1">
+                <img src="2-tessalonicenses-curiosidade.png" alt="Curiosidade sobre 2 Tessalonicenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl border-4 border-amber-300">
-                <div class="text-6xl mb-4 text-center">📬</div>
-                <h3 class="text-3xl font-bold text-amber-700 mb-4 text-center">Carta Rapidinha!</h3>
-                <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                    Paulo escreveu 2 Tessalonicenses apenas alguns meses depois da primeira carta! Ele estava tão preocupado com os mal-entendidos que escreveu novamente rapidinho para esclarecer tudo.
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">📬</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-700 mb-2">Carta Rapidinha!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Paulo escreveu esta carta apenas <strong>alguns meses depois da primeira</strong>! Era 51-52 d.C.
+                                Ele estava tão preocupado com os mal-entendidos que não perdeu tempo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">✍️</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-700 mb-2">A Assinatura Autêntica!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Paulo termina a carta escrevendo <strong>de próprio punho</strong> para provar que era dele!
+                                Por quê? Porque pessoas mal-intencionadas estavam espalhando cartas <strong>falsas</strong> em seu nome (2 Ts 2:2)!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">🏗️</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-700 mb-2">Paulo Trabalhava de Graça!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Quando estava em Tessalônica, Paulo <strong>trabalhava dia e noite</strong> fazendo tendas
+                                para não ser um fardo financeiro para a igreja. Ele praticava o que pregava!
+                                (2 Ts 3:8)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-sky-400">
+                <div class="text-4xl mb-4 text-center">🔥</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Fé sob Pressão</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Paulo se orgulhava da fé dos tessalonicenses mesmo sendo perseguidos.</strong>
+                    Como você reage quando alguém faz piada da sua fé ou te exclui por causa de Jesus?
+                    O que te ajudaria a permanecer firme?
                 </p>
-                <div class="bg-white p-4 rounded-lg mt-4">
-                    <p class="text-lg text-gray-600 italic">
-                        💡 <strong>Detalhe interessante:</strong> Paulo termina a carta escrevendo de próprio punho para provar que era realmente dele, pois algumas pessoas estavam espalhando cartas falsas em nome dele!
-                    </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-400">
+                <div class="text-4xl mb-4 text-center">🛠️</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Esperança que Age</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Alguns pararam de trabalhar esperando Jesus voltar.</strong> Mas Paulo disse que
+                    a esperança verdadeira nos faz trabalhar mais, não menos. Como sua fé te motiva
+                    a estudar, ajudar e agir bem hoje?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-amber-400">
+                <div class="text-4xl mb-4 text-center">🛡️</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Deus é Fiel</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>2 Tessalonicenses 3:3 diz que Deus é fiel e te guarda do mal.</strong>
+                    Em que situação da sua vida você mais precisa lembrar dessa promessa agora?
+                    Como você pode depender da fidelidade de Deus nesse momento?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-800 to-indigo-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-sky-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
+                    <span class="text-2xl">🛡️</span>
                 </div>
-                <div class="mt-6 text-center">
-                    <span class="inline-block bg-amber-200 text-amber-800 px-4 py-2 rounded-full font-bold">
-                        ⏰ Escrita por volta de 51-52 d.C.
-                    </span>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Memorize 2 Ts 3:3</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escreva <strong>2 Tessalonicenses 3:3</strong> em um cartão pequeno e carregue na carteira ou
+                    bolso. Sempre que sentir medo ou ansiedade, leia em voz alta — é uma promessa real!
+                </p>
+                <span class="inline-block mt-3 bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-semibold">✏️ Memorização</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
+                    <span class="text-2xl">🛠️</span>
                 </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Trabalhe como Esperando Jesus</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Leia <strong>2 Tessalonicenses 3:6-13</strong> e escolha <strong>uma tarefa pendente</strong> —
+                    dever de casa, quarto bagunçado, ajuda em casa — e faça com excelência,
+                    como se Jesus fosse chegar logo!
+                </p>
+                <span class="inline-block mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">💪 Prática</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-amber-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
+                    <span class="text-2xl">🙏</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Ore pela Fidelidade de Deus</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Como Paulo orava pelos tessalonicenses, <strong>ore por alguém que está passando por algo difícil</strong>.
+                    Diga a essa pessoa: "Estou orando por você" — e realmente ore!
+                </p>
+                <span class="inline-block mt-3 bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">❤️ Ação</span>
             </div>
         </div>
     </section>
@@ -253,8 +467,8 @@
             <a href="../1-tessalonicenses/1-tessalonicenses.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ 1 Tessalonicenses
             </a>
-            <a href="../epistolas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Epístolas Paulinas
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
             </a>
             <a href="../1-timoteo/1-timoteo.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 1 Timóteo ➡️

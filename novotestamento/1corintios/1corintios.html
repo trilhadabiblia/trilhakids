@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,16 +49,16 @@
                 🌟 Os Três Segredos de 1 Coríntios 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-600">
                     <h3 class="text-2xl font-bold text-pink-700 mb-3">💝 Primeiro Segredo: O Amor Verdadeiro</h3>
                     <p class="italic text-gray-800">
                         O amor é paciente, o amor é bondoso,<br>
                         Não é invejoso, nem orgulhoso ou vaidoso.<br>
                         Tudo suporta, tudo crê, tudo espera,<br>
-                        O amor é a maior virtude que se venera!<br>
-                        <span class="text-sm font-semibold text-pink-600 mt-2 block">📖 1 Coríntios 13:4-7</span>
+                        O amor é a maior virtude que se venera!
                     </p>
+                    <p class="text-sm text-pink-600 mt-3 font-semibold">📖 1 Coríntios 13:4-7</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-6 rounded-2xl border-l-4 border-purple-600">
@@ -66,9 +67,9 @@
                         Somos um só corpo, muitos membros unidos,<br>
                         Cada um importante, todos bem-vindos.<br>
                         Não há divisões quando Cristo nos guia,<br>
-                        Juntos somos fortes na harmonia!<br>
-                        <span class="text-sm font-semibold text-purple-600 mt-2 block">📖 1 Coríntios 12:12-27</span>
+                        Juntos somos fortes na harmonia!
                     </p>
+                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 1 Coríntios 12:12-27</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-rose-50 to-red-50 p-6 rounded-2xl border-l-4 border-rose-600">
@@ -77,9 +78,9 @@
                         Deus dá dons especiais a cada pessoa,<br>
                         Para servir aos outros com alegria formosa.<br>
                         Use seus talentos para o bem fazer,<br>
-                        E a glória de Deus você vai ver!<br>
-                        <span class="text-sm font-semibold text-rose-600 mt-2 block">📖 1 Coríntios 12:4-11</span>
+                        E a glória de Deus você vai ver!
                     </p>
+                    <p class="text-sm text-rose-600 mt-3 font-semibold">📖 1 Coríntios 12:4-11</p>
                 </div>
 
             </div>
@@ -96,28 +97,67 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-pink-700 to-rose-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-pink-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-pink-700 leading-snug mb-4">
+                    "Agora, pois, permanecem a fé, a esperança e o amor, estes três; porém o maior destes é o amor."
+                </blockquote>
+                <p class="text-xl font-bold text-rose-600 mb-6">1 Coríntios 13:13</p>
+                <div class="bg-pink-50 rounded-2xl p-4 border-2 border-pink-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Paulo termina o capítulo do amor com esta conclusão poderosa: de tudo o que Deus nos dá — fé, esperança, dons, talentos — o amor é o maior. Sem ele, todo o resto perde o sentido. Com ele, tudo ganha vida!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
                 👥 Quem São os Personagens Principais?
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-6 rounded-2xl border-2 border-pink-200">
-                        <h3 class="text-2xl font-bold text-pink-700 mb-4">✍️ Paulo - O Missionário Escritor</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                            Paulo era um apóstolo que amava a igreja de Corinto. Ele escreveu esta carta especial para ajudar os cristãos a resolverem seus problemas e viverem melhor juntos!
-                        </p>
-                        <h3 class="text-2xl font-bold text-rose-700 mb-4">💒 A Igreja de Corinto</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Era uma igreja cheia de pessoas diferentes que precisavam aprender a se amar e viver em paz. Eles tinham muitas dúvidas e Paulo estava ali para ensinar!
-                        </p>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="order-2 md:order-1 space-y-5">
+                    <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-5 rounded-2xl border-2 border-pink-200">
+                        <h3 class="text-2xl font-bold text-pink-700 mb-2">✍️ Paulo — O Pai Espiritual</h3>
+                        <p class="text-gray-700 mb-3">Paulo fundou a igreja de Corinto e a amava como um pai ama seus filhos. Quando ouviu sobre os problemas deles, escreveu esta carta longa e carinhosa para corrigi-los e encorajá-los.</p>
+                        <div class="bg-white rounded-xl p-3 border-l-4 border-pink-500">
+                            <p class="text-sm font-bold text-pink-700 mb-1">📖 Leia na Bíblia — 1 Coríntios 4:15</p>
+                            <p class="text-gray-700 italic">"Porque, ainda que tivésseis dez mil instrutores em Cristo, não teríeis, contudo, muitos pais; pois eu vos gerei em Cristo Jesus."</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-5 rounded-2xl border-2 border-purple-200">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-2">💒 A Igreja de Corinto</h3>
+                        <p class="text-gray-700 mb-3">Corinto era uma cidade rica, cheia de pessoas de culturas diferentes. A igreja estava dividida em grupos que brigavam entre si, tinha problemas de comportamento e dúvidas sobre dons e ressurreição.</p>
+                        <div class="bg-white rounded-xl p-3 border-l-4 border-purple-500">
+                            <p class="text-sm font-bold text-purple-700 mb-1">📖 Leia na Bíblia — 1 Coríntios 1:2</p>
+                            <p class="text-gray-700 italic">"À Igreja de Deus que está em Corinto, aos santificados em Cristo Jesus, chamados santos."</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-5 rounded-2xl border-2 border-rose-200">
+                        <h3 class="text-2xl font-bold text-rose-700 mb-2">🌱 Apolo — O Regador</h3>
+                        <p class="text-gray-700 mb-3">Um pregador eloquente que veio depois de Paulo. Alguns coríntios se dividiam dizendo "sou de Paulo" ou "sou de Apolo" — mas Paulo ensina que só Cristo importa!</p>
+                        <div class="bg-white rounded-xl p-3 border-l-4 border-rose-500">
+                            <p class="text-sm font-bold text-rose-700 mb-1">📖 Leia na Bíblia — 1 Coríntios 3:6</p>
+                            <p class="text-gray-700 italic">"Eu plantei, Apolo regou, mas Deus deu o crescimento."</p>
+                        </div>
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <img src="1corintios-personagem.png" alt="Paulo e a Igreja de Corinto"
-                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="1corintios-personagem.png" alt="Paulo e a Igreja de Corinto" class="w-full h-auto rounded-xl shadow-lg">
                 </div>
             </div>
         </div>
@@ -129,32 +169,30 @@
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
                 📖 O Que o Livro Conta?
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
                 <div class="order-1">
-                    <img src="1corintios-o-que-conta.png" alt="Ensinamentos de 1 Coríntios"
-                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="1corintios-o-que-conta.png" alt="Ensinamentos de 1 Coríntios" class="w-full h-auto rounded-xl shadow-lg mb-4">
                 </div>
-                <div class="order-2">
-                    <div class="bg-white p-6 rounded-2xl border-2 border-pink-200 shadow-lg">
-                        <h3 class="text-2xl font-bold text-pink-700 mb-4">💝 Lições de Amor e Unidade</h3>
-                        <ul class="space-y-3 text-lg text-gray-700">
-                            <li class="flex items-start">
-                                <span class="text-2xl mr-3">🤝</span>
-                                <span><strong>Unidade:</strong> Paulo ensina que não deve haver brigas na igreja, todos devem ser amigos!</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-2xl mr-3">❤️</span>
-                                <span><strong>Amor:</strong> O capítulo 13 é famoso por falar sobre o amor verdadeiro que vem de Deus.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-2xl mr-3">✨</span>
-                                <span><strong>Dons:</strong> Deus dá talentos especiais para cada pessoa usar para ajudar os outros.</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-2xl mr-3">🙏</span>
-                                <span><strong>Vida Santa:</strong> Como viver de um jeito que agrada a Deus todos os dias.</span>
-                            </li>
-                        </ul>
+                <div class="order-2 space-y-4">
+                    <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-pink-500">
+                        <h3 class="text-xl font-bold text-pink-700 mb-2">🤝 Fim das Divisões</h3>
+                        <p class="text-gray-700 mb-3">A igreja estava dividida em facções. Paulo os chama à unidade: todos pertencem a Cristo, não a líderes humanos.</p>
+                        <p class="text-sm text-pink-600 italic border-t border-pink-100 pt-2">📖 1 Cor 1:10 — "Rogo-vos... que todos concordeis entre vós... que não haja entre vós divisões."</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-purple-500">
+                        <h3 class="text-xl font-bold text-purple-700 mb-2">✨ Dons do Espírito Santo</h3>
+                        <p class="text-gray-700 mb-3">Cada cristão recebe dons diferentes — não para se exibir, mas para servir ao corpo de Cristo. Todos são necessários, nenhum é superior!</p>
+                        <p class="text-sm text-purple-600 italic border-t border-purple-100 pt-2">📖 1 Cor 12:7 — "A manifestação do Espírito é dada a cada um para o proveito comum."</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-rose-500">
+                        <h3 class="text-xl font-bold text-rose-700 mb-2">❤️ O Hino do Amor</h3>
+                        <p class="text-gray-700 mb-3">O capítulo 13 descreve o amor cristão em 15 características — o texto mais bonito e memorável de toda a Bíblia sobre como amar de verdade!</p>
+                        <p class="text-sm text-rose-600 italic border-t border-rose-100 pt-2">📖 1 Cor 13:4 — "O amor é paciente, é benigno; o amor não arde em ciúmes, não se ufana."</p>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-pink-500">
+                        <h3 class="text-xl font-bold text-pink-700 mb-2">🌅 A Ressurreição</h3>
+                        <p class="text-gray-700 mb-3">O capítulo 15 é a maior explicação sobre a ressurreição. Jesus ressuscitou — e por isso nós também ressuscitaremos! A morte não tem a última palavra.</p>
+                        <p class="text-sm text-pink-600 italic border-t border-pink-100 pt-2">📖 1 Cor 15:57 — "Graças a Deus que nos dá a vitória por nosso Senhor Jesus Cristo."</p>
                     </div>
                 </div>
             </div>
@@ -165,29 +203,43 @@
     <section class="section bg-white p-8 mb-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
-                ⭐ Por Que é Importante?
+                ⭐ Por Que É Importante?
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl border-2 border-rose-200">
-                        <h3 class="text-2xl font-bold text-rose-700 mb-4">💖 O Maior de Todos os Dons</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                            Este livro nos ensina que <strong>o AMOR é o maior dom de todos!</strong> Podemos ter muitos talentos, mas sem amor, nada disso tem valor.
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="order-2 md:order-1 space-y-5">
+                    <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-5 rounded-2xl border-2 border-pink-200">
+                        <h3 class="text-2xl font-bold text-pink-700 mb-3">💖 O Amor É o Maior de Todos</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                            Você pode falar línguas de anjos, ter fé para mover montanhas e dar tudo aos pobres — mas sem amor, não adianta nada! O amor é o que dá valor a tudo.
                         </p>
-                        <div class="bg-white p-4 rounded-xl border-l-4 border-pink-600 mb-4">
-                            <p class="text-gray-800 italic">
-                                "Agora, pois, permanecem a fé, a esperança e o amor, estes três; porém o maior destes é o amor."
-                            </p>
-                            <p class="text-sm text-pink-600 font-semibold mt-2">📖 1 Coríntios 13:13</p>
+                        <div class="bg-white p-3 rounded-xl border-l-4 border-pink-500">
+                            <p class="text-sm font-bold text-pink-700 mb-1">📖 1 Coríntios 13:13</p>
+                            <p class="text-gray-700 italic">"Agora, pois, permanecem a fé, a esperança e o amor, estes três; porém o maior destes é o amor."</p>
                         </div>
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Paulo mostra que quando amamos de verdade, conseguimos viver em paz, perdoar e ajudar uns aos outros. O amor de Deus transforma tudo!
+                    </div>
+                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-5 rounded-2xl border-2 border-purple-200">
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">🧩 Você É Parte do Corpo!</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                            Assim como o corpo tem olhos, mãos e pés — todos diferentes mas todos necessários — a Igreja precisa de cada pessoa com seus dons únicos. Você faz falta!
                         </p>
+                        <div class="bg-white p-3 rounded-xl border-l-4 border-purple-500">
+                            <p class="text-sm font-bold text-purple-700 mb-1">📖 1 Coríntios 12:12</p>
+                            <p class="text-gray-700 italic">"Porque, assim como o corpo é um e tem muitos membros... assim também é Cristo."</p>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-5 rounded-2xl border-2 border-rose-200">
+                        <h3 class="text-2xl font-bold text-rose-700 mb-3">🏆 Faça Tudo para a Glória de Deus</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                            Paulo ensina que até as coisas do dia a dia — comer, brincar, estudar — podem glorificar a Deus quando feitas com amor e gratidão!
+                        </p>
+                        <div class="bg-white p-3 rounded-xl border-l-4 border-rose-500">
+                            <p class="text-sm font-bold text-rose-700 mb-1">📖 1 Coríntios 10:31</p>
+                            <p class="text-gray-700 italic">"Portanto, quer comais, quer bebais, ou façais qualquer outra coisa, fazei tudo para a glória de Deus."</p>
+                        </div>
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
-                    <img src="1corintios-importante.png" alt="O Amor é o Maior Dom"
-                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="1corintios-importante.png" alt="O Amor é o Maior Dom" class="w-full h-auto rounded-xl shadow-lg">
                 </div>
             </div>
         </div>
@@ -197,36 +249,45 @@
     <section class="section bg-gradient-to-br from-purple-50 to-pink-50 p-8 mb-4">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600">
-                🎯 Propósito do Livro
+                🎯 Qual é o Propósito do Livro?
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
                 <div class="order-1">
-                    <img src="1corintios-proposito.png" alt="Propósito de 1 Coríntios"
-                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
+                    <img src="1corintios-proposito.png" alt="Propósito de 1 Coríntios" class="w-full h-auto rounded-xl shadow-lg">
                 </div>
-                <div class="order-2">
-                    <div class="bg-white p-6 rounded-2xl border-2 border-purple-200 shadow-lg">
-                        <h3 class="text-2xl font-bold text-purple-700 mb-4">🔧 Corrigir e Fortalecer</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                            Paulo escreveu esta carta com dois grandes objetivos:
+                <div class="order-2 space-y-5">
+                    <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-pink-500">
+                        <div class="text-5xl mb-4">🩹</div>
+                        <h3 class="text-2xl font-bold text-pink-700 mb-3">Corrigir com Amor</h3>
+                        <p class="text-gray-700 text-lg mb-3">
+                            A igreja tinha problemas sérios — divisões, orgulho, comportamentos errados. Paulo corrige com firmeza, mas sempre com o coração de pai amoroso.
                         </p>
-                        <div class="space-y-4">
-                            <div class="bg-gradient-to-r from-pink-100 to-rose-100 p-4 rounded-xl">
-                                <h4 class="font-bold text-pink-700 mb-2">🩹 1. Corrigir Atitudes Erradas</h4>
-                                <p class="text-gray-700">
-                                    Ajudar a igreja a parar de brigar, a deixar comportamentos ruins e a seguir Jesus de verdade.
-                                </p>
-                            </div>
-                            <div class="bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-xl">
-                                <h4 class="font-bold text-purple-700 mb-2">💪 2. Fortalecer a Comunhão</h4>
-                                <p class="text-gray-700">
-                                    Ensinar como viver unidos, se amando e usando os dons de Deus para ajudar uns aos outros.
-                                </p>
-                            </div>
+                        <div class="bg-pink-50 p-3 rounded-xl border-l-4 border-pink-400">
+                            <p class="text-sm font-bold text-pink-700 mb-1">📖 1 Coríntios 1:10</p>
+                            <p class="text-gray-700 italic">"Rogo-vos... que todos concordeis entre vós, e que não haja entre vós divisões."</p>
                         </div>
-                        <p class="text-lg text-gray-700 leading-relaxed mt-4">
-                            O resultado? Uma igreja mais forte, mais amorosa e mais parecida com Jesus! 🌟
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-purple-500">
+                        <div class="text-5xl mb-4">💪</div>
+                        <h3 class="text-2xl font-bold text-purple-700 mb-3">Fortalecer a Comunidade</h3>
+                        <p class="text-gray-700 text-lg mb-3">
+                            Paulo quer que a igreja de Corinto cresça junta — usando os dons para servir uns aos outros, amando como Cristo amou, vivendo com pureza e propósito.
                         </p>
+                        <div class="bg-purple-50 p-3 rounded-xl border-l-4 border-purple-400">
+                            <p class="text-sm font-bold text-purple-700 mb-1">📖 1 Coríntios 14:12</p>
+                            <p class="text-gray-700 italic">"Assim também vós, pois que ambicionais os dons espirituais, procurai ter deles abundância para a edificação da Igreja."</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-rose-500">
+                        <div class="text-5xl mb-4">🌅</div>
+                        <h3 class="text-2xl font-bold text-rose-700 mb-3">Firmar na Ressurreição</h3>
+                        <p class="text-gray-700 text-lg mb-3">
+                            Alguns duvidavam da ressurreição. Paulo mostra que ela é o fundamento de tudo — se Cristo ressuscitou, nossa fé tem sentido e nossa esperança é real!
+                        </p>
+                        <div class="bg-rose-50 p-3 rounded-xl border-l-4 border-rose-400">
+                            <p class="text-sm font-bold text-rose-700 mb-1">📖 1 Coríntios 15:58</p>
+                            <p class="text-gray-700 italic">"Sede firmes e constantes, sempre abundantes na obra do Senhor, sabendo que o vosso trabalho não é vão no Senhor."</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -241,34 +302,104 @@
             </h2>
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
-                        <h3 class="text-2xl font-bold text-amber-700 mb-4">📜 O Famoso Capítulo do Amor!</h3>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                            <strong>1 Coríntios 13</strong> é chamado de "Capítulo do Amor" e é um dos textos mais conhecidos da Bíblia inteira! 💝
-                        </p>
-                        <div class="bg-white p-4 rounded-xl border-l-4 border-pink-600 mb-4">
-                            <p class="text-gray-800 font-semibold">
-                                ✨ É lido em casamentos<br>
-                                ✨ É decorado por crianças<br>
-                                ✨ É citado em músicas<br>
-                                ✨ É usado em cartões e mensagens
-                            </p>
+                    <img src="1corintios-curiosidade.png" alt="O Capítulo do Amor" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+                <div class="order-1 md:order-2">
+                    <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-3xl shadow-2xl border-4 border-amber-300">
+                        <div class="text-center mb-6">
+                            <span class="text-6xl">❤️📜</span>
                         </div>
-                        <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                            Esse capítulo ensina exatamente como é o amor de verdade: paciente, bondoso, não invejoso, não orgulhoso... É como um manual do amor perfeito!
-                        </p>
-                        <div class="bg-pink-100 p-4 rounded-xl text-center">
-                            <p class="text-pink-700 font-bold text-xl">
-                                💡 Desafio: Que tal decorar 1 Coríntios 13:4-7?
+                        <h3 class="text-3xl font-black text-amber-700 mb-6 text-center">O Capítulo do Amor!</h3>
+                        <div class="space-y-4 text-lg text-gray-700">
+                            <p class="bg-white p-4 rounded-xl shadow">
+                                <strong class="text-pink-600">💍</strong> 1 Coríntios 13 é lido em <strong>casamentos no mundo inteiro</strong> — é o texto mais citado em cerimônias de casamento!
+                            </p>
+                            <p class="bg-white p-4 rounded-xl shadow">
+                                <strong class="text-rose-600">🏙️</strong> Corinto era uma cidade <strong>muito rica e imoral</strong> — Paulo escreveu para uma igreja que vivia rodeada de tentações enormes.
+                            </p>
+                            <p class="bg-white p-4 rounded-xl shadow">
+                                <strong class="text-purple-600">📝</strong> Paulo escreveu pelo menos <strong>quatro cartas</strong> para Corinto — mas só duas chegaram até nós na Bíblia!
+                            </p>
+                            <p class="bg-white p-4 rounded-xl shadow">
+                                <strong class="text-amber-600">🏛️</strong> 1 Coríntios 15 é a <strong>maior explicação sobre a ressurreição</strong> de toda a Bíblia — escrita antes dos Evangelhos!
                             </p>
                         </div>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="1corintios-curiosidade.png" alt="O Capítulo do Amor"
-                        class="w-full h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300">
-                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 p-8 mb-4 rounded-2xl border-2 border-pink-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-pink-500">
+                <p class="text-5xl text-center mb-4">❤️</p>
+                <h3 class="text-xl font-bold text-pink-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo diz que sem amor, até falar línguas de anjos e ter fé para mover montanhas não adianta nada. <strong>Por que você acha que o amor é tão importante assim?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-purple-500">
+                <p class="text-5xl text-center mb-4">🧩</p>
+                <h3 class="text-xl font-bold text-purple-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Somos um corpo com muitos membros — cada um tem um dom diferente. <strong>Qual é o seu dom ou talento? Como você pode usá-lo para ajudar outras pessoas?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-rose-500">
+                <p class="text-5xl text-center mb-4">😤</p>
+                <h3 class="text-xl font-bold text-rose-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Coríntios 13 diz que o amor "não se irrita" e "não guarda rancor". <strong>Qual dessas características do amor você acha mais difícil de praticar? Por quê?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-pink-700 to-rose-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-pink-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-pink-700 mb-3">Leia o Capítulo do Amor</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>1 Coríntios 13 inteiro</strong> em voz alta para alguém da sua família. Depois pergunte: "Qual característica do amor você mais admira?"
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-rose-700 mb-3">Versículo na Parede</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva num papel colorido: <strong>"O maior dom é o amor! — 1 Cor 13:13"</strong> e cole em um lugar que você veja todos os dias.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💝</p>
+                <div class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-purple-700 mb-3">Pratique Uma Característica</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escolha uma característica do amor do capítulo 13 — paciência, bondade, não guardar rancor — e pratique <strong>conscientemente</strong> com alguém esta semana!
+                </p>
+            </div>
+
         </div>
     </section>
 
@@ -279,8 +410,8 @@
             <a href="../romanos/romanos.html" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Romanos
             </a>
-            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Cartas Paulinas
+            <a href="../cartasdepaulo.html" class="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas de Paulo
             </a>
             <a href="../2corintios/2corintios.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 2 Coríntios ➡️

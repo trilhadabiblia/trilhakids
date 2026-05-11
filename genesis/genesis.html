@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -32,7 +33,7 @@
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🌍</span>
                 <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 mx-2">
-                    LIVRO DE GÊNESIS
+                    GÊNESIS
                 </span>
                 <span>✨</span>
             </h1>
@@ -48,8 +49,8 @@
                 🌟 Os Três Segredos de Gênesis 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
+
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
                     <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌅 Primeiro Segredo: Deus Criou Tudo!</h3>
                     <p class="italic">
                         No princípio Deus fez o céu e o mar,<br>
@@ -57,10 +58,10 @@
                         Os animais, as plantas e você também,<br>
                         Tudo foi feito com amor, muito além!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 1:1 - "No princípio, criou Deus os céus e a terra."</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 1:1 — "No princípio, criou Deus os céus e a terra."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
                     <h3 class="text-2xl font-bold text-amber-700 mb-3">🤝 Segundo Segredo: Deus Faz Promessas!</h3>
                     <p class="italic">
                         A Abraão Deus prometeu abençoar,<br>
@@ -68,18 +69,18 @@
                         Mesmo quando tudo parecia impossível,<br>
                         Deus cumpriu Sua palavra, foi incrível!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 12:2 - "Farei de ti uma grande nação."</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 12:2 — "Farei de ti uma grande nação... e serás uma bênção."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">❤️ Terceiro Segredo: Deus Nunca Desiste!</h3>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">❤️ Terceiro Segredo: Deus Transforma o Mal em Bem!</h3>
                     <p class="italic">
                         Mesmo quando as pessoas erraram feio,<br>
                         Deus sempre teve um plano, um anseio,<br>
                         De salvar, perdoar e recomeçar,<br>
                         Seu amor por nós nunca vai acabar!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 50:20 - "Vós intentastes o mal contra mim; porém Deus o tornou em bem."</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Gênesis 50:20 — "Vós intentastes o mal contra mim; porém Deus o tornou em bem."</p>
                 </div>
 
             </div>
@@ -96,158 +97,294 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-yellow-700 to-amber-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-yellow-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "No princípio, criou Deus os céus e a terra."
+                </p>
+                <p class="text-yellow-200 font-bold text-xl mb-6">— Gênesis 1:1</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🌍 <span class="font-bold">O que isso significa?</span> Antes de tudo existir — antes das estrelas, dos animais, dos mares e de você — já existia Deus. Ele não surgiu de nada: Ele é eterno! E foi Ele quem decidiu criar tudo com amor. Você não é um acidente: foi feito de propósito por um Deus que quis que você existisse!
+                    </p>
+                </div>
+                <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📝 Copie no caderno</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">🗣️ Diga em voz alta</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📌 Coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-yellow-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div>
-                <img src="genesis-quem-e.png" alt="Personagens de Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="genesis-quem-e.png" alt="Personagens de Gênesis" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="space-y-4 text-lg leading-relaxed text-gray-700">
-                <p class="font-bold text-2xl text-yellow-700">🌟 Deus - O Criador de Tudo!</p>
-                <p>Ele é o personagem mais importante! Deus fez o céu, a terra, os animais, as plantas e as pessoas. Tudo começou com Ele!</p>
-                
-                <p class="font-bold text-2xl text-amber-700 mt-6">👨‍👩‍👧‍👦 As Famílias Escolhidas:</p>
-                <ul class="list-disc list-inside space-y-2 ml-4">
-                    <li><strong>Abraão:</strong> O pai da fé, que confiou em Deus</li>
-                    <li><strong>Isaque:</strong> O filho da promessa</li>
-                    <li><strong>Jacó:</strong> Que se tornou Israel</li>
-                    <li><strong>José:</strong> O sonhador que salvou sua família</li>
-                </ul>
-                <p class="text-yellow-600 font-semibold mt-4">✨ Deus escolheu essas famílias para mostrar Seu amor ao mundo!</p>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">🌟 Deus — O Criador de Tudo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O personagem mais importante do livro — e de toda a Bíblia! Ele cria, promete, protege e nunca desiste das pessoas que ama. Cada história de Gênesis mostra um aspecto diferente de quem Ele é.
+                    </p>
+                    <p class="text-sm text-yellow-700 font-semibold mt-2">📖 Gn 1:27 — "Criou Deus o homem à sua imagem... homem e mulher os criou."</p>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">🌈 Noé — O Fiel no Meio da Tempestade</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Quando todo o mundo tinha se afastado de Deus, Noé ficou firme. Ele construiu a arca, salvou sua família e recebeu a promessa do arco-íris — sinal de que Deus nunca mais destruiria a terra com o dilúvio!
+                    </p>
+                    <p class="text-sm text-amber-700 font-semibold mt-2">📖 Gn 6:9 — "Noé era homem justo e íntegro entre os seus contemporâneos."</p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-2">🏕️ Abraão — O Pai da Fé</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Deus chamou Abraão para deixar tudo para trás e ir para uma terra desconhecida. Ele foi! Deus prometeu que sua família seria tão grande quanto as estrelas do céu — e cumpriu!
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Gn 12:1 — "Disse o Senhor a Abrão: Sai da tua terra, da tua parentela e vai para a terra que te mostrarei."</p>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-500">
+                    <h3 class="text-2xl font-bold text-amber-600 mb-2">🌙 José — O Sonhador de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Vendido como escravo pelos próprios irmãos, preso injustamente — e mesmo assim, Deus estava com ele! José subiu de escravo a governador do Egito e salvou toda a sua família da fome.
+                    </p>
+                    <p class="text-sm text-amber-600 font-semibold mt-2">📖 Gn 39:2 — "O Senhor estava com José, e ele foi próspero."</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl border-2 border-yellow-200">
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-amber-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-600">
             📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-4 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
-                <p class="font-bold text-2xl text-amber-700">🌍 Como Tudo Começou!</p>
-                <p>Gênesis conta a história de como o mundo foi criado. Deus fez tudo em 6 dias e descansou no sétimo!</p>
-                
-                <p class="font-bold text-2xl text-yellow-700 mt-6">👨‍👩‍👧 O Plano de Deus:</p>
-                <p>Mostra como Deus prometeu abençoar Abraão e sua família. Mesmo quando as coisas ficavam difíceis, Deus sempre cumpria Suas promessas!</p>
-                
-                <p class="font-bold text-2xl text-amber-700 mt-6">📚 50 Capítulos Incríveis:</p>
-                <p>O livro tem 50 capítulos cheios de histórias emocionantes sobre criação, fé, família e o amor de Deus!</p>
-                
-                <div class="bg-white p-4 rounded-lg border-2 border-yellow-300 mt-6">
-                    <p class="text-yellow-700 font-bold">💡 Resumo Rápido:</p>
-                    <p class="text-gray-600">Criação → Adão e Eva → Noé → Abraão → Isaque → Jacó → José</p>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌅 A Criação em 6 Dias</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Deus criou a luz, o céu, a terra, os mares, as plantas, o sol, a lua, os animais e, por último, o ser humano — feito à Sua imagem! No sétimo dia, Ele descansou e abençoou esse dia.
+                    </p>
+                    <p class="text-sm text-yellow-700 font-semibold mt-2">📖 Gn 1:31 — "Viu Deus tudo quanto fizera, e era muito bom."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🍎 A Queda e a Esperança</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Adão e Eva desobedeceram a Deus no jardim do Éden. O pecado entrou no mundo — mas Deus já tinha um plano de redenção! Mesmo os expulsando do jardim, Ele fez roupas para protegê-los.
+                    </p>
+                    <p class="text-sm text-amber-700 font-semibold mt-2">📖 Gn 3:15 — "Porei inimizade entre ti e a mulher... ele te ferirá a cabeça." (a primeira promessa do Salvador!)</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3">🌈 O Dilúvio e o Arco-íris</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O mundo se encheu de maldade. Deus mandou o dilúvio, mas salvou Noé e sua família na arca. Depois, prometeu com um arco-íris: nunca mais destruiria a terra assim — uma promessa de misericórdia!
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Gn 9:13 — "Ponho o meu arco nas nuvens, e ele servirá de sinal de aliança entre mim e a terra."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-500">
+                    <h3 class="text-2xl font-bold text-amber-600 mb-3">⭐ Abraão, Isaque, Jacó e José</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os últimos 39 capítulos contam a história de quatro gerações — a família que Deus escolheu para abençoar o mundo inteiro. Cheio de fé, erros, arrependimentos e redenção!
+                    </p>
+                    <p class="text-sm text-amber-600 font-semibold mt-2">📖 Gn 50:20 — "Vós intentastes o mal contra mim; porém Deus o tornou em bem."</p>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="genesis-o-que-conta.png" alt="O que Gênesis conta" class="w-full h-auto rounded-xl shadow-lg">
+            <div>
+                <img src="genesis-o-que-conta.png" alt="O que Gênesis conta" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-yellow-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
             ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div>
-                <img src="genesis-por-que-importante.png" alt="Importância de Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="genesis-por-que-importante.png" alt="Importância de Gênesis" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700">
-                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <p class="font-bold text-xl text-yellow-700 mb-2">❤️ Deus Criou Tudo com Amor!</p>
-                    <p>Gênesis mostra que Deus fez você com muito carinho e tem um plano especial para sua vida!</p>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">❤️ Você Foi Criado com Propósito</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Gênesis diz que Deus criou o ser humano à Sua própria imagem. Você não é um acidente da natureza — você foi pensado, planejado e criado por Deus com um propósito especial!
+                    </p>
+                    <p class="text-sm text-yellow-700 font-semibold mt-2">📖 Gn 1:27 — "Criou Deus o homem à sua imagem, à imagem de Deus o criou."</p>
                 </div>
-                
-                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-xl border-l-4 border-amber-600">
-                    <p class="font-bold text-xl text-amber-700 mb-2">🤝 Deus Cumpre Suas Promessas!</p>
-                    <p>Mesmo quando as coisas parecem impossíveis, Deus sempre faz o que promete. Podemos confiar Nele!</p>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🤝 Deus Cumpre Suas Promessas</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Abraão esperou 25 anos por um filho — e Deus cumpriu! O arco-íris ainda aparece no céu hoje. Cada promessa de Gênesis nos lembra: podemos confiar em Deus também em nossas vidas!
+                    </p>
+                    <p class="text-sm text-amber-700 font-semibold mt-2">📖 Gn 21:1 — "Visitou o Senhor a Sara... e o Senhor fez a Sara como havia prometido."</p>
                 </div>
-                
-                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <p class="font-bold text-xl text-yellow-700 mb-2">🌟 Deus Nunca Desiste!</p>
-                    <p>O livro mostra que o pecado entrou no mundo, mas Deus nunca desistiu das pessoas. Ele sempre nos ama!</p>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3">🌟 Deus Transforma Situações Difíceis</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        José foi traído, vendido e preso — mas Deus estava com ele em todo momento! A história de José nos ensina que, mesmo quando as coisas parecem horríveis, Deus pode transformar tudo em bem.
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Gn 39:21 — "O Senhor estava com José e lhe demonstrou misericórdia."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl border-2 border-amber-200">
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-amber-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-600">
             🎯 Propósito do Livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-6 text-lg leading-relaxed text-gray-700 order-2 md:order-1">
-                <div class="bg-white p-6 rounded-xl shadow-md border-2 border-yellow-300">
-                    <p class="font-bold text-2xl text-yellow-700 mb-3">🌟 Ensinar Sobre o Criador</p>
-                    <p>Gênesis foi escrito para ensinar que Deus é o Criador de tudo e que devemos confiar no Seu plano maravilhoso!</p>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌍 Explicar o Começo de Tudo</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Gênesis responde às perguntas mais profundas: De onde viemos? Por que existimos? Por que o mundo tem sofrimento? A resposta começa aqui — em um Deus bom que criou um mundo bom.
+                    </p>
+                    <p class="text-sm text-yellow-700 font-semibold mt-2">📖 Gn 1:1 — "No princípio, criou Deus os céus e a terra."</p>
                 </div>
-                
-                <div class="bg-white p-6 rounded-xl shadow-md border-2 border-amber-300">
-                    <p class="font-bold text-2xl text-amber-700 mb-3">📜 Início da História</p>
-                    <p>O livro mostra como começou a história do povo de Deus. É o primeiro capítulo de uma história incrível!</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">📜 Revelar o Plano de Salvação</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Mesmo no capítulo 3, quando tudo parecia perdido, Deus já anunciou que um descendente da mulher esmagaria a cabeça da serpente. Desde o início, Deus planejou enviar Jesus!
+                    </p>
+                    <p class="text-sm text-amber-700 font-semibold mt-2">📖 Gn 3:15 — "Ele te ferirá a cabeça." (a primeira profecia sobre Jesus na Bíblia!)</p>
                 </div>
-                
-                <div class="bg-gradient-to-r from-yellow-200 to-amber-200 p-6 rounded-xl border-2 border-yellow-400">
-                    <p class="font-bold text-xl text-gray-800 mb-2">💡 Lição Principal:</p>
-                    <p class="text-gray-700">Deus é o Criador, Ele tem um plano para você, e você pode confiar Nele sempre!</p>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3">🌱 Preparar o Palco da História</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Gênesis apresenta o povo de Israel — descentes de Abraão — como o canal pelo qual Deus abençoaria o mundo inteiro. É o capítulo 1 da maior história já contada!
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Gn 12:3 — "Em ti serão benditas todas as famílias da terra."</p>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="genesis-proposito.png" alt="Propósito de Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+            <div>
+                <img src="genesis-proposito.png" alt="Propósito de Gênesis" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-yellow-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
             <div>
-                <img src="genesis-curiosidade.png" alt="Curiosidade sobre Gênesis" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="genesis-curiosidade.png" alt="Curiosidade sobre Gênesis" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
             <div class="space-y-6">
-                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-8 rounded-2xl border-4 border-yellow-300 shadow-xl">
-                    <p class="text-3xl font-black text-yellow-700 mb-4">🌟 Curiosidade Incrível!</p>
-                    <p class="text-2xl text-gray-800 leading-relaxed">
-                        A palavra <span class="font-black text-amber-700">"Gênesis"</span> significa 
-                        <span class="font-black text-yellow-700">"começo"</span> ou 
-                        <span class="font-black text-amber-700">"origem"</span>!
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-4 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📚</span>
+                        "Origem" em Grego!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A palavra <span class="font-bold text-yellow-700">"Gênesis"</span> vem do grego e significa <span class="font-bold text-amber-700">"origem"</span> ou <span class="font-bold text-yellow-700">"começo"</span>. É o livro perfeito para começar a ler a Bíblia — porque ele conta como absolutamente tudo começou!
                     </p>
-                    <div class="mt-6 p-4 bg-white rounded-xl border-2 border-yellow-400">
-                        <p class="text-lg text-gray-700">
-                            ✨ É o livro perfeito para começar a ler a Bíblia, porque ele conta como tudo começou!
-                        </p>
-                    </div>
                 </div>
-                
-                <div class="bg-gradient-to-r from-amber-200 to-yellow-200 p-6 rounded-xl">
-                    <p class="font-bold text-xl text-gray-800 mb-2">📚 Mais Curiosidades:</p>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>É o primeiro livro da Bíblia</li>
-                        <li>Foi escrito por Moisés</li>
-                        <li>Tem as histórias mais famosas da Bíblia!</li>
-                    </ul>
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-6 rounded-xl border-4 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">⭐</span>
+                        As Estrelas de Abraão
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Deus prometeu a Abraão uma família tão grande quanto as <span class="font-bold text-amber-700">estrelas do céu</span>! Cientistas calculam que existem mais de 200 bilhões de estrelas só na nossa galáxia. E hoje, judeus, cristãos e muçulmanos juntos somam mais de 4 bilhões de pessoas — todos descendentes espirituais de Abraão!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-4 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🌈</span>
+                        O Arco-íris Ainda Está Lá!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O arco-íris que aparece depois da chuva ainda hoje é o sinal da promessa de Deus a Noé (Gn 9:13). Toda vez que você vê um arco-íris, pode lembrar: <span class="font-bold text-yellow-700">Deus cumpre suas promessas</span>!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-yellow-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-600">
+                <div class="text-5xl text-center mb-4">🌍</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">Criado com Propósito</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Gênesis diz que você foi criado à imagem de Deus (Gn 1:27). O que isso significa para você? Como muda a forma que você se vê — e vê as outras pessoas — saber que todos são criados por Deus?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-amber-600">
+                <div class="text-5xl text-center mb-4">🌈</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Confiar nas Promessas</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Abraão esperou 25 anos por uma promessa de Deus. Você já teve que esperar por algo muito difícil? Como a história de Abraão pode te ajudar a continuar confiando mesmo quando demora?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-500">
+                <div class="text-5xl text-center mb-4">💪</div>
+                <h3 class="text-xl font-bold text-yellow-600 mb-3 text-center">Bem do Mal</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    José disse "Deus tornou em bem o que vocês planejaram para o mal" (Gn 50:20). Você já viveu uma situação ruim que depois se tornou algo bom? Como Deus pode fazer isso na nossa vida?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-yellow-700 to-amber-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-yellow-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-yellow-200 mb-3">Guarda no Coração</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Gênesis 1:1 num papel e guarde na carteira ou cole no quarto. Toda vez que olhar para o céu ou a natureza esta semana, lembre: tudo isso foi feito por um Deus que te ama!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-amber-300 text-center">
+                <div class="text-5xl mb-4">🌈</div>
+                <h3 class="text-xl font-bold text-amber-200 mb-3">Olhe para o Arco-íris</h3>
+                <p class="text-white leading-relaxed">
+                    Desenhe um arco-íris e escreva uma promessa que Deus já cumpriu na sua vida. Depois, escreva uma coisa que você está esperando Ele fazer. Cole onde você vai ver todo dia!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-yellow-300 text-center">
+                <div class="text-5xl mb-4">🌱</div>
+                <h3 class="text-xl font-bold text-yellow-200 mb-3">Seja como José</h3>
+                <p class="text-white leading-relaxed">
+                    Esta semana, quando alguém te machucar ou te tratar injustamente, em vez de se vingar, pergunte: "Como Deus pode transformar isso em algo bom?" — e escolha o perdão, como José escolheu!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="section no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-4">
+    <section class="section no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../pentateuco.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros do Pentateuco
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Pentateuco
             </a>
-            <a href="../exodo/exodo.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../exodo/exodo.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Êxodo ➡️
             </a>
         </div>
@@ -255,8 +392,9 @@
 
     <!-- Rodapé -->
     <section class="section bg-gradient-to-r from-yellow-600 to-amber-700 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Gênesis - O Começo de Tudo ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+        <h3 class="text-2xl font-black mb-2">✨ Gênesis — O Começo de Tudo ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>
 
     <script src="/menu.js"></script>

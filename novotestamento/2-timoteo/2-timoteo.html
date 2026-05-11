@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 2 Timóteo 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-600">
                     <h3 class="text-2xl font-bold text-orange-700 mb-3">🔥 Primeiro Segredo: Nunca Desista da Fé</h3>
                     <p class="italic">
@@ -96,27 +97,56 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-orange-700 to-red-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-orange-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Deus não nos deu espírito de covardia, mas de poder, amor e moderação."
+                </p>
+                <p class="text-orange-200 font-bold text-xl mb-6">— 2 Timóteo 1:7</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🔥 <span class="font-bold">O que isso significa?</span> Quando sentimos medo — de falar de Jesus, de fazer o certo, de ser diferente dos outros — Deus não colocou esse medo em você! Ele te deu o Espírito Santo, que é como um super-poder de coragem, amor e sabedoria. Medo não vem de Deus!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
             👥 Quem são os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
             <div>
                 <img src="2-timoteo-personagens.png" alt="Paulo e Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
             <div class="space-y-6">
                 <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-2xl border-l-4 border-orange-600">
-                    <h3 class="text-2xl font-bold text-orange-700 mb-2">✍️ Paulo - O Mestre Corajoso</h3>
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">✍️ Paulo — O Apóstolo Corajoso</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Paulo era um apóstolo valente que estava preso por pregar sobre Jesus. Mesmo na prisão, ele escreveu esta carta cheia de amor e sabedoria para seu amigo Timóteo. Paulo sabia que logo partiria para estar com Jesus, mas queria deixar palavras de ânimo e força!
+                        Paulo estava preso em Roma pela segunda vez, numa cela escura, sabendo que logo seria executado por causa de sua fé em Jesus. Mesmo assim, não tinha medo — escreveu esta carta cheia de amor, sabedoria e coragem para Timóteo.
                     </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 2 Timóteo 4:7 — "Combati o bom combate, acabei a carreira, guardei a fé."</p>
                 </div>
                 <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-l-4 border-red-600">
-                    <h3 class="text-2xl font-bold text-red-700 mb-2">🛡️ Timóteo - O Jovem Fiel</h3>
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">🛡️ Timóteo — O Jovem Fiel</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Timóteo era um jovem pastor que amava a Deus e servia na igreja. Paulo o considerava como um filho e queria encorajá-lo a continuar firme na fé, mesmo quando as coisas ficassem difíceis. Timóteo tinha um coração sincero e puro!
+                        Timóteo era um jovem pastor com um coração sincero, servindo na igreja de Éfeso. Paulo o considerava como um filho e queria encorajá-lo a continuar firme na fé, mesmo diante das dificuldades.
                     </p>
+                    <p class="text-sm text-red-700 font-semibold mt-2">📖 2 Timóteo 1:7 — "Deus não nos deu espírito de covardia, mas de poder, amor e moderação."</p>
+                </div>
+                <div class="bg-gradient-to-r from-orange-100 to-amber-100 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">📚 Marcos — O Amigo Reconciliado</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Marcos havia abandonado Paulo numa missão anterior (At 13:13), e Paulo ficou tão chateado que eles se separaram (At 15:38). Mas agora, no final da vida, Paulo pede que Timóteo traga Marcos consigo — eles se reconciliaram! Que lição bonita de perdão!
+                    </p>
+                    <p class="text-sm text-amber-700 font-semibold mt-2">📖 2 Timóteo 4:11 — "Toma a Marcos e traze-o contigo, porque me é útil para o ministério."</p>
                 </div>
             </div>
         </div>
@@ -130,16 +160,20 @@
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="space-y-4 order-2 md:order-1">
                 <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-orange-600">
-                    <span class="font-bold text-orange-700">📝 Uma Carta de Despedida:</span> Esta é a última carta que Paulo escreveu antes de morrer. Ele estava preso em Roma e sabia que logo seria executado por causa de sua fé em Jesus.
+                    <span class="font-bold text-orange-700">📝 Uma Carta de Despedida:</span> Esta é a última carta que Paulo escreveu antes de morrer. Ele estava preso em Roma e sabia que logo seria executado por causa de sua fé em Jesus. Uma despedida cheia de amor!
+                    <span class="block text-sm text-orange-600 mt-2 font-semibold">📖 2 Tm 4:6 — "Porque eu já estou sendo oferecido por libação, e o tempo da minha partida é chegado."</span>
                 </p>
                 <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-600">
-                    <span class="font-bold text-red-700">💪 Palavras de Coragem:</span> Paulo encoraja Timóteo a ser forte e corajoso, a não ter vergonha do evangelho e a continuar pregando a Palavra de Deus com ousadia!
+                    <span class="font-bold text-red-700">💪 Palavras de Coragem:</span> Paulo encoraja Timóteo a ser forte e corajoso, a não ter vergonha do evangelho e a continuar pregando a Palavra de Deus com ousadia, "a tempo e fora de tempo"!
+                    <span class="block text-sm text-red-600 mt-2 font-semibold">📖 2 Tm 4:2 — "Prega a palavra, insiste a tempo e fora de tempo."</span>
                 </p>
                 <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-orange-600">
-                    <span class="font-bold text-orange-700">🔥 Avisos Importantes:</span> Paulo também alerta sobre falsos mestres que viriam e ensina Timóteo a se manter firme na verdade da Bíblia.
+                    <span class="font-bold text-orange-700">🔥 Avisos Importantes:</span> Paulo alerta sobre falsos mestres que viriam e ensina Timóteo a se manter firme na verdade da Bíblia. A Palavra de Deus é nossa âncora!
+                    <span class="block text-sm text-orange-600 mt-2 font-semibold">📖 2 Tm 3:16-17 — "Toda a Escritura é inspirada por Deus e útil para ensinar."</span>
                 </p>
                 <p class="text-xl text-gray-700 leading-relaxed bg-white p-6 rounded-2xl shadow-md border-l-4 border-red-600">
-                    <span class="font-bold text-red-700">👑 Vitória Final:</span> Paulo termina dizendo que completou sua missão e que uma coroa de justiça o aguarda no céu!
+                    <span class="font-bold text-red-700">👑 Vitória Final:</span> Paulo termina dizendo que completou sua missão e que uma coroa de justiça o aguarda no céu — e não só ele, mas todos que amam a Jesus!
+                    <span class="block text-sm text-red-600 mt-2 font-semibold">📖 2 Tm 4:8 — "Há-me reservada a coroa da justiça, que o Senhor... me dará naquele dia."</span>
                 </p>
             </div>
             <div class="order-1 md:order-2">
@@ -163,18 +197,21 @@
                     <p class="text-gray-700 leading-relaxed">
                         Mesmo quando tudo parece difícil, devemos continuar firmes na fé. Paulo estava preso e sabia que morreria, mas não desistiu de servir a Jesus até o último momento!
                     </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 2 Tm 2:3 — "Suporta as aflições como bom soldado de Cristo Jesus."</p>
                 </div>
                 <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl">
                     <h3 class="text-2xl font-bold text-red-700 mb-3">📖 Valoriza a Palavra de Deus</h3>
                     <p class="text-gray-700 leading-relaxed">
                         A Bíblia é nosso tesouro mais precioso! Ela nos ensina, corrige e nos prepara para fazer o bem. Devemos ler, estudar e obedecer a Palavra de Deus todos os dias!
                     </p>
+                    <p class="text-sm text-red-700 font-semibold mt-2">📖 2 Tm 2:15 — "Procura apresentar-te a Deus como obreiro que não tem de que se envergonhar."</p>
                 </div>
                 <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-2xl">
                     <h3 class="text-2xl font-bold text-orange-700 mb-3">💪 Inspira Coragem</h3>
                     <p class="text-gray-700 leading-relaxed">
                         Esta carta nos ensina a ser corajosos e fiéis, mesmo quando as pessoas ao nosso redor não acreditam em Jesus. Deus nos dá força para enfrentar qualquer desafio!
                     </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-2">📖 2 Tm 1:7 — "Deus não nos deu espírito de covardia, mas de poder, amor e moderação."</p>
                 </div>
             </div>
         </div>
@@ -195,6 +232,7 @@
                     <p class="text-gray-700 leading-relaxed text-lg">
                         Paulo queria que Timóteo (e todos nós!) guardasse a fé verdadeira em Jesus e não deixasse ninguém enfraquecer sua confiança em Deus. A fé é como um tesouro que devemos proteger!
                     </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-3">📖 2 Tm 1:14 — "Guarda o bom depósito que te foi confiado, pelo Espírito Santo que habita em nós."</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-600">
                     <h3 class="text-2xl font-bold text-red-700 mb-4 flex items-center">
@@ -204,6 +242,7 @@
                     <p class="text-gray-700 leading-relaxed text-lg">
                         Paulo incentivou Timóteo a pregar a Palavra de Deus com ousadia, "a tempo e fora de tempo". Isso significa falar de Jesus sempre, seja fácil ou difícil. Todos precisam ouvir sobre o amor de Deus!
                     </p>
+                    <p class="text-sm text-red-700 font-semibold mt-3">📖 2 Tm 4:2 — "Prega a palavra, insiste a tempo e fora de tempo, corrige, repreende, exorta."</p>
                 </div>
                 <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-orange-600">
                     <h3 class="text-2xl font-bold text-orange-700 mb-4 flex items-center">
@@ -213,6 +252,7 @@
                     <p class="text-gray-700 leading-relaxed text-lg">
                         Paulo mostrou que, mesmo diante da morte, ele tinha esperança no céu. Ele sabia que Jesus o esperava com uma coroa de vitória. Essa esperança nos dá força para viver cada dia!
                     </p>
+                    <p class="text-sm text-orange-700 font-semibold mt-3">📖 2 Tm 4:8 — "Há-me reservada a coroa da justiça, que o Senhor, justo juiz, me dará naquele dia."</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
@@ -226,32 +266,98 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
             <div>
                 <img src="2-timoteo-curiosidade.png" alt="Curiosidade sobre 2 Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
             <div class="space-y-6">
-                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-8 rounded-2xl border-4 border-orange-300">
-                    <h3 class="text-3xl font-bold text-orange-700 mb-4 flex items-center">
-                        <span class="text-5xl mr-3">⛓️</span>
-                        A Última Carta de Paulo
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-2xl border-4 border-orange-300">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">⛓️</span>
+                        Pediu sua Capa e seus Livros
                     </h3>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                        Paulo escreveu esta carta enquanto estava preso em uma prisão escura e fria em Roma. Ele sabia que logo seria executado por causa de sua fé em Jesus, mas não tinha medo!
-                    </p>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                        Esta é considerada a <span class="font-bold text-red-700">última carta que Paulo escreveu</span> antes de morrer. Ele queria deixar palavras de encorajamento e sabedoria para seu amigo Timóteo e para todos nós!
-                    </p>
-                    <p class="text-xl text-gray-700 leading-relaxed">
-                        Paulo pediu a Timóteo que trouxesse sua capa e seus livros, mostrando que mesmo no final da vida, ele continuava estudando e se preparando para servir a Deus. <span class="font-bold text-orange-700">Que exemplo incrível de dedicação!</span> 📚🙏
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Mesmo preso numa cela fria e escura, esperando a morte, Paulo pediu a Timóteo que trouxesse sua capa para o frio e <span class="font-bold text-orange-700">seus pergaminhos para estudar</span> (2 Tm 4:13). Até o fim da vida, Paulo continuava aprendendo! Que exemplo para a gente! 📚
                     </p>
                 </div>
-                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-2 border-red-300">
-                    <p class="text-lg text-gray-700 italic text-center">
-                        "Combati o bom combate, acabei a carreira, guardei a fé!" 
-                        <span class="block mt-2 font-bold text-red-700">- 2 Timóteo 4:7</span>
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-2xl border-4 border-red-300">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🤝</span>
+                        A Reconciliação com Marcos
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Anos antes, Paulo e Barnabé brigaram por causa de Marcos, que havia abandonado a missão (At 15:37-39). Mas no final da vida, Paulo pediu que Marcos viesse ajudá-lo (2 Tm 4:11). <span class="font-bold text-red-700">Nunca é tarde para pedir perdão e se reconciliar!</span>
                     </p>
                 </div>
+                <div class="bg-gradient-to-r from-orange-100 to-amber-100 p-6 rounded-2xl border-4 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🏆</span>
+                        "Combati o Bom Combate"
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A frase de Paulo em 2 Tm 4:7 é uma das mais famosas da Bíblia. Ele usa imagens de <span class="font-bold text-amber-700">atleta e soldado</span> para descrever a vida cristã — como uma corrida e uma batalha que vale a pena vencer até o fim!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-orange-50 to-red-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-orange-600">
+                <div class="text-5xl text-center mb-4">😰</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Coragem ou Covardia?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo disse que Deus não nos deu espírito de covardia. Quando você sente medo de falar sobre Jesus ou de fazer o que é certo, o que 2 Timóteo 1:7 diz que você pode fazer com esse medo?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-red-600">
+                <div class="text-5xl text-center mb-4">🤝</div>
+                <h3 class="text-xl font-bold text-red-700 mb-3 text-center">Segunda Chance</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo e Marcos brigaram, mas se reconciliaram. Você já precisou pedir perdão ou dar uma segunda chance para alguém? Por que é difícil — e por que vale a pena?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-amber-600">
+                <div class="text-5xl text-center mb-4">🏃</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Terminar Bem</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo disse: "Combati o bom combate, guardei a fé." Como você quer guardar a fé na sua vida — na escola, em casa, com os amigos? O que é "terminar bem" para você?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-orange-700 to-red-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-orange-300 text-center">
+                <div class="text-5xl mb-4">✏️</div>
+                <h3 class="text-xl font-bold text-orange-200 mb-3">Escreva e Cole</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva 2 Timóteo 1:7 em um papel colorido e cole num lugar que você veja quando sentir medo — no espelho, na mochila ou na porta do quarto!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-red-300 text-center">
+                <div class="text-5xl mb-4">💌</div>
+                <h3 class="text-xl font-bold text-red-200 mb-3">Reconcilie-se</h3>
+                <p class="text-white leading-relaxed">
+                    Pense em alguém com quem você teve uma briga ou desentendimento. Inspire-se em Paulo e Marcos: dê o primeiro passo para se reconciliar esta semana — com uma mensagem, um sorriso ou um pedido de desculpas!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-amber-300 text-center">
+                <div class="text-5xl mb-4">🏆</div>
+                <h3 class="text-xl font-bold text-amber-200 mb-3">Minha Corrida da Fé</h3>
+                <p class="text-white leading-relaxed">
+                    Paulo disse "combati o bom combate". Escreva 3 formas concretas de como você vai "guardar a fé" esta semana — na escola, em casa e com seus amigos!
+                </p>
             </div>
         </div>
     </section>

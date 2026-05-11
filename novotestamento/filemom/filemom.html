@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Filemom 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-500">
                     <h3 class="text-2xl font-bold text-rose-600 mb-3">💝 Primeiro Segredo: O Perdão que Liberta</h3>
                     <p class="italic text-gray-800">
@@ -96,41 +97,64 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-rose-500">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
-            👥 Quem São os Personagens Principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-rose-700 to-pink-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <img src="filemom-personagem.png" alt="Personagens de Filemom" 
-                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="space-y-6">
-                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-2">✍️ Paulo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        O apóstolo que escreve esta carta cheia de amor! Ele está na prisão, mas seu coração está livre para amar e interceder pelos outros.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
-                    <h3 class="text-2xl font-bold text-pink-600 mb-2">🏠 Filemom</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Um cristão rico que abria sua casa para a igreja se reunir. Ele tinha um coração generoso, mas agora precisa exercitar o perdão!
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-2">🏃 Onésimo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Um escravo que fugiu de Filemom, mas encontrou Paulo e se converteu a Cristo. Agora ele volta transformado, pedindo uma nova chance!
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-rose-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Já não como escravo, mas como muito mais do que escravo — como irmão amado."
+                </p>
+                <p class="text-rose-200 font-bold text-xl mb-6">— Filemom 1:16</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        💌 <span class="font-bold">O que isso significa?</span> Paulo pede para Filemom receber de volta Onésimo — que era seu escravo — mas agora como <strong>irmão em Cristo</strong>! O Evangelho transforma relacionamentos: diante de Jesus, não importa quem você era antes. Somos todos iguais, todos amados, todos irmãos.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <img src="filemom-personagem.png" alt="Personagens de Filemom"
+                    class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-2">✍️ Paulo — O Intercessor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O apóstolo que escreve esta carta cheia de amor! Ele está na prisão, mas seu coração está livre para amar e interceder pelos outros. Paulo não ordena — ele pede por amor, mostrando como o evangelho transforma até a forma de liderar.
+                    </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 Fm 1:9 — "Paulo, idoso, e agora também prisioneiro de Jesus Cristo."</p>
+                </div>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-2">🏠 Filemom — O Desafiado a Perdoar</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Um cristão rico que abria sua casa para a igreja se reunir. Ele tinha um coração generoso, mas agora precisa exercitar o perdão mais difícil de todos — receber de volta quem te machucou, e tratá-lo como irmão!
+                    </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 Fm 1:5 — "ouvindo do teu amor e da fé que tens para com o Senhor Jesus e para com todos os santos."</p>
+                </div>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-2">🏃 Onésimo — O Transformado</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Um escravo que fugiu de Filemom, mas encontrou Paulo na prisão e se converteu a Cristo. Agora ele volta transformado, pedindo uma nova chance — não como fugitivo, mas como irmão!
+                    </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 Fm 1:11 — "Que outrora te foi inútil, mas agora é útil a ti e a mim."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-pink-500">
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-pink-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
             📖 O Que o Livro Conta?
         </h2>
@@ -139,130 +163,217 @@
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
                     <h3 class="text-2xl font-bold text-pink-600 mb-3">💌 Uma Carta Especial</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Paulo escreve a Filemom pedindo que ele receba Onésimo de volta — não como escravo, mas como irmão amado em Cristo!
+                        Paulo escreve a Filemom pedindo que ele receba Onésimo de volta — não como escravo, mas como irmão amado em Cristo! É um pedido feito com todo o amor e carinho de um pai para um filho.
                     </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 Fm 1:17 — "Se, pois, me tens como companheiro, recebe-o como a mim mesmo."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
                     <h3 class="text-2xl font-bold text-rose-600 mb-3">🙏 Um Pedido de Perdão</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Paulo até se oferece para pagar qualquer dívida que Onésimo tenha! Ele mostra que o amor cristão vai além das ofensas e busca a reconciliação.
+                        Paulo até se oferece para pagar qualquer dívida que Onésimo tenha! Ele mostra que o amor cristão vai além das ofensas e busca a reconciliação a qualquer custo — assim como Jesus pagou nossa dívida.
                     </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 Fm 1:18-19 — "E se em algo te prejudicou... lança isso na minha conta. Eu, Paulo, o escrevo de minha própria mão: eu o pagarei."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
                     <h3 class="text-2xl font-bold text-pink-600 mb-3">❤️ Uma Nova Família</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        O livro mostra que em Cristo não há diferenças: todos somos irmãos! Onésimo volta transformado, pronto para servir com amor.
+                        O livro mostra que em Cristo não há diferenças: todos somos irmãos! Onésimo volta transformado, pronto para servir com amor — e Filemom é convidado a enxergá-lo com olhos novos.
                     </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 Fm 1:16 — "Já não como escravo, mas como muito mais do que escravo, como irmão amado."</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="filemom-o-que-conta.png" alt="O que Filemom conta" 
+                <img src="filemom-o-que-conta.png" alt="O que Filemom conta"
                     class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-rose-500">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
             ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
-                <img src="filemom-importante.png" alt="Importância de Filemom" 
+                <img src="filemom-importante.png" alt="Importância de Filemom"
                     class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
             </div>
             <div class="space-y-6">
                 <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
                     <h3 class="text-2xl font-bold text-rose-600 mb-3">💝 Ensina Sobre Perdão</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Filemom nos mostra que perdoar é imitar Jesus! Quando alguém nos machuca, podemos escolher o amor e dar uma nova chance.
+                        Filemom nos mostra que perdoar é imitar Jesus! Quando alguém nos machuca, podemos escolher o amor e dar uma nova chance. Paulo não impõe — ele convida, porque o perdão verdadeiro precisa ser livre.
                     </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 Fm 1:14 — "Mas nada quis fazer sem o teu consentimento, para que o teu bem não fosse por obrigação, mas de livre vontade."</p>
                 </div>
                 <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
                     <h3 class="text-2xl font-bold text-pink-600 mb-3">🤝 Mostra a Igualdade em Cristo</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Não importa nossa posição social — todos somos iguais diante de Deus! Em Cristo, somos todos irmãos e parte da mesma família.
+                        Não importa nossa posição social — todos somos iguais diante de Deus! Em Cristo, somos todos irmãos e parte da mesma família. Essa verdade revolucionou o mundo antigo!
                     </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 Fm 1:16 — "Já não como escravo, mas como irmão amado, especialmente para mim."</p>
                 </div>
                 <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
                     <h3 class="text-2xl font-bold text-rose-600 mb-3">🌟 Revela o Poder da Graça</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        A graça de Deus transforma vidas! Onésimo era um fugitivo, mas se tornou um filho amado. Deus pode transformar qualquer história!
+                        A graça de Deus transforma vidas! Onésimo era um fugitivo inútil — o próprio nome dele significa "útil", e Paulo brinca: agora ele finalmente é o que seu nome diz! Deus pode transformar qualquer história!
                     </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 Fm 1:11 — "Que outrora te foi inútil, mas agora é útil a ti e a mim."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-pink-500">
+    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-pink-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-rose-500">
             🎯 Qual o Propósito do Livro?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div class="space-y-6 order-2 md:order-1">
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
-                    <h3 class="text-2xl font-bold text-pink-600 mb-3">💖 Mostrar o Amor Prático</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        O amor cristão não é apenas palavras — é ação! Paulo mostra como colocar o amor em prática através do perdão e da reconciliação.
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">💖</span>
+                        Mostrar o Amor Prático
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        O amor cristão não é apenas palavras — é ação! Paulo mostra como colocar o amor em prática: interceder, pagar a dívida de outro, pedir com humildade, e confiar na boa resposta do irmão.
                     </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 Fm 1:8-9 — "Embora em Cristo tenha plena liberdade para te ordenar o que convém, prefiro antes rogar-te pelo amor."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-3">🔄 Ensinar Sobre Restauração</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Deus não desiste de ninguém! Ele restaura relacionamentos quebrados e transforma erros do passado em oportunidades de crescimento.
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🔄</span>
+                        Ensinar Sobre Restauração
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Deus não desiste de ninguém! Ele restaura relacionamentos quebrados e transforma erros do passado em oportunidades de crescimento. A fuga de Onésimo se tornou o caminho para ele encontrar Jesus!
                     </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 Fm 1:15 — "Pois talvez por isso mesmo ele se tenha apartado de ti por algum tempo, para que o recebesses de volta para sempre."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
-                    <h3 class="text-2xl font-bold text-pink-600 mb-3">🌈 Demonstrar a Nova Vida em Cristo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Em Cristo, tudo é novo! Onésimo deixou de ser apenas um escravo e se tornou um irmão amado. Essa é a transformação que Jesus oferece!
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🌈</span>
+                        Demonstrar a Nova Vida em Cristo
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Em Cristo, tudo é novo! Onésimo deixou de ser apenas um escravo e se tornou um irmão amado. Essa é a transformação que Jesus oferece — e o que Paulo chama de "refrigerar o seu coração"!
                     </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 Fm 1:20 — "Sim, irmão, deixa que eu me beneficie de ti no Senhor; refrigera o meu coração em Cristo."</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="filemom-proposito.png" alt="Propósito de Filemom" 
+                <img src="filemom-proposito.png" alt="Propósito de Filemom"
                     class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-t-8 border-rose-500">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
             🎉 Você Sabia?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
-                <img src="filemom-curiosidade.png" alt="Curiosidade sobre Filemom" 
+                <img src="filemom-curiosidade.png" alt="Curiosidade sobre Filemom"
                     class="w-full h-auto rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300">
             </div>
             <div class="space-y-6">
-                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-3">📏 A Carta Mais Curta!</h3>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-4 border-rose-300">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📏</span>
+                        A Carta Mais Curta de Paulo!
+                    </h3>
                     <p class="text-gray-700 leading-relaxed text-lg">
-                        Filemom é a carta mais curta de Paulo — tem apenas 25 versículos! Mas não se engane: ela está cheia de amor, compaixão e ensinamentos profundos sobre perdão e graça.
+                        Filemom tem apenas <span class="font-bold text-rose-600">25 versículos</span> — você pode ler em menos de 5 minutos! Mas não se engane: ela está cheia de amor, compaixão e ensinamentos profundos sobre perdão, graça e igualdade em Cristo.
                     </p>
                 </div>
-                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
-                    <h3 class="text-2xl font-bold text-pink-600 mb-3">💌 Uma Carta Pessoal</h3>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-4 border-pink-300">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">💌</span>
+                        Uma Carta Pessoal — e Pública!
+                    </h3>
                     <p class="text-gray-700 leading-relaxed text-lg">
-                        Diferente de outras cartas que Paulo escreveu para igrejas inteiras, esta foi escrita diretamente para Filemom. É como uma carta de um amigo para outro!
+                        Paulo endereçou a carta a Filemom, mas também a "Áfia, Arquipo e à igreja que se reúne em tua casa" (Fm 1:2). Todo mundo ia ouvir o pedido! Isso era uma pressão gentil — mas também um ensinamento público sobre perdão.
                     </p>
                 </div>
-                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-3">🔗 Onésimo Significa "Útil"</h3>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-4 border-rose-300">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🔤</span>
+                        Onésimo Significa "Útil"
+                    </h3>
                     <p class="text-gray-700 leading-relaxed text-lg">
-                        Paulo faz um jogo de palavras: Onésimo significa "útil" em grego. Ele diz que antes Onésimo foi "inútil", mas agora se tornou verdadeiramente útil!
+                        Paulo faz um jogo de palavras intencional: Onésimo significa <span class="font-bold text-rose-600">"útil"</span> em grego. Ele diz que antes ele foi "inútil", mas agora se tornou verdadeiramente útil (Fm 1:11). A graça de Deus faz você se tornar o que você foi criado para ser!
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+            🤔 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-rose-500">
+                <div class="text-5xl text-center mb-4">🤝</div>
+                <h3 class="text-xl font-bold text-rose-600 mb-3 text-center">O Perdão Difícil</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo pede a Filemom para perdoar e receber Onésimo como irmão. Você já precisou perdoar alguém que te machucou de verdade? Como foi? O que tornava esse perdão difícil?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-pink-500">
+                <div class="text-5xl text-center mb-4">🔄</div>
+                <h3 class="text-xl font-bold text-pink-600 mb-3 text-center">Pessoas Mudam?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Onésimo mudou — de escravo fugitivo para servo fiel de Deus. Você acredita que as pessoas podem mudar de verdade? Você já viu isso acontecer? O que faz uma pessoa realmente mudar?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-lg p-6 border-l-4 border-rose-500">
+                <div class="text-5xl text-center mb-4">❤️</div>
+                <h3 class="text-xl font-bold text-rose-600 mb-3 text-center">Amor ou Obrigação?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo não ordena — ele pede por amor (Fm 1:8-9). Por que é mais bonito e poderoso agir por amor do que por obrigação? Como isso muda o jeito que você faz as coisas?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-rose-700 to-pink-900 rounded-3xl shadow-xl p-8 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur rounded-2xl p-6 border-2 border-rose-300 text-center">
+                <div class="text-5xl mb-4">📖</div>
+                <h3 class="text-xl font-bold text-rose-200 mb-3">Leia Filemom Inteiro</h3>
+                <p class="text-white leading-relaxed">
+                    São apenas 25 versículos! Leia toda a carta de uma vez. Depois escreva: "O que mais me surpreendeu foi..." — e compartilhe com alguém da família ou da turma.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur rounded-2xl p-6 border-2 border-pink-300 text-center">
+                <div class="text-5xl mb-4">✍️</div>
+                <h3 class="text-xl font-bold text-pink-200 mb-3">Escreva e Cole</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva: <em>"Já não como escravo, mas como irmão amado. — Filemom 1:16"</em> e cole onde você vai se lembrar de tratar todos com igual respeito — independente de quem sejam.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur rounded-2xl p-6 border-2 border-rose-300 text-center">
+                <div class="text-5xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold text-rose-200 mb-3">Passo de Reconciliação</h3>
+                <p class="text-white leading-relaxed">
+                    Esta semana, pense em alguém com quem você tem conflito ou distância. Dê um passo de reconciliação — uma mensagem, um pedido de desculpas, um sorriso, um gesto de paz.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="no-print section bg-gradient-to-r from-rose-100 to-pink-100 text-center border-2 border-rose-300 rounded-2xl p-10 mx-4 mb-8">
+    <section class="no-print section bg-gradient-to-r from-rose-100 to-pink-100 text-center border-2 border-rose-300 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-rose-600 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../tito/tito.html" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">

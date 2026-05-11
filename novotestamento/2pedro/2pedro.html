@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 2 Pedro 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-2xl border-l-4 border-emerald-600">
                     <h3 class="text-2xl font-bold text-emerald-700 mb-3">🛡️ Primeiro Segredo: Cresça na Fé!</h3>
                     <p class="italic">
@@ -96,182 +97,278 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
-            👥 Quem são os personagens principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-emerald-700 to-teal-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-emerald-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Crescei na graça e no conhecimento de nosso Senhor e Salvador Jesus Cristo."
+                </p>
+                <p class="text-emerald-200 font-bold text-xl mb-6">— 2 Pedro 3:18</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🌱 <span class="font-bold">O que isso significa?</span> São as últimas palavras de Pedro na Bíblia — e ele escolheu falar de crescimento! Crescer na graça é aprender a depender mais de Deus. Crescer no conhecimento é estudar mais sobre Jesus. E isso não tem fim — sempre há mais para aprender e crescer. Como uma planta que nunca para de crescer enquanto estiver viva!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-emerald-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
                 <img src="2pedro-personagem.png" alt="Personagens de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
+            <div class="space-y-4">
                 <div class="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 rounded-xl border-l-4 border-emerald-600">
-                    <h3 class="text-2xl font-bold text-emerald-700 mb-2">🌿 Pedro, o Apóstolo</h3>
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-2">🌿 Pedro — O Apóstolo Ancião</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        O mesmo pescador que Jesus chamou! Agora, velhinho e sábio, Pedro escreve suas últimas palavras para proteger os cristãos dos falsos ensinamentos.
+                        O mesmo pescador que Jesus chamou! Agora, velho e sábio, sabendo que logo iria morrer, Pedro escreve suas últimas palavras para proteger os cristãos dos falsos ensinamentos. Cada palavra é um tesouro!
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 1:1 — "Simão Pedro, servo e apóstolo de Jesus Cristo, aos que alcançaram fé igualmente preciosa."</p>
                 </div>
                 <div class="bg-gradient-to-r from-teal-100 to-emerald-100 p-6 rounded-xl border-l-4 border-teal-600">
                     <h3 class="text-2xl font-bold text-teal-700 mb-2">⛪ Os Cristãos Fiéis</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Pessoas que amavam Jesus mas estavam sendo confundidas por falsos mestres. Pedro os ensina a ficarem firmes na verdade!
+                        Pessoas que amavam Jesus mas estavam sendo confundidas por falsos mestres. Pedro os ensina a ficarem firmes na verdade, a crescerem na fé e a não se deixarem enganar por ensinamentos errados!
                     </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 2 Pe 1:3 — "O seu divino poder nos deu tudo o que é necessário para a vida e a piedade."</p>
+                </div>
+                <div class="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 rounded-xl border-l-4 border-emerald-500">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-2">✉️ Paulo — O Irmão Citado</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Pedro menciona Paulo nesta carta e chama as cartas dele de "Escrituras"! Isso é incrível — Pedro, em sua última carta, reconhece Paulo como inspirado por Deus. Dois apóstolos que um dia divergiram (Gl 2:11) agora reconhecem a obra um do outro!
+                    </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 3:15-16 — "...nosso amado irmão Paulo... escreveu segundo a sabedoria que lhe foi dada."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-emerald-50 to-teal-50 p-8 mb-4">
+    <section class="section bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-teal-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
             📖 O que o livro conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-1 space-y-4">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
                     <h3 class="text-2xl font-bold text-emerald-700 mb-2">📜 Últimas Palavras</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Pedro sabia que logo iria morrer, então escreveu esta carta especial para lembrar os cristãos de crescerem no conhecimento de Jesus!
+                        Pedro sabia que logo iria morrer — Jesus tinha dito isso a ele! Então ele escreveu esta carta especial para lembrar os cristãos das verdades mais importantes, para que ficassem firmes depois que ele partisse.
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 1:14-15 — "Sabendo que breve será a deposição do meu tabernáculo... para que, depois de eu partir, possais recordar estas coisas."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-600">
                     <h3 class="text-2xl font-bold text-teal-700 mb-2">⚠️ Alerta Contra Mentiras</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Ele avisa sobre falsos mestres que tentariam enganar o povo de Deus com ensinamentos errados. "Fiquem atentos!", Pedro alerta!
+                        Pedro avisa sobre falsos mestres que tentariam enganar o povo de Deus com ensinamentos errados, "introduzindo sorrateiramente heresias destruidoras". Fiquem atentos e bem ancorados na Palavra!
                     </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 2 Pe 2:1 — "...haverá também falsos profetas entre vós, como haverá falsos mestres."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
                     <h3 class="text-2xl font-bold text-emerald-700 mb-2">⏰ Jesus Voltará!</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Pedro garante: Jesus não esqueceu Sua promessa! Ele voltará para buscar Seu povo. Por isso, devemos viver com pureza e esperança!
+                        Pedro garante: Jesus não esqueceu Sua promessa! Ele voltará para buscar Seu povo. O que parece demora é na verdade paciência — Deus quer que todos tenham a chance de se arrepender!
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 3:9 — "O Senhor não retarda a sua promessa... mas é longânimo para convosco, não querendo que nenhum pereça."</p>
                 </div>
             </div>
-            <div class="order-2">
+            <div>
                 <img src="2pedro-o-que-conta.png" alt="O que 2 Pedro conta" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-emerald-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
             ⭐ Por que é importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
                 <img src="2pedro-importante.png" alt="Importância de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">🛡️</span>
-                        Proteção Espiritual
-                    </h3>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-6 rounded-xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3">🛡️ Proteção Espiritual</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Este livro nos ensina a identificar mentiras e a nos proteger de quem quer nos afastar de Jesus. É como um escudo de sabedoria!
+                        Este livro nos ensina a identificar mentiras e a nos proteger de quem quer nos afastar de Jesus. É como um escudo de sabedoria — quanto mais você conhece a verdade, mais fácil é reconhecer o falso!
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 2:9 — "O Senhor sabe livrar os piedosos da tentação e reservar os injustos para serem punidos."</p>
                 </div>
-                <div class="bg-gradient-to-br from-teal-100 to-emerald-100 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">📚</span>
-                        Crescimento na Fé
-                    </h3>
+                <div class="bg-gradient-to-br from-teal-100 to-emerald-100 p-6 rounded-xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">📚 Crescimento na Fé</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Pedro nos motiva a nunca parar de aprender sobre Jesus. Quanto mais conhecemos a Palavra, mais fortes ficamos!
+                        Pedro nos motiva a nunca parar de aprender sobre Jesus. Ele lista 7 virtudes para adicionar à fé: virtude, conhecimento, domínio próprio, perseverança, piedade, fraternidade e amor — como degraus de uma escada!
                     </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 2 Pe 1:5-8 — "Adicionai à vossa fé a virtude; à virtude, o conhecimento; ao conhecimento, o domínio próprio..."</p>
                 </div>
-                <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">⏰</span>
-                        Esperança Viva
-                    </h3>
+                <div class="bg-gradient-to-br from-emerald-100 to-teal-100 p-6 rounded-xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3">⏰ Esperança Viva</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Nos lembra que Jesus voltará! Isso nos dá esperança para viver cada dia com alegria, pureza e amor.
+                        Nos lembra que Jesus voltará! Isso nos dá esperança para viver cada dia com alegria, pureza e amor. E enquanto Ele não volta, cada dia é mais uma chance para quem ainda não O conhece!
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 3:13 — "...esperamos, segundo a sua promessa, novos céus e nova terra, nos quais habita a justiça."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-emerald-600 to-teal-600 text-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8">
+    <section class="section bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-teal-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
             🎯 Propósito do livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-1 space-y-6">
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border-2 border-white/30">
-                    <h3 class="text-2xl font-bold mb-3 flex items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
                         <span class="text-3xl mr-3">💎</span>
                         Permanecer Puros
                     </h3>
-                    <p class="leading-relaxed">
-                        Pedro quer que os cristãos vivam de forma pura e santa, sem se deixar contaminar por ensinamentos falsos ou pelo pecado.
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Pedro quer que os cristãos vivam de forma pura e santa, sem se deixar contaminar por ensinamentos falsos ou pelo pecado. A pureza é a resposta ao saber que Jesus voltará!
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 3:14 — "...esforçai-vos para serdes achados por ele imaculados e irrepreensíveis, em paz."</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border-2 border-white/30">
-                    <h3 class="text-2xl font-bold mb-3 flex items-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
                         <span class="text-3xl mr-3">🔥</span>
                         Manter a Fé Viva
                     </h3>
-                    <p class="leading-relaxed">
-                        Ajudar os cristãos a manterem a fé firme e verdadeira, mesmo quando pessoas tentarem enganá-los ou desanimá-los.
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Ajudar os cristãos a manterem a fé firme e verdadeira, mesmo quando pessoas tentarem enganá-los ou desanimá-los. Certificar a vocação e eleição — saber quem você é em Cristo!
                     </p>
+                    <p class="text-sm text-teal-700 font-semibold mt-2">📖 2 Pe 1:10 — "...esforçai-vos cada vez mais por tornar firme a vossa vocação e eleição."</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-sm p-6 rounded-xl border-2 border-white/30">
-                    <h3 class="text-2xl font-bold mb-3 flex items-center">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
                         <span class="text-3xl mr-3">👑</span>
                         Preparados para Jesus
                     </h3>
-                    <p class="leading-relaxed">
-                        Garantir que todos estejam prontos para o dia em que Jesus voltar — vivendo com esperança e santidade!
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Garantir que todos estejam prontos para o dia em que Jesus voltar — vivendo com esperança e santidade! Como os convidados de uma festa prontos para a chegada do anfitrião!
                     </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 2 Pe 3:11-12 — "...que tipo de pessoas deveis vós ser em santo procedimento... esperando e apressando a vinda do dia de Deus."</p>
                 </div>
             </div>
-            <div class="order-2">
-                <img src="2pedro-proposito.png" alt="Propósito de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-white/30">
+            <div>
+                <img src="2pedro-proposito.png" alt="Propósito de 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-emerald-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
             💡 Você sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
                 <img src="2pedro-curiosidade.png" alt="Curiosidade sobre 2 Pedro" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-amber-100 to-yellow-100 p-8 rounded-2xl border-4 border-amber-400 shadow-xl">
-                    <div class="flex items-center justify-center mb-4">
-                        <span class="text-6xl">📜</span>
-                    </div>
-                    <h3 class="text-3xl font-black text-amber-800 mb-4 text-center">
-                        Últimas Palavras de Pedro!
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 rounded-xl border-4 border-emerald-300">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📜</span>
+                        Últimas Palavras de Pedro
                     </h3>
-                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
-                        Esta carta foi escrita pouco antes da morte de Pedro — são suas últimas palavras registradas na Bíblia!
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Esta carta foi escrita pouco antes da morte de Pedro — são suas <span class="font-bold text-emerald-700">últimas palavras registradas na Bíblia!</span> Imagine um avô sábio, sabendo que logo vai ao céu, deixando conselhos preciosos. Cada palavra é um tesouro guardado com amor!
                     </p>
-                    <p class="text-lg text-gray-600 leading-relaxed text-center">
-                        Imagine: um avô sábio, sabendo que logo vai para o céu, deixando conselhos preciosos para seus netos amados. Cada palavra é um tesouro! 💎
+                </div>
+                <div class="bg-gradient-to-r from-teal-100 to-emerald-100 p-6 rounded-xl border-4 border-teal-300">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🪜</span>
+                        A Escada da Fé
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Em 2 Pe 1:5-7, Pedro lista <span class="font-bold text-teal-700">7 virtudes para adicionar à fé</span>, como degraus de uma escada: virtude → conhecimento → domínio próprio → perseverança → piedade → fraternidade → amor. Você sobe um degrau por vez!
                     </p>
-                    <div class="mt-6 p-4 bg-white rounded-xl">
-                        <p class="text-center text-emerald-700 font-bold italic">
-                            "Cresçam na graça e no conhecimento de nosso Senhor e Salvador Jesus Cristo!"
-                        </p>
-                        <p class="text-center text-sm text-gray-500 mt-2">- 2 Pedro 3:18</p>
-                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-emerald-100 to-teal-100 p-6 rounded-xl border-4 border-emerald-300">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🤝</span>
+                        Pedro Reconhece Paulo
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Pedro chama as cartas de Paulo de "Escrituras" (2 Pe 3:16) — reconhecendo que eram tão inspiradas quanto o AT! Curioso: anos antes eles tinham discutido publicamente (Gl 2:11). No final, o amor e a verdade prevaleceram!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-emerald-50 to-teal-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-emerald-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-emerald-600">
+                <div class="text-5xl text-center mb-4">🪜</div>
+                <h3 class="text-xl font-bold text-emerald-700 mb-3 text-center">A Escada da Fé</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Pedro lista 7 virtudes em 2 Pe 1:5-7: fé, virtude, conhecimento, domínio próprio, perseverança, piedade, fraternidade e amor. Em qual desses degraus você mais precisa crescer agora? Por quê?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-teal-600">
+                <div class="text-5xl text-center mb-4">🔍</div>
+                <h3 class="text-xl font-bold text-teal-700 mb-3 text-center">Verdade ou Mentira?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Pedro avisa sobre falsos mestres que falam coisas que parecem certas mas são erradas. Como você pode identificar se algo que ouve sobre Deus é verdade ou mentira? O que te ajuda a discernir?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-emerald-600">
+                <div class="text-5xl text-center mb-4">⏳</div>
+                <h3 class="text-xl font-bold text-emerald-700 mb-3 text-center">A Paciência de Deus</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    2 Pe 3:9 diz que Deus é paciente porque não quer que nenhum pereça. Pense em alguém que você ama que ainda não conhece Jesus. Como a paciência de Deus te encoraja a orar por essa pessoa?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-emerald-700 to-teal-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-emerald-300 text-center">
+                <div class="text-5xl mb-4">🌱</div>
+                <h3 class="text-xl font-bold text-emerald-200 mb-3">Cresça Esta Semana</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva 2 Pedro 3:18. Esta semana, aprenda UMA coisa nova sobre Jesus — leia um trecho da Bíblia que você nunca leu, pesquise uma pergunta que você tem sobre a fé, ou escute um sermão com atenção.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-teal-300 text-center">
+                <div class="text-5xl mb-4">🪜</div>
+                <h3 class="text-xl font-bold text-teal-200 mb-3">Avalie sua Escada</h3>
+                <p class="text-white leading-relaxed">
+                    Pegue os 7 degraus de 2 Pe 1:5-7 e se avalie de 1 a 5 em cada um. Qual é seu ponto mais fraco? Ore pedindo a Deus para te ajudar a crescer especificamente nesse degrau esta semana!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-emerald-300 text-center">
+                <div class="text-5xl mb-4">🙏</div>
+                <h3 class="text-xl font-bold text-emerald-200 mb-3">Ore com Paciência</h3>
+                <p class="text-white leading-relaxed">
+                    Pense em alguém que você ama que ainda não conhece Jesus. Deus é paciente porque quer que todos se arrependam (2 Pe 3:9). Ore por essa pessoa toda manhã desta semana, com esperança!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="section no-print bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-2 border-emerald-600/30 rounded-2xl p-10 mb-4">
+    <section class="section no-print bg-gradient-to-r from-emerald-600/20 to-teal-600/20 border-2 border-emerald-600/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-center text-emerald-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../1pedro/1pedro.html" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">

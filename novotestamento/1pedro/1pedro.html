@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 1 Pedro 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">🛡️ Primeiro Segredo: A Fé que Protege</h3>
                     <p class="italic">
@@ -108,103 +109,140 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            👥 Quem são os personagens principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="1-pedro-personagem.png" alt="Pedro e os cristãos perseguidos" 
-                    class="w-full h-auto rounded-xl shadow-lg object-contain">
-            </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✉️ Pedro, o Apóstolo</h3>
-                    <p class="text-gray-700 text-lg">
-                        O pescador que Jesus transformou em líder! Pedro escreve esta carta cheia de amor e coragem para animar os cristãos que estavam sofrendo perseguição. Ele conhecia bem o sofrimento e tinha muita sabedoria para compartilhar!
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-sky-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Lançai sobre ele toda a vossa ansiedade, porque ele tem cuidado de vós."
+                </p>
+                <p class="text-sky-200 font-bold text-xl mb-6">— 1 Pedro 5:7</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        💙 <span class="font-bold">O que isso significa?</span> Pedro diz para "lançar" — como jogar uma mochila pesada no chão! Tudo que te preocupa, que te dá medo ou que te deixa ansioso, você pode jogar sobre Deus. Por quê? Porque Ele tem cuidado de VOCÊ — não das pessoas em geral, mas de você, pelo nome, individualmente. Você nunca carrega sozinho!
                     </p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-sky-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            👥 Quem são os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="1-pedro-personagem.png" alt="Pedro e os cristãos perseguidos"
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">⚓ Pedro — O Pescador Apóstolo</h3>
+                    <p class="text-gray-700 text-lg">
+                        O pescador que Jesus transformou em líder! Pedro escreve esta carta cheia de amor e coragem para animar os cristãos perseguidos. Ele próprio havia negado Jesus (Mt 26:75), mas foi restaurado — o que torna seu encorajamento ainda mais poderoso!
+                    </p>
+                    <p class="text-sm text-sky-700 font-semibold mt-2">📖 1 Pe 1:1 — "Pedro, apóstolo de Jesus Cristo, aos eleitos que vivem como estrangeiros dispersos."</p>
+                </div>
                 <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💪 Os Cristãos Perseguidos</h3>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🔥 Os Cristãos Perseguidos</h3>
                     <p class="text-gray-700 text-lg">
                         Crentes espalhados pela Ásia Menor que estavam sendo maltratados por causa da fé em Jesus. Eles precisavam de encorajamento para não desistir e continuar firmes, mesmo quando tudo parecia difícil!
                     </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 1 Pe 1:6-7 — "...para que a prova da vossa fé, muito mais preciosa do que o ouro, seja achada em louvor."</p>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-100 to-sky-100 p-6 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">📜 Marcos — O Filho Espiritual</h3>
+                    <p class="text-gray-700 text-lg">
+                        Pedro chama Marcos de "meu filho" — um jovem que ele amava como um pai! Tradição da Igreja diz que o Evangelho de Marcos foi escrito a partir das memórias de Pedro. O mestre que inspira o discípulo a escrever para a eternidade!
+                    </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 1 Pe 5:13 — "A que está em Babilônia, eleita juntamente convosco, vos saúda, e também Marcos, meu filho."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             📖 O que o livro conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="space-y-4">
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-700 mb-2">🔥 Fé no Fogo</h3>
                     <p class="text-gray-700 text-lg">
-                        Pedro ensina que o sofrimento é como o fogo que purifica o ouro - ele torna nossa fé mais forte e brilhante! Mesmo nas dificuldades, podemos ter esperança porque Jesus já venceu tudo!
+                        Pedro ensina que o sofrimento é como o fogo que purifica o ouro — ele torna nossa fé mais forte e brilhante! Mesmo nas dificuldades, podemos ter esperança porque Jesus já venceu tudo!
                     </p>
+                    <p class="text-sm text-sky-700 font-semibold mt-2">📖 1 Pe 1:7 — "A prova da vossa fé, muito mais preciosa do que o ouro perecível, seja achada em louvor, glória e honra."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
                     <h3 class="text-2xl font-bold text-blue-700 mb-2">❤️ Amor em Ação</h3>
                     <p class="text-gray-700 text-lg">
-                        A carta mostra como viver de maneira santa: amando uns aos outros, sendo humildes, perdoando e fazendo o bem mesmo quando os outros são maus. Jesus é nosso maior exemplo!
+                        A carta mostra como viver de maneira santa: amando uns aos outros, sendo humildes, perdoando e fazendo o bem mesmo quando os outros são maus. Jesus é nosso maior exemplo de como agir!
                     </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 1 Pe 4:8 — "Mas, sobretudo, tende ardente amor uns para com os outros, porque o amor cobre uma multidão de pecados."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
                     <h3 class="text-2xl font-bold text-indigo-700 mb-2">👑 Esperança Eterna</h3>
                     <p class="text-gray-700 text-lg">
-                        Pedro lembra que somos peregrinos neste mundo e que nossa verdadeira casa está no céu! Nossa esperança está guardada lá, e nada pode tirar isso de nós!
+                        Pedro lembra que somos peregrinos neste mundo e que nossa verdadeira casa está no céu! Nossa herança está guardada lá, incorruptível, imaculada — e nada pode tirar isso de nós!
                     </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 1 Pe 1:3-4 — "...nos regenerou para uma viva esperança... para uma herança... guardada nos céus para vós."</p>
                 </div>
             </div>
             <div>
-                <img src="1-pedro-o-que-conta.png" alt="Fé e esperança no sofrimento" 
+                <img src="1-pedro-o-que-conta.png" alt="Fé e esperança no sofrimento"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-sky-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             ⭐ Por que é importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="1-pedro-importante.png" alt="A importância da fé e coragem" 
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="1-pedro-importante.png" alt="A importância da fé e coragem"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-br from-sky-100 to-blue-100 p-6 rounded-xl shadow-md border-2 border-sky-300">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-2">🛡️</span> Fé que Fortalece
-                    </h3>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-br from-sky-100 to-blue-100 p-6 rounded-xl border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">🛡️ Fé que Fortalece</h3>
                     <p class="text-gray-700 text-lg leading-relaxed">
                         Este livro nos ensina que a fé verdadeira não desiste quando as coisas ficam difíceis. Ela cresce e fica mais forte! Como um músculo que se exercita, nossa fé se fortalece nas provações.
                     </p>
+                    <p class="text-sm text-sky-700 font-semibold mt-2">📖 1 Pe 1:7 — "...para que a prova da vossa fé seja achada em louvor, glória e honra na revelação de Jesus Cristo."</p>
                 </div>
-                <div class="bg-gradient-to-br from-blue-100 to-indigo-100 p-6 rounded-xl shadow-md border-2 border-blue-300">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-2">💎</span> Jesus, Nosso Exemplo
-                    </h3>
+                <div class="bg-gradient-to-br from-blue-100 to-indigo-100 p-6 rounded-xl border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">💎 Jesus, Nosso Exemplo</h3>
                     <p class="text-gray-700 text-lg leading-relaxed">
-                        Pedro mostra que Jesus é nosso maior exemplo de coragem e amor. Ele sofreu por nós, mas não revidou. Seguir Jesus significa confiar Nele e fazer o bem, mesmo quando dói!
+                        Pedro mostra que Jesus é nosso maior exemplo de coragem e amor. Ele sofreu por nós, mas não revidou nem ameaçou. Seguir Jesus significa confiar Nele e fazer o bem, mesmo quando dói!
                     </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 1 Pe 2:21 — "Cristo também sofreu em vosso lugar, deixando-vos um exemplo, para que sigais os seus passos."</p>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-100 to-sky-100 p-6 rounded-xl border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🏛️ Pedras Vivas de Deus</h3>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        Pedro — cujo nome significa "pedra" — diz que cada crente é uma "pedra viva" que Deus usa para construir Seu templo espiritual. Você não é tijolos mortos; você é vivo e essencial na obra de Deus!
+                    </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 1 Pe 2:9 — "Mas vós sois geração eleita, sacerdócio real, nação santa, povo adquirido por Deus."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             🎯 Propósito do livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="space-y-6">
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
@@ -213,6 +251,7 @@
                     <p class="text-gray-700 text-lg leading-relaxed">
                         Pedro escreveu para encorajar os cristãos que estavam passando por momentos difíceis. Ele queria que eles soubessem que não estavam sozinhos e que o sofrimento não duraria para sempre!
                     </p>
+                    <p class="text-sm text-sky-700 font-semibold mt-2">📖 1 Pe 5:10 — "E o Deus de toda a graça... vos restaurará, consolidará, fortalecerá e estabelecerá."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
                     <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
@@ -221,6 +260,7 @@
                     <p class="text-gray-700 text-lg leading-relaxed">
                         O objetivo é ensinar como viver de forma santa diante das dificuldades: sendo humildes, amorosos, perdoadores e sempre fazendo o bem. Nossa vida deve brilhar como luz no mundo!
                     </p>
+                    <p class="text-sm text-blue-700 font-semibold mt-2">📖 1 Pe 2:12 — "Tendo um procedimento honesto entre os gentios, para que...glorifiquem a Deus no dia da visitação."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
                     <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
@@ -229,48 +269,120 @@
                     <p class="text-gray-700 text-lg leading-relaxed">
                         Pedro quer que os cristãos mantenham os olhos fixos na esperança eterna! Não importa o que aconteça aqui, temos uma herança maravilhosa guardada no céu que ninguém pode roubar!
                     </p>
+                    <p class="text-sm text-indigo-700 font-semibold mt-2">📖 1 Pe 1:3 — "...nos regenerou para uma viva esperança, mediante a ressurreição de Jesus Cristo dentre os mortos."</p>
                 </div>
             </div>
             <div>
-                <img src="1-pedro-proposito.png" alt="Propósito de animar e fortalecer" 
+                <img src="1-pedro-proposito.png" alt="Propósito de animar e fortalecer"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-sky-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             🤔 Você sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="1-pedro-curiosidade.png" alt="Pedro escreveu de Roma" 
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="1-pedro-curiosidade.png" alt="Pedro escreveu de Roma"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-amber-100 to-yellow-100 p-8 rounded-2xl shadow-xl border-4 border-amber-300">
-                    <h3 class="text-3xl font-black text-amber-700 mb-4 flex items-center">
-                        <span class="text-4xl mr-3">🏛️</span> A Misteriosa "Babilônia"
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl border-4 border-sky-300">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🏛️</span>
+                        A Misteriosa "Babilônia"
                     </h3>
-                    <p class="text-gray-800 text-xl leading-relaxed mb-4">
-                        Pedro escreveu essa carta de <span class="font-bold text-amber-700">Roma</span>, mas ele a chamou de <span class="font-bold text-amber-700">"Babilônia"</span>! 
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Pedro escreveu de <span class="font-bold text-sky-700">Roma</span>, mas chamou a cidade de <span class="font-bold text-sky-700">"Babilônia"</span> (1 Pe 5:13)! Era um nome em código que os cristãos entendiam — Roma perseguia os seguidores de Jesus assim como Babilônia havia perseguido Israel. Escrever em código mostrava que Pedro corria perigo real!
                     </p>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                        Por quê? Porque Roma era o centro do império que perseguia os cristãos, assim como a antiga Babilônia havia perseguido o povo de Deus! Era um nome secreto que os cristãos entendiam perfeitamente!
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl border-4 border-blue-300">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📖</span>
+                        Pedro por trás de Marcos
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A tradição da Igreja diz que o <span class="font-bold text-blue-700">Evangelho de Marcos</span> é essencialmente a pregação de Pedro — Marcos ouviu e escreveu as memórias do apóstolo! Pedro chama Marcos de "meu filho" (1 Pe 5:13). Uma dupla que deixou marca na história para sempre!
                     </p>
-                    <div class="bg-white p-4 rounded-lg mt-4">
-                        <p class="text-gray-600 text-base italic">
-                            💡 <strong>Dica:</strong> Isso mostra que Pedro estava em perigo também! Ele escrevia com coragem, mesmo arriscando sua própria vida para encorajar outros cristãos!
-                        </p>
-                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-100 to-sky-100 p-6 rounded-xl border-4 border-indigo-300">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🪨</span>
+                        Pedro Chama Todos de "Pedras"
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Pedro significa <span class="font-bold text-indigo-700">"rocha"</span> — e ele chama todos os cristãos de "pedras vivas" (1 Pe 2:5)! Jesus não é a única pedra — Ele é a pedra angular, e nós somos pedras vivas ao redor Dele, formando um templo espiritual. Todo crente importa na construção!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-sky-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-sky-500">
+                <div class="text-5xl text-center mb-4">🔥</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Ouro no Fogo</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Pe 1:7 diz que a fé testada é "mais preciosa do que o ouro." Você já passou por algo difícil que deixou sua fé mais forte no final? O que aconteceu e o que você aprendeu com isso?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                <div class="text-5xl text-center mb-4">🎒</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Lançar a Mochila</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Pe 5:7 diz para "lançar sobre Deus toda a ansiedade." O que te deixa mais ansioso ou preocupado hoje? Como seria concretamente "jogar" esse peso sobre Deus numa oração?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-indigo-500">
+                <div class="text-5xl text-center mb-4">👑</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Geração Eleita</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Pe 2:9 diz que você é "geração eleita, sacerdócio real, nação santa." Como saber que você foi escolhido e é especial para Deus muda a forma como você se vê e se trata?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-sky-300 text-center">
+                <div class="text-5xl mb-4">🎒</div>
+                <h3 class="text-xl font-bold text-sky-200 mb-3">Lance Sua Ansiedade</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva 1 Pedro 5:7 num papel. Quando sentir ansiedade ou medo esta semana, leia o versículo e ore: "Senhor, estou lançando _____ sobre Ti." Anote quantas vezes você praticou isso!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-blue-300 text-center">
+                <div class="text-5xl mb-4">🗣️</div>
+                <h3 class="text-xl font-bold text-blue-200 mb-3">Pronto para Responder</h3>
+                <p class="text-white leading-relaxed">
+                    1 Pe 3:15 diz para estar "sempre preparado para responder" sobre sua esperança. Prepare UMA frase simples explicando por que você acredita em Jesus — e pratique com alguém desta semana!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-indigo-300 text-center">
+                <div class="text-5xl mb-4">🪨</div>
+                <h3 class="text-xl font-bold text-indigo-200 mb-3">Seja uma Pedra Viva</h3>
+                <p class="text-white leading-relaxed">
+                    Como "pedra viva" (1 Pe 2:5), você ajuda a construir a igreja. Esta semana, faça algo concreto para fortalecer alguém: encoraje um amigo, ore por alguém em voz alta, ajude na comunidade!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10">
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../tiago/tiago.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">

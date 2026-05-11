@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #fff1f2; margin-top: 1rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,55 +32,48 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🌾</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700 mx-2">
                     LIVRO DE RUTE
                 </span>
-                <span>🌾</span>
+                <span>💛</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Fidelidade e Amizade — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">Fidelidade e Redenção — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-rute" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-rose-600">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
                 🌟 Os Três Segredos de Rute 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">💛 Primeiro Segredo: Amizade Verdadeira</h3>
-                    <p class="text-gray-800 leading-relaxed">
-                        Rute não deixou Noemi sozinha,<br>
-                        Mesmo quando tudo era tristeza e dor.<br>
-                        "Onde você for, eu vou também",<br>
-                        Disse com carinho e muito amor!<br>
-                        <span class="text-sm italic text-amber-600 mt-2 block">📖 Rute 1:16-17</span>
-                    </p>
+
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-600">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💛 Primeiro Segredo: Lealdade Que Supera Tudo</h3>
+                    <p>Rute era moabita — estrangeira em Israel. Quando Noemi ficou viúva e sem filhos, disse às noras que voltassem para casa. A outra foi. Rute ficou. Sua declaração em Rute 1:16 é uma das mais belas da Bíblia!</p>
+                    <div class="versiculo-card border-rose-400 mt-3">
+                        📖 Rt 1:16 — <em>"Onde tu morreres, morrerei eu, e ali serei sepultada. O Senhor me faça assim, se não for só a morte que nos separar."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌾 Segundo Segredo: Trabalho e Fé</h3>
-                    <p class="text-gray-800 leading-relaxed">
-                        Rute trabalhou duro no campo de trigo,<br>
-                        Para cuidar de Noemi com dedicação.<br>
-                        Deus viu sua fé e seu coração,<br>
-                        E enviou Boaz como benção!<br>
-                        <span class="text-sm italic text-yellow-600 mt-2 block">📖 Rute 2:11-12</span>
-                    </p>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-600">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🌾 Segundo Segredo: Deus Cuida dos Humildes</h3>
+                    <p>Rute foi colher espigas no campo — o trabalho mais humilde que havia. Mas Boaz a notou, protegeu e abençoou. Quando você trabalha com fé e honestidade, Deus vê — mesmo quando ninguém mais percebe.</p>
+                    <div class="versiculo-card border-pink-400 mt-3">
+                        📖 Rt 2:12 — <em>"O Senhor recompense o teu trabalho, e seja cumprida a tua recompensa da parte do Senhor, Deus de Israel."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">👑 Terceiro Segredo: Parte da História de Jesus</h3>
-                    <p class="text-gray-800 leading-relaxed">
-                        Rute se casou com Boaz tão gentil,<br>
-                        E teve um filho chamado Obede.<br>
-                        Ele foi avô do rei Davi,<br>
-                        E bisavô de Jesus, nossa fé!<br>
-                        <span class="text-sm italic text-amber-600 mt-2 block">📖 Rute 4:13-17; Mateus 1:5</span>
-                    </p>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-600">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">👑 Terceiro Segredo: Parte da Família de Jesus</h3>
+                    <p>Rute se casou com Boaz e teve um filho: Obede. Obede foi pai de Jessé. Jessé foi pai do rei Davi. E Davi é antepassado de Jesus! Uma estrangeira humilde faz parte da linhagem do Salvador do mundo.</p>
+                    <div class="versiculo-card border-rose-400 mt-3">
+                        📖 Mt 1:5 — <em>"Boaz gerou Obede de Rute; Obede gerou Jessé; Jessé gerou o rei Davi."</em>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -94,168 +88,207 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem é Rute? -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-                ❓ Quem é Rute?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-2 border-amber-300 shadow-lg">
-                        <p class="text-xl leading-relaxed text-gray-800 mb-4">
-                            <strong class="text-amber-700">Rute</strong> era uma mulher moabita que amava a Deus e cuidava de sua sogra Noemi.
-                        </p>
-                        <p class="text-xl leading-relaxed text-gray-800">
-                            Ela mostrou que a <strong class="text-yellow-700">amizade e a fidelidade</strong> são muito importantes.
-                        </p>
-                    </div>
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-rose-600 bg-gradient-to-br from-rose-700 to-pink-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl font-bold italic mb-6 leading-relaxed">
+                "O teu povo será o meu povo e o teu Deus será o meu Deus."
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-pink-200">— Rute 1:16</p>
+            <p class="text-lg leading-relaxed mb-6 text-pink-100">
+                Rute era estrangeira, mas escolheu seguir o Deus de Israel — e isso mudou tudo! Ela não conhecia Israel, mas conhecia o caráter de Noemi. E pelo exemplo de Noemi, Rute foi conquistada pelo Deus vivo.
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🤝</div>
+                    <p class="font-semibold">Lealdade real não some quando as coisas ficam difíceis!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="rute-personagem.png" alt="Rute - Personagem Principal"
-                        class="w-full h-auto rounded-xl shadow-xl object-cover">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🌾</div>
+                    <p class="font-semibold">Deus vê quem trabalha com fé e cuida de quem precisa!</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600">
-                📖 O que o livro conta?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-1">
-                    <img src="rute-o-que-conta.png" alt="O que o livro de Rute conta"
-                        class="w-full h-auto rounded-xl shadow-xl object-cover">
-                </div>
-                <div class="order-2">
-                    <div class="bg-white p-8 rounded-2xl border-2 border-yellow-300 shadow-lg">
-                        <p class="text-xl leading-relaxed text-gray-800 mb-4">
-                            Conta a história de como <strong class="text-amber-700">Rute ajudou Noemi</strong> e depois se casou com <strong class="text-yellow-700">Boaz</strong>.
-                        </p>
-                        <p class="text-xl leading-relaxed text-gray-800">
-                            Mostra como a <strong class="text-amber-700">fé e o amor</strong> ajudam a resolver problemas.
-                        </p>
-                    </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">👑</div>
+                    <p class="font-semibold">Ninguém é estrangeiro na família de Deus — todos são bem-vindos!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-                ⭐ Por que é importante?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="space-y-4">
-                        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-2 border-green-300 shadow-md">
-                            <p class="text-lg font-semibold text-gray-800">
-                                🟢 Mostra que <strong class="text-green-700">Deus cuida das pessoas</strong> que confiam nele.
-                            </p>
-                        </div>
-                        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-2 border-green-300 shadow-md">
-                            <p class="text-lg font-semibold text-gray-800">
-                                🟢 Ensina sobre <strong class="text-green-700">amizade, cuidado e fidelidade</strong>.
-                            </p>
-                        </div>
-                        <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-2 border-green-300 shadow-md">
-                            <p class="text-lg font-semibold text-gray-800">
-                                🟢 Rute e Boaz ajudam a preparar a história que leva a <strong class="text-green-700">Davi e Jesus</strong>.
-                            </p>
-                        </div>
-                    </div>
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-pink-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
+            🦸 Personagens Principais
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Rute -->
+            <div class="bg-gradient-to-b from-rose-50 to-pink-50 rounded-2xl p-6 shadow-lg border-2 border-rose-200 text-center">
+                <img src="rute-removebg-preview.png" alt="Rute" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-rose-700 mb-2">🌾 Rute</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Moabita que escolheu o Deus de Israel. Sua lealdade a Noemi e sua humildade no campo de Boaz são exemplo de caráter e fé. Avó do rei Davi e antepassada de Jesus.</p>
+                <div class="versiculo-card border-rose-400 text-left text-sm">
+                    📖 Rt 1:16 — <em>"O teu povo será o meu povo e o teu Deus será o meu Deus."</em>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="rute-importante.png" alt="Por que Rute é importante"
-                        class="w-full h-auto rounded-xl shadow-xl object-cover">
+            </div>
+
+            <!-- Noemi -->
+            <div class="bg-gradient-to-b from-pink-50 to-rose-50 rounded-2xl p-6 shadow-lg border-2 border-pink-200 text-center">
+                <img src="noemi-removebg-preview.png" alt="Noemi" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-pink-700 mb-2">💔 Noemi</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Perdeu o marido e os dois filhos em Moabe. Voltou para Belém chamando a si mesma de "Mara" (amarga). Mas a fidelidade de Rute e a providência de Deus restauraram sua alegria!</p>
+                <div class="versiculo-card border-pink-400 text-left text-sm">
+                    📖 Rt 4:14 — <em>"Bendito seja o Senhor, que não te deixou hoje sem parente resgatador!"</em>
+                </div>
+            </div>
+
+            <!-- Boaz -->
+            <div class="bg-gradient-to-b from-rose-50 to-pink-50 rounded-2xl p-6 shadow-lg border-2 border-rose-200 text-center">
+                <img src="boaz-removebg-preview.png" alt="Boaz" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-rose-700 mb-2">🏡 Boaz</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Rico fazendeiro de Belém, parente de Noemi. Agiu como "go'el" — parente resgatador — ao casar com Rute e resgatar as terras da família. Imagem de Jesus, nosso Redentor!</p>
+                <div class="versiculo-card border-rose-400 text-left text-sm">
+                    📖 Rt 2:12 — <em>"O Senhor recompense o teu trabalho e seja cumprida a tua recompensa da parte do Senhor."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-rose-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-600 shadow">
+                <h3 class="text-xl font-bold text-rose-700 mb-3">💔 A decisão de Rute (Rt 1)</h3>
+                <p class="text-gray-700 leading-relaxed">Noemi ficou viúva em Moabe com as duas noras. Quando decidiu voltar para Belém, mandou as noras voltarem para suas famílias. Orpá foi. Rute ficou — e fez sua famosa declaração de lealdade.</p>
+                <div class="versiculo-card border-rose-400 text-sm mt-3">
+                    📖 Rt 1:16 — <em>"Onde tu morreres, morrerei eu, e ali serei sepultada."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-600 shadow">
+                <h3 class="text-xl font-bold text-pink-700 mb-3">🌾 Rute no campo de Boaz (Rt 2)</h3>
+                <p class="text-gray-700 leading-relaxed">Para sustentar Noemi, Rute foi colher espigas deixadas pelos ceifeiros — direito dos pobres na lei de Moisés (Lv 19:9). Por "acaso" foi parar no campo de Boaz, parente de Noemi. Nada é por acaso com Deus!</p>
+                <div class="versiculo-card border-pink-400 text-sm mt-3">
+                    📖 Rt 2:3 — <em>"Aconteceu que a parte do campo que ela escolheu pertencia a Boaz."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-600 shadow">
+                <h3 class="text-xl font-bold text-rose-700 mb-3">🌙 A noite na eira (Rt 3)</h3>
+                <p class="text-gray-700 leading-relaxed">Por instrução de Noemi, Rute foi até Boaz na eira e pediu que ele agisse como "go'el" — parente resgatador. Boaz ficou honrado com o pedido e prometeu regularizar tudo. A lei do go'el é imagem poderosa da redenção!</p>
+                <div class="versiculo-card border-rose-400 text-sm mt-3">
+                    📖 Rt 3:9 — <em>"Estende a tua aba sobre mim, pois és parente resgatador."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-600 shadow">
+                <h3 class="text-xl font-bold text-pink-700 mb-3">👶 Boaz resgata, nasce Obede (Rt 4)</h3>
+                <p class="text-gray-700 leading-relaxed">Boaz comprou as terras de Noemi e casou com Rute na frente das testemunhas da cidade. Nasceu Obede — cujo nome significa "servidor". Obede → Jessé → Davi → Jesus. Uma história de redenção que atravessa gerações!</p>
+                <div class="versiculo-card border-pink-400 text-sm mt-3">
+                    📖 Rt 4:17 — <em>"As vizinhas lhe puseram nome Obede; este é pai de Jessé, pai de Davi."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-rose-100 to-pink-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-rose-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
+            💡 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start mb-8">
+            <div>
+                <img src="rute-curiosidade.png" alt="Curiosidades de Rute" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-rose-600 shadow-md">
+                    <p class="font-bold text-rose-700 mb-1">👑 Uma das 5 mulheres na genealogia de Jesus!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Mateus 1 lista 5 mulheres na genealogia de Jesus: Tamar, Raabe, Rute, Bate-Seba e Maria. Rute era moabita — estrangeira! Isso mostra que Jesus veio para salvar pessoas de todos os povos.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-pink-600 shadow-md">
+                    <p class="font-bold text-pink-700 mb-1">🏡 Boaz é imagem de Jesus!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">O "go'el" (parente resgatador) tinha que ser parente, querer resgatar e ter condição de pagar o preço. Jesus se tornou humano (parente), quis nos salvar e pagou o preço com Sua vida. Boaz prefigura tudo isso!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-rose-600 shadow-md">
+                    <p class="font-bold text-rose-700 mb-1">📚 Um dos dois livros com nome de mulher!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Rute e Ester são os únicos livros da Bíblia com nome de mulher como título. Rute tem apenas 4 capítulos — um dos livros mais curtos do Antigo Testamento, mas com uma das histórias mais ricas!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-600">
-                🎯 Propósito do livro
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-1">
-                    <img src="rute-proposito.png" alt="Propósito do livro de Rute"
-                        class="w-full h-auto rounded-xl shadow-xl object-cover">
-                </div>
-                <div class="order-2">
-                    <div class="space-y-4">
-                        <div class="bg-white p-6 rounded-xl border-2 border-amber-300 shadow-md">
-                            <p class="text-lg font-semibold text-gray-800">
-                                ✨ Mostrar que <strong class="text-amber-700">Deus cuida das pessoas fiéis</strong>.
-                            </p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl border-2 border-yellow-300 shadow-md">
-                            <p class="text-lg font-semibold text-gray-800">
-                                ✨ Ensinar sobre <strong class="text-yellow-700">amizade, coragem e confiança</strong> em Deus.
-                            </p>
-                        </div>
-                        <div class="bg-white p-6 rounded-xl border-2 border-amber-300 shadow-md">
-                            <p class="text-lg font-semibold text-gray-800">
-                                ✨ Preparar a história da <strong class="text-amber-700">família que leva a Jesus</strong>.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-pink-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
+            🤔 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-rose-50 to-pink-50 rounded-2xl p-6 shadow border-2 border-rose-200 text-center">
+                <div class="text-4xl mb-4">💛</div>
+                <h3 class="text-lg font-bold text-rose-700 mb-3">Lealdade</h3>
+                <p class="text-gray-700 leading-relaxed">Rute poderia ter voltado para a família em Moabe — seria mais fácil. Por que você acha que ela escolheu ficar com Noemi mesmo sem nada a ganhar?</p>
+            </div>
+            <div class="bg-gradient-to-b from-pink-50 to-rose-50 rounded-2xl p-6 shadow border-2 border-pink-200 text-center">
+                <div class="text-4xl mb-4">🌾</div>
+                <h3 class="text-lg font-bold text-pink-700 mb-3">Providência</h3>
+                <p class="text-gray-700 leading-relaxed">Rute foi colher "por acaso" no campo de Boaz — mas será que foi mesmo por acaso? Como você enxerga a mão de Deus nos "por acasos" da sua vida?</p>
+            </div>
+            <div class="bg-gradient-to-b from-rose-50 to-pink-50 rounded-2xl p-6 shadow border-2 border-rose-200 text-center">
+                <div class="text-4xl mb-4">🏡</div>
+                <h3 class="text-lg font-bold text-rose-700 mb-3">Redenção</h3>
+                <p class="text-gray-700 leading-relaxed">Boaz pagou um preço para resgatar Rute e Noemi. Jesus pagou um preço para nos resgatar. O que você sente quando pensa que Jesus quis ser seu "parente resgatador"?</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-                💡 Curiosidade Divertida!
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-purple-100 to-pink-100 p-8 rounded-2xl border-4 border-purple-300 shadow-xl">
-                        <p class="text-xl leading-relaxed text-gray-800 mb-4">
-                            O filho de Rute e Boaz foi <strong class="text-purple-700">Obede</strong>, que foi o avô do rei <strong class="text-pink-700">Davi</strong>.
-                        </p>
-                        <p class="text-xl leading-relaxed text-gray-800 font-bold text-purple-700">
-                            Rute é parte da família que leva a Jesus! 👑
-                        </p>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="rute-curiosidade.png" alt="Curiosidade sobre Rute"
-                        class="w-full h-auto rounded-xl shadow-xl object-cover">
-                </div>
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-rose-600 bg-gradient-to-br from-rose-700 to-pink-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold mb-3">Seja Leal</h3>
+                <p class="leading-relaxed">Escolha um amigo ou familiar que precisa de apoio e demonstre que você está ao lado dele — não por obrigação, mas por amor. Seja como Rute!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">📖</div>
+                <h3 class="text-xl font-bold mb-3">Descubra a Família</h3>
+                <p class="leading-relaxed">Leia Mateus 1:1-17 e procure o nome de Rute na genealogia de Jesus. Conta quantas gerações existem entre Rute e Jesus — vai surpreender!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🙏</div>
+                <h3 class="text-xl font-bold mb-3">Agradeça ao Go'el</h3>
+                <p class="leading-relaxed">Jesus é nosso parente resgatador — veio, pagou o preço e nos trouxe para a família de Deus. Esta semana, escreva uma pequena oração agradecendo a Ele por isso!</p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-yellow-600/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="section no-print text-center bg-gradient-to-r from-rose-600/20 to-pink-700/20 border-2 border-rose-600/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-rose-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../juizes/juizes.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../juizes/juizes.html" class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Juízes
             </a>
-            <a href="../historicos.html" class="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../historicos.html" class="bg-gradient-to-r from-pink-700 to-rose-600 hover:from-pink-800 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Livros Históricos
             </a>
-            <a href="../1samuel/1samuel.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../1samuel/1samuel.html" class="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 1 Samuel ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-amber-600 to-yellow-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Rute - Fidelidade e Amizade ✨</h3>
+    <section class="section bg-gradient-to-r from-rose-600 to-pink-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🌾 Livro de Rute — Fidelidade e Redenção 🌾</h3>
         <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 

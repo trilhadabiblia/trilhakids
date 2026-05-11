@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,16 +49,16 @@
                 🌟 Os Três Segredos de João 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">💫 Primeiro Segredo: A Luz do Mundo</h3>
                     <p class="italic">
                         Jesus veio como luz brilhante,<br>
                         Para iluminar cada instante,<br>
                         Nas trevas Ele resplandece,<br>
-                        E quem O segue não perece!<br>
-                        <span class="text-sm font-semibold text-sky-700 block mt-3">📖 João 8:12 - "Eu sou a luz do mundo"</span>
+                        E quem O segue não perece!
                     </p>
+                    <p class="text-sm text-sky-600 mt-3 font-semibold">📖 João 8:12</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-500">
@@ -66,9 +67,9 @@
                         Deus amou o mundo de tal maneira,<br>
                         Que deu Seu Filho, verdade primeira,<br>
                         Para que todo aquele que crê,<br>
-                        Tenha vida eterna, você pode ver!<br>
-                        <span class="text-sm font-semibold text-blue-700 block mt-3">📖 João 3:16 - "Porque Deus amou o mundo"</span>
+                        Tenha vida eterna, você pode ver!
                     </p>
+                    <p class="text-sm text-blue-600 mt-3 font-semibold">📖 João 3:16</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-500">
@@ -77,9 +78,9 @@
                         Água em vinho transformou,<br>
                         Lázaro da morte ressuscitou,<br>
                         Sete sinais João escreveu,<br>
-                        Para mostrar que Jesus é Deus!<br>
-                        <span class="text-sm font-semibold text-indigo-700 block mt-3">📖 João 20:31 - "Para que creiais que Jesus é o Cristo"</span>
+                        Para mostrar que Jesus é Deus!
                     </p>
+                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 João 20:31</p>
                 </div>
 
             </div>
@@ -96,27 +97,65 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-blue-700 to-indigo-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-blue-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-blue-700 leading-snug mb-4">
+                    "Porque Deus amou o mundo de tal maneira que deu o seu Filho unigênito, para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+                </blockquote>
+                <p class="text-xl font-bold text-indigo-600 mb-6">João 3:16</p>
+                <div class="bg-blue-50 rounded-2xl p-4 border-2 border-blue-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Este é o versículo mais famoso de toda a Bíblia! Jesus disse isso a Nicodemos, um líder religioso que foi de madrugada falar com Ele. A mensagem é simples: Deus te ama tanto que deu tudo — até o próprio Filho — para que você possa viver para sempre com Ele!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-sky-100 text-sky-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            👥 Quem são os personagens principais?
+            👥 Quem São os Personagens Principais?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <div class="order-2 md:order-1">
                 <img src="joao-personagem.png" alt="Personagens de João" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✨ Jesus Cristo</h3>
-                    <p class="text-gray-700 text-lg">O Filho de Deus, a Luz do Mundo, o Verbo que se fez carne. Ele é o personagem central que veio para salvar a humanidade!</p>
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✨ Jesus — O Verbo que se Fez Carne</h3>
+                    <p class="text-gray-700 mb-3">Em João, Jesus é apresentado como o próprio Deus que veio morar entre nós. Ele faz sete "Eu sou..." que revelam quem Ele realmente é!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Leia na Bíblia — João 1:14</p>
+                        <p class="text-gray-700 italic">"E o Verbo se fez carne e habitou entre nós, cheio de graça e de verdade."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🎣 Os Discípulos</h3>
-                    <p class="text-gray-700 text-lg">Especialmente Pedro, André, Tiago e João. Eles seguiram Jesus e aprenderam Seus ensinamentos maravilhosos!</p>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🌙 Nicodemos — O Curioso da Madrugada</h3>
+                    <p class="text-gray-700 mb-3">Um líder religioso que foi secretamente de noite falar com Jesus — e ouviu as palavras mais importantes da Bíblia!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — João 3:3</p>
+                        <p class="text-gray-700 italic">"Em verdade, em verdade te digo: se alguém não nascer de novo, não pode ver o reino de Deus."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">👨‍🏫 Nicodemos, Maria, Marta e Lázaro</h3>
-                    <p class="text-gray-700 text-lg">Pessoas que encontraram Jesus e tiveram suas vidas transformadas pela fé e pelo amor de Deus!</p>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">👫 Maria, Marta e Lázaro</h3>
+                    <p class="text-gray-700 mb-3">Amigos íntimos de Jesus. Quando Lázaro morreu, Jesus chorou — o versículo mais curto da Bíblia — e depois o ressuscitou!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Leia na Bíblia — João 11:35</p>
+                        <p class="text-gray-700 italic">"Jesus chorou."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -125,21 +164,29 @@
     <!-- Seção 2: O que o livro conta? -->
     <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            📖 O que o livro conta?
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-3">🌟 Jesus é o Filho de Deus</h3>
-                    <p class="text-gray-700 text-lg">João apresenta Jesus como o Verbo divino que se fez carne. Ele não é apenas um profeta ou mestre, mas o próprio Deus encarnado!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">🌟 Jesus Existia Antes de Tudo</h3>
+                    <p class="text-gray-700 mb-3">João começa não com o nascimento de Jesus, mas lá no começo de tudo! "No princípio era o Verbo" — Jesus é Deus eterno que se tornou humano.</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 João 1:1 — "No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-3">✨ Milagres Poderosos</h3>
-                    <p class="text-gray-700 text-lg">Sete sinais incríveis: água em vinho, cura do filho do oficial, paralítico curado, multiplicação dos pães, andar sobre as águas, cego de nascença e ressurreição de Lázaro!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">✨ Sete Sinais Incríveis</h3>
+                    <p class="text-gray-700 mb-3">Água em vinho, cura do paralítico, multiplicação dos pães, andar sobre as águas, cura do cego de nascença e ressurreição de Lázaro — cada milagre prova que Jesus é Deus!</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 João 2:11 — "Este primeiro sinal fez Jesus em Caná da Galileia... e os seus discípulos creram nele."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">❤️ Amor e Fé</h3>
-                    <p class="text-gray-700 text-lg">Mostra o amor incondicional de Deus e ensina que através da fé em Jesus podemos ter vida eterna e abundante!</p>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">🗣️ Os Sete "Eu Sou"</h3>
+                    <p class="text-gray-700 mb-3">Só em João, Jesus diz: "Eu sou o pão da vida", "a luz do mundo", "o bom pastor", "a ressurreição e a vida", "o caminho, a verdade e a vida"!</p>
+                    <p class="text-sm text-indigo-600 italic border-t border-indigo-100 pt-2">📖 João 11:25 — "Eu sou a ressurreição e a vida; quem crê em mim, ainda que esteja morto, viverá."</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-2">💝 Cruz, Ressurreição e Missão</h3>
+                    <p class="text-gray-700 mb-3">Jesus entrega Sua vida voluntariamente, ressuscita e aparece para Maria Madalena, para Tomé e à beira do mar para os discípulos — enviando-os ao mundo!</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 João 19:30 — "Tendo recebido o vinagre, disse Jesus: Está consumado! E, inclinando a cabeça, entregou o espírito."</p>
                 </div>
             </div>
             <div>
@@ -151,24 +198,42 @@
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            💎 Por que é importante?
+            💎 Por Que É Importante?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
             <div class="order-2 md:order-1">
-                <img src="joao-importante.png" alt="Importância de João" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="joao-importante.png" alt="Importância de João" class="w-full h-auto rounded xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-br from-sky-100 to-blue-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4">🌈 O Caminho para a Vida Eterna</h3>
-                    <p class="text-gray-800 text-xl leading-relaxed">
-                        João ensina que <span class="font-bold text-blue-600">crer em Jesus é o caminho para a vida eterna</span>. Não é apenas seguir regras, mas ter um relacionamento verdadeiro com Deus através de Jesus!
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-br from-sky-50 to-blue-100 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">🌈 O Caminho para a Vida Eterna</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        João deixa claro: crer em Jesus não é seguir regras — é ter um relacionamento real com o Filho de Deus e receber vida que nunca acaba!
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 João 3:16</p>
+                        <p class="text-gray-700 italic">"Para que todo aquele que nele crê não pereça, mas tenha a vida eterna."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-br from-blue-100 to-indigo-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-blue-700 mb-4">✨ Conhecer Quem é Jesus</h3>
-                    <p class="text-gray-800 text-xl leading-relaxed">
-                        Este evangelho revela a <span class="font-bold text-indigo-600">verdadeira identidade de Jesus</span> como o Filho de Deus, mostrando Seu poder, amor e graça incomparáveis!
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">🌿 Vida em Abundância</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Jesus não veio para nos dar uma vida vazia — veio para que tenhamos vida plena, com alegria, propósito e paz todos os dias!
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 João 10:10</p>
+                        <p class="text-gray-700 italic">"Eu vim para que tenham vida e a tenham em abundância."</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-100 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🛤️ Jesus é o Único Caminho</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        João registra a declaração mais exclusiva de Jesus — não há outro caminho para chegar ao Pai. Isso não é arrogância; é amor que quer nos guiar de volta a Deus!
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 João 14:6</p>
+                        <p class="text-gray-700 italic">"Eu sou o caminho, e a verdade, e a vida; ninguém vem ao Pai senão por mim."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -177,26 +242,45 @@
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-r from-blue-50 to-indigo-50 p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            🎯 Propósito do livro
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-sky-500">
-                    <div class="text-6xl mb-4 text-center">📢</div>
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4 text-center">Proclamar Jesus como Salvador</h3>
-                    <p class="text-gray-700 text-xl leading-relaxed text-center">
-                        João escreveu para que as pessoas <span class="font-bold text-sky-600">conheçam e acreditem em Jesus como o Salvador</span> do mundo!
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+            <div class="space-y-5 order-2 md:order-1">
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-sky-500">
+                    <div class="text-5xl mb-4">📢</div>
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">Proclamar que Jesus é o Filho de Deus</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        João foi claro sobre sua missão: provar, por meio dos sinais e das palavras de Jesus, que Ele é o Cristo — o Filho de Deus.
                     </p>
+                    <div class="bg-sky-50 p-3 rounded-xl border-l-4 border-sky-400">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 João 20:31</p>
+                        <p class="text-gray-700 italic">"Estes, porém, foram escritos para que creiais que Jesus é o Cristo, o Filho de Deus."</p>
+                    </div>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-500">
-                    <div class="text-6xl mb-4 text-center">💖</div>
-                    <h3 class="text-3xl font-bold text-blue-700 mb-4 text-center">Levar à Fé Verdadeira</h3>
-                    <p class="text-gray-700 text-xl leading-relaxed text-center">
-                        O objetivo é que todos <span class="font-bold text-blue-600">creiam que Jesus é o Cristo, o Filho de Deus</span>, e tenham vida em Seu nome!
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">💖</div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">Levar à Fé e à Vida Eterna</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        João escreve para que, crendo, tenhamos vida em Seu nome. É um convite aberto para qualquer pessoa em qualquer época!
                     </p>
+                    <div class="bg-blue-50 p-3 rounded-xl border-l-4 border-blue-400">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 João 20:31</p>
+                        <p class="text-gray-700 italic">"...e para que, crendo, tenhais vida em seu nome."</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-xl border-t-4 border-indigo-500">
+                    <div class="text-5xl mb-4">❤️</div>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">Revelar o Amor Eterno de Deus</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Acima de tudo, João quer que cada leitor saiba: você é amado por Deus de um jeito que nenhuma palavra consegue medir por completo.
+                    </p>
+                    <div class="bg-indigo-50 p-3 rounded-xl border-l-4 border-indigo-400">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 João 13:34</p>
+                        <p class="text-gray-700 italic">"Que vos ameis uns aos outros; assim como eu vos amei, que também vós uns aos outros vos ameis."</p>
+                    </div>
                 </div>
             </div>
-            <div>
+            <div class="order-1 md:order-2">
                 <img src="joao-proposito.png" alt="Propósito de João" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
@@ -205,32 +289,113 @@
     <!-- Seção 5: Você sabia? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            🤔 Você sabia?
+            🤔 Você Sabia?
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <div class="order-2 md:order-1">
                 <img src="joao-curiosidade.png" alt="Curiosidade sobre João" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-sky-100 via-blue-100 to-indigo-100 p-10 rounded-3xl shadow-2xl border-4 border-sky-300">
-                    <div class="text-7xl mb-6 text-center">🕊️✨</div>
-                    <h3 class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700 mb-6 text-center">
-                        Mais que um Homem Bom!
-                    </h3>
-                    <p class="text-gray-800 text-2xl leading-relaxed text-center font-semibold">
-                        João escreveu este evangelho para mostrar que <span class="text-blue-700 font-black">Jesus não era apenas um homem bom ou um grande mestre</span> — Ele é o <span class="text-sky-600 font-black">próprio Filho de Deus</span>, o Criador do universo que se fez humano para nos salvar! 
-                    </p>
-                    <p class="text-gray-700 text-xl mt-6 text-center italic">
-                        "No princípio era o Verbo, e o Verbo estava com Deus, e o Verbo era Deus!" 📖
-                    </p>
+                <div class="bg-gradient-to-br from-sky-100 via-blue-100 to-indigo-100 p-8 rounded-3xl shadow-2xl border-4 border-sky-300">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">🕊️✨</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-blue-700 mb-6 text-center">O Evangelho Diferente!</h3>
+                    <div class="space-y-4 text-lg text-gray-700">
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-sky-600">🔢</strong> João tem <strong>7 sinais</strong> (milagres), <strong>7 "Eu sou"</strong> e <strong>7 discursos</strong> — o número 7 simboliza perfeição!
+                        </p>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-blue-600">📖</strong> João 11:35 — <strong>"Jesus chorou"</strong> — é o versículo mais curto de toda a Bíblia!
+                        </p>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-indigo-600">🦅</strong> João é simbolizado por uma <strong>águia</strong> — pois seu evangelho "voa mais alto", revelando a natureza divina de Jesus.
+                        </p>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-sky-600">📝</strong> João nunca escreve seu próprio nome — ele se chama apenas <strong>"o discípulo que Jesus amava"</strong>!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-blue-50 to-indigo-50 p-8 mb-4 rounded-2xl border-2 border-blue-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-sky-500">
+                <p class="text-5xl text-center mb-4">❤️</p>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    João 3:16 diz que Deus amou o mundo "de tal maneira". <strong>Como você sente o amor de Deus na sua vida? Consegue dar um exemplo?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500">
+                <p class="text-5xl text-center mb-4">🛤️</p>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jesus disse: "Eu sou o caminho, a verdade e a vida." <strong>O que significa para você seguir o caminho de Jesus no dia a dia?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-500">
+                <p class="text-5xl text-center mb-4">😢</p>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jesus chorou quando viu Maria chorando pela morte de Lázaro. <strong>Você sabia que pode orar para Jesus quando está triste? Você já fez isso?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-700 to-indigo-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-blue-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3">Leia João 3</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>João capítulo 3</strong> — a conversa de Jesus com Nicodemos de madrugada. É onde está o versículo mais famoso de toda a Bíblia!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3">Decore João 3:16</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Memorize João 3:16 inteiro e recite para alguém da família. Este versículo resume toda a mensagem da Bíblia em uma única frase!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🙏</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">Liste 3 Bênçãos</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Jesus disse que veio para dar vida em abundância. Escreva <strong>3 bênçãos da sua vida</strong> e agradeça a Deus por cada uma delas!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Navegação -->
     <section class="section no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <h3 class="text-3xl font-black text-blue-700 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../lucas/lucas.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Lucas

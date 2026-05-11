@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 1 João 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-500">
                     <h3 class="text-2xl font-bold text-rose-600 mb-3">❤️ Primeiro Segredo: Deus É Amor</h3>
                     <p class="italic">
@@ -96,213 +97,283 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-rose-700 to-pink-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-rose-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Nós amamos porque ele nos amou primeiro."
+                </p>
+                <p class="text-rose-200 font-bold text-xl mb-6">— 1 João 4:19</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        ❤️ <span class="font-bold">O que isso significa?</span> O amor não começa em nós — começa em Deus! Ele amou você primeiro, antes de você fazer qualquer coisa para merecer. E quando esse amor entra no seu coração, ele transborda para as pessoas ao redor. Você não precisa fabricar amor — receba o de Deus e deixe ele fluir!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
             👥 Quem São os Personagens Principais?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-4">❤️ João - O Apóstolo do Amor</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        João era o discípulo que Jesus amava! Ele escreveu esta carta quando já estava bem velhinho, 
-                        compartilhando o que aprendeu em anos de caminhada com Jesus.
-                    </p>
-                    <div class="bg-white p-4 rounded-xl">
-                        <p class="font-semibold text-gray-800">🌟 Sua Mensagem:</p>
-                        <p class="text-gray-600">Ensinar que o amor verdadeiro vem de Deus e deve ser praticado entre os irmãos!</p>
-                    </div>
-                </div>
-                <div class="bg-gradient-to-br from-blue-50 to-sky-50 p-6 rounded-2xl border-l-4 border-blue-500 mt-4">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">👨‍👩‍👧‍👦 Os Seguidores de Jesus</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        João escreveu para os cristãos da época, chamando-os de "filhinhos". Ele queria que eles 
-                        conhecessem o amor de Deus e vivessem na luz, amando uns aos outros!
-                    </p>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="1joao-personagem.png" alt="João e os seguidores de Jesus" 
+            <div>
+                <img src="1joao-personagem.png" alt="João e os seguidores de Jesus"
                     class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-2">❤️ João — O Apóstolo do Amor</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O discípulo que Jesus amava! João escreveu esta carta quando tinha mais de 90 anos, cheio de sabedoria acumulada em décadas de caminhada com Jesus. Ele chama os leitores de "filhinhos" — como um avô falando com a família!
+                    </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 1 Jo 1:1-3 — "O que era desde o princípio, o que ouvimos, o que vimos com os nossos olhos... anunciamos a vós."</p>
+                </div>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-2">👨‍👩‍👧‍👦 Os "Filhinhos" de João</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        João escreveu para os cristãos que amava como filhos. Eles enfrentavam falsos ensinamentos e precisavam de certeza: certeza do amor de Deus, certeza da salvação, certeza de como reconhecer a verdade!
+                    </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 1 Jo 2:1 — "Filhinhos meus, escrevo-vos estas coisas para que não pequeis."</p>
+                </div>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-xl border-l-4 border-rose-400">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-2">✝️ Jesus — O Centro de Tudo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        João começa dizendo "vimos com os próprios olhos, tocamos com as próprias mãos"! Jesus não é teoria — é alguém real, que João conheceu pessoalmente. A carta toda gira em torno Dele: a vida, a luz, o amor.
+                    </p>
+                    <p class="text-sm text-rose-700 font-semibold mt-2">📖 1 Jo 4:9 — "Nisto se manifestou o amor de Deus para conosco: Deus enviou seu Filho unigênito ao mundo."</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 p-8 mb-4">
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-pink-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
             📖 O Que o Livro Conta?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-1">
-                <img src="1joao-o-que-conta.png" alt="O amor verdadeiro que vem de Deus" 
+            <div>
+                <img src="1joao-o-que-conta.png" alt="O amor verdadeiro que vem de Deus"
                     class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-rose-500">
-                    <h3 class="text-2xl font-bold text-rose-600 mb-4">❤️ O Amor Verdadeiro de Deus</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        João ensina que o amor verdadeiro não é apenas um sentimento - é uma forma de viver! 
-                        Ele explica que Deus É amor, e quem conhece a Deus, ama de verdade.
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-2">❤️ Deus É Amor</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João não diz apenas que Deus TEM amor — ele diz que Deus É amor! É a sua natureza, não apenas uma característica. Quem conhece a Deus de verdade vai naturalmente amar as pessoas ao redor.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3 bg-rose-50 p-4 rounded-xl">
-                            <span class="text-2xl">💡</span>
-                            <div>
-                                <p class="font-bold text-rose-700">Andar na Luz</p>
-                                <p class="text-gray-600 text-sm">Viver de forma transparente, sem esconder pecados</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-pink-50 p-4 rounded-xl">
-                            <span class="text-2xl">🤝</span>
-                            <div>
-                                <p class="font-bold text-pink-700">Amar os Irmãos</p>
-                                <p class="text-gray-600 text-sm">Demonstrar amor prático uns pelos outros</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-rose-50 p-4 rounded-xl">
-                            <span class="text-2xl">✝️</span>
-                            <div>
-                                <p class="font-bold text-rose-700">Conhecer Jesus</p>
-                                <p class="text-gray-600 text-sm">Ter um relacionamento verdadeiro com Cristo</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 1 Jo 4:8 — "Aquele que não ama não conhece a Deus, porque Deus é amor."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-2">💡 Andar na Luz</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João fala muito sobre "luz" e "trevas." Andar na luz significa ser transparente, confessar os erros, não esconder pecados. Quando vivemos assim, temos comunhão com Deus e uns com os outros!
+                    </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 1 Jo 1:7 — "Se, porém, andarmos na luz... o sangue de Jesus nos purifica de todo pecado."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-400">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-2">🤝 Amar os Irmãos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O teste do amor a Deus é o amor ao próximo! É impossível dizer que ama a Deus e tratar mal as pessoas. O amor verdadeiro não é só palavra — é ação, é prático, é concreto!
+                    </p>
+                    <p class="text-sm text-rose-700 font-semibold mt-2">📖 1 Jo 4:20-21 — "Se alguém diz: Amo a Deus, e odeia a seu irmão, é mentiroso."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
             ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl shadow-xl border-l-4 border-yellow-500">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-6">💡 Vivendo na Luz de Deus</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        Este livro mostra que quem ama vive na luz e conhece a Deus de verdade! 
-                        Não podemos dizer que amamos a Deus se odiamos nossos irmãos.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="bg-white p-5 rounded-xl shadow-md">
-                            <p class="font-bold text-rose-600 mb-2">❤️ O Amor Verdadeiro</p>
-                            <p class="text-gray-600">É impossível conhecer a Deus e não amar as pessoas ao nosso redor!</p>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl shadow-md">
-                            <p class="font-bold text-blue-600 mb-2">🌟 A Luz de Cristo</p>
-                            <p class="text-gray-600">Quando vivemos na luz, nossas ações refletem o caráter de Jesus!</p>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl shadow-md">
-                            <p class="font-bold text-green-600 mb-2">✅ Certeza da Salvação</p>
-                            <p class="text-gray-600">João nos ajuda a ter certeza de que somos filhos de Deus!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <img src="1joao-importante.png" alt="Vivendo na luz" 
+            <div>
+                <img src="1joao-importante.png" alt="Vivendo na luz"
                     class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-br from-rose-100 to-pink-100 p-6 rounded-xl border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">❤️ O Amor Que Vem de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        1 João nos lembra que amar não é uma tarefa difícil que temos que cumprir sozinhos — é uma resposta ao amor que já recebemos. Deus amou primeiro; a gente responde amando!
+                    </p>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 1 Jo 4:19 — "Nós amamos porque ele nos amou primeiro."</p>
+                </div>
+                <div class="bg-gradient-to-br from-pink-100 to-rose-100 p-6 rounded-xl border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">💡 Vivendo na Luz</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Quando vivemos na transparência com Deus e com as pessoas, recebemos perdão e temos paz. Guardar pecado escondido é carregar um peso — confessar é o caminho para a leveza!
+                    </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 1 Jo 1:9 — "Se confessarmos os nossos pecados, ele é fiel e justo para nos perdoar os pecados."</p>
+                </div>
+                <div class="bg-gradient-to-br from-rose-100 to-pink-100 p-6 rounded-xl border-l-4 border-rose-400">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">✅ Certeza da Salvação</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        João escreveu para que os leitores soubessem com certeza que têm a vida eterna! Não uma esperança vaga — uma certeza firme baseada em Jesus. Você pode saber que é filho de Deus!
+                    </p>
+                    <p class="text-sm text-rose-700 font-semibold mt-2">📖 1 Jo 5:13 — "Escrevi-vos estas coisas para que saibais que tendes a vida eterna."</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-blue-50 to-sky-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-sky-600">
+    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-pink-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
             🎯 Propósito do Livro
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-1">
-                <img src="1joao-proposito.png" alt="O amor é a marca dos filhos de Deus" 
-                    class="w-full h-auto rounded-xl shadow-2xl object-cover">
-            </div>
-            <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-500">
-                    <h3 class="text-3xl font-bold text-blue-600 mb-6">❤️ A Marca dos Filhos de Deus</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        João escreveu para reforçar que o amor é a marca dos verdadeiros filhos de Deus! 
-                        Não é só falar que amamos - precisamos demonstrar esse amor em nossas ações.
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-500">
+                    <h3 class="text-2xl font-bold text-rose-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🎯</span>
+                        Dar Certeza da Vida Eterna
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        João escreve explicitamente: "escrevi para que saibais que tendes a vida eterna." Ele quer que os cristãos tenham certeza — não dúvida — da sua salvação. A fé não precisa tremer de incerteza!
                     </p>
-                    <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-6 rounded-xl mb-6">
-                        <p class="text-xl font-bold text-rose-700 mb-3">🌟 Três Pilares do Amor:</p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-start gap-2">
-                                <span class="text-rose-500 font-bold">1.</span>
-                                <span><strong>Conhecer a Deus:</strong> Ter um relacionamento pessoal com Ele</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-pink-500 font-bold">2.</span>
-                                <span><strong>Obedecer Seus Mandamentos:</strong> Viver de acordo com Sua Palavra</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="text-rose-500 font-bold">3.</span>
-                                <span><strong>Amar os Irmãos:</strong> Cuidar uns dos outros com ações práticas</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="bg-blue-50 p-4 rounded-xl border-l-4 border-blue-500">
-                        <p class="text-sm text-gray-600 italic">
-                            "Nisto conhecerão todos que sois meus discípulos: se tiverdes amor uns aos outros." - João 13:35
-                        </p>
-                    </div>
+                    <p class="text-sm text-rose-600 font-semibold mt-2">📖 1 Jo 5:13 — "Escrevi-vos estas coisas para que saibais que tendes a vida eterna."</p>
                 </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-500">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🤝</span>
+                        Identificar o Amor Verdadeiro
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        João ensina que o amor não é apenas palavra — é ação. Amar "não de palavra nem de língua, mas em ação e em verdade." Você sabe se está amando de verdade quando olha para o que faz, não o que diz!
+                    </p>
+                    <p class="text-sm text-pink-600 font-semibold mt-2">📖 1 Jo 3:18 — "Filhinhos, não amemos de palavra nem de língua, mas em ação e em verdade."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-400">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-3">🛡️</span>
+                        Guardar-se de Falsas Crenças
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        João adverte contra os que negavam que Jesus veio em carne (os gnósticos). A última frase da carta é surpreendente: "Guardai-vos dos ídolos!" — qualquer coisa que ocupa o lugar de Deus no coração!
+                    </p>
+                    <p class="text-sm text-rose-700 font-semibold mt-2">📖 1 Jo 5:21 — "Filhinhos, guardai-vos dos ídolos."</p>
+                </div>
+            </div>
+            <div>
+                <img src="1joao-proposito.png" alt="O amor é a marca dos filhos de Deus"
+                    class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-500">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-8 rounded-2xl shadow-xl border-l-4 border-purple-500">
-                    <h3 class="text-3xl font-bold text-purple-600 mb-6">💡 Luz e Amor - As Duas Marcas!</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-6">
-                        João fala muito sobre "luz" e "amor" nesta carta! Essas são as duas grandes marcas 
-                        da vida cristã que ele aprendeu com Jesus.
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="1joao-curiosidade.png" alt="Luz e amor - as marcas da vida cristã"
+                    class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-6 rounded-xl border-4 border-rose-300">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">👴</span>
+                        O Apóstolo Mais Velho
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        João tinha mais de <span class="font-bold text-rose-700">90 anos</span> quando escreveu esta carta! Era o mais velho dos apóstolos, e o único que não morreu como mártir. Por isso chama todos de "filhinhos" — ele se via como pai espiritual de toda uma geração!
                     </p>
-                    <div class="space-y-4">
-                        <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-yellow-400">
-                            <p class="font-bold text-yellow-600 mb-2 flex items-center gap-2">
-                                <span>💡</span> A Palavra "Luz"
-                            </p>
-                            <p class="text-gray-600">Aparece mais de 20 vezes! João ensina que Deus é luz e nEle não há trevas!</p>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-rose-400">
-                            <p class="font-bold text-rose-600 mb-2 flex items-center gap-2">
-                                <span>❤️</span> A Palavra "Amor"
-                            </p>
-                            <p class="text-gray-600">Aparece mais de 40 vezes! É o tema principal da carta de João!</p>
-                        </div>
-                        <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-blue-400">
-                            <p class="font-bold text-blue-600 mb-2 flex items-center gap-2">
-                                <span>👴</span> João Idoso
-                            </p>
-                            <p class="text-gray-600">Quando escreveu, João tinha mais de 90 anos! Por isso chama todos de "filhinhos"!</p>
-                        </div>
-                        <div class="bg-gradient-to-r from-purple-100 to-pink-100 p-5 rounded-xl">
-                            <p class="font-bold text-purple-700 mb-2">🌟 Curiosidade Extra:</p>
-                            <p class="text-gray-700">João é o único apóstolo que não morreu como mártir. Ele viveu até idade avançada 
-                            e escreveu 5 livros do Novo Testamento: o Evangelho de João, 1, 2 e 3 João, e Apocalipse!</p>
-                        </div>
-                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-pink-100 to-rose-100 p-6 rounded-xl border-4 border-pink-300">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🔢</span>
+                        "Amor" 40 Vezes, "Luz" 20 Vezes!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        A palavra <span class="font-bold text-pink-700">"amor"</span> aparece mais de 40 vezes e <span class="font-bold text-rose-700">"luz"</span> mais de 20 vezes em apenas 5 capítulos! João repetia propositalmente — como um professor que quer ter certeza de que o aluno não vai esquecer a lição principal!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-6 rounded-xl border-4 border-rose-300">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">✍️</span>
+                        5 Livros do NT!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        João escreveu <span class="font-bold text-rose-700">5 livros</span> do Novo Testamento: o Evangelho de João, as cartas 1, 2 e 3 João, e o Apocalipse! Nenhum outro escritor contribuiu com tantos livros. E o tema central de todos é o mesmo: Jesus, o amor e a vida eterna.
+                    </p>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="1joao-curiosidade.png" alt="Luz e amor - as marcas da vida cristã" 
-                    class="w-full h-auto rounded-xl shadow-2xl object-cover">
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-rose-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-pink-500">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-rose-500">
+                <div class="text-5xl text-center mb-4">❤️</div>
+                <h3 class="text-xl font-bold text-rose-600 mb-3 text-center">Amado Primeiro</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Jo 4:19 diz "amamos porque ele nos amou primeiro." Quando você pensa no quanto Deus te ama — mesmo antes de você fazer qualquer coisa — como isso muda a forma como você trata as pessoas ao redor?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-pink-500">
+                <div class="text-5xl text-center mb-4">💡</div>
+                <h3 class="text-xl font-bold text-pink-600 mb-3 text-center">Andar na Luz</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Jo 1:9 diz que se confessarmos, Deus nos perdoa. Por que é tão difícil admitir quando erramos? Como você se sente depois de pedir perdão de verdade — com Deus e com as pessoas?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-rose-400">
+                <div class="text-5xl text-center mb-4">🤔</div>
+                <h3 class="text-xl font-bold text-rose-700 mb-3 text-center">Amando o Difícil</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    1 Jo 4:20 diz que é impossível amar a Deus e odiar o irmão. Tem alguém difícil de amar na sua vida? Como o fato de que Deus te amou primeiro pode te ajudar a amar essa pessoa?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-rose-700 to-pink-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-rose-300 text-center">
+                <div class="text-5xl mb-4">❤️</div>
+                <h3 class="text-xl font-bold text-rose-200 mb-3">Conte o Amor</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva 1 Jo 4:19 num papel. Toda vez que receber algo bom esta semana — um carinho, uma ajuda, um sorriso — lembre: é o amor de Deus chegando até você! Anote quantas vezes você percebeu o amor de Deus!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-pink-300 text-center">
+                <div class="text-5xl mb-4">💡</div>
+                <h3 class="text-xl font-bold text-pink-200 mb-3">Pratique a Transparência</h3>
+                <p class="text-white leading-relaxed">
+                    1 Jo 1:9 fala sobre confessar. Esta semana, quando errar com alguém, peça perdão logo — com Deus e com a pessoa. Não deixe acumular! "Andar na luz" começa com honestidade nas pequenas coisas.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-rose-300 text-center">
+                <div class="text-5xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold text-rose-200 mb-3">Amor em Ação</h3>
+                <p class="text-white leading-relaxed">
+                    Identifique UMA pessoa difícil de amar na sua vida. Faça UM gesto de amor prático por ela esta semana — não porque você tem vontade, mas porque Deus primeiro amou você (1 Jo 4:19)!
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-rose-500/20 to-pink-500/20 border-2 border-rose-500/30 rounded-2xl p-10 mb-4">
+    <section class="no-print text-center bg-gradient-to-r from-rose-500/20 to-pink-500/20 border-2 border-rose-500/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../2pedro/2pedro.html" class="bg-gradient-to-r from-rose-500 to-pink-500 hover:from-rose-600 hover:to-pink-600 text-white px-8 py-3 rounded-lg font-bold transition-all">

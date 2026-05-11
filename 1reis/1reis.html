@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #f5f3ff; margin-top: 1rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-purple-700 to-violet-800 hover:from-purple-800 hover:to-violet-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,61 +32,48 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>👑</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-violet-800 mx-2">
                     LIVRO DE 1 REIS
                 </span>
-                <span>👑</span>
+                <span>🔥</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Sabedoria e Fidelidade a Deus — Um Resumo Visual para Crianças</p>
-            <div class="mt-6 bg-gradient-to-r from-yellow-100 to-amber-100 border-l-4 border-yellow-600 p-4 rounded-lg">
-                <p class="text-gray-700 italic">
-                    "Agora, obedeça cuidadosamente a todos os mandamentos do SENHOR, seu Deus, e cumpra cuidadosamente todos os seus decretos, mandamentos, decisões e princípios. Obedeça a tudo o que está escrito nos ensinos de Moisés para que tenha sucesso em tudo o que fizer e por onde quer que for."
-                </p>
-                <p class="text-yellow-700 font-bold mt-2">— 1 Reis 2:3</p>
-            </div>
+            <p class="text-xl text-gray-600 font-semibold">Sabedoria, Templo e o Profeta de Fogo — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-1reis" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-yellow-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-700">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-violet-800">
                 🌟 Os Três Segredos de 1 Reis 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💎 Primeiro Segredo: A Sabedoria Verdadeira</h3>
-                    <p class="text-gray-800">
-                        Salomão não pediu ouro nem poder,<br>
-                        Mas sabedoria para o povo proteger.<br>
-                        Deus ficou feliz com seu coração sincero,<br>
-                        E lhe deu sabedoria, o maior tesouro verdadeiro!
-                    </p>
-                    <p class="text-yellow-600 font-semibold mt-2">📖 1 Reis 3:7-14</p>
+
+                <div class="bg-gradient-to-r from-purple-50 to-violet-50 p-6 rounded-xl border-l-4 border-purple-700">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">💎 Primeiro Segredo: Pedir o que Importa</h3>
+                    <p>Quando Deus apareceu em sonho para Salomão e disse "Pede o que quiseres", ele não pediu ouro, fama ou vida longa. Pediu sabedoria para governar o povo com justiça. Deus ficou tão impressionado que deu tudo — sabedoria e riqueza!</p>
+                    <div class="versiculo-card border-purple-400 mt-3">
+                        📖 1 Rs 3:9 — <em>"Dá, pois, ao teu servo um coração que saiba ouvir, para que possa governar o teu povo e discernir entre o bem e o mal."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🏛️ Segundo Segredo: O Templo do Senhor</h3>
-                    <p class="text-gray-800">
-                        Com mãos habilidosas e coração devoto,<br>
-                        Salomão construiu o Templo, lugar santo e remoto.<br>
-                        Ali Deus habitaria entre Seu povo amado,<br>
-                        Um lugar de adoração, glorioso e consagrado!
-                    </p>
-                    <p class="text-amber-600 font-semibold mt-2">📖 1 Reis 6:1-38</p>
+                <div class="bg-gradient-to-r from-violet-50 to-purple-50 p-6 rounded-xl border-l-4 border-violet-700">
+                    <h3 class="text-2xl font-bold text-violet-800 mb-3">🏛️ Segundo Segredo: Um Lar para Deus</h3>
+                    <p>O pai Davi sonhou em construir um templo para Deus, mas não pôde. Salomão realizou esse sonho — 7 anos de construção, 153.000 trabalhadores, e as pedras eram cortadas longe para não haver barulho de martelo no monte sagrado!</p>
+                    <div class="versiculo-card border-violet-400 mt-3">
+                        📖 1 Rs 8:27 — <em>"Mas, de fato, habitará Deus na terra? Os céus, sim, os céus dos céus não te podem conter; quanto menos esta casa que eu edificiei!"</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">⚠️ Terceiro Segredo: Fidelidade ou Divisão</h3>
-                    <p class="text-gray-800">
-                        Quando os reis esqueceram de Deus adorar,<br>
-                        O reino se dividiu, começou a se separar.<br>
-                        Norte e Sul, dois reinos em confusão,<br>
-                        Mostrando que sem Deus não há unidade, só divisão!
-                    </p>
-                    <p class="text-yellow-600 font-semibold mt-2">📖 1 Reis 12:1-24</p>
+                <div class="bg-gradient-to-r from-purple-50 to-violet-50 p-6 rounded-xl border-l-4 border-purple-700">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">🔥 Terceiro Segredo: Deus Responde ao Fogo</h3>
+                    <p>O profeta Elias desafiou 450 profetas de Baal no Monte Carmelo. Os profetas de Baal gritaram o dia todo — nada. Elias orou uma só vez — e fogo caiu do céu! Deus não precisa de gritos, só de fé!</p>
+                    <div class="versiculo-card border-purple-400 mt-3">
+                        📖 1 Rs 18:37 — <em>"Responde-me, Senhor, responde-me, para que este povo conheça que tu és o Senhor Deus."</em>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -100,178 +88,211 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            👑 Quem são os personagens principais?
-        </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="1reis-personagem.png" alt="Personagens de 1 Reis" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">👑 Rei Salomão</h3>
-                    <p class="text-gray-700 text-lg">
-                        O rei Salomão é o personagem principal, junto com os reis que vieram depois dele.
-                        Ele ficou conhecido por pedir a sabedoria de Deus para governar o povo.
-                    </p>
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-purple-700 bg-gradient-to-br from-purple-800 to-violet-900 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl font-bold italic mb-6 leading-relaxed">
+                "Dá ao teu servo um coração que saiba ouvir, para que possa discernir entre o bem e o mal."
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-purple-200">— 1 Reis 3:9</p>
+            <p class="text-lg leading-relaxed mb-6 text-purple-100">
+                Salomão poderia ter pedido qualquer coisa — ouro, poder, a morte dos seus inimigos. Mas pediu sabedoria para ajudar as pessoas. Deus ficou tão feliz com isso que deu tudo! O que você pede quando ora?
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">💎</div>
+                    <p class="font-semibold">Pedir sabedoria é o pedido mais inteligente que existe!</p>
                 </div>
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">📚 Outros Personagens</h3>
-                    <p class="text-gray-700 text-lg">
-                        Profetas como Elias, reis de Israel e Judá, e o povo que precisava de líderes sábios e fiéis a Deus.
-                    </p>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">👂</div>
+                    <p class="font-semibold">Um coração que ouve Deus vale mais que todo o ouro do mundo!</p>
                 </div>
-                <p class="text-yellow-600 font-semibold text-center">📖 Referência: 1 Reis 3:7-14</p>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🙏</div>
+                    <p class="font-semibold">Quando buscamos primeiro a Deus, Ele cuida de todo o resto!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-violet-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-violet-800">
+            🦸 Personagens Principais
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Salomão -->
+            <div class="bg-gradient-to-b from-purple-50 to-violet-50 rounded-2xl p-6 shadow-lg border-2 border-purple-200 text-center">
+                <img src="1reis-personagem.png" alt="Salomão" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-purple-800 mb-2">💎 Salomão</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Filho de Davi, o rei mais rico e sábio do mundo antigo. Construiu o Templo de Jerusalém em 7 anos. Mas no final deixou que suas muitas esposas o afastassem de Deus — a maior sabedoria não o protegeu da maior tolice!</p>
+                <div class="versiculo-card border-purple-400 text-left text-sm">
+                    📖 1 Rs 3:12 — <em>"Eis que te dei um coração sábio e inteligente, tal que não houve antes de ti, nem depois de ti se levantará semelhante."</em>
+                </div>
+            </div>
+
+            <!-- Elias -->
+            <div class="bg-gradient-to-b from-violet-50 to-purple-50 rounded-2xl p-6 shadow-lg border-2 border-violet-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-orange-100 to-red-100 rounded-xl mb-4 text-6xl">
+                    🔥
+                </div>
+                <h3 class="text-xl font-bold text-violet-800 mb-2">🔥 Elias</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O profeta mais dramático do Antigo Testamento! Desafiou o rei Acabe, chamou seca por 3 anos, orou fogo do céu, fugiu em depressão — e Deus o encontrou no silêncio de uma caverna com pão quentinho e água.</p>
+                <div class="versiculo-card border-violet-400 text-left text-sm">
+                    📖 1 Rs 19:12 — <em>"Depois do fogo, uma voz quieta e delicada."</em>
+                </div>
+            </div>
+
+            <!-- Rainha de Sabá -->
+            <div class="bg-gradient-to-b from-purple-50 to-violet-50 rounded-2xl p-6 shadow-lg border-2 border-purple-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-yellow-100 to-amber-100 rounded-xl mb-4 text-6xl">
+                    👸
+                </div>
+                <h3 class="text-xl font-bold text-purple-800 mb-2">👸 Rainha de Sabá</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Viajou do extremo sul (atual Etiópia ou Iêmen) para testar a sabedoria de Salomão com perguntas difíceis. Ficou tão impressionada que declarou: "A metade não me foi dita!" Jesus a citou como exemplo de quem busca a sabedoria.</p>
+                <div class="versiculo-card border-purple-400 text-left text-sm">
+                    📖 1 Rs 10:7 — <em>"A metade não me foi dita; a tua sabedoria e a tua prosperidade excedem a fama que ouvi."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-purple-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-violet-800">
             📖 O que o livro conta?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-1 space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
-                    <h3 class="text-xl font-bold text-yellow-700 mb-2">🧠 A Sabedoria de Salomão</h3>
-                    <p class="text-gray-700">
-                        Conta sobre o reinado de Salomão, que pediu sabedoria a Deus para governar com justiça e amor.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
-                    <h3 class="text-xl font-bold text-amber-700 mb-2">🏛️ O Templo Sagrado</h3>
-                    <p class="text-gray-700">
-                        Fala sobre a construção do Templo em Jerusalém, casa de adoração ao Senhor.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
-                    <h3 class="text-xl font-bold text-yellow-700 mb-2">⚔️ A Divisão do Reino</h3>
-                    <p class="text-gray-700">
-                        Mostra como o reino se dividiu em Reino do Norte (Israel) e Reino do Sul (Judá).
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
-                    <h3 class="text-xl font-bold text-amber-700 mb-2">📚 22 Capítulos</h3>
-                    <p class="text-gray-700">
-                        O livro tem 22 capítulos cheios de histórias e lições sobre fidelidade e sabedoria.
-                    </p>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-purple-50 to-violet-50 p-6 rounded-2xl border-l-4 border-purple-700 shadow">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">💎 Salomão pede sabedoria (1 Rs 3)</h3>
+                <p class="text-gray-700 leading-relaxed">Deus apareceu a Salomão em sonho e ofereceu qualquer coisa. Salomão pediu sabedoria — não riqueza. Deus ficou tão contente que deu riqueza também! Logo depois, Salomão resolveu um caso impossível: duas mães e um bebê — quem é a mãe de verdade?</p>
+                <div class="versiculo-card border-purple-400 text-sm mt-3">
+                    📖 1 Rs 3:28 — <em>"Todo o Israel temeu ao rei, pois viram que havia nele sabedoria de Deus para exercer o juízo."</em>
                 </div>
             </div>
-            <div class="order-2">
-                <img src="1reis-o-que-conta.png" alt="O que 1 Reis conta" class="w-full h-auto rounded-xl shadow-lg">
+
+            <div class="bg-gradient-to-r from-violet-50 to-purple-50 p-6 rounded-2xl border-l-4 border-violet-700 shadow">
+                <h3 class="text-xl font-bold text-violet-800 mb-3">🏛️ O Templo de Deus é construído (1 Rs 6–8)</h3>
+                <p class="text-gray-700 leading-relaxed">Salomão levou 7 anos para construir o Templo usando cedros do Líbano, ouro, prata e pedras preciosas. As pedras eram cortadas a distância para não haver barulho de ferro no monte. Na dedicação, a glória de Deus encheu o lugar em forma de nuvem!</p>
+                <div class="versiculo-card border-violet-400 text-sm mt-3">
+                    📖 1 Rs 8:11 — <em>"A glória do Senhor encheu a casa do Senhor."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-violet-50 p-6 rounded-2xl border-l-4 border-purple-700 shadow">
+                <h3 class="text-xl font-bold text-purple-800 mb-3">⚡ A divisão do reino (1 Rs 12)</h3>
+                <p class="text-gray-700 leading-relaxed">Após a morte de Salomão, seu filho Roboão recebeu um aviso: seja mais gentil que seu pai. Ele ignorou os conselheiros velhos e ouviu os jovens inexperientes. Resultado: 10 tribos se revoltaram e formaram o Reino do Norte (Israel). Uma decisão tola partiu o país em dois!</p>
+                <div class="versiculo-card border-purple-400 text-sm mt-3">
+                    📖 1 Rs 12:14 — <em>"Meu pai vos agravou com jugo pesado; eu, porém, ainda o farei mais pesado." — Roboão</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-violet-50 to-purple-50 p-6 rounded-2xl border-l-4 border-violet-700 shadow">
+                <h3 class="text-xl font-bold text-violet-800 mb-3">🔥 Elias no Monte Carmelo (1 Rs 18–19)</h3>
+                <p class="text-gray-700 leading-relaxed">450 profetas de Baal gritaram o dia todo — silêncio. Elias orou uma vez e fogo caiu do céu! Mas logo depois fugiu em pânico para o deserto. Deus o encontrou exausto, preparou pão e água, e sussurrou em voz mansa: "Levanta-te e come, porque a jornada é longa."</p>
+                <div class="versiculo-card border-violet-400 text-sm mt-3">
+                    📖 1 Rs 19:12 — <em>"Depois do fogo, uma voz quieta e delicada."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-purple-100 to-violet-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-purple-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-violet-800">
+            💡 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+                <img src="1reis-curiosidade.png" alt="Curiosidades de 1 Reis" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-purple-700 shadow-md">
+                    <p class="font-bold text-purple-800 mb-1">🏛️ O Templo foi construído em silêncio!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Todas as pedras do Templo eram cortadas e preparadas longe do monte, para que não se ouvisse nenhum som de martelo ou cinzel no local sagrado (1 Rs 6:7). Era um canteiro de obras silencioso — como a santidade de Deus exigia!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-violet-700 shadow-md">
+                    <p class="font-bold text-violet-800 mb-1">😔 Elias pediu para morrer — e Deus fez café!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Depois da maior vitória da sua vida, Elias entrou em depressão e pediu para Deus tirar sua vida (1 Rs 19:4). Deus não o repreendeu. Preparou um bolo assado e água, e disse: "Levanta-te e come, porque a jornada é muito longa para ti."</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-purple-700 shadow-md">
+                    <p class="font-bold text-purple-800 mb-1">✝️ Jesus falou sobre Salomão e a Rainha de Sabá!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Jesus disse: "A rainha do Sul se levantará no juízo com esta geração e a condenará; porque veio dos confins da terra para ouvir a sabedoria de Salomão, e eis aqui maior que Salomão." (Mt 12:42) — Jesus é a sabedoria definitiva!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            🌟 Por que é importante?
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-violet-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-violet-800">
+            🤔 Perguntas para Pensar
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="1reis-importante.png" alt="Importância de 1 Reis" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-purple-50 to-violet-50 rounded-2xl p-6 shadow border-2 border-purple-200 text-center">
+                <div class="text-4xl mb-4">💎</div>
+                <h3 class="text-lg font-bold text-purple-800 mb-3">O Pedido Certo</h3>
+                <p class="text-gray-700 leading-relaxed">Se Deus te aparecesse agora e dissesse "Pede o que quiseres", o que você pediria? Será que sua resposta se parece mais com a de Salomão ou com a do que o mundo costuma querer?</p>
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">💡 Sabedoria de Deus</h3>
-                    <p class="text-gray-700 text-lg">
-                        Porque mostra que a verdadeira sabedoria vem de Deus, não do mundo.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">✨ Obediência Traz Bênção</h3>
-                    <p class="text-gray-700 text-lg">
-                        Ensina que obedecer a Deus traz bênção, mas desobedecer traz tristeza e divisão.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">👑 Líderes Fiéis</h3>
-                    <p class="text-gray-700 text-lg">
-                        Mostra a importância de ter líderes que amam o Senhor e seguem Seus caminhos.
-                    </p>
-                </div>
+            <div class="bg-gradient-to-b from-violet-50 to-purple-50 rounded-2xl p-6 shadow border-2 border-violet-200 text-center">
+                <div class="text-4xl mb-4">🔥</div>
+                <h3 class="text-lg font-bold text-violet-800 mb-3">O Fogo e o Silêncio</h3>
+                <p class="text-gray-700 leading-relaxed">Deus não estava no vento forte, nem no terremoto, nem no fogo — mas na voz quieta e delicada. Você consegue ouvir Deus quando a vida está barulhenta? Como você cria silêncio para ouvi-Lo?</p>
+            </div>
+            <div class="bg-gradient-to-b from-purple-50 to-violet-50 rounded-2xl p-6 shadow border-2 border-purple-200 text-center">
+                <div class="text-4xl mb-4">😔</div>
+                <h3 class="text-lg font-bold text-purple-800 mb-3">Depois da Vitória</h3>
+                <p class="text-gray-700 leading-relaxed">Elias teve a maior vitória da sua vida e logo depois caiu em depressão. Por que você acha que isso aconteceu? Já aconteceu com você de sentir que "descarregou" depois de algo grande?</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            🎯 Propósito do livro
-        </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-1 space-y-4">
-                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-4">💎 Tesouro Verdadeiro</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Ensinar que a sabedoria e a fidelidade a Deus são mais valiosas que qualquer riqueza material.
-                        Quando buscamos a Deus em primeiro lugar, Ele nos dá sabedoria para viver bem e honrá-Lo em tudo!
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-4">🙏 Lição Eterna</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        O livro nos ensina que reis e líderes podem ter poder, mas só Deus tem a sabedoria perfeita.
-                        Confiar em Deus e obedecer Seus mandamentos é o caminho para uma vida abençoada!
-                    </p>
-                </div>
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-purple-700 bg-gradient-to-br from-purple-800 to-violet-900 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">💎</div>
+                <h3 class="text-xl font-bold mb-3">Peça como Salomão</h3>
+                <p class="leading-relaxed">Esta semana, antes de fazer qualquer pedido em oração, pare e pergunte: "Estou pedindo o que eu quero ou o que Deus quer para mim?" Ore pedindo sabedoria primeiro!</p>
             </div>
-            <div class="order-2">
-                <img src="1reis-proposito.png" alt="Propósito de 1 Reis" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🤫</div>
+                <h3 class="text-xl font-bold mb-3">Encontre o Silêncio</h3>
+                <p class="leading-relaxed">Assim como Deus falou com Elias em voz quieta, reserve 5 minutos de silêncio — sem celular, sem TV — e apenas ouça. O que Deus pode estar dizendo para você nesse silêncio?</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            💡 Você sabia?
-        </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="1reis-curiosidade.png" alt="Curiosidade sobre 1 Reis" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-8 rounded-xl shadow-lg border-4 border-yellow-600">
-                    <h3 class="text-3xl font-bold text-yellow-700 mb-4 text-center">🧠 O Homem Mais Sábio!</h3>
-                    <p class="text-gray-800 text-xl leading-relaxed text-center mb-4">
-                        Salomão foi considerado o homem mais sábio do mundo! Reis e rainhas vinham de terras distantes
-                        só para ouvir sua sabedoria e ver suas riquezas.
-                    </p>
-                    <div class="bg-white p-6 rounded-lg">
-                        <p class="text-gray-700 text-lg text-center italic">
-                            Quem busca a sabedoria de Deus, encontra o verdadeiro tesouro! 💎
-                        </p>
-                    </div>
-                    <p class="text-yellow-600 font-bold text-center mt-4">✨ A sabedoria de Deus é o maior presente!</p>
-                </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">📖</div>
+                <h3 class="text-xl font-bold mb-3">Leia o Desafio</h3>
+                <p class="leading-relaxed">Leia 1 Reis 18:20-39 — o desafio do Monte Carmelo. Como você descreveria a fé de Elias para um amigo que nunca ouviu essa história?</p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="section no-print text-center bg-gradient-to-r from-purple-700/20 to-violet-800/20 border-2 border-purple-700/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-purple-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../2samuel/2samuel.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2samuel/2samuel.html" class="bg-gradient-to-r from-purple-700 to-violet-800 hover:from-purple-800 hover:to-violet-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ 2 Samuel
             </a>
-            <a href="../livros-historicos.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../historicos.html" class="bg-gradient-to-r from-violet-800 to-purple-700 hover:from-violet-900 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Livros Históricos
             </a>
-            <a href="../2reis/2reis.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2reis/2reis.html" class="bg-gradient-to-r from-purple-600 to-violet-700 hover:from-purple-700 hover:to-violet-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 2 Reis ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-yellow-600 to-amber-700 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Reis - Sabedoria e Fidelidade a Deus ✨</h3>
+    <section class="section bg-gradient-to-r from-purple-700 to-violet-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">👑 Livro de 1 Reis — Sabedoria, Templo e o Profeta de Fogo 👑</h3>
         <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 

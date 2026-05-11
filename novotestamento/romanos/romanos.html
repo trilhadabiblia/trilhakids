@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,38 +49,38 @@
                 🌟 Os Três Segredos de Romanos 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-300">
+
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">💔 Primeiro Segredo: Todos Precisam de Salvação</h3>
                     <p class="italic">
                         Todos nós pecamos, é verdade,<br>
                         Ninguém é perfeito de verdade!<br>
                         Mas Deus nos ama sem parar,<br>
-                        E quer nossa vida transformar!<br>
+                        E quer nossa vida transformar!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Todos pecaram e estão destituídos da glória de Deus" - Romanos 3:23</p>
+                    <p class="text-sm text-sky-600 mt-3 font-semibold">📖 Romanos 3:23</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-300">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-500">
                     <h3 class="text-2xl font-bold text-blue-600 mb-3">🎁 Segundo Segredo: Salvação é um Presente</h3>
                     <p class="italic">
                         Não é por obras que vamos ganhar,<br>
                         É pela fé que vamos alcançar!<br>
                         Jesus pagou tudo na cruz,<br>
-                        Basta crer nEle, nossa luz!<br>
+                        Basta crer nEle, nossa luz!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Porque pela graça sois salvos, mediante a fé" - Romanos 5:1</p>
+                    <p class="text-sm text-blue-600 mt-3 font-semibold">📖 Romanos 6:23</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-300">
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-500">
                     <h3 class="text-2xl font-bold text-indigo-600 mb-3">🦋 Terceiro Segredo: Nova Vida em Cristo</h3>
                     <p class="italic">
                         Quando Jesus entra no coração,<br>
                         Tudo muda, há transformação!<br>
                         Somos novas criaturas de verdade,<br>
-                        Vivendo em amor e liberdade!<br>
+                        Vivendo em amor e liberdade!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 "Se alguém está em Cristo, nova criatura é" - Romanos 6:4</p>
+                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 Romanos 12:2</p>
                 </div>
 
             </div>
@@ -96,27 +97,65 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-sky-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-sky-700 leading-snug mb-4">
+                    "E sabemos que todas as coisas contribuem juntamente para o bem daqueles que amam a Deus."
+                </blockquote>
+                <p class="text-xl font-bold text-blue-600 mb-6">Romanos 8:28</p>
+                <div class="bg-sky-50 rounded-2xl p-4 border-2 border-sky-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Isso não significa que coisas ruins não acontecem — significa que Deus é tão poderoso e tão bom que consegue pegar até as coisas difíceis da nossa vida e transformar em algo bom para quem O ama. Nada está fora do controle dEle!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-sky-100 text-sky-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="romanos-personagem.png" alt="Personagens de Romanos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ Paulo, o Apóstolo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo era um missionário corajoso que viajava pelo mundo contando sobre Jesus. Ele escreveu esta carta especial para os cristãos que moravam em Roma, a capital do império!
-                    </p>
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ Paulo — O Autor da Carta</h3>
+                    <p class="text-gray-700 mb-3">Paulo era o maior teólogo da Igreja primitiva. Antes de visitar Roma, escreveu esta carta para apresentar o evangelho completo — o mais profundo que ele já escreveu!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Leia na Bíblia — Romanos 1:1</p>
+                        <p class="text-gray-700 italic">"Paulo, servo de Jesus Cristo, chamado para apóstolo, separado para o evangelho de Deus."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-2xl border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-600 mb-2">⛪ Os Cristãos de Roma</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Eram pessoas que acreditavam em Jesus e se reuniam em pequenos grupos nas casas. Paulo queria ensiná-los mais sobre a fé e o amor de Deus!
-                    </p>
+                    <p class="text-gray-700 mb-3">Pessoas de diferentes origens — judeus e gentios — que criam em Jesus e se reuniam em casas. Paulo os amava mesmo sem conhecê-los pessoalmente!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — Romanos 1:8</p>
+                        <p class="text-gray-700 italic">"Em primeiro lugar, dou graças a meu Deus... a respeito de todos vós, porque a vossa fé é anunciada em todo o mundo."</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">🌟 Abraão — O Exemplo de Fé</h3>
+                    <p class="text-gray-700 mb-3">Paulo usa Abraão como o grande exemplo de que a salvação sempre foi pela fé — muito antes da lei de Moisés existir!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Leia na Bíblia — Romanos 4:3</p>
+                        <p class="text-gray-700 italic">"Abraão creu em Deus, e isso lhe foi imputado como justiça."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,25 +166,31 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-4 order-2 md:order-2">
-                <img src="romanos-o-que-conta.png" alt="O que Romanos conta" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-1">
-                <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-sky-300">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-4">💔 O Problema do Pecado</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Paulo explica que todas as pessoas do mundo pecaram e se afastaram de Deus. Ninguém consegue ser perfeito sozinho!
-                    </p>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">✝️ A Solução de Jesus</h3>
-                    <p class="text-gray-700 leading-relaxed mb-4">
-                        Mas a boa notícia é que Deus nos ama tanto que enviou Jesus para nos salvar! Jesus morreu na cruz e ressuscitou para nos dar vida nova.
-                    </p>
-                    <h3 class="text-2xl font-bold text-indigo-600 mb-4">🎁 O Presente da Graça</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        A salvação é um presente gratuito de Deus! Não precisamos fazer nada para merecê-la, apenas acreditar em Jesus com todo o coração.
-                    </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-4 order-1">
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">💔 O Problema: Todos Pecamos</h3>
+                    <p class="text-gray-700 mb-3">Paulo começa com uma verdade difícil mas necessária: toda pessoa — judia ou gentio, religiosa ou não — peca e se afasta de Deus. Ninguém é perfeito por conta própria.</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 Romanos 3:23 — "Porque todos pecaram e estão destituídos da glória de Deus."</p>
                 </div>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-blue-500">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">🎁 A Solução: O Dom Gratuito</h3>
+                    <p class="text-gray-700 mb-3">Mas Deus tem a solução! A morte de Jesus na cruz paga o preço do nosso pecado. A salvação não é comprada nem merecida — é recebida como um presente pelo dom da fé!</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Romanos 6:23 — "Porque o salário do pecado é a morte; mas o dom gratuito de Deus é a vida eterna em Jesus Cristo."</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-indigo-500">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">🙏 O Caminho: Confessar e Crer</h3>
+                    <p class="text-gray-700 mb-3">Receber a salvação é simples: confessar com a boca que Jesus é o Senhor e crer no coração que Deus O ressuscitou. Isso está ao alcance de qualquer pessoa!</p>
+                    <p class="text-sm text-indigo-600 italic border-t border-indigo-100 pt-2">📖 Romanos 10:9 — "Se confessares com a tua boca que Jesus é o Senhor, e creres no teu coração... serás salvo."</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-sky-500">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">🦋 A Vida Nova: Transformação</h3>
+                    <p class="text-gray-700 mb-3">A segunda parte de Romanos mostra como viver a nova vida — amando uns aos outros, obedecendo às autoridades, sendo paciente e presenteando com alegria.</p>
+                    <p class="text-sm text-sky-600 italic border-t border-sky-100 pt-2">📖 Romanos 12:2 — "Transformai-vos pela renovação da vossa mente, para que experimenteis qual seja a boa, agradável e perfeita vontade de Deus."</p>
+                </div>
+            </div>
+            <div class="order-2">
+                <img src="romanos-o-que-conta.png" alt="O que Romanos conta" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
     </section>
@@ -153,37 +198,41 @@
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            ⭐ Por Que é Importante?
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="romanos-importante.png" alt="Importância de Romanos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-8 rounded-xl shadow-lg border-2 border-sky-300">
-                    <h3 class="text-3xl font-bold text-sky-600 mb-6 text-center">🙏 Salvos Pela Fé!</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <span class="text-3xl">💝</span>
-                            <div>
-                                <h4 class="font-bold text-blue-600 text-lg mb-2">Não é Por Obras</h4>
-                                <p class="text-gray-700">Não precisamos ser perfeitos ou fazer coisas incríveis para Deus nos amar. Ele já nos ama do jeito que somos!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <span class="text-3xl">✨</span>
-                            <div>
-                                <h4 class="font-bold text-blue-600 text-lg mb-2">É Pela Fé</h4>
-                                <p class="text-gray-700">Quando acreditamos em Jesus e confiamos nEle, recebemos o maior presente: a vida eterna com Deus!</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <span class="text-3xl">🌈</span>
-                            <div>
-                                <h4 class="font-bold text-blue-600 text-lg mb-2">Liberdade e Paz</h4>
-                                <p class="text-gray-700">A fé em Jesus nos dá paz no coração e liberdade para viver felizes, sabendo que somos amados!</p>
-                            </div>
-                        </div>
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-5 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🙏 Salvos Pela Fé, Não Por Obras</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Você não precisa ser perfeito para Deus te amar! A salvação não é recompensa por bom comportamento — é um presente da graça de Deus para quem crê.
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-sky-500">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Romanos 5:1</p>
+                        <p class="text-gray-700 italic">"Tendo sido, pois, justificados pela fé, temos paz com Deus por nosso Senhor Jesus Cristo."</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">🕊️ Nenhuma Condenação!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Quem está em Cristo não precisa viver com culpa ou medo de ser rejeitado por Deus. A condenação ficou na cruz com Jesus — para sempre!
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Romanos 8:1</p>
+                        <p class="text-gray-700 italic">"Portanto, agora nenhuma condenação há para os que estão em Cristo Jesus."</p>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">💝 Nada Nos Separa do Amor de Deus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Paulo termina com a promessa mais reconfortante: absolutamente nada — nem morte, nem perigo, nem nada no universo — pode separar você do amor de Deus!
+                    </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Romanos 8:38-39</p>
+                        <p class="text-gray-700 italic">"Estou certo de que nem a morte... nem qualquer outra criatura nos poderá separar do amor de Deus."</p>
                     </div>
                 </div>
             </div>
@@ -193,36 +242,46 @@
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-br from-blue-50 to-indigo-50 p-8 mb-4">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
-            🎯 Propósito do Livro
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-2">
-                <img src="romanos-proposito.png" alt="Propósito de Romanos" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-1">
-                <div class="bg-white p-8 rounded-xl shadow-lg border-2 border-blue-300">
-                    <h3 class="text-3xl font-bold text-blue-600 mb-6 text-center">🦋 Transformação Pela Graça</h3>
-                    <div class="space-y-6">
-                        <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-4 rounded-lg">
-                            <p class="text-gray-700 leading-relaxed">
-                                <span class="font-bold text-sky-600">Paulo queria mostrar</span> como a graça de Deus tem o poder de mudar completamente nossa vida!
-                            </p>
-                        </div>
-                        <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg">
-                            <p class="text-gray-700 leading-relaxed">
-                                <span class="font-bold text-blue-600">Quando Jesus entra no coração,</span> nos tornamos pessoas novas, cheias de amor, alegria e vontade de fazer o bem!
-                            </p>
-                        </div>
-                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-4 rounded-lg">
-                            <p class="text-gray-700 leading-relaxed">
-                                <span class="font-bold text-indigo-600">O amor de Deus nos transforma</span> de dentro para fora, nos ajudando a viver de um jeito que agrada a Ele!
-                            </p>
-                        </div>
-                        <div class="text-center mt-6 p-4 bg-gradient-to-r from-sky-100 to-blue-100 rounded-lg">
-                            <p class="text-xl font-bold text-blue-700">🌟 Deus quer transformar você também! 🌟</p>
-                        </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-5 order-1">
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-sky-500">
+                    <div class="text-5xl mb-4">📜</div>
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">Explicar o Evangelho Completamente</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Romanos é a explicação mais completa do evangelho na Bíblia — do problema do pecado até a vida transformada. Paulo não deixou nada de fora!
+                    </p>
+                    <div class="bg-sky-50 p-3 rounded-xl border-l-4 border-sky-400">
+                        <p class="text-sm font-bold text-sky-700 mb-1">📖 Romanos 1:16</p>
+                        <p class="text-gray-700 italic">"Porque não me envergonho do evangelho de Cristo, pois é o poder de Deus para salvação de todo aquele que crê."</p>
                     </div>
                 </div>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-blue-500">
+                    <div class="text-5xl mb-4">🦋</div>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">Mostrar a Transformação pela Graça</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        A graça não é apenas para nos salvar — é para nos transformar! Paulo quer que os cristãos vivam de um jeito cada vez mais parecido com Jesus.
+                    </p>
+                    <div class="bg-blue-50 p-3 rounded-xl border-l-4 border-blue-400">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Romanos 12:2</p>
+                        <p class="text-gray-700 italic">"Transformai-vos pela renovação da vossa mente."</p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-indigo-500">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">Unir Judeus e Gentios em Cristo</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Em Roma havia cristãos judeus e gentios com conflitos. Paulo os chama a se aceitar como Cristo os aceitou — todos iguais diante da graça!
+                    </p>
+                    <div class="bg-indigo-50 p-3 rounded-xl border-l-4 border-indigo-400">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Romanos 15:7</p>
+                        <p class="text-gray-700 italic">"Portanto, recebei-vos uns aos outros, como também Cristo nos recebeu."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-2">
+                <img src="romanos-proposito.png" alt="Propósito de Romanos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
     </section>
@@ -237,39 +296,112 @@
                 <img src="romanos-curiosidade.png" alt="Curiosidade sobre Romanos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-xl shadow-lg border-4 border-amber-300">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-3xl shadow-2xl border-4 border-amber-300">
                     <div class="text-center mb-6">
-                        <span class="text-6xl">✉️</span>
+                        <span class="text-6xl">✉️📖</span>
                     </div>
-                    <h3 class="text-3xl font-bold text-amber-600 mb-6 text-center">Carta Antes da Visita!</h3>
-                    <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
-                        <p class="bg-white p-4 rounded-lg border-2 border-amber-200">
-                            <span class="font-bold text-amber-600">😮 Incrível mas verdade:</span> Paulo escreveu esta carta para os cristãos de Roma antes mesmo de conhecê-los pessoalmente!
+                    <h3 class="text-3xl font-black text-amber-600 mb-6 text-center">A Carta que Mudou o Mundo!</h3>
+                    <div class="space-y-4 text-lg text-gray-700">
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-amber-600">✉️</strong> Paulo escreveu Romanos <strong>antes de conhecer pessoalmente</strong> os cristãos de Roma — puro amor por pessoas que nunca havia visto!
                         </p>
-                        <p class="bg-white p-4 rounded-lg border-2 border-yellow-200">
-                            <span class="font-bold text-yellow-600">📬 Uma carta especial:</span> Ele enviou esta mensagem linda explicando o evangelho, mesmo nunca tendo visitado a cidade!
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-yellow-600">📚</strong> Romanos é considerada a <strong>carta mais importante de toda a Bíblia</strong> sobre salvação e graça.
                         </p>
-                        <p class="bg-white p-4 rounded-lg border-2 border-amber-200">
-                            <span class="font-bold text-amber-600">🗺️ O sonho de Paulo:</span> Ele tinha um grande sonho de ir a Roma e conhecer os irmãos de lá. E depois, ele conseguiu!
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-amber-600">⚡</strong> Lendo Romanos, Martinho Lutero entendeu que somos <strong>salvos pela fé</strong> — e isso gerou a Reforma Protestante em 1517!
                         </p>
-                        <div class="text-center mt-6 p-4 bg-gradient-to-r from-amber-100 to-yellow-100 rounded-lg">
-                            <p class="font-bold text-amber-700">📖 Romanos é considerada a carta mais importante sobre a salvação!</p>
-                        </div>
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-yellow-600">🗣️</strong> Paulo ditou a carta para um escriba chamado <strong>Tércio</strong>, que assinou ao final: "Eu, Tércio, que escrevi esta carta!" (Rm 16:22)
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl border-2 border-sky-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-sky-500">
+                <p class="text-5xl text-center mb-4">🪞</p>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Romanos 3:23 diz que <em>todos</em> pecaram — ninguém é melhor que ninguém. <strong>Como isso muda a forma de você enxergar outras pessoas?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-500">
+                <p class="text-5xl text-center mb-4">🎁</p>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    A salvação é um presente que não se merece — apenas se recebe. <strong>Você já ganhou um presente que não esperava? Como se sentiu? É assim que Deus nos trata!</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-500">
+                <p class="text-5xl text-center mb-4">🌈</p>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Romanos 8:28 diz que Deus transforma tudo para o bem de quem O ama. <strong>Você consegue pensar em algum momento difícil que Deus transformou em algo bom?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-sky-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-sky-100 text-sky-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3">Leia Romanos 8</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>Romanos capítulo 8</strong> — é considerado o capítulo mais consolador de toda a Bíblia! Cheio de promessas incríveis de Deus para você.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3">Versículo na Parede</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva num papel colorido: <strong>"Tudo contribui para o meu bem! — Rm 8:28"</strong> e cole em algum lugar que você veja quando estiver com medo ou triste.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🙏</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">Ore pela Transformação</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Pense em uma coisa difícil na sua vida agora. Escreva em um papel e ore: <strong>"Deus, eu confio que o Senhor pode transformar isso em algo bom."</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Navegação -->
     <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <h3 class="text-3xl font-black text-sky-700 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../atos/atos.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Atos
             </a>
             <a href="../index.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros do Novo Testamento
+                📚 Ver Novo Testamento
             </a>
             <a href="../1corintios/1corintios.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 1 Coríntios ➡️
@@ -279,7 +411,7 @@
 
     <!-- Rodapé -->
     <section class="section bg-gradient-to-r from-sky-500 to-blue-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Romanos - A Carta da Graça ✨</h3>
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Romanos - A Carta da Graça e Salvação ✨</h3>
         <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
         <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>

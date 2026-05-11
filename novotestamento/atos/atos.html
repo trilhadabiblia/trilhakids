@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -56,7 +57,7 @@
                         Falaram em outras línguas, pregaram com ousadia,<br>
                         E três mil pessoas creram naquele dia!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Atos 2:1-4, 41</p>
+                    <p class="text-sm text-orange-600 mt-3 font-semibold">📖 Atos 2:1-4, 41</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-500">
@@ -67,7 +68,7 @@
                         Paulo viajou por terras tão distantes,<br>
                         Levando o evangelho a todos os instantes!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Atos 4:13, 20</p>
+                    <p class="text-sm text-red-600 mt-3 font-semibold">📖 Atos 4:13, 20</p>
                 </div>
 
                 <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-yellow-500">
@@ -78,7 +79,7 @@
                         Judeus e gentios, todos eram irmãos,<br>
                         Unidos em Cristo, de corações e mãos!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Atos 1:8; 10:34-35</p>
+                    <p class="text-sm text-yellow-600 mt-3 font-semibold">📖 Atos 1:8; 10:34-35</p>
                 </div>
             </div>
         </div>
@@ -94,31 +95,73 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-orange-600 to-red-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-300 text-center">
+                <p class="text-5xl mb-4">📖</p>
+                <blockquote class="text-3xl font-black text-orange-700 leading-snug mb-4">
+                    "Mas recebereis poder, ao descer sobre vós o Espírito Santo, e sereis minhas testemunhas tanto em Jerusalém como em toda a Judeia e Samaria e até aos confins da terra."
+                </blockquote>
+                <p class="text-xl font-bold text-red-600 mb-6">Atos 1:8</p>
+                <div class="bg-orange-50 rounded-2xl p-4 border-2 border-orange-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Estas foram as últimas palavras de Jesus antes de subir ao céu — e são o mapa do livro de Atos inteiro! Jerusalém → Judeia → Samaria → mundo. A missão começa no lugar onde você está e vai crescendo até alcançar todos!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-            👥 Quem são os Personagens Principais?
+            👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="atos-personagem.png" alt="Personagens de Atos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-4 rounded-lg border-l-4 border-orange-500">
-                    <h3 class="font-bold text-xl text-orange-600 mb-2">🗝️ Pedro</h3>
-                    <p class="text-gray-700">O pescador corajoso que pregou no Pentecostes e viu milhares se converterem!</p>
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">🗝️ Pedro — O Pregador Corajoso</h3>
+                    <p class="text-gray-700 mb-3">O pescador que havia negado Jesus três vezes agora pregava sem medo diante de multidões! No dia de Pentecostes, três mil pessoas creram pela sua pregação.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-orange-500">
+                        <p class="text-sm font-bold text-orange-700 mb-1">📖 Leia na Bíblia — Atos 2:38</p>
+                        <p class="text-gray-700 italic">"Arrependei-vos, e cada um de vós seja batizado em nome de Jesus Cristo para remissão dos pecados."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-4 rounded-lg border-l-4 border-red-500">
-                    <h3 class="font-bold text-xl text-red-600 mb-2">⚡ Paulo</h3>
-                    <p class="text-gray-700">O perseguidor que se tornou o maior missionário, levando Jesus ao mundo inteiro!</p>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">⚡ Paulo — O Missionário Incansável</h3>
+                    <p class="text-gray-700 mb-3">Era chamado Saulo e perseguia os cristãos — até encontrar Jesus no caminho de Damasco! Transformado, tornou-se o maior missionário da história da igreja.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-red-500">
+                        <p class="text-sm font-bold text-red-700 mb-1">📖 Leia na Bíblia — Atos 9:15</p>
+                        <p class="text-gray-700 italic">"Este é um instrumento escolhido por mim para levar o meu nome perante os gentios."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
-                    <h3 class="font-bold text-xl text-yellow-600 mb-2">🔥 Espírito Santo</h3>
-                    <p class="text-gray-700">O poder de Deus que encheu os discípulos de coragem, sabedoria e ousadia!</p>
+                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-5 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-2">🔥 Espírito Santo — O Poder de Deus</h3>
+                    <p class="text-gray-700 mb-3">O verdadeiro protagonista de Atos! É Ele quem guia, capacita, consola e enche os discípulos de coragem para enfrentar qualquer situação.</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Leia na Bíblia — Atos 2:4</p>
+                        <p class="text-gray-700 italic">"E todos foram cheios do Espírito Santo e começaram a falar em outras línguas."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-4 rounded-lg border-l-4 border-blue-500">
-                    <h3 class="font-bold text-xl text-blue-600 mb-2">💎 Estêvão, João e Barnabé</h3>
-                    <p class="text-gray-700">Heróis da fé que pregaram, curaram e deram suas vidas por Jesus!</p>
+                <div class="bg-gradient-to-r from-blue-50 to-sky-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-2">💎 Estêvão — O Primeiro Mártir</h3>
+                    <p class="text-gray-700 mb-3">O primeiro cristão a morrer por sua fé. Mesmo apedrejado, pediu perdão pelos seus inimigos — igual a Jesus na cruz!</p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-blue-500">
+                        <p class="text-sm font-bold text-blue-700 mb-1">📖 Leia na Bíblia — Atos 7:59-60</p>
+                        <p class="text-gray-700 italic">"Senhor Jesus, recebe o meu espírito... Senhor, não lhes imputes este pecado."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -127,31 +170,29 @@
     <!-- Seção 2: O que o livro conta? -->
     <section class="section bg-gradient-to-br from-orange-50 to-red-50 p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-            📖 O que o Livro Conta?
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-500">
-                    <h3 class="font-bold text-2xl text-orange-600 mb-3">🔥 O Dia de Pentecostes</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Depois que Jesus subiu ao céu, Ele enviou o Espírito Santo! 
-                        Os discípulos estavam reunidos quando de repente veio um vento forte 
-                        e línguas de fogo apareceram sobre eles. Ficaram cheios do poder de Deus!
-                    </p>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">🔥 O Dia de Pentecostes</h3>
+                    <p class="text-gray-700 mb-3">Cinquenta dias após a Páscoa, o Espírito Santo desceu como vento forte e línguas de fogo sobre os discípulos reunidos. Em um único dia, 3 mil pessoas creram em Jesus!</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Atos 2:41 — "Os que, pois, receberam a sua palavra foram batizados; e naquele dia agregaram-se como três mil almas."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500">
-                    <h3 class="font-bold text-2xl text-red-600 mb-3">✨ A Igreja Cresce</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Pedro pregou com tanta coragem que 3 mil pessoas creram em Jesus! 
-                        Os apóstolos faziam milagres, curavam doentes e a igreja crescia todos os dias.
-                    </p>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-red-500">
+                    <h3 class="text-2xl font-bold text-red-600 mb-2">⛪ A Primeira Igreja</h3>
+                    <p class="text-gray-700 mb-3">Os primeiros cristãos compartilhavam tudo, oravam juntos, aprendiam com os apóstolos e comiam juntos com alegria. Que modelo de comunidade!</p>
+                    <p class="text-sm text-red-600 italic border-t border-red-100 pt-2">📖 Atos 2:44-45 — "Todos os que criam estavam juntos e tinham tudo em comum; vendiam suas propriedades... e repartiam com todos."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-500">
-                    <h3 class="font-bold text-2xl text-yellow-600 mb-3">🌍 Missões ao Mundo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo fez três grandes viagens missionárias, levando o evangelho 
-                        a cidades distantes. Enfrentou perigos, mas nunca desistiu de falar de Jesus!
-                    </p>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-yellow-500">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-2">🌍 As Três Viagens de Paulo</h3>
+                    <p class="text-gray-700 mb-3">Paulo percorreu mais de 16.000 km, fundou igrejas em cidades do mundo romano, enfrentou naufrágios, prisões e apedrejamentos — e nunca parou de pregar!</p>
+                    <p class="text-sm text-yellow-600 italic border-t border-yellow-100 pt-2">📖 Atos 13:2 — "Separai-me Barnabé e Saulo para a obra a que os tenho chamado."</p>
+                </div>
+                <div class="bg-white p-5 rounded-2xl shadow-md border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-2">🏛️ O Evangelho Chega a Roma</h3>
+                    <p class="text-gray-700 mb-3">Atos termina com Paulo preso em Roma, a capital do mundo, mas pregando livremente. A missão começou em Jerusalém e alcançou o centro do império!</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Atos 28:31 — "Pregando o reino de Deus e ensinando as coisas concernentes ao Senhor Jesus Cristo, com toda a ousadia."</p>
                 </div>
             </div>
             <div>
@@ -163,41 +204,42 @@
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
-            💡 Por que é Importante?
+            💡 Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
                 <img src="atos-importante.png" alt="Importância de Atos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl shadow-md">
-                    <h3 class="font-bold text-2xl text-orange-600 mb-3 flex items-center gap-2">
-                        <span>🔥</span> O Poder do Espírito Santo
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Atos nos ensina que o mesmo Espírito Santo que encheu os discípulos 
-                        está disponível para nós hoje! Ele nos dá coragem para falar de Jesus 
-                        e poder para viver uma vida que agrada a Deus.
+            <div class="order-1 md:order-2 space-y-5">
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-600 mb-3">🔥 O Espírito Santo é Para Nós Também!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O mesmo Espírito que encheu Pedro e Paulo está disponível para qualquer pessoa que crê em Jesus — inclusive você! Ele dá coragem, sabedoria e amor.
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-orange-500">
+                        <p class="text-sm font-bold text-orange-700 mb-1">📖 Atos 1:8</p>
+                        <p class="text-gray-700 italic">"Mas recebereis poder, ao descer sobre vós o Espírito Santo, e sereis minhas testemunhas."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl shadow-md">
-                    <h3 class="font-bold text-2xl text-red-600 mb-3 flex items-center gap-2">
-                        <span>💪</span> Coragem e Amor
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Mesmo quando foram presos, ameaçados e perseguidos, os apóstolos 
-                        continuaram pregando com amor e coragem. Eles nos mostram que 
-                        vale a pena seguir Jesus, não importa o que aconteça!
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-600 mb-3">💪 Coragem Que Vence o Medo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Pedro e João foram presos e ameaçados, mas responderam: "não podemos deixar de falar". Essa coragem não era deles — vinha do Espírito Santo!
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-red-500">
+                        <p class="text-sm font-bold text-red-700 mb-1">📖 Atos 4:13</p>
+                        <p class="text-gray-700 italic">"Ao verem a ousadia de Pedro e de João... reconheciam que tinham estado com Jesus."</p>
+                    </div>
                 </div>
-                <div class="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-xl shadow-md">
-                    <h3 class="font-bold text-2xl text-yellow-600 mb-3 flex items-center gap-2">
-                        <span>🌟</span> Todos Podem Conhecer Jesus
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Atos mostra que o evangelho é para todo mundo — não importa de onde você é 
-                        ou quem você é. Jesus ama a todos e quer que todos O conheçam!
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-5 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3">🌟 Todos Podem Conhecer Jesus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Atos mostra que o evangelho não tem fronteiras de raça, nação ou classe. Deus não faz diferença entre as pessoas — Ele ama a todos igualmente!
                     </p>
+                    <div class="bg-white p-3 rounded-xl border-l-4 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Atos 10:34-35</p>
+                        <p class="text-gray-700 italic">"Deus não faz acepção de pessoas; mas... aquele que o teme e pratica a justiça lhe é aceito."</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -208,46 +250,43 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500">
             🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-orange-500">
-                    <div class="flex items-start gap-4">
-                        <span class="text-4xl">📜</span>
-                        <div>
-                            <h3 class="font-bold text-xl text-orange-600 mb-2">Contar a História da Igreja</h3>
-                            <p class="text-gray-700">
-                                Atos é como um diário que mostra como tudo começou! 
-                                Como a igreja nasceu, cresceu e se espalhou pelo mundo inteiro.
-                            </p>
-                        </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-5 order-2 md:order-1">
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-orange-500">
+                    <div class="text-5xl mb-4">📜</div>
+                    <h3 class="text-2xl font-bold text-orange-600 mb-3">Contar a História da Igreja</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Atos é o único livro histórico do Novo Testamento — um diário vivo de como a igreja nasceu, cresceu e se espalhou em apenas algumas décadas pelo mundo conhecido.
+                    </p>
+                    <div class="bg-orange-50 p-3 rounded-xl border-l-4 border-orange-400">
+                        <p class="text-sm font-bold text-orange-700 mb-1">📖 Atos 1:8</p>
+                        <p class="text-gray-700 italic">"...sereis minhas testemunhas tanto em Jerusalém... e até aos confins da terra."</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-red-500">
-                    <div class="flex items-start gap-4">
-                        <span class="text-4xl">🕊️</span>
-                        <div>
-                            <h3 class="font-bold text-xl text-red-600 mb-2">Mostrar o Espírito Santo em Ação</h3>
-                            <p class="text-gray-700">
-                                O livro revela como o Espírito Santo guiou, fortaleceu e capacitou 
-                                os primeiros cristãos a fazer coisas incríveis para Deus!
-                            </p>
-                        </div>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-red-500">
+                    <div class="text-5xl mb-4">🕊️</div>
+                    <h3 class="text-2xl font-bold text-red-600 mb-3">Mostrar o Espírito Santo em Ação</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Muitos chamam Atos de "o Evangelho do Espírito Santo". É Ele o verdadeiro herói — guiando cada decisão, cada missão, cada milagre.
+                    </p>
+                    <div class="bg-red-50 p-3 rounded-xl border-l-4 border-red-400">
+                        <p class="text-sm font-bold text-red-700 mb-1">📖 Atos 4:20</p>
+                        <p class="text-gray-700 italic">"Porque não podemos deixar de falar do que vimos e ouvimos."</p>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-yellow-500">
-                    <div class="flex items-start gap-4">
-                        <span class="text-4xl">🌍</span>
-                        <div>
-                            <h3 class="font-bold text-xl text-yellow-600 mb-2">Inspirar Missões e Evangelismo</h3>
-                            <p class="text-gray-700">
-                                Atos nos ensina que somos chamados a levar o evangelho a todas as nações, 
-                                começando onde estamos e indo até os confins da terra!
-                            </p>
-                        </div>
+                <div class="bg-white p-5 rounded-2xl shadow-lg border-t-4 border-yellow-500">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3">Inspirar Missões e Evangelismo</h3>
+                    <p class="text-gray-700 text-lg mb-3">
+                        Atos ainda não acabou! A missão de ser testemunha de Jesus continua — e você faz parte dessa história hoje, na sua escola, bairro e família.
+                    </p>
+                    <div class="bg-yellow-50 p-3 rounded-xl border-l-4 border-yellow-400">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Atos 13:47</p>
+                        <p class="text-gray-700 italic">"Eu te pus para ser luz dos gentios, a fim de que sejas para salvação até aos confins da terra."</p>
                     </div>
                 </div>
             </div>
-            <div>
+            <div class="order-1 md:order-2">
                 <img src="atos-proposito.png" alt="Propósito de Atos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
         </div>
@@ -263,29 +302,23 @@
                 <img src="atos-curiosidade.png" alt="Curiosidade sobre Atos" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-orange-100 via-red-100 to-yellow-100 p-8 rounded-2xl shadow-xl border-4 border-orange-300">
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="text-5xl">📖</span>
-                        <h3 class="font-black text-3xl text-orange-600">Curiosidade Incrível!</h3>
+                <div class="bg-gradient-to-br from-orange-100 via-red-100 to-yellow-100 p-8 rounded-3xl shadow-2xl border-4 border-orange-300">
+                    <div class="text-center mb-6">
+                        <span class="text-6xl">🔥✈️</span>
                     </div>
-                    <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
-                        <p class="font-semibold">
-                            🎬 O livro de Atos é como a "continuação" do Evangelho de Lucas! 
-                            Lucas escreveu os dois livros para contar toda a história de Jesus 
-                            e da igreja primitiva.
+                    <h3 class="text-3xl font-black text-orange-600 mb-6 text-center">Curiosidades de Atos!</h3>
+                    <div class="space-y-4 text-lg text-gray-700">
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-orange-600">🎬</strong> Atos é a <strong>continuação do Evangelho de Lucas</strong> — o mesmo autor contou toda a história!
                         </p>
-                        <p>
-                            ✈️ <span class="font-bold">Paulo fez três viagens missionárias</span> incríveis! 
-                            Ele viajou mais de 16.000 quilômetros a pé e de barco, 
-                            enfrentou naufrágios, prisões e perigos — tudo para levar Jesus às nações!
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-red-600">✈️</strong> Paulo percorreu mais de <strong>16.000 km</strong> em três viagens missionárias — a pé, de barco e enfrentando naufrágio!
                         </p>
-                        <p>
-                            🔢 <span class="font-bold">No dia de Pentecostes, 3.000 pessoas foram batizadas!</span> 
-                            Foi o maior batismo coletivo da história da igreja primitiva!
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-yellow-600">🔢</strong> No dia de Pentecostes, <strong>3.000 pessoas</strong> foram batizadas num único dia — o maior batismo coletivo da história!
                         </p>
-                        <p>
-                            🌟 <span class="font-bold">Atos tem 28 capítulos</span> e termina com Paulo 
-                            pregando em Roma — mostrando que o evangelho chegou ao centro do mundo conhecido!
+                        <p class="bg-white p-4 rounded-xl shadow">
+                            <strong class="text-orange-600">✝️</strong> A palavra <strong>"cristão"</strong> foi usada pela primeira vez na cidade de Antioquia, registrada em Atos 11:26!
                         </p>
                     </div>
                 </div>
@@ -293,9 +326,82 @@
         </div>
     </section>
 
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-orange-50 to-yellow-50 p-8 mb-4 rounded-2xl border-2 border-orange-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-500">
+                <p class="text-5xl text-center mb-4">🔥</p>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Pedro negou Jesus com medo, mas depois de receber o Espírito Santo pregou sem medo para milhares. <strong>Como você acha que o Espírito Santo muda as pessoas?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-red-500">
+                <p class="text-5xl text-center mb-4">🗣️</p>
+                <h3 class="text-xl font-bold text-red-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo não desistiu mesmo preso e naufragando. <strong>O que te dá coragem para falar sobre Jesus para seus amigos, mesmo com vergonha ou medo?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-yellow-500">
+                <p class="text-5xl text-center mb-4">🤝</p>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    A primeira Igreja partilhava tudo com quem precisava. <strong>Como você pode compartilhar o que tem — tempo, brinquedos, amizade — com alguém que precisa?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-orange-600 to-red-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-orange-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3">Leia o Pentecostes</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>Atos 2:1-47</strong> em voz alta — o dia mais emocionante da história da igreja! Vento, fogo, novas línguas e 3 mil batizados!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-red-700 mb-3">Versículo na Parede</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva num papel colorido: <strong>"Sou testemunha de Jesus! — Atos 1:8"</strong> e cole no seu quarto para lembrar da sua missão!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📣</p>
+                <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3">Seja Testemunha!</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Conta para alguém — um colega, amigo ou familiar — uma coisa que você aprendeu sobre Jesus nesta semana. Isso é ser testemunha!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Navegação -->
     <section class="no-print text-center bg-gradient-to-r from-orange-500/20 to-red-500/20 border-2 border-orange-500/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <h3 class="text-3xl font-black text-orange-700 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../joao/joao.html" class="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ João

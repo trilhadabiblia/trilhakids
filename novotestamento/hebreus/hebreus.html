@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Hebreus 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-2xl border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-3">👑 Primeiro Segredo: Jesus é Superior!</h3>
                     <p class="italic">
@@ -96,47 +97,64 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
-            👥 Quem São os Personagens Principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-purple-700 to-blue-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="hebreus-personagem.png" alt="Personagens de Hebreus" 
-                    class="w-full h-auto rounded-xl shadow-lg object-contain">
-            </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✍️ O Autor Inspirado</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Não sabemos quem escreveu Hebreus, mas sabemos que foi inspirado por Deus! 
-                        Alguns dizem que foi Paulo, outros dizem Barnabé ou Apolo. O importante é que 
-                        Deus usou alguém especial para escrever esta carta poderosa!
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-l-4 border-blue-600">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">⛪ Os Cristãos Hebreus</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Eram judeus que aceitaram Jesus como Salvador! Mas estavam enfrentando 
-                        perseguição e tentação de voltar às antigas práticas. Esta carta foi 
-                        escrita para fortalecer a fé deles e mostrar que Jesus é suficiente!
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">👑 Jesus - O Personagem Central</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Ele é o verdadeiro herói de Hebreus! O livro todo fala sobre como Jesus 
-                        é superior a tudo e todos: anjos, Moisés, sacerdotes e sacrifícios. 
-                        Ele é o Filho de Deus perfeito!
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-purple-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-2xl font-black text-white mb-4 leading-tight">
+                    "Corramos com perseverança a corrida que nos está proposta, olhando para Jesus, o autor e consumador da nossa fé."
+                </p>
+                <p class="text-purple-200 font-bold text-xl mb-6">— Hebreus 12:1-2</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🏃 <span class="font-bold">O que isso significa?</span> A vida cristã é como uma corrida — não de velocidade, mas de perseverança. E o melhor: você não corre sozinho! Os heróis do capítulo 11 — Abraão, Moisés, Davi e tantos outros — são como uma arquibancada cheia de pessoas torcendo por você. E Jesus? Ele é quem te olha nos olhos e te diz: "Continue!"
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="hebreus-personagem.png" alt="Personagens de Hebreus"
+                    class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✍️ O Autor Inspirado</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Não sabemos quem escreveu Hebreus — Paulo, Barnabé, Apolo ou outra pessoa? É o livro mais misterioso do NT nesse sentido! Mas sabemos que foi inspirado por Deus, e que o autor conhecia profundamente o Antigo Testamento.
+                    </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 1:1 — "Havendo Deus falado... pelos profetas, nestes últimos dias nos falou pelo Filho."</p>
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-l-4 border-blue-600">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">⛪ Os Cristãos Hebreus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Judeus que aceitaram Jesus como Salvador, mas estavam sofrendo perseguição e sentindo vontade de voltar às antigas práticas. A carta foi escrita para eles: "Não desistam! Jesus é mais que suficiente!"
+                    </p>
+                    <p class="text-sm text-blue-600 font-semibold mt-2">📖 Hb 10:35-36 — "Não abandoneis, pois, a vossa confiança, que tem grande recompensa."</p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">👑 Jesus — O Herói Central</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Ele é o verdadeiro protagonista de Hebreus! O livro todo mostra como Jesus é superior a tudo e todos: anjos, Moisés, sacerdotes, sacrifícios. Ele é o Filho de Deus — e também nosso Sumo Sacerdote!
+                    </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 1:3 — "...sendo o resplendor da sua glória e a expressão exata do seu ser."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-purple-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
+    <section class="section bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             📖 O Que o Livro Conta?
         </h2>
@@ -145,76 +163,70 @@
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-2">✝️ Jesus é o Filho de Deus</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        O livro começa mostrando que Jesus é maior que os anjos! Ele é o Filho 
-                        de Deus, o criador do universo, e tem toda autoridade no céu e na terra. 
-                        Ninguém é como Ele!
+                        O livro começa mostrando que Jesus é maior que os anjos! Ele é o Filho de Deus, o criador do universo, e tem toda autoridade no céu e na terra. Os capítulos 1-2 são um hino poderoso à grandeza de Jesus!
                     </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 1:3-4 — "...tendo efetuado a purificação dos pecados, assentou-se à destra da Majestade nas alturas."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-bold text-blue-700 mb-2">🕊️ O Sacerdote Perfeito</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Jesus não é como os sacerdotes antigos que precisavam fazer sacrifícios 
-                        todos os dias. Ele é o sacerdote perfeito segundo a ordem de Melquisedeque, 
-                        que vive para sempre e intercede por nós!
+                        Jesus não é como os sacerdotes antigos que precisavam fazer sacrifícios todos os dias pelos próprios pecados. Ele é o sacerdote perfeito segundo a ordem de Melquisedeque — que vive para sempre e intercede por nós agora!
                     </p>
+                    <p class="text-sm text-blue-600 font-semibold mt-2">📖 Hb 4:14-15 — "...temos um grande sumo sacerdote... Jesus, Filho de Deus... que foi tentado em tudo."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-2">🩸 O Sacrifício Completo</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Jesus ofereceu o sacrifício perfeito: Ele mesmo! Na cruz, Ele pagou o 
-                        preço pelos nossos pecados de uma vez por todas. Não precisamos de mais 
-                        sacrifícios - Jesus é suficiente!
+                        Jesus ofereceu o sacrifício perfeito: Ele mesmo! Na cruz, Ele pagou o preço pelos nossos pecados de uma vez por todas. Os animais precisavam ser sacrificados repetidamente — Jesus fez UMA VEZ e foi suficiente para sempre!
                     </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 10:10 — "...pela qual vontade temos sido santificados, mediante a oferta do corpo de Jesus Cristo, uma vez por todas."</p>
                 </div>
             </div>
             <div>
-                <img src="hebreus-o-que-conta.png" alt="O que Hebreus conta" 
+                <img src="hebreus-o-que-conta.png" alt="O que Hebreus conta"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-purple-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             ⭐ Por Que é Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="hebreus-importante.png" alt="Importância de Hebreus" 
+            <div>
+                <img src="hebreus-importante.png" alt="Importância de Hebreus"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
+            <div class="space-y-4">
                 <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-2">🎯 Jesus é Suficiente</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Hebreus nos ensina que não precisamos de mais nada além de Jesus! 
-                        Não precisamos de rituais complicados, sacrifícios de animais ou 
-                        intermediários. Jesus fez tudo por nós na cruz!
+                        Hebreus nos ensina que não precisamos de mais nada além de Jesus! Não precisamos de rituais complicados nem de intermediários. Jesus fez tudo por nós na cruz — e ainda intercede por nós agora mesmo!
                     </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 7:25 — "...ele pode salvar totalmente os que por ele se aproximam de Deus, vivendo sempre para interceder por eles."</p>
                 </div>
                 <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-l-4 border-blue-600">
                     <h3 class="text-2xl font-bold text-blue-700 mb-2">💪 Fortalece Nossa Fé</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Quando passamos por dificuldades e tentações, Hebreus nos lembra de 
-                        permanecer firmes em Jesus. Ele é a âncora da nossa alma, seguro e 
-                        firme! Não devemos desistir!
+                        Quando passamos por dificuldades e tentações, Hebreus nos lembra de permanecer firmes em Jesus. Ele é a âncora da nossa alma — não balança mesmo quando o mar está agitado!
                     </p>
+                    <p class="text-sm text-blue-600 font-semibold mt-2">📖 Hb 6:19 — "A qual temos como âncora da alma, segura e firme, e que penetra até o interior do véu."</p>
                 </div>
                 <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-2">🏆 Mostra Heróis da Fé</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        O capítulo 11 é incrível! Ele conta sobre Abraão, Moisés, Raabe, 
-                        Davi e muitos outros que confiaram em Deus. Eles nos inspiram a 
-                        também viver pela fé!
+                        O capítulo 11 é incrível! Ele conta sobre Abraão, Moisés, Raabe, Davi e muitos outros que confiaram em Deus sem ver. Eles nos inspiram a também correr com perseverança!
                     </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 11:1 — "Ora, a fé é a certeza daquilo que esperamos e a prova das coisas que não vemos."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-blue-50 to-purple-50 p-8 mb-4 rounded-2xl shadow-lg">
+    <section class="section bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-blue-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             🎯 Propósito do Livro
         </h2>
@@ -223,85 +235,143 @@
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-2">🛡️ Fortalecer a Fé</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        O principal objetivo de Hebreus é fortalecer a fé dos cristãos que 
-                        estavam sendo perseguidos e tentados a desistir. O autor os encoraja 
-                        a permanecer firmes em Jesus, não importa o que aconteça!
+                        O principal objetivo de Hebreus é fortalecer a fé dos cristãos que estavam sendo perseguidos e tentados a desistir. O autor os encoraja a permanecer firmes em Jesus, não importa o que aconteça!
                     </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 10:36 — "Porque necessitais de perseverança para que, cumprindo a vontade de Deus, alcanceis a promessa."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
                     <h3 class="text-2xl font-bold text-blue-700 mb-2">👑 Exaltar Jesus</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Hebreus foi escrito para mostrar que Jesus é superior a tudo! Ele é 
-                        maior que os anjos, maior que Moisés, maior que os sacerdotes. Ele é 
-                        o Filho de Deus, o Salvador perfeito!
+                        Hebreus foi escrito para mostrar que Jesus é superior a tudo! Ele é maior que os anjos, maior que Moisés, maior que os sacerdotes. Ele é o Filho de Deus, o Salvador perfeito e eterno!
                     </p>
+                    <p class="text-sm text-blue-600 font-semibold mt-2">📖 Hb 1:4 — "...tanto superior aos anjos, quanto o nome que herdou é mais excelente do que o deles."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
                     <h3 class="text-2xl font-bold text-purple-700 mb-2">📚 Explicar a Nova Aliança</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        O livro explica como Jesus inaugurou uma nova aliança melhor que a antiga. 
-                        Não precisamos mais de sacrifícios de animais porque Jesus é o sacrifício 
-                        perfeito e final!
+                        O livro explica como Jesus inaugurou uma aliança melhor que a antiga. Não precisamos mais de sacrifícios de animais porque Jesus é o sacrifício perfeito e final — a nova aliança é eterna!
                     </p>
+                    <p class="text-sm text-purple-600 font-semibold mt-2">📖 Hb 8:6 — "...ele é também mediador de uma aliança tanto melhor, a qual foi estabelecida sobre melhores promessas."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-600">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🔥 Avisar Contra a Apostasia</h3>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🔥 Avisar Contra Desistir</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Hebreus alerta sobre o perigo de abandonar a fé em Jesus. O autor 
-                        encoraja os leitores a não endurecer o coração, mas a perseverar até 
-                        o fim com confiança em Deus!
+                        Hebreus alerta sobre o perigo de abandonar a fé em Jesus. O autor encoraja os leitores a não endurecer o coração, mas a se encorajarem uns aos outros todos os dias!
                     </p>
+                    <p class="text-sm text-blue-600 font-semibold mt-2">📖 Hb 3:13 — "Antes, exortai-vos uns aos outros cada dia, enquanto ainda se chama 'hoje'."</p>
                 </div>
             </div>
             <div>
-                <img src="hebreus-proposito.png" alt="Propósito de Hebreus" 
+                <img src="hebreus-proposito.png" alt="Propósito de Hebreus"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-gradient-to-br from-purple-100 to-blue-100 p-8 mb-4 rounded-2xl shadow-lg border-4 border-purple-300">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-purple-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="hebreus-curiosidade.png" alt="Curiosidade sobre Hebreus" 
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="hebreus-curiosidade.png" alt="Curiosidade sobre Hebreus"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-purple-600">
-                    <h3 class="text-3xl font-bold text-purple-700 mb-4">📖 O Capítulo da Fé!</h3>
-                    <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                        Hebreus 11 é conhecido como o "Capítulo da Fé" ou o "Hall da Fama da Fé"! 
-                        Ele lista mais de 15 heróis da Bíblia que viveram pela fé em Deus.
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-4 border-purple-300">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🏟️</span>
+                        A Arquibancada dos Heróis
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Hebreus 12:1 diz que estamos "rodeados por uma nuvem de testemunhas" — são os heróis do capítulo 11! Imagine uma arquibancada cheia de Abraão, Moisés, Davi, Raabe... <span class="font-bold text-purple-700">todos torcendo por você</span> enquanto você corre sua corrida de fé!
                     </p>
-                    <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-xl mb-4">
-                        <p class="text-gray-700 leading-relaxed font-semibold">
-                            🌟 Alguns heróis mencionados:<br>
-                            • Abel - ofereceu sacrifício pela fé<br>
-                            • Enoque - andou com Deus<br>
-                            • Noé - construiu a arca<br>
-                            • Abraão - obedeceu a Deus<br>
-                            • Sara - recebeu força para ter um filho<br>
-                            • Moisés - escolheu sofrer com o povo de Deus<br>
-                            • Raabe - escondeu os espias<br>
-                            • E muitos outros!
-                        </p>
-                    </div>
-                    <p class="text-gray-700 leading-relaxed text-lg">
-                        O capítulo termina dizendo que todos esses heróis esperavam por algo 
-                        melhor que Deus havia prometido - e esse "algo melhor" é Jesus! 
-                        Agora nós também podemos fazer parte dessa lista de heróis da fé! 💪
+                </div>
+                <div class="bg-gradient-to-r from-blue-100 to-purple-100 p-6 rounded-xl border-4 border-blue-300">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🔮</span>
+                        Quem foi Melquisedeque?
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Hebreus fala muito de Melquisedeque — um rei-sacerdote misterioso que aparece só duas vezes no AT (Gn 14 e Sl 110). Ele não tem pai, mãe ou genealogia registrada, e se torna uma imagem perfeita do sacerdócio eterno de Jesus (Hb 7). <span class="font-bold text-blue-700">Intrigante, né?</span>
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-purple-100 to-blue-100 p-6 rounded-xl border-4 border-purple-300">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📖</span>
+                        O Hall da Fama da Fé
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Hebreus 11 é conhecido como o <span class="font-bold text-purple-700">"Hall da Fama da Fé"</span> — lista mais de 15 heróis: Abel, Enoque, Noé, Abraão, Sara, Isaque, Jacó, José, Moisés, Raabe... O capítulo termina dizendo que todos esperavam por Jesus. Agora nós fazemos parte dessa lista! 💪
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-purple-50 to-blue-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-purple-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-600">
+                <div class="text-5xl text-center mb-4">🏃</div>
+                <h3 class="text-xl font-bold text-purple-700 mb-3 text-center">Seu Herói da Fé</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Hb 12:1 diz que corremos "rodeados por uma nuvem de testemunhas" — os heróis do capítulo 11. Qual desses heróis te inspira mais e por quê? O que você pode aprender com a fé dele?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-600">
+                <div class="text-5xl text-center mb-4">🙏</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Jesus Entende Você</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Hb 4:15 diz que Jesus "foi tentado em tudo, tal como nós, mas sem pecado." Como saber que Jesus entende suas tentações e dificuldades muda a forma como você ora a Ele?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-purple-600">
+                <div class="text-5xl text-center mb-4">⚓</div>
+                <h3 class="text-xl font-bold text-purple-700 mb-3 text-center">Sua Âncora</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Hb 6:19 chama a esperança em Jesus de "âncora da alma". Quando você se sente perdido ou com medo, o que te ancora? Como a fé em Jesus pode ser essa âncora na sua vida?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-purple-700 to-blue-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-purple-300 text-center">
+                <div class="text-5xl mb-4">🏅</div>
+                <h3 class="text-xl font-bold text-purple-200 mb-3">Escolha Seu Herói</h3>
+                <p class="text-white leading-relaxed">
+                    Leia Hebreus 11 e escolha UM herói da fé. Pesquise sobre ele no Antigo Testamento e escreva: "O que aprendi com a fé de _____ foi..." Compartilhe com alguém!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-blue-300 text-center">
+                <div class="text-5xl mb-4">✏️</div>
+                <h3 class="text-xl font-bold text-blue-200 mb-3">A Corrida da Fé</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Hebreus 12:1-2 num papel. Desenhe uma pista de corrida e coloque os nomes dos heróis do cap. 11 nas arquibancadas — torcendo por você! Lembre: Jesus está na linha de chegada!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-purple-300 text-center">
+                <div class="text-5xl mb-4">⚖️</div>
+                <h3 class="text-xl font-bold text-purple-200 mb-3">Largue o Peso</h3>
+                <p class="text-white leading-relaxed">
+                    Hb 12:1 diz para "depor todo impedimento" que atrapalha nossa corrida. Identifique UM hábito, medo ou atitude que te pesa. Esta semana, ore pedindo a Deus para te ajudar a largar esse peso!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-2 border-purple-600/30 rounded-2xl p-10">
+    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-blue-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../filemom/filemom.html" class="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">

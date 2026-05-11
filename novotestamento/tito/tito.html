@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Tito 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-300">
                     <h3 class="text-2xl font-bold text-sky-700 mb-3">✨ Primeiro Segredo: Lidere com Sabedoria</h3>
                     <p class="italic">
@@ -96,28 +97,57 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-sky-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Em tudo, apresenta-te a ti mesmo como modelo de boas obras."
+                </p>
+                <p class="text-sky-200 font-bold text-xl mb-6">— Tito 2:7</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🪶 <span class="font-bold">O que isso significa?</span> Paulo disse a Tito: "Seja um exemplo!" Não era só pra Tito — é pra você também! Um modelo é alguém que os outros olham e pensam: "Quero ser assim." Você não precisa ser adulto para ser um exemplo — sua honestidade, sua bondade e sua fé já inspiram as pessoas ao seu redor.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Personagens Principais -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-sky-500">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                 👥 Quem São os Personagens Principais?
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
                 <div>
                     <img src="tito-personagem.png" alt="Paulo e Tito" class="w-full h-auto rounded-xl shadow-lg">
                 </div>
                 <div class="space-y-6">
                     <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                        <h3 class="text-2xl font-bold text-sky-700 mb-3">✍️ Paulo - O Apóstolo Mestre</h3>
+                        <h3 class="text-2xl font-bold text-sky-700 mb-3">✍️ Paulo — O Apóstolo Mestre</h3>
                         <p class="text-gray-700 leading-relaxed">
                             Paulo era como um professor sábio que viajava ensinando sobre Jesus. Ele escreveu esta carta para seu amigo Tito, dando conselhos importantes sobre como cuidar da igreja e ensinar as pessoas a viverem de forma que agradasse a Deus!
                         </p>
+                        <p class="text-sm text-sky-700 font-semibold mt-2">📖 Tt 1:4 — "A Tito, verdadeiro filho na fé comum: graça e paz da parte de Deus Pai e de Cristo Jesus."</p>
                     </div>
                     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
-                        <h3 class="text-2xl font-bold text-blue-700 mb-3">🪶 Tito - O Colaborador Fiel</h3>
+                        <h3 class="text-2xl font-bold text-blue-700 mb-3">🪶 Tito — O Colaborador Fiel</h3>
                         <p class="text-gray-700 leading-relaxed">
-                            Tito era um jovem líder cheio de energia e amor por Jesus. Ele ajudava Paulo nas viagens missionárias e foi enviado para a ilha de Creta para organizar as igrejas e ensinar os crentes a viverem com boas obras e caráter exemplar!
+                            Tito era um jovem líder cheio de energia e amor por Jesus. Ele foi enviado para a ilha de Creta para organizar as igrejas e ensinar os crentes a viverem com boas obras e caráter exemplar. Paulo confiava completamente nele!
                         </p>
+                        <p class="text-sm text-blue-700 font-semibold mt-2">📖 Tt 1:5 — "Por esta causa te deixei em Creta, para que pusesses em ordem o que ainda estava por fazer."</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-500">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3">🏝️ A Igreja em Creta</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Creta era uma ilha grande do Mediterrâneo, conhecida por ser um lugar desafiador. A igreja lá precisava de organização e liderança. Eram pessoas reais, com defeitos, que Tito foi ajudar a crescer na fé — como um jardineiro cuidando de plantas novas!
+                        </p>
+                        <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Tt 1:5 — "...e constituísses presbíteros em cada cidade, como eu te mandei."</p>
                     </div>
                 </div>
             </div>
@@ -125,7 +155,7 @@
     </section>
 
     <!-- Seção 2: O Que o Livro Conta? -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-blue-500">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                 📖 O Que o Livro Conta?
@@ -137,12 +167,21 @@
                         <p class="text-gray-700 leading-relaxed">
                             Paulo ensina Tito a escolher líderes sábios e respeitosos para cuidar da igreja. Esses líderes precisavam ser honestos, amorosos e bons exemplos para todos seguirem. Era como escolher os melhores capitães para guiar o navio!
                         </p>
+                        <p class="text-sm text-sky-700 font-semibold mt-2">📖 Tt 1:7-9 — "Convém que o bispo seja irrepreensível... amigo de hospitalidade, amante do bem..."</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
                         <h3 class="text-2xl font-bold text-blue-700 mb-3">💪 Como Viver com Boas Obras</h3>
                         <p class="text-gray-700 leading-relaxed">
-                            A carta ensina que nossa fé em Jesus deve aparecer em nossas ações! Devemos ser bondosos, honestos, trabalhar duro e ajudar os outros. Não basta apenas falar sobre Jesus - precisamos viver como Ele viveu, fazendo o bem todos os dias!
+                            A carta ensina que nossa fé em Jesus deve aparecer em nossas ações! Devemos ser bondosos, honestos, trabalhar duro e ajudar os outros. Não basta apenas falar sobre Jesus — precisamos viver como Ele viveu!
                         </p>
+                        <p class="text-sm text-blue-700 font-semibold mt-2">📖 Tt 2:7-8 — "Em tudo, apresenta-te a ti mesmo como modelo de boas obras... de modo que não possam dizer mal."</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3">🕊️ A Graça que Transforma</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            O capítulo mais bonito de Tito! A graça de Deus — seu amor gratuito — nos ensina a abandonar o que é errado e a viver de forma justa e boa. Não é esforço nosso, é a graça de Deus agindo em nós!
+                        </p>
+                        <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Tt 2:11-12 — "A graça de Deus se manifestou... ensinando-nos a renunciar à impiedade e a viver sensatamente."</p>
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
@@ -153,7 +192,7 @@
     </section>
 
     <!-- Seção 3: Por Que É Importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-sky-500">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                 ⭐ Por Que É Importante?
@@ -166,14 +205,23 @@
                     <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
                         <h3 class="text-2xl font-bold text-sky-700 mb-3">🌟 A Fé Verdadeira Se Vê</h3>
                         <p class="text-gray-700 leading-relaxed">
-                            Tito nos ensina que não adianta apenas dizer que amamos Jesus - precisamos mostrar isso! Quando somos gentis, honestos e ajudamos os outros, as pessoas veem que nossa fé é real. É como uma árvore que mostra sua saúde pelos frutos que dá!
+                            Tito nos ensina que não adianta apenas dizer que amamos Jesus — precisamos mostrar isso! Quando somos gentis, honestos e ajudamos os outros, as pessoas veem que nossa fé é real. É como uma árvore que mostra sua saúde pelos frutos!
                         </p>
+                        <p class="text-sm text-sky-700 font-semibold mt-2">📖 Tt 2:14 — "...para purificar para si mesmo um povo exclusivamente seu, zeloso de boas obras."</p>
                     </div>
                     <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
                         <h3 class="text-2xl font-bold text-blue-700 mb-3">💎 Nossas Atitudes Falam Mais Alto</h3>
                         <p class="text-gray-700 leading-relaxed">
-                            O livro mostra que nossas ações são mais poderosas que nossas palavras! Quando vivemos de forma correta, respeitosa e bondosa, estamos mostrando ao mundo como é seguir Jesus. Somos como pequenas luzes que brilham na escuridão!
+                            O livro mostra que nossas ações são mais poderosas que nossas palavras! Quando vivemos de forma correta, respeitosa e bondosa, estamos mostrando ao mundo como é seguir Jesus. Somos como pequenas luzes que brilham!
                         </p>
+                        <p class="text-sm text-blue-700 font-semibold mt-2">📖 Tt 3:1-2 — "...que estejam prontos para toda boa obra... mostrando toda mansidão para com todos os homens."</p>
+                    </div>
+                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-500">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3">🕊️ Salvo pela Misericórdia, não Mérito</h3>
+                        <p class="text-gray-700 leading-relaxed">
+                            Tito 3:5 é uma das frases mais poderosas da Bíblia: Deus nos salvou não porque a gente merecia, mas pela sua misericórdia! Entender isso muda tudo — a gratidão nos motiva a fazer o bem!
+                        </p>
+                        <p class="text-sm text-indigo-700 font-semibold mt-2">📖 Tt 3:5 — "ele nos salvou, não por obras de justiça que houvéssemos feito, mas segundo a sua misericórdia."</p>
                     </div>
                 </div>
             </div>
@@ -181,7 +229,7 @@
     </section>
 
     <!-- Seção 4: Propósito do Livro -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-blue-500">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                 🎯 Propósito do Livro
@@ -189,16 +237,34 @@
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div class="space-y-6 order-2 md:order-1">
                     <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
-                        <h3 class="text-2xl font-bold text-sky-700 mb-3">👑 Ensinar Liderança Sábia</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            Paulo escreveu para ensinar Tito (e todos nós!) a liderar com sabedoria e amor. Um bom líder não é mandão ou orgulhoso - ele serve aos outros, ensina com paciência e mostra o caminho certo pelo exemplo. É como ser um pastor cuidadoso do rebanho!
+                        <h3 class="text-2xl font-bold text-sky-700 mb-4 flex items-center">
+                            <span class="text-4xl mr-3">👑</span>
+                            Ensinar Liderança Sábia
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Paulo escreveu para ensinar Tito (e todos nós!) a liderar com sabedoria e amor. Um bom líder não é mandão ou orgulhoso — ele serve aos outros, ensina com paciência e mostra o caminho certo pelo exemplo.
                         </p>
+                        <p class="text-sm text-sky-700 font-semibold mt-3">📖 Tt 1:9 — "...retendo a palavra fiel, que é segundo a doutrina, para que seja poderoso tanto para exortar."</p>
                     </div>
                     <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
-                        <h3 class="text-2xl font-bold text-blue-700 mb-3">✨ Promover Comportamento Exemplar</h3>
-                        <p class="text-gray-700 leading-relaxed">
-                            O livro nos desafia a viver de forma que honre a Deus em tudo! Isso significa ser honesto na escola, obediente em casa, bondoso com os amigos e sempre fazer o que é certo. Quando vivemos assim, mostramos que Jesus realmente transformou nosso coração!
+                        <h3 class="text-2xl font-bold text-blue-700 mb-4 flex items-center">
+                            <span class="text-4xl mr-3">✨</span>
+                            Promover Comportamento Exemplar
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            O livro nos desafia a viver de forma que honre a Deus em tudo! Ser honesto na escola, obediente em casa, bondoso com os amigos. Quando vivemos assim, mostramos que Jesus realmente transformou nosso coração!
                         </p>
+                        <p class="text-sm text-blue-700 font-semibold mt-3">📖 Tt 3:8 — "...afirmo que os que creram em Deus cuidem de se distinguir nas boas obras. Estas coisas são boas e úteis."</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-4 flex items-center">
+                            <span class="text-4xl mr-3">🤝</span>
+                            Servir com Hospitalidade
+                        </h3>
+                        <p class="text-gray-700 leading-relaxed text-lg">
+                            Paulo pede a Tito que cuide de Zenas e Apolo em sua viagem (Tt 3:13), lembrando que hospitalidade — receber, ajudar, cuidar dos outros — é uma das marcas do cristão. Pequenas gentilezas importam muito para Deus!
+                        </p>
+                        <p class="text-sm text-indigo-700 font-semibold mt-3">📖 Tt 3:13-14 — "...a fim de que os nossos aprendam a distinguir-se em boas obras para as necessidades prementes."</p>
                     </div>
                 </div>
                 <div class="order-1 md:order-2">
@@ -209,29 +275,104 @@
     </section>
 
     <!-- Seção 5: Você Sabia? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-sky-500">
         <div class="max-w-6xl mx-auto">
             <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
                 🤔 Você Sabia?
             </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="grid md:grid-cols-2 gap-8 items-center mb-8">
                 <div>
                     <img src="tito-curiosidade.png" alt="Tito nas Viagens" class="w-full h-auto rounded-xl shadow-lg">
                 </div>
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-8 rounded-xl shadow-lg border-4 border-sky-300">
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4">🌍 O Missionário Aventureiro!</h3>
-                    <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                        Tito não era apenas um ajudante comum - ele era um verdadeiro aventureiro missionário! Ele viajou com Paulo por muitas cidades perigosas, enfrentou tempestades no mar e até ajudou a resolver problemas difíceis nas igrejas. Paulo confiava tanto nele que o enviou para missões especiais!
-                    </p>
-                    <p class="text-gray-700 leading-relaxed text-lg mb-4">
-                        Tito foi para a ilha de Creta, um lugar cheio de desafios, para organizar as igrejas e ensinar as pessoas. Ele era corajoso, dedicado e amava ajudar os outros a conhecer Jesus melhor. Paulo o chamava de "verdadeiro filho na fé" - que elogio especial!
-                    </p>
-                    <div class="bg-white p-4 rounded-lg mt-4">
-                        <p class="text-sky-600 font-bold text-center">
-                            🌟 Tito nos ensina que nunca somos jovens demais para fazer a diferença no Reino de Deus!
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-4 border-sky-300">
+                        <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                            <span class="text-4xl mr-3">🏝️</span>
+                            A Ilha dos "Mentirosos"
+                        </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Paulo cita um poeta cretense chamado Epimênides, que disse: "Os cretenses são sempre mentirosos, bestas ruins, ventres preguiçosos" (Tt 1:12). Era a reputação da ilha! Mas Deus enviou Tito exatamente para lá — <span class="font-bold text-sky-700">porque ninguém está além do alcance da graça de Deus!</span>
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-4 border-blue-300">
+                        <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                            <span class="text-4xl mr-3">🌍</span>
+                            Tito: o Grego que Virou Missionário
+                        </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Tito era um grego — não era judeu. Isso era muito importante no tempo de Paulo! Ele foi um exemplo vivo de que a salvação é para <span class="font-bold text-blue-700">todos os povos</span>, não só para os judeus. Paulo nunca o circuncidou (Gl 2:3), mostrando que a graça, não as regras, nos salva.
+                        </p>
+                    </div>
+                    <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-4 border-indigo-300">
+                        <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                            <span class="text-4xl mr-3">✉️</span>
+                            A Menor das Pastorais
+                        </h3>
+                        <p class="text-lg text-gray-700 leading-relaxed">
+                            Tito é uma das três "Epístolas Pastorais" (com 1 e 2 Timóteo), todas sobre como cuidar da igreja. Com apenas 3 capítulos, é a menor das três — mas cada versículo é puro ouro! O livro resume em poucas palavras o que é uma vida cristã prática.
                         </p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-50 to-blue-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-sky-500">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-sky-500">
+                <div class="text-5xl text-center mb-4">🪶</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Ser Modelo</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo disse que Tito deveria ser um "modelo de boas obras" (Tt 2:7). Em que área da sua vida você pode ser um exemplo para outras pessoas — na escola, em casa ou com os amigos?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-blue-500">
+                <div class="text-5xl text-center mb-4">🕊️</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">A Graça Transforma</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Tt 2:11-12 diz que a graça de Deus nos ensina a viver de forma certa. O que você acha que a graça de Deus quer transformar na sua vida? Qual hábito ou atitude você gostaria de mudar?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-indigo-500">
+                <div class="text-5xl text-center mb-4">🏝️</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">O Seu "Creta"</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Tito foi enviado para Creta, um lugar difícil. Existe algum lugar difícil ou alguém "complicado" na sua vida onde você pode mostrar amor e fazer boas obras — mesmo sendo desafiador?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-sky-300 text-center">
+                <div class="text-5xl mb-4">🌟</div>
+                <h3 class="text-xl font-bold text-sky-200 mb-3">Seja o Modelo</h3>
+                <p class="text-white leading-relaxed">
+                    Escolha UMA boa obra para fazer por alguém esta semana — ajudar em casa, ser honesto numa situação difícil, ou incluir alguém que está sozinho. Como Tito, seja o modelo!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-blue-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-blue-200 mb-3">A Graça na Sua Vida</h3>
+                <p class="text-white leading-relaxed">
+                    Leia Tito 2:11-14. Escreva em 3 linhas: "A graça de Deus me ensina a..." — pense em algo concreto que você quer mudar no seu jeito de agir com as pessoas ao seu redor.
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-indigo-300 text-center">
+                <div class="text-5xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold text-indigo-200 mb-3">Hospitalidade em Ação</h3>
+                <p class="text-white leading-relaxed">
+                    Paulo pediu a Tito que ajudasse Zenas e Apolo na viagem (Tt 3:13). Esta semana, ajude alguém que está "em viagem" — com dificuldades, numa situação nova. Uma ajuda prática que faça diferença!
+                </p>
             </div>
         </div>
     </section>

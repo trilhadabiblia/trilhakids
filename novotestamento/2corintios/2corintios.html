@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 2 Coríntios 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">💪 Primeiro Segredo: Força na Fraqueza</h3>
                     <p class="italic">
@@ -102,31 +103,77 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <blockquote class="versiculo-card border-sky-500 pl-6 mb-6">
+                    <p class="text-2xl font-bold text-gray-800 italic leading-relaxed mb-3">
+                        "Se alguém está em Cristo, é uma nova criação; as coisas antigas passaram; eis que tudo se tornou novo."
+                    </p>
+                    <cite class="text-sky-600 font-bold text-lg">— 2 Coríntios 5:17</cite>
+                </blockquote>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Este versículo nos diz algo incrível: quando aceitamos Jesus no nosso coração, começamos uma vida totalmente nova!
+                    Não importa o que fizemos de errado antes — em Jesus, temos um recomeço.
+                    É como uma borboleta que sai do casulo: algo completamente novo e lindo!
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-sky-100 text-sky-700 px-4 py-2 rounded-full font-semibold text-sm">🦋 Nova Criação</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm">✨ Recomeço em Cristo</span>
+                    <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-semibold text-sm">🌟 Esperança Nova</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             👥 Quem são os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-8">
             <div class="order-2 md:order-1">
                 <img src="2corintios-personagem.png" alt="Paulo e os Coríntios" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ Paulo - O Apóstolo Corajoso</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo é um missionário que passou por muitas dificuldades: prisões, naufrágios, perseguições! 
-                        Mas ele nunca desistiu de pregar sobre Jesus. Nesta carta, ele abre seu coração e mostra como 
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-2 border-sky-200 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-2">✍️ Paulo — O Apóstolo Corajoso</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo é um missionário que passou por muitas dificuldades: prisões, naufrágios, perseguições!
+                        Mas ele nunca desistiu de pregar sobre Jesus. Nesta carta, ele abre seu coração e mostra como
                         Deus o fortalecia mesmo quando estava fraco e cansado.
                     </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Pelo que me glorio nas fraquezas, para que em mim habite o poder de Cristo."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Coríntios 12:9b</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200 rounded-2xl">
                     <h3 class="text-2xl font-bold text-blue-600 mb-2">⛪ Os Cristãos de Corinto</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Os cristãos de Corinto eram pessoas que acreditavam em Jesus, mas enfrentavam desafios e dúvidas. 
-                        Paulo os amava muito e escreveu esta carta para encorajá-los, ensiná-los e lembrá-los do amor 
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Os cristãos de Corinto eram pessoas que acreditavam em Jesus, mas enfrentavam desafios e dúvidas.
+                        Paulo os amava muito e escreveu esta carta para encorajá-los, ensiná-los e lembrá-los do amor
                         e do poder de Deus em suas vidas!
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Alargai-vos também vós. Tenho grande confiança em vós."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Coríntios 7:4</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-2 border-indigo-200 rounded-2xl">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-2">🤝 Tito — O Mensageiro Fiel</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Tito era um colaborador de Paulo que viajou até Corinto para levar mensagens e resolver conflitos.
+                        Quando voltou com boas notícias sobre a fé dos coríntios, Paulo ficou muito alegre e encorajado!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Deus, que consola os abatidos, consolou-nos com a vinda de Tito."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 2 Coríntios 7:6</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -139,28 +186,39 @@
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-sky-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
                     <h3 class="text-xl font-bold text-sky-600 mb-2">💪 As Dificuldades de Paulo</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo conta sobre todas as coisas difíceis que enfrentou: foi preso, apedrejado, 
-                        naufragou três vezes, passou fome e frio! Mas em tudo isso, ele não desanimou porque 
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo conta sobre todas as coisas difíceis que enfrentou: foi preso, apedrejado,
+                        naufragou três vezes, passou fome e frio! Mas em tudo isso, ele não desanimou porque
                         sabia que Deus estava com ele.
                     </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Em tudo somos atribulados, mas não angustiados; perplexos, mas não desanimados."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Coríntios 4:8</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
                     <h3 class="text-xl font-bold text-blue-600 mb-2">✨ O Poder de Deus na Fraqueza</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo aprendeu uma lição incrível: quando ele se sentia fraco, era exatamente aí que 
-                        o poder de Deus brilhava mais forte! Deus disse a ele: "A minha graça é suficiente para você, 
-                        porque o meu poder se aperfeiçoa na fraqueza."
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo aprendeu uma lição incrível: quando ele se sentia fraco, era exatamente aí que
+                        o poder de Deus brilhava mais forte! Esta verdade mudou a vida dele — e pode mudar a nossa também!
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"A minha graça te basta, porque o poder se aperfeiçoa na fraqueza."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Coríntios 12:9a</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-indigo-200">
                     <h3 class="text-xl font-bold text-indigo-600 mb-2">❤️ Encorajamento e Amor</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo escreve com muito amor para encorajar os cristãos de Corinto. Ele os lembra de serem 
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreve com muito amor para encorajar os cristãos de Corinto. Ele os lembra de serem
                         generosos, de perdoarem uns aos outros e de confiarem em Deus em todas as situações da vida!
                     </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Bendito seja o Deus... que nos consola em toda a nossa tribulação."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 2 Coríntios 1:3-4</cite>
+                    </blockquote>
                 </div>
             </div>
             <div>
@@ -178,37 +236,48 @@
             <div class="order-2 md:order-1">
                 <img src="2corintios-importante.png" alt="Importância de 2 Coríntios" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl">
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-2 border-sky-200">
                     <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
                         <span class="text-3xl mr-2">💪</span>
                         Força na Fraqueza
                     </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        2 Coríntios nos ensina que não precisamos ser perfeitos ou super-heróis! Quando nos sentimos 
-                        fracos, cansados ou com medo, é justamente aí que Deus mostra Seu poder incrível em nossas vidas. 
-                        Ele nos fortalece e nos ajuda a continuar!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        2 Coríntios nos ensina que não precisamos ser perfeitos ou super-heróis! Quando nos sentimos
+                        fracos, cansados ou com medo, é justamente aí que Deus mostra Seu poder incrível em nossas vidas.
                     </p>
+                    <blockquote class="versiculo-card border-sky-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Quando sou fraco, então é que sou forte."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Coríntios 12:10</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl">
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
                         <span class="text-3xl mr-2">🌟</span>
-                        Confiança em Deus
+                        Confiança nas Promessas de Deus
                     </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Este livro nos encoraja a confiar em Deus em todas as situações, sejam elas boas ou difíceis. 
-                        Deus sempre está conosco, nos consolando, nos fortalecendo e nos guiando. Nunca estamos sozinhos!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Este livro nos encoraja a confiar em Deus em todas as situações. Todas as promessas de Deus
+                        são garantidas em Cristo Jesus — nunca falham!
                     </p>
+                    <blockquote class="versiculo-card border-blue-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque todas as promessas de Deus são nele sim."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Coríntios 1:20</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl">
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-2 border-indigo-200">
                     <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
                         <span class="text-3xl mr-2">❤️</span>
                         Amor e Generosidade
                     </h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo nos ensina a importância de amar uns aos outros, de perdoar e de ser generosos. 
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo nos ensina a importância de amar uns aos outros, de perdoar e de ser generosos.
                         Quando compartilhamos o que temos com alegria, Deus abençoa ainda mais nossas vidas!
                     </p>
+                    <blockquote class="versiculo-card border-indigo-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Deus ama aquele que dá com alegria."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 2 Coríntios 9:7</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
@@ -220,30 +289,39 @@
             🎯 Propósito do Livro
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">🌈 Encorajar os Cristãos</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        O principal propósito de 2 Coríntios é encorajar os cristãos a perseverarem e não desistirem, 
-                        mesmo quando a vida fica difícil. Paulo mostra que vale a pena continuar seguindo a Jesus, 
-                        porque Deus nos dá força e nos recompensa!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        O principal propósito de 2 Coríntios é encorajar os cristãos a perseverarem e não desistirem,
+                        mesmo quando a vida fica difícil. Paulo mostra que vale a pena continuar seguindo a Jesus!
                     </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Pelo que não desfalecemos; mas ainda que o nosso homem exterior se corrompa, o interior, contudo, se renova de dia em dia."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 2 Coríntios 4:16</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-600 mb-3">🙏 Confiar em Deus nos Desafios</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo quer que os cristãos aprendam a confiar em Deus em meio aos desafios e tribulações. 
-                        Ele mostra que Deus é fiel e nos consola em todas as nossas aflições, nos dando esperança 
-                        e paz mesmo nas tempestades da vida.
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo quer que os cristãos aprendam a confiar em Deus em meio aos desafios e tribulações.
+                        Ele mostra que Deus é fiel e nos consola em todas as nossas aflições.
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque a nossa leve e momentânea tribulação produz para nós um eterno peso de glória."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 2 Coríntios 4:17</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-indigo-200">
                     <h3 class="text-2xl font-bold text-indigo-600 mb-3">💎 Valorizar a Graça de Deus</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Este livro nos ensina a valorizar a graça maravilhosa de Deus! Não importa quão fracos ou 
-                        imperfeitos nos sintamos, a graça de Deus é suficiente e Seu poder se manifesta em nossas 
-                        fraquezas. Isso é libertador e incrível!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Este livro nos ensina a valorizar a graça maravilhosa de Deus! Não importa quão fracos ou
+                        imperfeitos nos sintamos, a graça de Deus é suficiente para nós.
                     </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Graças a Deus pelo seu dom inefável!"</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 2 Coríntios 9:15</cite>
+                    </blockquote>
                 </div>
             </div>
             <div>
@@ -257,35 +335,126 @@
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-8">
             <div class="order-2 md:order-1">
                 <img src="2corintios-curiosidade.png" alt="Curiosidade sobre 2 Coríntios" class="w-full h-auto rounded-xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-8 rounded-xl border-4 border-amber-300 shadow-lg">
-                    <div class="flex items-start mb-4">
-                        <span class="text-5xl mr-4">💌</span>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">💌</span>
                         <div>
-                            <h3 class="text-2xl font-bold text-amber-700 mb-3">Uma Carta Cheia de Emoção!</h3>
-                            <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                                Paulo escreveu esta carta com o coração cheio de emoção e gratidão! Você pode sentir 
-                                o amor dele pelos coríntios em cada palavra. Ele chora, se alegra, se preocupa e 
-                                celebra com eles!
+                            <h3 class="text-xl font-bold text-amber-700 mb-2">A Carta Mais Pessoal de Paulo</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                2 Coríntios é considerada a carta mais <strong>pessoal e emocional</strong> de Paulo.
+                                Ele chora, se alegra, se preocupa e celebra — é como ler o diário de um amigo muito querido!
                             </p>
-                            <p class="text-gray-700 text-lg leading-relaxed mb-4">
-                                Esta é considerada a carta mais pessoal e emocional de Paulo. Ele compartilha seus 
-                                sentimentos mais profundos, suas lágrimas e suas vitórias. É como ler o diário de um 
-                                amigo muito querido!
-                            </p>
-                            <div class="bg-white p-4 rounded-lg border-l-4 border-amber-500">
-                                <p class="text-gray-600 italic">
-                                    "Alargai-vos também vós. Tenho grande confiança em vós, tenho grande glória por 
-                                    vossa causa; estou cheio de consolação e transbordo de gozo." - 2 Coríntios 7:4
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">😢</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-700 mb-2">A Carta das Lágrimas</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Paulo menciona que escreveu uma carta anterior <strong>"com muitas lágrimas"</strong>
+                                (2 Cor 2:4). Isso mostra o quanto ele amava profundamente os cristãos de Corinto!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-2 border-purple-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">🌠</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-purple-700 mb-2">Paulo no Terceiro Céu!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Paulo conta que foi levado ao <strong>"terceiro céu"</strong> e ouviu coisas
+                                indizíveis (2 Cor 12:2-4). Uma visão tão extraordinária que Deus deu um "espinho"
+                                para que ele não se orgulhasse!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-sky-400">
+                <div class="text-4xl mb-4 text-center">🦋</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Nova Criação</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Se você está em Cristo, você é uma nova criação.</strong> O que isso significa para você?
+                    Tem alguma coisa na sua vida que você gostaria que fosse renovada por Jesus?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-400">
+                <div class="text-4xl mb-4 text-center">💪</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Força na Fraqueza</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Paulo se sentiu fraco e descobriu que Deus o fortalecia.</strong> Quando você se sente fraco ou
+                    com medo, como você pode lembrar que o poder de Deus é suficiente para você?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-indigo-400">
+                <div class="text-4xl mb-4 text-center">🎁</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Dar com Alegria</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Deus ama quem dá com alegria, não por obrigação.</strong> O que você pode compartilhar
+                    com outras pessoas esta semana — tempo, carinho, ou algo seu — com um coração feliz?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-800 to-sky-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-sky-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
+                    <span class="text-2xl">📖</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Leia 2 Cor 4:8-9</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Leia 2 Coríntios 4:8-9 e escreva em um papel <strong>3 situações difíceis</strong> da sua vida
+                    que Deus pode transformar. Ele está com você em cada uma delas!
+                </p>
+                <span class="inline-block mt-3 bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-semibold">📚 Leitura</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
+                    <span class="text-2xl">✍️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Escreva 2 Cor 5:17</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escreva <strong>2 Coríntios 5:17</strong> em um papel bonito e coloque em um lugar especial
+                    onde você possa ver todo dia — no espelho, na mochila ou na cama!
+                </p>
+                <span class="inline-block mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">✏️ Memorização</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-indigo-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
+                    <span class="text-2xl">🎁</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Doe com Alegria</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escolha <strong>algo para compartilhar com alguém</strong> esta semana — um brinquedo, um lanche,
+                    um elogio sincero ou seu tempo — e faça isso com um sorriso e coração feliz!
+                </p>
+                <span class="inline-block mt-3 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">❤️ Ação</span>
             </div>
         </div>
     </section>

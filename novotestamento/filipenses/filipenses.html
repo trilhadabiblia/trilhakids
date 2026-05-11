@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Filipenses 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-300">
                     <h3 class="text-2xl font-bold text-yellow-600 mb-3">😊 Primeiro Segredo: Alegria em Qualquer Lugar</h3>
                     <p class="italic text-gray-800 leading-loose">
@@ -96,142 +97,361 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-yellow-600 to-orange-700 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <blockquote class="versiculo-card border-yellow-500 pl-6 mb-6">
+                    <p class="text-2xl font-bold text-gray-800 italic leading-relaxed mb-3">
+                        "Tudo posso naquele que me fortalece."
+                    </p>
+                    <cite class="text-yellow-600 font-bold text-lg">— Filipenses 4:13</cite>
+                </blockquote>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Você já olhou para uma tarefa difícil e pensou: "Não consigo"? Paulo entendia esse sentimento —
+                    ele estava preso, longe de casa, enfrentando perigos. Mas ele descobriu o segredo:
+                    a força não vem de nós. Ela vem de <strong>Cristo que mora em nós</strong>.
+                    Com Ele, o impossível se torna possível!
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-yellow-100 text-yellow-700 px-4 py-2 rounded-full font-semibold text-sm">💪 Força em Cristo</span>
+                    <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full font-semibold text-sm">🌟 Nada é Impossível</span>
+                    <span class="bg-amber-100 text-amber-700 px-4 py-2 rounded-full font-semibold text-sm">🙏 Dependência de Deus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Personagens Principais -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center mb-8">
             <div class="order-2 md:order-1">
-                <img src="filipenses-personagem.png" alt="Personagens de Filipenses" 
+                <img src="filipenses-personagem.png" alt="Personagens de Filipenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">✍️ Paulo - O Apóstolo Alegre</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo estava preso em Roma, mas seu coração transbordava de alegria! Ele escreveu esta carta para seus amigos queridos em Filipos, agradecendo pelo amor e cuidado que tinham por ele. Mesmo nas correntes, Paulo ensinava sobre a verdadeira alegria que vem de Jesus!
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">✍️ Paulo — O Apóstolo Alegre</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo estava preso em Roma, mas seu coração transbordava de alegria! Ele escreveu esta carta
+                        para seus amigos queridos em Filipos. Mesmo nas correntes, Paulo ensinava sobre a verdadeira
+                        alegria que vem de Jesus.
                     </p>
+                    <blockquote class="versiculo-card border-yellow-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque para mim o viver é Cristo, e o morrer é lucro."</p>
+                        <cite class="text-yellow-600 font-bold text-xs">— Filipenses 1:21</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-xl border-l-4 border-orange-500">
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-2 border-orange-200">
                     <h3 class="text-2xl font-bold text-orange-700 mb-3">⛪ Os Cristãos de Filipos</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        A igreja de Filipos foi a primeira igreja que Paulo fundou na Europa! Eles eram muito generosos e sempre ajudavam Paulo em suas viagens missionárias. Mesmo quando Paulo estava longe, eles enviavam presentes e orações. Que amigos especiais!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        A igreja de Filipos foi a <strong>primeira igreja na Europa</strong>! Eram muito generosos e
+                        sempre ajudavam Paulo. Mesmo quando Paulo estava longe, enviavam presentes e orações. Amigos especiais!
                     </p>
+                    <blockquote class="versiculo-card border-orange-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Dou graças a meu Deus em toda memória de vós, sempre em todas as minhas orações rogando com alegria por todos vós."</p>
+                        <cite class="text-orange-600 font-bold text-xs">— Filipenses 1:3-4</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🏃 Epafrodito — O Mensageiro Corajoso</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Epafrodito foi enviado pelos filipenses para levar presentes a Paulo na prisão. No caminho,
+                        ficou tão doente que quase morreu! Mas se recuperou e Paulo o chama de "meu irmão e companheiro de lutas".
+                    </p>
+                    <blockquote class="versiculo-card border-amber-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Mas Deus teve misericórdia dele, e não somente dele, mas também de mim, para que eu não tivesse tristeza sobre tristeza."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— Filipenses 2:27</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O Que o Livro Conta? -->
-    <section class="section bg-gradient-to-br from-yellow-50 to-orange-50 p-8 mb-4">
+    <section class="section bg-gradient-to-br from-yellow-50 to-orange-50 p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
             📖 O Que o Livro Conta?
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-yellow-200">
                     <h3 class="text-2xl font-bold text-yellow-700 mb-3">😊 Uma Carta da Prisão</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo estava preso, mas em vez de reclamar, ele escreveu uma das cartas mais alegres da Bíblia! Ele agradeceu aos filipenses por sua ajuda, falou sobre a alegria de conhecer Jesus e ensinou como viver de maneira que agrada a Deus.
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo estava preso, mas em vez de reclamar, escreveu uma das cartas mais alegres da Bíblia!
+                        Sua prisão até ajudou o evangelho a se espalhar — os próprios soldados da guarda do imperador ouviram sobre Jesus!
                     </p>
+                    <blockquote class="versiculo-card border-yellow-400 pl-4 bg-yellow-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"As minhas correntes se tornaram manifestas em Cristo em todo o pretório e em todos os demais lugares."</p>
+                        <cite class="text-yellow-600 font-bold text-xs">— Filipenses 1:13</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-orange-200">
                     <h3 class="text-2xl font-bold text-orange-700 mb-3">🎵 Gratidão e Paz</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo ensinou que devemos ser gratos em tudo e não nos preocuparmos, mas orarmos com alegria. Ele compartilhou seu segredo: "Tudo posso naquele que me fortalece!" A verdadeira alegria não depende das circunstâncias, mas de Jesus!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensinou que devemos orar com gratidão em vez de se preocupar. Quando fazemos isso,
+                        a paz de Deus — que vai além do entendimento — guarda nosso coração!
                     </p>
+                    <blockquote class="versiculo-card border-orange-400 pl-4 bg-orange-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Em nada sejais ansiosos; antes em tudo, pela oração e súplica com ações de graças, sejam os vossos pedidos conhecidos de Deus."</p>
+                        <cite class="text-orange-600 font-bold text-xs">— Filipenses 4:6</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🤝 Humildade como Jesus</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo usa o exemplo de Jesus — que sendo Deus, se tornou servo — para nos ensinar
+                        a pensar nos outros antes de nós mesmos. Essa é a maior grandeza!
+                    </p>
+                    <blockquote class="versiculo-card border-amber-400 pl-4 bg-amber-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Nada façais por contenda ou por vanglória, mas por humildade; cada um considere os outros superiores a si mesmo."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— Filipenses 2:3</cite>
+                    </blockquote>
                 </div>
             </div>
             <div>
-                <img src="filipenses-o-que-conta.png" alt="O que Filipenses conta" 
+                <img src="filipenses-o-que-conta.png" alt="O que Filipenses conta"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por Que É Importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
             ⭐ Por Que É Importante?
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <div class="order-2 md:order-1">
-                <img src="filipenses-importante.png" alt="Importância de Filipenses" 
+                <img src="filipenses-importante.png" alt="Importância de Filipenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌟 Alegria Verdadeira</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Filipenses nos ensina que a verdadeira alegria não vem de brinquedos, jogos ou coisas que temos, mas de Jesus! Mesmo quando as coisas ficam difíceis, podemos ter paz e alegria porque Jesus está conosco. Que lição maravilhosa!
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🌟</span>
+                        Alegria Verdadeira
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        A verdadeira alegria não vem de brinquedos ou coisas materiais — vem de Jesus!
+                        Mesmo quando as coisas ficam difíceis, podemos ter paz e alegria porque Ele está conosco.
                     </p>
+                    <blockquote class="versiculo-card border-yellow-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Alegrai-vos sempre no Senhor; outra vez digo: alegrai-vos!"</p>
+                        <cite class="text-yellow-600 font-bold text-xs">— Filipenses 4:4</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-xl border-l-4 border-orange-500">
-                    <h3 class="text-2xl font-bold text-orange-700 mb-3">💪 Força em Jesus</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        "Tudo posso naquele que me fortalece" é um dos versículos mais famosos! Ele nos lembra que não estamos sozinhos. Quando achamos que não conseguimos fazer algo, Jesus nos dá força, coragem e sabedoria para seguir em frente!
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💪</span>
+                        Força em Jesus
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        "Tudo posso naquele que me fortalece" é um dos versículos mais famosos da Bíblia!
+                        Quando achamos que não conseguimos, Jesus nos dá força, coragem e sabedoria para seguir!
                     </p>
+                    <blockquote class="versiculo-card border-orange-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Tudo posso naquele que me fortalece."</p>
+                        <cite class="text-orange-600 font-bold text-xs">— Filipenses 4:13</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">☮️</span>
+                        Contentamento
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo aprendeu a estar satisfeito em qualquer situação — com muito ou com pouco.
+                        Contentamento é uma arte que se aprende com Cristo ao nosso lado!
+                    </p>
+                    <blockquote class="versiculo-card border-amber-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Aprendi a estar contente em qualquer estado em que me encontre."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— Filipenses 4:11</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do Livro -->
-    <section class="section bg-gradient-to-br from-orange-50 to-amber-50 p-8 mb-4">
+    <section class="section bg-gradient-to-br from-orange-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
             🎯 Propósito do Livro
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-500">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-yellow-200">
                     <h3 class="text-2xl font-bold text-yellow-700 mb-3">😊 Viver com Alegria</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo queria que os cristãos de Filipos (e nós também!) vivessem com alegria constante. Não importa o que aconteça ao nosso redor, podemos escolher ser alegres porque Jesus vive em nossos corações e nunca nos abandona!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo queria que os cristãos de Filipos vivessem com alegria constante. Não importa
+                        o que aconteça ao redor — podemos escolher ser alegres porque Jesus vive em nossos corações!
                     </p>
+                    <blockquote class="versiculo-card border-yellow-400 pl-4 bg-yellow-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"E a paz de Deus, que excede todo entendimento, guardará os vossos corações e os vossos sentimentos em Cristo Jesus."</p>
+                        <cite class="text-yellow-600 font-bold text-xs">— Filipenses 4:7</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-orange-200">
                     <h3 class="text-2xl font-bold text-orange-700 mb-3">🤝 Viver com Humildade</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Paulo também ensinou sobre humildade. Jesus, sendo Deus, se tornou servo para nos salvar. Da mesma forma, devemos pensar nos outros antes de nós mesmos, ajudar quem precisa e amar como Jesus amou. Essa é a verdadeira grandeza!
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensinou sobre humildade usando Jesus como exemplo. Jesus, sendo Deus,
+                        se tornou servo para nos salvar. Devemos pensar nos outros antes de nós mesmos!
                     </p>
+                    <blockquote class="versiculo-card border-orange-400 pl-4 bg-orange-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Haja em vós o mesmo sentimento que houve também em Cristo Jesus."</p>
+                        <cite class="text-orange-600 font-bold text-xs">— Filipenses 2:5</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">💭 Pensar em Coisas Boas</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo nos diz para encher nossa mente com coisas verdadeiras, honestas, justas e
+                        puras. O que colocamos em nossa cabeça molda quem somos!
+                    </p>
+                    <blockquote class="versiculo-card border-amber-400 pl-4 bg-amber-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...tudo o que é verdadeiro, tudo o que é honesto, tudo o que é justo... nisso pensai."</p>
+                        <cite class="text-amber-600 font-bold text-xs">— Filipenses 4:8</cite>
+                    </blockquote>
                 </div>
             </div>
             <div>
-                <img src="filipenses-proposito.png" alt="Propósito de Filipenses" 
+                <img src="filipenses-proposito.png" alt="Propósito de Filipenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você Sabia? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500">
             🤔 Você Sabia?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center mb-8">
             <div class="order-2 md:order-1">
-                <img src="filipenses-curiosidade.png" alt="Curiosidade sobre Filipenses" 
+                <img src="filipenses-curiosidade.png" alt="Curiosidade sobre Filipenses"
                     class="w-full h-auto rounded-xl shadow-lg object-contain">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-yellow-50 via-orange-50 to-amber-50 p-8 rounded-xl shadow-lg border-4 border-yellow-400">
-                    <div class="flex items-center mb-4">
-                        <span class="text-6xl mr-4">🎉</span>
-                        <h3 class="text-3xl font-black text-yellow-700">A Carta Mais Alegre!</h3>
-                    </div>
-                    <p class="text-xl text-gray-800 leading-relaxed mb-4">
-                        Paulo menciona "alegria" ou "regozijo" mais de <span class="font-black text-orange-600 text-2xl">15 vezes</span> nesta carta! Isso é incrível porque ele estava preso quando escreveu! 
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Imagine: Paulo estava acorrentado, longe de seus amigos, mas seu coração estava tão cheio de Jesus que ele não parava de falar sobre alegria! 😊
-                    </p>
-                    <div class="bg-white p-4 rounded-lg border-2 border-orange-300 mt-4">
-                        <p class="text-gray-800 font-semibold text-center">
-                            💡 <span class="text-yellow-600">Lição:</span> A verdadeira alegria não depende do lugar onde estamos, mas de quem está em nosso coração!
-                        </p>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">🎉</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-yellow-700 mb-2">A Carta Mais Alegre!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Paulo menciona "alegria" ou "regozijo" mais de <strong>16 vezes</strong> nesta carta!
+                                Isso é incrível porque ele estava preso quando escreveu — a alegria dele não dependia das circunstâncias!
+                            </p>
+                        </div>
                     </div>
                 </div>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-2 border-orange-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">👩</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-orange-700 mb-2">A Primeira Convertida na Europa!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                A primeira pessoa convertida em Filipos foi <strong>Lídia</strong>, uma vendedora de tecidos de púrpura.
+                                Ela abriu sua casa para Paulo e sua equipe — a primeira "igreja" europeia foi numa casa de mulher!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">🎶</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-700 mb-2">Música na Prisão!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Antes de fundar a igreja em Filipos, Paulo e Silas foram presos lá. Em vez de chorar,
+                                <strong>cantaram hinos à meia-noite</strong> e houve um terremoto que abriu as portas da prisão! (At 16:25-26)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-yellow-600 to-orange-700 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-yellow-400">
+                <div class="text-4xl mb-4 text-center">😊</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">A Alegria de Paulo</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Paulo estava preso, mas era alegre.</strong> O que tirou a sua alegria alguma vez?
+                    Como você pode, como Paulo, escolher ser alegre mesmo nas situações difíceis?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-orange-400">
+                <div class="text-4xl mb-4 text-center">💪</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Tudo Posso!</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Filipenses 4:13 diz "tudo posso em Cristo".</strong> Você tem algo difícil pela frente —
+                    uma prova, um medo, um desafio? Como você pode depender da força de Cristo nessa situação?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-amber-400">
+                <div class="text-4xl mb-4 text-center">🤝</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Humildade na Prática</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Filipenses 2:3 fala sobre pensar nos outros antes de si.</strong> Há alguém na sua vida
+                    que precisa que você coloque os interesses dela antes dos seus? Como você pode fazer isso hoje?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-orange-700 to-amber-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-yellow-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
+                    <span class="text-2xl">📝</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Lista de Gratidão</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Leia <strong>Filipenses 4:4-7</strong> e faça uma lista de <strong>5 coisas pelas quais você agradece a Deus</strong>.
+                    Cole no espelho do banheiro e leia toda manhã desta semana!
+                </p>
+                <span class="inline-block mt-3 bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm font-semibold">📖 Leitura</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-orange-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
+                    <span class="text-2xl">✍️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Escreva Fil 4:13</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escreva <strong>Filipenses 4:13</strong> em um papel e decore com desenhos de força e coragem.
+                    Guarde na mochila para que você possa ler quando sentir que "não consigo"!
+                </p>
+                <span class="inline-block mt-3 bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-semibold">✏️ Memorização</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-amber-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
+                    <span class="text-2xl">🎵</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Cante como Paulo!</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Paulo cantou na prisão! Esta semana, quando uma situação difícil aparecer, <strong>ore e cante</strong>
+                    uma música de louvor em vez de reclamar. Veja o que acontece com seu coração!
+                </p>
+                <span class="inline-block mt-3 bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">🎶 Prática</span>
             </div>
         </div>
     </section>

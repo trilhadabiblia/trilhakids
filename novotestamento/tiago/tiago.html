@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de Tiago 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-2xl border-2 border-amber-300">
                     <h3 class="text-2xl font-bold text-amber-700 mb-3">🔨 Primeiro Segredo: Fé com Ação</h3>
                     <p class="italic">
@@ -96,10 +97,30 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-amber-700 to-orange-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-amber-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Sede praticantes da palavra, e não somente ouvintes, enganando-vos a vós mesmos."
+                </p>
+                <p class="text-amber-200 font-bold text-xl mb-6">— Tiago 1:22</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        ⚒️ <span class="font-bold">O que isso significa?</span> Tiago diz que não adianta só ouvir a Palavra de Deus e ficar de braços cruzados — é como olhar no espelho, ver que tem um cabelo bagunçado, e não fazer nada! A fé que agrada a Deus é a que sai do coração e aparece nas mãos, nas palavras e nas atitudes do dia a dia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-amber-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
-            👥 Quem são os personagens principais?
+            👥 Quem são os Personagens Principais?
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <div>
@@ -107,23 +128,32 @@
             </div>
             <div class="space-y-6">
                 <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">⚒️ Tiago</h3>
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">⚒️ Tiago — O Irmão de Jesus</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Irmão de Jesus e líder da igreja em Jerusalém. Ele escreveu esta carta cheia de conselhos práticos para os cristãos que estavam espalhados pelo mundo. Tiago era conhecido por sua sabedoria e por viver exatamente o que ensinava!
+                        Irmão de Jesus e líder da igreja em Jerusalém! Ele era tão dedicado à oração que ficou com o apelido de "Joelho de Camelo" — de tanto ajoelhar, seus joelhos ficaram calejados. Ele vivia exatamente o que ensinava!
                     </p>
+                    <p class="text-sm text-amber-600 font-semibold mt-2">📖 Tg 1:1 — "Tiago, servo de Deus e do Senhor Jesus Cristo, às doze tribos que estão na dispersão."</p>
                 </div>
                 <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-xl border-l-4 border-orange-600">
-                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🌍 Os Cristãos Espalhados</h3>
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🌍 Os Cristãos na Dispersão</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Pessoas que acreditavam em Jesus mas estavam longe de casa, enfrentando dificuldades e perseguições. Tiago escreveu para encorajá-los a viver sua fé com coragem e sabedoria, mesmo nos momentos difíceis.
+                        Judeus que acreditavam em Jesus mas estavam longe de casa, espalhados pelo mundo, enfrentando perseguições e dificuldades. Tiago escreveu para encorajá-los a viver sua fé com coragem e sabedoria prática!
                     </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Tg 1:2-3 — "Meus irmãos, tende grande alegria quando cairdes em várias provações, sabendo que a prova da vossa fé produz paciência."</p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">⚡ Elias — O Homem de Oração</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Tiago cita Elias como exemplo de oração poderosa — e diz que ele era "um homem semelhante a nós"! Elias orou e não choveu por 3 anos e meio. Depois orou de novo e a chuva voltou. Se Elias conseguiu, você também pode!
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Tg 5:17 — "Elias era um homem semelhante a nós; e orou fervorosamente para que não chovesse."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-amber-50 to-orange-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-amber-50 to-orange-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-orange-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
             📖 O que o livro conta?
         </h2>
@@ -134,18 +164,21 @@
                     <p class="text-gray-700 leading-relaxed">
                         Tiago ensina que não basta só dizer que temos fé — precisamos mostrar isso através das nossas atitudes! É como construir uma casa: não adianta só ter o projeto, é preciso pegar as ferramentas e trabalhar!
                     </p>
+                    <p class="text-sm text-amber-600 font-semibold mt-2">📖 Tg 2:17 — "Assim também a fé, se não tiver obras, por si mesma está morta."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-600">
                     <h3 class="text-2xl font-bold text-orange-700 mb-3">💬 Controle da Língua</h3>
                     <p class="text-gray-700 leading-relaxed">
-                        Ele usa exemplos incríveis para mostrar o poder das palavras: a língua é como um leme que dirige um navio enorme, ou como uma faísca que pode incendiar uma floresta inteira! Por isso, devemos tomar cuidado com o que falamos.
+                        Tiago usa exemplos incríveis para mostrar o poder das palavras: a língua é como um leme que dirige um navio enorme, ou como uma faísca que pode incendiar uma floresta inteira! Devemos cuidar muito do que falamos.
                     </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Tg 3:5 — "Assim também a língua é um pequeno membro, mas se gloria de grandes coisas."</p>
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
                     <h3 class="text-2xl font-bold text-yellow-700 mb-3">🙏 Sabedoria e Paciência</h3>
                     <p class="text-gray-700 leading-relaxed">
                         Tiago nos encoraja a pedir sabedoria a Deus e ter paciência nas dificuldades. Ele usa o exemplo do agricultor que espera pacientemente pela colheita — assim devemos ser nós, confiando em Deus!
                     </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Tg 1:5 — "Se algum de vós tem falta de sabedoria, peça-a a Deus, que a todos dá liberalmente."</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
@@ -155,7 +188,7 @@
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-amber-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
             ⭐ Por que é importante?
         </h2>
@@ -164,62 +197,67 @@
                 <img src="tiago-importante.png" alt="Importância de Tiago" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="space-y-6">
-                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-amber-700 mb-4">🌟 Fé Verdadeira em Ação</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🌟 Fé Verdadeira em Ação</h3>
+                    <p class="text-gray-700 leading-relaxed">
                         Tiago nos mostra que fé verdadeira não é só acreditar com a mente — é viver de acordo com o que acreditamos! É como plantar uma semente: ela só cresce se for regada e cuidada.
                     </p>
-                    <div class="bg-white p-4 rounded-xl border-2 border-amber-300">
-                        <p class="text-amber-700 font-bold text-center">
-                            "Sejam praticantes da palavra, e não apenas ouvintes!" ⚒️
-                        </p>
-                    </div>
+                    <p class="text-sm text-amber-600 font-semibold mt-2">📖 Tg 1:22 — "Sede praticantes da palavra, e não somente ouvintes, enganando-vos a vós mesmos."</p>
                 </div>
-                <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl border-2 border-orange-300">
-                    <h3 class="text-xl font-bold text-orange-700 mb-2">💪 Fé que Transforma</h3>
-                    <p class="text-gray-700">
+                <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">💪 Fé que Transforma</h3>
+                    <p class="text-gray-700 leading-relaxed">
                         Este livro nos desafia a sair da zona de conforto e colocar nossa fé em prática através de boas obras, palavras gentis e atitudes que honram a Deus!
                     </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Tg 2:14 — "Que aproveita, meus irmãos, se alguém disser que tem fé, mas não tiver obras?"</p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🤲 Cuida dos Mais Fracos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Tiago diz que a religião pura e imaculada é cuidar dos órfãos e das viúvas! A fé que agrada a Deus sempre olha para quem está ao redor e pergunta: "Quem eu posso ajudar hoje?"
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Tg 1:27 — "A religião pura e imaculada... é esta: visitar os órfãos e as viúvas nas suas tribulações."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-orange-50 to-yellow-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-orange-50 to-yellow-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-orange-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
             🎯 Propósito do livro
         </h2>
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
             <div class="space-y-6 order-2 md:order-1">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-amber-300">
-                    <h3 class="text-3xl font-bold text-amber-700 mb-4">🌱 Encorajar e Fortalecer</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        Tiago escreveu esta carta para encorajar os cristãos a viverem com:
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">⏳</span>
+                        Perseverar nas Provações
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Tiago encoraja os cristãos a encarar as dificuldades como oportunidades de crescimento — não como castigos! A provação testada produz paciência, e a paciência forma o caráter.
                     </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3 bg-amber-50 p-4 rounded-lg">
-                            <span class="text-3xl">⏳</span>
-                            <div>
-                                <h4 class="font-bold text-amber-700">Paciência</h4>
-                                <p class="text-gray-600">Esperar em Deus mesmo nas dificuldades</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-orange-50 p-4 rounded-lg">
-                            <span class="text-3xl">🙇</span>
-                            <div>
-                                <h4 class="font-bold text-orange-700">Humildade</h4>
-                                <p class="text-gray-600">Reconhecer que precisamos de Deus e dos outros</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-yellow-50 p-4 rounded-lg">
-                            <span class="text-3xl">❤️</span>
-                            <div>
-                                <h4 class="font-bold text-yellow-700">Boas Obras</h4>
-                                <p class="text-gray-600">Demonstrar amor através de ações práticas</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="text-sm text-amber-600 font-semibold mt-2">📖 Tg 1:12 — "Bem-aventurado o homem que suporta com paciência a provação... receberá a coroa da vida."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🌱</span>
+                        Fé que se Vê nas Obras
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        O livro mostra que fé e obras não se opõem — trabalham juntos! Abraão crendo e agindo ao mesmo tempo tornou sua fé perfeita. A fé sem obras é só teoria.
+                    </p>
+                    <p class="text-sm text-orange-600 font-semibold mt-2">📖 Tg 2:22 — "Vês que a fé agia juntamente com as suas obras, e que pelas obras a fé foi aperfeiçoada."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">👅</span>
+                        Disciplina das Palavras
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed text-lg">
+                        Tiago dedica um capítulo inteiro ao poder da língua! Quem domina as palavras, domina a si mesmo. Bênção e maldição não devem sair da mesma boca.
+                    </p>
+                    <p class="text-sm text-yellow-600 font-semibold mt-2">📖 Tg 3:2 — "Quem não peca em palavras é homem perfeito, capaz de refrear também o corpo inteiro."</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
@@ -229,53 +267,108 @@
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-amber-600">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
             🤔 Você sabia?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center mb-8">
             <div>
                 <img src="tiago-curiosidade.png" alt="Curiosidade sobre Tiago" class="w-full h-auto rounded-xl shadow-lg">
             </div>
             <div class="space-y-6">
-                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-8 rounded-2xl shadow-xl border-4 border-amber-300">
-                    <div class="text-center mb-6">
-                        <span class="text-6xl">🔥</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-amber-700 mb-4 text-center">Exemplos do Dia a Dia!</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                        Tiago é um mestre em usar exemplos simples e poderosos para ensinar grandes verdades! Ele compara:
+                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-6 rounded-xl border-4 border-amber-300">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🐪</span>
+                        "Joelho de Camelo"
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Tiago ficou famoso pelo apelido "<span class="font-bold text-amber-700">Joelho de Camelo</span>" — de tanto ajoelhar em oração, seus joelhos ficaram calejados e duros como os de um camelo! Um líder que pregava fé em ação também era um homem de intensa oração. Que exemplo!
                     </p>
-                    <div class="space-y-3">
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-amber-500">
-                            <p class="font-bold text-amber-700">👅 A língua com um fogo</p>
-                            <p class="text-gray-600 text-sm">Pequena, mas pode causar grande destruição!</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-orange-500">
-                            <p class="font-bold text-orange-700">🚢 A língua com um leme de navio</p>
-                            <p class="text-gray-600 text-sm">Pequena peça que dirige algo enorme!</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-yellow-500">
-                            <p class="font-bold text-yellow-700">🌊 A pessoa indecisa com ondas do mar</p>
-                            <p class="text-gray-600 text-sm">Levada de um lado para o outro!</p>
-                        </div>
-                        <div class="bg-white p-4 rounded-lg border-l-4 border-red-500">
-                            <p class="font-bold text-red-700">🌱 O agricultor com o cristão paciente</p>
-                            <p class="text-gray-600 text-sm">Espera pela colheita com confiança!</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 bg-amber-200 p-4 rounded-lg text-center">
-                        <p class="text-amber-800 font-bold">
-                            ✨ Esses exemplos tornam as lições de Tiago inesquecíveis! ✨
-                        </p>
-                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl border-4 border-orange-300">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">😲</span>
+                        Irmão de Jesus que não Acreditava
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Durante o ministério de Jesus, Tiago e seus irmãos <span class="font-bold text-orange-700">não acreditavam nEle</span> (Jo 7:5)! Foi só depois da ressurreição que Jesus apareceu a Tiago (1 Co 15:7) e tudo mudou. Tiago se tornou um dos maiores líderes da igreja primitiva!
+                    </p>
+                </div>
+                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-6 rounded-xl border-4 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🎨</span>
+                        Mestre dos Exemplos
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Tiago usa <span class="font-bold text-yellow-700">mais de 50 imagens e exemplos</span> da natureza e do cotidiano: língua = fogo e leme; fé morta = corpo sem espírito; pessoa indecisa = onda do mar; cristão paciente = agricultor que espera a chuva. O estilo mais vívido do NT!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-amber-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-amber-600">
+                <div class="text-5xl text-center mb-4">👂</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Ouvir ou Praticar?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Tg 1:22 diz para ser "praticante da palavra, não somente ouvinte." Qual é a diferença entre ouvir sobre Deus na escola dominical e realmente praticar o que aprendeu? Você é mais ouvinte ou praticante?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-orange-600">
+                <div class="text-5xl text-center mb-4">🔥</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">O Poder da Língua</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Tg 3:5-6 fala sobre o poder da língua para destruir ou construir. Você já usou palavras que machucaram alguém — ou que fizeram alguém se sentir muito bem? Como você pode usar as palavras para edificar?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-yellow-600">
+                <div class="text-5xl text-center mb-4">🤲</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">Fé Viva ou Morta?</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Tg 2:17 diz que "a fé sem obras está morta." Se um amigo precisasse de ajuda e você dissesse apenas "vou orar por você" sem fazer mais nada — isso seria fé viva ou morta? O que a fé viva faria?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-amber-700 to-orange-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-amber-300 text-center">
+                <div class="text-5xl mb-4">📋</div>
+                <h3 class="text-xl font-bold text-amber-200 mb-3">Praticar, Não Só Ouvir</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Tiago 1:22 num papel. Esta semana, cada vez que aprender algo na Bíblia ou no culto, pergunte: "Como eu posso PRATICAR isso hoje?" Anote sua resposta!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-orange-300 text-center">
+                <div class="text-5xl mb-4">👅</div>
+                <h3 class="text-xl font-bold text-orange-200 mb-3">Monitore Sua Língua</h3>
+                <p class="text-white leading-relaxed">
+                    Por 1 dia inteiro, preste atenção nas suas palavras. Ao final do dia anote: "Quantas vezes eu encorajei alguém com palavras? Quantas vezes eu fui negativo?" Como você pode melhorar amanhã?
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-yellow-300 text-center">
+                <div class="text-5xl mb-4">🤝</div>
+                <h3 class="text-xl font-bold text-yellow-200 mb-3">Boa Obra Concreta</h3>
+                <p class="text-white leading-relaxed">
+                    Escolha UMA pessoa que precisa de ajuda esta semana. Não diga só "vou orar" — faça algo concreto: ajudar com uma tarefa, dar algo que precisa, visitar, escutar com atenção. Fé em ação!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="section no-print text-center bg-gradient-to-r from-amber-600/20 to-orange-600/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
+    <section class="section no-print text-center bg-gradient-to-r from-amber-600/20 to-orange-600/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-600">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../hebreus/hebreus.html" class="bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">

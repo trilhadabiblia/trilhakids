@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 1 Tessalonicenses 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-l-8 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-700 mb-3">💙 Segredo 1: Viva com Fé, Amor e Esperança</h3>
                     <p class="italic">
@@ -72,7 +73,7 @@
                 </div>
 
                 <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-l-8 border-indigo-500">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌅 Segredo 3: Jesus Voltará Como um Ladrão</h3>
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌅 Segredo 3: Jesus Voltará!</h3>
                     <p class="italic">
                         Ninguém sabe quando Jesus vai chegar,<br>
                         Por isso, preparado você deve estar,<br>
@@ -96,139 +97,363 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <blockquote class="versiculo-card border-sky-500 pl-6 mb-6">
+                    <p class="text-2xl font-bold text-gray-800 italic leading-relaxed mb-3">
+                        "Alegrai-vos sempre. Orai sem cessar. Em tudo dai graças."
+                    </p>
+                    <cite class="text-sky-600 font-bold text-lg">— 1 Tessalonicenses 5:16-18</cite>
+                </blockquote>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Paulo dá três comandos curtos que mudam a vida toda. <strong>Alegrai-vos sempre</strong> — a alegria
+                    é uma escolha! <strong>Orai sem cessar</strong> — fale com Deus em todo momento.
+                    <strong>Em tudo dai graças</strong> — até nas dificuldades há algo pelo qual ser grato.
+                    São apenas três frases, mas juntas formam o segredo de uma vida plena!
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-sky-100 text-sky-700 px-4 py-2 rounded-full font-semibold text-sm">😊 Alegria Sempre</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm">🙏 Oração Contínua</span>
+                    <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-semibold text-sm">🙌 Gratidão em Tudo</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-8">
             <div class="order-2 md:order-1">
-                <img src="1-tessalonicenses-personagem.png" alt="Personagens de 1 Tessalonicenses" 
+                <img src="1-tessalonicenses-personagem.png" alt="Personagens de 1 Tessalonicenses"
                     class="w-full h-auto rounded-2xl shadow-2xl border-4 border-sky-300">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-2">✍️ Paulo</h3>
-                    <p class="text-gray-700 text-lg">O apóstolo que escreveu esta carta cheia de amor e encorajamento aos cristãos de Tessalônica.</p>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">✍️ Paulo — O Apóstolo Afetuoso</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreveu esta carta cheia de amor e encorajamento. Seu coração estava tão ligado
+                        aos tessalonicenses que ele os comparava a seus próprios filhos!
+                    </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...de tal modo vos amávamos que nos dispúnhamos a dar-vos não só o evangelho de Deus, mas também as nossas próprias vidas."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Tessalonicenses 2:8</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">🤝 Silas</h3>
-                    <p class="text-gray-700 text-lg">Companheiro de Paulo na missão, ajudando a espalhar as boas notícias de Jesus.</p>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">🤝 Silas e Timóteo — Os Companheiros</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Silas foi companheiro de Paulo na fundação da igreja. Timóteo foi enviado de volta a
+                        Tessalônica para fortalecer a fé dos cristãos quando Paulo não podia ir pessoalmente.
+                    </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...enviamos Timóteo, nosso irmão e ministro de Deus... para vos firmar e exortar acerca da vossa fé."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Tessalonicenses 3:2</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">⛪ Os Cristãos de Tessalônica</h3>
-                    <p class="text-gray-700 text-lg">Igreja jovem e corajosa que enfrentava perseguições, mas permanecia firme na fé.</p>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">⛪ Os Cristãos de Tessalônica</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Igreja jovem e corajosa que enfrentava perseguições, mas permanecia firme na fé.
+                        Paulo os elogia pela tríade perfeita: <strong>fé, amor e esperança</strong>!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...a obra da vossa fé, o labor do vosso amor e a firmeza da vossa esperança em nosso Senhor Jesus Cristo."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Tessalonicenses 1:3</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             📖 O Que o Livro Conta?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-sky-500">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
                     <h3 class="text-2xl font-bold text-sky-700 mb-3">💙 Fé Que Não Desiste</h3>
-                    <p class="text-gray-700 text-lg">Paulo elogia os tessalonicenses por sua fé forte, mesmo quando eram perseguidos por seguir Jesus.</p>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo elogia os tessalonicenses por sua fé forte, mesmo quando eram perseguidos.
+                        Sua fé era tão famosa que toda a região ouvia falar deles!
+                    </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque de vós partiu a palavra do Senhor, não só pela Macedônia e pela Acaia, mas em todo lugar a vossa fé se tem divulgado."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Tessalonicenses 1:8</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
                     <h3 class="text-2xl font-bold text-blue-700 mb-3">❤️ Amor Fraternal</h3>
-                    <p class="text-gray-700 text-lg">A carta ensina sobre amar uns aos outros como uma família, cuidando e ajudando sempre.</p>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        A carta ensina sobre amar uns aos outros como uma família, cuidando e ajudando sempre.
+                        Esse amor fraternal era o testemunho mais poderoso da igreja!
+                    </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Acerca do amor fraternal... vós próprios estais ensinados por Deus a vos amardes uns aos outros."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Tessalonicenses 4:9</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-500">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-indigo-200">
                     <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌅 Esperança na Volta de Jesus</h3>
-                    <p class="text-gray-700 text-lg">Paulo conforta a igreja com a promessa de que Jesus voltará para buscar Seus filhos!</p>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo conforta a igreja com a promessa da volta de Jesus. Os que morreram em Cristo
+                        ressuscitarão primeiro — e todos estaremos com o Senhor para sempre!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...e assim estaremos sempre com o Senhor. Portanto, consolai-vos uns aos outros com estas palavras."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Tessalonicenses 4:17-18</cite>
+                    </blockquote>
                 </div>
             </div>
             <div>
-                <img src="1-tessalonicenses-o-que-conta.png" alt="O que 1 Tessalonicenses conta" 
+                <img src="1-tessalonicenses-o-que-conta.png" alt="O que 1 Tessalonicenses conta"
                     class="w-full h-auto rounded-2xl shadow-2xl border-4 border-blue-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="order-2 md:order-1">
-                <img src="1-tessalonicenses-importante.png" alt="Importância de 1 Tessalonicenses" 
+                <img src="1-tessalonicenses-importante.png" alt="Importância de 1 Tessalonicenses"
                     class="w-full h-auto rounded-2xl shadow-2xl border-4 border-sky-300">
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-sky-700 mb-3">🛡️ Ensina a Viver Preparados</h3>
-                    <p class="text-gray-700 text-lg">Nos ensina a estar sempre prontos para a volta de Jesus, vivendo de maneira que O agrada.</p>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-100 to-blue-100 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🛡️</span>
+                        Ensina a Viver Preparados
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Nos ensina a estar sempre prontos para a volta de Jesus. Devemos ser filhos da luz —
+                        não vivendo na escuridão, mas alertas e sóbrios!
+                    </p>
+                    <blockquote class="versiculo-card border-sky-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...vós, irmãos, não estais em trevas... todos vós sois filhos da luz e filhos do dia."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Tessalonicenses 5:4-5</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-3">💪 Fortalece a Fé</h3>
-                    <p class="text-gray-700 text-lg">Mostra que podemos permanecer firmes mesmo quando as coisas ficam difíceis.</p>
+                <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💪</span>
+                        Fortalece a Fé
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Mostra que podemos permanecer firmes mesmo quando as coisas ficam difíceis.
+                        Estar firmes na fé é o que nos mantém de pé!
+                    </p>
+                    <blockquote class="versiculo-card border-blue-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...agora vivemos, se vós estais firmes no Senhor."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Tessalonicenses 3:8</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-xl">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌟 Traz Esperança</h3>
-                    <p class="text-gray-700 text-lg">Nos lembra que Jesus voltará e que um dia estaremos com Ele para sempre!</p>
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">🌟</span>
+                        Traz Esperança
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Nos lembra que Jesus voltará! A esperança da Sua vinda nos motiva a viver com
+                        santidade e amor. O melhor ainda está por vir!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...e assim estaremos sempre com o Senhor."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Tessalonicenses 4:17</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             🎯 Propósito do Livro
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-sky-500">
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4">💌 Encorajar os Cristãos</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Paulo escreveu esta carta para encorajar os cristãos de Tessalônica a continuarem fortes na fé, 
-                        mesmo enfrentando perseguições e dificuldades. Era como um abraço de longe, dizendo: "Não desistam! 
-                        Vocês estão indo muito bem!"
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-700 mb-3">💌 Encorajar os Cristãos</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreveu para encorajar cristãos perseguidos a continuarem fortes. Era como
+                        um abraço de longe dizendo: "Não desistam! Vocês estão indo muito bem!"
                     </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...para que ninguém se abale nestas tribulações; porque vós mesmos sabeis que para isso somos designados."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Tessalonicenses 3:3</cite>
+                    </blockquote>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-blue-500">
-                    <h3 class="text-3xl font-bold text-blue-700 mb-4">🔥 Permanecer Firmes</h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        O objetivo era fortalecer a igreja para que não desanimasse, mas continuasse seguindo Jesus com alegria, 
-                        amor e esperança, sabendo que Ele cuida de cada um de nós.
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">🔥 Permanecer Firmes</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Fortalecer a igreja para que não desanimasse, mas continuasse seguindo Jesus com alegria,
+                        amor e esperança — e que Deus os santificasse completamente!
                     </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"O próprio Deus da paz vos santifique em tudo; e o vosso espírito, alma e corpo sejam conservados íntegros."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Tessalonicenses 5:23</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">✨ Viver com Santidade</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensina que Deus nos chama a viver de maneira santa — diferente do mundo ao redor,
+                        refletindo o caráter de Jesus em cada área da vida.
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque a vontade de Deus é a vossa santificação."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Tessalonicenses 4:3</cite>
+                    </blockquote>
                 </div>
             </div>
             <div>
-                <img src="1-tessalonicenses-proposito.png" alt="Propósito de 1 Tessalonicenses" 
+                <img src="1-tessalonicenses-proposito.png" alt="Propósito de 1 Tessalonicenses"
                     class="w-full h-auto rounded-2xl shadow-2xl border-4 border-blue-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4">
+    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto mb-8">
             <div class="order-2 md:order-1">
-                <img src="1-tessalonicenses-curiosidade.png" alt="Curiosidade sobre 1 Tessalonicenses" 
+                <img src="1-tessalonicenses-curiosidade.png" alt="Curiosidade sobre 1 Tessalonicenses"
                     class="w-full h-auto rounded-2xl shadow-2xl border-4 border-sky-300">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-sky-100 via-blue-100 to-indigo-100 p-8 rounded-2xl shadow-xl border-4 border-sky-400">
-                    <h3 class="text-3xl font-bold text-sky-700 mb-4">📜 Uma das Cartas Mais Antigas!</h3>
-                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
-                        1 Tessalonicenses é uma das cartas mais antigas do Novo Testamento! Foi escrita por volta do ano 50 d.C., 
-                        apenas cerca de 20 anos depois que Jesus subiu ao céu.
-                    </p>
-                    <p class="text-gray-700 text-xl leading-relaxed">
-                        Isso significa que essa carta já tem quase 2000 anos e continua ensinando pessoas do mundo inteiro 
-                        sobre fé, amor e esperança! 🌍✨
-                    </p>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">📜</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-amber-700 mb-2">Uma das Cartas Mais Antigas!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                1 Tessalonicenses foi escrita por volta do ano <strong>50 d.C.</strong> — apenas 20 anos
+                                depois de Jesus ressuscitar! É uma das cartas mais antigas do Novo Testamento.
+                            </p>
+                        </div>
+                    </div>
                 </div>
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">⚡</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-700 mb-2">Só 3 Semanas!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Paulo ficou apenas <strong>3 semanas</strong> em Tessalônica antes de ser expulso pelos seus
+                                opositores (At 17:1-10). Mas uma igreja tão forte nasceu nesse curto tempo — o Espírito Santo agiu!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">🗺️</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-700 mb-2">A Cidade do Porto!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Tessalônica era <strong>porto estratégico na Via Egnatia</strong>, a principal estrada romana
+                                que ligava o Oriente ao Ocidente. Por isso o evangelho se espalhou tão rápido por toda a região!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-sky-400">
+                <div class="text-4xl mb-4 text-center">💪</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Fé Resistente</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Paulo e Silas foram expulsos, mas a igreja ficou firme.</strong> O que te ajuda a
+                    permanecer firme na fé quando as coisas ficam difíceis? Você tem amigos ou família que
+                    te fortalecem como Timóteo fortaleceu os tessalonicenses?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-400">
+                <div class="text-4xl mb-4 text-center">🙏</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Os Três Comandos</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>1 Tessalonicenses 5:16-18 diz: alegrai-vos, orai sem cessar, dai graças.</strong>
+                    Qual desses três é mais difícil para você? O que tornaria mais fácil praticar esse
+                    comando no seu dia a dia?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-indigo-400">
+                <div class="text-4xl mb-4 text-center">🌅</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">A Volta de Jesus</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Paulo diz que Jesus voltará.</strong> Se você soubesse que Jesus voltaria amanhã,
+                    o que você mudaria na sua vida hoje? Esse é exatamente o jeito como Paulo quer que
+                    vivamos sempre!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-800 to-indigo-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-sky-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
+                    <span class="text-2xl">📋</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Os Três Comandos</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escreva <strong>1 Tessalonicenses 5:16-18</strong> em três tiras de papel colorido — uma para
+                    cada comando. Cole nos lugares onde passa mais tempo: quarto, mochila, geladeira!
+                </p>
+                <span class="inline-block mt-3 bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-semibold">✏️ Memorização</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
+                    <span class="text-2xl">🙏</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Um Dia de Oração</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escolha <strong>um dia</strong> para praticar "orai sem cessar": ore pela manhã ao acordar,
+                    no almoço antes de comer, à tarde quando sentir dificuldade e à noite antes de dormir!
+                </p>
+                <span class="inline-block mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">🙏 Prática</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-indigo-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
+                    <span class="text-2xl">💌</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Escreva uma Nota</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Como Paulo encorajou a igreja, <strong>escreva uma nota de encorajamento</strong> para alguém —
+                    amigo, familiar ou colega. Diga o que você admira nessa pessoa e ore por ela!
+                </p>
+                <span class="inline-block mt-3 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">❤️ Ação</span>
             </div>
         </div>
     </section>
@@ -240,8 +465,8 @@
             <a href="../colossenses/colossenses.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Colossenses
             </a>
-            <a href="../epistolas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Epístolas Paulinas
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
             </a>
             <a href="../2-tessalonicenses/2-tessalonicenses.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 2 Tessalonicenses ➡️

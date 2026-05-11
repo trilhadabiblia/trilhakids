@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -48,7 +49,7 @@
                 🌟 Os Três Segredos de 1 Timóteo 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
                     <h3 class="text-2xl font-bold text-sky-600 mb-3">💪 Primeiro Segredo: Seja Forte na Fé!</h3>
                     <p class="italic">
@@ -96,154 +97,373 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-sky-700 to-blue-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-2xl p-8 shadow-xl">
+                <blockquote class="versiculo-card border-sky-500 pl-6 mb-6">
+                    <p class="text-2xl font-bold text-gray-800 italic leading-relaxed mb-3">
+                        "Ninguém despreze a tua mocidade; mas sê o exemplo dos fiéis, na palavra, no trato, no amor, no espírito, na fé, na pureza."
+                    </p>
+                    <cite class="text-sky-600 font-bold text-lg">— 1 Timóteo 4:12</cite>
+                </blockquote>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Paulo escreve para Timóteo — um jovem que às vezes era subestimado por causa da idade.
+                    Mas Paulo diz: <strong>não deixe ninguém te diminuir por ser jovem!</strong>
+                    Em vez disso, mostre pelo seu exemplo quem você é em Cristo. Palavra, amor, fé, pureza
+                    — cada atitude sua conta a história de Jesus para quem está assistindo!
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-sky-100 text-sky-700 px-4 py-2 rounded-full font-semibold text-sm">👦 Jovem mas Capaz</span>
+                    <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-semibold text-sm">✨ Exemplo em Tudo</span>
+                    <span class="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full font-semibold text-sm">❤️ Vida que Prega</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Personagens Principais -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-4 border-sky-500">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-4 border-4 border-sky-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-blue-600">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-8">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-sky-50 to-blue-50 p-6 rounded-2xl border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-4">🧔 Paulo - O Mestre Sábio</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
-                        Paulo era um apóstolo experiente que amava Jesus de todo coração. Ele viajava pelo mundo ensinando sobre Jesus e cuidando das igrejas.
-                    </p>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">👦 Timóteo - O Jovem Líder</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        Timóteo era um jovem discípulo que Paulo chamava de "meu verdadeiro filho na fé". Mesmo sendo jovem, ele tinha um coração puro e desejava servir a Deus com dedicação!
-                    </p>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
                 <img src="1-timoteo-personagem.png" alt="Paulo e Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3">🧔 Paulo — O Mestre Sábio</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo era um apóstolo experiente que amava Jesus de todo coração. Escreveu esta carta
+                        como um pai experiente guiando seu filho mais jovem nos caminhos da liderança cristã.
+                    </p>
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"A Timóteo, meu verdadeiro filho na fé: graça, misericórdia e paz da parte de Deus Pai e de Cristo Jesus nosso Senhor."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Timóteo 1:2</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3">👦 Timóteo — O Jovem Líder</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Timóteo era um jovem discípulo com mãe judia crente e pai grego. Paulo o deixou
+                        responsável pela igreja de Éfeso — uma missão enorme para alguém tão jovem!
+                    </p>
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Ninguém despreze a tua mocidade; mas sê o exemplo dos fiéis, na palavra, no trato, no amor..."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Timóteo 4:12</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">⛪ A Igreja de Éfeso</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Timóteo foi deixado em Éfeso para cuidar da igreja lá — uma cidade enorme, cheia de
+                        influências pagãs e falsos mestres que tentavam distorcer o evangelho!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...para que ordenasses a alguns que não ensinassem outra doutrina."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Timóteo 1:3</cite>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O Que o Livro Conta? -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-4 border-blue-500">
+    <section class="section bg-gradient-to-r from-sky-50 to-blue-50 rounded-3xl shadow-xl p-8 mb-4 border-4 border-blue-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-indigo-600">
             📜 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-1">
                 <img src="1-timoteo-o-que-conta.png" alt="Conselhos de Paulo" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
-            <div class="order-2">
-                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-500">
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        📝 <strong>Uma Carta Especial:</strong> Paulo escreveu esta carta para dar conselhos sábios a Timóteo sobre como liderar a igreja de Éfeso.
+            <div class="order-2 space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-sky-200">
+                    <h3 class="text-xl font-bold text-sky-600 mb-3">📝 Conselhos para Liderar</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensina como escolher líderes sábios, como ensinar a verdade e como viver com
+                        pureza. É como um manual de liderança para a igreja!
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        ⛪ <strong>Como Cuidar da Igreja:</strong> Ele ensinou sobre como escolher líderes sábios, como orar, como ensinar a verdade e como viver com pureza.
+                    <blockquote class="versiculo-card border-sky-400 pl-4 bg-sky-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...exercita-te na piedade. Porque o exercício corporal para pouco é proveitoso, mas a piedade para tudo é proveitosa."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Timóteo 4:7-8</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-blue-200">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">🙏 Como Orar pela Igreja</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensina que devemos orar por todos — inclusive pelos governantes e reis!
+                        A oração é o trabalho mais importante da igreja.
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        💎 <strong>Conselhos Preciosos:</strong> Paulo alertou sobre falsos mestres e ensinou que o amor verdadeiro vem de um coração puro e fé sincera.
+                    <blockquote class="versiculo-card border-blue-400 pl-4 bg-blue-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Exorto, antes de tudo, a que se façam súplicas, orações, intercessões, e ações de graças por todos os homens."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Timóteo 2:1</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-indigo-200">
+                    <h3 class="text-xl font-bold text-indigo-600 mb-3">💎 Guardar a Verdade</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo alertou sobre falsos mestres e ensinou que o amor verdadeiro vem de um coração
+                        puro, boa consciência e fé sincera — nada de inventar doutrinas novas!
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        🌟 <strong>Encorajamento:</strong> Mesmo sendo jovem, Timóteo poderia ser um grande exemplo de fé, amor e pureza para todos!
-                    </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Guarda o bom depósito que te foi confiado, pelo Espírito Santo que habita em nós."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Timóteo 6:20</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por Que É Importante? -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-4 border-indigo-500">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-4 border-4 border-indigo-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-600">
             ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-500">
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        👨‍🏫 <strong>Líderes Servem com Amor:</strong> Este livro nos ensina que liderar não é mandar, mas servir com amor e exemplo. Um bom líder cuida das pessoas como Jesus cuidou!
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        💪 <strong>Idade Não Importa:</strong> Timóteo era jovem, mas Paulo mostrou que Deus pode usar qualquer pessoa — não importa a idade — que tenha fé e um coração puro!
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        📖 <strong>A Verdade é Preciosa:</strong> Devemos guardar e ensinar a Palavra de Deus com cuidado, protegendo-a de ensinamentos falsos.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        ❤️ <strong>Viva com Pureza:</strong> Nossas palavras, ações e pensamentos devem refletir o amor de Jesus para que outros vejam a luz de Deus em nós!
-                    </p>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
                 <img src="1-timoteo-importante.png" alt="Importância de 1 Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-gradient-to-r from-sky-50 to-blue-50 p-6 rounded-2xl border-2 border-sky-200">
+                    <h3 class="text-2xl font-bold text-sky-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">👦</span>
+                        Sua Idade Não é Limite!
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Timóteo era jovem e isso não foi obstáculo. Deus pode usar crianças e jovens com fé —
+                        o que importa é o coração, não os anos de vida!
+                    </p>
+                    <blockquote class="versiculo-card border-sky-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Ninguém despreze a tua mocidade; mas sê o exemplo dos fiéis."</p>
+                        <cite class="text-sky-600 font-bold text-xs">— 1 Timóteo 4:12</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">👨‍🏫</span>
+                        Líderes Servem com Amor
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Liderar não é mandar — é servir! Um bom líder cuida das pessoas, ora por elas
+                        e as ensina com amor e paciência, como Jesus fez.
+                    </p>
+                    <blockquote class="versiculo-card border-blue-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Porque há um só Deus e um só Mediador entre Deus e os homens, Jesus Cristo homem."</p>
+                        <cite class="text-blue-600 font-bold text-xs">— 1 Timóteo 2:5</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3 flex items-center">
+                        <span class="text-3xl mr-2">💰</span>
+                        Contentamento é Riqueza
+                    </h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo ensina que a piedade com contentamento é um grande ganho. Não é o dinheiro que
+                        traz felicidade — é viver com Deus e estar contente com o que se tem!
+                    </p>
+                    <blockquote class="versiculo-card border-indigo-500 pl-4 bg-white rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Mas é grande ganho a piedade com contentamento."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Timóteo 6:6</cite>
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do Livro -->
-    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 mx-4 border-4 border-purple-500">
+    <section class="section bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl shadow-xl p-8 mb-4 border-4 border-purple-500">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600">
             🎯 Propósito do Livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-1">
                 <img src="1-timoteo-proposito.png" alt="Propósito de 1 Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
-            <div class="order-2">
-                <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-2xl border-l-4 border-purple-500">
-                    <h3 class="text-2xl font-bold text-purple-600 mb-4">📚 Ensinar Boas Práticas</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Paulo escreveu esta carta para ensinar Timóteo — e todos nós — sobre como cuidar bem do povo de Deus. É como um manual de instruções para líderes da igreja!
+            <div class="order-2 space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-600 mb-3">📚 Ensinar Boas Práticas</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo escreveu para ensinar como cuidar bem do povo de Deus — como escolher líderes,
+                        orar, ensinar a verdade e viver com pureza. É um manual de liderança cristã!
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        ✅ <strong>Escolher líderes sábios</strong> que amam a Deus de verdade<br>
-                        ✅ <strong>Orar sempre</strong> por todos, em todo tempo<br>
-                        ✅ <strong>Ensinar a verdade</strong> da Palavra de Deus<br>
-                        ✅ <strong>Viver com pureza</strong> e ser exemplo de fé<br>
-                        ✅ <strong>Cuidar das pessoas</strong> com amor e sabedoria
+                    <blockquote class="versiculo-card border-purple-400 pl-4 bg-purple-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...para que saibas como deves portar-te na casa de Deus, que é a igreja do Deus vivo, coluna e firmamento da verdade."</p>
+                        <cite class="text-purple-600 font-bold text-xs">— 1 Timóteo 3:15</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-pink-200">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3">🙏 Orar por Todos</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Um dos propósitos principais é ensinar a importância da oração — por governantes,
+                        por vizinhos, por inimigos. A oração muda o mundo!
                     </p>
-                    <p class="text-lg text-gray-700 leading-relaxed font-semibold text-purple-600">
-                        🌟 O propósito é simples: ajudar a igreja a crescer forte, saudável e cheia do amor de Jesus!
+                    <blockquote class="versiculo-card border-pink-400 pl-4 bg-pink-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"Exorto, antes de tudo, a que se façam súplicas, orações, intercessões, e ações de graças por todos os homens."</p>
+                        <cite class="text-pink-600 font-bold text-xs">— 1 Timóteo 2:1</cite>
+                    </blockquote>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-600 mb-3">🌱 Crescer na Piedade</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Paulo quer que Timóteo — e nós — nos exercitemos na piedade como um atleta se
+                        exercita. Crescer espiritualmente exige treino e dedicação!
                     </p>
+                    <blockquote class="versiculo-card border-indigo-400 pl-4 bg-indigo-50 rounded-lg p-3">
+                        <p class="text-sm italic text-gray-600">"...exercita-te na piedade. Porque... a piedade para tudo é proveitosa, tendo a promessa da vida presente e da futura."</p>
+                        <cite class="text-indigo-600 font-bold text-xs">— 1 Timóteo 4:7-8</cite>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você Sabia? -->
-    <section class="section bg-gradient-to-br from-sky-100 to-blue-100 rounded-3xl shadow-xl p-8 mb-8 mx-4 border-4 border-sky-400">
+    <section class="section bg-gradient-to-br from-sky-100 to-blue-100 rounded-3xl shadow-xl p-8 mb-4 border-4 border-sky-400">
         <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-blue-700">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto mb-8">
             <div class="order-2 md:order-1">
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-sky-500">
-                    <h3 class="text-2xl font-bold text-sky-600 mb-4">👦 Timóteo Era Bem Jovem!</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Quando Paulo escreveu esta carta, Timóteo era considerado muito jovem para ser líder. Algumas pessoas até duvidavam dele por causa da idade!
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Mas Paulo o chamava carinhosamente de <strong>"meu verdadeiro filho na fé"</strong>! Isso mostra o amor especial que Paulo tinha por Timóteo, como um pai ama seu filho.
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        🌟 Paulo ensinou que <strong>idade não importa</strong> quando você tem fé, amor e um coração puro! Deus pode usar crianças, jovens e adultos — todos são importantes no Reino de Deus!
-                    </p>
-                    <p class="text-xl font-bold text-sky-600 text-center mt-6">
-                        💙 Você também pode ser usado por Deus, não importa sua idade!
-                    </p>
+                <img src="1-timoteo-curiosidade.png" alt="Curiosidade sobre Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="order-1 md:order-2 space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-sky-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">👦</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-sky-600 mb-2">Timóteo Era Bem Jovem!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Quando Paulo escreveu esta carta, Timóteo tinha provavelmente entre 20 e 30 anos — jovem demais
+                                para ser líder na cultura da época. Mas Paulo confiou a ele uma cidade inteira!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-blue-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">🌍</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-blue-600 mb-2">Filho de Dois Mundos!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Timóteo tinha <strong>mãe judia crente</strong> (Eunice) e <strong>pai grego</strong>. Ele cresceu entre
+                                duas culturas — e isso o ajudou a alcançar pessoas muito diferentes!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-indigo-200">
+                    <div class="flex items-start">
+                        <span class="text-4xl mr-4">💡</span>
+                        <div>
+                            <h3 class="text-xl font-bold text-indigo-600 mb-2">O Versículo Mais Mal Citado!</h3>
+                            <p class="text-gray-700 leading-relaxed">
+                                Muita gente diz "dinheiro é a raiz de todos os males", mas Paulo escreveu:
+                                <strong>"o amor ao dinheiro"</strong> é a raiz! Ter dinheiro não é pecado — amar o dinheiro mais que a Deus é!
+                                (1 Tm 6:10)
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="order-1 md:order-2">
-                <img src="1-timoteo-curiosidade.png" alt="Curiosidade sobre Timóteo" class="w-full h-auto rounded-2xl shadow-lg">
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-sky-600 to-blue-800 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-sky-400">
+                <div class="text-4xl mb-4 text-center">👦</div>
+                <h3 class="text-xl font-bold text-sky-700 mb-3 text-center">Nunca Pequeno Demais</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>1 Timóteo 4:12 diz "ninguém despreze a tua mocidade".</strong> Você já sentiu que não
+                    podia fazer algo por ser jovem ou criança? O que Paulo diria a você sobre o que Deus
+                    pode fazer através de alguém da sua idade?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-blue-400">
+                <div class="text-4xl mb-4 text-center">✨</div>
+                <h3 class="text-xl font-bold text-blue-700 mb-3 text-center">Ser Exemplo</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>Paulo diz para sermos exemplo na palavra, trato, amor, fé e pureza.</strong>
+                    Em qual dessas cinco áreas você quer crescer mais? Quem você conhece que já é um
+                    bom exemplo nessa área e poderia te inspirar?
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl border-t-4 border-indigo-400">
+                <div class="text-4xl mb-4 text-center">💰</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Contentamento</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    <strong>1 Timóteo 6:6 diz "piedade com contentamento é grande ganho".</strong>
+                    Você costuma ficar satisfeito com o que tem, ou sempre quer mais? O que significa
+                    ser rico em Deus em vez de rico em coisas?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-blue-800 to-indigo-900 p-8 mb-4 rounded-2xl shadow-lg">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-sky-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">1</span>
+                    <span class="text-2xl">📋</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">As 5 Áreas do Exemplo</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Leia <strong>1 Timóteo 4:12</strong> e escreva as 5 áreas: palavra, trato, amor, fé e pureza.
+                    Para cada uma, escreva <strong>uma ação concreta</strong> de como você vai ser exemplo
+                    nessa área esta semana!
+                </p>
+                <span class="inline-block mt-3 bg-sky-100 text-sky-700 px-3 py-1 rounded-full text-sm font-semibold">📖 Leitura</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-blue-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">2</span>
+                    <span class="text-2xl">✍️</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Memorize 1 Tm 4:12</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Escreva <strong>1 Timóteo 4:12</strong> e cole no seu espelho. Toda manhã, leia em voz alta
+                    e lembre: você não é pequeno demais para Deus te usar hoje!
+                </p>
+                <span class="inline-block mt-3 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-semibold">✏️ Memorização</span>
+            </div>
+            <div class="bg-white rounded-2xl p-6 shadow-xl">
+                <div class="flex items-center mb-4">
+                    <span class="bg-indigo-500 text-white text-lg font-black w-10 h-10 rounded-full flex items-center justify-center mr-3">3</span>
+                    <span class="text-2xl">🙏</span>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-3">Ore por um Líder</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Como Paulo ensina em <strong>1 Timóteo 2:1-2</strong>, ore por alguém que lidera —
+                    seu pastor, professor, pai ou mãe. Diga a essa pessoa que você orou por ela!
+                </p>
+                <span class="inline-block mt-3 bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-sm font-semibold">❤️ Ação</span>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mx-4 mb-8">
+    <section class="no-print text-center bg-gradient-to-r from-sky-500/20 to-blue-600/20 border-2 border-sky-500/30 rounded-2xl p-10 mb-4">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../2-tessalonicenses/2-tessalonicenses.html" class="bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-600 hover:to-blue-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ 2 Tessalonicenses
             </a>
-            <a href="../epistolas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Epístolas Paulinas
+            <a href="../cartas-paulinas.html" class="bg-gradient-to-r from-blue-600 to-sky-500 hover:from-blue-700 hover:to-sky-600 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Cartas Paulinas
             </a>
             <a href="../2-timoteo/2-timoteo.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 2 Timóteo ➡️

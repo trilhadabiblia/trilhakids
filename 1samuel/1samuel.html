@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #eef2ff; margin-top: 1rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-indigo-700 to-blue-800 hover:from-indigo-800 hover:to-blue-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,58 +32,48 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>👑</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-800 mx-2">
                     LIVRO DE 1 SAMUEL
                 </span>
-                <span>👑</span>
+                <span>🎯</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Ouvindo a Voz de Deus — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">Profetas e Reis — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-1samuel" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-indigo-700">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-800">
                 🌟 Os Três Segredos de 1 Samuel 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">👂 Primeiro Segredo: Ouvir a Voz de Deus</h3>
-                    <p class="italic">
-                        Samuel era pequeno, mas atento,<br>
-                        Ouviu Deus chamar no templo silencioso,<br>
-                        "Fala, Senhor, teu servo te escuta",<br>
-                        E assim começou um caminho glorioso!<br><br>
-                        <strong>Quando Deus te chamar, esteja pronto para ouvir!</strong>
-                    </p>
-                    <p class="text-sm text-amber-600 mt-2">📖 1 Samuel 3:10</p>
+
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border-l-4 border-indigo-700">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">👂 Primeiro Segredo: Ouvir a Voz de Deus</h3>
+                    <p>Samuel era uma criança dormindo no templo quando Deus o chamou pelo nome — três vezes! Ele não reconheceu a voz na primeira nem na segunda. Quando entendeu, respondeu com humildade e obediência.</p>
+                    <div class="versiculo-card border-indigo-400 mt-3">
+                        📖 1 Sm 3:9 — <em>"Fala, Senhor, porque o teu servo ouve."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">👑 Segundo Segredo: Deus Escolhe Líderes Fiéis</h3>
-                    <p class="italic">
-                        Saul era alto, mas não obedeceu,<br>
-                        Davi era pequeno, mas seu coração brilhou,<br>
-                        Deus não olha o tamanho ou aparência,<br>
-                        Ele vê quem de verdade O amou!<br><br>
-                        <strong>Deus escolhe quem tem coração fiel, não quem parece forte!</strong>
-                    </p>
-                    <p class="text-sm text-yellow-600 mt-2">📖 1 Samuel 16:7</p>
+                <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">👑 Segundo Segredo: Deus Olha o Coração</h3>
+                    <p>Quando Samuel foi ungir o novo rei em Belém, olhou para os filhos mais altos e mais fortes de Jessé — mas Deus disse não a todos. O escolhido era o caçula, que estava no campo cuidando de ovelhas.</p>
+                    <div class="versiculo-card border-blue-400 mt-3">
+                        📖 1 Sm 16:7 — <em>"O homem olha as aparências, porém o Senhor olha o coração."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
-                    <h3 class="text-2xl font-bold text-amber-800 mb-3">💪 Terceiro Segredo: Fé Vence Gigantes</h3>
-                    <p class="italic">
-                        Golias era enorme, todos tremiam de medo,<br>
-                        Mas Davi confiou: "Deus está comigo!",<br>
-                        Com uma pedrinha e fé no coração,<br>
-                        Derrubou o gigante, cumpriu seu destino!<br><br>
-                        <strong>Com Deus ao seu lado, nada é impossível!</strong>
-                    </p>
-                    <p class="text-sm text-amber-700 mt-2">📖 1 Samuel 17:45-47</p>
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-xl border-l-4 border-indigo-700">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">🎯 Terceiro Segredo: Fé Vence Gigantes</h3>
+                    <p>Golias tinha mais de 2,90 metros e desafiou Israel por 40 dias. Todo o exército tremeu — menos Davi. Ele não lutou com espada, mas com fé. Uma pedrinha de atiradeira e a batalha foi vencida!</p>
+                    <div class="versiculo-card border-indigo-400 mt-3">
+                        📖 1 Sm 17:47 — <em>"O Senhor não salva por espada nem por lança, porque do Senhor é a batalha."</em>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
@@ -97,178 +88,207 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem é Samuel? -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
-                👤 Quem é Samuel?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="relative">
-                    <img src="1samuel-quem-e.png" alt="Samuel" class="w-full h-auto rounded-xl shadow-lg">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-indigo-700 bg-gradient-to-br from-indigo-800 to-blue-900 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-3xl font-bold italic mb-6 leading-relaxed">
+                "O homem olha as aparências, porém o Senhor olha o coração."
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-blue-200">— 1 Samuel 16:7</p>
+            <p class="text-lg leading-relaxed mb-6 text-blue-100">
+                Quando Samuel chegou à casa de Jessé para ungir o novo rei, ficou impressionado com os irmãos mais altos e fortes de Davi. Mas Deus o corrigiu: o que importa não é o que aparece por fora, mas o que está dentro!
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">💙</div>
+                    <p class="font-semibold">Deus não se impressiona com altura, força ou beleza!</p>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            <strong class="text-amber-700">Samuel</strong> era um menino que ouviu a voz de Deus e se tornou um grande profeta.
-                        </p>
-                    </div>
-                    <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            Ele ensinou ao povo como <strong class="text-yellow-700">ouvir e obedecer a Deus</strong>.
-                        </p>
-                    </div>
-                    <div class="bg-amber-100 p-4 rounded-lg">
-                        <p class="text-lg text-amber-800 font-semibold text-center">
-                            👂 "Fala, Senhor, porque o teu servo ouve" - 1 Samuel 3:9
-                        </p>
-                    </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🎯</div>
+                    <p class="font-semibold">Ele procura um coração fiel, humilde e obediente.</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">👶</div>
+                    <p class="font-semibold">Você não precisa ser o mais forte — precisa ser fiel!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-amber-50 to-yellow-50 p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
-                📖 O que o livro conta?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4 order-2 md:order-1">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            Conta como Israel ganhou seu <strong class="text-amber-700">primeiro rei, Saul</strong>, e depois <strong class="text-yellow-700">Davi</strong>, que confiava em Deus.
-                        </p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            Mostra histórias de <strong class="text-amber-700">fé, coragem e escolhas certas</strong>.
-                        </p>
-                    </div>
-                    <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-4 rounded-lg">
-                        <p class="text-lg text-amber-800 font-semibold text-center">
-                            👑 De Samuel a Davi: a jornada dos reis de Israel!
-                        </p>
-                    </div>
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-blue-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-800">
+            🦸 Personagens Principais
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Samuel -->
+            <div class="bg-gradient-to-b from-indigo-50 to-blue-50 rounded-2xl p-6 shadow-lg border-2 border-indigo-200 text-center">
+                <img src="pequenosamuel.png" alt="Samuel" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-indigo-800 mb-2">👂 Samuel</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Filho da oração de Ana, dedicado a Deus desde criança. Cresceu no templo com o sacerdote Eli. Foi o último juiz de Israel e o profeta que ungiu os dois primeiros reis: Saul e Davi.</p>
+                <div class="versiculo-card border-indigo-400 text-left text-sm">
+                    📖 1 Sm 3:10 — <em>"Fala, Senhor, porque o teu servo ouve."</em>
                 </div>
-                <div class="relative order-1 md:order-2">
-                    <img src="1samuel-o-que-conta.png" alt="O que o livro conta" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+
+            <!-- Saul -->
+            <div class="bg-gradient-to-b from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg border-2 border-blue-200 text-center">
+                <img src="reisaul.png" alt="Rei Saul" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-blue-800 mb-2">👑 Rei Saul</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O primeiro rei de Israel — alto, forte e impressionante. Começou humilde, mas o poder mudou seu coração. Quando desobedeceu a Deus, o reino lhe foi tirado. Uma lição sobre como o orgulho destrói o que a graça constrói.</p>
+                <div class="versiculo-card border-blue-400 text-left text-sm">
+                    📖 1 Sm 15:22 — <em>"Obedecer é melhor do que sacrificar, e dar atenção, melhor do que a gordura de carneiros."</em>
+                </div>
+            </div>
+
+            <!-- Davi -->
+            <div class="bg-gradient-to-b from-indigo-50 to-blue-50 rounded-2xl p-6 shadow-lg border-2 border-indigo-200 text-center">
+                <img src="pequenodavi.png" alt="Davi" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-indigo-800 mb-2">🎯 Davi</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O caçula dos filhos de Jessé — pastor de ovelhas, músico e poeta. Deus o escolheu pelo coração. Com fé e uma pedrinha, derrubou o gigante Golias. Tornou-se o rei mais amado de Israel e antepassado direto de Jesus.</p>
+                <div class="versiculo-card border-indigo-400 text-left text-sm">
+                    📖 1 Sm 17:45 — <em>"Venho a ti em nome do Senhor dos Exércitos, o Deus dos exércitos de Israel!"</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-indigo-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-800">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-2xl border-l-4 border-indigo-700 shadow">
+                <h3 class="text-xl font-bold text-indigo-800 mb-3">🙏 Samuel — o menino que ouviu Deus (1 Sm 1–7)</h3>
+                <p class="text-gray-700 leading-relaxed">Ana orou com lágrimas por um filho e prometeu dedicá-lo a Deus. Samuel nasceu e foi levado ao templo ainda pequeno. Lá, Deus o chamou três vezes de noite — e ele se tornou profeta respeitado em todo Israel.</p>
+                <div class="versiculo-card border-indigo-400 text-sm mt-3">
+                    📖 1 Sm 1:27 — <em>"Por este menino eu orava, e o Senhor me concedeu o que lhe pedi."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-700 shadow">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">👑 Israel pede um rei — Saul ungido (1 Sm 8–15)</h3>
+                <p class="text-gray-700 leading-relaxed">O povo queria ser igual às outras nações e pediu um rei. Deus avisou que isso seria um erro, mas atendeu ao pedido. Saul foi ungido — alto, forte, perfeito por fora. Mas quando desobedeceu a Deus, o próprio Deus se arrependeu de tê-lo feito rei.</p>
+                <div class="versiculo-card border-blue-400 text-sm mt-3">
+                    📖 1 Sm 15:22 — <em>"Obedecer é melhor do que sacrificar."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-2xl border-l-4 border-indigo-700 shadow">
+                <h3 class="text-xl font-bold text-indigo-800 mb-3">🌟 Deus escolhe Davi (1 Sm 16)</h3>
+                <p class="text-gray-700 leading-relaxed">Samuel foi a Belém ungir um filho de Jessé. Sete filhos passaram na sua frente — todos impressionantes. Mas Deus disse não a cada um. O oitavo, o caçula Davi, estava no campo com as ovelhas. Esse era o escolhido!</p>
+                <div class="versiculo-card border-indigo-400 text-sm mt-3">
+                    📖 1 Sm 16:7 — <em>"O Senhor olha o coração."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-blue-700 shadow">
+                <h3 class="text-xl font-bold text-blue-800 mb-3">🎯 Davi e Golias (1 Sm 17)</h3>
+                <p class="text-gray-700 leading-relaxed">Golias desafiou Israel por 40 dias. Nenhum soldado teve coragem de enfrentá-lo. Davi chegou ao campo, ouviu o desafio e foi lutar — não com armadura, mas com fé, uma atiradeira e cinco pedrinhas. Uma foi suficiente!</p>
+                <div class="versiculo-card border-blue-400 text-sm mt-3">
+                    📖 1 Sm 17:47 — <em>"Do Senhor é a batalha, e Ele vos entregará nas nossas mãos."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-indigo-100 to-blue-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-indigo-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-800">
+            💡 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+                <img src="1samuel-curiosidade.png" alt="Curiosidades de 1 Samuel" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-indigo-700 shadow-md">
+                    <p class="font-bold text-indigo-800 mb-1">📏 Golias tinha quase 3 metros de altura!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">A Bíblia diz que Golias media "seis côvados e um palmo" — cerca de 2,90 metros! Usava uma armadura que pesava quase 60 kg. Era literalmente o maior guerreiro do mundo antigo. E caiu com uma pedrinha.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-blue-700 shadow-md">
+                    <p class="font-bold text-blue-800 mb-1">🎵 Davi foi músico antes de ser guerreiro!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Antes de enfrentar Golias, Davi já era famoso por tocar harpa. Saul o chamou ao palácio para tocar quando espíritos maus o afligiam — a música de Davi acalmava o rei! (1 Sm 16:23)</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-indigo-700 shadow-md">
+                    <p class="font-bold text-indigo-800 mb-1">✝️ Davi é antepassado direto de Jesus!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Jesus é chamado 17 vezes de "Filho de Davi" no Novo Testamento! Toda a história de Davi aponta para o Messias que viria da sua linhagem. O menino pastor de Belém prefigura o Bom Pastor de Belém.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
-                ⭐ Por que é importante?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="relative">
-                    <img src="1samuel-por-que-importante.png" alt="Por que é importante" class="w-full h-auto rounded-xl shadow-lg">
-                </div>
-                <div class="space-y-4">
-                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            🟢 Mostra que <strong class="text-green-700">Deus pode usar qualquer pessoa</strong>, mesmo crianças, para fazer coisas grandes.
-                        </p>
-                    </div>
-                    <div class="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-xl border-l-4 border-emerald-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            🟢 Ensina sobre <strong class="text-emerald-700">obediência, fé e coragem</strong>.
-                        </p>
-                    </div>
-                    <div class="bg-amber-100 p-4 rounded-lg">
-                        <p class="text-lg text-amber-800 font-semibold text-center">
-                            ✨ Deus não olha o tamanho, mas o coração!
-                        </p>
-                    </div>
-                </div>
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-blue-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-indigo-700 to-blue-800">
+            🤔 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-indigo-50 to-blue-50 rounded-2xl p-6 shadow border-2 border-indigo-200 text-center">
+                <div class="text-4xl mb-4">👂</div>
+                <h3 class="text-lg font-bold text-indigo-800 mb-3">Ouvir Deus</h3>
+                <p class="text-gray-700 leading-relaxed">Samuel ouviu a voz de Deus três vezes antes de entender que era Ele. Como você acha que podemos aprender a reconhecer quando Deus está nos falando?</p>
+            </div>
+            <div class="bg-gradient-to-b from-blue-50 to-indigo-50 rounded-2xl p-6 shadow border-2 border-blue-200 text-center">
+                <div class="text-4xl mb-4">💙</div>
+                <h3 class="text-lg font-bold text-blue-800 mb-3">O Coração</h3>
+                <p class="text-gray-700 leading-relaxed">Deus disse que olha o coração, não as aparências. O que você acha que Deus vê quando olha para o seu coração hoje?</p>
+            </div>
+            <div class="bg-gradient-to-b from-indigo-50 to-blue-50 rounded-2xl p-6 shadow border-2 border-indigo-200 text-center">
+                <div class="text-4xl mb-4">🎯</div>
+                <h3 class="text-lg font-bold text-indigo-800 mb-3">Seus Gigantes</h3>
+                <p class="text-gray-700 leading-relaxed">Davi enfrentou Golias com fé, não com espada. Que "gigante" você enfrenta hoje — uma dificuldade, um medo, um problema — que você pode entregar a Deus?</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
-                🎯 Propósito do livro
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="space-y-4 order-2 md:order-1">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            📖 Ensinar sobre <strong class="text-amber-700">ouvir e obedecer a Deus</strong>.
-                        </p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            👑 Mostrar como <strong class="text-yellow-700">Deus escolhe líderes fiéis</strong>.
-                        </p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-700">
-                        <p class="text-xl leading-relaxed text-gray-700">
-                            💪 Ensinar que <strong class="text-amber-800">confiar em Deus ajuda a vencer problemas</strong>.
-                        </p>
-                    </div>
-                </div>
-                <div class="relative order-1 md:order-2">
-                    <img src="1samuel-proposito.png" alt="Propósito do livro" class="w-full h-auto rounded-xl shadow-lg">
-                </div>
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-indigo-700 bg-gradient-to-br from-indigo-800 to-blue-900 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">👂</div>
+                <h3 class="text-xl font-bold mb-3">Seja como Samuel</h3>
+                <p class="leading-relaxed">Reserve 5 minutos de silêncio esta semana para ouvir Deus. Leia 1 Samuel 3:1-10 e depois ore: "Fala, Senhor, porque eu ouço."</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-700">
-                💡 Curiosidade Divertida!
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="relative">
-                    <img src="1samuel-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-xl shadow-lg">
-                </div>
-                <div class="space-y-4">
-                    <div class="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl shadow-lg border-4 border-purple-300">
-                        <p class="text-2xl leading-relaxed text-gray-700 font-bold text-center mb-4">
-                            Davi derrotou o gigante Golias com apenas <strong class="text-purple-700">uma pedrinha</strong> e muita <strong class="text-pink-700">fé em Deus</strong>!
-                        </p>
-                        <p class="text-3xl text-center font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                            Com Deus, nada é impossível! 💪✨
-                        </p>
-                    </div>
-                    <div class="bg-amber-100 p-4 rounded-lg">
-                        <p class="text-lg text-amber-800 font-semibold text-center">
-                            🎯 "O Senhor não necessita de espada nem de lança para salvar" - 1 Samuel 17:47
-                        </p>
-                    </div>
-                </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">💙</div>
+                <h3 class="text-xl font-bold mb-3">Cuide do seu Coração</h3>
+                <p class="leading-relaxed">Escreva 3 coisas que você quer que Deus veja no seu coração. Peça a Ele para te ajudar a cultivar essas qualidades esta semana!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🎯</div>
+                <h3 class="text-xl font-bold mb-3">Enfrente seu Golias</h3>
+                <p class="leading-relaxed">Identifique um "gigante" na sua vida — um medo, uma dificuldade — e escreva uma oração pedindo a Deus coragem para enfrentá-lo com fé, como Davi!</p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-yellow-700/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
-        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="section no-print text-center bg-gradient-to-r from-indigo-700/20 to-blue-800/20 border-2 border-indigo-700/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-indigo-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../rute/rute.html" class="bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../rute/rute.html" class="bg-gradient-to-r from-indigo-700 to-blue-800 hover:from-indigo-800 hover:to-blue-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Rute
             </a>
-            <a href="../livros-historicos.html" class="bg-gradient-to-r from-yellow-700 to-amber-600 hover:from-yellow-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../historicos.html" class="bg-gradient-to-r from-blue-800 to-indigo-700 hover:from-blue-900 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Livros Históricos
             </a>
-            <a href="../2samuel/2samuel.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2samuel/2samuel.html" class="bg-gradient-to-r from-indigo-600 to-blue-700 hover:from-indigo-700 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 2 Samuel ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-amber-600 to-yellow-700 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Samuel - Ouvindo a Voz de Deus ✨</h3>
+    <section class="section bg-gradient-to-r from-indigo-700 to-blue-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">👑 Livro de 1 Samuel — Profetas e Reis 👑</h3>
         <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 

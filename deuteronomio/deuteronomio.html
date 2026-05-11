@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-green-700 to-emerald-800 hover:from-green-800 hover:to-emerald-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,10 +32,10 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>📜</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 mx-2">
-                    LIVRO DE DEUTERONÔMIO
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800 mx-2">
+                    DEUTERONÔMIO
                 </span>
-                <span>📜</span>
+                <span>🌿</span>
             </h1>
             <p class="text-xl text-gray-600 font-semibold">As Últimas Palavras de Moisés — Um Resumo Visual para Crianças</p>
         </div>
@@ -42,44 +43,44 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-deuteronomio" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-yellow-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-green-700">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
                 🌟 Os Três Segredos de Deuteronômio 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💛 Primeiro Segredo: Lembre-se Sempre!</h3>
+
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">💛 Primeiro Segredo: Lembre-se Sempre!</h3>
                     <p class="italic">
                         Quando a vida parecer difícil de entender,<br>
                         Olhe para trás e veja Deus te proteger!<br>
-                        Ele te tirou do Egito com amor e poder,<br>
+                        Ele te tirou do deserto com amor e poder,<br>
                         Nunca se esqueça do que Ele fez por você!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 8:2</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 8:2 — "Lembra-te de todo o caminho pelo qual o Senhor teu Deus te conduziu."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-700">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">❤️ Segundo Segredo: Ame de Todo Coração!</h3>
+                <div class="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-2xl border-l-4 border-emerald-700">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">❤️ Segundo Segredo: Ame de Todo Coração!</h3>
                     <p class="italic">
                         "Amarás ao Senhor teu Deus" é o que diz a lei,<br>
                         Com toda sua força, alma e coração, você verá:<br>
                         Quando amamos a Deus de verdade e com fervor,<br>
                         Ele nos guia sempre com seu infinito amor!
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 6:5</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 6:5 — "Amarás ao Senhor teu Deus de todo o teu coração."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🌈 Terceiro Segredo: Escolha a Bênção!</h3>
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🌈 Terceiro Segredo: Escolha a Vida!</h3>
                     <p class="italic">
                         Moisés disse: "Escolham hoje o que vão fazer,<br>
                         Obedecer a Deus é vida, podem crer!<br>
                         Mas se afastar d'Ele traz só tristeza e dor,<br>
                         Escolha a vida e o caminho do Senhor!"
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 30:19</p>
+                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Deuteronômio 30:19 — "Escolhe pois a vida, para que vivas, tu e a tua descendência."</p>
                 </div>
 
             </div>
@@ -96,183 +97,300 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            👤 Quem são os Personagens Principais?
+    <!-- Versículo para Guardar -->
+    <section class="section bg-gradient-to-br from-green-700 to-emerald-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            📖 Versículo para Guardar no Coração
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="deuteronomio-personagem.png" alt="Moisés" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">👴 Moisés</h3>
-                    <p class="text-gray-700 text-lg">
-                        O grande líder do povo de Israel, agora já idoso e sábio. Ele está dando suas últimas palavras antes de o povo entrar na Terra Prometida. Moisés relembra tudo o que Deus fez e ensina o povo a nunca esquecer!
+        <div class="max-w-3xl mx-auto">
+            <div class="versiculo-card border-green-300 bg-white/10 backdrop-blur p-8 rounded-2xl text-center">
+                <p class="text-3xl font-black text-white mb-4 leading-tight">
+                    "Amarás ao Senhor teu Deus de todo o teu coração, de toda a tua alma e de toda a tua força."
+                </p>
+                <p class="text-green-200 font-bold text-xl mb-6">— Deuteronômio 6:5</p>
+                <div class="bg-white/20 rounded-xl p-4 text-left">
+                    <p class="text-white text-lg leading-relaxed">
+                        🌿 <span class="font-bold">O que isso significa?</span> Jesus disse que este é o <em>maior</em> mandamento de toda a Bíblia! Amar a Deus com tudo — mente, sentimentos e ações — não é uma das regras, é a raiz de todas as outras. Quando você realmente ama Deus com tudo, as demais coisas se encaixam naturalmente no lugar.
                     </p>
                 </div>
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">👨‍👩‍👧‍👦 O Povo de Israel</h3>
-                    <p class="text-gray-700 text-lg">
-                        A nova geração que vai finalmente entrar na terra que Deus prometeu. Eles precisam aprender as leis e lembrar sempre de obedecer ao Senhor!
+                <div class="mt-4 flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📝 Copie no caderno</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">🗣️ Diga em voz alta</span>
+                    <span class="bg-white/20 text-white px-4 py-2 rounded-full font-semibold">📌 Coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-green-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="deuteronomio-personagem.png" alt="Personagens de Deuteronômio" class="w-full h-auto rounded-xl shadow-2xl object-cover">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">👴 Moisés — O Grande Mestre</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Com 120 anos, olhos ainda vivos e força intacta, Moisés faz seus três grandes discursos de despedida. Ele sabe que não vai entrar na Terra Prometida — mas se dedica inteiramente a preparar o povo. Que entrega!
                     </p>
+                    <p class="text-sm text-green-800 font-semibold mt-2">📖 Dt 34:7 — "Tinha Moisés cento e vinte anos quando morreu; seus olhos não se escureceram, nem o seu vigor natural havia diminuído."</p>
+                </div>
+                <div class="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-xl border-l-4 border-emerald-700">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-2">⚔️ Josué — O Novo Líder</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O espião corajoso de Números agora é o escolhido para suceder Moisés. Diante de todo o povo, Moisés passa o manto da liderança para Josué — e Deus confirma a escolha. O futuro está em boas mãos!
+                    </p>
+                    <p class="text-sm text-emerald-800 font-semibold mt-2">📖 Dt 31:7-8 — "Moisés convocou Josué... Sê forte e corajoso... o Senhor vai contigo."</p>
+                </div>
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-600">
+                    <h3 class="text-2xl font-bold text-green-700 mb-2">👨‍👩‍👧‍👦 A Nova Geração</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Filhos e netos dos que saíram do Egito — nascidos no deserto, prontos para herdar a promessa. Moisés fala diretamente para eles: lembrem, amem, obedeçam, ensinem seus filhos. A fé precisa passar adiante!
+                    </p>
+                    <p class="text-sm text-green-700 font-semibold mt-2">📖 Dt 6:7 — "Inculca estas palavras a teus filhos, e delas falarás assentado em tua casa, andando no caminho."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+    <section class="section bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-emerald-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
             📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
             <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600">
-                    <h3 class="text-xl font-bold text-yellow-700 mb-2">📜 Últimos Ensinamentos</h3>
-                    <p class="text-gray-700">
-                        Moisés reúne todo o povo e relembra a jornada pelo deserto. Ele conta sobre as vitórias, os erros e as bênçãos de Deus. É como uma grande aula de revisão antes da prova final!
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🗣️ Os Três Grandes Discursos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Deuteronômio é essencialmente o discurso de despedida de Moisés — três grandes sermões ao povo. Ele revê os 40 anos no deserto, renova as leis e termina com a escolha: bênção ou maldição, vida ou morte.
                     </p>
+                    <p class="text-sm text-green-800 font-semibold mt-2">📖 Dt 1:1 — "Estas são as palavras que Moisés dirigiu a todo o Israel."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-amber-700">
-                    <h3 class="text-xl font-bold text-amber-700 mb-2">⚖️ Relembrar as Leis</h3>
-                    <p class="text-gray-700">
-                        Moisés repete as leis que Deus deu no Monte Sinai. Ele explica como viver de forma que agrade a Deus, com amor, justiça e obediência. São 34 capítulos cheios de sabedoria!
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-700">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">🎵 O Shemá — A Oração Central</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O capítulo 6 traz o Shemá: "Ouve, Israel: o Senhor nosso Deus é o único Senhor." É a declaração de fé do povo de Deus, repetida todos os dias por judeus há 3.000 anos. E Jesus a citou como o maior mandamento!
                     </p>
+                    <p class="text-sm text-emerald-800 font-semibold mt-2">📖 Dt 6:4-5 — "Ouve, Israel: o Senhor nosso Deus é o único Senhor. Amarás ao Senhor teu Deus..."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600">
-                    <h3 class="text-xl font-bold text-yellow-700 mb-2">❤️ Amar e Obedecer</h3>
-                    <p class="text-gray-700">
-                        O coração do livro é sobre amar a Deus de todo coração! Moisés incentiva o povo a nunca se esquecer do Senhor e a ensinar seus filhos sobre Ele todos os dias.
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-600">
+                    <h3 class="text-2xl font-bold text-green-700 mb-3">⚡ Bênçãos e Maldições</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Os capítulos 27–28 são poderosos: Moisés descreve em detalhe o que acontece quando o povo obedece (bênção em tudo!) e quando desobedece (consequências sérias). É uma escolha real com consequências reais.
                     </p>
+                    <p class="text-sm text-green-700 font-semibold mt-2">📖 Dt 28:2 — "Todas estas bênçãos virão sobre ti e te alcançarão, se obedeceres à voz do Senhor."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-700 mb-3">🏔️ A Morte de Moisés</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Deus leva Moisés ao topo do Monte Nebo — e ele vê toda a Terra Prometida com seus próprios olhos. Então morre, com 120 anos, em plena força. O próprio Deus o enterra. Ninguém encontrou sua tumba até hoje.
+                    </p>
+                    <p class="text-sm text-emerald-700 font-semibold mt-2">📖 Dt 34:6 — "Ele o sepultou... ninguém sabe até hoje o lugar da sua sepultura."</p>
                 </div>
             </div>
             <div>
-                <img src="deuteronomio-o-que-conta.png" alt="O que conta" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="deuteronomio-o-que-conta.png" alt="O que Deuteronômio conta" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            ⭐ Por Que é Importante?
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-green-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="deuteronomio-importante.png" alt="Importância" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div>
+                <img src="deuteronomio-importante.png" alt="Importância de Deuteronômio" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">🙏 Lembrar da Fidelidade</h3>
-                    <p class="text-gray-700 text-lg">
-                        Deuteronômio nos ensina a nunca esquecer o que Deus fez por nós. Mesmo quando as coisas ficam difíceis, devemos lembrar que Ele sempre esteve conosco!
+            <div class="space-y-4">
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🙏 Jesus Citou Deuteronômio 3 Vezes!</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Quando Satanás tentou Jesus no deserto, Jesus respondeu três vezes com versículos de Deuteronômio! Dt 8:3, Dt 6:16 e Dt 6:13. Era o livro que Jesus usou como escudo — uma arma poderosa!
                     </p>
+                    <p class="text-sm text-green-800 font-semibold mt-2">📖 Dt 8:3 — "Nem só de pão viverá o homem, mas de tudo o que sai da boca do Senhor."</p>
                 </div>
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-700">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">🌟 Vida e Bênção</h3>
-                    <p class="text-gray-700 text-lg">
-                        O livro mostra que seguir a Palavra de Deus traz vida abundante e muitas bênçãos. Quando obedecemos, vivemos melhor e mais felizes!
+                <div class="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-xl border-l-4 border-emerald-700">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">📣 Passar a Fé para os Filhos</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        O capítulo 6 insiste: fale de Deus com seus filhos em casa, no caminho, ao deitar e ao levantar. A fé não é só para domingos — é uma conversa diária. Cada família é uma escola de fé!
                     </p>
+                    <p class="text-sm text-emerald-800 font-semibold mt-2">📖 Dt 6:7 — "Inculca estas palavras a teus filhos, e delas falarás... deitando-te e levantando-te."</p>
                 </div>
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">💪 Continuar Obedecendo</h3>
-                    <p class="text-gray-700 text-lg">
-                        Inspira o povo (e nós também!) a continuar seguindo ao Senhor, não importa o que aconteça. A obediência é o caminho para uma vida plena!
+                <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-600">
+                    <h3 class="text-2xl font-bold text-green-700 mb-3">🌿 Gratidão Antes de Entrar na Bênção</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Moisés alerta: quando você entrar na terra boa, cuidar com casas bonitas e ter fartura, não esqueça que foi Deus quem deu tudo! O perigo do coração cheio é esquecer de onde veio a bênção.
                     </p>
+                    <p class="text-sm text-green-700 font-semibold mt-2">📖 Dt 8:10-11 — "Quando tiveres comido e te fartares... cuida-te que não te esqueças do Senhor."</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
-            🎯 Qual é o Propósito do Livro?
+    <section class="section bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-emerald-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
+            🎯 Propósito do Livro
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-yellow-600">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">💝</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-yellow-700 mb-3">Relembrar o Amor de Deus</h3>
-                            <p class="text-gray-700 text-lg leading-relaxed">
-                                Preparar o povo para uma nova fase da vida, mostrando que Deus sempre os amou e cuidou deles. É hora de entrar na Terra Prometida com fé renovada!
-                            </p>
-                        </div>
-                    </div>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🔄 Renovar o Pacto com a Nova Geração</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        A aliança feita no Sinai foi com os pais — mas Moisés a renova com os filhos. A fé em Deus não é herança automática: cada geração precisa fazer sua própria escolha de seguir ao Senhor.
+                    </p>
+                    <p class="text-sm text-green-800 font-semibold mt-2">📖 Dt 29:10-12 — "Vós todos estais hoje perante o Senhor... para entrares no pacto do Senhor."</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-t-4 border-amber-700">
-                    <div class="flex items-start space-x-4">
-                        <span class="text-5xl">💪</span>
-                        <div>
-                            <h3 class="text-2xl font-bold text-amber-700 mb-3">Fortalecer a Fé</h3>
-                            <p class="text-gray-700 text-lg leading-relaxed">
-                                Dar ao povo coragem e confiança para enfrentar os desafios que virão. Com Deus ao lado deles, nada é impossível! A fé precisa estar forte para as batalhas à frente.
-                            </p>
-                        </div>
-                    </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-emerald-700">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">📚 Guardar a Palavra de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Moisés manda escrever a Lei, colocá-la na Arca da Aliança e lê-la em público a cada sete anos. A Palavra de Deus precisa ser escrita, lembrada e ensinada — nunca pode ser esquecida!
+                    </p>
+                    <p class="text-sm text-emerald-800 font-semibold mt-2">📖 Dt 17:19 — "E a terá consigo, e a lerá todos os dias da sua vida."</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-green-600">
+                    <h3 class="text-2xl font-bold text-green-700 mb-3">🌅 Preparar para o Futuro com Deus</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Com Josué assumindo o comando e a Terra Prometida à vista, Deuteronômio encerra o Pentateuco com esperança. O futuro não é incerto — é uma promessa nas mãos de um Deus fiel!
+                    </p>
+                    <p class="text-sm text-green-700 font-semibold mt-2">📖 Dt 31:8 — "O Senhor mesmo vai à tua frente... não te deixará, nem te desamparará; não temas."</p>
                 </div>
             </div>
             <div>
-                <img src="deuteronomio-proposito.png" alt="Propósito" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="deuteronomio-proposito.png" alt="Propósito de Deuteronômio" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
         </div>
     </section>
 
     <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700">
+    <section class="section bg-white rounded-3xl shadow-xl p-8 mb-8 border-t-8 border-green-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
             🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="deuteronomio-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-center mb-8 max-w-6xl mx-auto">
+            <div>
+                <img src="deuteronomio-curiosidade-Photoroom.png" alt="Curiosidade sobre Deuteronômio" class="w-full h-auto rounded-xl shadow-2xl object-cover">
             </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-8 rounded-2xl shadow-xl border-4 border-yellow-600">
-                    <div class="text-center mb-4">
-                        <span class="text-6xl">📚</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-yellow-700 mb-4 text-center">Segunda Lei!</h3>
-                    <p class="text-gray-700 text-xl leading-relaxed text-center mb-4">
-                        O nome "Deuteronômio" vem do grego e significa <strong>"segunda lei"</strong>! 
+            <div class="space-y-6">
+                <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-4 border-green-300">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">📚</span>
+                        "Segunda Lei" em Grego!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        <span class="font-bold text-green-700">"Deuteronômio"</span> vem do grego e significa <span class="font-bold text-emerald-700">"segunda lei"</span>. Não são leis novas — é uma repetição e aprofundamento das leis para a nova geração. Como uma revisão geral antes da maior aventura da vida!
                     </p>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        É como se fosse uma grande revisão das leis que Deus deu antes! Moisés está repassando tudo novamente para a nova geração que vai entrar na Terra Prometida. É como quando a professora revisa a matéria antes da prova importante! 📝✨
+                </div>
+                <div class="bg-gradient-to-r from-emerald-100 to-green-100 p-6 rounded-xl border-4 border-emerald-300">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">⚔️</span>
+                        Jesus Usou Deuteronômio Como Escudo!
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quando Satanás tentou Jesus no deserto por 40 dias, Jesus respondeu cada tentação com um versículo de Deuteronômio. Três tentações, três respostas — todas do mesmo livro! Saber a Palavra de Deus de cor é a melhor defesa que existe.
                     </p>
-                    <div class="mt-6 text-center">
-                        <span class="inline-block bg-yellow-600 text-white px-6 py-2 rounded-full font-bold">
-                            🎓 Revisão Divina!
-                        </span>
-                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl border-4 border-green-300">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3 flex items-center">
+                        <span class="text-4xl mr-3">🏔️</span>
+                        Moisés Viu, Mas Não Entrou
+                    </h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Moisés liderou o povo por 40 anos, mas por causa de um momento de desobediência (bateu na pedra em vez de falar com ela — Nm 20), Deus não o deixou entrar na terra. Mesmo assim, Deus o levou ao cume do Monte Nebo para <span class="font-bold text-green-700">ver toda a terra com seus próprios olhos</span> antes de morrer. Que misericórdia!
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-green-700">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-green-700 to-emerald-800">
+            💭 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-700">
+                <div class="text-5xl text-center mb-4">❤️</div>
+                <h3 class="text-xl font-bold text-green-800 mb-3 text-center">Amar com Tudo</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jesus disse que Dt 6:5 é o maior mandamento. Amar a Deus com "todo o coração, alma e força" significa que não fica nada de fora. Tem alguma parte da sua vida que você ainda não entregou a Deus?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-emerald-700">
+                <div class="text-5xl text-center mb-4">🌿</div>
+                <h3 class="text-xl font-bold text-emerald-800 mb-3 text-center">Não Esquecer</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Moisés repetia: "Lembre-se!" O perigo de ter tudo — comida, casa, amigos — é esquecer que Deus deu tudo isso. O que você pode fazer para não esquecer da fidelidade de Deus na sua vida?
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-4 border-green-600">
+                <div class="text-5xl text-center mb-4">🌅</div>
+                <h3 class="text-xl font-bold text-green-700 mb-3 text-center">Escolher a Vida</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    "Escolhe a vida" (Dt 30:19) — Moisés não impôs, convidou. Deus dá a escolha. Toda decisão pequena que você toma no dia a dia é um pequeno "escolho a vida" ou "escolho o outro caminho". Que escolhas você está fazendo?
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-green-700 to-emerald-900 rounded-3xl shadow-xl p-10 mb-8">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-green-300 text-center">
+                <div class="text-5xl mb-4">📝</div>
+                <h3 class="text-xl font-bold text-green-200 mb-3">Guarda no Coração</h3>
+                <p class="text-white leading-relaxed">
+                    Escreva Deuteronômio 6:5 e memorize esta semana. Quando acordar, diga em voz alta. Jesus chamou este versículo de "o maior mandamento" — ele merece um lugar especial na sua memória!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-emerald-300 text-center">
+                <div class="text-5xl mb-4">📋</div>
+                <h3 class="text-xl font-bold text-emerald-200 mb-3">Lista da Fidelidade de Deus</h3>
+                <p class="text-white leading-relaxed">
+                    Moisés fez uma revisão de 40 anos de fidelidade de Deus. Faça a sua: escreva 5 momentos em que você viu Deus cuidar de você ou da sua família. Guarde essa lista — ela vai te fortalecer nos momentos difíceis!
+                </p>
+            </div>
+            <div class="bg-white/15 backdrop-blur p-6 rounded-2xl border-2 border-green-300 text-center">
+                <div class="text-5xl mb-4">🗣️</div>
+                <h3 class="text-xl font-bold text-green-200 mb-3">Conte Para Alguém</h3>
+                <p class="text-white leading-relaxed">
+                    Deuteronômio manda contar as histórias de Deus para os filhos. Esta semana, conte para alguém mais novo (irmão, primo, amigo) uma história de como Deus foi fiel — na Bíblia ou na sua vida!
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-yellow-600/20 to-amber-700/20 border-2 border-yellow-600/30 rounded-2xl p-10 mb-4">
+    <section class="no-print text-center bg-gradient-to-r from-green-700/20 to-emerald-800/20 border-2 border-green-700/30 rounded-2xl p-10 mb-8">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../numeros/numeros.html" class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
+            <a href="../numeros/numeros.html" class="bg-gradient-to-r from-green-700 to-emerald-800 hover:from-green-800 hover:to-emerald-900 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Números
             </a>
-            <a href="../pentateuco.html" class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
-                📚 Ver Livros do Pentateuco
+            <a href="../pentateuco.html" class="bg-gradient-to-r from-emerald-800 to-green-700 hover:from-emerald-900 hover:to-green-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Pentateuco
             </a>
-            <a href="../josue/josue.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
+            <a href="../josue/josue.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Josué ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-yellow-600 to-amber-700 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Deuteronômio - As Últimas Palavras de Moisés ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
+    <section class="section bg-gradient-to-r from-green-700 to-emerald-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Deuteronômio — As Últimas Palavras de Moisés ✨</h3>
+        <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+        <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
     </section>
 
     <script src="/menu.js"></script>
