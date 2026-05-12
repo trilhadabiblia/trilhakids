@@ -8,32 +8,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
+            body { background: white; }
+            .no-print { display: none; }
+            .section { page-break-inside: avoid; break-inside: avoid; }
         }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card {
+            border-left: 6px solid;
+            padding: 1rem 1.25rem;
+            border-radius: 0.75rem;
+            background: #fdf4ff;
         }
     </style>
 </head>
@@ -43,7 +29,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-fuchsia-600 to-purple-700 hover:from-fuchsia-700 hover:to-purple-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -56,284 +42,337 @@
                     class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
                     aria-describedby="desc-ester">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>👑</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-700 mx-2">
                     LIVRO DE ESTER
                 </span>
                 <span>👑</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Coragem, Fé e Salvação — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-ester" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">Coragem, Fé e Salvação — Um Resumo Visual para Crianças</p>
+            <span id="desc-ester" class="sr-only" aria-hidden="true">Clique na imagem para ler os segredos!</span>
         </div>
     </section>
 
     <!-- Modal -->
     <div id="modal-ester"
         class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-pink-200">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-fuchsia-200">
             <button id="close-modal"
                 class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
 
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-rose-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-purple-700">
                 🌟 Os Três Segredos de Ester 🌟
             </h2>
 
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
                 <div>
-                    <h3 class="text-2xl font-bold text-pink-700 mb-2">👑 1️⃣ Deus usa pessoas comuns para coisas extraordinárias</h3>
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-2">👑 1️⃣ Deus coloca pessoas no lugar certo</h3>
                     <p>
                         Ester era uma jovem simples e judia,<br>
-                        Mas Deus tinha um plano, que alegria!<br>
-                        Ela se tornou rainha em tempo certo,<br>
-                        Para salvar seu povo do perigo perto!<br><br>
-
-                        ✨ Não importa quem você é ou de onde veio,<br>
-                        Deus pode te usar de jeito pleno e meio!<br>
-                        Ele prepara cada um com propósito especial,<br>
-                        Para fazer a diferença no momento crucial!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ester 4:14</span>
+                        Orphan, criada por Mardoqueu todo dia.<br>
+                        Mas Deus tinha um plano que ela mal sabia —<br>
+                        Ela seria rainha para salvar o povo da agonia!<br><br>
+                        ✨ Não importa sua origem ou família,<br>
+                        Deus pode te colocar exatamente onde precisaria.<br>
+                        "Para um momento como este" você está aí —<br>
+                        Pergunte a Deus: "Qual é o meu propósito aqui?"
                     </p>
+                    <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ester 4:14</span>
                 </div>
-
-                <!-- Segredo 2 -->
                 <div>
-                    <h3 class="text-2xl font-bold text-pink-700 mb-2">💪 2️⃣ Coragem nasce quando confiamos em Deus</h3>
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-2">💪 2️⃣ Coragem é confiar em Deus mesmo com medo</h3>
                     <p>
-                        Ester tinha medo, era perigoso ir ao rei,<br>
-                        Mas ela confiou em Deus, seguiu Sua lei.<br>
-                        Com jejum e oração, ela se fortaleceu,<br>
-                        E corajosamente fez o que Deus lhe deu!<br><br>
-
-                        🦁 Ter coragem não é não ter medo não,<br>
-                        É confiar em Deus mesmo em aflição!<br>
-                        Quando entregamos tudo nas mãos do Senhor,<br>
-                        Ele nos dá força, paz e muito valor!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ester 4:16</span>
+                        Entrar no rei sem ser chamada — morte certa!<br>
+                        Mas Ester disse: "Se perecer, perecerei" — alerta!<br>
+                        Ela jejuou 3 dias e foi com fé que converta,<br>
+                        E Deus abriu o coração do rei — vitória aberta!<br><br>
+                        🦁 Coragem não é ausência de medo,<br>
+                        É agir pela fé mesmo com o coração em segredo.<br>
+                        Quando Deus te chama para algo difícil e sério,<br>
+                        Ele vai adiante de você abrindo o caminho inteiro!
                     </p>
+                    <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ester 4:16</span>
                 </div>
-
-                <!-- Segredo 3 -->
                 <div>
-                    <h3 class="text-2xl font-bold text-pink-700 mb-2">🙌 3️⃣ Deus está sempre no controle</h3>
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-2">🎭 3️⃣ Deus age nos bastidores</h3>
                     <p>
-                        <b>Algo curioso:</b> O nome de Deus não aparece aqui,<br>
-                        Mas Sua presença é clara, pode até sorrir!<br>
-                        Cada detalhe, cada momento no lugar,<br>
-                        Mostra que Deus estava sempre a orquestrar!<br><br>
-
-                        🌈 Mesmo quando não vemos ou não entendemos,<br>
-                        Deus está agindo nos bastidores que não percebemos!<br>
-                        Ele cuida de tudo com perfeição,<br>
-                        Confia nEle de todo coração!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Todo o livro de Ester</span>
+                        O nome de Deus não aparece aqui nenhuma vez!<br>
+                        Mas a mão Dele fica clara — olha que proeza!<br>
+                        Coincidências demais, cada detalhe no lugar,<br>
+                        Só pode ser Deus tudo a orquestrar!<br><br>
+                        🌈 Mesmo quando Deus parece ausente da cena,<br>
+                        Ele está nos bastidores — nada Ele abandona ou pena.<br>
+                        Cada detalhe da sua vida está em Suas mãos,<br>
+                        Confie — Ele escreve histórias maiores que as nossas razões!
                     </p>
+                    <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Todo o livro de Ester</span>
                 </div>
-
-                <!-- Moral -->
                 <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-pink-800">
+                    <p class="text-xl font-semibold text-fuchsia-800">
                         📘 Moral da história:<br>
-                        Seja corajoso, confie em Deus,<br>
-                        Pois Ele tem planos maravilhosos e são Seus! 💕
+                        Você está onde está por um propósito —<br>
+                        seja corajoso, Deus está no controle de tudo isso! 💜
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
         const imgEster = document.getElementById("img-ester");
         const modal = document.getElementById("modal-ester");
         const closeModal = document.getElementById("close-modal");
-
-        imgEster.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        imgEster.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="ester-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Personagens Principais -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-fuchsia-600">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-4xl font-black text-center text-fuchsia-700 mb-10">👥 Personagens Principais</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <img src="ester-personagem.png" alt="Ester"
+                        class="w-full h-48 object-contain rounded-xl shadow-md mb-4">
+                    <h3 class="text-2xl font-black text-fuchsia-700">Ester</h3>
+                    <p class="text-gray-600 mt-2">A jovem judia órfã que se tornou rainha da Pérsia e, com coragem e fé, arriscou a vida para salvar seu povo do extermínio.</p>
                 </div>
-                <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-2xl border-4 border-pink-500">
-                    <h2 class="text-4xl font-black text-pink-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-pink-600">Ester</span>, a jovem judia corajosa que se tornou rainha da Pérsia.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-pink-600">Mordecai</span>, o primo sábio de Ester que a orientou e protegeu.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            O <span class="font-bold text-pink-600">rei Assuero</span>, que governava a Pérsia e amava Ester.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E <span class="font-bold text-pink-600">Hamã</span>, o vilão que tramou destruir o povo judeu.
-                        </p>
+                <div class="text-center">
+                    <div class="w-full h-48 rounded-xl shadow-md mb-4 flex items-center justify-center bg-gradient-to-br from-amber-600 to-yellow-700">
+                        <span class="text-6xl">🧔</span>
                     </div>
+                    <h3 class="text-2xl font-black text-fuchsia-700">Mardoqueu</h3>
+                    <p class="text-gray-600 mt-2">O primo sábio que criou Ester como filha, se recusou a se curvar a Hamã e foi o estrategista por trás da salvação do povo judeu.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-full h-48 rounded-xl shadow-md mb-4 flex items-center justify-center bg-gradient-to-br from-gray-700 to-red-900">
+                        <span class="text-6xl">😈</span>
+                    </div>
+                    <h3 class="text-2xl font-black text-fuchsia-700">Hamã</h3>
+                    <p class="text-gray-600 mt-2">O ministro cheio de orgulho que tramou o extermínio de todos os judeus — mas acabou caindo na armadilha que ele mesmo armou para Mardoqueu.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
+    <!-- Seção 1: Ester torna-se rainha -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-purple-700">
         <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-rose-50 to-red-50 p-8 rounded-2xl border-4 border-rose-500">
-                        <h2 class="text-4xl font-black text-rose-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Conta a história de <span class="font-bold text-rose-600">uma jovem judia chamada Ester</span>, que se tornou rainha da Pérsia.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ela <span class="font-bold text-rose-600">usou sua coragem e posição</span> para salvar seu povo de um terrível plano.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O vilão <span class="font-bold text-rose-600">Hamã tramou destruir todos os judeus</span>, mas Ester impediu!
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-rose-600">10 capítulos</span> de suspense, coragem e vitória!
-                            </p>
-                        </div>
-                    </div>
+            <h2 class="text-4xl font-black text-purple-700 mb-6 flex items-center gap-3">
+                <span>👸</span> Ester Torna-se Rainha
+                <span class="text-lg font-bold text-purple-500 bg-purple-50 px-3 py-1 rounded-full">Est 1–2</span>
+            </h2>
+            <div class="versiculo-card border-purple-500 mb-6">
+                <p class="text-purple-800 font-semibold italic">"E o rei amou a Ester mais do que a todas as outras mulheres, e ela obteve graça e favor diante dele mais do que todas as outras virgens; assim ele lhe pôs na cabeça a coroa real."</p>
+                <p class="text-purple-600 text-sm mt-2 font-bold">— Ester 2:17</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-purple-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-purple-700 mb-3">🌹 A jovem escondida</h3>
+                    <p class="text-gray-700">Ester não revelou que era judia ao entrar no palácio — Mardoqueu a instruiu a guardar segredo. Deus às vezes prepara pessoas em silêncio, longe dos holofotes, para o momento certo.</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="ester-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                <div class="bg-fuchsia-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-fuchsia-700 mb-3">📖 Mardoqueu no portão</h3>
+                    <p class="text-gray-700">Mardoqueu ficava todo dia no portão do palácio para saber como Ester estava. Certa vez ouviu um plano de assassinato contra o rei e o denunciou — um ato que Deus usaria mais tarde de forma surpreendente!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
+    <!-- Seção 2: O plano de Hamã -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-fuchsia-700">
         <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="ester-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            <h2 class="text-4xl font-black text-fuchsia-700 mb-6 flex items-center gap-3">
+                <span>😈</span> O Plano Maligno de Hamã
+                <span class="text-lg font-bold text-fuchsia-500 bg-fuchsia-50 px-3 py-1 rounded-full">Est 3</span>
+            </h2>
+            <div class="versiculo-card border-fuchsia-500 mb-6">
+                <p class="text-fuchsia-800 font-semibold italic">"E Hamã disse ao rei Assuero: 'Há um povo espalhado e disperso entre os povos de todas as províncias do teu reino, cujas leis são diferentes das de todos os outros povos.'"</p>
+                <p class="text-fuchsia-600 text-sm mt-2 font-bold">— Ester 3:8</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-fuchsia-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-fuchsia-700 mb-3">🎲 O sorteio do "pur"</h3>
+                    <p class="text-gray-700">Hamã jogou sortes — chamadas "pur" — para escolher o dia do extermínio dos judeus. O resultado? O 13º dia do 12º mês. Deus deu ao povo quase um ano inteiro para reagir. O próprio azar de Hamã foi a graça de Deus!</p>
                 </div>
-                <div class="bg-gradient-to-br from-fuchsia-50 to-pink-50 p-8 rounded-2xl border-4 border-fuchsia-500">
-                    <h2 class="text-4xl font-black text-fuchsia-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-fuchsia-600">Deus pode usar qualquer pessoa</span>, até alguém simples e jovem, para fazer grandes coisas.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que <span class="font-bold text-fuchsia-600">Deus sempre tem um plano</span> e coloca as pessoas certas nos lugares certos.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Demonstra que <span class="font-bold text-fuchsia-600">coragem e fé</span> podem mudar o destino de muitas pessoas!
-                        </p>
-                    </div>
+                <div class="bg-rose-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-rose-700 mb-3">💰 Uma proposta ridícula</h3>
+                    <p class="text-gray-700">Hamã se ofereceu para pagar 340 toneladas de prata ao tesouro real para financiar o massacre. Isso mostra o quanto o ódio cega — gastar uma fortuna para destruir um povo inocente. O ódio nunca compensa!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
+    <!-- Seção 3: "Para um momento como este" -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-violet-700">
         <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-purple-50 to-fuchsia-50 p-8 rounded-2xl border-4 border-purple-500">
-                        <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-purple-600">Ensinar sobre coragem, fé e confiança em Deus</span> — mesmo quando as coisas parecem difíceis ou perigosas.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostrar que <span class="font-bold text-purple-600">Deus está sempre presente</span>, mesmo quando não vemos Sua ação diretamente.
-                            </p>
-                        </div>
-                    </div>
+            <h2 class="text-4xl font-black text-violet-700 mb-6 flex items-center gap-3">
+                <span>⚡</span> "Para um Momento como Este"
+                <span class="text-lg font-bold text-violet-500 bg-violet-50 px-3 py-1 rounded-full">Est 4–5</span>
+            </h2>
+            <div class="versiculo-card border-violet-500 mb-6">
+                <p class="text-violet-800 font-semibold italic">"Quem sabe se não foi para um momento como este que você chegou à posição de rainha?"</p>
+                <p class="text-violet-600 text-sm mt-2 font-bold">— Ester 4:14</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-violet-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-violet-700 mb-3">🚨 A lei da morte</h3>
+                    <p class="text-gray-700">Qualquer pessoa que fosse ao rei sem ser convocada era executada — a não ser que o rei estendesse o cetro dourado. Ester não havia sido chamada há 30 dias. Ir ao rei era um ato de fé literal — com risco de vida!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="ester-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                <div class="bg-purple-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-purple-700 mb-3">🍽️ A estratégia do jantar</h3>
+                    <p class="text-gray-700">Com sabedoria, Ester não pediu nada de imediato. Ela preparou um banquete, depois outro, criando o momento certo. Às vezes Deus nos guia a esperar o momento perfeito em vez de agir apressadamente.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
+    <!-- Seção 4: A virada — vitória do povo -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-pink-700">
         <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="ester-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            <h2 class="text-4xl font-black text-pink-700 mb-6 flex items-center gap-3">
+                <span>🎉</span> A Grande Virada — Vitória do Povo!
+                <span class="text-lg font-bold text-pink-500 bg-pink-50 px-3 py-1 rounded-full">Est 6–10</span>
+            </h2>
+            <div class="versiculo-card border-pink-500 mb-6">
+                <p class="text-pink-800 font-semibold italic">"Para os judeus houve luz e alegria, júbilo e honra. Em toda província e em toda cidade aonde quer que chegasse o decreto do rei, havia entre os judeus alegria e júbilo, banquetes e festas."</p>
+                <p class="text-pink-600 text-sm mt-2 font-bold">— Ester 8:16-17</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-pink-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-pink-700 mb-3">😴 A noite que mudou tudo</h3>
+                    <p class="text-gray-700">O rei teve insônia uma noite e mandou ler os registros do reino — e "coincidentemente" ouviram sobre Mardoqueu salvando sua vida! No dia seguinte, quando Hamã veio pedir para enforcar Mardoqueu, o rei perguntou: "O que se faz ao homem que o rei quer honrar?" Que virada!</p>
                 </div>
-                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
-                    <h2 class="text-4xl font-black text-violet-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-violet-600">O nome de Deus não aparece nenhuma vez no livro de Ester!</span>
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mesmo assim, <span class="font-bold text-violet-600">dá pra ver que Ele estava cuidando de tudo</span> o tempo todo!
-                        </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-violet-300">
-                            <p class="text-sm text-gray-700 italic">Deus age nos bastidores da nossa vida, mesmo quando não percebemos! 🙏✨
-                                </br></br>
-                                "Quem sabe se não foi para um momento como este que você chegou à posição de rainha?"</br>Ester 4:14</p>
-                        </div>
-                    </div>
+                <div class="bg-rose-50 p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold text-rose-700 mb-3">⚖️ A forca virou-se contra Hamã</h3>
+                    <p class="text-gray-700">Hamã mandou construir uma forca de 22 metros de altura para enforcar Mardoqueu. Mas quando o rei descobriu o plano de Hamã, ele mesmo foi enforcado naquela forca! O mal preparou sua própria destruição.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-fuchsia-800 to-purple-900 text-white p-10 mb-4 rounded-3xl shadow-2xl">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-3xl font-black mb-6 flex items-center justify-center gap-3">
+                <span>💜</span> Versículo para Guardar no Coração <span>💜</span>
+            </h2>
+            <div class="bg-white bg-opacity-10 border-2 border-white border-opacity-30 rounded-2xl p-8 mb-8">
+                <p class="text-2xl font-bold italic mb-4">
+                    "Quem sabe se não foi para um momento como este que você chegou à posição de rainha?"
+                </p>
+                <p class="text-fuchsia-200 font-bold text-lg">— Ester 4:14</p>
+            </div>
+            <p class="text-fuchsia-100 text-lg mb-8">
+                Mardoqueu disse isso para Ester quando ela hesitou. É a pergunta que Deus faz para cada um de nós: <strong>e se você estiver exatamente onde está por um propósito?</strong> Sua escola, sua família, sua turma — tudo tem um "momento como este"!
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 text-left">
+                <div class="bg-white bg-opacity-10 rounded-xl p-4">
+                    <p class="font-bold text-fuchsia-200 mb-2">🔍 Qual é o seu momento?</p>
+                    <p class="text-sm">Pensa: onde você está hoje — escola, família, turma? Qual problema você poderia ajudar a resolver com os dons que Deus te deu?</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-xl p-4">
+                    <p class="font-bold text-fuchsia-200 mb-2">🦁 Coragem para agir</p>
+                    <p class="text-sm">Ester disse "se perecer, perecerei" e foi assim mesmo. Às vezes obedecer a Deus custa algo. Mas a recompensa de agir pela fé é sempre maior!</p>
+                </div>
+                <div class="bg-white bg-opacity-10 rounded-xl p-4">
+                    <p class="font-bold text-fuchsia-200 mb-2">🙏 Ore, jejue, então vá</p>
+                    <p class="text-sm">Ester preparou 3 dias de jejum antes de agir. Antes de uma decisão difícil, busca Deus primeiro — o resultado nas mãos Dele é infinitamente melhor!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Você Sabia? -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-amber-500">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center text-amber-700 mb-10">💡 Você Sabia?</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 text-center">
+                    <div class="text-5xl mb-4">🙈</div>
+                    <h3 class="text-xl font-black text-amber-700 mb-3">Deus sem ser citado!</h3>
+                    <p class="text-gray-700">O nome de Deus não aparece nenhuma vez no livro de Ester — é um dos poucos livros da Bíblia assim! Mas Sua presença é evidente em cada "coincidência" da história. Deus age mesmo quando não é "visto".</p>
+                </div>
+                <div class="bg-fuchsia-50 border-2 border-fuchsia-300 rounded-2xl p-6 text-center">
+                    <div class="text-5xl mb-4">🪵</div>
+                    <h3 class="text-xl font-black text-fuchsia-700 mb-3">A forca de Hamã</h3>
+                    <p class="text-gray-700">Hamã mandou construir uma forca de 22 metros (!) para enforcar Mardoqueu. Mas no final, foi ele mesmo que foi enforcado nela. O livro de Ester mostra que o mal sempre cai na armadilha que prepara para os outros. (Est 7:9-10)</p>
+                </div>
+                <div class="bg-purple-50 border-2 border-purple-300 rounded-2xl p-6 text-center">
+                    <div class="text-5xl mb-4">✝️</div>
+                    <h3 class="text-xl font-black text-purple-700 mb-3">Ester prefigura Jesus!</h3>
+                    <p class="text-gray-700">Ester entrou na presença do rei arriscando a própria vida para interceder e salvar seu povo. Jesus entrou na presença de Deus — não com risco de morte, mas através dela — para nos salvar para sempre. (Hb 7:25)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white p-8 mb-4 shadow-lg rounded-3xl border-t-8 border-fuchsia-500">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center text-fuchsia-700 mb-10">🤔 Perguntas para Pensar</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-fuchsia-50 border-l-4 border-fuchsia-500 rounded-2xl p-6">
+                    <div class="text-4xl mb-4 text-center">🌟</div>
+                    <h3 class="text-lg font-black text-fuchsia-700 mb-3">Para um momento como este</h3>
+                    <p class="text-gray-700">Mardoqueu disse que Ester estava rainha "para um momento como este." Você acredita que está onde está (escola, família, turma) com um propósito? Como Deus poderia estar te usando agora?</p>
+                </div>
+                <div class="bg-purple-50 border-l-4 border-purple-500 rounded-2xl p-6">
+                    <div class="text-4xl mb-4 text-center">😰</div>
+                    <h3 class="text-lg font-black text-purple-700 mb-3">Coragem com medo</h3>
+                    <p class="text-gray-700">Ester estava com medo mas foi assim mesmo. Já teve um momento que você precisou fazer algo difícil mas certo, mesmo com medo? Como foi? O que te deu coragem?</p>
+                </div>
+                <div class="bg-violet-50 border-l-4 border-violet-500 rounded-2xl p-6">
+                    <div class="text-4xl mb-4 text-center">🎭</div>
+                    <h3 class="text-lg font-black text-violet-700 mb-3">Deus nos bastidores</h3>
+                    <p class="text-gray-700">O nome de Deus não aparece no livro, mas Ele estava em tudo. Você já viveu uma situação que parecia "coincidência" mas você percebeu que foi Deus agindo? Conta como foi!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-purple-900 to-fuchsia-800 text-white p-10 mb-4 rounded-3xl shadow-2xl">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-10 flex items-center justify-center gap-3">
+                <span>🎯</span> Desafio da Semana <span>🎯</span>
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white bg-opacity-15 rounded-2xl p-6 text-center border border-white border-opacity-20">
+                    <div class="text-5xl mb-4">🔍</div>
+                    <h3 class="text-xl font-black mb-3 text-fuchsia-200">Desafio do Propósito</h3>
+                    <p class="text-sm leading-relaxed">Escreva em um papel: "Estou em [escola/família/turma] para um momento como este." Liste 3 maneiras de como você pode fazer a diferença onde está. Guarde o papel e releia em 1 mês!</p>
+                </div>
+                <div class="bg-white bg-opacity-15 rounded-2xl p-6 text-center border border-white border-opacity-20">
+                    <div class="text-5xl mb-4">🦁</div>
+                    <h3 class="text-xl font-black mb-3 text-fuchsia-200">Desafio da Coragem</h3>
+                    <p class="text-sm leading-relaxed">Identifique algo que você tem evitado por medo (defender um colega, falar de Deus, admitir um erro). Esta semana, faça "como Ester" — ore primeiro, e então aja com coragem!</p>
+                </div>
+                <div class="bg-white bg-opacity-15 rounded-2xl p-6 text-center border border-white border-opacity-20">
+                    <div class="text-5xl mb-4">🎭</div>
+                    <h3 class="text-xl font-black mb-3 text-fuchsia-200">Desafio dos Bastidores</h3>
+                    <p class="text-sm leading-relaxed">Durante a semana, anote 3 "coincidências" que aconteceram. Ao final, olhe para a lista e reflita: onde Deus estava agindo nos bastidores da sua semana? Compartilhe com alguém!</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-pink-700/20 to-rose-700/20 border-2 border-pink-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="no-print text-center bg-gradient-to-r from-fuchsia-700/20 to-purple-700/20 border-2 border-fuchsia-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-fuchsia-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
             <a href="../neemias/neemias.html"
-                class="bg-gradient-to-r from-pink-700 to-rose-600 hover:from-pink-800 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                class="bg-gradient-to-r from-fuchsia-700 to-purple-700 hover:from-fuchsia-800 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Neemias
             </a>
             <a href="../historicos.html"
-                class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                class="bg-gradient-to-r from-purple-600 to-fuchsia-600 hover:from-purple-700 hover:to-fuchsia-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 📚 Ver Históricos
             </a>
-            <a href="../../poeticos.html"
+            <a href="../poeticos.html"
                 class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 📖 Ver Livros Poéticos ➡️
             </a>
@@ -341,9 +380,9 @@
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-pink-600 to-rose-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Ester - Coragem e Salvação ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-fuchsia-600 to-purple-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">👑 Livro de Ester — Coragem, Fé e Salvação 👑</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

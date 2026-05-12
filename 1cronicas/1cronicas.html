@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #fff7ed; margin-top: 1rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,55 +32,46 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🏛️</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700 mx-2">
                     LIVRO DE 1 CRÔNICAS
                 </span>
                 <span>🎶</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Deus é Fiel ao Seu Povo — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">Adoração, Memória e o Preparo do Templo — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-1cronicas" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-700">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
                 🌟 Os Três Segredos de 1 Crônicas 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-800 mb-3">📜 Primeiro Segredo: A História Não Se Esquece</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Desde Adão até Davi, cada nome tem valor,<br>
-                        Deus cuida de cada um com imenso amor.<br>
-                        As gerações passam, mas a fé permanece,<br>
-                        Quem confia em Deus jamais desaparece!
-                    </p>
-                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 1 Crônicas 1-9</p>
+
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">📜 Primeiro Segredo: Cada Nome Tem Valor</h3>
+                    <p>Os primeiros 9 capítulos são listas de nomes — de Adão até Davi. Parece chato, mas cada nome é uma pessoa que Deus conheceu e amou! Para os judeus voltando do exílio na Babilônia, esses nomes provavam: "Você pertence a essa história. Você não foi esquecido."</p>
+                    <div class="versiculo-card border-amber-400 mt-3">
+                        📖 1 Cr 1:1 — <em>"Adão, Sete, Enos..."</em> — cada nome conta. Você também está na história de Deus!
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
-                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🏗️ Segundo Segredo: Preparar com Amor</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Davi não construiu, mas tudo preparou,<br>
-                        Com ouro, prata e bronze ele trabalhou.<br>
-                        O templo seria a casa do Senhor,<br>
-                        Feito com dedicação, alegria e amor!
-                    </p>
-                    <p class="text-sm text-yellow-700 mt-3 font-semibold">📖 1 Crônicas 22:5</p>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">🏛️ Segundo Segredo: Preparar é Servir</h3>
+                    <p>Davi quis construir o Templo — mas Deus disse não, pois ele era homem de guerra. Em vez de reclamar, Davi passou anos preparando tudo: toneladas de ouro, prata, madeira, pedras, e planos detalhados. Servir nem sempre é fazer; às vezes é preparar o caminho para outros.</p>
+                    <div class="versiculo-card border-orange-400 mt-3">
+                        📖 1 Cr 22:5 — <em>"A casa que se deve edificar ao Senhor há de ser magnificente para glória e ornamento em todas as terras."</em>
+                    </div>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🎵 Terceiro Segredo: Adoração com Alegria</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Com harpas, címbalos e muita canção,<br>
-                        O povo adorava com todo coração.<br>
-                        Deus merece louvor, festa e gratidão,<br>
-                        Servir ao Senhor é nossa missão!
-                    </p>
-                    <p class="text-sm text-amber-700 mt-3 font-semibold">📖 1 Crônicas 25:1-7</p>
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🎵 Terceiro Segredo: Adoração Organizada</h3>
+                    <p>Davi não organizou só material para o Templo — organizou o louvor! Criou times de músicos, definiu escalas de sacerdotes, compôs cânticos. Para Davi, adorar a Deus bem era tão sério quanto construir bem. O louvor não é improviso — é serviço dedicado!</p>
+                    <div class="versiculo-card border-amber-400 mt-3">
+                        📖 1 Cr 25:7 — <em>"O número deles com seus irmãos instruídos no canto do Senhor, todos habilidosos, era duzentos e oitenta e oito."</em>
+                    </div>
                 </div>
 
             </div>
@@ -96,119 +88,211 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            👑 Quem são os Personagens Principais?
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="1cronicas-personagem.png" alt="Rei Davi" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2 space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p class="text-2xl font-bold text-amber-800">👑 O Rei Davi e o Povo de Israel</p>
-                <p>O rei <span class="font-bold text-amber-700">Davi</span> é o personagem principal deste livro. Ele aparece como um homem que ama a Deus de todo coração!</p>
-                <p>Davi preparou tudo para a construção do <span class="font-bold text-yellow-700">templo de Deus</span>, mesmo sabendo que seria seu filho Salomão quem o construiria.</p>
-                <p>O <span class="font-bold text-amber-700">povo de Israel</span> também é importante, mostrando como Deus cuida de cada geração com fidelidade.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl shadow-lg border-2 border-amber-200">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            📖 O Que o Livro Conta?
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-1 space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p class="text-2xl font-bold text-amber-800">📜 A História de Israel Recontada</p>
-                <p>O livro reconta a história de Israel desde <span class="font-bold text-amber-700">Adão</span> até o reinado de <span class="font-bold text-yellow-700">Davi</span>.</p>
-                <p>Mostra como Davi preparou <span class="font-bold text-amber-700">materiais e pessoas</span> para a construção do templo do Senhor.</p>
-                <p>São <span class="font-bold text-yellow-700">29 capítulos</span> cheios de história, fé e adoração a Deus!</p>
-                <p class="text-amber-700 font-semibold">✨ Cada nome e cada detalhe mostram o cuidado de Deus com seu povo!</p>
-            </div>
-            <div class="order-2">
-                <img src="1cronicas-o-que-conta.png" alt="História de Israel" class="w-full h-auto rounded-xl shadow-lg">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-amber-600 bg-gradient-to-br from-amber-700 to-orange-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl font-bold italic mb-6 leading-relaxed">
+                "Tua é, Senhor, a grandeza, o poder, a glória, a vitória e a majestade. Tudo o que há nos céus e na terra é teu."
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-orange-200">— 1 Crônicas 29:11</p>
+            <p class="text-lg leading-relaxed mb-6 text-orange-100">
+                Essa foi a oração de Davi quando o povo ofereceu tudo para a construção do Templo. Davi não disse "olha o que demos a Deus!" — disse "tudo que temos já era Seu!" Jesus usou parte dessa oração no Pai Nosso: "teu é o reino, o poder e a glória."
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🙌</div>
+                    <p class="font-semibold">Quando damos a Deus, estamos devolvendo o que já era Dele!</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">👑</div>
+                    <p class="font-semibold">Toda grandeza, poder e glória pertencem a Deus!</p>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🎵</div>
+                    <p class="font-semibold">Adorar é reconhecer quem Deus é — não só pedir coisas!</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            💫 Por Que é Importante?
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            🦸 Personagens Principais
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="1cronicas-importante.png" alt="Importância" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Davi -->
+            <div class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-2xl p-6 shadow-lg border-2 border-amber-200 text-center">
+                <img src="1cronicas-personagem.png" alt="Rei Davi" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-amber-800 mb-2">👑 Rei Davi</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O herói de 1 Crônicas. Não pode construir o Templo, mas preparou tudo com amor: toneladas de ouro e prata, plantas detalhadas, músicos treinados, e a oração mais bela da Bíblia antes de morrer.</p>
+                <div class="versiculo-card border-amber-400 text-left text-sm">
+                    📖 1 Cr 29:14 — <em>"Quem sou eu e quem é o meu povo, para que possamos dar-te espontaneamente desta forma?"</em>
+                </div>
             </div>
-            <div class="order-1 md:order-2 space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p class="text-2xl font-bold text-amber-800">🌟 Deus Cuida de Cada Geração</p>
-                <p>Este livro lembra como Deus <span class="font-bold text-amber-700">cuidou de cada geração</span> do seu povo, desde o começo!</p>
-                <p>Mostra que <span class="font-bold text-yellow-700">adorar a Deus</span> é o centro da vida do Seu povo.</p>
-                <p>Ensina a importância de ser <span class="font-bold text-amber-700">fiel</span> e servir com <span class="font-bold text-yellow-700">alegria</span>!</p>
-                <p class="text-amber-700 font-semibold">✨ Deus é fiel e cumpre todas as suas promessas!</p>
+
+            <!-- Asafe e os Músicos -->
+            <div class="bg-gradient-to-b from-orange-50 to-amber-50 rounded-2xl p-6 shadow-lg border-2 border-orange-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-amber-100 to-orange-100 rounded-xl mb-4 text-6xl">
+                    🎵
+                </div>
+                <h3 class="text-xl font-bold text-orange-800 mb-2">🎵 Asafe e os Músicos</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Davi organizou 4.000 músicos em times de adoração. Os 288 mais habilidosos eram especialistas treinados. Asafe era o maestro principal — e seus Salmos (Sl 50 e 73–83) ainda cantamos hoje na Igreja!</p>
+                <div class="versiculo-card border-orange-400 text-left text-sm">
+                    📖 1 Cr 25:1 — <em>"Davi e os chefes... separaram para o serviço... os que profetizassem com harpas, alaúdes e címbalos."</em>
+                </div>
             </div>
+
+            <!-- Salomão -->
+            <div class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-2xl p-6 shadow-lg border-2 border-amber-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-yellow-100 to-amber-100 rounded-xl mb-4 text-6xl">
+                    🏛️
+                </div>
+                <h3 class="text-xl font-bold text-amber-800 mb-2">🏛️ Salomão</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O filho destinado a construir o Templo. Davi lhe disse: "Você fará o que eu não pude." Salomão recebeu os planos, o ouro, a prata, a madeira — tudo que Davi havia preparado com amor por anos.</p>
+                <div class="versiculo-card border-amber-400 text-left text-sm">
+                    📖 1 Cr 22:11 — <em>"Agora, filho meu, o Senhor seja contigo e te dê êxito, para que edificues a casa do Senhor teu Deus."</em>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl shadow-lg border-2 border-yellow-200">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
-            🎯 Propósito do Livro
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-amber-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            📖 O que o livro conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-1 space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p class="text-2xl font-bold text-amber-800">🏛️ Honrar a Deus em Tudo</p>
-                <p>O propósito é lembrar que <span class="font-bold text-amber-700">tudo o que fazemos</span> deve honrar a Deus!</p>
-                <p>Mostrar que Davi planejou o <span class="font-bold text-yellow-700">templo</span> com amor e dedicação, mesmo sem construí-lo.</p>
-                <p>Ensinar que servir a Deus é preparar o caminho para as <span class="font-bold text-amber-700">próximas gerações</span>.</p>
-                <p class="text-amber-700 font-semibold">✨ Quando fazemos tudo para a glória de Deus, Ele é honrado!</p>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-2xl border-l-4 border-amber-600 shadow">
+                <h3 class="text-xl font-bold text-amber-800 mb-3">📜 As genealogias — de Adão a Davi (1 Cr 1–9)</h3>
+                <p class="text-gray-700 leading-relaxed">Nove capítulos de listas de nomes — de Adão até as famílias que voltaram do exílio. Parece monótono, mas era uma declaração poderosa: "Deus se lembrou de cada geração!" Para o povo que perdeu tudo, saber seu nome estava escrito era esperança.</p>
+                <div class="versiculo-card border-amber-400 text-sm mt-3">
+                    📖 1 Cr 9:1 — <em>"Todo o Israel foi registrado por genealogias."</em>
+                </div>
             </div>
-            <div class="order-2">
-                <img src="1cronicas-proposito.png" alt="Propósito" class="w-full h-auto rounded-xl shadow-lg">
+
+            <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-600 shadow">
+                <h3 class="text-xl font-bold text-orange-800 mb-3">👑 Davi coroado e a Arca em Jerusalém (1 Cr 11–17)</h3>
+                <p class="text-gray-700 leading-relaxed">Davi foi coroado rei com todo o apoio das tribos. Depois buscou a Arca da Aliança para trazê-la a Jerusalém — com música, dança e festa! Deus também fez a Aliança Davídica: um descendente de Davi reinaria para sempre.</p>
+                <div class="versiculo-card border-orange-400 text-sm mt-3">
+                    📖 1 Cr 16:8 — <em>"Dai graças ao Senhor, invocai o seu nome, fazei conhecidas as suas obras entre os povos."</em>
+                </div>
             </div>
+
+            <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-2xl border-l-4 border-amber-600 shadow">
+                <h3 class="text-xl font-bold text-amber-800 mb-3">🏛️ Davi prepara o Templo (1 Cr 22–27)</h3>
+                <p class="text-gray-700 leading-relaxed">Deus disse a Davi que ele não poderia construir o Templo por ter sido homem de guerra. Mas Davi não ficou amargo — preparou 3.400 toneladas de ouro, 34.000 toneladas de prata, bronze, cedro, pedras preciosas e os planos completos para Salomão.</p>
+                <div class="versiculo-card border-amber-400 text-sm mt-3">
+                    📖 1 Cr 22:14 — <em>"Com grande esforço preparei para a casa do Senhor cem mil talentos de ouro."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-600 shadow">
+                <h3 class="text-xl font-bold text-orange-800 mb-3">🙏 A oração final de Davi (1 Cr 29)</h3>
+                <p class="text-gray-700 leading-relaxed">No último capítulo, o povo ofertou generosamente para o Templo — e Davi orou uma das orações mais belas da Bíblia. Reconheceu que tudo veio de Deus, ungiu Salomão como rei, e morreu em "boa velhice, cheio de dias, riqueza e glória."</p>
+                <div class="versiculo-card border-orange-400 text-sm mt-3">
+                    📖 1 Cr 29:11 — <em>"Tua é, Senhor, a grandeza, o poder, a glória, a vitória e a majestade."</em>
+                </div>
+            </div>
+
         </div>
     </section>
 
-    <!-- Seção 5: Você sabia? -->
-    <section class="section bg-white p-8 mb-4 rounded-2xl shadow-lg">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-800">
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-amber-100 to-orange-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-amber-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
             💡 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="1cronicas-curiosidade.png" alt="Curiosidade" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+                <img src="1cronicas-curiosidade.png" alt="Curiosidades de 1 Crônicas" class="w-full h-auto rounded-2xl shadow-lg">
             </div>
-            <div class="order-1 md:order-2 space-y-4 text-lg text-gray-700 leading-relaxed">
-                <p class="text-2xl font-bold text-amber-800">🎵 Davi, o Músico de Deus!</p>
-                <p>Davi fez <span class="font-bold text-amber-700">instrumentos musicais</span> e organizou os levitas para cantarem no templo!</p>
-                <p>Ele criou times de músicos com <span class="font-bold text-yellow-700">harpas, címbalos e liras</span> para adorar a Deus com alegria!</p>
-                <p>Adorar a Deus com <span class="font-bold text-amber-700">música e alegria</span> é um presente de amor! 🎵🙌</p>
-                <p class="text-amber-700 font-semibold">✨ Deus ama quando O adoramos com todo nosso coração!</p>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-amber-600 shadow-md">
+                    <p class="font-bold text-amber-800 mb-1">🎵 288 músicos especializados no Templo!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Davi organizou 4.000 músicos, e 288 eram considerados "habilidosos" — treinados especificamente para o louvor ao Senhor (1 Cr 25:7). Era o maior e mais bem organizado time de worship da história antiga!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-orange-600 shadow-md">
+                    <p class="font-bold text-orange-800 mb-1">💰 A maior oferta da história bíblica!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Davi preparou cerca de 3.400 toneladas de ouro e 34.000 toneladas de prata para o Templo (1 Cr 22:14). Em valores atuais, seria centenas de bilhões de reais. E o povo ainda doou mais! Quando o coração ama, não mede o preço.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-amber-600 shadow-md">
+                    <p class="font-bold text-amber-800 mb-1">✝️ A oração de Davi está no Pai Nosso!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Jesus terminou o Pai Nosso com: "teu é o reino, o poder e a glória para sempre" (Mt 6:13). Essa doxologia vem direto da oração de Davi em 1 Cr 29:11! Jesus aprendeu a orar com as palavras do seu antepassado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            🤔 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-2xl p-6 shadow border-2 border-amber-200 text-center">
+                <div class="text-4xl mb-4">📜</div>
+                <h3 class="text-lg font-bold text-amber-800 mb-3">Seu Nome Importa</h3>
+                <p class="text-gray-700 leading-relaxed">Deus se lembrou do nome de cada pessoa nas genealogias. Como você se sente sabendo que Deus também conhece o seu nome — e que você faz parte da história que Ele está escrevendo?</p>
+            </div>
+            <div class="bg-gradient-to-b from-orange-50 to-amber-50 rounded-2xl p-6 shadow border-2 border-orange-200 text-center">
+                <div class="text-4xl mb-4">🏛️</div>
+                <h3 class="text-lg font-bold text-orange-800 mb-3">Preparar para Outros</h3>
+                <p class="text-gray-700 leading-relaxed">Davi preparou o Templo que ele mesmo nunca usou — para a geração seguinte. Você consegue pensar em algo que pode fazer hoje para abençoar outras pessoas mais tarde?</p>
+            </div>
+            <div class="bg-gradient-to-b from-amber-50 to-orange-50 rounded-2xl p-6 shadow border-2 border-amber-200 text-center">
+                <div class="text-4xl mb-4">🎵</div>
+                <h3 class="text-lg font-bold text-amber-800 mb-3">Adorar com Dedicação</h3>
+                <p class="text-gray-700 leading-relaxed">Davi organizou o louvor com tanto cuidado quanto o ouro para o Templo. O que isso te diz sobre como devemos tratar o momento de adorar a Deus na nossa vida?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-amber-600 bg-gradient-to-br from-amber-700 to-orange-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🙌</div>
+                <h3 class="text-xl font-bold mb-3">Ore como Davi</h3>
+                <p class="leading-relaxed">Leia 1 Crônicas 29:10-13 em voz alta como uma oração. Depois ore com suas próprias palavras dizendo: "Tudo o que tenho veio de Ti, Senhor — e é Teu!"</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🎵</div>
+                <h3 class="text-xl font-bold mb-3">Prepare o Louvor</h3>
+                <p class="leading-relaxed">Escolha uma música de louvor para cantar ou ouvir antes de dormir esta semana. Assim como Davi organizou o louvor, você também pode criar seu momento especial com Deus!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🤲</div>
+                <h3 class="text-xl font-bold mb-3">Prepare para Outros</h3>
+                <p class="leading-relaxed">Pense em algo que você pode preparar ou fazer esta semana para abençoar alguém — mesmo que você não veja o resultado. Sirva como Davi: sem precisar de reconhecimento!</p>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-800/20 border-2 border-amber-700/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-amber-900 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="section no-print text-center bg-gradient-to-r from-amber-600/20 to-orange-700/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-amber-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../2reis/2reis.html" class="bg-gradient-to-r from-amber-700 to-yellow-800 hover:from-amber-800 hover:to-yellow-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2reis/2reis.html" class="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ 2 Reis
             </a>
-            <a href="../livros-historicos.html" class="bg-gradient-to-r from-yellow-800 to-amber-700 hover:from-yellow-900 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../historicos.html" class="bg-gradient-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Livros Históricos
             </a>
-            <a href="../2cronicas/2cronicas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../2cronicas/2cronicas.html" class="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 2 Crônicas ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-amber-700 to-yellow-800 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 1 Crônicas - Deus é Fiel ao Seu Povo ✨</h3>
+    <section class="section bg-gradient-to-r from-amber-600 to-orange-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🏛️ Livro de 1 Crônicas — Adoração, Memória e o Preparo do Templo 🎶</h3>
         <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 

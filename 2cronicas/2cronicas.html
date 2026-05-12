@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de 2 Crônicas - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #f0fdf4; margin-top: 1rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,301 +28,278 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="2cronicas-capa.png" alt="Capa: 2 Crônicas" id="img-2cronicas"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-2cronicas">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-                <span>👑</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                <span>🏛️</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700 mx-2">
                     LIVRO DE 2 CRÔNICAS
                 </span>
-                <span>👑</span>
+                <span>🙏</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Reis, Promessas e o Amor de Deus — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-2cronicas" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">Templo, Reforma e a Grande Promessa de Deus — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-2cronicas"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2cronicas" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-emerald-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
                 🌟 Os Três Segredos de 2 Crônicas 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✨ 1️⃣ Obedecer a Deus traz bênçãos</h3>
-                    <p>
-                        Quando os reis seguiam ao Senhor,<br>
-                        A nação prosperava com paz e amor.<br>
-                        Mas quando viravam as costas pra Ele,<br>
-                        Vinham problemas, tristeza e quartel!<br><br>
 
-                        💡 Deus sempre mostra o melhor caminho,<br>
-                        Quando andamos com Ele, nunca estamos sozinhos.<br>
-                        Seguir os caminhos de Deus é sábio,<br>
-                        Traz sabedoria e paz pro coração!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Crônicas 7:14</span>
-                    </p>
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">🏛️ Primeiro Segredo: A Glória que Enche Tudo</h3>
+                    <p>Quando Salomão terminou a dedicação do Templo e o povo louvou a Deus, algo extraordinário aconteceu: uma nuvem tão densa de glória encheu o Templo que os sacerdotes não conseguiam entrar! Era a presença de Deus vinda morar entre o Seu povo.</p>
+                    <div class="versiculo-card border-emerald-400 mt-3">
+                        📖 2 Cr 5:14 — <em>"Os sacerdotes não podiam ministrar por causa da nuvem, porque a glória do Senhor havia enchido a casa de Deus."</em>
+                    </div>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">❤️ 2️⃣ Deus é paciente e amoroso</h3>
-                    <p>
-                        Mesmo quando o povo errava sem parar,<br>
-                        Deus não desistia, continuava a amar.<br>
-                        Mandava profetas, dava mais uma chance,<br>
-                        Porque Seu amor é maior que qualquer distância!<br><br>
-
-                        🌈 Ele espera que voltemos pra Ele,<br>
-                        Com um coração arrependido e fiel.<br>
-                        O amor de Deus nunca tem fim,<br>
-                        Sempre está pronto pra receber você assim!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Crônicas 30:9</span>
-                    </p>
+                <div class="bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-3">🙏 Segundo Segredo: A Promessa que Ainda Vale</h3>
+                    <p>Logo após a dedicação do Templo, Deus apareceu a Salomão de noite e deu uma das promessas mais amadas da Bíblia — que vale para toda geração, inclusive para nós hoje. Ela tem quatro condições e uma garantia tripla!</p>
+                    <div class="versiculo-card border-teal-400 mt-3">
+                        📖 2 Cr 7:14 — <em>"Se o meu povo se humilhar, orar, me buscar e abandonar os seus maus caminhos, então eu ouvirei do céu, perdoarei os seus pecados e sararei a sua terra."</em>
+                    </div>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">📜 3️⃣ Deus cumpre todas as Suas promessas</h3>
-                    <p>
-                        <b>E não para por aí!</b> Deus prometeu cuidar,<br>
-                        Da família de Davi, sempre a guardar.<br>
-                        Mesmo com reis ruins e tempos difíceis,<br>
-                        Deus manteve Sua palavra, foi sempre fiel!<br><br>
-
-                        ✝️ Suas promessas são verdadeiras,<br>
-                        Ele nunca falha, suas palavras são certeiras!<br>
-                        Podemos confiar no que Deus diz,<br>
-                        Porque Ele é fiel e nos faz feliz!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Crônicas 6:4</span>
-                    </p>
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-xl border-l-4 border-emerald-600">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">🌅 Terceiro Segredo: O Livro Termina com Esperança</h3>
+                    <p>2 Crônicas termina com algo surpreendente: o decreto do rei Ciro da Pérsia, libertando Israel para voltar para casa! Depois de anos de exílio na Babilônia, o último versículo do livro é uma chamada: "Quem é do Seu povo? Que suba!"</p>
+                    <div class="versiculo-card border-emerald-400 mt-3">
+                        📖 2 Cr 36:23 — <em>"Assim diz Ciro, rei da Pérsia: ...Quem entre vocês é do seu povo? Que o Senhor seu Deus seja com ele, e que suba!"</em>
+                    </div>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-purple-800">
-                        📘 Moral da história:<br>
-                        Volte seu coração para Deus,<br>
-                        E viva em paz com os caminhos Seus! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const img2Cronicas = document.getElementById("img-2cronicas");
+        const img = document.getElementById("img-2cronicas");
         const modal = document.getElementById("modal-2cronicas");
         const closeModal = document.getElementById("close-modal");
-
-        img2Cronicas.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="2cronicas-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-emerald-600 bg-gradient-to-br from-emerald-700 to-teal-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl font-bold italic mb-6 leading-relaxed">
+                "Se o meu povo se humilhar, orar, me buscar e abandonar os seus maus caminhos, então eu ouvirei do céu, perdoarei os seus pecados e sararei a sua terra."
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-emerald-200">— 2 Crônicas 7:14</p>
+            <p class="text-lg leading-relaxed mb-6 text-emerald-100">
+                Deus disse isso a Salomão logo após a dedicação do Templo. É uma das promessas mais citadas em toda a Bíblia — e ainda vale hoje! Tem 4 condições (humilhar, orar, buscar, abandonar o mal) e 3 promessas (ouvir, perdoar, sarar).
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🙇</div>
+                    <p class="font-semibold">Humilhar-se — reconhecer que precisamos de Deus!</p>
                 </div>
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-4 border-purple-500">
-                    <h2 class="text-4xl font-black text-purple-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-purple-600">Salomão</span>, o rei mais sábio, que construiu o templo de Deus.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Os <span class="font-bold text-purple-600">reis de Judá</span>, como Ezequias e Josias, que tentaram guiar o povo de volta a Deus.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E o <span class="font-bold text-purple-600">povo de Israel</span>, que precisava aprender a obedecer ao Senhor.
-                        </p>
-                    </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🙏</div>
+                    <p class="font-semibold">Orar e buscar — aproximar-se de Deus de verdade!</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-8 rounded-2xl border-4 border-indigo-500">
-                        <h2 class="text-4xl font-black text-indigo-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Conta a história dos <span class="font-bold text-indigo-600">reis que governaram depois de Davi</span>, especialmente os do Reino de Judá.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostra como <span class="font-bold text-indigo-600">Deus abençoava quando o povo obedecia</span> e seguia Seus caminhos.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                E como <span class="font-bold text-indigo-600">as coisas ficavam difíceis</span> quando se afastavam dEle.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-indigo-600">36 capítulos</span> repletos de histórias de reis, templos e fé!
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="2cronicas-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">↩️</div>
+                    <p class="font-semibold">Abandonar o mal — fazer a parte que nos cabe!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="2cronicas-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-teal-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
+            🦸 Personagens Principais
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Salomão -->
+            <div class="bg-gradient-to-b from-emerald-50 to-teal-50 rounded-2xl p-6 shadow-lg border-2 border-emerald-200 text-center">
+                <img src="2cronicas-personagem.png" alt="Salomão" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-emerald-800 mb-2">💎 Salomão</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Construiu o Templo em 7 anos. Sua oração de dedicação é uma das mais longas e belas da Bíblia. Deus apareceu a ele duas vezes — mas no final, Salomão se afastou por causa das muitas esposas que trouxeram ídolos para Israel.</p>
+                <div class="versiculo-card border-emerald-400 text-left text-sm">
+                    📖 2 Cr 7:1 — <em>"Quando Salomão acabou de orar, desceu fogo do céu e consumiu o holocausto."</em>
                 </div>
-                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-4 border-amber-500">
-                    <h2 class="text-4xl font-black text-amber-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que <span class="font-bold text-amber-600">seguir os caminhos de Deus traz sabedoria e paz</span>, enquanto desobedecer traz confusão e tristeza.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Também mostra o quanto <span class="font-bold text-amber-600">Deus é paciente e amoroso</span>, mesmo quando o povo erra.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Nos lembra que <span class="font-bold text-amber-600">Deus sempre está pronto para perdoar</span> quem volta para Ele de coração.
-                        </p>
-                    </div>
+            </div>
+
+            <!-- Ezequias -->
+            <div class="bg-gradient-to-b from-teal-50 to-emerald-50 rounded-2xl p-6 shadow-lg border-2 border-teal-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-emerald-100 to-teal-100 rounded-xl mb-4 text-6xl">
+                    🔔
+                </div>
+                <h3 class="text-xl font-bold text-teal-800 mb-2">🔔 Rei Ezequias</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Um dos reis mais fiéis de Judá. Limpou o Templo que estava abandonado há anos e celebrou a Páscoa pela primeira vez em décadas — com tanto entusiasmo que o povo pediu mais 7 dias de festa! Sua oração destruiu 185.000 soldados assírios.</p>
+                <div class="versiculo-card border-teal-400 text-left text-sm">
+                    📖 2 Cr 30:26 — <em>"Houve grande alegria em Jerusalém, pois desde os dias de Salomão... não havia sido assim."</em>
+                </div>
+            </div>
+
+            <!-- Josiás -->
+            <div class="bg-gradient-to-b from-emerald-50 to-teal-50 rounded-2xl p-6 shadow-lg border-2 border-emerald-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-teal-100 to-emerald-100 rounded-xl mb-4 text-6xl">
+                    📜
+                </div>
+                <h3 class="text-xl font-bold text-emerald-800 mb-2">📜 Rei Josiás</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">Começou a reinar com 8 anos! Aos 16 começou a buscar a Deus, aos 20 começou a reforma, e aos 26 mandou reformar o Templo — onde encontraram o Livro da Lei perdido há décadas. Quando ouviu as palavras, rasgou suas vestes e chorou.</p>
+                <div class="versiculo-card border-emerald-400 text-left text-sm">
+                    📖 2 Cr 34:19 — <em>"Quando o rei ouviu as palavras da lei, rasgou as suas vestes."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-emerald-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-2xl border-l-4 border-emerald-600 shadow">
+                <h3 class="text-xl font-bold text-emerald-800 mb-3">🏛️ Salomão e o Templo — a dedicação (2 Cr 1–9)</h3>
+                <p class="text-gray-700 leading-relaxed">Salomão construiu o Templo e o dedicou com uma oração de 52 versículos. Quando terminou, fogo desceu do céu e consumiu o sacrifício! Então Deus apareceu a ele com a promessa de 2 Cr 7:14 — uma das maiores promessas de toda a Bíblia.</p>
+                <div class="versiculo-card border-emerald-400 text-sm mt-3">
+                    📖 2 Cr 6:40 — <em>"Ó meu Deus, olha para este lugar e ouve as orações que aqui se fizerem."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-teal-600 shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-3">👑 Os Reis de Judá — bons e ruins (2 Cr 10–28)</h3>
+                <p class="text-gray-700 leading-relaxed">Após a divisão do reino, 2 Crônicas foca apenas em Judá — os reis da linhagem de Davi. Cada rei é avaliado com uma pergunta: ele fez o que era reto aos olhos do Senhor? Os bons reformaram; os ruins trouxeram idolatria e colheram consequências.</p>
+                <div class="versiculo-card border-teal-400 text-sm mt-3">
+                    📖 2 Cr 14:2 — <em>"Asa fez o que era bom e reto aos olhos do Senhor seu Deus."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-emerald-50 to-teal-50 p-6 rounded-2xl border-l-4 border-emerald-600 shadow">
+                <h3 class="text-xl font-bold text-emerald-800 mb-3">🔔 A Grande Reforma de Ezequias (2 Cr 29–32)</h3>
+                <p class="text-gray-700 leading-relaxed">Ezequias abriu as portas do Templo que estavam fechadas e limpou tudo. Celebrou a Páscoa com tal alegria que o povo pediu mais 7 dias — e Deus enviou chuva de bênçãos. Quando o exército assírio cercou Jerusalém, ele orou — e 185.000 soldados morreram numa noite.</p>
+                <div class="versiculo-card border-emerald-400 text-sm mt-3">
+                    📖 2 Cr 30:9 — <em>"O Senhor vosso Deus é gracioso e misericordioso, e não virará de vós o rosto, se vos converterdes a ele."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-teal-600 shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-3">📜 Josiás, a queda e o decreto de Ciro (2 Cr 34–36)</h3>
+                <p class="text-gray-700 leading-relaxed">Josiás fez a maior reforma de Judá depois de encontrar o Livro da Lei. Mas o povo voltou ao mal depois dele. Judá caiu para a Babilônia em 586 a.C. — mas o livro termina com esperança: o decreto de Ciro libertando Israel para voltar para casa!</p>
+                <div class="versiculo-card border-teal-400 text-sm mt-3">
+                    📖 2 Cr 36:23 — <em>"Quem entre vocês é do seu povo? Que o Senhor seu Deus seja com ele, e que suba!"</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-emerald-100 to-teal-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-emerald-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
+            💡 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+                <img src="2cronicas-curiosidade.png" alt="Curiosidades de 2 Crônicas" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-emerald-600 shadow-md">
+                    <p class="font-bold text-emerald-800 mb-1">🌍 2 Cr 7:14 — citado por líderes do mundo inteiro!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Esse versículo foi citado por presidentes, líderes e pastores em momentos de crise nacional ao longo de séculos. Escrito há 3.000 anos, continua sendo a oração de avivamento mais pedida do mundo — porque as condições e as promessas são eternas.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-teal-600 shadow-md">
+                    <p class="font-bold text-teal-800 mb-1">🎉 A Páscoa de Ezequias durou 14 dias!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Ezequias celebrou a Páscoa por 7 dias — e o povo ficou tão empolgado que pediu mais 7 dias! (2 Cr 30:23) Era a maior festa religiosa desde Salomão. Quando Deus aviva, as pessoas não querem ir embora!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-emerald-600 shadow-md">
+                    <p class="font-bold text-emerald-800 mb-1">✝️ Jesus é o Templo cumprido!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">A glória de Deus que encheu o Templo de Salomão (2 Cr 5:14) — João 1:14 diz que "o Verbo se fez carne e habitou entre nós" (o grego diz "tabernaculou"). Jesus É o Templo vivo, onde a glória de Deus habita de forma permanente!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-4 border-emerald-500">
-                        <h2 class="text-4xl font-black text-emerald-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-emerald-600">Lembrar o povo de que Deus sempre cumpre Suas promessas</span> e nunca abandona quem confia nEle.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostrar que <span class="font-bold text-emerald-600">Deus deseja que o coração das pessoas esteja voltado para Ele</span>, com amor e obediência.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="2cronicas-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-teal-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-700">
+            🤔 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-emerald-50 to-teal-50 rounded-2xl p-6 shadow border-2 border-emerald-200 text-center">
+                <div class="text-4xl mb-4">🙏</div>
+                <h3 class="text-lg font-bold text-emerald-800 mb-3">A Promessa de 7:14</h3>
+                <p class="text-gray-700 leading-relaxed">2 Cr 7:14 tem 4 condições: humilhar, orar, buscar e abandonar o mal. Qual dessas quatro é mais difícil para você? O que impede você de cumpri-la?</p>
+            </div>
+            <div class="bg-gradient-to-b from-teal-50 to-emerald-50 rounded-2xl p-6 shadow border-2 border-teal-200 text-center">
+                <div class="text-4xl mb-4">🔔</div>
+                <h3 class="text-lg font-bold text-teal-800 mb-3">Templo Aberto ou Fechado?</h3>
+                <p class="text-gray-700 leading-relaxed">As portas do Templo tinham sido fechadas antes de Ezequias as abrir de novo. Há alguma área da sua vida com Deus que foi "fechada" e precisa ser reaberta?</p>
+            </div>
+            <div class="bg-gradient-to-b from-emerald-50 to-teal-50 rounded-2xl p-6 shadow border-2 border-emerald-200 text-center">
+                <div class="text-4xl mb-4">📜</div>
+                <h3 class="text-lg font-bold text-emerald-800 mb-3">Encontrou o Livro</h3>
+                <p class="text-gray-700 leading-relaxed">Josiás chorou ao ouvir a Palavra de Deus lida em voz alta — porque ele entendeu que tinha descuidado dela. Quando foi a última vez que a Bíblia te tocou assim?</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="2cronicas-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-8 rounded-2xl border-4 border-rose-500">
-                    <h2 class="text-4xl font-black text-rose-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-rose-600">Salomão pediu sabedoria em vez de riquezas!</span>
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E Deus ficou tão feliz com esse pedido que deu a ele <span class="font-bold text-rose-600">as duas coisas</span> — sabedoria E riquezas!
-                        </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-rose-300">
-                            <p class="text-sm text-gray-700 italic">Quando colocamos Deus em primeiro lugar, Ele nos abençoa de formas incríveis! 👑✨
-                                </br></br>
-                                Deus disse a Salomão: "Você não pediu riquezas nem bens materiais, nem glória, nem a morte dos seus inimigos, nem longa vida. Você pediu sabedoria e conhecimento... por isso darei a você sabedoria e conhecimento. Além disso, darei a você riquezas, bens materiais e glória."</br>2 Crônicas 1:11-12</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-emerald-600 bg-gradient-to-br from-emerald-700 to-teal-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🙏</div>
+                <h3 class="text-xl font-bold mb-3">Ore 2 Cr 7:14</h3>
+                <p class="leading-relaxed">Leia 2 Crônicas 7:14 em voz alta como uma oração pessoal. Substitua "o meu povo" por "eu". As 4 condições e as 3 promessas são suas também!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🔔</div>
+                <h3 class="text-xl font-bold mb-3">Abra as Portas</h3>
+                <p class="leading-relaxed">Assim como Ezequias abriu as portas do Templo fechadas, identifique uma prática espiritual que você abandonou e volte a ela esta semana — leitura, oração, louvor.</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">📖</div>
+                <h3 class="text-xl font-bold mb-3">Leia como Josiás</h3>
+                <p class="leading-relaxed">Leia um trecho da Bíblia esta semana como se fosse a primeira vez — com atenção e coração aberto. Anote o que te surpreendeu!</p>
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-purple-700/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-emerald-600/20 to-teal-700/20 border-2 border-emerald-600/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-emerald-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../1cronicas/1cronicas.html"
-                class="bg-gradient-to-r from-purple-700 to-indigo-600 hover:from-purple-800 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../1cronicas/1cronicas.html" class="bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-700 hover:to-teal-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ 1 Crônicas
             </a>
-            <a href="../historicos.html"
-                class="bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Históricos
+            <a href="../historicos.html" class="bg-gradient-to-r from-teal-700 to-emerald-600 hover:from-teal-800 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Livros Históricos
             </a>
-            <a href="../esdras/esdras.html"
-                class="bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-700 hover:to-emerald-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../esdras/esdras.html" class="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Esdras ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Crônicas - Promessas e Amor de Deus ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-emerald-600 to-teal-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🏛️ Livro de 2 Crônicas — Templo, Reforma e a Grande Promessa de Deus 🙏</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        trilhoGame.visitarLivro('II Crônicas');
+        trilhoGame.visitarLivro('2 Crônicas');
     </script>
 </body>
-
 </html>

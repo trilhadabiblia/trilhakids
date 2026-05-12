@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de 2 Reis - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; background: #f0fdfa; margin-top: 1rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-teal-600 to-cyan-700 hover:from-teal-700 hover:to-cyan-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,304 +28,276 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="2reis-capa.png" alt="Capa: 2 Reis" id="img-2reis"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-2reis">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🔥</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700 mx-2">
                     LIVRO DE 2 REIS
                 </span>
-                <span>🔥</span>
+                <span>🌊</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Fidelidade, Profecia e Promessa — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-2reis" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">Profetas, Milagres e a Queda dos Reinos — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-2reis"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-blue-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-cyan-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-2reis" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-teal-600">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
                 🌟 Os Três Segredos de 2 Reis 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">✨ 1️⃣ Deus quer obediência e amor</h3>
-                    <p>
-                        Mas o povo errou, virou as costas pro Senhor.<br>
-                        Seguiram reis maus, fizeram o que é ruim,<br>
-                        E Deus mostrou: o pecado tem fim!<br><br>
 
-                        ⚡ Mesmo quando parece que tudo acabou,<br>
-                        Deus é justo e sempre mostrou:<br>
-                        Obedecer é o melhor caminho,<br>
-                        Pra andar com Ele e não ficar sozinho.<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 17:7–18</span>
-                    </p>
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-3">🔥 Primeiro Segredo: O Manto que Passa</h3>
+                    <p>Quando Elias foi arrebatado ao céu em um carro de fogo, seu manto caiu para Eliseu. Esse manto era símbolo da missão de profeta. Eliseu pediu o dobro do espírito de Elias — e Deus honrou esse pedido com o dobro dos milagres!</p>
+                    <div class="versiculo-card border-teal-400 mt-3">
+                        📖 2 Rs 2:9 — <em>"Pede o que queres que eu te faça, antes que me seja arrebatado de ti." — Elias. E Eliseu disse: "Ora, que uma porção dupla do teu espírito seja sobre mim."</em>
+                    </div>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">📜 2️⃣ A palavra de Deus sempre acontece</h3>
-                    <p>
-                        Vieram profetas com algo a dizer,<br>
-                        Falando verdades que Deus quis fazer.<br>
-                        Tudo o que Ele disse, se realizou,<br>
-                        Pois o Senhor prometeu, cumpriu e mostrou!<br><br>
-
-                        💬 Suas palavras são luz e direção,<br>
-                        Pra quem escuta com o coração.<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 10:10</span>
-                    </p>
+                <div class="bg-gradient-to-r from-cyan-50 to-teal-50 p-6 rounded-xl border-l-4 border-cyan-600">
+                    <h3 class="text-2xl font-bold text-cyan-800 mb-3">🌊 Segundo Segredo: O Orgulho Impede a Cura</h3>
+                    <p>Namã era general, homem poderoso — e leproso. Quando o profeta Eliseu disse "vá lavar-se 7 vezes no Jordão", ele ficou furioso. O rio era simples demais para um homem importante. Seus servos o convenceram a tentar — e ele foi curado! O orgulho quase custou sua saúde.</p>
+                    <div class="versiculo-card border-cyan-400 mt-3">
+                        📖 2 Rs 5:13 — <em>"Se o profeta te pedisse alguma coisa difícil, não a farias? Quanto mais quando te diz: Lava-te e ficarás limpo?"</em>
+                    </div>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-blue-700 mb-2">💖 3️⃣ Deus é fiel e nunca esquece</h3>
-                    <p>
-                        <b>Por fim</b>, aprendemos que Deus é fiel,<br>
-                        Cumpre promessas, é puro, é do Céu!<br>
-                        Mesmo com reis ruins e gente desobediente,<br>
-                        Deus guardou Davi e sua semente!<br><br>
-
-                        🌈 Deus sempre cumpre o que prometeu,<br>
-                        Porque Ele é bom, é fiel, Ele é Deus!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: 2 Reis 8:19</span>
-                    </p>
+                <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-3">📜 Terceiro Segredo: A Consequência da Desobediência</h3>
+                    <p>Israel e Judá tiveram reis bons e ruins, mas no fim a maioria abandonou Deus para adorar ídolos. Deus avisou várias vezes pelos profetas — mas o povo não ouviu. Resultado: Israel caiu para a Assíria, e Judá para a Babilônia. O exílio foi o resultado de gerações de escolhas erradas.</p>
+                    <div class="versiculo-card border-teal-400 mt-3">
+                        📖 2 Rs 17:13 — <em>"O Senhor advertiu Israel e Judá por intermédio de todos os profetas... dizendo: Convertei-vos dos vossos maus caminhos."</em>
+                    </div>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-blue-800">
-                        📘 Moral da história:<br>
-                        Obedeça, confie e ame o Senhor,<br>
-                        Que cuida de nós com todo amor! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const img2Reis = document.getElementById("img-2reis");
+        const img = document.getElementById("img-2reis");
         const modal = document.getElementById("modal-2reis");
         const closeModal = document.getElementById("close-modal");
-
-        img2Reis.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem é o personagem principal? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="2reis-personagem.png" alt="Quem é o personagem principal?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-teal-600 bg-gradient-to-br from-teal-700 to-cyan-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">💛 Versículo para Guardar no Coração</h2>
+        <div class="max-w-3xl mx-auto text-center">
+            <blockquote class="text-2xl font-bold italic mb-6 leading-relaxed">
+                "Se o profeta te pedisse alguma coisa difícil, não a farias? Quanto mais quando te diz: Lava-te e ficarás limpo?"
+            </blockquote>
+            <p class="text-xl font-semibold mb-8 text-cyan-200">— 2 Reis 5:13</p>
+            <p class="text-lg leading-relaxed mb-6 text-cyan-100">
+                Namã quase perdeu sua cura por achar que o método era simples demais para um general importante. Seus servos o salvaram com uma pergunta sábia. Às vezes Deus pede coisas simples — e o orgulho nos impede de obedecer!
+            </p>
+            <div class="grid md:grid-cols-3 gap-4 mt-6">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">🙏</div>
+                    <p class="font-semibold">A obediência simples vale mais que grandes planos complicados!</p>
                 </div>
-                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border-4 border-orange-500">
-                    <h2 class="text-4xl font-black text-orange-700 mb-6">👥 Quem é o personagem principal?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Os profetas <span class="font-bold text-orange-600">Elias e Eliseu</span> são os grandes
-                            servos de Deus que aparecem neste livro.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Eles mostraram o poder de Deus através de <span class="font-bold text-orange-600">milagres e
-                                mensagens</span> ao povo de Israel.
-                        </p>
-                    </div>
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">💧</div>
+                    <p class="font-semibold">O orgulho impede bênçãos que a humildade facilmente recebe!</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-yellow-50 to-lime-50 p-8 rounded-2xl border-4 border-yellow-500">
-                        <h2 class="text-4xl font-black text-yellow-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Conta como vários <span class="font-bold text-yellow-600">reis governaram</span> —
-                                alguns bons, outros maus.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostra os <span class="font-bold text-yellow-600">milagres incríveis</span> que Deus fez
-                                por meio de Elias e Eliseu.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Fala sobre quando o povo foi <span class="font-bold text-yellow-600">levado
-                                    cativo</span> por causa da desobediência.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-yellow-600">25 capítulos</span> cheios de ação e
-                                fé.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="2reis-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+                <div class="bg-white bg-opacity-20 rounded-2xl p-4">
+                    <div class="text-2xl mb-2">✨</div>
+                    <p class="font-semibold">Confie no caminho de Deus mesmo quando parece simples demais!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="2reis-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Personagens Principais -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-cyan-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+            🦸 Personagens Principais
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+
+            <!-- Elias -->
+            <div class="bg-gradient-to-b from-teal-50 to-cyan-50 rounded-2xl p-6 shadow-lg border-2 border-teal-200 text-center">
+                <img src="elias.png" alt="Elias" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-teal-800 mb-2">🔥 Elias</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O profeta de fogo que abriu 2 Reis com o espetáculo mais impressionante da Bíblia: foi arrebatado ao céu vivo, num carro puxado por cavalos de fogo! Um dos únicos dois homens a nunca morrer — o outro é Enoque.</p>
+                <div class="versiculo-card border-teal-400 text-left text-sm">
+                    📖 2 Rs 2:11 — <em>"Eis que um carro de fogo... separou um ao outro; e Elias subiu ao céu num redemoinho."</em>
                 </div>
-                <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border-4 border-green-500">
-                    <h2 class="text-4xl font-black text-green-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-green-600">Deus fala através dos profetas</span> e
-                            deseja que o povo o ouça.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que quando o povo se <span class="font-bold text-green-600">afasta de Deus,</span>
-                            colhe consequências.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mas também revela que <span class="font-bold text-green-600">Deus nunca deixa de amar</span>
-                            o seu povo.
-                        </p>
-                    </div>
+            </div>
+
+            <!-- Eliseu -->
+            <div class="bg-gradient-to-b from-cyan-50 to-teal-50 rounded-2xl p-6 shadow-lg border-2 border-cyan-200 text-center">
+                <img src="eliseu.png" alt="Eliseu" class="w-full h-40 object-contain rounded-xl mb-4">
+                <h3 class="text-xl font-bold text-cyan-800 mb-2">✨ Eliseu</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">O sucessor de Elias que pediu o dobro do espírito — e recebeu! Fez 16 milagres (o dobro dos 8 de Elias): multiplicou óleo, ressuscitou uma criança, curou a lepra de Namã, fez um machado flutuar e muito mais.</p>
+                <div class="versiculo-card border-cyan-400 text-left text-sm">
+                    📖 2 Rs 4:44 — <em>"Comeram e ainda sobrou, segundo a palavra do Senhor."</em>
+                </div>
+            </div>
+
+            <!-- Namã -->
+            <div class="bg-gradient-to-b from-teal-50 to-cyan-50 rounded-2xl p-6 shadow-lg border-2 border-teal-200 text-center">
+                <div class="w-full h-40 flex items-center justify-center bg-gradient-to-br from-blue-100 to-cyan-100 rounded-xl mb-4 text-6xl">
+                    🌊
+                </div>
+                <h3 class="text-xl font-bold text-teal-800 mb-2">🌊 Namã</h3>
+                <p class="text-gray-700 text-sm leading-relaxed mb-3">General sírio poderoso, mas leproso. Uma criada israelita escrava lhe indicou o profeta Eliseu. O general orgulhoso quase recusou a cura por achar o remédio simples demais — mas humilhou-se, mergulhou 7 vezes e foi curado!</p>
+                <div class="versiculo-card border-teal-400 text-left text-sm">
+                    📖 2 Rs 5:14 — <em>"Desceu e mergulhou no Jordão sete vezes... e a sua carne tornou como a carne de um menino."</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- O que o livro conta? -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-teal-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+            📖 O que o livro conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-2xl border-l-4 border-teal-600 shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-3">🔥 Elias sobe ao céu — Eliseu recebe o manto (2 Rs 2)</h3>
+                <p class="text-gray-700 leading-relaxed">Elias e Eliseu caminhavam juntos quando um carro e cavalos de fogo desceram e separaram os dois. Elias subiu no redemoinho. Seu manto caiu. Eliseu o apanhou — e ao tocar o Jordão com ele, as águas abriram! A missão continuava.</p>
+                <div class="versiculo-card border-teal-400 text-sm mt-3">
+                    📖 2 Rs 2:13-14 — <em>"Apanhou o manto de Elias... e as águas se dividiram."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-cyan-50 to-teal-50 p-6 rounded-2xl border-l-4 border-cyan-600 shadow">
+                <h3 class="text-xl font-bold text-cyan-800 mb-3">✨ Os milagres de Eliseu (2 Rs 4–6)</h3>
+                <p class="text-gray-700 leading-relaxed">Eliseu multiplicou o óleo de uma viúva pobre, ressuscitou o filho da sunamita, purificou um ensopado envenenado, alimentou 100 pessoas com 20 pães — e ainda sobrou — e fez um machado de ferro flutuar na água. O dobro do espírito, de fato!</p>
+                <div class="versiculo-card border-cyan-400 text-sm mt-3">
+                    📖 2 Rs 4:6 — <em>"Encheu todos os vasos. E disse ao filho: Traz-me ainda outro vaso. E ele disse: Não há mais. E o azeite parou."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-teal-50 to-cyan-50 p-6 rounded-2xl border-l-4 border-teal-600 shadow">
+                <h3 class="text-xl font-bold text-teal-800 mb-3">🌊 Namã curado — uma criada muda tudo (2 Rs 5)</h3>
+                <p class="text-gray-700 leading-relaxed">Uma criança israelita escrava na casa de Namã disse: "Se ao menos meu senhor fosse ao profeta em Samaria!" — essa pequena sugestão de uma garota sem nome mudou a história do general mais poderoso da Síria. Nunca subestime quem Deus usa!</p>
+                <div class="versiculo-card border-teal-400 text-sm mt-3">
+                    📖 2 Rs 5:3 — <em>"Tomara que meu senhor fosse ao profeta que está em Samaria! Ele o curaria da sua lepra."</em>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-cyan-50 to-teal-50 p-6 rounded-2xl border-l-4 border-cyan-600 shadow">
+                <h3 class="text-xl font-bold text-cyan-800 mb-3">📜 A queda de Israel e Judá (2 Rs 17 e 25)</h3>
+                <p class="text-gray-700 leading-relaxed">Depois de gerações de reis idólatras, Israel foi derrotado pela Assíria (722 a.C.) e Judá pela Babilônia (586 a.C.). O templo foi destruído. O povo foi levado cativo. Mas um restinho de esperança permaneceu — Deus ainda cumpriria Suas promessas.</p>
+                <div class="versiculo-card border-cyan-400 text-sm mt-3">
+                    📖 2 Rs 17:13 — <em>"Convertei-vos dos vossos maus caminhos e guardai os meus mandamentos." — mas eles não ouviram.</em>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Você Sabia? -->
+    <section class="section bg-gradient-to-r from-teal-100 to-cyan-100 rounded-3xl shadow-xl p-10 mb-8 border-4 border-teal-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+            💡 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+                <img src="2reis-curiosidade.png" alt="Curiosidades de 2 Reis" class="w-full h-auto rounded-2xl shadow-lg">
+            </div>
+            <div class="space-y-4">
+                <div class="bg-white p-5 rounded-xl border-l-4 border-teal-600 shadow-md">
+                    <p class="font-bold text-teal-800 mb-1">✨ Eliseu fez o DOBRO dos milagres de Elias!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Elias realizou 8 milagres registrados. Eliseu realizou 16 — exatamente o dobro! Deus honrou literalmente o pedido de "porção dupla do espírito". E um dos milagres de Eliseu aconteceu depois que ele já estava morto (2 Rs 13:21)!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-cyan-600 shadow-md">
+                    <p class="font-bold text-cyan-800 mb-1">👦 Josiás tinha 8 anos quando virou rei!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">O rei Josiás começou a reinar com apenas 8 anos (2 Rs 22:1). Aos 26, mandou reformar o Templo — e encontraram o Livro da Lei perdido há décadas! Uma criança liderou a maior reforma espiritual de Judá. Deus usa jovens!</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border-l-4 border-teal-600 shadow-md">
+                    <p class="font-bold text-teal-800 mb-1">✝️ João Batista veio "no espírito de Elias"!</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Jesus disse que João Batista era o "Elias que havia de vir" (Mt 11:14). O anjo Gabriel anunciou que João viria "no espírito e poder de Elias" (Lc 1:17). O profeta de fogo do Antigo Testamento anunciava o precursor de Jesus!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-purple-50 to-violet-50 p-8 rounded-2xl border-4 border-purple-500">
-                        <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-purple-600">Ensinar que devemos escutar a voz de Deus</span>
-                                e obedecer aos seus mandamentos.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostrar que <span class="font-bold text-purple-600">Deus sempre dá novas chances</span>
-                                ao seu povo.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <img src="2reis-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-white rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-cyan-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+            🤔 Perguntas para Pensar
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-b from-teal-50 to-cyan-50 rounded-2xl p-6 shadow border-2 border-teal-200 text-center">
+                <div class="text-4xl mb-4">🔥</div>
+                <h3 class="text-lg font-bold text-teal-800 mb-3">Pedir o Dobro</h3>
+                <p class="text-gray-700 leading-relaxed">Eliseu pediu ousadamente "o dobro do espírito". Você costuma pedir coisas grandes a Deus ou tem medo de pedir demais? O que Eliseu te ensina sobre isso?</p>
+            </div>
+            <div class="bg-gradient-to-b from-cyan-50 to-teal-50 rounded-2xl p-6 shadow border-2 border-cyan-200 text-center">
+                <div class="text-4xl mb-4">🌊</div>
+                <h3 class="text-lg font-bold text-cyan-800 mb-3">Humildade que Cura</h3>
+                <p class="text-gray-700 leading-relaxed">Namã quase perdeu sua cura por orgulho. Tem alguma área da sua vida onde o orgulho pode estar impedindo Deus de agir? O que seria "mergulhar 7 vezes" para você?</p>
+            </div>
+            <div class="bg-gradient-to-b from-teal-50 to-cyan-50 rounded-2xl p-6 shadow border-2 border-teal-200 text-center">
+                <div class="text-4xl mb-4">👧</div>
+                <h3 class="text-lg font-bold text-teal-800 mb-3">Pequenos que Mudam</h3>
+                <p class="text-gray-700 leading-relaxed">Uma criada sem nome mudou o destino de Namã com uma frase. Como você pode ser essa "criada" — alguém que indica Jesus para quem está ao seu redor, mesmo sendo jovem?</p>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="2reis-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-red-50 to-rose-50 p-8 rounded-2xl border-4 border-red-500">
-                    <h2 class="text-4xl font-black text-red-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-red-600">Elias subiu ao céu em um redemoinho de fogo — sem
-                                morrer!</span>
-                        </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-red-300">
-                            <p class="text-sm text-gray-700 italic">Com Deus, nada é impossível! 🔥🚀
-                                </br></br>
-                                Elias e Eliseu estavam caminhando juntos enquanto conversavam. De repente, um carro
-                                puxado por cavalos que pareciam de fogo separou Elias de Eliseu. Elias foi levado ao céu
-                                num redemoinho.</br>2 Reis 2:11</p>
-                        </div>
-                    </div>
-                </div>
+    <!-- Desafio da Semana -->
+    <section class="section rounded-3xl shadow-xl p-10 mb-8 border-t-8 border-teal-600 bg-gradient-to-br from-teal-700 to-cyan-800 text-white">
+        <h2 class="text-4xl font-black text-center mb-8">🏆 Desafio da Semana</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">✨</div>
+                <h3 class="text-xl font-bold mb-3">Peça o Dobro</h3>
+                <p class="leading-relaxed">Assim como Eliseu pediu ousadamente, esta semana ore pedindo mais do Espírito de Deus na sua vida. Não tenha medo de pedir grande — Deus ama quando confiamos Nele!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">🌊</div>
+                <h3 class="text-xl font-bold mb-3">Abaixa o Orgulho</h3>
+                <p class="leading-relaxed">Identifique algo onde o orgulho está impedindo você de obedecer a Deus ou pedir desculpas a alguém. Faça o seu "mergulho no Jordão" — a coisa simples que você tem evitado!</p>
+            </div>
+            <div class="bg-white bg-opacity-20 rounded-2xl p-6 text-center">
+                <div class="text-4xl mb-4">👧</div>
+                <h3 class="text-xl font-bold mb-3">Seja a Criada</h3>
+                <p class="leading-relaxed">Assim como a criada israelita indicou o caminho da cura para Namã, esta semana indique Jesus para um amigo — com uma palavra, uma mensagem, ou um convite para a igreja!</p>
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-yellow-700/20 to-orange-700/20 border-2 border-yellow-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Navegação -->
+    <section class="section no-print text-center bg-gradient-to-r from-teal-600/20 to-cyan-700/20 border-2 border-teal-600/30 rounded-2xl p-10 mb-8">
+        <h3 class="text-3xl font-black text-teal-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../1reis/1reis.html"
-                class="bg-gradient-to-r from-orange-700 to-amber-600 hover:from-orange-800 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../1reis/1reis.html" class="bg-gradient-to-r from-teal-600 to-cyan-700 hover:from-teal-700 hover:to-cyan-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ 1 Reis
             </a>
-            <a href="../historicos.html"
-                class="bg-gradient-to-r from-yellow-600 to-orange-700 hover:from-yellow-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Históricos
+            <a href="../historicos.html" class="bg-gradient-to-r from-cyan-700 to-teal-600 hover:from-cyan-800 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+                📚 Ver Livros Históricos
             </a>
-            <a href="../1cronicas/1cronicas.html"
-                class="bg-gradient-to-r from-lime-600 to-green-600 hover:from-lime-700 hover:to-green-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../1cronicas/1cronicas.html" class="bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 1 Crônicas ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-orange-600 to-amber-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de 2 Reis - O Poder e o Amor de Deus ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-teal-600 to-cyan-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🔥 Livro de 2 Reis — Profetas, Milagres e a Queda dos Reinos 🔥</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
     <script src="../gamificacao.js"></script>
     <script>
-        trilhoGame.visitarLivro('II Reis');
+        trilhoGame.visitarLivro('2 Reis');
     </script>
 </body>
-
 </html>
