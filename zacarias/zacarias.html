@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-blue-700 to-indigo-900 hover:from-blue-800 hover:to-indigo-950 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -30,11 +31,11 @@
                     class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-                <span>🌟</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                <span>🌙</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900 mx-2">
                     LIVRO DE ZACARIAS
                 </span>
-                <span>🌟</span>
+                <span>👑</span>
             </h1>
             <p class="text-xl text-gray-600 font-semibold">Visões de Esperança e o Messias Prometido — Um Resumo Visual para Crianças</p>
         </div>
@@ -42,44 +43,44 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-zacarias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-blue-700">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
                 🌟 Os Três Segredos de Zacarias 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">✨ Primeiro Segredo: Visões da Noite</h3>
-                    <p class="italic text-gray-800">
+
+                <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">🌙 Primeiro Segredo: Oito Visões em Uma Noite!</h3>
+                    <p class="italic text-gray-800 leading-relaxed">
                         Em uma noite estrelada, Deus revelou,<br>
                         Oito visões que o profeta contemplou!<br>
                         Cavalos, candelabros e anjos a voar,<br>
                         Mostrando que Deus nunca vai nos deixar!<br>
+                        <span class="text-sm italic text-blue-600 mt-2 block not-italic">📖 Zacarias 1:7-8</span>
                     </p>
-                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Zacarias 1:7-8</p>
                 </div>
 
-                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">👑 Segundo Segredo: O Rei Humilde Vem</h3>
-                    <p class="italic text-gray-800">
+                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-800">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">👑 Segundo Segredo: O Rei Humilde Vem num Jumentinho!</h3>
+                    <p class="italic text-gray-800 leading-relaxed">
                         "Alegra-te muito, ó filha de Sião!"<br>
                         Um Rei chegará montado em jumentinho, então!<br>
                         Humilde e justo, trazendo salvação,<br>
                         Jesus cumpriu esta linda profecia com amor no coração!<br>
+                        <span class="text-sm italic text-indigo-600 mt-2 block not-italic">📖 Zacarias 9:9</span>
                     </p>
-                    <p class="text-sm text-indigo-600 mt-3 font-semibold">📖 Zacarias 9:9</p>
                 </div>
 
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💎 Terceiro Segredo: Deus Restaura Tudo</h3>
-                    <p class="italic text-gray-800">
-                        Quando tudo parece destruído e sem cor,<br>
-                        Deus promete reconstruir com Seu amor!<br>
-                        O templo, a cidade, o povo e a fé,<br>
-                        Nada é impossível quando Deus está de pé!<br>
+                <div class="bg-blue-50 p-6 rounded-2xl border-l-4 border-blue-800">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">💎 Terceiro Segredo: Olharão Para Aquele que Traspassaram!</h3>
+                    <p class="italic text-gray-800 leading-relaxed">
+                        Quinhentos anos antes de Jesus morrer na cruz,<br>
+                        Zacarias já anunciava essa luz:<br>
+                        "Olharão para aquele que traspassaram" com dor —<br>
+                        Cumprido quando a lança abriu o lado do Senhor!<br>
+                        <span class="text-sm italic text-blue-600 mt-2 block not-italic">📖 Zacarias 12:10 → João 19:37</span>
                     </p>
-                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 Zacarias 8:3</p>
                 </div>
 
             </div>
@@ -96,61 +97,110 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-r from-blue-700 to-indigo-900 text-white p-8 mb-4 text-center">
+        <h2 class="text-3xl font-black mb-4">💛 Versículo para Guardar no Coração</h2>
+        <blockquote class="text-2xl font-bold italic max-w-3xl mx-auto leading-relaxed mb-4">
+            "Não por exército nem por força, mas pelo Meu Espírito, diz o Senhor dos Exércitos."
+        </blockquote>
+        <p class="text-lg font-semibold opacity-90">📖 Zacarias 4:6</p>
+        <p class="mt-4 text-base opacity-80 max-w-2xl mx-auto">
+            Zorobabel estava reconstruindo o templo com poucos recursos e muitos inimigos. A resposta de Deus: não é no poder humano, mas no Espírito Santo que as grandes obras acontecem!
+        </p>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
             👥 Quem São os Personagens Principais?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-2xl shadow-lg border-2 border-purple-200">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-4">🎭 Os Heróis da História</h3>
-                    <ul class="space-y-4 text-lg text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">📜</span>
-                            <span><strong class="text-purple-600">Zacarias:</strong> O profeta que teve visões incríveis de Deus durante a noite!</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">👷</span>
-                            <span><strong class="text-indigo-600">Zorobabel:</strong> O líder corajoso que reconstruiu o templo de Deus em Jerusalém.</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-2xl mr-3">👼</span>
-                            <span><strong class="text-purple-600">O Anjo do Senhor:</strong> Mensageiro divino que explicava as visões e trazia palavras de esperança!</span>
-                        </li>
-                    </ul>
+            <div class="order-2 md:order-1 space-y-6">
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">📜 Zacarias — "O Senhor Lembra"</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Profeta e sacerdote ao mesmo tempo, contemporâneo de Ageu. Seu nome significa "O Senhor lembra" — e o livro todo é sobre Deus que não esqueceu Seu povo! Recebeu oito visões proféticas em uma única noite.
+                    </p>
+                    <div class="versiculo-card bg-white border-blue-500 text-gray-700">
+                        <p class="font-semibold text-blue-800">🌙 Seu Chamado:</p>
+                        <p class="italic">"Voltai para Mim, diz o Senhor dos Exércitos, e Eu voltarei para vós." — Zc 1:3</p>
+                    </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-2xl border-2 border-indigo-200 shadow-lg">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">👷 Zorobabel — O Construtor da Promessa</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        O governador que estava reconstruindo o templo com poucos recursos e muitos obstáculos. Deus lhe deu uma promessa incrível por meio de Zacarias: o que parecia impossível seria feito pelo Espírito de Deus!
+                    </p>
+                    <div class="versiculo-card bg-white border-indigo-500 text-gray-700">
+                        <p class="font-semibold text-indigo-800">💪 A Promessa para Ele:</p>
+                        <p class="italic">"Quem és tu, ó grande monte? Diante de Zorobabel tornar-te-ás planície!" — Zc 4:7</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">👼 O Anjo Intérprete — O Guia das Visões</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        "O anjo que falava comigo" aparece mais de 30 vezes em Zacarias! Ele é o mensageiro de Deus que explica cada visão. É como um guia turístico das revelações divinas — sem ele, Zacarias não entenderia nada do que via!
+                    </p>
+                    <div class="versiculo-card bg-white border-blue-500 text-gray-700">
+                        <p class="font-semibold text-blue-800">🗣️ Sua Função:</p>
+                        <p class="italic">"O anjo que falava comigo saiu e disse: 'Olha e dize o que vês.'" — Zc 5:5</p>
+                    </div>
+                </div>
+
             </div>
             <div class="order-1 md:order-2">
-                <img src="zacarias-personagem.png" alt="Personagens de Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+                <img src="zacarias-personagem.png" alt="Personagens de Zacarias" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-blue-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+    <section class="section bg-gradient-to-br from-blue-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
             📖 O Que o Livro Conta?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="zacarias-o-que-conta.png" alt="O que Zacarias conta" class="w-full h-auto rounded-xl shadow-xl">
+                <img src="zacarias-o-que-conta.png" alt="O que Zacarias conta" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-indigo-300">
             </div>
             <div class="order-2">
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-indigo-200">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🌈 Uma História de Esperança</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Zacarias recebeu <strong class="text-purple-600">oito visões maravilhosas</strong> em uma única noite! 
-                        Deus mostrou cavalos coloridos, candelabros de ouro, rolos voadores e muito mais!
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Cada visão trazia uma mensagem: <strong class="text-indigo-600">Deus vai restaurar Seu povo</strong> 
-                        e enviar um Rei especial — o Messias!
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed">
-                        O livro também fala sobre <strong class="text-purple-600">Jesus</strong>, que viria montado em um jumentinho, 
-                        trazendo paz e salvação para todos! 🕊️
-                    </p>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-blue-200 space-y-6">
+
+                    <div class="bg-blue-50 p-5 rounded-xl border-l-4 border-blue-700">
+                        <h4 class="font-bold text-xl text-blue-800 mb-2 flex items-center gap-2">
+                            <span>🌙</span> Capítulos 1–6 — As Oito Visões da Noite
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Em uma única noite, Zacarias tem oito visões: cavalos coloridos patrulhando a terra, chifres e ferreiros, um homem medindo Jerusalém, Josué o sacerdote limpo de pecado, o candelabro e as oliveiras, o rolo voador gigante, a mulher no cesto e quatro carros. Cada visão: uma mensagem de restauração!
+                        </p>
+                    </div>
+
+                    <div class="bg-indigo-50 p-5 rounded-xl border-l-4 border-indigo-700">
+                        <h4 class="font-bold text-xl text-indigo-800 mb-2 flex items-center gap-2">
+                            <span>🏙️</span> Capítulos 7–8 — O Jejum e as Promessas de Sião
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            O povo pergunta se deve continuar os jejuns. Deus responde: mais importante que o ritual é a justiça! Depois, Deus dá dez promessas gloriosas sobre Jerusalém: "Voltarei a Sião e habitarei no meio de Jerusalém!"
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 p-5 rounded-xl border-l-4 border-blue-800">
+                        <h4 class="font-bold text-xl text-blue-800 mb-2 flex items-center gap-2">
+                            <span>👑</span> Capítulos 9–14 — As Profecias do Messias
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            A segunda parte é um explosão de profecias sobre Jesus: o Rei humilde no jumentinho (9:9), as 30 moedas de prata (11:12-13), o Bom Pastor golpeado (13:7), o traspassado (12:10), e o Dia do Senhor final (cap. 14)!
+                        </p>
+                    </div>
+
+                    <div class="versiculo-card bg-blue-100 border-blue-500 text-center">
+                        <p class="font-bold text-blue-800 text-lg">✨ Zacarias é o livro mais citado</p>
+                        <p class="text-gray-700 italic">nos relatos da Paixão de Jesus no Novo Testamento!</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -158,73 +208,89 @@
 
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-            💡 Por Que É Importante?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
+            ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-6 rounded-2xl shadow-lg border-2 border-purple-200">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-4">🎯 Lições Poderosas</h3>
-                    <div class="space-y-4 text-lg text-gray-700">
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
-                            <span class="text-3xl mr-4">🔮</span>
-                            <div>
-                                <strong class="text-indigo-600">Deus tem planos perfeitos:</strong> Mesmo quando tudo parece perdido, Deus está trabalhando!
-                            </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-xl border-2 border-blue-200 space-y-5">
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-blue-700">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl">🔮</span>
+                            <h4 class="font-bold text-xl text-gray-800">O Mais Messiânico dos Profetas Menores</h4>
                         </div>
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
-                            <span class="text-3xl mr-4">🏗️</span>
-                            <div>
-                                <strong class="text-purple-600">Restauração é possível:</strong> Deus pode reconstruir o que foi destruído em nossas vidas!
-                            </div>
-                        </div>
-                        <div class="flex items-start bg-white p-4 rounded-lg shadow">
-                            <span class="text-3xl mr-4">👑</span>
-                            <div>
-                                <strong class="text-indigo-600">Jesus é o Messias prometido:</strong> As profecias de Zacarias se cumpriram perfeitamente!
-                            </div>
-                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Nenhum outro Profeta Menor fala tanto sobre Jesus! Zacarias prediz com detalhes a entrada triunfal, as 30 moedas de prata, o pastor golpeado, o traspassado pela lança — tudo citado no NT com precisão chocante.
+                        </p>
                     </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-indigo-700">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl">🕊️</span>
+                            <h4 class="font-bold text-xl text-gray-800">"Não por Força, Mas pelo Meu Espírito"</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Zacarias 4:6 é um dos versículos mais usados na história da Igreja. Ele ensina que as grandes obras de Deus não dependem de dinheiro ou poder — mas do Espírito Santo. Essa verdade transformou gerações de cristãos!
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-blue-700">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl">🌍</span>
+                            <h4 class="font-bold text-xl text-gray-800">A Visão do Fim dos Tempos</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            O capítulo 14 de Zacarias é uma das profecias escatológicas mais ricas do AT: o Dia do Senhor, as nações reunidas, o Monte das Oliveiras dividido e o Senhor reinando como Rei sobre toda a terra!
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="zacarias-importante.png" alt="Importância de Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+                <img src="zacarias-importante.png" alt="Importância de Zacarias" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-indigo-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+    <section class="section bg-gradient-to-br from-blue-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
             🎯 Propósito do Livro
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="zacarias-proposito.png" alt="Propósito de Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+                <img src="zacarias-proposito.png" alt="Propósito de Zacarias" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-blue-300">
             </div>
             <div class="order-2">
-                <div class="bg-white p-6 rounded-2xl shadow-lg border-2 border-indigo-200">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-4">🌟 Missão Especial</h3>
-                    <div class="space-y-4">
-                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-600">
-                            <p class="text-lg text-gray-700">
-                                <strong class="text-purple-600">Reanimar o povo desanimado:</strong> Depois do exílio, 
-                                o povo estava triste e cansado. Zacarias trouxe palavras de ânimo e esperança! 💪
-                            </p>
-                        </div>
-                        <div class="bg-indigo-50 p-4 rounded-lg border-l-4 border-indigo-600">
-                            <p class="text-lg text-gray-700">
-                                <strong class="text-indigo-600">Apontar para Jesus:</strong> Centenas de anos antes, 
-                                Zacarias já falava sobre o Messias que viria salvar o mundo! 🌍
-                            </p>
-                        </div>
-                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-600">
-                            <p class="text-lg text-gray-700">
-                                <strong class="text-purple-600">Mostrar o futuro glorioso:</strong> Deus revelou que 
-                                um dia tudo será perfeito em Seu Reino eterno! 👑
-                            </p>
-                        </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-indigo-200 space-y-5">
+
+                    <div class="bg-blue-50 p-5 rounded-xl border-l-4 border-blue-700">
+                        <h4 class="font-bold text-xl text-blue-800 mb-2">💪 Encorajar o Povo a Terminar o Templo</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Junto com Ageu, Zacarias foi enviado para motivar o povo desanimado a concluir a reconstrução. Mas onde Ageu falava de consequências práticas, Zacarias falava de visões celestiais — mostrando o apoio de Deus no reino espiritual!
+                        </p>
                     </div>
+
+                    <div class="bg-indigo-50 p-5 rounded-xl border-l-4 border-indigo-700">
+                        <h4 class="font-bold text-xl text-indigo-800 mb-2">🌟 Revelar o Messias com Detalhes</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            A segunda parte do livro (cap. 9-14) é quase um "manual do Messias" — descrevendo como Jesus chegaria, como seria traído, como sofreria e como reinaria. É o livro profético mais citado nos evangelhos!
+                        </p>
+                    </div>
+
+                    <div class="bg-blue-50 p-5 rounded-xl border-l-4 border-blue-800">
+                        <h4 class="font-bold text-xl text-blue-800 mb-2">🕊️ Mostrar que Deus Governa no Invisível</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            As visões da noite mostram cavalos patrulhando a terra, anjos atuando — Deus está ativo no invisível mesmo quando o visível parece caótico. As coisas não estão fora do controle de Deus!
+                        </p>
+                    </div>
+
+                    <div class="versiculo-card bg-amber-50 border-amber-500 text-center">
+                        <p class="font-black text-xl text-amber-800">"O Senhor dos Exércitos estará no lugar deles, e o seu Deus os salvará naquele dia."</p>
+                        <p class="text-sm text-gray-600 mt-2">📖 Zacarias 9:16</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -232,58 +298,155 @@
 
     <!-- Seção 5: Você sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
             🤔 Você Sabia?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl shadow-lg border-4 border-yellow-400">
-                    <div class="text-center mb-6">
-                        <span class="text-6xl">😴💭✨</span>
-                    </div>
-                    <h3 class="text-3xl font-bold text-amber-700 mb-4 text-center">Oito Visões em Uma Noite!</h3>
-                    <p class="text-xl text-gray-700 leading-relaxed text-center mb-4">
-                        Zacarias teve <strong class="text-purple-600">OITO visões incríveis</strong> 
-                        em apenas <strong class="text-indigo-600">UMA NOITE</strong>! 🌙
-                    </p>
-                    <p class="text-lg text-gray-700 leading-relaxed text-center mb-4">
-                        Imagine acordar e lembrar de oito sonhos diferentes, cada um com uma mensagem especial de Deus! 
-                        Foi como assistir oito filmes seguidos, mas muito mais emocionante! 🎬
-                    </p>
-                    <div class="bg-white p-4 rounded-lg mt-4">
-                        <p class="text-lg text-gray-700 text-center">
-                            <strong class="text-purple-600">Curiosidade:</strong> Essas visões incluíam cavalos coloridos, 
-                            candelabros de ouro, um rolo voador gigante e até uma mulher dentro de um cesto! 🐴📜🕯️
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl shadow-xl border-2 border-yellow-300 space-y-5">
+
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2 flex items-center gap-2">
+                            <span>💰</span> 30 Moedas de Prata — 500 Anos Antes!
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Zacarias 11:12-13 descreve 30 moedas de prata arremessadas no templo e usadas para comprar o "campo do oleiro". Mateus 27:9 cita esse trecho ao narrar que Judas devolveu as 30 moedas e os sacerdotes compraram o "Campo de Sangue" — 500 anos depois!
                         </p>
                     </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2 flex items-center gap-2">
+                            <span>📚</span> O Maior dos Profetas Menores!
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Zacarias é o livro mais longo dos Profetas Menores — 14 capítulos! Muitos estudiosos o chamam de "o Apocalipse do Antigo Testamento" por causa de suas visões simbólicas e profecias do fim dos tempos que lembram muito o livro de Apocalipse!
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2 flex items-center gap-2">
+                            <span>🐴</span> O Rei num Jumentinho — Escolha Simbólica!
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Em Zc 9:9, o Messias vem num jumentinho — não num cavalo de guerra. Na cultura do Oriente Médio, o cavalo simbolizava conquista militar; o jumentinho simbolizava paz. Jesus escolheu um jumentinho na entrada triunfal (Mt 21) para mostrar que era o Rei da Paz!
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="zacarias-curiosidade.png" alt="Curiosidade sobre Zacarias" class="w-full h-auto rounded-xl shadow-xl">
+                <img src="zacarias-curiosidade.png" alt="Curiosidades de Zacarias" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-yellow-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-blue-700 to-indigo-900 text-white p-8 mb-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8">✝️ Conexão com Jesus</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-5">
+                    <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/20">
+                        <h3 class="text-xl font-bold mb-2">🐴 Zc 9:9 → Entrada Triunfal (Mt 21:5)</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            "Eis que o teu rei virá a ti, justo e Salvador, humilde, montado sobre um jumento." Quando Jesus entrou em Jerusalém, Mateus cita explicitamente Zacarias: "Isso aconteceu para se cumprir o que foi dito pelo profeta" (Mt 21:4-5). 500 anos de precisão!
+                        </p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/20">
+                        <h3 class="text-xl font-bold mb-2">💰 Zc 11:12-13 → As 30 Moedas de Prata (Mt 27:9)</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            Zacarias foi "pago" com 30 moedas de prata — o preço de um escravo — e as jogou na casa do Senhor para o oleiro. Judas recebeu 30 moedas por Jesus, as jogou no templo, e os sacerdotes compraram o campo do oleiro. Idêntico!
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/20">
+                        <h3 class="text-xl font-bold mb-2">⚔️ Zc 12:10 → A Lança no Lado de Jesus (Jo 19:37)</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            "Olharão para aquele que traspassaram, e o pranteará como se pranteasse o filho unigênito." João 19:37 cita esse versículo ao descrever o soldado que perfurou o lado de Jesus na cruz. Profecia e cumprimento separados por 500 anos!
+                        </p>
+                    </div>
+                    <div class="versiculo-card bg-white/20 border-white/60 text-white">
+                        <p class="font-bold text-lg">🔑 A Grande Conexão:</p>
+                        <p class="italic mt-1">Zacarias é o profeta que mais detalhou a Semana da Paixão de Jesus: a entrada triunfal (9:9), a traição (11:12), o pastor golpeado (13:7) e a lança (12:10). Cada detalhe cumprido com exatidão!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-blue-50 to-indigo-50 p-8 mb-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
+                💭 Perguntas para Pensar
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-600 text-center">
+                    <div class="text-5xl mb-4">🌙</div>
+                    <h3 class="font-bold text-xl text-blue-700 mb-3">O Invisível é Real</h3>
+                    <p class="text-gray-600 leading-relaxed">As visões de Zacarias mostram anjos e carros de fogo agindo no invisível. Você acredita que Deus está atuando em coisas que você não pode ver? Como isso muda a forma de encarar os problemas?</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-indigo-600 text-center">
+                    <div class="text-5xl mb-4">🐴</div>
+                    <h3 class="font-bold text-xl text-indigo-700 mb-3">O Rei da Paz</h3>
+                    <p class="text-gray-600 leading-relaxed">Jesus escolheu um jumentinho — o símbolo da paz — em vez de um cavalo de guerra. O que isso diz sobre o tipo de Rei que Jesus é? Como isso é diferente dos reis e heróis que o mundo valoriza?</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-700 text-center">
+                    <div class="text-5xl mb-4">🔮</div>
+                    <h3 class="font-bold text-xl text-blue-700 mb-3">Profecias Cumpridas</h3>
+                    <p class="text-gray-600 leading-relaxed">Zacarias previu detalhes sobre Jesus com 500 anos de antecedência. Como isso fortalece sua fé de que a Bíblia é a Palavra de Deus? Que outros detalhes de sua vida Deus já "planejou" antecipadamente?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-indigo-900">
+                🏆 Desafio da Semana
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg text-center">
+                    <div class="text-5xl mb-3">🔍</div>
+                    <h3 class="font-bold text-xl text-blue-700 mb-3">Desafio 1: Detetive Bíblico</h3>
+                    <p class="text-gray-600 leading-relaxed">Encontre pelo menos 3 das profecias de Zacarias cumpridas nos evangelhos. Use uma Bíblia com referências cruzadas ou peça ajuda a um adulto. Compare cada profecia com o cumprimento — escreva as referências!</p>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-6 rounded-2xl border-2 border-indigo-200 shadow-lg text-center">
+                    <div class="text-5xl mb-3">🎨</div>
+                    <h3 class="font-bold text-xl text-indigo-700 mb-3">Desafio 2: Desenhe Uma Visão!</h3>
+                    <p class="text-gray-600 leading-relaxed">Leia uma das 8 visões de Zacarias (cap. 1-6) e desenhe o que imagina que Zacarias viu. Pode ser o candelabro dourado com as oliveiras (cap. 4), o rolo voador (cap. 5) ou os cavalos coloridos (cap. 1)!</p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-2xl border-2 border-blue-200 shadow-lg text-center">
+                    <div class="text-5xl mb-3">🕊️</div>
+                    <h3 class="font-bold text-xl text-blue-700 mb-3">Desafio 3: Memorize Zc 4:6!</h3>
+                    <p class="text-gray-600 leading-relaxed">Memorize: "Não por exército nem por força, mas pelo Meu Espírito, diz o Senhor dos Exércitos." Quando encontrar algo difícil esta semana, repita esse versículo. Deixe que ele seja o lembrete de que Deus é quem faz as grandes obras!</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-purple-700 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="section no-print text-center bg-gradient-to-r from-blue-700/20 to-indigo-900/20 border-2 border-blue-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../ageu/ageu.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../ageu/ageu.html" class="bg-gradient-to-r from-blue-700 to-indigo-900 hover:from-blue-800 hover:to-indigo-950 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Ageu
             </a>
-            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-800 to-blue-700 hover:from-indigo-900 hover:to-blue-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Profetas Menores
             </a>
-            <a href="../malaquias/malaquias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../malaquias/malaquias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 Malaquias ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Zacarias - Visões de Esperança ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-blue-700 to-indigo-900 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Zacarias — Visões de Esperança e o Messias Prometido ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

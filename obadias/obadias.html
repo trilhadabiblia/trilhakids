@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-red-700 to-orange-700 hover:from-red-800 hover:to-orange-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,7 +32,7 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🗻</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700 mx-2">
                     LIVRO DE OBADIAS
                 </span>
                 <span>⚖️</span>
@@ -42,44 +43,50 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-obadias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-300">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
                 🌟 Os Três Segredos de Obadias 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-600">
-                    <h3 class="text-2xl font-bold text-red-700 mb-3">🏔️ Primeiro Segredo: O Orgulho Traz Queda</h3>
-                    <p class="italic">
-                        Nas montanhas altas, Edom pensou estar,<br>
-                        "Ninguém pode me tocar, ninguém me alcançar!"<br>
-                        Mas Deus olhou do céu e disse com firmeza:<br>
-                        "O orgulho te derruba, humildade é riqueza!"
+
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🏔️ Primeiro Segredo: O Orgulho Engana!</h3>
+                    <p class="italic text-gray-800">
+                        Nas rochas vermelhas de Petra, bem no alto,<br>
+                        Edom gritava: "Ninguém nos alcança — isso é certo!"<br>
+                        Mas o orgulho enganou o coração de pedra deles,<br>
+                        Pois Deus derruba os montes e os castelos!<br>
+                        <span class="text-red-800 font-semibold">Quanto mais alto você sobe por orgulho e vaidade,<br>
+                        Maior será a queda — essa é a realidade!</span>
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Obadias 1:3-4</p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Obadias 3-4 — "O orgulho do teu coração te enganou... Ainda que subas como a águia... eu te derrubarei."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-orange-600">
-                    <h3 class="text-2xl font-bold text-orange-700 mb-3">👁️ Segundo Segredo: Deus Vê Tudo</h3>
-                    <p class="italic">
-                        Quando Judá sofreu, Edom ficou contente,<br>
-                        Aplaudiu a dor do irmão, foi indiferente.<br>
-                        Mas Deus que tudo vê, jamais esquece não,<br>
-                        O que você faz aos outros, volta em sua mão!
+                <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-2xl border-l-4 border-orange-700">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">👁️ Segundo Segredo: Trair um Irmão Tem Consequências!</h3>
+                    <p class="italic text-gray-800">
+                        Edom e Israel eram primos — irmãos desde a origem,<br>
+                        Mas quando Judá caiu, Edom aplaudiu a tragédia sem fim!<br>
+                        Bloqueou os refugiados, os entregou ao inimigo cruel,<br>
+                        "Como fizeste ao teu irmão, assim te farão" — diz o céu!<br>
+                        <span class="text-orange-800 font-semibold">A lei que governa o mundo é simples e real:<br>
+                        O que você semeia no irmão, você colherá igual!</span>
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Obadias 1:10-12</p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Obadias 15 — "Assim como fizeste, se te fará; as tuas obras tornarão sobre a tua própria cabeça."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-red-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">👑 Terceiro Segredo: O Reino é do Senhor</h3>
-                    <p class="italic">
-                        No final da história, quem vence é o bem,<br>
-                        Deus protege Seu povo, cuida de quem Ele tem.<br>
-                        O Reino é do Senhor, Sua justiça vai reinar,<br>
-                        Quem confia Nele nunca vai se abalar!
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-800">
+                    <h3 class="text-2xl font-bold text-red-900 mb-3">👑 Terceiro Segredo: O Reino É do Senhor!</h3>
+                    <p class="italic text-gray-800">
+                        Impérios sobem e caem como maré,<br>
+                        Mas o Reino de Deus permanece de pé!<br>
+                        Edom acabou, Babilônia virou pó e vento,<br>
+                        Mas o povo de Deus tem um eterno fundamento!<br>
+                        <span class="text-red-900 font-semibold">A última palavra da história não é dos poderosos —<br>
+                        É do Senhor, que reina sobre todos os povos!</span>
                     </p>
-                    <p class="text-sm text-gray-600 mt-3 font-semibold">📖 Obadias 1:21</p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Obadias 21 — "E o reino será do Senhor." (A última palavra do livro!)</p>
                 </div>
 
             </div>
@@ -96,181 +103,358 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
-                👥 Quem São os Personagens Principais?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl shadow-lg border-2 border-red-200">
-                        <h3 class="text-3xl font-bold text-red-700 mb-4">📜 Obadias, o Profeta</h3>
-                        <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                            Obadias foi um profeta corajoso que trouxe uma mensagem curta, mas poderosa! Seu nome significa "servo do Senhor", e ele não teve medo de confrontar uma nação inteira.
-                        </p>
-                        <h3 class="text-3xl font-bold text-orange-700 mb-4 mt-6">🏔️ O Povo de Edom</h3>
-                        <p class="text-xl text-gray-700 leading-relaxed">
-                            Edom era descendente de Esaú, irmão de Jacó. Eles moravam em montanhas altas e se achavam invencíveis. Quando Judá sofreu, eles riram e ajudaram os inimigos. Grande erro!
-                        </p>
-                    </div>
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-red-700 to-orange-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            ⚖️ Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-red-300 text-center">
+                <p class="text-5xl mb-4">👑</p>
+                <blockquote class="text-3xl font-black text-red-800 leading-snug mb-4">
+                    "Assim como fizeste, se te fará; as tuas obras tornarão sobre a tua própria cabeça."
+                </blockquote>
+                <p class="text-xl font-bold text-orange-700 mb-6">Obadias 15</p>
+                <div class="bg-red-50 rounded-2xl p-4 border-2 border-red-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Este é um dos princípios mais universais da Bíblia: o que você faz aos outros, especialmente aos mais vulneráveis, volta para você. Jesus ensinou o mesmo: "Com a medida que medirdes, também vos será medido" (Mt 7:2).
+                    </p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="obadias-personagem.png" alt="Personagens de Obadias" class="w-full h-auto rounded-xl shadow-2xl border-4 border-red-300">
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-orange-50 to-red-50 p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                📖 O Que o Livro Conta?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-1">
-                    <img src="obadias-o-que-conta.png" alt="História de Obadias" class="w-full h-auto rounded-xl shadow-2xl border-4 border-orange-300">
-                </div>
-                <div class="order-2">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-orange-200">
-                        <h3 class="text-3xl font-bold text-orange-700 mb-4">⚠️ O Aviso de Deus para Edom</h3>
-                        <p class="text-xl text-gray-700 leading-relaxed mb-6">
-                            Deus enviou Obadias com um recado claro: "Edom, você se orgulhou demais! Quando Meu povo sofreu, você riu e até ajudou os inimigos. Agora chegou sua vez de enfrentar as consequências!"
-                        </p>
-                        <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl">
-                            <p class="text-lg font-semibold text-red-800">
-                                🗻 O orgulho de Edom seria sua queda<br>
-                                ⚖️ A justiça de Deus alcançaria todos<br>
-                                👑 O Reino do Senhor prevaleceria
-                            </p>
-                        </div>
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">📜 Obadias — O Servo do Senhor</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O nome Obadias significa <em>"servo do Senhor"</em>. Quase nada sabemos sobre ele — nem sua tribo, nem sua época exata. Mas Deus o escolheu para entregar a mensagem mais curta e direta do Antigo Testamento: 21 versículos que ensinam sobre orgulho, traição e justiça divina.
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Leia na Bíblia — Obadias 1</p>
+                        <p class="text-gray-700 italic">"Visão de Obadias. Assim diz o Senhor Deus acerca de Edom."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🗻 Edom — O Irmão Traidor</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Os edomitas eram descendentes de Esaú — irmão gêmeo de Jacó (Israel). Viviam nas montanhas rochosas de Petra, no sul da atual Jordânia. Quando Babilônia destruiu Jerusalém (586 a.C.), Edom não apenas não ajudou — aplaudiu, bloqueou os refugiados e até entregou fugitivos aos inimigos.
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-600">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Leia na Bíblia — Obadias 10</p>
+                        <p class="text-gray-700 italic">"Por causa da violência contra teu irmão Jacó, te cobrirá vergonha, e serás destruído para sempre."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-amber-50 p-5 rounded-2xl border-2 border-red-300">
+                    <h3 class="text-2xl font-bold text-red-800 mb-2">🏚️ Judá — O Irmão Caído</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Judá (Israel do Sul) havia sido devastado pela Babilônia. Jerusalém estava em ruínas, o templo destruído, o povo levado cativo. Nesse momento de colapso total, o irmão vizinho (Edom) deveria ter ajudado — mas escolheu se aproveitar. A mensagem de Obadias é de consolo: Deus viu e não ficou quieto!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-500">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Leia na Bíblia — Obadias 17</p>
+                        <p class="text-gray-700 italic">"Mas no monte Sião haverá livramento, e será um lugar santo; e a casa de Jacó possuirá as suas possessões."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="obadias-personagem.png" alt="Personagens de Obadias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="obadias-o-que-conta.png" alt="História de Obadias" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-red-200 shadow text-center">
+                    <p class="text-sm font-bold text-red-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Obadias tem apenas <strong>1 capítulo e 21 versículos</strong> — o menor livro do Antigo Testamento! Cabe em menos de 5 minutos de leitura. Perfeito para ler com a família!</p>
+                </div>
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-red-700 mb-2">📜 Três Grandes Movimentos</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-red-700 shadow">
+                    <p class="font-bold text-red-800 mb-1">🏔️ Parte 1 (v. 1–9): A Condenação do Orgulho</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus declara guerra ao orgulho de Edom. Eles viviam nas rochas vermelhas de Petra, inacessíveis, e se sentiam invencíveis. Deus responde: "Ainda que subas como a águia... de lá te farei descer!" O orgulho é uma armadilha — quanto mais alto, mais dura é a queda.</p>
+                    <p class="text-sm text-red-600 italic border-t border-red-100 pt-2">📖 Obadias 3 — "O orgulho do teu coração te enganou, ó tu que habitas nas fendas da rocha."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-orange-700 shadow">
+                    <p class="font-bold text-orange-800 mb-1">😈 Parte 2 (v. 10–14): Os Sete Crimes Contra o Irmão</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Obadias lista 7 crimes de Edom contra Judá no dia da queda: ficar olhando sem ajudar, alegrar-se com a desgraça, falar orgulhosamente, entrar pela cidade saqueando, bloquear as fugas, entregar refugiados, e se apoderar de bens. Cada "não deverias ter" é uma acusação direta!</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Obadias 12 — "Não devias ter-te alegrado com os filhos de Judá no dia da sua ruína."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-amber-600 shadow">
+                    <p class="font-bold text-amber-800 mb-1">👑 Parte 3 (v. 15–21): O Dia do Senhor e a Restauração</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">O Dia do Senhor chegará sobre todas as nações. Edom receberá de volta exatamente o que fez. Mas Israel será restaurado — e a última linha do livro é a promessa mais gloriosa: "E o reino será do Senhor." Toda a história caminha para esse fim!</p>
+                    <p class="text-sm text-amber-600 italic border-t border-amber-100 pt-2">📖 Obadias 21 — "E o reino será do Senhor."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
-                ⭐ Por Que É Importante?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl shadow-lg border-2 border-red-200">
-                        <h3 class="text-3xl font-bold text-red-700 mb-6">👁️ Deus Vê Tudo e É Justo</h3>
-                        <p class="text-xl text-gray-700 leading-relaxed mb-6">
-                            Obadias nos ensina que Deus não é apenas o Deus de Israel, mas de TODAS as nações! Ele vê o que cada país faz, como cada pessoa age, e Sua justiça alcança a todos.
-                        </p>
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3">
-                                <span class="text-3xl">🌍</span>
-                                <p class="text-lg text-gray-700">Deus governa sobre toda a Terra</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-3xl">⚖️</span>
-                                <p class="text-lg text-gray-700">Nenhuma injustiça passa despercebida</p>
-                            </div>
-                            <div class="flex items-start gap-3">
-                                <span class="text-3xl">🛡️</span>
-                                <p class="text-lg text-gray-700">Ele defende Seu povo com amor</p>
-                            </div>
-                        </div>
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
+            ⭐ Por Que É Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">🏔️ O Orgulho É Uma Armadilha!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Edom se achava seguro e superior. A Bíblia inteira confirma o que Obadias ensina: <strong class="text-red-700">"Deus resiste aos soberbos, mas dá graça aos humildes"</strong> (Tg 4:6). O orgulho nos faz enxergar menos do que a realidade — e nos faz tomar decisões destrutivas.
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Obadias 3</p>
+                        <p class="text-gray-700 italic">"O orgulho do teu coração te enganou."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="obadias-importante.png" alt="Importância de Obadias" class="w-full h-auto rounded-xl shadow-2xl border-4 border-red-300">
+
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">👁️ Deus Vê Até o que Ninguém Vê!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Edom pensou que poderia trair sem consequência. Mas <strong class="text-orange-700">Deus não ignora a injustiça</strong> — especialmente a que acontece contra os mais fracos. O silêncio diante do sofrimento do irmão também é condenado. "Não deverias ter ficado olhando!"
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-600">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Obadias 15</p>
+                        <p class="text-gray-700 italic">"Assim como fizeste, se te fará; as tuas obras tornarão sobre a tua própria cabeça."</p>
+                    </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-amber-50 p-5 rounded-2xl border-2 border-red-300">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">✝️ Obadias Aponta para o Reino de Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        "O reino será do Senhor" (v.21) é a profecia que Jesus cumpriu. Ele veio proclamar que o <strong class="text-red-800">Reino de Deus chegou</strong>. E curiosamente, Herodes — que tentou matar Jesus bebê — era idumeu, descendente de Edom! O conflito Jacó × Esaú chegou até o Natal!
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="obadias-importante.png" alt="Importância de Obadias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-br from-orange-50 to-red-50 p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                🎯 Qual o Propósito do Livro?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-1">
-                    <img src="obadias-proposito.png" alt="Propósito de Obadias" class="w-full h-auto rounded-xl shadow-2xl border-4 border-orange-300">
-                </div>
-                <div class="order-2">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-orange-200">
-                        <h3 class="text-3xl font-bold text-orange-700 mb-6">📚 Duas Lições Poderosas</h3>
-                        
-                        <div class="mb-8 bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl">
-                            <h4 class="text-2xl font-bold text-red-700 mb-3">1️⃣ O Orgulho Leva à Queda</h4>
-                            <p class="text-lg text-gray-700 leading-relaxed">
-                                Edom pensava que era imbatível nas suas montanhas altas. Mas Deus mostrou que ninguém é maior que Ele! A humildade é sempre melhor que o orgulho.
-                            </p>
-                        </div>
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="obadias-proposito.png" alt="Propósito de Obadias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
 
-                        <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl">
-                            <h4 class="text-2xl font-bold text-orange-700 mb-3">2️⃣ Deus Defende Seu Povo</h4>
-                            <p class="text-lg text-gray-700 leading-relaxed">
-                                Mesmo quando parece que os maus estão vencendo, Deus está no controle! Ele cuida dos Seus filhos e faz justiça no tempo certo.
-                            </p>
-                        </div>
+                <div class="bg-white p-5 rounded-2xl border-2 border-red-200 shadow">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">🛡️ Consolar um Povo Destroçado</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Judá estava em ruínas. O templo, destruído. A cidade, queimada. O povo, exilado. E o vizinho (Edom) havia ajudado os inimigos. Obadias foi enviado para dizer: <strong class="text-red-700">Deus viu tudo. Deus não esqueceu. Deus fará justiça.</strong> Isso era o consolo necessário!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-500">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Obadias 17</p>
+                        <p class="text-gray-700 italic">"Mas no monte Sião haverá livramento, e será um lugar santo."</p>
                     </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-orange-200 shadow">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">⚖️ Declarar que Nenhuma Injustiça Fica Impune</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O propósito maior é afirmar que <strong class="text-orange-700">a história tem um Juiz</strong>. Impérios e nações que oprimem, que se alegram com o sofrimento alheio, que traem os mais fracos — todos terão que prestar contas. O reino humano passa; o Reino de Deus permanece!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-500">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Obadias 21</p>
+                        <p class="text-gray-700 italic">"E o reino será do Senhor."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-red-100 to-orange-100 p-4 rounded-xl border-l-4 border-red-700">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-red-800">Não há posição tão elevada que proteja alguém do julgamento de Deus. E não há situação tão destruída que Deus não possa restaurar. O povo de Deus tem consolo: o reino será do Senhor — sempre!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Você sabia? -->
+    <!-- Seção 5: Você Sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600">
-                🤔 Você Sabia?
-            </h2>
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl shadow-lg border-2 border-red-200">
-                        <h3 class="text-3xl font-bold text-red-700 mb-6">📏 O Menor, Mas Não Menos Importante!</h3>
-                        <p class="text-xl text-gray-700 leading-relaxed mb-6">
-                            Obadias é o livro mais curto de TODO o Antigo Testamento! Tem apenas 21 versículos, mas está cheio de sabedoria e poder!
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-6 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-3xl font-bold text-red-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-red-700 mb-4">
+                        <p class="text-gray-700">
+                            📏 <strong>O menor livro do AT:</strong> Obadias tem apenas 21 versículos — o livro mais curto de todo o Antigo Testamento. Para comparar: o Salmo 119 sozinho tem 176 versículos — mais de 8 vezes o tamanho de Obadias inteiro!
                         </p>
-                        <div class="bg-white p-6 rounded-xl mb-6">
-                            <p class="text-2xl font-bold text-orange-600 text-center mb-2">21 versículos</p>
-                            <p class="text-lg text-gray-600 text-center">= 1 capítulo completo</p>
-                        </div>
-                        <p class="text-lg text-gray-700 leading-relaxed italic">
-                            Isso prova que não é o tamanho que importa, mas a mensagem! Às vezes, as palavras mais curtas carregam as verdades mais profundas. 💎
+                    </div>
+
+                    <div class="bg-red-100 p-4 rounded-xl border-l-4 border-red-800 mb-4">
+                        <p class="text-gray-700">
+                            🏙️ <strong>Petra — a cidade nas rochas:</strong> Edom vivia em Petra, uma cidade incrível escavada na rocha vermelha no deserto da Jordânia. Hoje é patrimônio mundial da UNESCO e um dos lugares mais visitados do mundo! Mas a nação edomita acabou exatamente como Obadias profetizou.
+                        </p>
+                    </div>
+
+                    <div class="bg-orange-100 p-4 rounded-xl border-l-4 border-orange-800">
+                        <p class="text-gray-700">
+                            👑 <strong>Herodes era edomita:</strong> Herodes, o rei que tentou matar Jesus bebê (Mateus 2), era idumeu — descendente de Edom! O conflito entre Esaú (Edom) e Jacó (Israel) que começou no ventre de Rebeca (Gn 25) chegou até o nascimento de Jesus. E Jesus, o verdadeiro Rei de Israel, venceu!
                         </p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="obadias-curiosidade.png" alt="Curiosidade sobre Obadias" class="w-full h-auto rounded-xl shadow-2xl border-4 border-red-300">
-                </div>
             </div>
+            <div class="order-1 md:order-2">
+                <img src="obadias-curiosidade.png" alt="Curiosidades sobre Obadias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 rounded-3xl shadow-xl border-t-8 border-red-600 p-8 mb-4 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-black text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-700">
+            ✝️ Obadias Aponta para Jesus
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-4 text-lg text-gray-700">
+                <p class="leading-relaxed">
+                    <span class="font-bold text-red-700">"O reino será do Senhor"</span> (Ob 21) é a promessa que Jesus cumpriu ao proclamar: "O Reino de Deus está próximo!" (Mc 1:15). Todo o ministério de Jesus foi a inauguração desse Reino eterno que Obadias anunciou.
+                </p>
+                <p class="leading-relaxed">
+                    <span class="font-bold text-orange-700">Herodes, o Grande</span> — que ordenou a chacina dos bebês para matar Jesus — era idumeu, descendente direto de Edom. O ódio de Esaú por Jacó chegou até o Natal. Mas assim como Obadias prometeu, o "filho de Jacó" (Jesus) prevaleceu!
+                </p>
+                <p class="leading-relaxed">
+                    O versículo <span class="font-bold text-red-700">"como fizeste, se te fará"</span> (Ob 15) ressoa em Jesus: "Com a medida que medirdes, também vos será medido" (Mt 7:2). A lei da reciprocidade que Obadias anuncia é confirmada pelo próprio Jesus!
+                </p>
+            </div>
+            <div class="versiculo-card border-red-500 bg-white text-lg">
+                <p class="font-bold text-red-700 mb-2">Obadias e o nascimento de Jesus</p>
+                <p class="italic text-gray-700 mb-3">"Herodes, ao ver que fora iludido pelos magos, irritou-se muito... mandou matar todos os meninos... Esta palavra tinha sido dita pelo Senhor por intermédio do profeta." (Mateus 2:16-17)</p>
+                <p class="font-bold text-red-600">📖 Mateus 2:16</p>
+                <p class="text-sm text-gray-500 mt-2">Herodes (edomita, descendente de Esaú) tentou destruir Jesus (descendente de Jacó/Israel) — o mesmo conflito de Obadias! Mas o "reino do Senhor" não pode ser destruído por nenhum Herodes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4 rounded-2xl border-2 border-red-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-800 to-orange-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-red-700">
+                <p class="text-5xl text-center mb-4">🏔️</p>
+                <h3 class="text-xl font-bold text-red-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Edom se achava invencível nas suas montanhas — e o orgulho o destruiu. <strong>Existe alguma área na sua vida onde você se acha "superior" ou invencível? Como o orgulho pode te enganar?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-600">
+                <p class="text-5xl text-center mb-4">👀</p>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Edom foi condenado também por <em>ficar olhando</em> sem ajudar. <strong>Você já viu alguém sendo maltratado e ficou em silêncio? O que Obadias diz sobre essa escolha? O que você poderia fazer diferente?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-amber-600">
+                <p class="text-5xl text-center mb-4">👑</p>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    O livro termina com "o reino será do Senhor." <strong>Quando as coisas ao redor parecem injustas e os maus parecem vencer, como essa promessa te ajuda a não desanimar e continuar confiando em Deus?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-red-800 to-orange-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-red-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🙏</p>
+                <div class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-red-700 mb-3">Peça perdão por orgulho</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Pense numa situação recente onde você agiu com orgulho — se achou melhor que alguém, não pediu ajuda, ou não admitiu um erro. <strong>Converse com Deus e, se necessário, com a pessoa.</strong> Humildade é força!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3">Leia Obadias inteiro</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    São apenas 21 versículos — menos de 5 minutos! Leia em voz alta para alguém da família. Depois pergunte juntos: <strong>o que Edom fez de errado? O que podemos aprender sobre como tratar os outros?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🤝</p>
+                <div class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3">Ajude um "irmão" em dificuldade</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Edom foi condenado por não ajudar. Esta semana, <strong>escolha alguém que esteja passando por dificuldade</strong> e faça algo concreto — uma palavra, um gesto, uma ajuda real. Seja o oposto de Edom!
+                </p>
+            </div>
+
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="section no-print bg-gradient-to-r from-red-600/20 to-orange-600/20 border-2 border-red-600/30 rounded-2xl p-10 mb-4">
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-3xl font-black text-center text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="../amos/amos.html" class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
-                    ⬅️ Amós
-                </a>
-                <a href="../profetas-menores.html" class="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
-                    📚 Ver Profetas Menores
-                </a>
-                <a href="../jonas/jonas.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl">
-                    Jonas ➡️
-                </a>
-            </div>
+    <section class="no-print text-center bg-gradient-to-r from-red-700/20 to-orange-700/20 border-2 border-red-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="../amos/amos.html" class="bg-gradient-to-r from-amber-800 to-yellow-900 hover:from-amber-900 hover:to-yellow-950 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Amós
+            </a>
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-red-700 to-orange-700 hover:from-red-800 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Menores
+            </a>
+            <a href="../jonas/jonas.html" class="bg-gradient-to-r from-blue-700 to-cyan-700 hover:from-blue-800 hover:to-cyan-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                Jonas ➡️
+            </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-red-600 to-orange-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Obadias - Justiça e Humildade ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-red-700 to-orange-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🗻 Livro de Obadias — Orgulho, Justiça e o Reino do Senhor ⚖️</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

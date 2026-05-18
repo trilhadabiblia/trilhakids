@@ -1,43 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Salmos - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
@@ -53,288 +28,407 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="salmos-capa.png" alt="Capa: Salmos" id="img-salmos"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-salmos">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🎵</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
                     LIVRO DE SALMOS
                 </span>
                 <span>🎵</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Cânticos, Orações e Adoração — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-salmos" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">O Hinário da Bíblia — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-salmos"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-salmos" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-300">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
                 🌟 Os Três Segredos de Salmos 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">💬 1️⃣ Podemos falar com Deus sobre tudo</h3>
-                    <p>
-                        Nos Salmos vemos pessoas falando com Deus,<br>
-                        Quando estão felizes, tristes ou medrosos.<br>
-                        Davi chorou, cantou, pediu e agradeceu,<br>
-                        E mostrou que Deus escuta tudo que é nosso!<br><br>
 
-                        🗣️ Não precisa esconder o que você sente,<br>
-                        Deus quer ouvir o coração da gente!<br>
-                        Seja alegria, medo, tristeza ou gratidão,<br>
-                        Fale com Ele, abra seu coração!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Salmo 62:8</span>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-purple-600">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💬 Primeiro Segredo: Podemos Falar com Deus Sobre Tudo</h3>
+                    <p class="italic text-gray-800">
+                        Nos Salmos, pessoas falaram com Deus de verdade,<br>
+                        Chorando, cantando, pedindo com sinceridade.<br>
+                        Davi gritou, adorou, confessou e agradeceu,<br>
+                        E mostrou que Deus escuta tudo que nos pertenceu!<br>
+                        <span class="text-purple-700 font-semibold">Não precisa esconder o que você sente,<br>
+                        Deus quer ouvir o coração da gente!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Salmo 62:8 — "Derramai diante dele o vosso coração; Deus é o nosso refúgio."</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🎶 2️⃣ Adorar a Deus é uma festa do coração</h3>
-                    <p>
+                <div class="bg-gradient-to-r from-indigo-50 to-violet-50 p-6 rounded-2xl border-l-4 border-indigo-600">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🎶 Segundo Segredo: Adorar a Deus é uma Festa do Coração</h3>
+                    <p class="italic text-gray-800">
                         Os Salmos são cheios de música e louvor,<br>
                         Celebrando quem Deus é, Seu imenso amor!<br>
                         Com instrumentos, canto e dança também,<br>
-                        O povo adorava dizendo: "Deus é nosso bem!"<br><br>
-
-                        🎉 Adoração não é só cantar na igreja,<br>
-                        É viver com gratidão, deixar a luz surgir e seja!<br>
-                        Quando louvamos, nosso coração fica leve,<br>
-                        E a presença de Deus em nós se move!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Salmo 150:1-6</span>
+                        O povo adorava dizendo: "Deus é nosso bem!"<br>
+                        <span class="text-indigo-700 font-semibold">Adoração não é só cantar na igreja,<br>
+                        É viver com gratidão em qualquer que seja a viagem!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Salmo 150:6 — "Tudo que tem fôlego louve ao Senhor! Aleluia!"</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🙏 3️⃣ A Palavra de Deus conforta e fortalece</h3>
-                    <p>
-                        <b>Que maravilha!</b> Os Salmos trazem paz,<br>
-                        Nos momentos difíceis, Deus nos refaz.<br>
+                <div class="bg-gradient-to-r from-violet-50 to-purple-50 p-6 rounded-2xl border-l-4 border-violet-600">
+                    <h3 class="text-2xl font-bold text-violet-700 mb-3">🙏 Terceiro Segredo: A Palavra de Deus Conforta e Fortalece</h3>
+                    <p class="italic text-gray-800">
+                        Quando estamos na escuridão e sem saber o que fazer,<br>
+                        Os Salmos são a lâmpada que nos faz ver!<br>
                         Cada verso é um abraço do céu,<br>
-                        Lembrando que nunca estamos só, Ele é fiel!<br><br>
-
-                        💙 Quando lemos os Salmos, somos consolados,<br>
-                        Fortalecidos, amados e renovados!<br>
-                        A Palavra de Deus é luz pro caminho,<br>
-                        Guia nossos passos com amor e carinho!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Salmo 119:105</span>
+                        Lembrando que Deus é fiel e nunca nos esqueceu!<br>
+                        <span class="text-violet-700 font-semibold">A Palavra de Deus é luz pro caminho,<br>
+                        Guia nossos passos com amor e carinho!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Salmo 119:105 — "Lâmpada para os meus pés é a tua palavra, e luz para o meu caminho."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-purple-800">
-                        📘 Moral da história:<br>
-                        Fale com Deus, louve com alegria,<br>
-                        E deixe Sua Palavra guiar sua vida! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgSalmos = document.getElementById("img-salmos");
+        const img = document.getElementById("img-salmos");
         const modal = document.getElementById("modal-salmos");
         const closeModal = document.getElementById("close-modal");
-
-        imgSalmos.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="salmos-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-purple-700 to-indigo-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💜 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-purple-300 text-center">
+                <p class="text-5xl mb-4">🎵</p>
+                <blockquote class="text-3xl font-black text-purple-700 leading-snug mb-4">
+                    "O Senhor é o meu pastor; nada me faltará."
+                </blockquote>
+                <p class="text-xl font-bold text-indigo-600 mb-6">Salmo 23:1</p>
+                <div class="bg-purple-50 rounded-2xl p-4 border-2 border-purple-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Davi escreveu isso sabendo que um bom pastor cuida de cada ovelha — dá comida, água, proteção e descanso. Deus cuida de você assim: com atenção total, em cada detalhe, o tempo todo!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-4 border-purple-500">
-                    <h2 class="text-4xl font-black text-purple-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-purple-600">Davi</span>, o rei que escreveu a maioria dos salmos, expressando seu coração a Deus.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-purple-600">Asafe</span>, um músico e poeta do templo que também compôs salmos lindos.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Os <span class="font-bold text-purple-600">filhos de Corá</span> e outros músicos e poetas que adoravam a Deus.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-violet-100 text-violet-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-5 rounded-2xl border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">👑 Davi — O Rei Adorador</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Davi escreveu mais da metade dos Salmos! Ele foi pastor, guerreiro e rei — mas, acima de tudo, um homem apaixonado por Deus. Nos seus salmos vemos alegria, medo, arrependimento e gratidão profunda.
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-purple-500">
+                        <p class="text-sm font-bold text-purple-700 mb-1">📖 Leia na Bíblia — Salmo 51:10</p>
+                        <p class="text-gray-700 italic">"Cria em mim, ó Deus, um coração puro e renova em mim um espírito firme."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">🎼 Asafe — O Músico do Templo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Asafe era o maestro dos músicos do templo, escolhido por Davi. Ele compôs 12 salmos que falam sobre a justiça de Deus e sobre confiar n'Ele mesmo quando as coisas parecem injustas.
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Leia na Bíblia — Salmo 73:28</p>
+                        <p class="text-gray-700 italic">"Para mim, o bom é estar perto de Deus; fiz do Senhor Deus meu refúgio."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-5 rounded-2xl border-2 border-violet-200">
+                    <h3 class="text-2xl font-bold text-violet-700 mb-2">🎶 Os Filhos de Corá</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Um grupo de levitas que serviam como porteiros e cantores do templo. Eles compuseram 11 salmos lindos, incluindo o famoso Salmo 42 — que começa com uma das imagens mais bonitas da Bíblia!
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-violet-500">
+                        <p class="text-sm font-bold text-violet-700 mb-1">📖 Leia na Bíblia — Salmo 42:1</p>
+                        <p class="text-gray-700 italic">"Como o cervo anseia pelas correntes das águas, assim a minha alma anseia por ti, ó Deus."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="salmos-personagem.png" alt="Personagens de Salmos" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-8 rounded-2xl border-4 border-indigo-500">
-                        <h2 class="text-4xl font-black text-indigo-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                É uma <span class="font-bold text-indigo-600">coleção de 150 cânticos e orações</span> cheios de emoção e verdade.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Expressam <span class="font-bold text-indigo-600">alegria, tristeza, arrependimento, gratidão e louvor</span> a Deus de maneira sincera.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                São <span class="font-bold text-indigo-600">orações em forma de poesia</span>, que tocam o coração e elevam a alma!
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-indigo-600">150 capítulos</span> de pura adoração e comunhão com Deus!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="salmos-o-que-conta.png" alt="História de Salmos" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-purple-200 shadow text-center">
+                    <p class="text-sm font-bold text-purple-700 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Salmos tem <strong>150 capítulos</strong> — divididos em 5 livros, como um hinário completo para adorar a Deus!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="salmos-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-purple-700 mb-2">🎵 Os Cinco Livros de Salmos</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-purple-600 shadow">
+                    <p class="font-bold text-purple-700 mb-1">📗 Livro I (Salmos 1–41) — Davi e o Início</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Salmos escritos principalmente por Davi — sobre o homem que confia em Deus em todas as situações da vida.</p>
+                    <p class="text-sm text-purple-600 italic border-t border-purple-100 pt-2">📖 Salmo 23:1 — "O Senhor é o meu pastor; nada me faltará."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-indigo-600 shadow">
+                    <p class="font-bold text-indigo-700 mb-1">📘 Livro II (Salmos 42–72) — Buscando a Deus</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Salmos dos Filhos de Corá e de Davi — expressando saudade de Deus, pedido de socorro e confiança.</p>
+                    <p class="text-sm text-indigo-600 italic border-t border-indigo-100 pt-2">📖 Salmo 42:1 — "Como o cervo anseia pelas correntes das águas, assim a minha alma anseia por ti."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-violet-600 shadow">
+                    <p class="font-bold text-violet-700 mb-1">📙 Livro III (Salmos 73–89) — No Santuário</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Salmos de Asafe e dos Filhos de Corá — meditando sobre a santidade de Deus e Sua fidelidade ao povo.</p>
+                    <p class="text-sm text-violet-600 italic border-t border-violet-100 pt-2">📖 Salmo 84:10 — "Vale mais um dia nos teus átrios do que mil em outro lugar."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-blue-600 shadow">
+                    <p class="font-bold text-blue-700 mb-1">📕 Livros IV e V (Salmos 90–150) — Grande Louvor</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">A grande coleção final — celebrando o reinado de Deus, Sua criação e culminando com 5 salmos de "Aleluia"!</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Salmo 150:6 — "Tudo que tem fôlego louve ao Senhor! Aleluia!"</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="salmos-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
-                    <h2 class="text-4xl font-black text-violet-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que <span class="font-bold text-violet-600">podemos falar com Deus em todos os momentos</span> — quando estamos felizes, tristes ou com medo.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-violet-600">Deus sempre ouve</span> nossas orações e se importa com nossos sentimentos.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Nos ensina a <span class="font-bold text-violet-600">adorar e louvar a Deus</span> com sinceridade e alegria do coração!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-5 rounded-2xl border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🗣️ Ensina a Orar com Honestidade!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Os salmos mostram que <strong class="text-purple-600">podemos dizer tudo a Deus</strong> — alegria, medo, raiva, tristeza, dúvidas. Deus não quer orações ensaiadas; Ele quer o coração real.
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-purple-500">
+                        <p class="text-sm font-bold text-purple-700 mb-1">📖 Salmo 62:8</p>
+                        <p class="text-gray-700 italic">"Derramai diante dele o vosso coração; Deus é o nosso refúgio."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">📖 O Livro Mais Citado no Novo Testamento</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Salmos é o livro do Antigo Testamento <strong class="text-indigo-600">mais citado por Jesus e pelos apóstolos</strong>! Jesus usou Salmos para ensinar, orar e até na cruz. Esse livro conecta os dois Testamentos.
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Salmo 22:1 (citado por Jesus na cruz)</p>
+                        <p class="text-gray-700 italic">"Deus meu, Deus meu, por que me abandonaste?"</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-5 rounded-2xl border-2 border-violet-200">
+                    <h3 class="text-2xl font-bold text-violet-700 mb-3">🎶 Louvor que Muda o Coração</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quando cantamos e louvamos a Deus, algo acontece dentro de nós — <strong class="text-violet-600">o desânimo some, a fé cresce e a paz vem</strong>! Os salmos ensinaram isso ao povo de Deus por séculos.
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="salmos-importante.png" alt="Importância de Salmos" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-fuchsia-50 to-pink-50 p-8 rounded-2xl border-4 border-fuchsia-500">
-                        <h2 class="text-4xl font-black text-fuchsia-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-fuchsia-600">Inspirar as pessoas a expressarem seus sentimentos diante de Deus</span> com honestidade e confiança.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ensinar a <span class="font-bold text-fuchsia-600">adorá-Lo com sinceridade e amor</span>, em todos os momentos da vida!
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-indigo-50 to-violet-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="salmos-proposito.png" alt="Propósito de Salmos" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 shadow">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🙏 Guia de Oração para Todas as Horas</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Salmos foi o <strong class="text-purple-600">livro de oração do povo de Deus</strong> por mais de 3.000 anos. Cada salmo é uma oração pronta — você pode orar com as mesmas palavras que Davi e Jesus usaram!
+                    </p>
+                    <div class="bg-purple-50 p-3 rounded-xl border-l-4 border-purple-500">
+                        <p class="text-sm font-bold text-purple-700 mb-1">📖 Salmo 5:3</p>
+                        <p class="text-gray-700 italic">"De manhã ouves a minha voz; de manhã apresento a ti a minha oração e fico na expectativa."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="salmos-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-indigo-200 shadow">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌟 Revelar Quem Deus É</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Nos 150 salmos encontramos Deus como <strong class="text-indigo-600">pastor, rei, guerreiro, refugio, luz, rocha e muito mais</strong>! Cada salmo revela um faceta do caráter de Deus.
+                    </p>
+                    <div class="bg-indigo-50 p-3 rounded-xl border-l-4 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-700 mb-1">📖 Salmo 18:2</p>
+                        <p class="text-gray-700 italic">"O Senhor é a minha rocha, a minha fortaleza e o meu libertador."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-4 rounded-xl border-l-4 border-violet-500">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-purple-700">Em qualquer situação da vida — alegria, medo, arrependimento ou gratidão — existe um salmo que expressa exatamente o que você sente!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="salmos-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-cyan-50 to-sky-50 p-8 rounded-2xl border-4 border-cyan-500">
-                    <h2 class="text-4xl font-black text-cyan-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-cyan-600">O Salmo 119 é o maior capítulo da Bíblia</span> — tem 176 versículos!
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-2xl border-2 border-purple-200">
+                    <h3 class="text-3xl font-bold text-purple-700 mb-4">📏 O Maior e o Menor Capítulo!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        O <strong class="text-purple-600">Salmo 119 tem 176 versículos</strong> — é o maior capítulo de toda a Bíblia! Já o <strong class="text-indigo-600">Salmo 117 tem apenas 2 versículos</strong> — o menor de toda a Bíblia!
+                    </p>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-indigo-500 mb-4">
+                        <p class="text-gray-700">
+                            📍 <strong>Centro da Bíblia:</strong> O Salmo 118 é o capítulo central de toda a Bíblia — existem 594 capítulos antes e 594 depois dele. E o versículo central? "É melhor refugiar-se no Senhor do que confiar no homem." (Sl 118:8)
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E o <span class="font-bold text-cyan-600">Salmo 117 é o menor</span> — só 2 versículos curtinhos!
+                    </div>
+
+                    <div class="bg-purple-100 p-4 rounded-xl border-l-4 border-purple-600 mb-4">
+                        <p class="text-gray-700">
+                            ✝️ <strong>Jesus usou Salmos na cruz:</strong> Quando Jesus disse "Meu Deus, meu Deus, por que me abandonaste?" (Mt 27:46), Ele estava orando com as palavras do Salmo 22 — escrito por Davi mil anos antes!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Um é gigante, o outro é do tamanho de uma <span class="font-bold text-cyan-600">oração curtinha mas poderosa!</span>
+                    </div>
+
+                    <div class="bg-indigo-100 p-4 rounded-xl border-l-4 border-indigo-600">
+                        <p class="text-gray-700">
+                            🎸 <strong>O Salmo 150 cita 9 instrumentos!</strong> Harpa, lira, alaúde, trombeta, flauta, címbalos... Era uma orquestra completa louvando a Deus! Imagine como devia ser lindo!
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-cyan-300">
-                            <p class="text-sm text-gray-700 italic">Grande ou pequeno, o que importa é adorar a Deus com o coração! 🎶💙
-                                </br></br>
-                                Louvem o Senhor, todas as nações! Exaltem-no, todos os povos! Pois grande é o seu amor leal para conosco, e a fidelidade do Senhor dura para sempre. Aleluia!</br>Salmo 117</p>
-                        </div>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="salmos-curiosidade.png" alt="Curiosidades sobre Salmos" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-purple-700/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 p-8 mb-4 rounded-2xl border-2 border-indigo-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-purple-600">
+                <p class="text-5xl text-center mb-4">💬</p>
+                <h3 class="text-xl font-bold text-purple-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Davi conversava com Deus sobre tudo — medo, raiva, alegria, tristeza. <strong>Você costuma contar para Deus como está se sentindo de verdade? O que você normalmente fala para Ele?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-600">
+                <p class="text-5xl text-center mb-4">🎵</p>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Em alguns salmos, Davi começa triste e termina louvando — mesmo sem a situação ter mudado. <strong>Você já percebeu que cantar ou orar muda como você se sente por dentro? Como aconteceu?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-violet-600">
+                <p class="text-5xl text-center mb-4">🐑</p>
+                <h3 class="text-xl font-bold text-violet-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    O Salmo 23 diz que o Senhor é nosso pastor — dá descanso, guia, protege e está conosco mesmo nos momentos difíceis. <strong>Em qual parte da sua vida você mais precisa do cuidado do Bom Pastor hoje?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-purple-800 to-indigo-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-purple-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-purple-700 mb-3">Leia em Voz Alta</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia o <strong>Salmo 23</strong> e o <strong>Salmo 150</strong> em voz alta para alguém da sua família. Um fala sobre o cuidado de Deus, o outro é um louvor com toda a orquestra!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">Escreva Seu Salmo</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva um mini-salmo de 4 a 6 linhas — pode ser de gratidão, pedido ou louvor. Comece com "Senhor, eu te agradeço por..." ou "Ó Deus, me ajuda a..." Use suas próprias palavras!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🎶</p>
+                <div class="bg-violet-100 text-violet-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-violet-700 mb-3">Louvor em Família</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escolha uma música de louvor que sua família goste e cantem juntos esta semana. Depois compartilhe por que essa música é especial para você — assim como Davi compartilhava seus salmos!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../jo/jo.html"
-                class="bg-gradient-to-r from-purple-700 to-indigo-600 hover:from-purple-800 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../jo/jo.html" class="bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-800 hover:to-yellow-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Jó
             </a>
-            <a href="../poeticos.html"
-                class="bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../poeticos.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 📚 Ver Livros Poéticos
             </a>
-            <a href="../proverbios/proverbios.html"
-                class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../proverbios/proverbios.html" class="bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Provérbios ➡️
             </a>
         </div>
@@ -342,8 +436,8 @@
 
     <!-- Rodapé -->
     <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Salmos - Cânticos e Adoração ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+        <h3 class="text-2xl font-black mb-2">🎵 Livro de Salmos — O Hinário da Bíblia 🎵</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -352,5 +446,4 @@
         trilhoGame.visitarLivro('Salmos');
     </script>
 </body>
-
 </html>

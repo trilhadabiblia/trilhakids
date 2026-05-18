@@ -75,3 +75,5 @@ cypress/screenshots/
 *.tmp.*
 
 # Arquivos do sistema
+
+books/

@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Lamentações - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-slate-700 to-indigo-900 hover:from-slate-800 hover:to-indigo-950 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,291 +28,407 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="lamentacoes-capa.png" alt="Capa: Lamentações" id="img-lamentacoes"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-lamentacoes">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>💧</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-gray-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900 mx-2">
                     LIVRO DE LAMENTAÇÕES
                 </span>
                 <span>💧</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Tristeza, Lamento e Esperança — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-lamentacoes" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">Lágrimas Honestas e Esperança no Amanhecer — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-lamentacoes"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-slate-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-gray-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-lamentacoes" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-slate-300">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900">
                 🌟 Os Três Segredos de Lamentações 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-700 mb-2">😢 1️⃣ Podemos ser honestos com Deus sobre nossa dor</h3>
-                    <p>
-                        Jeremias não escondeu suas lágrimas e tristeza,<br>
-                        Ele abriu o coração com total franqueza.<br>
-                        Chorou pela destruição, pelo sofrimento e dor,<br>
-                        E Deus escutou cada lamento com amor!<br><br>
 
-                        💙 Não precisamos fingir que está tudo bem,<br>
-                        Deus quer que sejamos honestos também!<br>
-                        Quando choramos, quando sentimos tristeza,<br>
-                        Podemos levar tudo a Ele com certeza!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Lamentações 1:1-2</span>
+                <div class="bg-gradient-to-r from-slate-50 to-gray-50 p-6 rounded-2xl border-l-4 border-slate-700">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">😢 Primeiro Segredo: Deus Aceita Nossas Lágrimas Honestas</h3>
+                    <p class="italic text-gray-800">
+                        Jeremias não escondeu suas lágrimas e a tristeza,<br>
+                        Abriu o coração a Deus com total franqueza.<br>
+                        Chorou pela cidade, pelo povo e pela dor,<br>
+                        E Deus escutou cada lamento com amor!<br>
+                        <span class="text-slate-800 font-semibold">Não precisa fingir que está tudo bem,<br>
+                        Deus quer que sejamos honestos também!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Lamentações 1:1 — "Como está solitária a cidade que era tão populosa! Como se tornou como viúva!"</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-700 mb-2">🌅 2️⃣ As misericórdias de Deus são novas cada manhã</h3>
-                    <p>
-                        No meio da tristeza, uma luz brilhou,<br>
+                <div class="bg-gradient-to-r from-indigo-50 to-blue-50 p-6 rounded-2xl border-l-4 border-indigo-700">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">🌅 Segundo Segredo: As Misericórdias São Novas Cada Manhã!</h3>
+                    <p class="italic text-gray-800">
+                        No fundo do lamento, uma luz brilhou,<br>
                         Jeremias lembrou do Deus que o amou:<br>
-                        "Suas misericórdias nunca têm fim,<br>
-                        Renovam-se cada manhã para mim!"<br><br>
-
-                        ✨ Mesmo nos dias mais escuros e difíceis,<br>
-                        O amor de Deus é sempre novo e gentil!<br>
-                        Cada amanhecer traz nova esperança,<br>
-                        Porque a fidelidade de Deus nunca cansa!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Lamentações 3:22-23</span>
+                        "Suas misericórdias não têm fim nem acabam,<br>
+                        Renovam-se cada manhã — nunca se apagam!"<br>
+                        <span class="text-indigo-800 font-semibold">Mesmo no dia mais escuro e difícil,<br>
+                        O amor de Deus amanhece — nunca é sutil!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Lamentações 3:22-23 — "As misericórdias do Senhor... renovam-se cada manhã; grande é a tua fidelidade."</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-700 mb-2">🙏 3️⃣ A esperança permanece em Deus</h3>
-                    <p>
-                        <b>Que bela mensagem!</b> Mesmo em meio ao lamento,<br>
-                        Jeremias não perdeu a esperança por um momento!<br>
-                        "Bom é o Senhor para os que nEle esperam,<br>
-                        Para aqueles que O buscam e perseveram!"<br><br>
-
-                        🌈 Quando tudo parece perdido e sem saída,<br>
-                        Deus continua sendo nossa esperança e vida!<br>
-                        Podemos confiar que Ele nos sustentará,<br>
-                        E um novo começo Ele preparará!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Lamentações 3:24-25</span>
+                <div class="bg-gradient-to-r from-blue-50 to-slate-50 p-6 rounded-2xl border-l-4 border-blue-700">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">🙏 Terceiro Segredo: A Esperança Fica em Deus, Não nas Circunstâncias</h3>
+                    <p class="italic text-gray-800">
+                        Tudo estava destruído — a cidade, o templo, o lar,<br>
+                        Mas Jeremias encontrou ainda um lugar:<br>
+                        "O Senhor é a minha porção", ele concluiu,<br>
+                        "Portanto, esperarei nEle" — e a esperança surgiu!<br>
+                        <span class="text-blue-800 font-semibold">A esperança verdadeira não está nas coisas,<br>
+                        Está em Deus — e Ele não abandona as almas!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Lamentações 3:24 — "O Senhor é a minha porção, diz a minha alma; portanto, esperarei nEle."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-slate-800">
-                        📘 Moral da história:<br>
-                        Mesmo na tristeza, busque a Deus em oração,<br>
-                        Pois Ele renova suas forças com compaixão! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgLamentacoes = document.getElementById("img-lamentacoes");
+        const img = document.getElementById("img-lamentacoes");
         const modal = document.getElementById("modal-lamentacoes");
         const closeModal = document.getElementById("close-modal");
-
-        imgLamentacoes.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="lamentacoes-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-slate-700 to-indigo-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🌅 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-slate-300 text-center">
+                <p class="text-5xl mb-4">🌄</p>
+                <blockquote class="text-2xl font-black text-slate-800 leading-snug mb-4">
+                    "As misericórdias do Senhor... não têm fim. Renovam-se cada manhã; grande é a tua fidelidade."
+                </blockquote>
+                <p class="text-xl font-bold text-indigo-700 mb-6">Lamentações 3:22-23</p>
+                <div class="bg-slate-50 rounded-2xl p-4 border-2 border-slate-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Este versículo está bem no MEIO do livro mais triste da Bíblia — como um diamante dentro do lama! Jeremias estava no pior momento possível quando escreveu isso. Isso prova que a esperança em Deus não depende de as coisas estarem bem!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-2xl border-4 border-slate-500">
-                    <h2 class="text-4xl font-black text-slate-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-slate-600">Jeremias</span>, o profeta que escreveu estes poemas tristes expressando sua dor.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E o <span class="font-bold text-slate-600">povo de Jerusalém</span>, que sofria com a destruição de sua cidade amada.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-5 rounded-2xl border-2 border-slate-300">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-2">😢 Jeremias — O Profeta que Chora</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Jeremias viu com seus próprios olhos o exército babilônico destruir Jerusalém, o Templo, os palácios. Em vez de fugir, ficou entre as ruínas e escreveu cinco poemas de dor. Seu choro não era fraqueza — era amor profundo por Deus e pelo povo!
+                    </p>
+                    <div class="versiculo-card bg-slate-50 border-slate-600">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📖 Leia na Bíblia — Lamentações 1:16</p>
+                        <p class="text-gray-700 italic">"Por isso choro; os meus olhos, os meus olhos destilarão água, porque longe de mim está o consolador."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-2">🏙️ Jerusalém — A Cidade Viúva</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        No capítulo 1, Jeremias personifica Jerusalém como uma viúva — uma mulher que perdeu o marido e está sozinha, sem ninguém para confortá-la. A cidade que foi gloriosa agora está em ruínas. É uma das imagens mais poderosas e tristes de toda a Bíblia.
+                    </p>
+                    <div class="versiculo-card bg-indigo-50 border-indigo-600">
+                        <p class="text-sm font-bold text-indigo-800 mb-1">📖 Leia na Bíblia — Lamentações 1:1</p>
+                        <p class="text-gray-700 italic">"Como está solitária a cidade que era tão populosa! Como se tornou como viúva a que era grande entre as nações!"</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-slate-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-2">🙏 O Povo em Exílio — Todos Nós no Sofrimento</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        No capítulo 3 — o centro e coração do livro — a voz muda de "ele" para "eu": o povo fala coletivamente sobre sua dor. E é exatamente aí, no meio do sofrimento, que surge a maior declaração de esperança: "As misericórdias do Senhor renovam-se cada manhã!"
+                    </p>
+                    <div class="versiculo-card bg-blue-50 border-blue-600">
+                        <p class="text-sm font-bold text-blue-800 mb-1">📖 Leia na Bíblia — Lamentações 3:25</p>
+                        <p class="text-gray-700 italic">"Bom é o Senhor para os que nele esperam, para a alma que o busca."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="lamentacoes-personagem.png" alt="Personagens de Lamentações" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-gray-50 to-zinc-50 p-8 rounded-2xl border-4 border-gray-500">
-                        <h2 class="text-4xl font-black text-gray-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                São <span class="font-bold text-gray-600">cinco poemas tristes</span> em que Jeremias expressa sua dor profunda.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ele <span class="font-bold text-gray-600">lamenta a destruição de Jerusalém</span> e todo o sofrimento do povo.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mas no meio da tristeza, <span class="font-bold text-gray-600">ele lembra da fidelidade de Deus</span> e renova sua esperança!
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-gray-600">5 capítulos</span> de lamento e esperança!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-slate-50 to-indigo-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="lamentacoes-o-que-conta.png" alt="História de Lamentações" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-slate-200 shadow text-center">
+                    <p class="text-sm font-bold text-slate-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Lamentações tem <strong>5 capítulos</strong> — cada um é um poema. O capítulo 3 é o centro do livro e o mais esperançoso, com os versículos mais famosos!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="lamentacoes-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-slate-800 mb-2">🌑 Cinco Poemas, Uma Jornada</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-slate-700 shadow">
+                    <p class="font-bold text-slate-800 mb-1">🏚️ Caps. 1–2: A Cidade em Ruínas</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jeremias descreve Jerusalém destruída — o Templo em chamas, o povo levado cativo, as ruas silenciosas. É uma cena de dor total. Mas Jeremias não perde a fé: reconhece que a disciplina de Deus vem de justiça e amor.</p>
+                    <p class="text-sm text-slate-600 italic border-t border-slate-100 pt-2">📖 Lamentações 2:11 — "Os meus olhos se gastaram de chorar; as minhas entranhas fermentaram; o meu fígado se derramou na terra."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-indigo-700 shadow">
+                    <p class="font-bold text-indigo-800 mb-1">🌅 Cap. 3: O CORAÇÃO do Livro — A Esperança!</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">O capítulo 3 é o clímax — bem no MEIO do livro. Jeremias está no seu ponto mais baixo... e aí ele para, lembra de Deus, e escreve os versículos mais bonitos. A esperança não está nas circunstâncias — está no caráter de Deus!</p>
+                    <p class="text-sm text-indigo-600 italic border-t border-indigo-100 pt-2">📖 Lamentações 3:22-23 — "As misericórdias do Senhor... renovam-se cada manhã; grande é a tua fidelidade."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-blue-600 shadow">
+                    <p class="font-bold text-blue-800 mb-1">🙏 Caps. 4–5: Oração pela Restauração</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Os últimos poemas descrevem mais sofrimento — mas terminam com uma oração ao Senhor: "Tu, porém, reinas para sempre! Restaura-nos a ti!" O livro termina não com desespero, mas com o rosto voltado para Deus.</p>
+                    <p class="text-sm text-blue-600 italic border-t border-blue-100 pt-2">📖 Lamentações 5:21 — "Restaura-nos a ti, Senhor, e seremos restaurados; renova os nossos dias como dantes."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="lamentacoes-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-stone-50 to-neutral-50 p-8 rounded-2xl border-4 border-stone-500">
-                    <h2 class="text-4xl font-black text-stone-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que <span class="font-bold text-stone-600">podemos conversar com Deus mesmo em tempos difíceis</span>, sendo honestos sobre nossa dor.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-stone-600">Deus sempre ouve nosso choro</span> e está presente em nosso sofrimento.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Nos ensina que <span class="font-bold text-stone-600">é normal sentir tristeza</span>, mas não devemos perder a esperança em Deus!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-slate-50 to-gray-100 p-5 rounded-2xl border-2 border-slate-300">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">💙 Chorar Não É Falta de Fé!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Lamentações nos diz que <strong class="text-slate-700">é permitido e saudável chorar</strong> — mesmo para quem crê em Deus. Deus não diz "pare de chorar". Ele diz "Eu ouço". Jesus também chorou (Jo 11:35). Trazer a dor honestamente a Deus é um ato de fé!
+                    </p>
+                    <div class="versiculo-card bg-slate-50 border-slate-600">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📖 Lamentações 3:55-56</p>
+                        <p class="text-gray-700 italic">"Invoquei o teu nome, ó Senhor, do fundo do abismo. Ouviste a minha voz."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-blue-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">🌄 A Esperança Mais Bela Nasce na Escuridão!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Lamentações 3:22-23 está no livro MAIS triste da Bíblia — e é um dos versículos mais cheios de esperança! Isso ensina que <strong class="text-indigo-700">a fidelidade de Deus não depende de como estamos nos sentindo</strong>. Ela é independente das circunstâncias!
+                    </p>
+                    <div class="versiculo-card bg-indigo-50 border-indigo-600">
+                        <p class="text-sm font-bold text-indigo-800 mb-1">📖 Lamentações 3:26</p>
+                        <p class="text-gray-700 italic">"É bom aguardar em silêncio a salvação do Senhor."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-50 to-slate-50 p-5 rounded-2xl border-2 border-blue-200">
+                    <h3 class="text-2xl font-bold text-blue-800 mb-3">✝️ Lamentações Aponta para Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jesus chorou sobre Jerusalém (Lc 19:41) — com as mesmas lágrimas de Jeremias. E na cruz, Jesus "bebeu o cálice" do julgamento que o povo sofreu, pagando por todos os nossos pecados. <strong class="text-blue-700">As misericórdias novas a cada manhã chegaram em definitivo com a ressurreição!</strong>
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="lamentacoes-importante.png" alt="Importância de Lamentações" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-4 border-blue-500">
-                        <h2 class="text-4xl font-black text-blue-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-blue-600">Mostrar que, mesmo em meio à dor</span>, ainda há esperança em Deus e em Sua fidelidade.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ensinar que <span class="font-bold text-blue-600">podemos trazer nossa tristeza a Deus</span>, pois Ele nos conforta e renova nossas forças!
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-indigo-50 to-blue-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="lamentacoes-proposito.png" alt="Propósito de Lamentações" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-slate-200 shadow">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">🗣️ Dar Voz à Dor</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Lamentações existe para dizer: <strong class="text-slate-700">sua dor tem um lugar diante de Deus</strong>. Você não precisa fingir que está bem. Não precisa ter respostas para todas as perguntas. Pode chegar diante de Deus chorando — e Ele ouve!
+                    </p>
+                    <div class="versiculo-card bg-slate-50 border-slate-600">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📖 Lamentações 3:40-41</p>
+                        <p class="text-gray-700 italic">"Sondemos os nossos caminhos e os examinemos, e tornemos para o Senhor. Levantemos o nosso coração com as mãos a Deus nos céus."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="lamentacoes-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-indigo-200 shadow">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">⚓ Ancorar a Esperança na Fidelidade de Deus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Em meio às ruínas, Jeremias ancora a esperança não em "as coisas vão melhorar" — mas em <strong class="text-indigo-700">"Deus é fiel"</strong>. A fidelidade de Deus é a âncora que segura mesmo quando a tempestade destrói tudo ao redor!
+                    </p>
+                    <div class="versiculo-card bg-indigo-50 border-indigo-600">
+                        <p class="text-sm font-bold text-indigo-800 mb-1">📖 Lamentações 3:24</p>
+                        <p class="text-gray-700 italic">"O Senhor é a minha porção, diz a minha alma; portanto, esperarei nEle."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-100 to-indigo-100 p-4 rounded-xl border-l-4 border-slate-700">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-slate-800">No livro mais triste da Bíblia está o versículo mais esperançoso — provando que a fidelidade de Deus brilha mais forte exatamente na maior escuridão!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="lamentacoes-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-4 border-amber-500">
-                    <h2 class="text-4xl font-black text-amber-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-amber-600">Mesmo sendo um livro triste</span>, há um dos versículos mais lindos sobre a fidelidade de Deus!
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-indigo-900">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-slate-50 to-indigo-50 p-6 rounded-2xl border-2 border-slate-200">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-slate-700 mb-4">
+                        <p class="text-gray-700">
+                            🔤 <strong>Poemas em forma de A-B-C!</strong> Lamentações é um acróstico hebraico — cada versículo começa com uma letra diferente do alfabeto hebraico (22 letras). É como escrever um poema onde cada linha começa com A, B, C... Jeremias chorou com arte e estrutura!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-amber-600">"As misericórdias do Senhor são novas a cada manhã"</span> (Lamentações 3:22-23)
+                    </div>
+
+                    <div class="bg-slate-100 p-4 rounded-xl border-l-4 border-slate-800 mb-4">
+                        <p class="text-gray-700">
+                            💎 <strong>O diamante no meio da lama:</strong> Lamentações 3:22-23 fica exatamente no CENTRO matemático do livro (capítulo 3 de 5, versículo 22-23 de 66 no capítulo mais longo). Parece que Jeremias colocou a joia da esperança bem no coração da dor!
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-amber-300">
-                            <p class="text-sm text-gray-700 italic">No meio da escuridão, a luz da esperança brilha! 🌅💛
-                                </br></br>
-                                As misericórdias do Senhor são a causa de não sermos consumidos, porque as suas misericórdias não têm fim. Renovam-se cada manhã; grande é a tua fidelidade.</br>Lamentações 3:22-23</p>
-                        </div>
+                    </div>
+
+                    <div class="bg-indigo-100 p-4 rounded-xl border-l-4 border-indigo-800">
+                        <p class="text-gray-700">
+                            ✡️ <strong>Judeus lêem Lamentações no Tisha B'Av:</strong> Todo ano, o povo judeu lê esse livro na data em que o Templo foi destruído — sentados no chão, com pouca luz, em sinal de luto. É uma prática de mais de 2.500 anos!
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="lamentacoes-curiosidade.png" alt="Curiosidades sobre Lamentações" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-slate-700/20 to-gray-700/20 border-2 border-slate-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-slate-50 to-indigo-50 p-8 mb-4 rounded-2xl border-2 border-slate-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-indigo-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-slate-700">
+                <p class="text-5xl text-center mb-4">😢</p>
+                <h3 class="text-xl font-bold text-slate-800 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Lamentações mostra que podemos ser honestos com Deus sobre a dor. <strong>Você já levou uma tristeza ou mágoa honestamente para Deus em oração? O que aconteceu? Ou por que ainda não fez isso?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-700">
+                <p class="text-5xl text-center mb-4">🌅</p>
+                <h3 class="text-xl font-bold text-indigo-800 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    "As misericórdias se renovam cada manhã." <strong>O que você acha que isso significa na prática? Como você pode começar o seu dia amanhã lembrando que as misericórdias de Deus são novas para você?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-blue-600">
+                <p class="text-5xl text-center mb-4">⚓</p>
+                <h3 class="text-xl font-bold text-blue-800 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jeremias perdeu tudo mas disse: "O Senhor é a minha porção." <strong>Se você perdesse tudo o que tem — casa, brinquedos, amigos — o que ainda sobraria? Deus seria suficiente para você?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-slate-800 to-indigo-950 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-slate-300 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-slate-800 mb-3">Leia Lamentações 3:19-33</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia os versículos 19 a 33 do capítulo 3 — a jornada de Jeremias da dor para a esperança. Identifique: <strong>em que versículo a virada acontece?</strong> O que muda na voz do escritor?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-indigo-800 mb-3">Memorize Lamentações 3:22-23</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"As misericórdias do Senhor renovam-se cada manhã"</strong> e cole perto da sua cama. Cada manhã ao acordar, leia em voz alta — como um lembrete de que Deus começou um novo dia de graça para você!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🌅</p>
+                <div class="bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-blue-800 mb-3">Diário do Amanhecer</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Por 5 manhãs seguidas, anote: <strong>"Uma misericórdia nova que recebi hoje foi..."</strong> Pode ser pequena: acordar, respirar, ter família. Depois compartilhe com alguém o que percebeu sobre a fidelidade de Deus!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-slate-700/20 to-indigo-900/20 border-2 border-slate-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../jeremias/jeremias.html"
-                class="bg-gradient-to-r from-slate-700 to-gray-600 hover:from-slate-800 hover:to-gray-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../jeremias/jeremias.html" class="bg-gradient-to-r from-orange-700 to-red-800 hover:from-orange-800 hover:to-red-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Jeremias
             </a>
-            <a href="../profetas-maiores.html"
-                class="bg-gradient-to-r from-gray-600 to-slate-700 hover:from-gray-700 hover:to-slate-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros Proféticos
+            <a href="../profetas-maiores.html" class="bg-gradient-to-r from-slate-700 to-indigo-900 hover:from-slate-800 hover:to-indigo-950 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Maiores
             </a>
-            <a href="../ezequiel/ezequiel.html"
-                class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../ezequiel/ezequiel.html" class="bg-gradient-to-r from-emerald-700 to-teal-800 hover:from-emerald-800 hover:to-teal-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Ezequiel ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-slate-600 to-gray-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Lamentações - Esperança na Tristeza ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-slate-700 to-indigo-900 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">💧 Livro de Lamentações — Esperança no Amanhecer 💧</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -346,5 +437,4 @@
         trilhoGame.visitarLivro('Lamentações');
     </script>
 </body>
-
 </html>

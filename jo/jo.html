@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Jó - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-800 hover:to-yellow-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,293 +28,416 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="jo-capa.png" alt="Capa: Jó" id="img-jo"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-jo">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-                <span>💪</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-gray-600 mx-2">
+                <span>🔥</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700 mx-2">
                     LIVRO DE JÓ
                 </span>
-                <span>💪</span>
+                <span>🔥</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Fé, Perseverança e Esperança — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-jo" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">O Homem que Saiu como Ouro — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-jo"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-slate-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-gray-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-jo" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-400">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
                 🌟 Os Três Segredos de Jó 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-700 mb-2">💪 1️⃣ A fé verdadeira resiste às tempestades</h3>
-                    <p>
-                        Jó perdeu tudo — família, saúde, bens materiais,<br>
-                        Mas sua fé em Deus não vacilou nos temporais.<br>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🔥 Primeiro Segredo: A Fé Verdadeira Resiste às Tempestades</h3>
+                    <p class="italic text-gray-800">
+                        Jó perdeu tudo — família, bens, saúde e mais,<br>
+                        Mas sua fé em Deus permaneceu firme demais.<br>
                         Mesmo chorando, sofrendo, sem entender,<br>
-                        Ele continuou confiando, sem se render!<br><br>
-
-                        🌪️ As tempestades vêm pra testar nosso coração,<br>
-                        Mas a fé verdadeira permanece firme na aflição.<br>
-                        Quando confiamos em Deus de verdade,<br>
-                        Nada nos separa da Sua bondade!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Jó 1:21-22</span>
+                        Ele continuou confiando, sem se render!<br>
+                        <span class="text-amber-700 font-semibold">As tempestades vêm pra testar nosso coração,<br>
+                        Mas a fé verdadeira permanece firme na aflição!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Jó 1:21 — "O Senhor deu, e o Senhor tirou; bendito seja o nome do Senhor."</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-700 mb-2">❓ 2️⃣ Nem sempre entendemos os planos de Deus</h3>
-                    <p>
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">❓ Segundo Segredo: Nem Sempre Entendemos os Planos de Deus</h3>
+                    <p class="italic text-gray-800">
                         Jó tinha muitas perguntas, queria respostas,<br>
-                        Por que tanto sofrimento? Por que tantas apostas?<br>
+                        Por que tanto sofrimento? Por que tais apostas?<br>
                         Mas Deus é maior, Seus caminhos são altos,<br>
-                        Às vezes não entendemos, mas Ele sabe os atalhos!<br><br>
-
-                        🤔 Não precisamos entender tudo que Deus faz,<br>
-                        Só precisamos confiar que Ele é capaz!<br>
-                        Sua sabedoria é perfeita e profunda,<br>
-                        E Seu amor por nós sempre abunda!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Jó 38:1-4</span>
+                        Às vezes não entendemos, mas Ele sabe os atalhos!<br>
+                        <span class="text-yellow-700 font-semibold">Não precisamos entender tudo que Deus faz,<br>
+                        Só precisamos confiar que Ele é capaz!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Jó 38:4 — "Onde estavas tu quando lancei os fundamentos da terra?"</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-slate-700 mb-2">🎁 3️⃣ Deus recompensa a perseverança</h3>
-                    <p>
-                        <b>O final da história</b> é lindo de ver,<br>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🎁 Terceiro Segredo: Deus Recompensa a Perseverança</h3>
+                    <p class="italic text-gray-800">
+                        O final da história é lindo de ver,<br>
                         Deus restaurou Jó, fez tudo florescer!<br>
-                        Deu o dobro de tudo que ele tinha perdido,<br>
-                        Porque Jó permaneceu firme e não foi vencido!<br><br>
-
-                        ✨ Quando passamos pelas lutas sem desistir,<br>
-                        Deus prepara bênçãos que vão nos surpreender e sorrir!<br>
-                        A recompensa de Deus é maior que a dor,<br>
-                        Ele restaura tudo com Seu imenso amor!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Jó 42:10-12</span>
+                        Deu o dobro de tudo que ele havia perdido,<br>
+                        Porque Jó permaneceu firme e não foi vencido!<br>
+                        <span class="text-orange-700 font-semibold">A recompensa de Deus é maior que a dor,<br>
+                        Ele restaura tudo com Seu imenso amor!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Jó 42:10 — "O Senhor restaurou a sorte de Jó... e o Senhor deu a Jó o dobro."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-slate-800">
-                        📘 Moral da história:<br>
-                        Confie em Deus nas tempestades,<br>
-                        Pois Ele transforma dor em felicidades! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgJo = document.getElementById("img-jo");
+        const img = document.getElementById("img-jo");
         const modal = document.getElementById("modal-jo");
         const closeModal = document.getElementById("close-modal");
-
-        imgJo.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="jo-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-amber-700 to-yellow-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-amber-300 text-center">
+                <p class="text-5xl mb-4">🔥</p>
+                <blockquote class="text-3xl font-black text-amber-700 leading-snug mb-4">
+                    "Mas ele conhece o meu caminho; se me provar, sairei como ouro."
+                </blockquote>
+                <p class="text-xl font-bold text-yellow-700 mb-6">Jó 23:10</p>
+                <div class="bg-amber-50 rounded-2xl p-4 border-2 border-amber-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jó disse isso no meio do sofrimento, quando ainda não via saída. O ouro precisa do fogo para ficar puro — e Deus usa as dificuldades para nos tornar mais preciosos do que éramos antes!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-8 rounded-2xl border-4 border-slate-500">
-                    <h2 class="text-4xl font-black text-slate-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-slate-600">Jó</span>, um homem bom e fiel que passou por grandes provações.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-slate-600">Sua esposa</span>, que também sofreu com as perdas.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Seus <span class="font-bold text-slate-600">três amigos</span>: Elifaz, Bildade e Zofar, que tentaram consolá-lo.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E <span class="font-bold text-slate-600">Deus</span>, que no final fala com Jó e restaura sua vida.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">🧔 Jó — O Homem Íntegro</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Jó era um homem bom, temente a Deus e afastado do mal. Perdeu tudo em um só dia — filhos, bens e saúde — mas nunca abandonou o Senhor, mesmo sem entender o porquê.
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-amber-500">
+                        <p class="text-sm font-bold text-amber-700 mb-1">📖 Leia na Bíblia — Jó 1:1</p>
+                        <p class="text-gray-700 italic">"Havia no país de Uz um homem chamado Jó; era esse homem íntegro e reto, temente a Deus e que se desviava do mal."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">👴 Os Três Amigos</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Elifaz, Bildade e Zofar vieram visitar Jó para consolá-lo. Por sete dias ficaram em silêncio — isso foi bom! Mas quando começaram a falar, disseram coisas erradas, acusando Jó de ter pecado.
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Leia na Bíblia — Jó 42:7</p>
+                        <p class="text-gray-700 italic">"Não falastes de mim o que é reto, como o fez o meu servo Jó."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🌪️ Deus no Turbilhão</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        No clímax do livro, Deus fala de dentro de um grande vento — o "turbilhão". Ele não dá explicações, mas faz 70 perguntas que mostram Sua grandeza infinita e a pequenez de tudo que imaginamos saber.
+                    </p>
+                    <div class="bg-white rounded-xl p-3 border-l-4 border-orange-500">
+                        <p class="text-sm font-bold text-orange-700 mb-1">📖 Leia na Bíblia — Jó 38:4</p>
+                        <p class="text-gray-700 italic">"Onde estavas tu quando lancei os fundamentos da terra? Dize-mo, se tens entendimento."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="jo-personagem.png" alt="Personagens de Jó" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-gray-50 to-zinc-50 p-8 rounded-2xl border-4 border-gray-500">
-                        <h2 class="text-4xl font-black text-gray-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Conta a história de <span class="font-bold text-gray-600">Jó, um homem bom e fiel</span> que perdeu tudo o que tinha.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ele perdeu <span class="font-bold text-gray-600">seus bens, sua família e sua saúde</span>, mas nunca deixou de confiar em Deus.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mesmo <span class="font-bold text-gray-600">em meio à dor e sem entender</span>, ele permaneceu com o coração firme e esperançoso.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-gray-600">42 capítulos</span> de sofrimento, questionamentos e restauração!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="jo-o-que-conta.png" alt="História de Jó" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 shadow text-center">
+                    <p class="text-sm font-bold text-amber-700 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Jó tem <strong>42 capítulos</strong> — o maior livro poético da Bíblia. Uma história de sofrimento, fé e restauração!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="jo-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-amber-700 mb-2">⚡ A Grande Provação de Jó</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-amber-600 shadow">
+                    <p class="font-bold text-amber-700 mb-1">⚡ Capítulos 1–2 — A Queda</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jó perde filhos, bens e saúde num só dia. Satanás tentou provar que Jó só amava Deus pelas bênçãos — mas errou!</p>
+                    <p class="text-sm text-amber-600 italic border-t border-amber-100 pt-2">📖 Jó 1:21 — "O Senhor deu, e o Senhor tirou; bendito seja o nome do Senhor."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-yellow-600 shadow">
+                    <p class="font-bold text-yellow-700 mb-1">🗣️ Capítulos 3–37 — Os Debates</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jó e seus amigos debatem por longos capítulos. Os amigos erram ao julgar; Jó erra ao reclamar demais — mas nunca desiste de buscar Deus.</p>
+                    <p class="text-sm text-yellow-600 italic border-t border-yellow-100 pt-2">📖 Jó 13:15 — "Ainda que ele me mate, nele esperarei."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-orange-600 shadow">
+                    <p class="font-bold text-orange-700 mb-1">🌪️ Capítulos 38–41 — Deus Fala</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus aparece no turbilhão e faz perguntas majestosas sobre a criação. Jó percebe o quanto Deus é maior e se humilha.</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Jó 38:4 — "Onde estavas tu quando lancei os fundamentos da terra?"</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-amber-800 shadow">
+                    <p class="font-bold text-amber-800 mb-1">🌅 Capítulo 42 — A Restauração</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jó ora pelos amigos que o magoaram. Deus restaura tudo — e dá a Jó o dobro do que ele tinha antes!</p>
+                    <p class="text-sm text-amber-700 italic border-t border-amber-200 pt-2">📖 Jó 42:10 — "E o Senhor deu a Jó o dobro de tudo o que ele tivera antes."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="jo-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-stone-50 to-neutral-50 p-8 rounded-2xl border-4 border-stone-500">
-                    <h2 class="text-4xl font-black text-stone-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que, <span class="font-bold text-stone-600">mesmo quando as coisas parecem dar errado</span>, Deus continua conosco.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina a <span class="font-bold text-stone-600">confiar em Deus</span>, mesmo sem entender tudo o que acontece.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Revela que <span class="font-bold text-stone-600">o sofrimento não significa que Deus nos abandonou</span> — Ele está sempre presente!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">💪 Deus Permanece Fiel!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O livro de Jó ensina que <strong class="text-amber-600">sofrimento não significa que Deus nos abandonou</strong>. Ele estava presente do começo ao fim — inclusive no momento em que Jó mais sofreu.
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-amber-500">
+                        <p class="text-sm font-bold text-amber-700 mb-1">📖 Jó 1:8</p>
+                        <p class="text-gray-700 italic">"Consideraste o meu servo Jó? Porque ninguém há na terra semelhante a ele."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🙏 Fé Não é Ausência de Dúvidas</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Jó chorou, reclamou e questionou Deus — mas <strong class="text-yellow-600">nunca O abandonou</strong>. Isso mostra que é normal ter perguntas difíceis, desde que continuemos buscando Deus com honestidade.
+                    </p>
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Jó 13:15</p>
+                        <p class="text-gray-700 italic">"Ainda que ele me mate, nele esperarei."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🌅 Deus Restaura e Recompensa</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quem persevera na fé recebe de Deus mais do que perdeu. <strong class="text-orange-600">A última parte da vida de Jó foi melhor que a primeira</strong> — prova de que Deus não deixa de cuidar dos Seus filhos!
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="jo-importante.png" alt="Importância de Jó" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border-4 border-blue-500">
-                        <h2 class="text-4xl font-black text-blue-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-blue-600">Ensinar que a fé verdadeira permanece firme</span> mesmo nas dificuldades e nas tempestades da vida.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostrar que <span class="font-bold text-blue-600">Deus recompensa quem continua confiando</span> em Seu amor, mesmo quando não entende Seus planos.
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="jo-proposito.png" alt="Propósito de Jó" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-amber-200 shadow">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🤔 Responder à Pergunta Mais Antiga</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        "Por que pessoas boas sofrem?" é a pergunta mais antiga da humanidade. Jó mostra que nem sempre Deus dá a resposta — mas sempre dá <strong class="text-amber-600">a Si mesmo</strong>.
+                    </p>
+                    <div class="bg-amber-50 p-3 rounded-xl border-l-4 border-amber-500">
+                        <p class="text-sm font-bold text-amber-700 mb-1">📖 Jó 42:5</p>
+                        <p class="text-gray-700 italic">"Eu te conhecia só de ouvir, mas agora os meus olhos te veem."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="jo-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-yellow-200 shadow">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🔥 Ensinar sobre Soberania de Deus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Deus está no controle de tudo — mesmo do que não entendemos. <strong class="text-yellow-600">Seus planos são maiores e mais sábios</strong> do que nossa mente pode imaginar.
+                    </p>
+                    <div class="bg-yellow-50 p-3 rounded-xl border-l-4 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Jó 38:4</p>
+                        <p class="text-gray-700 italic">"Onde estavas tu quando lancei os fundamentos da terra? Dize-mo, se tens entendimento."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-4 rounded-xl border-l-4 border-orange-500">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-amber-700">Confiar em Deus mesmo sem entender — pois Ele é bom, soberano e sempre nos restaura!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="jo-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-4 border-emerald-500">
-                    <h2 class="text-4xl font-black text-emerald-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-emerald-600">Jó é um dos livros mais antigos da Bíblia!</span>
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4">📜 O Livro Mais Antigo da Bíblia!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Muitos estudiosos acreditam que Jó é o <strong class="text-amber-600">livro mais antigo de toda a Bíblia</strong> — possivelmente mais antigo até que os livros de Moisés!
+                    </p>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-yellow-500 mb-4">
+                        <p class="text-gray-700">
+                            🌌 <strong>Ciência no turbilhão:</strong> Nos capítulos 38 a 41, Deus faz perguntas sobre estrelas, neve, raio, gravidade e animais — uma aula de astronomia, meteorologia e zoologia em forma de poesia!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E no final da história, <span class="font-bold text-emerald-600">Deus deu a ele o dobro de tudo o que havia perdido!</span>
+                    </div>
+
+                    <div class="bg-amber-100 p-4 rounded-xl border-l-4 border-amber-600 mb-4">
+                        <p class="text-gray-700">
+                            ✝️ <strong>Conexão com Jesus:</strong> No meio do sofrimento, Jó declarou: <em>"Eu sei que o meu Redentor vive!"</em> — uma profecia sobre Jesus, que ressuscitou e vive para sempre! (Hb 7:25)
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-emerald-300">
-                            <p class="text-sm text-gray-700 italic">Deus sempre restaura e abençoa quem permanece fiel! 🙌✨
-                                </br></br>
-                                O Senhor abençoou o final da vida de Jó mais do que o início. Ele possuiu catorze mil ovelhas, seis mil camelos, mil juntas de bois e mil jumentas.</br>Jó 42:12</p>
-                        </div>
+                    </div>
+
+                    <div class="bg-yellow-100 p-4 rounded-xl border-l-4 border-yellow-600">
+                        <p class="text-gray-700">
+                            🥇 <strong>O dobro de tudo:</strong> No final, Jó recebeu 14.000 ovelhas, 6.000 camelos, 1.000 juntas de bois e 1.000 jumentas — exatamente o dobro do que tinha antes!
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="jo-curiosidade.png" alt="Curiosidades sobre Jó" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-slate-700/20 to-gray-700/20 border-2 border-slate-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4 rounded-2xl border-2 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-amber-600">
+                <p class="text-5xl text-center mb-4">💪</p>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jó perdeu tudo em um dia, mas disse "bendito seja o nome do Senhor". <strong>Você já passou por algo muito difícil e conseguiu confiar em Deus assim mesmo?</strong> Como foi?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-yellow-600">
+                <p class="text-5xl text-center mb-4">👥</p>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Os amigos de Jó tentaram ajudar mas disseram coisas erradas. <strong>Quando um amigo está triste, como você age? O que ajuda mais — explicar ou só estar presente?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-600">
+                <p class="text-5xl text-center mb-4">🌪️</p>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus não explicou a Jó por que tudo aconteceu — mas Jó continuou confiando. <strong>É difícil confiar em Deus quando você não entende? O que te ajuda a confiar mesmo sem entender?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-amber-800 to-yellow-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-amber-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3">Leia em Voz Alta</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia <strong>Jó capítulo 1</strong> e depois o <strong>capítulo 42</strong> para alguém da sua família. Veja como a história começa na tragédia e termina com o dobro de bênçãos!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🔥</p>
+                <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3">Versículo do Ouro</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Memorize Jó 23:10: <strong>"Se me provar, sairei como ouro."</strong> Escreva num papel colorido e cole no seu quarto. Esta semana, quando algo difícil acontecer, lembre esse versículo!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">❤️</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3">Ore por Quem Magoou</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Jó foi restaurado quando orou pelos amigos que o magoaram. Pense em alguém que te feriu com palavras ou ações. Esta semana, ore por essa pessoa de verdade — e veja o que acontece no seu coração!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-700/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../poeticos.html"
-                class="bg-gradient-to-r from-slate-700 to-gray-600 hover:from-slate-800 hover:to-gray-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                ⬅️ Ver Livros Poéticos
+            <a href="../ester/ester.html" class="bg-gradient-to-r from-fuchsia-600 to-purple-700 hover:from-fuchsia-700 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Ester
             </a>
-            <a href="../salmos/salmos.html"
-                class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../poeticos.html" class="bg-gradient-to-r from-amber-700 to-yellow-700 hover:from-amber-800 hover:to-yellow-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Ver Livros Poéticos
+            </a>
+            <a href="../salmos/salmos.html" class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Salmos ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-slate-600 to-gray-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Jó - Fé e Perseverança ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-amber-700 to-yellow-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🔥 Livro de Jó — Sofrimento, Fé e Restauração 🔥</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -348,5 +446,4 @@
         trilhoGame.visitarLivro('Jó');
     </script>
 </body>
-
 </html>

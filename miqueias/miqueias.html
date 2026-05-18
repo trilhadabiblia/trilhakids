@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,55 +32,61 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>⚖️</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700 mx-2">
                     LIVRO DE MIQUEIAS
                 </span>
-                <span>⚖️</span>
+                <span>🕊️</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">Justiça, Misericórdia e Esperança — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">Justiça, Misericórdia e a Profecia de Belém — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-miqueias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-300">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
                 🌟 Os Três Segredos de Miqueias 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Primeiro Segredo: A Balança da Justiça</h3>
+
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-purple-700">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">⚖️ Primeiro Segredo: O Que Deus Quer de Você é Simples!</h3>
                     <p class="italic text-gray-800">
-                        Deus não gosta de ver o mal,<br>
-                        Quando os fortes fazem o mal aos pequeninos.<br>
-                        Miqueias bradou com voz celestial:<br>
-                        "Pratiquem justiça em todos os caminhos!"<br>
-                        <span class="text-purple-600 font-semibold mt-2 block">— Miqueias 6:8</span>
+                        Não precisa de mil regras complicadas,<br>
+                        Nem de rituais ou ofertas exageradas.<br>
+                        Deus já disse tudo em três palavras claras:<br>
+                        Justiça, bondade e humildade — são as mais raras!<br>
+                        <span class="text-purple-800 font-semibold">Praticar justiça, amar a misericórdia,<br>
+                        E andar humildemente — essa é toda a teoria!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Miqueias 6:8 — "O que o Senhor requer de ti: que pratiques a justiça, e ames a misericórdia, e andes humildemente com o teu Deus."</p>
                 </div>
 
-                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">💝 Segundo Segredo: O Coração Bondoso</h3>
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-2xl border-l-4 border-indigo-700">
+                    <h3 class="text-2xl font-bold text-indigo-800 mb-3">🌟 Segundo Segredo: Belém Seria o Berço do Rei!</h3>
                     <p class="italic text-gray-800">
-                        Não basta apenas saber o que é certo,<br>
-                        Deus quer que amemos a bondade de coração aberto.<br>
-                        Como um abraço quentinho e afetuoso,<br>
-                        Sejamos gentis, amorosos e generosos!<br>
-                        <span class="text-indigo-600 font-semibold mt-2 block">— Miqueias 6:8</span>
+                        Setecentos anos antes de Ele nascer,<br>
+                        Miqueias disse onde Deus viria aparecer!<br>
+                        "Belém pequena, de onde sairá o governante,<br>
+                        Cujas origens são desde os tempos distantes!"<br>
+                        <span class="text-indigo-800 font-semibold">Quando os magos perguntaram onde estava o Rei,<br>
+                        O sacerdote abriu Miqueias e mostrou: "É aqui!"</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Miqueias 5:2 — "E tu, Belém Efrata... de ti me sairá o que há de reinar em Israel." (Citado em Mateus 2:6!)</p>
                 </div>
 
-                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🌟 Terceiro Segredo: A Estrela de Belém</h3>
+                <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-2xl border-l-4 border-purple-800">
+                    <h3 class="text-2xl font-bold text-purple-900 mb-3">🌊 Terceiro Segredo: Deus Joga Nossos Pecados no Mar!</h3>
                     <p class="italic text-gray-800">
-                        Miqueias viu com olhos proféticos,<br>
-                        Que em Belém nasceria o Salvador.<br>
-                        Séculos antes, em versos poéticos,<br>
-                        Anunciou a vinda do Redentor!<br>
-                        <span class="text-purple-600 font-semibold mt-2 block">— Miqueias 5:2</span>
+                        "Quem é como o Senhor?" — o próprio nome de Miqueias pergunta!<br>
+                        Nenhum deus existe que perdoa assim, que restaura e abençoa!<br>
+                        Ele lança nossos pecados no fundo do mar azul,<br>
+                        E os pisa com os pés, sem guardá-los — isso é o que é Jesus!<br>
+                        <span class="text-purple-900 font-semibold">O perdão de Deus não arquiva o erro para cobrar depois,<br>
+                        Ele o joga no mar tão fundo que não aparece mais!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Miqueias 7:19 — "Tornará a ter misericórdia de nós; pisará aos pés as nossas iniquidades; e lançarás todos os nossos pecados nas profundezas do mar."</p>
                 </div>
 
             </div>
@@ -96,188 +103,358 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-purple-700 to-indigo-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💜 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-purple-300 text-center">
+                <p class="text-5xl mb-4">⚖️</p>
+                <blockquote class="text-2xl font-black text-purple-800 leading-snug mb-4">
+                    "O que o Senhor requer de ti: que pratiques a justiça, e ames a misericórdia, e andes humildemente com o teu Deus."
+                </blockquote>
+                <p class="text-xl font-bold text-indigo-700 mb-6">Miqueias 6:8</p>
+                <div class="bg-purple-50 rounded-2xl p-4 border-2 border-purple-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Em três frases, Miqueias resumiu tudo o que a Bíblia ensina sobre como viver. Jesus disse o mesmo de forma diferente: "Amar a Deus de todo coração e amar o próximo como a si mesmo" (Mt 22:37-40). Miqueias 6:8 e Jesus apontam para a mesma direção!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-violet-100 text-violet-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-            👥 Quem são os personagens principais?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+            👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="miqueias-personagem.png" alt="Personagens de Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-5 rounded-2xl border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-2">📣 Miqueias — O Profeta do Povo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Miqueias era de Moresete, uma pequena aldeia no interior de Judá. Não era da corte, não era sacerdote — era um homem do campo. Seu nome significa <em>"Quem é como o Senhor?"</em>, e o próprio livro termina respondendo: ninguém! Ele profetizou durante os reinados de Jotão, Acaz e Ezequias (735–700 a.C.).
+                    </p>
+                    <div class="versiculo-card bg-purple-50 border-purple-600">
+                        <p class="text-sm font-bold text-purple-800 mb-1">📖 Leia na Bíblia — Miqueias 3:8</p>
+                        <p class="text-gray-700 italic">"Mas eu estou cheio de poder, do Espírito do Senhor, e de juízo e força, para declarar a Jacó a sua transgressão."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">👑 Líderes Corruptos — Juízes, Sacerdotes e Profetas</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Os alvos das denúncias de Miqueias eram os que deveriam liderar com justiça: juízes que aceitavam suborno, sacerdotes que ensinavam por dinheiro, e profetas falsos que pregavam só o que as pessoas queriam ouvir. Miqueias os confrontou sem rodeios!
+                    </p>
+                    <div class="versiculo-card bg-indigo-50 border-indigo-600">
+                        <p class="text-sm font-bold text-indigo-800 mb-1">📖 Leia na Bíblia — Miqueias 3:11</p>
+                        <p class="text-gray-700 italic">"Os seus chefes julgam por suborno, os seus sacerdotes ensinam por interesse, os seus profetas profetizam por dinheiro."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-5 rounded-2xl border-2 border-purple-300">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-2">🏚️ Os Pobres de Israel e Judá</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Os ricos cobiçavam e roubavam as casas e os campos dos mais pobres (2:2). Era uma época de prosperidade material — mas construída sobre exploração. Miqueias falou em nome dos que ninguém ouvia, exatamente como Amós havia feito ao norte.
+                    </p>
+                    <div class="versiculo-card bg-purple-50 border-purple-500">
+                        <p class="text-sm font-bold text-purple-800 mb-1">📖 Leia na Bíblia — Miqueias 2:2</p>
+                        <p class="text-gray-700 italic">"Cobiçam campos e os roubam, e casas, e as tomam; assim oprimem o homem e a sua casa."</p>
+                    </div>
+                </div>
+
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">📣 Miqueias - O Profeta da Justiça</h3>
-                    <p class="text-gray-700 text-lg">
-                        Miqueias era um profeta corajoso que vivia no campo. Ele não tinha medo de falar a verdade aos poderosos! 
-                        Seu nome significa "Quem é como o Senhor?" e ele mostrou que Deus se importa com os pobres e oprimidos.
-                    </p>
-                </div>
-                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-2">👑 Líderes de Israel e Judá</h3>
-                    <p class="text-gray-700 text-lg">
-                        Os reis, juízes e sacerdotes que estavam fazendo coisas erradas. Miqueias os repreendeu por não cuidarem 
-                        do povo com justiça e por se afastarem de Deus.
-                    </p>
-                </div>
+            <div class="order-1 md:order-2">
+                <img src="miqueias-personagem.png" alt="Personagens de Miqueias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
     <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-            📖 O que o livro conta?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Denúncia da Injustiça</h3>
-                    <p class="text-gray-700 text-lg">
-                        Miqueias viu que os líderes estavam sendo cruéis com os pobres, roubando suas terras e não seguindo 
-                        as leis de Deus. Ele bradou contra essas injustiças com voz forte e clara!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌟 A Profecia do Messias</h3>
-                    <p class="text-gray-700 text-lg">
-                        Em meio às mensagens de julgamento, Miqueias trouxe uma esperança maravilhosa: ele profetizou que 
-                        o Salvador nasceria em Belém, uma pequena cidade! Essa profecia se cumpriu com Jesus!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💝 O Que Deus Requer</h3>
-                    <p class="text-gray-700 text-lg">
-                        Miqueias ensinou o versículo mais famoso do livro: Deus quer que pratiquemos a justiça, 
-                        amemos a bondade e andemos humildemente com Ele. Simples e poderoso!
-                    </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="miqueias-o-que-conta.png" alt="História de Miqueias" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-purple-200 shadow text-center">
+                    <p class="text-sm font-bold text-purple-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Miqueias tem <strong>7 capítulos</strong>. Cap. 5:2 tem a profecia de Belém; cap. 6:8 tem o versículo mais famoso; cap. 7:18-19 tem uma das mais belas declarações de perdão da Bíblia!</p>
                 </div>
             </div>
-            <div>
-                <img src="miqueias-o-que-conta.png" alt="O que Miqueias conta" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-purple-700 mb-2">📜 Três Grandes Ciclos</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-purple-700 shadow">
+                    <p class="font-bold text-purple-800 mb-1">⚖️ Ciclo 1 (Cap. 1–2): Julgamento e Esperança</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Miqueias anuncia o julgamento que vem sobre Samaria e Jerusalém por causa da idolatria e da exploração dos pobres. Os ricos roubam casas e campos. Mas termina com uma promessa: um "Abre Caminho" que irá à frente do povo reunido de volta para Deus!</p>
+                    <p class="text-sm text-purple-600 italic border-t border-purple-100 pt-2">📖 Miqueias 2:13 — "Subirá o que abre o caminho diante deles... e o Senhor à sua frente."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-indigo-700 shadow">
+                    <p class="font-bold text-indigo-800 mb-1">🌟 Ciclo 2 (Cap. 3–5): Os Líderes e o Rei de Belém</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Miqueias condena os líderes corruptos e profetiza que Jerusalém será arrasada. Mas então vem a visão mais gloriosa: na era messiânica, as nações virão a Sião para aprender os caminhos de Deus, as espadas virarão arados — e de Belém sairá o grande Pastor de Israel!</p>
+                    <p class="text-sm text-indigo-600 italic border-t border-indigo-100 pt-2">📖 Miqueias 5:2 — "E tu, Belém Efrata... de ti me sairá o que há de reinar em Israel."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-violet-600 shadow">
+                    <p class="font-bold text-violet-800 mb-1">💜 Ciclo 3 (Cap. 6–7): O Tribunal de Deus e o Perdão</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus "processa" Israel como num tribunal: "O que te fiz? Em que te cansei?" Depois vem o versículo mais famoso (6:8). O livro termina com a mais bela declaração de perdão: Deus lança os pecados nas profundezas do mar e ninguém é como Ele!</p>
+                    <p class="text-sm text-violet-600 italic border-t border-violet-100 pt-2">📖 Miqueias 7:19 — "Lançarás todos os nossos pecados nas profundezas do mar."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-            💎 Por que é importante?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="miqueias-importante.png" alt="Importância de Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-5 rounded-2xl border-2 border-purple-200">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">📋 O Resumo de Toda a Lei!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Miqueias 6:8 resume em três imperativos tudo o que Deus quer: <strong class="text-purple-700">agir com justiça</strong> (na vida prática), <strong class="text-purple-700">amar a misericórdia</strong> (no coração) e <strong class="text-purple-700">andar humildemente com Deus</strong> (no relacionamento). Jesus disse que esses três são o coração de toda a Lei (Mt 22:37-40)!
+                    </p>
+                    <div class="versiculo-card bg-purple-50 border-purple-600">
+                        <p class="text-sm font-bold text-purple-800 mb-1">📖 Miqueias 6:8</p>
+                        <p class="text-gray-700 italic">"Que pratiques a justiça, e ames a misericórdia, e andes humildemente com o teu Deus."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-5 rounded-2xl border-2 border-indigo-200">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌊 O Perdão Mais Profundo!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Miqueias 7:19 diz que Deus lança nossos pecados <em>"nas profundezas do mar"</em>. Não arquiva para cobrar depois. Não fica lembrando. Joga fora de vez! <strong class="text-indigo-700">Esse é o perdão de Deus</strong> — total, definitivo e irrecuperável.
+                    </p>
+                    <div class="versiculo-card bg-indigo-50 border-indigo-600">
+                        <p class="text-sm font-bold text-indigo-800 mb-1">📖 Miqueias 7:18</p>
+                        <p class="text-gray-700 italic">"Quem é um Deus como tu, que perdoa a iniquidade e passa por cima da transgressão?"</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-violet-50 p-5 rounded-2xl border-2 border-purple-300">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3">✝️ A Profecia Mais Precisa Sobre Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Miqueias 5:2 é a única profecia bíblica que indica o <strong class="text-purple-800">lugar exato do nascimento do Messias</strong>. 700 anos antes, Deus já havia escolhido Belém. Quando os magos chegaram, o rei Herodes convocou os sacerdotes — e eles abriram Miqueias!
+                    </p>
+                </div>
+
             </div>
-            <div class="order-1 md:order-2 space-y-4">
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ A Receita de Deus para uma Vida Boa</h3>
-                    <p class="text-gray-700 text-lg">
-                        Miqueias 6:8 é como uma receita divina! Ele nos ensina exatamente o que Deus espera de nós: 
-                        ser justo, amar fazer o bem e caminhar com humildade ao lado de Deus. Não é complicado!
-                    </p>
-                </div>
-                <div class="bg-indigo-50 p-6 rounded-xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">💝 Deus Se Importa com os Pequenos</h3>
-                    <p class="text-gray-700 text-lg">
-                        Este livro mostra que Deus vê quando alguém é maltratado. Ele defende os fracos e quer que 
-                        façamos o mesmo. Somos chamados a ser a voz dos que não têm voz!
-                    </p>
-                </div>
-                <div class="bg-purple-50 p-6 rounded-xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🌟 Esperança no Messias</h3>
-                    <p class="text-gray-700 text-lg">
-                        A profecia sobre Belém nos lembra que Deus sempre cumpre Suas promessas. Mesmo nos momentos 
-                        difíceis, há esperança de salvação e restauração!
-                    </p>
-                </div>
+            <div class="order-1 md:order-2">
+                <img src="miqueias-importante.png" alt="Importância de Miqueias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-            🎯 Propósito do livro
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Deus é Justo</h3>
-                    <p class="text-gray-700 text-lg">
-                        Miqueias nos lembra que Deus não ignora o pecado e a injustiça. Ele é um juiz justo que 
-                        defende o que é certo e corrige o que está errado. Sua justiça é perfeita!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">💝 Deus é Misericordioso</h3>
-                    <p class="text-gray-700 text-lg">
-                        Mas Deus não é apenas justo - Ele também é cheio de misericórdia! Mesmo quando Seu povo 
-                        errava, Ele oferecia perdão e uma nova chance. Que amor maravilhoso!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🌈 O Equilíbrio Perfeito</h3>
-                    <p class="text-gray-700 text-lg">
-                        O livro mostra o equilíbrio perfeito entre a justiça e a misericórdia de Deus. Ele não 
-                        tolera o mal, mas sempre oferece restauração para quem se arrepende sinceramente.
-                    </p>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="miqueias-proposito.png" alt="Propósito de Miqueias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
-            <div>
-                <img src="miqueias-proposito.png" alt="Propósito de Miqueias" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-purple-200 shadow">
+                    <h3 class="text-2xl font-bold text-purple-700 mb-3">⚖️ Confrontar Líderes com a Realidade</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Miqueias falou verdades duras para quem estava no poder: juízes, sacerdotes e profetas que usavam a religião para se beneficiar enquanto oprimiam o povo. O livro mostra que <strong class="text-purple-700">Deus responsabiliza os líderes</strong> de forma especial pela forma como tratam os vulneráveis.
+                    </p>
+                    <div class="versiculo-card bg-purple-50 border-purple-500">
+                        <p class="text-sm font-bold text-purple-800 mb-1">📖 Miqueias 3:1</p>
+                        <p class="text-gray-700 italic">"Ouvi, pois, cabeças de Jacó, e príncipes da casa de Israel: Não é da vossa obrigação conhecer o juízo?"</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-indigo-200 shadow">
+                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">🌟 Apontar para o Rei que Vem de Belém</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        No meio do julgamento, Miqueias aponta para além do momento presente: <strong class="text-indigo-700">um Governante perfeito está a caminho</strong>. Não de Jerusalém — mas de Belém, a pequena cidade de Davi. Ele pastoreará o povo "no poder do Senhor" e sua grandeza chegará aos confins da terra!
+                    </p>
+                    <div class="versiculo-card bg-indigo-50 border-indigo-500">
+                        <p class="text-sm font-bold text-indigo-800 mb-1">📖 Miqueias 5:4</p>
+                        <p class="text-gray-700 italic">"E ele estará e apascentará o rebanho na força do Senhor... e este será a paz."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-4 rounded-xl border-l-4 border-purple-700">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-purple-800">Deus é ao mesmo tempo Juiz e Pai amoroso. Ele não tolera injustiça — especialmente dos líderes. Mas também joga os nossos pecados no fundo do mar quando nos arrependemos. E preparou tudo — até a cidade do nascimento do Salvador — com séculos de antecedência!</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Você sabia? -->
+    <!-- Seção 5: Você Sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
-            🤔 Você sabia?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+            🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <img src="miqueias-curiosidade.png" alt="Curiosidade sobre Miqueias" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-purple-100 to-indigo-100 p-8 rounded-2xl shadow-xl border-4 border-purple-300">
-                    <h3 class="text-3xl font-black text-purple-700 mb-4">🌟 A Profecia Mais Precisa!</h3>
-                    <p class="text-gray-800 text-xl leading-relaxed mb-4">
-                        Miqueias profetizou o local EXATO onde Jesus nasceria - Belém! Isso aconteceu cerca de 
-                        700 anos ANTES de Jesus nascer! 
-                    </p>
-                    <p class="text-gray-800 text-xl leading-relaxed mb-4">
-                        Quando os magos do Oriente perguntaram ao rei Herodes onde nasceria o Rei dos Judeus, 
-                        os sacerdotes citaram a profecia de Miqueias 5:2!
-                    </p>
-                    <p class="text-gray-800 text-xl leading-relaxed">
-                        É incrível como Deus planejou tudo com antecedência e cumpriu cada detalhe perfeitamente! 
-                        Ele é o Deus que vê o futuro e controla a história! 🎯✨
-                    </p>
+                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-6 rounded-2xl border-2 border-purple-200">
+                    <h3 class="text-3xl font-bold text-purple-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-purple-700 mb-4">
+                        <p class="text-gray-700">
+                            🎄 <strong>Os sacerdotes usaram Miqueias no Natal:</strong> Quando os Magos chegaram à Jerusalém perguntando onde nasceria o Rei dos Judeus, Herodes chamou os sacerdotes — e eles abriram Miqueias 5:2 para responder: "Em Belém da Judeia!" (Mateus 2:5-6). A profecia de 700 anos guiou os Magos até Jesus!
+                        </p>
+                    </div>
+
+                    <div class="bg-purple-100 p-4 rounded-xl border-l-4 border-purple-800 mb-4">
+                        <p class="text-gray-700">
+                            🔁 <strong>Igual a Isaías — palavra por palavra:</strong> Miqueias 4:1-3 e Isaías 2:2-4 são praticamente idênticos — a visão das espadas virando arados e todas as nações vindo a Sião. Dois profetas contemporâneos receberam a mesma visão independentemente!
+                        </p>
+                    </div>
+
+                    <div class="bg-indigo-100 p-4 rounded-xl border-l-4 border-indigo-800">
+                        <p class="text-gray-700">
+                            📜 <strong>Citado por Jeremias 100 anos depois:</strong> Em Jeremias 26:18, os anciãos de Judá citam Miqueias 3:12 para defender Jeremias de ser morto. Eles disseram: "Miqueias disse a mesma coisa no tempo de Ezequias, e o rei não o matou!" O livro de Miqueias era tão conhecido que foi usado como argumento jurídico!
+                        </p>
+                    </div>
                 </div>
             </div>
+            <div class="order-1 md:order-2">
+                <img src="miqueias-curiosidade.png" alt="Curiosidades sobre Miqueias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 rounded-3xl shadow-xl border-t-8 border-purple-600 p-8 mb-4 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-black text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-700">
+            ✝️ Miqueias Aponta para Jesus
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-4 text-lg text-gray-700">
+                <p class="leading-relaxed">
+                    <span class="font-bold text-purple-700">Miqueias 5:2</span> — "de ti, Belém, me sairá o que há de reinar em Israel" — é a única profecia do AT que indica o <strong>lugar exato</strong> do nascimento do Messias. Mateus 2:6 mostra os sacerdotes citando exatamente esse versículo para os Magos.
+                </p>
+                <p class="leading-relaxed">
+                    <span class="font-bold text-indigo-700">Miqueias 6:8</span> resume o que Jesus chamou de "os pontos mais importantes da Lei" (Mt 23:23): justiça, misericórdia e fidelidade. Jesus veio para cumprir e encarnar exatamente o que Miqueias pregou!
+                </p>
+                <p class="leading-relaxed">
+                    <span class="font-bold text-purple-700">Miqueias 7:19</span> — "lançarás nossos pecados nas profundezas do mar" — aponta para o perdão completo que Jesus conquistou na cruz. João 1:29 confirma: Jesus é o <em>"Cordeiro de Deus que tira o pecado do mundo"</em>!
+                </p>
+            </div>
+            <div class="versiculo-card border-purple-500 bg-white text-lg">
+                <p class="font-bold text-purple-700 mb-2">Os sacerdotes guiam os Magos com Miqueias</p>
+                <p class="italic text-gray-700 mb-3">"E tu, Belém, terra de Judá, de modo algum és a menor entre os príncipes de Judá; porque de ti sairá o Guia que há de apascentar o meu povo Israel."</p>
+                <p class="font-bold text-purple-600">📖 Mateus 2:6 (citando Miqueias 5:2)</p>
+                <p class="text-sm text-gray-500 mt-2">700 anos depois de Miqueias escrever, os sacerdotes de Herodes abriram exatamente esse versículo. Deus havia marcado o endereço do Salvador na Bíblia muito antes de Ele nascer!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4 rounded-2xl border-2 border-purple-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-800 to-indigo-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-purple-700">
+                <p class="text-5xl text-center mb-4">⚖️</p>
+                <h3 class="text-xl font-bold text-purple-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Miqueias 6:8 diz: praticar justiça, amar misericórdia, andar humildemente. <strong>Qual dos três você acha mais fácil de fazer? E qual é o mais difícil? Por quê?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-indigo-600">
+                <p class="text-5xl text-center mb-4">🌊</p>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus joga nossos pecados no fundo do mar. <strong>Você já se sentiu com vergonha de algum erro e achou que Deus não poderia perdoar? Como Miqueias 7:19 muda o jeito de você enxergar isso?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-violet-600">
+                <p class="text-5xl text-center mb-4">🌟</p>
+                <h3 class="text-xl font-bold text-violet-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Miqueias profetizou Belém 700 anos antes. <strong>O que isso diz sobre o planejamento de Deus? Tem algo na sua vida que parece sem direção — como você pode confiar que Deus já vê o futuro?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-purple-800 to-indigo-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-purple-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">⚖️</p>
+                <div class="bg-purple-100 text-purple-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-purple-700 mb-3">Viva Miqueias 6:8</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Esta semana, escolha <strong>um ato concreto de justiça, um de misericórdia e um de humildade</strong>. Anote o que você fez cada dia. No final da semana, compartilhe com alguém o que aprendeu!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🌊</p>
+                <div class="bg-indigo-100 text-indigo-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-indigo-700 mb-3">Jogue no mar!</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva num papel algo que você precisa pedir perdão a Deus. Ore, confesse — e depois rasgue o papel em pedaços. <strong>Deus jogou no fundo do mar. Não precisa mais carregar isso!</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-violet-100 text-violet-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-violet-700 mb-3">Memorize Miqueias 6:8</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"Praticar a justiça, amar a misericórdia e andar humildemente com teu Deus"</strong> e cole em algum lugar visível. Deixe esse versículo guiar suas decisões esta semana!
+                </p>
+            </div>
+
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4">
+    <section class="no-print text-center bg-gradient-to-r from-purple-700/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../jonas/jonas.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../jonas/jonas.html" class="bg-gradient-to-r from-blue-700 to-cyan-700 hover:from-blue-800 hover:to-cyan-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Jonas
             </a>
-            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Profetas Menores
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Menores
             </a>
-            <a href="../naum/naum.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../naum/naum.html" class="bg-gradient-to-r from-slate-700 to-gray-800 hover:from-slate-800 hover:to-gray-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Naum ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Miqueias - Justiça e Misericórdia ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-purple-700 to-indigo-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">⚖️ Livro de Miqueias — Justiça, Misericórdia e a Profecia de Belém 🌟</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Jeremias - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-orange-700 to-red-800 hover:from-orange-800 hover:to-red-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,297 +28,407 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="jeremias-capa.png" alt="Capa: Jeremias" id="img-jeremias"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-jeremias">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
-                <span>😢</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-orange-600 mx-2">
+                <span>🔥</span>
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800 mx-2">
                     LIVRO DE JEREMIAS
                 </span>
-                <span>😢</span>
+                <span>🔥</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Advertência, Amor e Correção — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-jeremias" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">O Profeta do Coração Partido — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-jeremias"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-jeremias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-orange-300">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800">
                 🌟 Os Três Segredos de Jeremias 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-red-700 mb-2">📢 1️⃣ Deus escolhe pessoas de todas as idades</h3>
-                    <p>
-                        Jeremias era jovem quando Deus o chamou,<br>
-                        Disse: "Não sei falar!" mas Deus o acalmou.<br>
-                        "Não diga que é criança, Eu estarei contigo,<br>
-                        Te darei as palavras, você será Meu amigo!"<br><br>
 
-                        🌟 Deus não olha para a idade ou experiência,<br>
-                        Ele olha para o coração e a obediência!<br>
-                        Seja você jovem ou mais velho também,<br>
-                        Deus pode te usar para fazer o bem!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Jeremias 1:6-8</span>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-700">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">👶 Primeiro Segredo: Deus Te Conhece Antes de Você Nascer!</h3>
+                    <p class="italic text-gray-800">
+                        Jeremias era jovem e se sentiu incapaz,<br>
+                        "Não sei falar!", disse com a voz capaz.<br>
+                        Mas Deus respondeu com amor e com calma:<br>
+                        "Antes de nascer, já te escolhi, minha alma!"<br>
+                        <span class="text-orange-800 font-semibold">Deus não olha para a idade ou o que você sabe,<br>
+                        Ele já tem um plano que ninguém desabe!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Jeremias 1:5 — "Antes que te formasse no ventre materno, te conheci; antes que saísses da madre, te santifiquei."</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-red-700 mb-2">💔 2️⃣ Deus corrige porque ama</h3>
-                    <p>
-                        Jeremias avisou o povo muitas vezes,<br>
-                        Que precisavam mudar, abandonar as tolices.<br>
-                        Mas o povo não quis escutar, ignorou,<br>
-                        E a correção de Deus chegou como Ele falou.<br><br>
-
-                        😢 Deus corrige aqueles que Ele ama,<br>
-                        Como um pai que cuida e chama.<br>
-                        A disciplina não é castigo cruel,<br>
-                        É amor que nos guia pro caminho do céu!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Jeremias 7:23-28</span>
+                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🔥 Segundo Segredo: A Palavra de Deus Queima por Dentro!</h3>
+                    <p class="italic text-gray-800">
+                        Jeremias quis calar — mas não conseguia,<br>
+                        A Palavra de Deus no coração ardia!<br>
+                        "Como fogo nos ossos" — ele não podia mais,<br>
+                        Tinha que falar, mesmo sem ter paz!<br>
+                        <span class="text-red-800 font-semibold">Quando Deus coloca algo no seu coração,<br>
+                        Não tem como ficar calado — é missão!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Jeremias 20:9 — "Havia no meu coração como um fogo ardente, encerrado nos meus ossos; esgotei-me tentando retê-lo, e não pude."</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-red-700 mb-2">🌈 3️⃣ Deus promete restauração e esperança</h3>
-                    <p>
-                        <b>Mas tem esperança!</b> No meio da tristeza,<br>
-                        Deus prometeu restaurar com certeza!<br>
-                        "Tenho planos de paz e não de mal,<br>
-                        Para dar futuro e esperança final!"<br><br>
-
-                        💚 Mesmo após a correção e a dor,<br>
-                        Deus restaura com Seu imenso amor!<br>
-                        Ele nunca desiste do Seu povo querido,<br>
-                        Sempre traz esperança, nunca é esquecido!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Jeremias 29:11-13</span>
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🌈 Terceiro Segredo: Os Planos de Deus São de Paz!</h3>
+                    <p class="italic text-gray-800">
+                        No meio de tanta tristeza e destruição,<br>
+                        Deus falou ao povo com grande consolação:<br>
+                        "Tenho planos de paz, não de calamidade,<br>
+                        Para dar-lhes futuro e uma nova realidade!"<br>
+                        <span class="text-amber-800 font-semibold">Mesmo no pior momento da sua vida,<br>
+                        O plano de Deus para você é sempre de saída!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Jeremias 29:11 — "Porque eu bem sei os planos que tenho a vosso respeito, planos de paz e não de mal, para vos dar um futuro e uma esperança."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-red-800">
-                        📘 Moral da história:<br>
-                        Ouça a voz de Deus e obedeça com amor,<br>
-                        Pois Ele sempre quer o seu melhor, sem dor! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgJeremias = document.getElementById("img-jeremias");
+        const img = document.getElementById("img-jeremias");
         const modal = document.getElementById("modal-jeremias");
         const closeModal = document.getElementById("close-modal");
-
-        imgJeremias.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="jeremias-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-orange-700 to-red-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🧡 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-orange-300 text-center">
+                <p class="text-5xl mb-4">🌟</p>
+                <blockquote class="text-3xl font-black text-orange-800 leading-snug mb-4">
+                    "Porque eu bem sei os planos que tenho a vosso respeito... planos de paz e não de mal, para vos dar um futuro e uma esperança."
+                </blockquote>
+                <p class="text-xl font-bold text-red-700 mb-6">Jeremias 29:11</p>
+                <div class="bg-orange-50 rounded-2xl p-4 border-2 border-orange-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jeremias escreveu isso para o povo exilado na Babilônia — longe de casa, sem esperança. E Deus disse: "Eu tenho um plano para vocês — de paz, não de destruição!" Esse versículo vale para você também, em qualquer situação!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-8 rounded-2xl border-4 border-red-500">
-                    <h2 class="text-4xl font-black text-red-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-red-600">Jeremias</span>, o jovem profeta escolhido por Deus para levar mensagens difíceis ao povo.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            O <span class="font-bold text-red-600">povo de Judá</span>, que precisava se arrepender e voltar para Deus.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-red-600">Reis como Zedequias</span>, que lideravam o povo mas não ouviam a Deus.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E o <span class="font-bold text-red-600">rei Nabucodonosor da Babilônia</span>, usado por Deus para corrigir Seu povo.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-2">😢 Jeremias — O Profeta do Coração Partido</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Chamado ainda jovem, Jeremias profetizou por mais de 40 anos — sem ver nenhuma conversão. Foi ridicularizado, espancado, jogado num poço e preso. Mesmo assim, nunca parou. Seu segredo: a Palavra de Deus era como fogo dentro dele que não conseguia apagar!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-600">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Leia na Bíblia — Jeremias 1:5</p>
+                        <p class="text-gray-700 italic">"Antes que te formasse no ventre materno, te conheci; antes que saísses da madre, te santifiquei; às nações te dei por profeta."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-800 mb-2">✍️ Baruque — O Secretário Fiel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Baruque era o escrivão de Jeremias — era ele quem escrevia as profecias em rolos de couro. Quando o rei Joaquim queimou o rolo (literalmente jogou no fogo!), Jeremias ditou tudo de novo para Baruque. A amizade fiel é um presente de Deus!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Leia na Bíblia — Jeremias 36:4</p>
+                        <p class="text-gray-700 italic">"Então Jeremias chamou a Baruque, filho de Nerias; e Baruque escreveu, da boca de Jeremias, todas as palavras do Senhor."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-red-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-2">👑 Zedequias — O Rei que Não Ouviu</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Zedequias era o último rei de Judá. Ele chamava Jeremias às escondidas para ouvir as profecias — mas tinha medo de obedecer. Resultado: Jerusalém foi destruída e ele foi levado preso para a Babilônia. Ouvir sem obedecer não adianta!
+                    </p>
+                    <div class="versiculo-card bg-amber-50 border-amber-600">
+                        <p class="text-sm font-bold text-amber-800 mb-1">📖 Leia na Bíblia — Jeremias 38:19</p>
+                        <p class="text-gray-700 italic">"Respondeu o rei Zedequias a Jeremias: Tenho medo dos judeus que desertaram para os caldeus."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="jeremias-personagem.png" alt="Personagens de Jeremias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border-4 border-orange-500">
-                        <h2 class="text-4xl font-black text-orange-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Jeremias foi <span class="font-bold text-orange-600">escolhido por Deus ainda jovem</span> para uma missão importante.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ele teve que <span class="font-bold text-orange-600">avisar o povo</span> que Jerusalém seria destruída se não mudassem seus caminhos.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O povo não quis ouvir, mas <span class="font-bold text-orange-600">Jeremias permaneceu fiel</span> à mensagem de Deus.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-orange-600">52 capítulos</span> de advertências e promessas!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-orange-50 to-amber-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="jeremias-o-que-conta.png" alt="História de Jeremias" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-orange-200 shadow text-center">
+                    <p class="text-sm font-bold text-orange-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Jeremias tem <strong>52 capítulos</strong> — é o livro mais longo da Bíblia em número de palavras! Cap. 29 e 31 têm as promessas mais lindas.</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="jeremias-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-orange-800 mb-2">📜 A Missão Difícil de Jeremias</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-orange-700 shadow">
+                    <p class="font-bold text-orange-800 mb-1">📢 O Chamado e os Avisos (Cap. 1–25)</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus chama Jeremias jovem e o envia com avisos sérios: se o povo não se arrepender, a Babilônia vai destruir Jerusalém. Por 40 anos Jeremias grita, chora e suplica — mas ninguém ouve. Fiel mesmo sem resultados visíveis!</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Jeremias 7:13 — "Eu falei, e não ouvis tes; chamei, e não respondestes."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-red-700 shadow">
+                    <p class="font-bold text-red-800 mb-1">😢 O Sofrimento do Profeta (Cap. 26–45)</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Jeremias é preso, espancado, jogado num poço com lama até afundar! Mas até no fundo do poço ele não renegou a mensagem. Um homem chamado Ebede-Meleque, com 30 ajudantes, o tirou com cordas — um momento de graça no meio do caos.</p>
+                    <p class="text-sm text-red-600 italic border-t border-red-100 pt-2">📖 Jeremias 20:9 — "Havia no meu coração como um fogo ardente, encerrado nos meus ossos."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-amber-600 shadow">
+                    <p class="font-bold text-amber-800 mb-1">🌱 A Nova Aliança e a Esperança (Cap. 30–33)</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">No meio da destruição, Deus revela algo revolucionário: uma Nova Aliança! Não escrita em pedra como a do Sinai, mas no coração de cada pessoa. Jeremias 31:31-33 é a maior profecia do NT no Antigo Testamento — cumprida em Jesus!</p>
+                    <p class="text-sm text-amber-600 italic border-t border-amber-100 pt-2">📖 Jeremias 31:33 — "Porei a minha lei no seu interior e a escreverei no seu coração; eu serei o seu Deus, e eles serão o meu povo."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="jeremias-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-4 border-amber-500">
-                    <h2 class="text-4xl font-black text-amber-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que <span class="font-bold text-amber-600">obedecer a Deus é sempre o melhor caminho</span>, mesmo quando é difícil.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-amber-600">Deus avisa antes de corrigir</span>, porque Ele se importa conosco.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Revela que <span class="font-bold text-amber-600">a desobediência tem consequências</span>, mas o arrependimento traz restauração!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">💪 Coragem para Falar a Verdade!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Jeremias falou a verdade por 40 anos sem ninguém ouvir. Nenhuma conversão, nenhum aplauso — apenas perseguição. Mas ele não parou. Isso ensina que <strong class="text-orange-700">fidelidade a Deus não depende de resultados</strong> que conseguimos ver!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-600">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Jeremias 1:8</p>
+                        <p class="text-gray-700 italic">"Não temas diante deles, porque eu estou contigo para te livrar, diz o Senhor."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🛒 Comprou um Campo — Em Plena Destruição!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Com os babilônios cercando a cidade, Deus pediu a Jeremias que comprasse um campo (Jr 32). Era um ato de fé absurdo! Mas Jeremias obedeceu — como sinal de que <strong class="text-red-700">Deus restauraria Israel</strong>. Confiar em Deus no pior momento é fé real!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Jeremias 32:17</p>
+                        <p class="text-gray-700 italic">"Ah! Senhor Deus! Tu fizeste os céus e a terra com grande poder... nada te é impossível."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-amber-50 to-orange-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">✝️ Jeremias Aponta para Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jeremias 31:31-33 profetiza a <strong class="text-amber-700">Nova Aliança escrita no coração</strong> — cumprida por Jesus na Santa Ceia (Lc 22:20: "Este cálice é a nova aliança no meu sangue"). E assim como Jeremias sofreu inocente, Jesus também sofreu — sendo o verdadeiro profeta rejeitado.
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="jeremias-importante.png" alt="Importância de Jeremias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-emerald-50 to-green-50 p-8 rounded-2xl border-4 border-emerald-500">
-                        <h2 class="text-4xl font-black text-emerald-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-emerald-600">Mostrar que Deus nunca deixa de amar Seu povo</span>, mesmo quando precisa corrigi-lo.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ensinar que <span class="font-bold text-emerald-600">a correção de Deus é prova do Seu amor</span>, e sempre vem acompanhada de esperança!
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="jeremias-proposito.png" alt="Propósito de Jeremias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-orange-200 shadow">
+                    <h3 class="text-2xl font-bold text-orange-800 mb-3">🔔 Chamar ao Arrependimento Antes que Seja Tarde</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O propósito central de Jeremias era: <strong class="text-orange-700">voltai-vos a Deus com todo o coração</strong>! Não basta praticar rituais religiosos por fora — Deus quer transformação de dentro. Religion exterior sem coração não salva!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-600">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Jeremias 4:4</p>
+                        <p class="text-gray-700 italic">"Circuncidai-vos ao Senhor e tirai o prepúcio do coração."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="jeremias-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-red-200 shadow">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🌱 Revelar a Nova Aliança por Vir</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Mesmo no fracasso da Antiga Aliança (o povo sempre quebrava), Deus revelou através de Jeremias que viria uma <strong class="text-red-700">Nova Aliança — não em tábuas de pedra, mas escrita no coração</strong>. Essa aliança foi inaugurada por Jesus!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Jeremias 31:31</p>
+                        <p class="text-gray-700 italic">"Eis que dias vêm, diz o Senhor, em que farei nova aliança com a casa de Israel."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-xl border-l-4 border-orange-700">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-orange-800">Deus nunca desiste do Seu povo. Mesmo quando precisa corrigir, Ele já preparou planos de esperança e uma nova aliança escrita no coração!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="jeremias-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-2xl border-4 border-blue-500">
-                    <h2 class="text-4xl font-black text-blue-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-blue-600">Jeremias é conhecido como "o profeta chorão"!</span>
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-700 to-red-800">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-3xl font-bold text-orange-800 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-orange-700 mb-4">
+                        <p class="text-gray-700">
+                            📜 <strong>O rolo queimado e reescrito:</strong> O rei Joaquim jogou o rolo das profecias de Jeremias literalmente no fogo enquanto ouvia a leitura (Jr 36)! Jeremias então ditou tudo de novo para Baruque — com mais conteúdo ainda. A Palavra de Deus não pode ser destruída!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Porque ele <span class="font-bold text-blue-600">chorava ao ver o povo se afastando de Deus</span> e ignorando Suas advertências.
+                    </div>
+
+                    <div class="bg-orange-100 p-4 rounded-xl border-l-4 border-orange-800 mb-4">
+                        <p class="text-gray-700">
+                            😢 <strong>O profeta que nunca casou:</strong> Deus pediu a Jeremias que não se casasse e não tivesse filhos (Jr 16:2) — como sinal profético do sofrimento que viria sobre o povo. Foi uma das missões mais solitárias da Bíblia!
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-blue-300">
-                            <p class="text-sm text-gray-700 italic">Jeremias tinha um coração tão sensível quanto corajoso! 😢💙
-                                </br></br>
-                                "Porque eu bem sei os planos que tenho para vocês", diz o Senhor, "planos de fazê-los prosperar e não de causar dano, planos de dar a vocês esperança e um futuro."</br>Jeremias 29:11</p>
-                        </div>
+                    </div>
+
+                    <div class="bg-red-100 p-4 rounded-xl border-l-4 border-red-800">
+                        <p class="text-gray-700">
+                            🏺 <strong>O oleiro e o barro:</strong> Deus levou Jeremias à casa de um oleiro e disse: "Como o oleiro molda o barro, Eu moldo o meu povo." (Jr 18). Deus é o oleiro — e nós somos o barro em Suas mãos!
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="jeremias-curiosidade.png" alt="Curiosidades sobre Jeremias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-red-700/20 to-orange-700/20 border-2 border-red-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-orange-50 to-amber-50 p-8 mb-4 rounded-2xl border-2 border-orange-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-red-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-700">
+                <p class="text-5xl text-center mb-4">👶</p>
+                <h3 class="text-xl font-bold text-orange-800 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus disse a Jeremias: "Antes de te formar no ventre, te conheci!" <strong>O que significa para você saber que Deus te conhecia antes de você nascer? Como isso muda a forma de você enxergar sua própria vida?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-red-700">
+                <p class="text-5xl text-center mb-4">🔥</p>
+                <h3 class="text-xl font-bold text-red-800 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jeremias falou a verdade por 40 anos sem ninguém ouvir. <strong>Você já teve que dizer algo verdadeiro que era difícil ou que as pessoas não gostaram de ouvir? Como você se sentiu? O que te deu coragem?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-amber-600">
+                <p class="text-5xl text-center mb-4">🌟</p>
+                <h3 class="text-xl font-bold text-amber-800 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Jer 29:11 diz que Deus tem planos de paz para nós. <strong>Tem algo na sua vida agora que parece sem saída ou assustador? Como você pode confiar que Deus tem um plano bom mesmo nessa situação?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-orange-800 to-red-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-orange-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-orange-800 mb-3">Leia Jeremias 29:11-13</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia os versículos 11 a 13 do capítulo 29. Depois leia Jeremias 1:4-8 — o chamado de Jeremias. <strong>O que essas passagens têm em comum?</strong> Compartilhe com alguém da família.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-red-800 mb-3">Memorize Jeremias 29:11</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"Porque eu bem sei os planos que tenho a vosso respeito... planos de paz"</strong> e coloque em lugar visível. Quando surgir um medo ou preocupação, diga esse versículo em voz alta!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💌</p>
+                <div class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-amber-800 mb-3">Carta para o Futuro</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Inspirado em Jer 29:11, escreva uma <strong>carta para o "você do futuro"</strong> — sobre seus sonhos, medos e o que você acredita que Deus tem para você. Guarde e releia daqui a um ano!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-orange-700/20 to-red-800/20 border-2 border-orange-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../isaias/isaias.html"
-                class="bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-800 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../isaias/isaias.html" class="bg-gradient-to-r from-blue-700 to-indigo-800 hover:from-blue-800 hover:to-indigo-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Isaías
             </a>
-            <a href="../profetas-maiores.html"
-                class="bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros Proféticos
+            <a href="../profetas-maiores.html" class="bg-gradient-to-r from-orange-700 to-red-800 hover:from-orange-800 hover:to-red-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Maiores
             </a>
-            <a href="../lamentacoes/lamentacoes.html"
-                class="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../lamentacoes/lamentacoes.html" class="bg-gradient-to-r from-slate-600 to-zinc-700 hover:from-slate-700 hover:to-zinc-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Lamentações ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-red-600 to-orange-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Jeremias - O Profeta Chorão ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-orange-700 to-red-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🔥 Livro de Jeremias — O Profeta do Coração Partido 🔥</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -352,5 +437,4 @@
         trilhoGame.visitarLivro('Jeremias');
     </script>
 </body>
-
 </html>

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -16,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -30,7 +32,7 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>💔</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700 mx-2">
                     LIVRO DE OSÉIAS
                 </span>
                 <span>💖</span>
@@ -41,44 +43,50 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-oseias" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-rose-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-rose-300">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
                 🌟 Os Três Segredos de Oséias 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
+
                 <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-600">
-                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💕 Primeiro Segredo: O Amor Que Perdoa</h3>
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💕 Primeiro Segredo: O Amor Que Perdoa!</h3>
                     <p class="italic text-gray-800">
                         Mesmo quando erramos e nos afastamos,<br>
                         O amor de Deus nunca nos abandona.<br>
                         Como Oséias amou Gômer sem parar,<br>
-                        Deus nos ama e sempre vai nos buscar!
+                        Deus nos ama e sempre vai nos buscar!<br>
+                        <span class="text-rose-700 font-semibold">O perdão não é fraqueza — é a força maior,<br>
+                        É o coração de Deus transbordando de amor!</span>
                     </p>
-                    <p class="text-sm text-rose-600 mt-3 font-semibold">📖 "Eu os curarei da infidelidade e os amarei de livre vontade" - Oséias 14:4</p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Oséias 14:4 — "Eu os curarei da infidelidade e os amarei de livre vontade."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-2xl border-l-4 border-pink-600">
-                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🔄 Segundo Segredo: Sempre Há Volta</h3>
+                <div class="bg-gradient-to-r from-pink-50 to-rose-50 p-6 rounded-2xl border-l-4 border-pink-600">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🔄 Segundo Segredo: Sempre Há Volta!</h3>
                     <p class="italic text-gray-800">
                         Não importa o quanto você se perdeu,<br>
                         Deus espera com os braços abertos seus.<br>
-                        O arrependimento traz restauração,<br>
-                        E Deus transforma tristeza em canção!
+                        O arrependimento abre uma nova porta,<br>
+                        E Deus transforma a vida de quem retorna!<br>
+                        <span class="text-pink-700 font-semibold">Nenhuma distância é grande demais para o amor,<br>
+                        Que vence o pecado e remove toda dor!</span>
                     </p>
-                    <p class="text-sm text-pink-600 mt-3 font-semibold">📖 "Venham, voltemos para o Senhor" - Oséias 6:1</p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Oséias 6:1 — "Venham, voltemos para o Senhor, pois ele nos feriu, mas nos curará."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-purple-50 to-rose-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">💎 Terceiro Segredo: Amor Incondicional</h3>
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-700">
+                    <h3 class="text-2xl font-bold text-rose-800 mb-3">💎 Terceiro Segredo: Deus Quer o Coração, Não Só os Rituais!</h3>
                     <p class="italic text-gray-800">
-                        O amor de Deus não depende do que fazemos,<br>
-                        Ele nos ama mesmo quando tropeçamos.<br>
-                        Como um pai que nunca vai desistir,<br>
-                        Deus sempre estará aqui para nos ouvir!
+                        "Quero misericórdia, não sacrifício!" Deus diz,<br>
+                        Não basta o culto externo — que o coração reviz!<br>
+                        De que vale oferta sem amor de verdade?<br>
+                        Deus quer intimidade, não só formalidade!<br>
+                        <span class="text-rose-800 font-semibold">Jesus citou Oséias duas vezes — e é verdade:<br>
+                        O que mais importa a Deus é o amor, não a vaidade!</span>
                     </p>
-                    <p class="text-sm text-purple-600 mt-3 font-semibold">📖 "Com amor eterno eu a amei; com bondade a atraí" - Oséias 11:4</p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Oséias 6:6 — "Porque misericórdia quero, e não sacrifício." (Citado por Jesus em Mt 9:13 e Mt 12:7!)</p>
                 </div>
 
             </div>
@@ -95,173 +103,358 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
-            👥 Quem São os Personagens Principais?
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-rose-600 to-pink-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💖 Versículo para Guardar no Coração
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="oseias-personagem.png" alt="Oséias e Gômer" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-6 rounded-xl border-l-4 border-rose-600">
-                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">💙</span> Oséias - O Profeta Fiel
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Um profeta que obedeceu a Deus mesmo quando foi difícil. Ele se casou com Gômer para mostrar ao povo como Deus ama, perdoa e nunca desiste das pessoas que ama!
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-rose-300 text-center">
+                <p class="text-5xl mb-4">💕</p>
+                <blockquote class="text-3xl font-black text-rose-800 leading-snug mb-4">
+                    "Porque misericórdia quero, e não sacrifício, e o conhecimento de Deus, mais do que holocaustos."
+                </blockquote>
+                <p class="text-xl font-bold text-pink-700 mb-6">Oséias 6:6</p>
+                <div class="bg-rose-50 rounded-2xl p-4 border-2 border-rose-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jesus citou esse versículo duas vezes nos Evangelhos (Mateus 9:13 e 12:7)! Deus não quer só que façamos coisas religiosas — Ele quer nosso coração, nosso amor e nossa amizade com Ele.
                     </p>
                 </div>
-                <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-6 rounded-xl border-l-4 border-pink-600">
-                    <h3 class="text-2xl font-bold text-pink-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">💔</span> Gômer - A Esposa Infiel
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        A esposa de Oséias que representa o povo de Israel. Ela se afastou, mas Oséias a buscou de volta, mostrando como Deus nunca desiste de nós, mesmo quando erramos!
-                    </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-5 rounded-2xl border-2 border-rose-200">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-2">💙 Oséias — O Profeta do Amor Fiel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Um profeta que obedeceu a Deus mesmo quando foi doloroso. Deus o chamou para casar com Gômer como uma parábola viva: o casamento de Oséias mostraria ao povo de Israel o quanto Deus sofre com a infidelidade deles — e o quanto os ama mesmo assim.
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-500">
+                        <p class="text-sm font-bold text-rose-800 mb-1">📖 Leia na Bíblia — Oséias 3:1</p>
+                        <p class="text-gray-700 italic">"Ama ainda uma mulher amada de outrem... assim como o Senhor ama os filhos de Israel."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-5 rounded-2xl border-2 border-pink-200">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-2">💔 Gômer — A Esposa que Representa Israel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        A esposa de Oséias que representava o povo de Israel em sua infidelidade a Deus. Ela abandonou Oséias, mas ele a buscou de volta — pagando o preço para resgatá-la. Assim Deus nunca desiste de Seu povo, mesmo quando eles O abandonam por ídolos.
+                    </p>
+                    <div class="versiculo-card bg-pink-50 border-pink-500">
+                        <p class="text-sm font-bold text-pink-800 mb-1">📖 Leia na Bíblia — Oséias 11:8</p>
+                        <p class="text-gray-700 italic">"Como poderei abandonar-te, ó Efraim?... O meu coração se revira dentro de mim."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-rose-50 to-red-50 p-5 rounded-2xl border-2 border-rose-300">
+                    <h3 class="text-2xl font-bold text-rose-800 mb-2">🏛️ Israel do Norte — O Povo Infiel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Oséias profetizou para o Reino do Norte (Israel) por volta de 750–722 a.C. O povo estava rico materialmente, mas adorava ídolos de Baal e havia abandonado a aliança com Deus. Em 722 a.C., a Assíria invadiu e destruiu o reino — exatamente como Oséias havia anunciado.
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-600">
+                        <p class="text-sm font-bold text-rose-800 mb-1">📖 Leia na Bíblia — Oséias 4:6</p>
+                        <p class="text-gray-700 italic">"O meu povo foi destruído por falta do conhecimento."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="oseias-personagem.png" alt="Personagens de Oséias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-r from-rose-50 to-pink-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
             📖 O Que o Livro Conta?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-600">
-                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">💒</span> Um Casamento Especial
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Deus pediu a Oséias que se casasse com Gômer, uma mulher que seria infiel. Isso parecia estranho, mas tinha um propósito: mostrar como Israel havia abandonado a Deus!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-600">
-                    <h3 class="text-2xl font-bold text-pink-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">🔄</span> Perdão e Restauração
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Mesmo quando Gômer se afastou, Oséias a buscou e a trouxe de volta. Assim como Deus continua amando e perdoando Seu povo, não importa quantas vezes eles se afastem!
-                    </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="oseias-o-que-conta.png" alt="História de Oséias" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-rose-200 shadow text-center">
+                    <p class="text-sm font-bold text-rose-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Oséias tem <strong>14 capítulos</strong>. Cap. 1–3 contam a história do casamento; cap. 6 tem o versículo mais citado por Jesus; cap. 11 tem a mais comovente declaração de amor de Deus!</p>
                 </div>
             </div>
-            <div>
-                <img src="oseias-o-que-conta.png" alt="A História de Oséias" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-rose-700 mb-2">📜 Duas Grandes Partes</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-rose-600 shadow">
+                    <p class="font-bold text-rose-800 mb-1">💒 Parte 1 (Cap. 1–3): O Casamento Como Parábola</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus pede a Oséias que case com Gômer, uma mulher que seria infiel. Os filhos recebem nomes proféticos: Jezreel (juízo), Lo-Ruama ("não amada") e Lo-Ami ("não meu povo"). Mas no capítulo 3, Oséias a busca de volta e paga o preço para resgatá-la — um retrato do amor redentor de Deus!</p>
+                    <p class="text-sm text-rose-600 italic border-t border-rose-100 pt-2">📖 Oséias 2:14 — "Mas eis que eu a atrairei e a levarei ao deserto, e lhe falarei ao coração."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-pink-600 shadow">
+                    <p class="font-bold text-pink-800 mb-1">⚖️ Parte 2 (Cap. 4–14): Julgamento e Restauração</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Oséias apresenta as acusações de Deus contra Israel: falta de conhecimento de Deus, adoração de ídolos, injustiça, confiança em potências estrangeiras em vez de em Deus. O juízo virá — mas o livro termina com uma promessa linda de restauração e amor renovado!</p>
+                    <p class="text-sm text-pink-600 italic border-t border-pink-100 pt-2">📖 Oséias 14:4 — "Eu os curarei da infidelidade e os amarei de livre vontade."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-rose-400 shadow">
+                    <p class="font-bold text-rose-700 mb-1">💡 A Mensagem Central</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Israel foi chamado a ser esposa fiel de Deus. Mas foi infiel, adorando os Baals como uma prostituta espiritual. Ainda assim, o amor de Deus — chamado <em>hesed</em> em hebraico (amor leal, fidelidade amorosa) — persiste. Ele vai punir, mas para restaurar, não para destruir!</p>
+                    <p class="text-sm text-rose-500 italic border-t border-rose-100 pt-2">📖 Oséias 6:6 — "Porque misericórdia quero, e não sacrifício."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
             ⭐ Por Que É Importante?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="order-2 md:order-1">
-                <img src="oseias-importante.png" alt="Importância de Oséias" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-5 rounded-2xl border-2 border-rose-200">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💖 O Amor de Deus Não Depende de Nós!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Oséias revela algo extraordinário: Deus nos ama não porque somos bons, mas porque Ele escolheu nos amar. Mesmo quando Israel foi completamente infiel, <strong class="text-rose-700">Deus continuou amando</strong>. Esse amor em hebraico se chama <em>hesed</em> — amor leal e inabalável.
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-500">
+                        <p class="text-sm font-bold text-rose-800 mb-1">📖 Oséias 11:9</p>
+                        <p class="text-gray-700 italic">"Não executarei o furor da minha ira... porque sou Deus e não homem."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-5 rounded-2xl border-2 border-pink-200">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🔄 Sempre Podemos Voltar!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Oséias ensina que o arrependimento genuíno sempre encontra Deus de braços abertos. O convite "Voltemos para o Senhor" (6:1) mostra que nunca é tarde demais. <strong class="text-pink-700">Deus espera por nós</strong>, como o pai do filho pródigo (que Jesus contou séculos depois!).
+                    </p>
+                    <div class="versiculo-card bg-pink-50 border-pink-500">
+                        <p class="text-sm font-bold text-pink-800 mb-1">📖 Oséias 6:1</p>
+                        <p class="text-gray-700 italic">"Venham, voltemos para o Senhor, pois ele nos feriu, mas nos curará."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-rose-50 to-red-50 p-5 rounded-2xl border-2 border-rose-300">
+                    <h3 class="text-2xl font-bold text-rose-800 mb-3">✝️ Oséias Aponta para Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Jesus citou Oséias 6:6 duas vezes! E Oséias 11:1 ("Do Egito chamei o meu filho") foi cumprido em Mateus 2:15, quando José levou Jesus ao Egito. O nome "Oséias" significa <strong class="text-rose-800">salvação</strong> — a mesma raiz de "Jesus"!
+                    </p>
+                </div>
+
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-6 rounded-xl border-l-4 border-rose-600">
-                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">💖</span> O Amor de Deus é Fiel
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Oséias nos ensina que o amor de Deus é fiel e nunca muda, mesmo quando nós erramos. Ele sempre nos perdoa e nos dá novas chances!
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-6 rounded-xl border-l-4 border-pink-600">
-                    <h3 class="text-2xl font-bold text-pink-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">🙏</span> Sempre Podemos Voltar
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Não importa o quanto nos afastamos de Deus, sempre podemos voltar para Ele. Seu amor nos espera com braços abertos, pronto para nos receber!
-                    </p>
-                </div>
+            <div class="order-1 md:order-2">
+                <img src="oseias-importante.png" alt="Importância de Oséias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-r from-pink-50 to-purple-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
-            🎯 Propósito do Livro
+    <section class="section bg-gradient-to-br from-pink-50 to-rose-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-rose-600">
-                    <h3 class="text-2xl font-bold text-rose-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">💝</span> Amor Incondicional
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        O livro de Oséias foi escrito para mostrar o amor incondicional de Deus. Ele nos ama não porque somos perfeitos, mas porque Ele escolheu nos amar para sempre!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-pink-600">
-                    <h3 class="text-2xl font-bold text-pink-700 mb-3 flex items-center">
-                        <span class="text-3xl mr-3">🌈</span> Misericórdia Sem Fim
-                    </h3>
-                    <p class="text-gray-700 text-lg leading-relaxed">
-                        Deus é misericordioso e sempre está pronto para perdoar. Assim como Oséias perdoou Gômer, Deus nos perdoa e nos dá esperança de um novo recomeço!
-                    </p>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="oseias-proposito.png" alt="Propósito de Oséias" class="w-full h-auto rounded-xl shadow-xl">
             </div>
-            <div>
-                <img src="oseias-proposito.png" alt="Propósito de Oséias" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 shadow">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💝 Revelar o Coração de Deus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Oséias foi escrito para mostrar que por trás de todo o juízo de Deus há um <strong class="text-rose-700">coração que ama</strong>. Deus não pune por crueldade — Ele disciplina como um pai que não desiste do filho. A punição de Israel não era o fim da história, era o caminho para a restauração.
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-500">
+                        <p class="text-sm font-bold text-rose-800 mb-1">📖 Oséias 2:19-20</p>
+                        <p class="text-gray-700 italic">"E desposar-te-ei para sempre... desposar-te-ei em fidelidade, e conhecerás o Senhor."</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-pink-200 shadow">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🌈 Chamar ao Arrependimento</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Israel estava destruindo a si mesmo com a idolatria, a injustiça e a falta de conhecimento de Deus. Oséias clama: <strong class="text-pink-700">Voltem! Há um caminho de volta!</strong> O amor de Deus é maior que o pecado de Israel — e maior que o nosso também.
+                    </p>
+                    <div class="versiculo-card bg-pink-50 border-pink-500">
+                        <p class="text-sm font-bold text-pink-800 mb-1">📖 Oséias 14:1</p>
+                        <p class="text-gray-700 italic">"Volta, ó Israel, para o Senhor teu Deus, pois tropeçaste na tua iniquidade."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-4 rounded-xl border-l-4 border-rose-600">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-rose-800">Deus nos ama com um amor que não se cansa e não desiste. Quando nos afastamos, Ele nos chama de volta. Quando voltamos, Ele nos cura. O amor de Oséias por Gômer é apenas uma sombra do amor infinito de Deus por nós!</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Você sabia? -->
+    <!-- Seção 5: Você Sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-pink-700">
             🤔 Você Sabia?
         </h2>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <img src="oseias-curiosidade.png" alt="Curiosidade sobre Oséias" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-r from-rose-100 to-pink-100 p-8 rounded-xl shadow-lg border-4 border-rose-300">
-                    <h3 class="text-3xl font-bold text-rose-700 mb-4 flex items-center">
-                        <span class="text-4xl mr-3">📚</span> Uma Parábola Viva!
-                    </h3>
-                    <p class="text-gray-700 text-xl leading-relaxed mb-4">
-                        A história de Oséias é como uma parábola viva sobre o amor de Deus por nós! Ele viveu essa história para que todos pudessem ver e entender o quanto Deus nos ama e nunca desiste de nós!
-                    </p>
-                    <div class="bg-white p-4 rounded-lg">
-                        <p class="text-rose-600 font-bold text-lg">
-                            🎭 Oséias não apenas pregou sobre o amor de Deus, ele VIVEU essa mensagem todos os dias!
+                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-6 rounded-2xl border-2 border-rose-200">
+                    <h3 class="text-3xl font-bold text-rose-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-rose-600 mb-4">
+                        <p class="text-gray-700">
+                            🎭 <strong>Uma parábola viva:</strong> Oséias não apenas pregou o amor de Deus — ele o viveu. O casamento com Gômer foi doloroso e real, não apenas simbólico. Deus pediu que Oséias sentisse na própria pele a dor que Deus sente com a infidelidade do Seu povo!
+                        </p>
+                    </div>
+
+                    <div class="bg-rose-100 p-4 rounded-xl border-l-4 border-rose-700 mb-4">
+                        <p class="text-gray-700">
+                            📛 <strong>Nomes proféticos dos filhos:</strong> Os três filhos de Oséias receberam nomes que eram mensagens de Deus: <em>Jezreel</em> (local do juízo), <em>Lo-Ruama</em> ("não amada") e <em>Lo-Ami</em> ("não meu povo"). Mas Deus prometeu que um dia os chamaria de "Amada" e "Meu povo" (Os 2:23)!
+                        </p>
+                    </div>
+
+                    <div class="bg-pink-100 p-4 rounded-xl border-l-4 border-pink-700">
+                        <p class="text-gray-700">
+                            ✝️ <strong>Oséias significa "Salvação":</strong> O nome hebraico <em>Hoshea</em> (Oséias) tem a mesma raiz de <em>Yeshua</em> (Jesus)! O profeta cujo nome significa "salvação" pregou sobre o amor que salva. Jesus é a salvação que Oséias anunciava!
                         </p>
                     </div>
                 </div>
             </div>
+            <div class="order-1 md:order-2">
+                <img src="oseias-curiosidade.png" alt="Curiosidades sobre Oséias" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-xl border-t-8 border-amber-500 p-8 mb-4 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-black text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            ✝️ Oséias Aponta para Jesus
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-4 text-lg text-gray-700">
+                <p class="leading-relaxed">
+                    <span class="font-bold text-amber-700">"Do Egito chamei o meu filho"</span> (Os 11:1) foi citado em Mateus 2:15 sobre Jesus, quando José levou a família ao Egito para fugir de Herodes. Israel saiu do Egito; Jesus também — e Ele é o verdadeiro Israel!
+                </p>
+                <p class="leading-relaxed">
+                    Jesus citou <span class="font-bold text-rose-700">Oséias 6:6 duas vezes</span> nos Evangelhos (Mt 9:13 e 12:7): "Misericórdia quero, e não sacrifício." Ele usava Oséias para ensinar que o amor e o relacionamento com Deus valem mais que qualquer ritual religioso.
+                </p>
+                <p class="leading-relaxed">
+                    O <span class="font-bold text-amber-700">amor redentor de Oséias por Gômer</span> aponta diretamente para Jesus, que pagou o preço máximo — Sua própria vida — para nos resgatar da escravidão do pecado e nos trazer de volta ao Pai.
+                </p>
+            </div>
+            <div class="versiculo-card border-amber-500 bg-white text-lg">
+                <p class="font-bold text-amber-700 mb-2">Jesus cita Oséias para defender os pecadores</p>
+                <p class="italic text-gray-700 mb-3">"Mas ide, e aprendei o que significa: Misericórdia quero, e não sacrifício; porque não vim chamar os justos, mas os pecadores ao arrependimento."</p>
+                <p class="font-bold text-amber-600">📖 Mateus 9:13</p>
+                <p class="text-sm text-gray-500 mt-2">Jesus usou Oséias para justificar por que comia com pecadores e coletores de impostos. O amor de Deus persegue quem está perdido — não espera quem está perdido chegar sozinho!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 p-8 mb-4 rounded-2xl border-2 border-rose-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-700 to-pink-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-rose-600">
+                <p class="text-5xl text-center mb-4">💔</p>
+                <h3 class="text-xl font-bold text-rose-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Oséias amou Gômer mesmo quando ela o abandonou. <strong>Você já amou alguém que te machucou? Como foi difícil continuar amando? O que isso te ensina sobre o amor de Deus por nós?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-pink-600">
+                <p class="text-5xl text-center mb-4">🔄</p>
+                <h3 class="text-xl font-bold text-pink-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus disse: "Misericórdia quero, e não sacrifício." <strong>O que você acha que Ele quis dizer? Tem alguma coisa "religiosa" que você faz mas que talvez falte o amor por dentro? O que mudaria?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-rose-500">
+                <p class="text-5xl text-center mb-4">🏠</p>
+                <h3 class="text-xl font-bold text-rose-800 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    O livro termina com: "Voltemos para o Senhor." <strong>Tem alguma área da sua vida onde você se afastou de Deus — em pensamentos, atitudes ou ações? O que você poderia fazer para voltar?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-rose-700 to-pink-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-rose-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💕</p>
+                <div class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-rose-700 mb-3">Perdoe alguém esta semana</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Pense em alguém que te machucou. <strong>Esta semana, ore por essa pessoa</strong> e, se for possível, diga que a perdoa. Lembre: você está fazendo o que Oséias fez — e o que Deus faz por nós todo dia!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-pink-700 mb-3">Memorize Oséias 6:6</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"Misericórdia quero, e não sacrifício"</strong> e cole em algum lugar da casa. Cada vez que ler, pense: estou sendo misericordioso com as pessoas ao meu redor?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-red-700 mb-3">Leia Oséias 11:1-9</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia esse capítulo em voz alta — é uma das declarações mais emocionantes de amor de Deus na Bíblia. Depois responda: <strong>o que mais te surpreendeu sobre como Deus nos ama?</strong>
+                </p>
+            </div>
+
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="section no-print text-center bg-gradient-to-r from-rose-600/20 to-pink-600/20 border-2 border-rose-600/30 rounded-2xl p-10 mb-4">
+    <section class="no-print text-center bg-gradient-to-r from-rose-600/20 to-pink-700/20 border-2 border-rose-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../daniel/daniel.html" class="bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../daniel/daniel.html" class="bg-gradient-to-r from-violet-700 to-indigo-900 hover:from-violet-800 hover:to-indigo-950 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Daniel
             </a>
-            <a href="../profetas-menores.html" class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Profetas Menores
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Menores
             </a>
-            <a href="../joel/joel.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../joel/joel.html" class="bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Joel ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-rose-600 to-pink-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Oséias - O Amor Que Nunca Desiste ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-rose-600 to-pink-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">💖 Livro de Oséias — O Amor Que Nunca Desiste 💖</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

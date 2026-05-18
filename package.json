@@ -5,6 +5,7 @@
     "start": "serve . -c ./serve.json"
   },
   "devDependencies": {
+    "jimp": "^0.22.12",
     "serve": "^14.2.5"
   }
 }

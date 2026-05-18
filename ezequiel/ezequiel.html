@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Ezequiel - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-emerald-700 to-green-800 hover:from-emerald-800 hover:to-green-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,294 +28,407 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="ezequiel-capa.png" alt="Capa: Ezequiel" id="img-ezequiel"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-ezequiel">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>👁️</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800 mx-2">
                     LIVRO DE EZEQUIEL
                 </span>
                 <span>👁️</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Visões, Restauração e Nova Vida — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-ezequiel" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">Visões, Ossos Secos e Coração Novo — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-ezequiel"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-indigo-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-ezequiel" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-emerald-300">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800">
                 🌟 Os Três Segredos de Ezequiel 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">✨ 1️⃣ A glória de Deus é impressionante e poderosa</h3>
-                    <p>
-                        Ezequiel viu visões maravilhosas do trono de Deus,<br>
-                        Querubins com asas, rodas de fogo, tudo grandioso!<br>
-                        A glória do Senhor brilhava como cristal,<br>
-                        Mostrando que Deus é soberano e celestial!<br><br>
 
-                        👁️ Quando vemos quem Deus realmente é,<br>
-                        Ficamos maravilhados, com reverência e fé!<br>
-                        Ele é glorioso, majestoso e santo,<br>
-                        Digno de todo louvor e canto!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ezequiel 1:1-28</span>
+                <div class="bg-gradient-to-r from-emerald-50 to-green-50 p-6 rounded-2xl border-l-4 border-emerald-700">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">✨ Primeiro Segredo: A Glória de Deus Vai Aonde Você Está!</h3>
+                    <p class="italic text-gray-800">
+                        Ezequiel estava longe, exilado em terra estranha,<br>
+                        Quando a glória de Deus apareceu — que façanha!<br>
+                        Não ficou só em Jerusalém, no templo ou altar,<br>
+                        A glória de Deus foi até lá para o encontrar!<br>
+                        <span class="text-emerald-800 font-semibold">Não importa onde você está — distante ou perto,<br>
+                        A glória de Deus te alcança — isso é certo!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Ezequiel 1:1 — "No trigésimo ano... estando eu entre os exilados... os céus se abriram e tive visões de Deus."</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">🦴 2️⃣ Deus pode dar vida ao que parece morto</h3>
-                    <p>
+                <div class="bg-gradient-to-r from-green-50 to-teal-50 p-6 rounded-2xl border-l-4 border-green-700">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🦴 Segundo Segredo: Deus Ressuscita o Que Parece Morto!</h3>
+                    <p class="italic text-gray-800">
                         Ezequiel viu um vale cheio de ossos secos,<br>
-                        Parecia impossível, sem vida, sem nexo!<br>
-                        Mas Deus mandou profetizar aos ossos ali,<br>
-                        E eles ganharam vida, ficaram de pé, vi!<br><br>
-
-                        💪 O que parece impossível para nós,<br>
-                        É totalmente possível para Deus, nossa voz!<br>
-                        Ele pode restaurar sonhos, corações e vidas,<br>
-                        Trazendo esperança às almas feridas!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ezequiel 37:1-14</span>
+                        Parecia impossível, sem vida, sem nexos!<br>
+                        Mas Deus mandou: "Profetiza, chama o vento!"<br>
+                        E ossos ganharam vida — que espanto e assombramento!<br>
+                        <span class="text-green-800 font-semibold">O que parece morto para você hoje em dia,<br>
+                        Em Deus pode ressurgir cheio de alegria!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Ezequiel 37:4-5 — "Ossos secos, ouçam a palavra do Senhor... eu farei entrar em vós o espírito, e vivereis."</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-purple-700 mb-2">❤️ 3️⃣ Deus promete um coração novo</h3>
-                    <p>
-                        <b>Que promessa linda!</b> Deus não desiste de nós,<br>
-                        Ele promete um coração novo, uma nova voz!<br>
-                        Tirará o coração de pedra, duro e frio,<br>
-                        E dará um coração de carne, cheio de brio!<br><br>
-
-                        🌱 Deus transforma por dentro, muda nossa essência,<br>
-                        Coloca Seu Espírito, dá nova presença!<br>
-                        Não importa o passado ou onde estivemos,<br>
-                        Deus nos renova, somos recriados, cremos!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Ezequiel 36:26-27</span>
+                <div class="bg-gradient-to-r from-teal-50 to-emerald-50 p-6 rounded-2xl border-l-4 border-teal-700">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-3">❤️ Terceiro Segredo: Deus Troca o Coração de Pedra por um de Carne!</h3>
+                    <p class="italic text-gray-800">
+                        "Tirarei o coração de pedra, duro e frio,<br>
+                        E darei coração de carne — novo e com brio!"<br>
+                        O Espírito de Deus morará dentro de nós,<br>
+                        Nos fazendo querer obedecer a Sua voz!<br>
+                        <span class="text-teal-800 font-semibold">Deus não muda só o comportamento de fora,<br>
+                        Ele transforma o coração — isso é o que importa!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Ezequiel 36:26 — "Dar-vos-ei um coração novo e porei dentro de vós um espírito novo."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-purple-800">
-                        📘 Moral da história:<br>
-                        Confie no poder de Deus para restaurar,<br>
-                        Ele pode renovar e tudo transformar! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgEzequiel = document.getElementById("img-ezequiel");
+        const img = document.getElementById("img-ezequiel");
         const modal = document.getElementById("modal-ezequiel");
         const closeModal = document.getElementById("close-modal");
-
-        imgEzequiel.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="ezequiel-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-emerald-700 to-green-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💚 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-emerald-300 text-center">
+                <p class="text-5xl mb-4">❤️</p>
+                <blockquote class="text-3xl font-black text-emerald-800 leading-snug mb-4">
+                    "Dar-vos-ei um coração novo e porei dentro de vós um espírito novo; tirarei o coração de pedra e dar-vos-ei um coração de carne."
+                </blockquote>
+                <p class="text-xl font-bold text-green-700 mb-6">Ezequiel 36:26</p>
+                <div class="bg-emerald-50 rounded-2xl p-4 border-2 border-emerald-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        "Coração de pedra" é o coração que não sente, não obedece, não ama. "Coração de carne" é sensível, vivo, capaz de amar de verdade. Deus promete fazer essa troca! E o Espírito Santo, dado a cada cristão, é o cumprimento exato dessa promessa!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-4 border-purple-500">
-                    <h2 class="text-4xl font-black text-purple-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-purple-600">Ezequiel</span>, o profeta sacerdote que teve visões impressionantes de Deus.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Os <span class="font-bold text-purple-600">exilados na Babilônia</span>, o povo de Israel vivendo longe de casa.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E os <span class="font-bold text-purple-600">líderes e reis de Israel</span>, que precisavam ouvir as mensagens de Deus.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-teal-100 text-teal-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-5 rounded-2xl border-2 border-emerald-200">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-2">👁️ Ezequiel — O Profeta-Sacerdote das Visões</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Ezequiel era sacerdote que foi exilado para a Babilônia antes de Jerusalém ser destruída. Deus o chamou com visões espetaculares — rodas de fogo, criaturas voadoras, a glória de Deus como brasa e cristal. Ele também fazia encenações dramáticas para transmitir as mensagens de Deus!
+                    </p>
+                    <div class="versiculo-card bg-emerald-50 border-emerald-600">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">📖 Leia na Bíblia — Ezequiel 2:1</p>
+                        <p class="text-gray-700 italic">"E me disse: Filho do homem, fica em pé; falar-te-ei."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-5 rounded-2xl border-2 border-green-200">
+                    <h3 class="text-2xl font-bold text-green-800 mb-2">⛓️ Os Exilados — O Povo Sem Esperança</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O povo de Israel estava exilado na Babilônia — longe do templo, longe de casa, sem rei. Muitos pensavam: "Deus nos abandonou. Não há mais esperança." Era para esse povo desesperado que Ezequiel profetizava — com mensagens de juízo, mas também de restauração!
+                    </p>
+                    <div class="versiculo-card bg-green-50 border-green-600">
+                        <p class="text-sm font-bold text-green-800 mb-1">📖 Leia na Bíblia — Ezequiel 37:11</p>
+                        <p class="text-gray-700 italic">"Os nossos ossos secaram, e pereceu a nossa esperança; estamos de todo cortados."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-5 rounded-2xl border-2 border-teal-200">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-2">🗼 O Vigilante — A Missão de Ezequiel</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Deus chamou Ezequiel de "atalaia" (sentinela/vigilante) — alguém que fica no alto da muralha para avisar o povo do perigo. Se o vigilante não avisa e alguém morre, a culpa é do vigilante. Essa é a seriedade da missão de pregar a Palavra!
+                    </p>
+                    <div class="versiculo-card bg-teal-50 border-teal-600">
+                        <p class="text-sm font-bold text-teal-800 mb-1">📖 Leia na Bíblia — Ezequiel 33:7</p>
+                        <p class="text-gray-700 italic">"Assim, a ti, ó filho do homem, te constituí por atalaia da casa de Israel."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="ezequiel-personagem.png" alt="Personagens de Ezequiel" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-indigo-50 to-violet-50 p-8 rounded-2xl border-4 border-indigo-500">
-                        <h2 class="text-4xl font-black text-indigo-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ezequiel teve <span class="font-bold text-indigo-600">visões impressionantes de Deus</span> — querubins, rodas de fogo e Sua glória!
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ele falou ao <span class="font-bold text-indigo-600">povo cativo na Babilônia</span> sobre arrependimento e mudança.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Trouxe mensagens de <span class="font-bold text-indigo-600">esperança e restauração</span>, mostrando que Deus não os havia esquecido!
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-indigo-600">48 capítulos</span> de visões e profecias poderosas!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-emerald-50 to-green-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="ezequiel-o-que-conta.png" alt="História de Ezequiel" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-emerald-200 shadow text-center">
+                    <p class="text-sm font-bold text-emerald-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Ezequiel tem <strong>48 capítulos</strong>. Cap. 1 tem a visão mais alucinante da Bíblia; cap. 37 tem os ossos secos; cap. 36 tem a promessa do coração novo!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="ezequiel-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-emerald-800 mb-2">📜 Três Grandes Movimentos</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-emerald-700 shadow">
+                    <p class="font-bold text-emerald-800 mb-1">⚡ Parte 1 (Cap. 1–24): A Glória Parte e os Avisos</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus chama Ezequiel com uma visão de Sua glória (carroça de fogo, quatro criaturas, rodas dentro de rodas). Depois mostra que a glória de Deus vai deixar o Templo — por causa do pecado do povo. A presença de Deus não pode ficar onde há idolatria.</p>
+                    <p class="text-sm text-emerald-600 italic border-t border-emerald-100 pt-2">📖 Ezequiel 10:18 — "Então a glória do Senhor saiu de sobre o limiar da casa."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-green-700 shadow">
+                    <p class="font-bold text-green-800 mb-1">⚖️ Parte 2 (Cap. 25–32): Julgamento das Nações</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Ezequiel profetiza contra as nações ao redor de Israel que zombaram e se aproveitaram da queda de Judá. Deus é justo com todos os povos, não só com Israel. Ninguém escapa da justiça de Deus — mas também ninguém escapa do Seu amor!</p>
+                    <p class="text-sm text-green-600 italic border-t border-green-100 pt-2">📖 Ezequiel 25:17 — "E saberão que eu sou o Senhor."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-teal-600 shadow">
+                    <p class="font-bold text-teal-800 mb-1">🌱 Parte 3 (Cap. 33–48): Restauração e Nova Vida!</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">O clímax glorioso: ossos secos que revivem (Ez 37), coração novo e Espírito novo (Ez 36), e uma visão de um novo Templo do qual jorra um rio que faz florescer tudo ao redor (Ez 47). A glória de Deus volta — para ficar!</p>
+                    <p class="text-sm text-teal-600 italic border-t border-teal-100 pt-2">📖 Ezequiel 43:2 — "E eis que a glória do Deus de Israel vinha do lado oriental... e a terra resplandecia de sua glória."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="ezequiel-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
-                    <h2 class="text-4xl font-black text-violet-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que, <span class="font-bold text-violet-600">mesmo longe de casa</span>, Deus continua conosco e nos ouve.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-violet-600">Deus tem poder para restaurar tudo</span> — sonhos, esperanças e vidas!
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Revela que <span class="font-bold text-violet-600">nada é impossível para Deus</span>, nem situações que parecem sem vida!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-5 rounded-2xl border-2 border-emerald-200">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">🌍 Deus Está em Todo Lugar!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Os israelitas pensavam que Deus só estava em Jerusalém, no Templo. Ezequiel recebeu suas visões em Babilônia — a mil quilômetros! Isso prova que <strong class="text-emerald-700">Deus não está preso a um lugar</strong>. Ele está com você onde quer que você esteja!
+                    </p>
+                    <div class="versiculo-card bg-emerald-50 border-emerald-600">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">📖 Ezequiel 11:16</p>
+                        <p class="text-gray-700 italic">"Ainda que eu os haja lançado para longe entre as nações... eu lhes serei por santuário pequenino."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-5 rounded-2xl border-2 border-green-200">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🦴 Ossos Secos Revivem — Nada é Impossível!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        A visão do vale dos ossos secos (Ez 37) é um dos textos mais esperançosos da Bíblia. Deus pergunta: "Esses ossos podem viver?" E ressuscita um exército inteiro! Isso ensina que <strong class="text-green-700">não existe situação sem saída com Deus</strong>!
+                    </p>
+                    <div class="versiculo-card bg-green-50 border-green-600">
+                        <p class="text-sm font-bold text-green-800 mb-1">📖 Ezequiel 37:14</p>
+                        <p class="text-gray-700 italic">"Porei o meu Espírito em vós, e vivereis, e vos estabelecerei na vossa própria terra."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-emerald-50 p-5 rounded-2xl border-2 border-teal-200">
+                    <h3 class="text-2xl font-bold text-teal-800 mb-3">✝️ Ezequiel Aponta para o Espírito Santo!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Ezequiel 36:26-27 promete coração novo e espírito novo — cumprido em Pentecostes (At 2), quando o Espírito Santo desceu sobre os discípulos! E o rio de água viva saindo do Templo (Ez 47) aponta para Jesus que disse: <strong class="text-teal-700">"De dentro dele correrão rios de água viva"</strong> (Jo 7:38).
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="ezequiel-importante.png" alt="Importância de Ezequiel" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-fuchsia-50 to-pink-50 p-8 rounded-2xl border-4 border-fuchsia-500">
-                        <h2 class="text-4xl font-black text-fuchsia-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-fuchsia-600">Mostrar que Deus renova corações</span> e tira o que é duro para colocar amor e vida.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ensinar que <span class="font-bold text-fuchsia-600">Deus dá nova vida ao Seu povo</span>, transformando o que parece morto em algo vivo!
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-green-50 to-teal-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="ezequiel-proposito.png" alt="Propósito de Ezequiel" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-emerald-200 shadow">
+                    <h3 class="text-2xl font-bold text-emerald-800 mb-3">📢 Mostrar que Deus é Soberano — Mesmo no Exílio</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O povo achava que Deus tinha perdido o controle. Ezequiel vem dizer: <strong class="text-emerald-700">Deus está no trono — sempre esteve</strong>. Ele permitiu o exílio como disciplina, mas não abandonou o povo. A frase "saberão que Eu sou o Senhor" aparece mais de 70 vezes no livro!
+                    </p>
+                    <div class="versiculo-card bg-emerald-50 border-emerald-600">
+                        <p class="text-sm font-bold text-emerald-800 mb-1">📖 Ezequiel 36:23</p>
+                        <p class="text-gray-700 italic">"E as nações saberão que eu sou o Senhor, diz o Senhor Deus, quando for santificado em vós diante dos seus olhos."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="ezequiel-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-green-200 shadow">
+                    <h3 class="text-2xl font-bold text-green-800 mb-3">🌱 Revelar a Promessa da Nova Criação</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Ezequiel termina com uma visão gloriosa: novo templo, nova cidade, nova terra — e a glória de Deus voltando para ficar para sempre. <strong class="text-green-700">Essa visão aponta para o novo céu e nova terra</strong> do Apocalipse — a destinação final de todo o povo de Deus!
+                    </p>
+                    <div class="versiculo-card bg-green-50 border-green-600">
+                        <p class="text-sm font-bold text-green-800 mb-1">📖 Ezequiel 48:35</p>
+                        <p class="text-gray-700 italic">"E o nome da cidade desde aquele dia será: O Senhor está ali."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-emerald-100 to-green-100 p-4 rounded-xl border-l-4 border-emerald-700">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-emerald-800">Deus nunca abandona o Seu povo. Mesmo nas piores circunstâncias, Ele age, restaura e promete um futuro glorioso com coração novo e Espírito vivo!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="ezequiel-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-4 border-emerald-500">
-                    <h2 class="text-4xl font-black text-emerald-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-emerald-600">Ezequiel viu uma visão de ossos secos que voltaram à vida!</span>
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-green-800">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-2xl border-2 border-emerald-200">
+                    <h3 class="text-3xl font-bold text-emerald-800 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-emerald-700 mb-4">
+                        <p class="text-gray-700">
+                            🎭 <strong>Ezequiel fazia "teatro profético":</strong> Ele encenava as mensagens de Deus! Deitou de lado por 390 dias para simbolizar os anos de pecado de Israel, construiu uma miniatura de Jerusalém sendo sitiada, cortou o próprio cabelo e dividiu em três partes — tudo como mensagens vivas!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            É <span class="font-bold text-emerald-600">um dos momentos mais incríveis da Bíblia</span> — mostrando o poder de Deus de ressuscitar!
+                    </div>
+
+                    <div class="bg-emerald-100 p-4 rounded-xl border-l-4 border-emerald-800 mb-4">
+                        <p class="text-gray-700">
+                            🤐 <strong>Ficou mudo por períodos:</strong> Deus fez Ezequiel ficar sem fala por longos períodos (Ez 3:26) — ele só podia falar quando Deus abria sua boca. Era um sinal poderoso para o povo: as únicas palavras que importam são as de Deus!
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-emerald-300">
-                            <p class="text-sm text-gray-700 italic">Deus transforma morte em vida com Seu poder! 🦴✨
-                                </br></br>
-                                Então o Senhor me perguntou: "Filho do homem, esses ossos poderão tornar a viver?" E eu respondi: "Ó Soberano Senhor, só tu o sabes." Então ele me disse: "Profetize a estes ossos e diga-lhes: Ossos secos, ouçam a palavra do Senhor!"</br>Ezequiel 37:3-4</p>
-                        </div>
+                    </div>
+
+                    <div class="bg-green-100 p-4 rounded-xl border-l-4 border-green-800">
+                        <p class="text-gray-700">
+                            🌊 <strong>O rio que faz florescer tudo:</strong> Em Ez 47, Ezequiel vê um rio saindo do Templo — começando por cima do tornozelo, depois joelhos, depois a cintura, depois profundo demais para atravessar. Onde o rio chega, tudo floresce! Isso aponta para o Espírito Santo e para Jesus, o Templo!
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="ezequiel-curiosidade.png" alt="Curiosidades sobre Ezequiel" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-purple-700/20 to-indigo-700/20 border-2 border-purple-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-emerald-50 to-green-50 p-8 mb-4 rounded-2xl border-2 border-emerald-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-emerald-800 to-green-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-emerald-700">
+                <p class="text-5xl text-center mb-4">🦴</p>
+                <h3 class="text-xl font-bold text-emerald-800 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Os ossos secos representavam o povo sem esperança. <strong>Tem alguma área da sua vida que parece "seca" ou sem esperança? O que você acha que Deus pode fazer nessa situação se você pedir a Ele?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-green-700">
+                <p class="text-5xl text-center mb-4">❤️</p>
+                <h3 class="text-xl font-bold text-green-800 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus promete trocar o coração de pedra por um de carne. <strong>Como seria um "coração de pedra" no dia a dia? E um "coração de carne"? Em que momento você age com coração de pedra com as pessoas ao redor?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-teal-600">
+                <p class="text-5xl text-center mb-4">🗼</p>
+                <h3 class="text-xl font-bold text-teal-800 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Ezequiel era um "vigilante" — responsável por avisar o povo do perigo. <strong>Você tem alguém próximo que precisa ouvir sobre Jesus? O que te impede de compartilhar? O que te daria coragem?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-emerald-800 to-green-950 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-emerald-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-emerald-100 text-emerald-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-emerald-800 mb-3">Leia Ezequiel 37:1-14</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia a visão dos ossos secos em voz alta! Depois pense: <strong>que "osso seco" da sua vida você quer pedir a Deus que reviva?</strong> Escreva numa folha e ore sobre isso esta semana.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-green-800 mb-3">Memorize Ezequiel 36:26</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"Dar-vos-ei um coração novo"</strong> e cole no espelho do banheiro. Toda manhã ao ver seu rosto, lembre: Deus quer te dar um coração novo — sensível, vivo e cheio do Espírito!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🙏</p>
+                <div class="bg-teal-100 text-teal-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-teal-800 mb-3">Ore como Vigilante</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escolha <strong>uma pessoa que parece longe de Deus</strong> e ore por ela todos os dias esta semana — como um vigilante que cuida do rebanho. Guarde o nome em segredo e depois compartilhe o que aconteceu!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-emerald-700/20 to-green-800/20 border-2 border-emerald-700/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../lamentacoes/lamentacoes.html"
-                class="bg-gradient-to-r from-purple-700 to-indigo-600 hover:from-purple-800 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../lamentacoes/lamentacoes.html" class="bg-gradient-to-r from-slate-700 to-indigo-900 hover:from-slate-800 hover:to-indigo-950 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Lamentações
             </a>
-            <a href="../profetas-maiores.html"
-                class="bg-gradient-to-r from-indigo-600 to-purple-700 hover:from-indigo-700 hover:to-purple-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Livros Proféticos
+            <a href="../profetas-maiores.html" class="bg-gradient-to-r from-emerald-700 to-green-800 hover:from-emerald-800 hover:to-green-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Maiores
             </a>
-            <a href="../daniel/daniel.html"
-                class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../daniel/daniel.html" class="bg-gradient-to-r from-amber-600 to-yellow-700 hover:from-amber-700 hover:to-yellow-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Daniel ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Ezequiel - Visões e Restauração ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-emerald-700 to-green-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">👁️ Livro de Ezequiel — Visões, Restauração e Coração Novo 👁️</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -349,5 +437,4 @@
         trilhoGame.visitarLivro('Ezequiel');
     </script>
 </body>
-
 </html>

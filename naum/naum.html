@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-800 hover:to-orange-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-slate-700 to-red-800 hover:from-slate-800 hover:to-red-900 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,55 +32,61 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>⚔️</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800 mx-2">
                     LIVRO DE NAUM
                 </span>
-                <span>⚔️</span>
+                <span>🏙️</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">A Justiça de Deus sobre Nínive — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">O Consolo para Israel e o Fim de Nínive — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-naum" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-red-700">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-slate-300">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
                 🌟 Os Três Segredos de Naum 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-2xl border-l-4 border-red-700">
-                    <h3 class="text-2xl font-bold text-red-800 mb-3">⚖️ Primeiro Segredo: A Justiça Chega!</h3>
-                    <p class="italic leading-loose">
-                        Deus é paciente e espera com amor,<br>
-                        Mas quando o mal não cessa, vem o clamor!<br>
-                        Nínive voltou a pecar sem parar,<br>
-                        E a justiça de Deus veio para julgar!<br>
-                        <span class="text-sm text-gray-600 block mt-2">📖 Naum 1:3 - "O SENHOR é tardio em irar-se, mas grande em poder"</span>
+
+                <div class="bg-gradient-to-r from-slate-50 to-red-50 p-6 rounded-2xl border-l-4 border-slate-700">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">⚖️ Primeiro Segredo: Deus É Paciente — Mas Não Para Sempre!</h3>
+                    <p class="italic text-gray-800">
+                        Nínive se arrependeu com Jonas — foi salva!<br>
+                        Mas 150 anos depois, voltou ao mal que a envolvia.<br>
+                        Deus esperou, esperou — com paciência infinita,<br>
+                        Mas chegou a hora: a conta foi cobrada, com pressa e com pressa!<br>
+                        <span class="text-slate-800 font-semibold">A paciência de Deus não é fraqueza nem esquecimento —<br>
+                        É amor que espera a mudança; mas o juízo vem no momento!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Naum 1:3 — "O Senhor é tardio em irar-se, mas grande em poder, e não inocentará o culpado."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-orange-600">
-                    <h3 class="text-2xl font-bold text-orange-800 mb-3">🛡️ Segundo Segredo: Deus Protege os Seus!</h3>
-                    <p class="italic leading-loose">
-                        Para quem confia, Deus é refúgio e proteção,<br>
-                        Um lugar seguro em meio à tribulação!<br>
-                        Ele conhece aqueles que nEle confiam,<br>
-                        E suas vidas com amor Ele guiam!<br>
-                        <span class="text-sm text-gray-600 block mt-2">📖 Naum 1:7 - "O SENHOR é bom, um refúgio no dia da angústia"</span>
+                <div class="bg-gradient-to-r from-red-50 to-slate-50 p-6 rounded-2xl border-l-4 border-red-700">
+                    <h3 class="text-2xl font-bold text-red-800 mb-3">🛡️ Segundo Segredo: Para Quem Confia, Deus É Refúgio!</h3>
+                    <p class="italic text-gray-800">
+                        No mesmo livro de guerra e ruína e destruição,<br>
+                        Brilha um versículo de paz e consolação:<br>
+                        "O Senhor é bom, fortaleza no dia da angústia,<br>
+                        Conhece os que nEle confiam — essa é a sua justiça!"<br>
+                        <span class="text-red-800 font-semibold">Naum foi escrito como consolo para um povo oprimido —<br>
+                        O mesmo livro que condena o opressor protege o sofrido!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Naum 1:7 — "O Senhor é bom, uma força na hora da angústia, e conhece os que nEle se refugiam."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-red-50 p-6 rounded-2xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-800 mb-3">🔥 Terceiro Segredo: O Arrependimento é Real!</h3>
-                    <p class="italic leading-loose">
-                        Jonas pregou e Nínive se arrependeu,<br>
-                        Mas cem anos depois, o mal prevaleceu!<br>
-                        Não basta apenas dizer "sim" uma vez,<br>
-                        Precisamos seguir a Deus com firmeza e altivez!<br>
-                        <span class="text-sm text-gray-600 block mt-2">📖 Naum 3:1 - "Ai da cidade sanguinária, toda cheia de mentiras"</span>
+                <div class="bg-gradient-to-r from-slate-50 to-red-50 p-6 rounded-2xl border-l-4 border-slate-800">
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">👣 Terceiro Segredo: Que Lindos São os Pés que Trazem Boas Novas!</h3>
+                    <p class="italic text-gray-800">
+                        "Que lindos são os pés sobre os montes!" Naum clamou,<br>
+                        O mensageiro que anuncia a paz — que alívio que causou!<br>
+                        Isaías repetiu essa imagem no capítulo cinquenta e dois,<br>
+                        E Paulo a usou para falar de quem prega o evangelho de Jesus!<br>
+                        <span class="text-slate-900 font-semibold">A boa notícia que Naum anunciava — Nínive caiu, Israel livre! —<br>
+                        Aponta para a maior boa nova: Cristo ressuscitou e vive!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Naum 1:15 — "Eis que sobre os montes os pés do que anuncia boas novas." (Ecoado em Isaías 52:7 e Romanos 10:15!)</p>
                 </div>
 
             </div>
@@ -96,131 +103,199 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Personagens Principais -->
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-slate-700 to-red-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🛡️ Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-slate-300 text-center">
+                <p class="text-5xl mb-4">🏰</p>
+                <blockquote class="text-3xl font-black text-slate-800 leading-snug mb-4">
+                    "O Senhor é bom, uma força na hora da angústia, e conhece os que nEle se refugiam."
+                </blockquote>
+                <p class="text-xl font-bold text-red-700 mb-6">Naum 1:7</p>
+                <div class="bg-slate-50 rounded-2xl p-4 border-2 border-slate-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        No meio de um livro sobre julgamento e destruição, esse versículo brilha como uma joia. Naum não foi escrito para aterrorizar — foi escrito para <em>consolar</em> um povo oprimido. O mesmo Deus que julga o opressor é refúgio para o oprimido!
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-slate-100 text-slate-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-red-100 text-red-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
             👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <h3 class="text-3xl font-bold text-red-800 mb-4">⚔️ Naum, o Profeta da Justiça</h3>
-                <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                    Naum foi um profeta corajoso que trouxe uma mensagem difícil: Deus ia julgar Nínive! 
-                    Seu nome significa "consolador" — ele consolava o povo de Deus mostrando que a justiça chegaria.
-                </p>
-                <h3 class="text-3xl font-bold text-orange-700 mb-4">🏛️ O Povo de Nínive</h3>
-                <p class="text-xl text-gray-700 leading-relaxed">
-                    Nínive era a capital da Assíria, um império cruel e violento. Eles haviam se arrependido nos dias de Jonas, 
-                    mas voltaram a praticar o mal. Agora, a paciência de Deus havia chegado ao fim.
-                </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-5 rounded-2xl border-2 border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-700 mb-2">📜 Naum — O "Consolador"</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O nome Naum significa <em>"consolação"</em> ou <em>"conforto"</em> — paradoxalmente, ele conforta o povo de Deus anunciando a destruição do opressor! Era de Elcós, localidade desconhecida. Profetizou entre 663 a.C. (queda de Tebas) e 612 a.C. (queda de Nínive).
+                    </p>
+                    <div class="versiculo-card bg-slate-50 border-slate-600">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📖 Leia na Bíblia — Naum 1:1</p>
+                        <p class="text-gray-700 italic">"Profecia acerca de Nínive. Livro da visão de Naum, o elcosita."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-700 mb-2">🏙️ Nínive — A Capital do Terror</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Nínive era a capital da Assíria, o império mais brutal da história antiga. Os assírios empalhavam prisioneiros em estacas, arrancavam pele de vivos e deportavam povos inteiros. Eles haviam destruído o Reino do Norte de Israel (722 a.C.) e aterrorizavam toda a região. 150 anos antes, Jonas pregou e eles se arrependeram — mas voltaram ao mal.
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Leia na Bíblia — Naum 3:1</p>
+                        <p class="text-gray-700 italic">"Ai da cidade sanguinária, toda cheia de mentira e rapina, sem cessar a presa!"</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-gray-50 to-slate-50 p-5 rounded-2xl border-2 border-gray-200">
+                    <h3 class="text-2xl font-bold text-gray-700 mb-2">😰 Judá — O Povo que Precisava de Consolo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Judá vivia sob a sombra aterrorizante da Assíria. Já tinha visto o reino irmão (Israel do Norte) ser destruído. Pagava tributos pesados e vivia com medo constante. Naum foi a mensagem de alívio: o opressor será derrubado — Deus não esqueceu Seu povo!
+                    </p>
+                    <div class="versiculo-card bg-gray-50 border-gray-500">
+                        <p class="text-sm font-bold text-gray-800 mb-1">📖 Leia na Bíblia — Naum 1:15</p>
+                        <p class="text-gray-700 italic">"Celebra as tuas festas, ó Judá, cumpre os teus votos; porque o perverso não passará mais por ti."</p>
+                    </div>
+                </div>
+
             </div>
             <div class="order-1 md:order-2">
-                <img src="naum-personagem.png" alt="Naum e Nínive" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="naum-personagem.png" alt="Personagens de Naum" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- Seção 2: O Que o Livro Conta? -->
-    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
-            📖 O Que o Livro de Naum Conta?
+    <!-- Seção 2: O que o livro conta? -->
+    <section class="section bg-gradient-to-br from-slate-50 to-red-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="naum-o-que-conta.png" alt="A Destruição de Nínive" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="naum-o-que-conta.png" alt="História de Naum" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-slate-200 shadow text-center">
+                    <p class="text-sm font-bold text-slate-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Naum tem <strong>3 capítulos</strong>. Cap. 1 apresenta o caráter de Deus (justo e protetor); caps. 2–3 descrevem a queda de Nínive em linguagem épica e poética!</p>
+                </div>
             </div>
-            <div class="order-2 space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-700">
-                    <h3 class="text-2xl font-bold text-red-800 mb-2">⚡ A Ira de Deus</h3>
-                    <p class="text-lg text-gray-700">
-                        Naum começa descrevendo como Deus é poderoso e justo. Ele não deixará o mal sem punição!
-                    </p>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-slate-700 mb-2">📜 Três Grandes Movimentos</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-slate-700 shadow">
+                    <p class="font-bold text-slate-800 mb-1">⚖️ Cap. 1: Quem é o Deus que Julga?</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Naum começa revelando o caráter de Deus: tardio em irar-se, mas grande em poder — e que não inocentará o culpado. O mesmo capítulo traz o versículo-joia (1:7): "O Senhor é bom, uma força na hora da angústia." Deus é simultaneamente juiz e refúgio — para pessoas diferentes!</p>
+                    <p class="text-sm text-slate-600 italic border-t border-slate-100 pt-2">📖 Naum 1:3 — "O Senhor é tardio em irar-se, mas grande em poder, e não inocentará o culpado."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-orange-600">
-                    <h3 class="text-2xl font-bold text-orange-800 mb-2">🏙️ O Julgamento de Nínive</h3>
-                    <p class="text-lg text-gray-700">
-                        Deus anuncia que Nínive será destruída por causa de sua violência, mentiras e crueldade.
-                    </p>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-red-700 shadow">
+                    <p class="font-bold text-red-800 mb-1">🏙️ Cap. 2: O Cerco e a Queda de Nínive</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Uma das cenas de batalha mais vívidas da Bíblia! Naum descreve o ataque como uma câmera filmando ao vivo — cavaleiros, carruagens, rios transbordando, portas das cidades abertas, o palácio cedendo. Cada detalhe se cumpriu em 612 a.C., quando babilônios e medos destruíram Nínive.</p>
+                    <p class="text-sm text-red-600 italic border-t border-red-100 pt-2">📖 Naum 2:6 — "As portas dos rios se abrem, e o palácio se dissolve."</p>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-800 mb-2">🔥 A Queda da Cidade</h3>
-                    <p class="text-lg text-gray-700">
-                        Naum descreve poeticamente como Nínive cairá — e isso realmente aconteceu em 612 a.C.!
-                    </p>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-orange-600 shadow">
+                    <p class="font-bold text-orange-800 mb-1">💀 Cap. 3: Por Que Nínive Merece o Julgamento?</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Naum lista os crimes de Nínive: cidade sanguinária, cheia de mentiras, comércio de escravos, feitiçaria, crueldade sem fim. Compara a queda de Nínive com a de Tebas (No-Ámon), que a própria Assíria havia destruído em 663 a.C. Quem vive pela espada, pela espada perece!</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Naum 3:7 — "Quem terá pena de ti? De onde buscarei consoladores para ti?"</p>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- Seção 3: Por Que é Importante? -->
+    <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
-            ⭐ Por Que o Livro de Naum é Importante?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="space-y-6">
-                    <div class="bg-gradient-to-r from-red-100 to-orange-100 p-6 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold text-red-800 mb-3 flex items-center">
-                            <span class="text-3xl mr-3">⚖️</span> Deus é Paciente, Mas Também Justo
-                        </h3>
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Deus dá muitas chances para as pessoas se arrependerem, mas Ele não ignora o mal para sempre. 
-                            A paciência de Deus não significa que Ele não se importa — Ele é justo e fará o que é certo!
-                        </p>
-                    </div>
-                    <div class="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-xl shadow-md">
-                        <h3 class="text-2xl font-bold text-orange-800 mb-3 flex items-center">
-                            <span class="text-3xl mr-3">🛡️</span> Deus Protege Quem Confia Nele
-                        </h3>
-                        <p class="text-lg text-gray-700 leading-relaxed">
-                            Enquanto Nínive seria destruída, Deus prometeu ser um refúgio para aqueles que confiassem nEle. 
-                            Ele cuida dos Seus filhos mesmo em tempos difíceis!
-                        </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-slate-50 to-gray-50 p-5 rounded-2xl border-2 border-slate-200">
+                    <h3 class="text-2xl font-bold text-slate-700 mb-3">🛡️ Deus Defende os Oprimidos!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Naum é uma mensagem de consolo para quem sofre sob o poder do mal. Ele diz: <strong class="text-slate-700">Deus viu. Deus vai agir. O opressor não ficará impune.</strong> Isso dava esperança real a um povo que vivia com medo da Assíria!
+                    </p>
+                    <div class="versiculo-card bg-slate-50 border-slate-600">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📖 Naum 1:7</p>
+                        <p class="text-gray-700 italic">"O Senhor é bom, uma força na hora da angústia, e conhece os que nEle se refugiam."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-red-50 to-orange-50 p-5 rounded-2xl border-2 border-red-200">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">⏳ A Paciência de Deus Tem Propósito!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Entre Jonas e Naum passaram cerca de 150 anos. Deus esperou — deu tempo para Nínive mudar. Mas quando o arrependimento não foi real e duradouro, o julgamento veio. <strong class="text-red-700">A paciência de Deus não é indiferença</strong> — é misericórdia com prazo!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-600">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Naum 1:3</p>
+                        <p class="text-gray-700 italic">"O Senhor é tardio em irar-se, mas grande em poder, e não inocentará o culpado."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-slate-50 to-red-50 p-5 rounded-2xl border-2 border-slate-300">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-3">✝️ Naum Aponta para o Evangelho!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Naum 1:15 — "os pés do que anuncia boas novas" — foi ecoado por Isaías 52:7 e por Paulo em Romanos 10:15, ao falar sobre os pregadores do evangelho de Jesus. O alívio de Naum (Nínive caiu!) aponta para o alívio maior: <strong class="text-slate-800">o pecado foi vencido na cruz!</strong>
+                    </p>
+                </div>
+
             </div>
             <div class="order-1 md:order-2">
-                <img src="naum-importante.png" alt="A Importância de Naum" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="naum-importante.png" alt="Importância de Naum" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- Seção 4: Propósito do Livro -->
-    <section class="section bg-gradient-to-br from-red-50 to-orange-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
-            🎯 Qual é o Propósito do Livro de Naum?
+    <!-- Seção 4: Propósito do livro -->
+    <section class="section bg-gradient-to-br from-red-50 to-slate-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
+            🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="naum-proposito.png" alt="Propósito de Naum" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="naum-proposito.png" alt="Propósito de Naum" class="w-full h-auto rounded-xl shadow-xl">
             </div>
-            <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-4 border-red-700">
-                    <h3 class="text-3xl font-bold text-red-800 mb-6 text-center">🔥 Três Grandes Lições</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">1️⃣</span>
-                            <div>
-                                <h4 class="text-xl font-bold text-red-700 mb-2">Deus Pune o Mal Persistente</h4>
-                                <p class="text-gray-700">Nínive teve sua chance, mas voltou a pecar. Deus não tolera o mal para sempre.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">2️⃣</span>
-                            <div>
-                                <h4 class="text-xl font-bold text-orange-700 mb-2">Deus Protege Quem Confia Nele</h4>
-                                <p class="text-gray-700">Para os que confiam em Deus, Ele é um refúgio seguro em qualquer tempestade.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <span class="text-4xl">3️⃣</span>
-                            <div>
-                                <h4 class="text-xl font-bold text-yellow-700 mb-2">O Arrependimento Precisa Ser Real</h4>
-                                <p class="text-gray-700">Não basta apenas dizer "desculpa" — precisamos realmente mudar e seguir a Deus!</p>
-                            </div>
-                        </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-slate-200 shadow">
+                    <h3 class="text-2xl font-bold text-slate-700 mb-3">😌 Consolar um Povo Apavorado</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O nome Naum = consolação. O propósito central do livro é dar esperança a Judá: o terror assírio tem data de validade! <strong class="text-slate-700">Deus não esqueceu Seu povo</strong>. O opressor que parece invencível não é eterno — e Deus é mais forte.
+                    </p>
+                    <div class="versiculo-card bg-slate-50 border-slate-500">
+                        <p class="text-sm font-bold text-slate-800 mb-1">📖 Naum 1:15</p>
+                        <p class="text-gray-700 italic">"Celebra as tuas festas, ó Judá, cumpre os teus votos; porque o perverso não passará mais por ti."</p>
                     </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-red-200 shadow">
+                    <h3 class="text-2xl font-bold text-red-700 mb-3">⚖️ Declarar que Toda Crueldade Tem um Fim</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Naum é o livro que responde ao sofrimento dizendo: <strong class="text-red-700">nenhum império do mal dura para sempre</strong>. A Assíria parecia invencível por séculos. Em 612 a.C. desapareceu tão completamente que foi "perdida" por 2.400 anos — até ser redescoberta por arqueólogos no século XIX!
+                    </p>
+                    <div class="versiculo-card bg-red-50 border-red-500">
+                        <p class="text-sm font-bold text-red-800 mb-1">📖 Naum 3:19</p>
+                        <p class="text-gray-700 italic">"Não há cura para a tua ferida; a tua chaga é maligna."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-slate-100 to-red-100 p-4 rounded-xl border-l-4 border-slate-700">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-slate-800">Deus é simultaneamente Juiz e Refúgio. Para quem pratica o mal e não se arrepende, Ele é juiz implacável. Para quem sofre e confia, Ele é fortaleza segura. O mesmo Deus — duas experiências completamente diferentes!</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -228,56 +303,158 @@
 
     <!-- Seção 5: Você Sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-red-700 to-orange-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
             🤔 Você Sabia?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-red-100 to-orange-100 p-8 rounded-2xl shadow-xl border-4 border-yellow-500">
-                    <h3 class="text-3xl font-bold text-red-800 mb-4 flex items-center">
-                        <span class="text-4xl mr-3">⏰</span> 100 Anos Depois de Jonas!
-                    </h3>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                        Naum escreveu cerca de 100 anos depois de Jonas! Lembra quando Jonas pregou e Nínive se arrependeu? 
-                        Pois é... eles voltaram a fazer o mal! 😔
-                    </p>
-                    <p class="text-xl text-gray-700 leading-relaxed mb-4">
-                        Isso nos ensina que o arrependimento precisa ser verdadeiro e duradouro. Não adianta apenas dizer 
-                        "desculpa" e depois continuar fazendo as mesmas coisas erradas!
-                    </p>
-                    <div class="bg-white p-4 rounded-lg mt-4">
-                        <p class="text-lg font-semibold text-orange-800">
-                            💡 Lição: Quando pedimos perdão a Deus, precisamos realmente mudar nosso coração e nossas atitudes!
+                <div class="bg-gradient-to-br from-slate-50 to-red-50 p-6 rounded-2xl border-2 border-slate-200">
+                    <h3 class="text-3xl font-bold text-slate-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-slate-700 mb-4">
+                        <p class="text-gray-700">
+                            🏺 <strong>Nínive foi "perdida" por 2.400 anos:</strong> Nínive foi destruída tão completamente em 612 a.C. que desapareceu da história. Por séculos, estudiosos achavam que era uma lenda bíblica. Só em 1845 o arqueólogo inglês Austen Henry Layard escavou o monte Kuyunjik, no atual Iraque, e encontrou os palácios de Nínive — exatamente como Naum havia descrito!
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-100 p-4 rounded-xl border-l-4 border-slate-800 mb-4">
+                        <p class="text-gray-700">
+                            🐟 <strong>A sequência de Jonas:</strong> Jonas pregou em Nínive e eles se arrependeram — por volta de 760 a.C. Naum profetizou a destruição de Nínive — por volta de 650 a.C. E em 612 a.C. aconteceu. Naum e Jonas são os únicos dois livros proféticos que falam diretamente sobre Nínive!
+                        </p>
+                    </div>
+
+                    <div class="bg-red-100 p-4 rounded-xl border-l-4 border-red-800">
+                        <p class="text-gray-700">
+                            👣 <strong>"Pés que trazem boas novas" — 3 vezes na Bíblia:</strong> A imagem de Naum 1:15 aparece também em Isaías 52:7 ("quão formosos são os pés do que anuncia boas novas") e em Romanos 10:15, onde Paulo a usa para descrever os pregadores do evangelho de Jesus. Uma imagem de 2.700 anos que ainda descreve quem anuncia Cristo!
                         </p>
                     </div>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="naum-curiosidade.png" alt="Curiosidade sobre Naum" class="w-full h-auto rounded-xl shadow-lg">
+                <img src="naum-curiosidade.png" alt="Curiosidades sobre Naum" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-slate-50 to-red-50 rounded-3xl shadow-xl border-t-8 border-slate-600 p-8 mb-4 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-black text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-slate-700 to-red-800">
+            ✝️ Naum Aponta para Jesus
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-4 text-lg text-gray-700">
+                <p class="leading-relaxed">
+                    <span class="font-bold text-slate-700">Naum 1:15</span> — "os pés do que anuncia boas novas" — é ecoado em Isaías 52:7 e citado por Paulo em Romanos 10:15 para descrever os pregadores do evangelho. O "consolo" que Naum anunciava (Nínive caiu!) aponta para o consolo definitivo: Jesus venceu o pecado e a morte!
+                </p>
+                <p class="leading-relaxed">
+                    <span class="font-bold text-red-700">Naum 1:7</span> — "O Senhor é bom, um refúgio na hora da angústia" — é o mesmo Deus que Jesus revelou: "Vinde a mim todos os que estais cansados e sobrecarregados, e eu vos darei descanso" (Mt 11:28). O refúgio de Naum tem nome: Jesus!
+                </p>
+                <p class="leading-relaxed">
+                    O contraste Jonas × Naum mostra a misericórdia e a justiça de Deus em equilíbrio — exatamente o que a <span class="font-bold text-slate-700">cruz de Jesus</span> revela: Deus é ao mesmo tempo justo (o pecado é punido) e misericordioso (Jesus pagou em nosso lugar)!
+                </p>
+            </div>
+            <div class="versiculo-card border-slate-500 bg-white text-lg">
+                <p class="font-bold text-slate-700 mb-2">Paulo usa Naum para falar do evangelho</p>
+                <p class="italic text-gray-700 mb-3">"Como também está escrito: Quão formosos os pés dos que anunciam o evangelho de paz, dos que anunciam boas novas de coisas boas!"</p>
+                <p class="font-bold text-slate-600">📖 Romanos 10:15 (citando Naum 1:15 e Isaías 52:7)</p>
+                <p class="text-sm text-gray-500 mt-2">Paulo usou a imagem de Naum — o mensageiro que corre com a notícia da vitória — para descrever quem leva o evangelho de Jesus ao mundo. Você também pode ser esse mensageiro!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-slate-50 to-red-50 p-8 mb-4 rounded-2xl border-2 border-slate-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-red-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-slate-700">
+                <p class="text-5xl text-center mb-4">⏳</p>
+                <h3 class="text-xl font-bold text-slate-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Nínive se arrependeu com Jonas mas voltou ao mal. <strong>O arrependimento verdadeiro precisa durar. Você já pediu perdão por algo mas voltou a fazer depois? O que tornaria o arrependimento mais real e duradouro?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-red-700">
+                <p class="text-5xl text-center mb-4">🛡️</p>
+                <h3 class="text-xl font-bold text-red-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Naum 1:7 diz que Deus é refúgio na hora da angústia. <strong>Já passou por um momento de medo ou angústia em que você se lembrou de Deus? Como foi? O que significa para você ter Deus como "fortaleza"?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-600">
+                <p class="text-5xl text-center mb-4">👣</p>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Paulo disse que são formosos os pés de quem anuncia boas novas. <strong>Você já compartilhou uma boa notícia sobre Deus com alguém? Como foi? Quem na sua vida precisa ouvir uma boa notícia?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-slate-800 to-red-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-slate-300 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🛡️</p>
+                <div class="bg-slate-100 text-slate-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-slate-700 mb-3">Refugie-se em Naum 1:7</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Quando sentir medo, angústia ou pressão esta semana, <strong>pare e repita em voz alta: "O Senhor é bom, uma força na hora da angústia."</strong> Deixe essa verdade entrar no coração antes de agir.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">👣</p>
+                <div class="bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-red-700 mb-3">Seja os "pés formosos"</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Esta semana, <strong>compartilhe uma boa notícia sobre Deus com uma pessoa</strong> — um versículo, um testemunho, uma história. Naum anunciou o fim do terror; você pode anunciar o início da esperança!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3">Leia Jonas e Naum juntos</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    São dois livros curtos sobre a mesma cidade! Leia Jonas (4 caps.) e Naum (3 caps.) em sequência. Depois pense: <strong>como a misericórdia de Deus (Jonas) e a justiça de Deus (Naum) se completam?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
     <!-- Navegação -->
-    <section class="section no-print bg-gradient-to-r from-red-700/20 to-orange-600/20 border-2 border-red-700/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-center text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="no-print text-center bg-gradient-to-r from-slate-700/20 to-red-800/20 border-2 border-slate-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../miqueias/miqueias.html" class="bg-gradient-to-r from-red-700 to-orange-600 hover:from-red-800 hover:to-orange-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                ⬅️ Miquéias
+            <a href="../miqueias/miqueias.html" class="bg-gradient-to-r from-purple-700 to-indigo-700 hover:from-purple-800 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                ⬅️ Miqueias
             </a>
-            <a href="../profetas-menores.html" class="bg-gradient-to-r from-orange-600 to-red-700 hover:from-orange-700 hover:to-red-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Profetas Menores
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-slate-700 to-red-800 hover:from-slate-800 hover:to-red-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Menores
             </a>
-            <a href="../habacuque/habacuque.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../habacuque/habacuque.html" class="bg-gradient-to-r from-teal-700 to-cyan-700 hover:from-teal-800 hover:to-cyan-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Habacuque ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-red-700 to-orange-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Naum - A Justiça de Deus ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-slate-700 to-red-800 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">⚔️ Livro de Naum — O Fim de Nínive e o Refúgio de Deus 🛡️</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

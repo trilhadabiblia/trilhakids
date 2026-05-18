@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,55 +32,61 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🦗</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700 mx-2">
                     LIVRO DE JOEL
                 </span>
-                <span>🦗</span>
+                <span>🔥</span>
             </h1>
-            <p class="text-xl text-gray-600 font-semibold">O Profeta do Arrependimento e da Restauração — Um Resumo Visual para Crianças</p>
+            <p class="text-xl text-gray-600 font-semibold">O Dia do Senhor, o Espírito Derramado e a Grande Restauração — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-joel" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-300">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
                 🌟 Os Três Segredos de Joel 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🦗 Primeiro Segredo: A Praga que Ensina</h3>
-                    <p class="italic">
-                        Quando os gafanhotos vieram devorar,<br>
-                        Joel começou a profetizar.<br>
-                        "Voltem para Deus de coração sincero,<br>
-                        Pois Ele é bondoso e verdadeiro!"<br>
-                        <span class="text-sm font-semibold text-amber-800 mt-2 block">— Joel 2:12-13</span>
+
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🦗 Primeiro Segredo: Deus Fala Até por Gafanhotos!</h3>
+                    <p class="italic text-gray-800">
+                        Quando os gafanhotos cobriram o céu e o chão,<br>
+                        Joel enxergou aí uma lição!<br>
+                        "Não é acidente — Deus está chamando,<br>
+                        Rasguem o coração e venham voltando!"<br>
+                        <span class="text-amber-800 font-semibold">Deus pode usar qualquer coisa para nos alcançar,<br>
+                        Quando fecha um caminho, é para nos fazer olhar!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Joel 2:12 — "Ainda agora, diz o Senhor, convertei-vos a mim de todo o vosso coração."</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-2xl border-2 border-yellow-300">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💧 Segundo Segredo: A Promessa do Espírito</h3>
-                    <p class="italic">
-                        "Derramarei Meu Espírito", disse o Senhor,<br>
-                        "Sobre toda carne, com grande amor.<br>
-                        Jovens e velhos vão profetizar,<br>
-                        E Minha glória irá transbordar!"<br>
-                        <span class="text-sm font-semibold text-yellow-800 mt-2 block">— Joel 2:28-29</span>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-600">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🕊️ Segundo Segredo: O Espírito Para Todo Mundo!</h3>
+                    <p class="italic text-gray-800">
+                        "Derramarei Meu Espírito sobre toda carne!" Deus prometeu,<br>
+                        "Jovens e velhos, homens e mulheres" — que poder que Ele deu!<br>
+                        Antes, só reis e profetas recebiam essa unção,<br>
+                        Mas Joel anunciou: virá para toda geração!<br>
+                        <span class="text-orange-800 font-semibold">E no dia de Pentecostes Pedro se levantou e falou:<br>
+                        "Isso é o que Joel profetizou — Deus cumpriu o que anunciou!"</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Joel 2:28 — "Derramarei o meu Espírito sobre toda a carne." (Citado em Atos 2:17!)</p>
                 </div>
 
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-300">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🌾 Terceiro Segredo: A Grande Restauração</h3>
-                    <p class="italic">
-                        O que foi perdido Deus vai restaurar,<br>
-                        As colheitas e a alegria voltarão ao seu lugar.<br>
-                        Quando nos arrependemos com sinceridade,<br>
-                        Deus nos devolve toda felicidade!<br>
-                        <span class="text-sm font-semibold text-amber-800 mt-2 block">— Joel 2:25-26</span>
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 p-6 rounded-2xl border-l-4 border-amber-700">
+                    <h3 class="text-2xl font-bold text-amber-800 mb-3">🌾 Terceiro Segredo: Deus Devolve os Anos Perdidos!</h3>
+                    <p class="italic text-gray-800">
+                        Os gafanhotos comeram os frutos dos anos,<br>
+                        Pareciam perdidos esses tempos tão profanos.<br>
+                        Mas Deus prometeu: "Vou restaurar tudo isso!<br>
+                        O que o inimigo roubou — Eu devolvo. Isso é preciso!"<br>
+                        <span class="text-amber-800 font-semibold">Não existe perda definitiva para quem confia no Senhor,<br>
+                        Deus restaura os anos roubados com ainda mais esplendor!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Joel 2:25 — "Compensar-vos-ei os anos que foram consumidos pelo gafanhoto."</p>
                 </div>
 
             </div>
@@ -96,164 +103,358 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-amber-600 to-orange-700 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🔥 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-amber-300 text-center">
+                <p class="text-5xl mb-4">🕊️</p>
+                <blockquote class="text-3xl font-black text-amber-800 leading-snug mb-4">
+                    "E acontecerá depois que derramarei o meu Espírito sobre toda a carne; vossos filhos e vossas filhas profetizarão."
+                </blockquote>
+                <p class="text-xl font-bold text-orange-700 mb-6">Joel 2:28</p>
+                <div class="bg-amber-50 rounded-2xl p-4 border-2 border-amber-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Quando Pedro se levantou no dia de Pentecostes (Atos 2), ele abriu a Bíblia e leu exatamente esse versículo! Joel profetizou 800 anos antes que o Espírito Santo seria derramado sobre <em>todas</em> as pessoas — não só sobre reis e profetas.
+                    </p>
+                </div>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-            👥 Quem são os Personagens Principais?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            👥 Quem São os Personagens Principais?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="joel-personagem.png" alt="Personagens de Joel" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">📯 Joel — O Profeta da Crise e da Esperança</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Quase nada sabemos sobre Joel além do seu nome e do nome de seu pai, Petuel. Mas sua mensagem é poderosa: uma crise terrível (a praga de gafanhotos) se torna oportunidade para o povo voltar a Deus e receber bênçãos ainda maiores do que as que perdeu.
+                    </p>
+                    <div class="versiculo-card bg-amber-50 border-amber-500">
+                        <p class="text-sm font-bold text-amber-800 mb-1">📖 Leia na Bíblia — Joel 2:13</p>
+                        <p class="text-gray-700 italic">"Rasgai o vosso coração, e não as vossas vestes, e convertei-vos ao Senhor, vosso Deus."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">🏛️ O Povo de Judá — Castigado, mas Amado</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        A praga de gafanhotos havia devastado as lavouras de Judá — vinhas, figueiras, trigo, tudo destruído. O luto era real. Joel não minimiza a dor, mas chama o povo a enxergar além da crise: é um chamado de Deus para retornar, e a restauração será ainda maior que a perda!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-500">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Leia na Bíblia — Joel 1:3</p>
+                        <p class="text-gray-700 italic">"Contai isso a vossos filhos, e vossos filhos aos seus filhos, e estes filhos à geração seguinte."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-5 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">🦗 Os Gafanhotos — O Sinal que Falava</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Os gafanhotos são os "personagens" que desencadeiam tudo. Joel os descreve em quatro vagas: cortador, enxame, devorador, destruidor. Mas também os usa como imagem de um exército maior — o "Dia do Senhor" — um tempo de juízo e transformação que ainda virá.
+                    </p>
+                    <div class="versiculo-card bg-yellow-50 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-800 mb-1">📖 Leia na Bíblia — Joel 2:25</p>
+                        <p class="text-gray-700 italic">"Compensar-vos-ei os anos que foram consumidos pelo gafanhoto."</p>
+                    </div>
+                </div>
+
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-xl border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">📯 Joel - O Profeta</h3>
-                    <p class="text-lg text-gray-700">
-                        Joel foi um profeta corajoso que alertou o povo sobre suas escolhas erradas. Ele tocou a trombeta chamando todos ao arrependimento e anunciou grandes promessas de Deus!
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">👨‍👩‍👧‍👦 O Povo de Judá</h3>
-                    <p class="text-lg text-gray-700">
-                        O povo de Judá estava passando por momentos difíceis por causa do pecado. Eles precisavam voltar para Deus de todo o coração e confiar em Sua misericórdia restauradora.
-                    </p>
-                </div>
+            <div class="order-1 md:order-2">
+                <img src="joel-personagem.png" alt="Personagens de Joel" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
     <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-            📖 O que o Livro Conta?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            📖 O Que o Livro Conta?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🦗 A Praga de Gafanhotos</h3>
-                    <p class="text-lg text-gray-700">
-                        Uma terrível praga de gafanhotos destruiu todas as plantações de Judá. Joel usou isso como exemplo para mostrar que o pecado também destrói nossas vidas.
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-yellow-600">
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💔 O Chamado ao Arrependimento</h3>
-                    <p class="text-lg text-gray-700">
-                        Joel chamou o povo a rasgar seus corações (não suas roupas!) e voltar para Deus com sinceridade, jejum e oração. Deus estava esperando para perdoar!
-                    </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-amber-600">
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🕊️ A Promessa do Espírito Santo</h3>
-                    <p class="text-lg text-gray-700">
-                        Joel profetizou que Deus derramaria Seu Espírito sobre todas as pessoas - jovens, idosos, homens e mulheres. Essa promessa se cumpriu no dia de Pentecostes!
-                    </p>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="joel-o-que-conta.png" alt="História de Joel" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 shadow text-center">
+                    <p class="text-sm font-bold text-amber-800 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Joel tem apenas <strong>3 capítulos</strong> — um dos livros mais curtos da Bíblia! Cap. 2:28-32 tem a profecia mais citada de Joel; Atos 2 mostra seu cumprimento em Pentecostes.</p>
                 </div>
             </div>
-            <div>
-                <img src="joel-o-que-conta.png" alt="O que Joel conta" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-amber-700 mb-2">📜 Três Grandes Movimentos</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-amber-600 shadow">
+                    <p class="font-bold text-amber-800 mb-1">🦗 Parte 1 (Cap. 1–2:17): A Praga e o Lamento</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">A devastação dos gafanhotos é total — lavouras, vinhas, celebrações, tudo destruído. Joel convoca o povo, os sacerdotes e os anciãos ao lamento e ao arrependimento. É a hora de "rasgar o coração, não as vestes" e voltar a Deus com sinceridade!</p>
+                    <p class="text-sm text-amber-600 italic border-t border-amber-100 pt-2">📖 Joel 2:12 — "Convertei-vos a mim de todo o vosso coração, e com jejum, e com choro, e com pranto."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-orange-600 shadow">
+                    <p class="font-bold text-orange-800 mb-1">🌾 Parte 2 (Cap. 2:18–27): A Promessa de Restauração</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Deus responde ao arrependimento com misericórdia! Ele promete restaurar as colheitas, afastar o exército do norte, e — a promessa mais linda — "compensar os anos que os gafanhotos comeram". Deus não apenas perdoa; Ele devolve o que foi perdido!</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Joel 2:26 — "E comereis em abundância, e vos fartareis, e louvareis o nome do Senhor vosso Deus."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-yellow-500 shadow">
+                    <p class="font-bold text-yellow-800 mb-1">🕊️ Parte 3 (Cap. 2:28–3:21): O Espírito e o Dia do Senhor</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">A grande promessa: Deus derramará Seu Espírito sobre toda a carne — filhos e filhas, jovens e velhos, homens e mulheres, servos e servas. O "Dia do Senhor" virá com julgamento das nações, mas os que invocarem o nome do Senhor serão salvos!</p>
+                    <p class="text-sm text-yellow-600 italic border-t border-yellow-100 pt-2">📖 Joel 2:32 — "Todo aquele que invocar o nome do Senhor será salvo." (Citado por Paulo em Rm 10:13!)</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-            ⭐ Por que é Importante?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            ⭐ Por Que É Importante?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="order-2 md:order-1">
-                <img src="joel-importante.png" alt="Importância de Joel" class="w-full h-auto rounded-xl shadow-lg">
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🔄 Deus Restaura o Que Foi Perdido!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        "Compensar-vos-ei os anos que os gafanhotos comeram" (2:25) é uma das promessas mais poderosas da Bíblia. Ela ensina que <strong class="text-amber-700">nenhuma perda é definitiva com Deus</strong>. Quando nos arrependemos, Ele não só perdoa — Ele restaura, compensa e renova!
+                    </p>
+                    <div class="versiculo-card bg-amber-50 border-amber-500">
+                        <p class="text-sm font-bold text-amber-800 mb-1">📖 Joel 2:25</p>
+                        <p class="text-gray-700 italic">"Compensar-vos-ei os anos que foram consumidos pelo gafanhoto."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🕊️ O Espírito para Todo Mundo!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        No Antigo Testamento, o Espírito de Deus vinha sobre pessoas específicas (reis, profetas, guerreiros). Joel anunciou algo revolucionário: chegaria um dia em que o Espírito seria derramado sobre <strong class="text-orange-700">todas as pessoas, sem distinção</strong>. Isso é Pentecostes!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-500">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Joel 2:28-29</p>
+                        <p class="text-gray-700 italic">"Sobre os vossos filhos e as vossas filhas... sobre os servos e as servas derramarei o meu Espírito."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-5 rounded-2xl border-2 border-yellow-300">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">✝️ Joel Aponta para Pentecostes e para Paulo!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Pedro citou Joel 2:28-32 no primeiro sermão cristão (At 2:17-21). Paulo citou Joel 2:32 em Romanos 10:13. Um profeta do século 9 a.C. forneceu as escrituras que fundaram a pregação cristã!
+                    </p>
+                </div>
+
             </div>
-            <div class="order-1 md:order-2 space-y-6">
-                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-amber-800 mb-4">🔄 Deus Restaura Tudo!</h3>
-                    <p class="text-xl text-gray-800 leading-relaxed">
-                        Joel nos ensina uma verdade maravilhosa: quando voltamos para Deus de coração sincero, Ele restaura tudo o que foi perdido! Não importa quão grande seja o estrago, Deus pode consertar e fazer novo.
-                    </p>
-                </div>
-                <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-8 rounded-2xl shadow-lg">
-                    <h3 class="text-3xl font-bold text-yellow-800 mb-4">💪 Nunca é Tarde!</h3>
-                    <p class="text-xl text-gray-800 leading-relaxed">
-                        A mensagem de Joel mostra que nunca é tarde demais para se arrepender e voltar para Deus. Ele sempre está esperando de braços abertos para nos receber e nos abençoar!
-                    </p>
-                </div>
+            <div class="order-1 md:order-2">
+                <img src="joel-importante.png" alt="Importância de Joel" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
     <section class="section bg-gradient-to-br from-yellow-50 to-amber-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
             🎯 Qual é o Propósito do Livro?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-amber-300">
-                    <div class="text-5xl mb-4">📢</div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-3">Convocar ao Arrependimento</h3>
-                    <p class="text-lg text-gray-700">
-                        Joel convocou o povo a se arrepender verdadeiramente de seus pecados e voltar para Deus. O arrependimento não é só sentir pena, mas mudar de direção e viver do jeito de Deus!
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-lg border-2 border-yellow-300">
-                    <div class="text-5xl mb-4">🕊️</div>
-                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">Anunciar a Vinda do Espírito Santo</h3>
-                    <p class="text-lg text-gray-700">
-                        Joel foi um dos primeiros profetas a anunciar que Deus derramaria Seu Espírito Santo sobre todas as pessoas. Essa promessa se cumpriu no livro de Atos e continua acontecendo hoje!
-                    </p>
-                </div>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="joel-proposito.png" alt="Propósito de Joel" class="w-full h-auto rounded-xl shadow-xl">
             </div>
-            <div>
-                <img src="joel-proposito.png" alt="Propósito de Joel" class="w-full h-auto rounded-xl shadow-lg">
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-amber-200 shadow">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">💔 Transformar Crises em Chamados</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Joel ensina que Deus usa momentos difíceis para nos chamar de volta. A praga não foi punição sem sentido — foi um <strong class="text-amber-700">convite urgente</strong>. Quando algo ruim acontece, Joel pergunta: "O que Deus está dizendo? Qual é o chamado por trás dessa crise?"
+                    </p>
+                    <div class="versiculo-card bg-amber-50 border-amber-500">
+                        <p class="text-sm font-bold text-amber-800 mb-1">📖 Joel 2:13</p>
+                        <p class="text-gray-700 italic">"Porque ele é misericordioso e compassivo, tardio em irar-se e grande em benignidade."</p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-orange-200 shadow">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🌍 Anunciar a Era do Espírito Santo</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Joel preparou o povo para entender o que aconteceria séculos depois. A <strong class="text-orange-700">era do Espírito Santo</strong> — em que Deus habitaria em cada crente, não apenas em líderes especiais — foi a maior esperança do livro, e se cumpriu em Pentecostes (Atos 2)!
+                    </p>
+                    <div class="versiculo-card bg-orange-50 border-orange-500">
+                        <p class="text-sm font-bold text-orange-800 mb-1">📖 Joel 2:32</p>
+                        <p class="text-gray-700 italic">"Todo aquele que invocar o nome do Senhor será salvo."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-100 to-orange-100 p-4 rounded-xl border-l-4 border-amber-600">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-amber-800">Nenhuma crise tem a última palavra quando Deus é o Senhor. Ele transforma devastação em restauração, lamento em alegria, e promete dar mais do que foi perdido. Arrependimento genuíno sempre encontra um Deus generoso!</span>
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Você sabia? -->
+    <!-- Seção 5: Você Sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
-            💡 Você Sabia?
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            🤔 Você Sabia?
         </h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <img src="joel-curiosidade.png" alt="Curiosidade sobre Joel" class="w-full h-auto rounded-xl shadow-lg">
-            </div>
-            <div class="order-1 md:order-2">
-                <div class="bg-gradient-to-br from-amber-100 via-yellow-100 to-amber-100 p-10 rounded-3xl shadow-2xl border-4 border-amber-400">
-                    <div class="text-6xl mb-6 text-center">🔥✨</div>
-                    <h3 class="text-3xl font-black text-amber-800 mb-6 text-center">O Primeiro a Profetizar Pentecostes!</h3>
-                    <p class="text-xl text-gray-800 leading-relaxed mb-6">
-                        Joel foi um dos primeiros profetas a falar sobre o derramamento do Espírito Santo! Centenas de anos depois, no dia de Pentecostes (Atos 2), o apóstolo Pedro citou a profecia de Joel quando o Espírito Santo desceu sobre os discípulos.
-                    </p>
-                    <div class="bg-white p-6 rounded-xl">
-                        <p class="text-lg text-amber-700 font-semibold italic">
-                            "E acontecerá depois que derramarei o meu Espírito sobre toda a carne; vossos filhos e vossas filhas profetizarão..." — Joel 2:28
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-amber-600 mb-4">
+                        <p class="text-gray-700">
+                            🎭 <strong>Pedro abriu a Bíblia em Joel:</strong> No primeiro sermão cristão da história, no dia de Pentecostes, Pedro não citou Isaías nem os Salmos — ele abriu em Joel 2:28! A profecia de 800 anos antes estava sendo cumprida diante dos olhos de todos.
+                        </p>
+                    </div>
+
+                    <div class="bg-amber-100 p-4 rounded-xl border-l-4 border-amber-700 mb-4">
+                        <p class="text-gray-700">
+                            ✍️ <strong>"Rasguem o coração, não as vestes":</strong> No tempo de Joel, rasgar as roupas era sinal de luto. Mas Deus pede algo mais profundo: que rasguemos o coração — que o arrependimento seja real e interno, não só um gesto externo para impressionar!
+                        </p>
+                    </div>
+
+                    <div class="bg-orange-100 p-4 rounded-xl border-l-4 border-orange-700">
+                        <p class="text-gray-700">
+                            ⚔️ <strong>Ao contrário de Isaías:</strong> Isaías e Miquéias prometem que na era messiânica as espadas serão transformadas em arados (Isaías 2:4). Joel 3:10 diz o contrário para o dia do julgamento: "Transformai os vossos arados em espadas." Os dois versículos se complementam — há tempo de paz e tempo de batalha final!
                         </p>
                     </div>
                 </div>
             </div>
+            <div class="order-1 md:order-2">
+                <img src="joel-curiosidade.png" alt="Curiosidades sobre Joel" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl shadow-xl border-t-8 border-amber-500 p-8 mb-4 max-w-6xl mx-auto">
+        <h2 class="text-4xl font-black text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-700">
+            ✝️ Joel Aponta para Jesus
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="space-y-4 text-lg text-gray-700">
+                <p class="leading-relaxed">
+                    <span class="font-bold text-amber-700">Pedro citou Joel 2:28-32</span> no dia de Pentecostes (Atos 2:17-21) para explicar o que acontecia. O Espírito Santo derramado era a promessa de Joel se cumprindo graças à morte e ressurreição de Jesus!
+                </p>
+                <p class="leading-relaxed">
+                    <span class="font-bold text-orange-700">Paulo citou Joel 2:32</span> em Romanos 10:13 — "Todo aquele que invocar o nome do Senhor será salvo" — para explicar que a salvação em Jesus está disponível para todos, judeus e gentios.
+                </p>
+                <p class="leading-relaxed">
+                    A promessa de <span class="font-bold text-amber-700">restaurar "os anos que os gafanhotos comeram"</span> aponta para Jesus, que veio para nos dar vida em abundância (Jo 10:10) e restaurar tudo o que o pecado havia destruído.
+                </p>
+            </div>
+            <div class="versiculo-card border-amber-500 bg-white text-lg">
+                <p class="font-bold text-amber-700 mb-2">Pedro cita Joel no primeiro sermão cristão</p>
+                <p class="italic text-gray-700 mb-3">"Mas Pedro, pondo-se de pé com os onze, levantou a voz e lhes disse... isto é o que foi dito pelo profeta Joel: 'E nos últimos dias... derramarei do meu Espírito sobre toda a carne.'"</p>
+                <p class="font-bold text-amber-600">📖 Atos 2:14-17</p>
+                <p class="text-sm text-gray-500 mt-2">Joel profetizou cerca de 800 anos antes de Pentecostes. A promessa mais extraordinária de Joel se cumpriu exatamente como descrita — e continua se cumprindo em cada crente que recebe o Espírito Santo hoje!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl border-2 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-orange-700">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-amber-600">
+                <p class="text-5xl text-center mb-4">🦗</p>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Joel via os gafanhotos como um chamado de Deus. <strong>Já aconteceu algo difícil na sua vida que te fez se aproximar mais de Deus? O que você aprendeu com isso?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-500">
+                <p class="text-5xl text-center mb-4">💔</p>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus disse: "Rasguem o coração, não as vestes." <strong>Qual é a diferença entre se arrepender por fora (só para parecer bom) e se arrepender de verdade por dentro? Como você sabe quando é real?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-yellow-500">
+                <p class="text-5xl text-center mb-4">🌾</p>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Deus prometeu devolver os anos que os gafanhotos comeram. <strong>Tem algo na sua vida que parece perdido? Como a promessa de Deus de restaurar te encoraja a continuar confiando Nele?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-amber-700 to-orange-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-amber-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💔</p>
+                <div class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3">Rasga o coração, não as vestes</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escolha uma área da sua vida onde você precisa se arrepender de verdade. <strong>Converse honestamente com Deus</strong> — não apenas diga palavras bonitas, mas fale o que está dentro do coração. Depois espere e ouça!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3">Leia Atos 2:14-21</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia o sermão de Pedro no dia de Pentecostes. Quando Pedro citar Joel, pare e pense: <strong>Joel escreveu isso 800 anos antes e Deus cumpriu!</strong> O que isso diz sobre a confiabilidade das promessas de Deus?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3">Memorize Joel 2:25</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"Compensar-vos-ei os anos que foram consumidos pelo gafanhoto"</strong> e cole onde você vai ver todo dia. Lembre-se dessa promessa quando sentir que perdeu algo que não volta mais!
+                </p>
+            </div>
+
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-yellow-600/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
-        <h3 class="text-3xl font-black text-amber-800 mb-6">🌟 Continue Sua Jornada!</h3>
+    <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-orange-700/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4 max-w-6xl mx-auto">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../oseias/oseias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../oseias/oseias.html" class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Oséias
             </a>
-            <a href="../profetas-menores.html" class="bg-gradient-to-r from-yellow-600 to-amber-600 hover:from-yellow-700 hover:to-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📚 Ver Profetas Menores
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-amber-600 to-orange-700 hover:from-amber-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📚 Profetas Menores
             </a>
-            <a href="../amos/amos.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../amos/amos.html" class="bg-gradient-to-r from-red-700 to-orange-800 hover:from-red-800 hover:to-orange-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Amós ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-amber-600 to-yellow-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Joel - Arrependimento e Restauração ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-amber-600 to-orange-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">🦗 Livro de Joel — O Dia do Senhor e o Espírito Derramado 🔥</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

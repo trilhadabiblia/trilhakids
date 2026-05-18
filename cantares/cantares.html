@@ -1,49 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Cantares - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-pink-600 to-rose-600 hover:from-pink-700 hover:to-rose-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-rose-600 to-fuchsia-700 hover:from-rose-700 hover:to-fuchsia-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -53,294 +28,407 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="cantares-capa.png" alt="Capa: Cantares" id="img-cantares"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-cantares">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>💝</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-rose-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700 mx-2">
                     LIVRO DE CANTARES
                 </span>
                 <span>💝</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Amor Verdadeiro, Beleza e Fidelidade — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-cantares" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">O Maior de Todos os Cânticos — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-cantares"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-pink-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-700 to-rose-600">
-                🌟 Os Três Segredos de Cantares 🌟
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-cantares" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-rose-300">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700">
+                🌹 Os Três Segredos de Cantares 🌹
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-pink-700 mb-2">💕 1️⃣ O amor foi criado por Deus</h3>
-                    <p>
+
+                <div class="bg-gradient-to-r from-rose-50 to-pink-50 p-6 rounded-2xl border-l-4 border-rose-600">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💕 Primeiro Segredo: O Amor Foi Criado por Deus</h3>
+                    <p class="italic text-gray-800">
                         Cantares é um poema cheio de beleza e emoção,<br>
-                        Mostrando que o amor é uma bênção do coração.<br>
+                        Mostrando que o amor é bênção do coração.<br>
                         Deus criou o amor puro, verdadeiro e leal,<br>
-                        Um presente precioso, algo especial!<br><br>
-
-                        🌹 O amor não é só sentimento passageiro,<br>
-                        É um dom de Deus, profundo e sincero!<br>
-                        Quando amamos como Ele nos ensinou,<br>
-                        Vivemos o amor que Deus planejou!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Cantares 8:6-7</span>
+                        Um presente precioso — algo muito especial!<br>
+                        <span class="text-rose-700 font-semibold">O amor não é só sentimento passageiro,<br>
+                        É dom de Deus, profundo e sincero!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Cantares 8:7 — "As muitas águas não poderiam apagar este amor; os rios não o submergiriam."</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-pink-700 mb-2">🤝 2️⃣ O amor verdadeiro é puro e respeitoso</h3>
-                    <p>
-                        O livro mostra um amor cheio de respeito,<br>
-                        Com carinho, amizade, tudo perfeito!<br>
-                        Não é egoísta, não busca só prazer,<br>
-                        Mas se preocupa com o bem-estar de quem quer!<br><br>
-
-                        ✨ O amor verdadeiro cuida, protege e espera,<br>
-                        É paciente, gentil, sempre sincero.<br>
-                        Ele valoriza, honra e não faz mal,<br>
-                        Esse é o amor de Deus, puro e ideal!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Cantares 2:16</span>
+                <div class="bg-gradient-to-r from-pink-50 to-fuchsia-50 p-6 rounded-2xl border-l-4 border-pink-600">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🤝 Segundo Segredo: O Amor Verdadeiro É Puro e Respeitoso</h3>
+                    <p class="italic text-gray-800">
+                        O livro mostra um amor cheio de cuidado e respeito,<br>
+                        Com carinho e amizade — tudo muito perfeito!<br>
+                        Não é egoísta, não busca apenas prazer,<br>
+                        Mas se preocupa com o bem de quem quer!<br>
+                        <span class="text-pink-700 font-semibold">O amor verdadeiro cuida, protege e espera,<br>
+                        Ele valoriza, honra e nunca desespera!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Cantares 2:16 — "O meu amado é meu e eu sou dele."</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-pink-700 mb-2">💍 3️⃣ O amor é forte e fiel como chama</h3>
-                    <p>
-                        <b>Que lindo!</b> O livro diz que o amor é forte,<br>
-                        Forte como a morte, não há quem o corte!<br>
-                        É fiel, é chama que não se apaga,<br>
-                        Águas não podem apagar essa chama que não se esvai ou se afaga!<br><br>
-
-                        🔥 O amor verdadeiro resiste às tempestades,<br>
-                        Permanece firme nas adversidades!<br>
-                        Quando amamos com fidelidade e dedicação,<br>
-                        Vivemos o amor eterno do coração!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Cantares 8:6-7</span>
+                <div class="bg-gradient-to-r from-fuchsia-50 to-rose-50 p-6 rounded-2xl border-l-4 border-fuchsia-600">
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-3">🔥 Terceiro Segredo: O Amor É Forte Como a Morte</h3>
+                    <p class="italic text-gray-800">
+                        O livro diz que o amor é forte, muito forte,<br>
+                        Forte como a morte — nada pode cortá-lo à sorte!<br>
+                        É chama que nunca se apaga nem se vai,<br>
+                        Nem a tempestade nem o rio o desfaz!<br>
+                        <span class="text-fuchsia-700 font-semibold">O amor que vem de Deus resiste às tormentas,<br>
+                        Permanece fiel mesmo nas horas mais lentas!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Cantares 8:6 — "O amor é forte como a morte... as suas brasas são brasas de fogo, a própria chama do Senhor."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-pink-800">
-                        📘 Moral da história:<br>
-                        Ame com pureza, respeito e fidelidade,<br>
-                        Como Deus nos ama com toda intensidade! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgCantares = document.getElementById("img-cantares");
+        const img = document.getElementById("img-cantares");
         const modal = document.getElementById("modal-cantares");
         const closeModal = document.getElementById("close-modal");
-
-        imgCantares.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="cantares-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-rose-600 to-fuchsia-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            🌹 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-rose-300 text-center">
+                <p class="text-5xl mb-4">💝</p>
+                <blockquote class="text-3xl font-black text-rose-700 leading-snug mb-4">
+                    "O amor é forte como a morte... as muitas águas não poderiam apagar este amor."
+                </blockquote>
+                <p class="text-xl font-bold text-fuchsia-700 mb-6">Cantares 8:6-7</p>
+                <div class="bg-rose-50 rounded-2xl p-4 border-2 border-rose-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Este é um dos versículos mais bonitos da Bíblia! Ele diz que o amor verdadeiro — que vem de Deus — não some, não se apaga e não pode ser destruído por nada. Isso vale para o amor de Deus por você também!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-2xl border-4 border-pink-500">
-                    <h2 class="text-4xl font-black text-pink-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-pink-600">Salomão</span>, o sábio rei que expressa seu amor através de belos poemas.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E a <span class="font-bold text-pink-600">jovem sulamita</span>, uma mulher simples, gentil e cheia de beleza interior.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Juntos, eles mostram <span class="font-bold text-pink-600">o amor verdadeiro e puro</span> que Deus criou.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-rose-100 text-rose-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-pink-100 text-pink-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-fuchsia-100 text-fuchsia-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-5 rounded-2xl border-2 border-rose-200">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-2">👑 Salomão — O Esposo Amante</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Salomão é o autor do livro e o amado do poema. Ele usa palavras belíssimas para elogiar a sulamita — os campos, as flores e os animais do campo servem de metáforas para o amor que sente. Um rei poderoso que se rende ao amor!
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-500">
+                        <p class="text-sm font-bold text-rose-700 mb-1">📖 Leia na Bíblia — Cantares 1:2</p>
+                        <p class="text-gray-700 italic">"Beije-me com os beijos de sua boca, porque melhor é o teu amor do que o vinho."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-pink-50 to-fuchsia-50 p-5 rounded-2xl border-2 border-pink-200">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-2">🌸 A Sulamita — A Noiva Amada</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        A sulamita era uma jovem simples do campo — trabalhava sob o sol, cuidava das vinhas. Mesmo assim, é descrita com uma beleza que vem de dentro: ela é forte, confiante, fiel e apaixonada. Deus valoriza a beleza de coração!
+                    </p>
+                    <div class="versiculo-card bg-pink-50 border-pink-500">
+                        <p class="text-sm font-bold text-pink-700 mb-1">📖 Leia na Bíblia — Cantares 1:5</p>
+                        <p class="text-gray-700 italic">"Eu sou morena, mas formosa, ó filhas de Jerusalém."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-fuchsia-50 to-rose-50 p-5 rounded-2xl border-2 border-fuchsia-200">
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-2">👭 As Filhas de Jerusalém — As Testemunhas</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Um grupo de jovens que aparece ao longo do livro como um coro — elas fazem perguntas, admiram o casal e testemunham o amor. Elas representam todos nós, que observamos e aprendemos sobre o amor verdadeiro!
+                    </p>
+                    <div class="versiculo-card bg-fuchsia-50 border-fuchsia-500">
+                        <p class="text-sm font-bold text-fuchsia-700 mb-1">📖 Leia na Bíblia — Cantares 3:11</p>
+                        <p class="text-gray-700 italic">"Saí e vede, ó filhas de Sião, o rei Salomão com a coroa com que sua mãe o coroou no dia do seu casamento."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="cantares-personagem.png" alt="Personagens de Cantares" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-rose-50 to-red-50 p-8 rounded-2xl border-4 border-rose-500">
-                        <h2 class="text-4xl font-black text-rose-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                É um <span class="font-bold text-rose-600">poema bonito sobre o amor verdadeiro</span> entre duas pessoas que se amam.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Fala do <span class="font-bold text-rose-600">carinho, da amizade e do cuidado</span> que existe no relacionamento puro.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Usa <span class="font-bold text-rose-600">lindas metáforas e versos poéticos</span> para expressar sentimentos profundos.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-rose-600">8 capítulos</span> repletos de poesia e amor!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="cantares-o-que-conta.png" alt="História de Cantares" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-rose-200 shadow text-center">
+                    <p class="text-sm font-bold text-rose-700 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Cantares tem <strong>8 capítulos</strong> de poesia pura. O capítulo 8 tem o clímax mais famoso — sobre a força do amor!</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="cantares-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-rose-700 mb-2">🌹 Os Três Atos do Poema</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-rose-600 shadow">
+                    <p class="font-bold text-rose-700 mb-1">🌅 O Namoro — Admiração e Saudade</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Os capítulos 1-3 mostram a admiração mútua, a saudade da presença um do outro e o desejo de se estar juntos. O amor começa com apreciação genuína e cuidado!</p>
+                    <p class="text-sm text-rose-600 italic border-t border-rose-100 pt-2">📖 Cantares 2:3-4 — "Ele me conduziu à casa do banquete, e o seu estandarte sobre mim é o amor."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-pink-600 shadow">
+                    <p class="font-bold text-pink-700 mb-1">💍 O Casamento — Celebração e Compromisso</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Os capítulos 4-5 descrevem o casamento e a beleza da entrega total um ao outro. O amor de Cantares é comprometido — não é passageiro. Inclui fidelidade e dedicação!</p>
+                    <p class="text-sm text-pink-600 italic border-t border-pink-100 pt-2">📖 Cantares 4:9 — "Roubaste o meu coração, minha irmã, noiva minha."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-fuchsia-600 shadow">
+                    <p class="font-bold text-fuchsia-700 mb-1">🔥 A Maturidade — Amor que Resiste a Tudo</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Os capítulos 6-8 mostram um amor que passa por desafios, dúvidas e distâncias — e sobrevive! O amor maduro é provado nas dificuldades e se torna ainda mais forte!</p>
+                    <p class="text-sm text-fuchsia-600 italic border-t border-fuchsia-100 pt-2">📖 Cantares 8:6 — "O amor é forte como a morte... a própria chama do Senhor."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="cantares-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-fuchsia-50 to-pink-50 p-8 rounded-2xl border-4 border-fuchsia-500">
-                    <h2 class="text-4xl font-black text-fuchsia-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-fuchsia-600">o amor foi criado por Deus</span> e é um presente maravilhoso.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina que o amor deve ser <span class="font-bold text-fuchsia-600">puro, respeitoso e cheio de bondade</span>, não egoísta.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Revela a <span class="font-bold text-fuchsia-600">beleza do amor verdadeiro</span> que cuida, protege e permanece fiel!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-rose-50 to-pink-50 p-5 rounded-2xl border-2 border-rose-200">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">💝 Deus Criou o Amor e o Celebra!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Cantares mostra que o amor entre marido e mulher é <strong class="text-rose-600">um presente sagrado de Deus</strong> — tão valioso que merece um livro inteiro na Bíblia! Deus não tem vergonha do amor — Ele o criou e o abençoa!
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-500">
+                        <p class="text-sm font-bold text-rose-700 mb-1">📖 Cantares 8:7</p>
+                        <p class="text-gray-700 italic">"As muitas águas não poderiam apagar este amor; os rios não o submergiriam."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-pink-50 to-fuchsia-50 p-5 rounded-2xl border-2 border-pink-200">
+                    <h3 class="text-2xl font-bold text-pink-700 mb-3">🌷 O Amor Verdadeiro Vale a Espera!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Três vezes no livro, a sulamita diz: <strong class="text-pink-600">"não desperteis o amor antes do tempo"</strong> (Ct 2:7). Isso ensina que o amor verdadeiro não tem pressa — ele aguarda o momento certo de Deus!
+                    </p>
+                    <div class="versiculo-card bg-pink-50 border-pink-500">
+                        <p class="text-sm font-bold text-pink-700 mb-1">📖 Cantares 2:7</p>
+                        <p class="text-gray-700 italic">"Conjuro-vos... que não desperteis nem exciteis o amor antes que ele queira."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-fuchsia-50 to-rose-50 p-5 rounded-2xl border-2 border-fuchsia-200">
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-3">✝️ Cantares Aponta para Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Na Bíblia, a relação entre marido e esposa é imagem do amor de <strong class="text-fuchsia-600">Cristo pela Igreja</strong> (Ef 5:25-27). Jesus é o Noivo que ama Sua noiva — a Igreja — com amor perfeito, fiel e sacrificial. Cantares é uma prévia desse amor eterno!
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="cantares-importante.png" alt="Importância de Cantares" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-purple-50 to-fuchsia-50 p-8 rounded-2xl border-4 border-purple-500">
-                        <h2 class="text-4xl font-black text-purple-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-purple-600">Ensinar o valor do amor verdadeiro</span>, da fidelidade e da dedicação no relacionamento.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Mostrar a <span class="font-bold text-purple-600">beleza de se amar como Deus ama</span> — com pureza, respeito e eternidade.
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-pink-50 to-fuchsia-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="cantares-proposito.png" alt="Propósito de Cantares" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-rose-200 shadow">
+                    <h3 class="text-2xl font-bold text-rose-700 mb-3">🎶 Celebrar o Amor Como Dom de Deus</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Cantares existe para dizer que o amor é <strong class="text-rose-600">sagrado e belo</strong> — digno de ser cantado, celebrado e guardado com cuidado. Não é algo envergonhoso, mas um presente precioso que Deus deu à humanidade desde o Éden!
+                    </p>
+                    <div class="versiculo-card bg-rose-50 border-rose-500">
+                        <p class="text-sm font-bold text-rose-700 mb-1">📖 Cantares 1:4</p>
+                        <p class="text-gray-700 italic">"O rei me introduziu nas suas câmaras... com razão te amam."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="cantares-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-fuchsia-200 shadow">
+                    <h3 class="text-2xl font-bold text-fuchsia-700 mb-3">💎 Ensinar o Valor da Pureza</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O livro ensina que <strong class="text-fuchsia-600">o amor puro é o mais poderoso e duradouro</strong>. A sulamita guarda seu coração com cuidado, espera o tempo certo e só então entrega tudo. Pureza não é fraqueza — é força!
+                    </p>
+                    <div class="versiculo-card bg-fuchsia-50 border-fuchsia-500">
+                        <p class="text-sm font-bold text-fuchsia-700 mb-1">📖 Cantares 4:12</p>
+                        <p class="text-gray-700 italic">"Jardim fechado és tu, minha irmã, noiva minha; jardim fechado, fonte selada."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-rose-100 to-fuchsia-100 p-4 rounded-xl border-l-4 border-rose-600">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-rose-700">O amor verdadeiro vem de Deus, imita o amor de Deus e aponta para o amor de Jesus pela Sua Igreja — eterno, fiel e inquebrantável!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="cantares-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-violet-50 to-purple-50 p-8 rounded-2xl border-4 border-violet-500">
-                    <h2 class="text-4xl font-black text-violet-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-violet-600">Este é o livro mais poético da Bíblia!</span>
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-600 to-fuchsia-700">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-rose-50 to-fuchsia-50 p-6 rounded-2xl border-2 border-rose-200">
+                    <h3 class="text-3xl font-bold text-rose-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-rose-600 mb-4">
+                        <p class="text-gray-700">
+                            🎵 <strong>"Cantares dos Cantares"</strong> é um superlativo hebraico que significa "O Maior de Todos os Cânticos"! Assim como "Rei dos Reis" significa o maior rei, "Cantares dos Cantares" é a mais linda de todas as canções!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            É como <span class="font-bold text-violet-600">uma canção cheia de versos e metáforas</span> sobre o amor — por isso se chama "Cantares"!
+                    </div>
+
+                    <div class="bg-rose-100 p-4 rounded-xl border-l-4 border-rose-700 mb-4">
+                        <p class="text-gray-700">
+                            ✡️ <strong>Judeus lêem Cantares na Páscoa:</strong> Os judeus recitam este livro na festa da Páscoa — como símbolo do amor de Deus pelo povo de Israel. Eles enxergam o amado como Deus e a amada como Israel!
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-violet-300">
-                            <p class="text-sm text-gray-700 italic">O amor verdadeiro é uma canção que ecoa para sempre! 🎵💕
-                                </br></br>
-                                Ponha-me como selo sobre o teu coração, como selo sobre o teu braço, pois o amor é forte como a morte... As muitas águas não poderiam apagar este amor; os rios não conseguiriam levá-lo.</br>Cantares 8:6-7</p>
-                        </div>
+                    </div>
+
+                    <div class="bg-fuchsia-100 p-4 rounded-xl border-l-4 border-fuchsia-600">
+                        <p class="text-gray-700">
+                            🌹 <strong>Deus não é mencionado diretamente</strong> em Cantares — é um dos únicos livros assim. Mas o amor descrito aponta claramente para Ele. A expressão "chama do Senhor" em Ct 8:6 é uma das poucas referências diretas a Deus!
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="cantares-curiosidade.png" alt="Curiosidades sobre Cantares" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-pink-700/20 to-rose-700/20 border-2 border-pink-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-rose-50 to-pink-50 p-8 mb-4 rounded-2xl border-2 border-rose-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-rose-700 to-fuchsia-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-rose-600">
+                <p class="text-5xl text-center mb-4">💝</p>
+                <h3 class="text-xl font-bold text-rose-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Cantares mostra que Deus criou o amor e o considera belo e sagrado. <strong>Como você demonstra amor pela sua família hoje? O que você poderia fazer diferente para mostrar mais carinho?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-pink-600">
+                <p class="text-5xl text-center mb-4">🌷</p>
+                <h3 class="text-xl font-bold text-pink-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    A sulamita repetiu: "não desperteis o amor antes do tempo." <strong>Por que você acha que Deus quer que a gente espere o momento certo para certas coisas? O que de bom acontece quando a gente aprende a esperar?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-fuchsia-600">
+                <p class="text-5xl text-center mb-4">✝️</p>
+                <h3 class="text-xl font-bold text-fuchsia-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Cantares aponta para o amor de Jesus pela Igreja. <strong>Como você descreveria o amor de Jesus por você? Em que momento da sua vida você mais sentiu que Jesus estava cuidando de você com amor?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-rose-700 to-fuchsia-900 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-rose-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-rose-100 text-rose-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-rose-700 mb-3">Leia Cantares 8:6-7</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia em voz alta os versículos 6 e 7 do <strong>capítulo 8</strong> — o clímax mais famoso do livro. Depois converse com alguém da família: o que mais chamou sua atenção sobre esse amor forte como a morte?
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💌</p>
+                <div class="bg-pink-100 text-pink-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-pink-700 mb-3">Escreva uma Carta de Amor</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva uma carta ou bilhete <strong>para alguém que você ama</strong> — pode ser para pai, mãe, irmão ou amigo. Use palavras gentis de agradecimento, como Salomão fez com a sulamita!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">🌸</p>
+                <div class="bg-fuchsia-100 text-fuchsia-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-fuchsia-700 mb-3">Atos de Carinho em Família</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Por 3 dias seguidos, faça <strong>um ato de carinho espontâneo</strong> por cada pessoa da sua família — um abraço, ajudar sem que peçam, um elogio genuíno. Amor é ação, não só sentimento!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-rose-600/20 to-fuchsia-700/20 border-2 border-rose-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../eclesiastes/eclesiastes.html"
-                class="bg-gradient-to-r from-pink-700 to-rose-600 hover:from-pink-800 hover:to-rose-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../eclesiastes/eclesiastes.html" class="bg-gradient-to-r from-teal-700 to-cyan-800 hover:from-teal-800 hover:to-cyan-900 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Eclesiastes
             </a>
-            <a href="../poeticos.html"
-                class="bg-gradient-to-r from-rose-600 to-pink-700 hover:from-rose-700 hover:to-pink-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../poeticos.html" class="bg-gradient-to-r from-rose-600 to-fuchsia-700 hover:from-rose-700 hover:to-fuchsia-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 📚 Ver Livros Poéticos
             </a>
-            <a href="../profetas-maiores.html"
-                class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
-                📖 Ver Livros Proféticos ➡️
+            <a href="../profetas-maiores.html" class="bg-gradient-to-r from-blue-700 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+                📖 Profetas Maiores ➡️
             </a>
         </div>
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-pink-600 to-rose-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Cantares - Amor Verdadeiro ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-rose-600 to-fuchsia-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">💝 Livro de Cantares — O Maior de Todos os Cânticos 💝</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -349,5 +437,4 @@
         trilhoGame.visitarLivro('Cantares');
     </script>
 </body>
-
 </html>

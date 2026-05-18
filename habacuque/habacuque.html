@@ -10,6 +10,7 @@
         .modal { transition: opacity 0.3s ease; }
         .modal-hidden { opacity: 0; pointer-events: none; }
         .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
 <body class="bg-slate-100 font-sans">
@@ -17,7 +18,7 @@
     <!-- Botão Imprimir -->
     <div class="no-print fixed bottom-6 right-6 z-50">
         <button onclick="window.print()"
-            class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
+            class="bg-gradient-to-r from-teal-600 to-cyan-700 hover:from-teal-700 hover:to-cyan-800 text-white px-6 py-3 rounded-full font-bold shadow-xl transition-all">
             🖨️ Imprimir
         </button>
     </div>
@@ -31,7 +32,7 @@
             </div>
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>🙏</span>
-                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700 mx-2">
                     LIVRO DE HABACUQUE
                 </span>
                 <span>💬</span>
@@ -42,43 +43,43 @@
 
     <!-- Modal com 3 Segredos -->
     <div id="modal-habacuque" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-purple-600">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-teal-600">
             <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
                 🌟 Os Três Segredos de Habacuque 🌟
             </h2>
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                
-                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🙋 Primeiro Segredo: Pode Perguntar!</h3>
+
+                <div class="bg-teal-50 p-6 rounded-2xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">🙋 Primeiro Segredo: Pode Perguntar!</h3>
                     <p class="text-gray-800 leading-relaxed">
                         Habacuque não teve medo de questionar,<br>
                         Com Deus ele foi conversar e perguntar:<br>
-                        "Por que o mal parece vencer?"<br>
-                        E Deus ouviu, pronto para responder!<br>
-                        <span class="text-sm italic text-purple-600 mt-2 block">📖 Habacuque 1:2-4</span>
+                        "Por que o mal parece vencer aqui?"<br>
+                        E Deus respondeu: "Estou ouvindo, estou aqui!"<br>
+                        <span class="text-sm italic text-teal-600 mt-2 block">📖 Habacuque 1:2-4</span>
                     </p>
                 </div>
 
-                <div class="bg-indigo-50 p-6 rounded-2xl border-l-4 border-indigo-600">
-                    <h3 class="text-2xl font-bold text-indigo-700 mb-3">👂 Segundo Segredo: Deus Sempre Responde!</h3>
+                <div class="bg-cyan-50 p-6 rounded-2xl border-l-4 border-cyan-600">
+                    <h3 class="text-2xl font-bold text-cyan-700 mb-3">✍️ Segundo Segredo: Um Versículo que Mudou o Mundo!</h3>
                     <p class="text-gray-800 leading-relaxed">
-                        Deus não ficou em silêncio, não!<br>
-                        Explicou Seu plano com amor e compaixão,<br>
-                        "Confie em Mim, mesmo sem entender,<br>
-                        Minha justiça vai prevalecer!"<br>
-                        <span class="text-sm italic text-indigo-600 mt-2 block">📖 Habacuque 2:2-4</span>
+                        Deus disse uma frase pequena mas poderosa demais,<br>
+                        Que atravessaria séculos e não pararia mais:<br>
+                        "O justo viverá pela fé, não por mérito ou poder,"<br>
+                        Esse versículo fez a Reforma Protestante acontecer!<br>
+                        <span class="text-sm italic text-cyan-600 mt-2 block">📖 Habacuque 2:4</span>
                     </p>
                 </div>
 
-                <div class="bg-purple-50 p-6 rounded-2xl border-l-4 border-purple-600">
-                    <h3 class="text-2xl font-bold text-purple-700 mb-3">🎵 Terceiro Segredo: Alegria na Tempestade!</h3>
+                <div class="bg-teal-50 p-6 rounded-2xl border-l-4 border-teal-600">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">🎵 Terceiro Segredo: Alegria Maior que as Circunstâncias!</h3>
                     <p class="text-gray-800 leading-relaxed">
-                        Mesmo quando tudo parecer ruim,<br>
-                        Habacuque cantou: "Vou confiar até o fim!"<br>
-                        Sem colheita, sem flores no campo,<br>
-                        Ainda assim, em Deus me alegro e canto!<br>
-                        <span class="text-sm italic text-purple-600 mt-2 block">📖 Habacuque 3:17-19</span>
+                        Sem figos, sem uvas, sem rebanho no pasto,<br>
+                        Sem nada na despensa — mas esse não é o contraste!<br>
+                        "Ainda assim me alegrarei no Senhor!"<br>
+                        Uma fé que não depende do que está lá fora!<br>
+                        <span class="text-sm italic text-teal-600 mt-2 block">📖 Habacuque 3:17-18</span>
                     </p>
                 </div>
 
@@ -96,83 +97,110 @@
         modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-r from-teal-600 to-cyan-700 text-white p-8 mb-4 text-center">
+        <h2 class="text-3xl font-black mb-4">💛 Versículo para Guardar no Coração</h2>
+        <blockquote class="text-2xl font-bold italic max-w-3xl mx-auto leading-relaxed mb-4">
+            "O justo viverá pela fé."
+        </blockquote>
+        <p class="text-lg font-semibold opacity-90">📖 Habacuque 2:4b</p>
+        <p class="mt-4 text-base opacity-80 max-w-2xl mx-auto">
+            Seis palavras simples. O versículo mais poderoso do profeta Habacuque — e um dos mais citados de toda a Bíblia!
+        </p>
+    </section>
+
     <!-- Seção 1: Quem são os personagens principais? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
             👥 Quem São os Personagens Principais?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
-            <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl border-2 border-purple-200 shadow-lg">
-                    <h3 class="text-3xl font-bold text-purple-700 mb-4">🙏 Habacuque - O Profeta Questionador</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Habacuque era um profeta corajoso que não teve medo de fazer perguntas difíceis a Deus. Ele via muita injustiça ao seu redor e queria entender por que Deus permitia essas coisas.
+            <div class="order-2 md:order-1 space-y-6">
+
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-2xl border-2 border-teal-200 shadow-lg">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">🙏 Habacuque — O Profeta que Abraçou Deus</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Seu nome em hebraico (חֲבַקּוּק) significa "abraço" ou "o que luta abraçando". E o livro mostra exatamente isso: Habacuque "abraça" Deus com suas perguntas honestas, não fugindo, mas se aproximando!
                     </p>
-                    <div class="bg-white p-4 rounded-xl border-l-4 border-purple-600">
-                        <p class="font-semibold text-purple-800">💭 Sua Grande Pergunta:</p>
-                        <p class="text-gray-700 italic">"Senhor, por que o mal parece vencer?"</p>
+                    <div class="versiculo-card bg-white border-teal-500 text-gray-700">
+                        <p class="font-semibold text-teal-800">💭 Sua Pergunta Corajosa:</p>
+                        <p class="italic">"Senhor, até quando clamarei e Tu não ouvirás?" — Hc 1:2</p>
                     </div>
                 </div>
-                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl border-2 border-indigo-200 shadow-lg mt-6">
-                    <h3 class="text-3xl font-bold text-indigo-700 mb-4">✨ Deus - O Mestre Paciente</h3>
-                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
-                        Deus não ficou bravo com as perguntas de Habacuque! Ele respondeu com paciência e amor, ensinando o profeta a confiar mesmo sem entender tudo.
+
+                <div class="bg-gradient-to-br from-cyan-50 to-teal-50 p-6 rounded-2xl border-2 border-cyan-200 shadow-lg">
+                    <h3 class="text-2xl font-bold text-cyan-700 mb-3">😔 O Povo Injusto de Judá — O Problema que Habacuque Vê</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Habacuque via ao redor: violência, lei ignorada, os pobres sendo esmagados pelos ricos, e ninguém fazendo nada. Isso deixava o profeta angustiado e cheio de perguntas.
                     </p>
-                    <div class="bg-white p-4 rounded-xl border-l-4 border-indigo-600">
-                        <p class="font-semibold text-indigo-800">💬 Sua Resposta de Amor:</p>
-                        <p class="text-gray-700 italic">"O justo viverá pela fé!"</p>
+                    <div class="versiculo-card bg-white border-cyan-500 text-gray-700">
+                        <p class="font-semibold text-cyan-800">⚖️ O Problema:</p>
+                        <p class="italic">"A lei está enfraquecida e a justiça nunca prevalece." — Hc 1:4</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-2xl border-2 border-teal-200 shadow-lg">
+                    <h3 class="text-2xl font-bold text-teal-700 mb-3">⚔️ Os Caldeus — A Resposta Surpresa de Deus</h3>
+                    <p class="text-gray-700 leading-relaxed mb-3">
+                        Habacuque perguntou por que Deus não punia Judá. A resposta o chocou: Deus usaria a feroz Babilônia (Caldeus) como instrumento de julgamento! Isso gerou uma segunda pergunta ainda mais difícil...
+                    </p>
+                    <div class="versiculo-card bg-white border-teal-500 text-gray-700">
+                        <p class="font-semibold text-teal-800">😲 Segunda Pergunta:</p>
+                        <p class="italic">"Como podes usar um povo mais ímpio ainda para punir?" — Hc 1:13</p>
+                    </div>
+                </div>
+
             </div>
             <div class="order-1 md:order-2">
-                <img src="habacuque-personagem.png" alt="Habacuque e Deus" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-purple-300">
+                <img src="habacuque-personagem.png" alt="Habacuque e os Personagens" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-teal-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-gradient-to-br from-purple-50 to-indigo-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+    <section class="section bg-gradient-to-br from-teal-50 to-cyan-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
             📖 O Que o Livro Conta?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="habacuque-o-que-conta.png" alt="A Conversa com Deus" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-indigo-300">
+                <img src="habacuque-o-que-conta.png" alt="A Conversa com Deus" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-cyan-300">
             </div>
             <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-purple-200">
-                    <h3 class="text-3xl font-bold text-purple-700 mb-6">💬 Uma Conversa Especial</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <span class="text-4xl">❓</span>
-                            <div>
-                                <h4 class="font-bold text-xl text-gray-800 mb-2">As Perguntas de Habacuque</h4>
-                                <p class="text-gray-700">O profeta vê injustiça e maldade em todo lugar. Ele pergunta a Deus por que as coisas ruins acontecem e por que os maus parecem vencer.</p>
-                            </div>
-                        </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-teal-200 space-y-6">
 
-                        <div class="flex items-start gap-4">
-                            <span class="text-4xl">💭</span>
-                            <div>
-                                <h4 class="font-bold text-xl text-gray-800 mb-2">A Resposta de Deus</h4>
-                                <p class="text-gray-700">Deus explica que Ele tem um plano perfeito. Mesmo que não entendamos tudo agora, devemos confiar que Deus fará justiça no tempo certo.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <span class="text-4xl">🎵</span>
-                            <div>
-                                <h4 class="font-bold text-xl text-gray-800 mb-2">A Canção de Fé</h4>
-                                <p class="text-gray-700">No final, Habacuque aprende a lição e canta uma linda canção de confiança em Deus, mesmo quando as coisas são difíceis!</p>
-                            </div>
-                        </div>
+                    <div class="bg-teal-50 p-5 rounded-xl border-l-4 border-teal-600">
+                        <h4 class="font-bold text-xl text-teal-800 mb-2 flex items-center gap-2">
+                            <span>❓</span> Capítulo 1 — As Duas Perguntas
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Habacuque faz duas perguntas difíceis: "Por que tu toleras a injustiça em Judá?" e "Por que usas os cruéis caldeus como instrumento?" É o único livro profético que começa com o profeta questionando Deus!
+                        </p>
                     </div>
 
-                    <div class="mt-6 bg-gradient-to-r from-purple-100 to-indigo-100 p-4 rounded-xl border-l-4 border-purple-600">
-                        <p class="font-bold text-purple-800 text-lg">✨ Mensagem Principal:</p>
-                        <p class="text-gray-800 italic">"Confie em Deus mesmo quando não entender!"</p>
+                    <div class="bg-cyan-50 p-5 rounded-xl border-l-4 border-cyan-600">
+                        <h4 class="font-bold text-xl text-cyan-800 mb-2 flex items-center gap-2">
+                            <span>✍️</span> Capítulo 2 — A Resposta e os Cinco "Ais"
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Deus responde com a frase que mudaria o mundo: "O justo viverá pela fé!" (2:4). Depois, pronuncia cinco "ais" de julgamento contra Babilônia, mostrando que os arrogantes também responderão a Deus.
+                        </p>
                     </div>
+
+                    <div class="bg-teal-50 p-5 rounded-xl border-l-4 border-teal-600">
+                        <h4 class="font-bold text-xl text-teal-800 mb-2 flex items-center gap-2">
+                            <span>🎵</span> Capítulo 3 — A Canção de Fé Total
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Habacuque termina com uma oração-canção majestosa! Ele relembra o poder de Deus na história, confessa seu tremor diante de Deus, e conclui com a declaração de fé mais bonita da Bíblia: "Ainda assim me alegrarei!"
+                        </p>
+                    </div>
+
+                    <div class="versiculo-card bg-amber-50 border-amber-500 text-gray-800 text-center">
+                        <p class="font-bold text-amber-800 text-lg">✨ Mensagem Principal:</p>
+                        <p class="italic">"A fé verdadeira não depende das circunstâncias!"</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -180,93 +208,89 @@
 
     <!-- Seção 3: Por que é importante? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
             ⭐ Por Que É Importante?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-purple-50 to-indigo-50 p-8 rounded-2xl shadow-xl border-2 border-purple-200">
-                    <h3 class="text-3xl font-bold text-purple-700 mb-6">🌟 Lições Para Nossa Vida</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">💪</span>
-                                <h4 class="font-bold text-xl text-gray-800">Fé nos Momentos Difíceis</h4>
-                            </div>
-                            <p class="text-gray-700 leading-relaxed">
-                                Habacuque nos ensina que é normal ter dúvidas e perguntas. O importante é levar essas perguntas a Deus e confiar Nele, mesmo quando não entendemos tudo.
-                            </p>
-                        </div>
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-8 rounded-2xl shadow-xl border-2 border-teal-200 space-y-5">
 
-                        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-indigo-600">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">🙏</span>
-                                <h4 class="font-bold text-xl text-gray-800">Deus Ouve Nossas Perguntas</h4>
-                            </div>
-                            <p class="text-gray-700 leading-relaxed">
-                                Você pode conversar com Deus sobre qualquer coisa! Ele não fica bravo quando fazemos perguntas. Ele quer nos ensinar e nos ajudar a crescer na fé.
-                            </p>
+                    <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-teal-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl">💬</span>
+                            <h4 class="font-bold text-xl text-gray-800">O Único Diálogo Direto com Deus</h4>
                         </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-purple-600">
-                            <div class="flex items-center gap-3 mb-3">
-                                <span class="text-3xl">🎵</span>
-                                <h4 class="font-bold text-xl text-gray-800">Alegria Mesmo na Tempestade</h4>
-                            </div>
-                            <p class="text-gray-700 leading-relaxed">
-                                Podemos ter alegria mesmo quando as coisas não vão bem, porque sabemos que Deus está no controle e cuida de nós!
-                            </p>
-                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            Habacuque é o único livro profético estruturado como um diálogo: o profeta fala, Deus responde, o profeta questiona de novo, Deus responde de novo. É uma conversa real entre um homem e seu Criador!
+                        </p>
                     </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-cyan-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl">🔥</span>
+                            <h4 class="font-bold text-xl text-gray-800">O Versículo da Reforma Protestante</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            "O justo viverá pela fé" (Hc 2:4) é citado 3 vezes no Novo Testamento. Quando Martim Lutero leu esse versículo em Romanos 1:17, ele teve uma revelação que mudou o mundo cristão para sempre!
+                        </p>
+                    </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md border-l-4 border-teal-600">
+                        <div class="flex items-center gap-3 mb-2">
+                            <span class="text-3xl">🎵</span>
+                            <h4 class="font-bold text-xl text-gray-800">Uma Oração Cantada no Templo</h4>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            O capítulo 3 termina com a nota "Para o mestre de música, com instrumentos de cordas". Era uma canção litúrgica real, cantada por corais no templo de Jerusalém!
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="habacuque-importante.png" alt="Fé nos Momentos Difíceis" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-indigo-300">
+                <img src="habacuque-importante.png" alt="A Importância de Habacuque" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-teal-300">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-gradient-to-br from-indigo-50 to-purple-50 p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+    <section class="section bg-gradient-to-br from-teal-50 to-cyan-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
             🎯 Propósito do Livro
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-1">
-                <img src="habacuque-proposito.png" alt="Confiança Total em Deus" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-purple-300">
+                <img src="habacuque-proposito.png" alt="Confiança em Deus" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-cyan-300">
             </div>
             <div class="order-2">
-                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-indigo-200">
-                    <h3 class="text-3xl font-bold text-indigo-700 mb-6">✨ Inspirar Confiança Total em Deus</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-600">
-                            <h4 class="font-bold text-xl text-purple-800 mb-3">🌈 O Grande Objetivo</h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                Habacuque foi escrito para nos ensinar que podemos confiar em Deus completamente, mesmo quando a vida é difícil e não entendemos o que está acontecendo.
-                            </p>
-                        </div>
+                <div class="bg-white p-8 rounded-2xl shadow-xl border-2 border-teal-200 space-y-5">
 
-                        <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl border-l-4 border-indigo-600">
-                            <h4 class="font-bold text-xl text-indigo-800 mb-3">💎 Versículo Especial</h4>
-                            <p class="text-gray-700 leading-relaxed italic mb-3">
-                                "Ainda que a figueira não floresça, nem haja fruto na vide... eu me alegrarei no Senhor!"
-                            </p>
-                            <p class="text-sm text-gray-600">📖 Habacuque 3:17-18</p>
-                        </div>
-
-                        <div class="bg-gradient-to-r from-purple-50 to-indigo-50 p-6 rounded-xl border-l-4 border-purple-600">
-                            <h4 class="font-bold text-xl text-purple-800 mb-3">🎯 Para Você Hoje</h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                Quando você estiver triste, com medo ou confuso, lembre-se de Habacuque! Você pode conversar com Deus sobre tudo e confiar que Ele tem o melhor plano para sua vida.
-                            </p>
-                        </div>
-
-                        <div class="bg-gradient-to-r from-yellow-100 to-amber-100 p-5 rounded-xl text-center border-2 border-yellow-400">
-                            <p class="font-black text-2xl text-yellow-800">🌟 "O justo viverá pela fé!" 🌟</p>
-                        </div>
+                    <div class="bg-teal-50 p-5 rounded-xl border-l-4 border-teal-600">
+                        <h4 class="font-bold text-xl text-teal-800 mb-2">🙋 Perguntar é Fé, Não Falta de Fé!</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Habacuque mostra que questionar Deus honestamente é diferente de rejeitar Deus. Quando levamos nossas dúvidas a Deus, estamos demonstrando que confiamos que Ele pode responder!
+                        </p>
                     </div>
+
+                    <div class="bg-cyan-50 p-5 rounded-xl border-l-4 border-cyan-600">
+                        <h4 class="font-bold text-xl text-cyan-800 mb-2">⚖️ Deus Governa Mesmo Quando Parece Distante</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Quando a injustiça parece vencer, Habacuque ensina que Deus ainda está no controle — e os arrogantes (mesmo Babilônia!) responderão pelo que fizeram no tempo certo.
+                        </p>
+                    </div>
+
+                    <div class="bg-teal-50 p-5 rounded-xl border-l-4 border-teal-600">
+                        <h4 class="font-bold text-xl text-teal-800 mb-2">🌈 Alegria que Não Depende das Circunstâncias</h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            O clímax do livro (3:17-19) é a declaração máxima de fé: alegrar-se em Deus mesmo sem colheita, sem rebanho, sem nada. Uma fé que vai além do que podemos ver ou sentir!
+                        </p>
+                    </div>
+
+                    <div class="versiculo-card bg-amber-50 border-amber-500 text-center">
+                        <p class="font-black text-xl text-amber-800">"Ainda assim me alegrarei no Senhor, exultarei no Deus da minha salvação!"</p>
+                        <p class="text-sm text-gray-600 mt-2">📖 Habacuque 3:18</p>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -274,66 +298,146 @@
 
     <!-- Seção 5: Você sabia? -->
     <section class="section bg-white p-8 mb-4">
-        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
             🤔 Você Sabia?
         </h2>
         <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
             <div class="order-2 md:order-1">
-                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl shadow-xl border-2 border-yellow-300">
-                    <div class="text-center mb-6">
-                        <span class="text-6xl">🎵</span>
-                        <h3 class="text-3xl font-bold text-amber-700 mt-4">Uma Canção de Esperança!</h3>
+                <div class="bg-gradient-to-br from-yellow-50 to-amber-50 p-8 rounded-2xl shadow-xl border-2 border-yellow-300 space-y-5">
+
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2 flex items-center gap-2">
+                            <span>🔥</span> Mudou o Curso da História!
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            Em 1517, o monge Martim Lutero leu "O justo viverá pela fé" (Hc 2:4 → Rm 1:17). Esse versículo o fez entender que a salvação é graça, não mérito. Isso iniciou a Reforma Protestante — um dos maiores movimentos da história cristã!
+                        </p>
                     </div>
-                    
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-xl shadow-md">
-                            <h4 class="font-bold text-xl text-gray-800 mb-3 flex items-center gap-2">
-                                <span>🎼</span> O Final Musical
-                            </h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                Habacuque termina seu livro com uma linda canção de fé e esperança! É como se ele estivesse dizendo: "Aprendi a lição! Agora vou cantar sobre a grandeza de Deus!"
-                            </p>
-                        </div>
 
-                        <div class="bg-white p-6 rounded-xl shadow-md">
-                            <h4 class="font-bold text-xl text-gray-800 mb-3 flex items-center gap-2">
-                                <span>🎤</span> Uma Oração Cantada
-                            </h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                O capítulo 3 de Habacuque é na verdade uma oração em forma de música! Ela era cantada no templo com instrumentos musicais. Que legal, né?
-                            </p>
-                        </div>
-
-                        <div class="bg-white p-6 rounded-xl shadow-md">
-                            <h4 class="font-bold text-xl text-gray-800 mb-3 flex items-center gap-2">
-                                <span>💪</span> De Dúvida Para Louvor
-                            </h4>
-                            <p class="text-gray-700 leading-relaxed">
-                                Habacuque começa o livro cheio de perguntas e termina cantando! Isso mostra que quando confiamos em Deus, Ele transforma nossa tristeza em alegria!
-                            </p>
-                        </div>
-
-                        <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-5 rounded-xl text-center border-2 border-purple-400">
-                            <p class="font-bold text-lg text-purple-800 mb-2">🎵 Que tal cantar para Deus hoje?</p>
-                            <p class="text-gray-700">Mesmo quando as coisas são difíceis, você pode louvar a Deus como Habacuque fez!</p>
-                        </div>
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2 flex items-center gap-2">
+                            <span>📜</span> Três Vezes no Novo Testamento!
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            "O justo viverá pela fé" aparece citado em Romanos 1:17, Gálatas 3:11 e Hebreus 10:38 — três vezes no NT! É um dos versículos do Antigo Testamento mais citados pelos apóstolos. Uma frase do profeta com impacto de séculos!
+                        </p>
                     </div>
+
+                    <div class="bg-white p-5 rounded-xl shadow-md">
+                        <h4 class="font-bold text-xl text-gray-800 mb-2 flex items-center gap-2">
+                            <span>🎼</span> Nota Musical no Fim do Livro!
+                        </h4>
+                        <p class="text-gray-700 leading-relaxed">
+                            O capítulo 3 tem no rodapé: "Para o mestre de música, para usar com instrumentos de corda". A palavra "selá" aparece 3 vezes — uma marca musical. Habacuque não apenas profetizou: ele compôs uma canção para o culto no templo!
+                        </p>
+                    </div>
+
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <img src="habacuque-curiosidade.png" alt="Canção de Habacuque" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-yellow-300">
+                <img src="habacuque-curiosidade.png" alt="Curiosidades de Habacuque" class="w-full h-auto rounded-2xl shadow-2xl border-4 border-yellow-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Conexão com Jesus -->
+    <section class="section bg-gradient-to-br from-teal-700 to-cyan-800 text-white p-8 mb-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8">✝️ Conexão com Jesus</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-5">
+                    <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/20">
+                        <h3 class="text-xl font-bold mb-2">📜 O Versículo que Explicou o Evangelho</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            "O justo viverá pela fé" (Hc 2:4) é a base da teologia de Paulo: somos salvos pela fé em Jesus, não por obras. Paulo cita esse versículo para explicar o que Jesus realizou na cruz: a justificação pela fé!
+                        </p>
+                        <div class="mt-3 bg-white/10 p-3 rounded-lg text-sm italic text-white/80">
+                            "Pois nele se revela a justiça de Deus, de fé em fé, como está escrito: O justo viverá pela fé." — Romanos 1:17
+                        </div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/20">
+                        <h3 class="text-xl font-bold mb-2">🎯 "O Ungido" em Habacuque 3:13</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            No cântico final, Habacuque fala: "Tu saíste para salvar o teu povo, para salvar teu ungido" (3:13). A palavra "ungido" em hebraico é mashiach — Messias! Habacuque antecipa que Deus enviará um Ungido para libertar seu povo.
+                        </p>
+                    </div>
+                </div>
+                <div class="space-y-5">
+                    <div class="bg-white/10 backdrop-blur p-5 rounded-2xl border border-white/20">
+                        <h3 class="text-xl font-bold mb-2">🌈 Alegria Sem Depender das Circunstâncias</h3>
+                        <p class="text-white/90 leading-relaxed">
+                            Paulo em Filipenses 4:11 diz: "Aprendi a contentar-me em qualquer estado." É o mesmo espírito de Hc 3:17-18! A alegria cristã não vem do que temos, mas de quem temos — Jesus Cristo. Habacuque prepara o caminho para essa revelação!
+                        </p>
+                    </div>
+                    <div class="versiculo-card bg-white/20 border-white/60 text-white">
+                        <p class="font-bold text-lg">🔑 A Grande Conexão:</p>
+                        <p class="italic mt-1">"O justo viverá pela fé" (Hc 2:4) → O justo é justificado pela fé em Jesus → "Portanto, tendo sido justificados por fé, temos paz com Deus por meio de Jesus Cristo." (Rm 5:1)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-teal-50 to-cyan-50 p-8 mb-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+                💭 Perguntas para Pensar
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-teal-500 text-center">
+                    <div class="text-5xl mb-4">❓</div>
+                    <h3 class="font-bold text-xl text-teal-700 mb-3">Você Já Perguntou a Deus?</h3>
+                    <p class="text-gray-600 leading-relaxed">Habacuque fez perguntas difíceis a Deus. Você já quis perguntar algo para Deus mas teve medo? Que tipo de perguntas você faria?</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-cyan-500 text-center">
+                    <div class="text-5xl mb-4">😊</div>
+                    <h3 class="font-bold text-xl text-cyan-700 mb-3">Alegria sem Ter Tudo?</h3>
+                    <p class="text-gray-600 leading-relaxed">Habacuque disse que se alegraria mesmo sem colheita nem rebanho. Você consegue ser feliz quando não tem o que quer? O que dá alegria de verdade?</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-teal-500 text-center">
+                    <div class="text-5xl mb-4">✍️</div>
+                    <h3 class="font-bold text-xl text-teal-700 mb-3">Escreva a Visão!</h3>
+                    <p class="text-gray-600 leading-relaxed">Deus disse a Habacuque: "Escreve a visão em tábuas" (2:2). Se Deus te pedisse para escrever uma mensagem para sua geração, o que você escreveria?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desafio da Semana -->
+    <section class="section bg-white p-8 mb-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-700">
+                🏆 Desafio da Semana
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-2xl border-2 border-teal-200 shadow-lg text-center">
+                    <div class="text-5xl mb-3">📝</div>
+                    <h3 class="font-bold text-xl text-teal-700 mb-3">Desafio 1: Carta para Deus</h3>
+                    <p class="text-gray-600 leading-relaxed">Escreva uma carta honesta a Deus com uma pergunta que você tem no coração — algo que você não entende, como fez Habacuque. Depois leia Salmo 73 como resposta!</p>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-50 to-teal-50 p-6 rounded-2xl border-2 border-cyan-200 shadow-lg text-center">
+                    <div class="text-5xl mb-3">🎵</div>
+                    <h3 class="font-bold text-xl text-cyan-700 mb-3">Desafio 2: Canção de Fé</h3>
+                    <p class="text-gray-600 leading-relaxed">Faça sua própria "canção de Habacuque": liste 3 coisas que você NÃO tem (que gostaria de ter), e depois escreva: "Ainda assim me alegrarei porque..."</p>
+                </div>
+                <div class="bg-gradient-to-br from-teal-50 to-cyan-50 p-6 rounded-2xl border-2 border-teal-200 shadow-lg text-center">
+                    <div class="text-5xl mb-3">📖</div>
+                    <h3 class="font-bold text-xl text-teal-700 mb-3">Desafio 3: Memorize!</h3>
+                    <p class="text-gray-600 leading-relaxed">Memorize Habacuque 2:4b: "O justo viverá pela fé." Descubra com a ajuda de um adulto por que esse versículo aparece 3 vezes no Novo Testamento e qual foi o impacto na história da Igreja!</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Navegação -->
-    <section class="section no-print text-center bg-gradient-to-r from-purple-600/20 to-indigo-600/20 border-2 border-purple-600/30 rounded-2xl p-10 mb-4">
+    <section class="section no-print text-center bg-gradient-to-r from-teal-600/20 to-cyan-700/20 border-2 border-teal-600/30 rounded-2xl p-10 mb-4">
         <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../naum/naum.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+            <a href="../naum/naum.html" class="bg-gradient-to-r from-teal-600 to-cyan-700 hover:from-teal-700 hover:to-cyan-800 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 ⬅️ Naum
             </a>
-            <a href="../profetas-menores.html" class="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
+            <a href="../profetas-menores.html" class="bg-gradient-to-r from-cyan-600 to-teal-600 hover:from-cyan-700 hover:to-teal-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
                 📚 Ver Profetas Menores
             </a>
             <a href="../sofonias/sofonias.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg">
@@ -343,9 +447,9 @@
     </section>
 
     <!-- Rodapé -->
-    <section class="section bg-gradient-to-r from-purple-600 to-indigo-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Habacuque - Conversando com Deus ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+    <section class="section bg-gradient-to-r from-teal-600 to-cyan-700 text-white p-8 text-center">
+        <h3 class="text-2xl font-black mb-2">✨ Livro de Habacuque — Conversando com Deus ✨</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>

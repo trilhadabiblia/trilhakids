@@ -1,43 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livro de Provérbios - Resumo Visual</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @media print {
-            body {
-                background: white;
-            }
-
-            .no-print {
-                display: none;
-            }
-
-            .section {
-                page-break-inside: avoid;
-                break-inside: avoid;
-            }
-        }
-
-        .modal {
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .modal-visible {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        @media print { body { background: white; } .no-print { display: none; } .section { page-break-inside: avoid; break-inside: avoid; } }
+        .modal { transition: opacity 0.3s ease; }
+        .modal-hidden { opacity: 0; pointer-events: none; }
+        .modal-visible { opacity: 1; pointer-events: auto; }
+        .versiculo-card { border-left: 6px solid; padding: 1rem 1.25rem; border-radius: 0.75rem; }
     </style>
 </head>
-
 <body class="bg-slate-100 font-sans">
 
     <!-- Botão Imprimir -->
@@ -53,285 +28,398 @@
         <div class="w-full max-w-2xl text-center">
             <div class="relative inline-block">
                 <img src="proverbios-capa.png" alt="Capa: Provérbios" id="img-proverbios"
-                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300"
-                    aria-describedby="desc-proverbios">
+                    class="w-full h-auto rounded-xl shadow-xl mb-8 object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
             </div>
-
             <h1 class="text-5xl font-black mb-4 inline-flex items-center justify-center w-full">
                 <span>💡</span>
-                <span
-                    class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mx-2">
+                <span class="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600 mx-2">
                     LIVRO DE PROVÉRBIOS
                 </span>
                 <span>💡</span>
             </h1>
-
-            <p class="text-xl text-gray-600 font-semibold">Sabedoria, Conselhos e Boas Escolhas — Um Resumo Visual para
-                Crianças</p>
-
-            <span id="desc-proverbios" class="sr-only" aria-hidden="true">
-                Clique na imagem para ler os versos!
-            </span>
+            <p class="text-xl text-gray-600 font-semibold">Sabedoria para Cada Dia — Um Resumo Visual para Crianças</p>
         </div>
     </section>
 
-    <!-- Modal -->
-    <div id="modal-proverbios"
-        class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
-        <div
-            class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-200">
-            <button id="close-modal"
-                class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
-
-            <h2
-                class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-600">
+    <!-- Modal com 3 Segredos -->
+    <div id="modal-proverbios" class="modal modal-hidden fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 p-4">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-3xl w-full p-8 relative overflow-y-auto max-h-[90vh] border-4 border-amber-300">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold no-print">&times;</button>
+            <h2 class="text-4xl font-extrabold text-center mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
                 🌟 Os Três Segredos de Provérbios 🌟
             </h2>
-
             <div class="space-y-8 text-lg leading-relaxed text-gray-700">
-                <!-- Segredo 1 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">🧠 1️⃣ Sabedoria começa com o temor do Senhor</h3>
-                    <p>
-                        O livro começa com uma lição preciosa,<br>
-                        Que traz luz à vida, torna tudo mais formosa:<br>
-                        "O temor do Senhor é o princípio da sabedoria",<br>
-                        Respeitar a Deus traz conhecimento e alegria!<br><br>
 
-                        🌟 Ser sábio não é só saber muito na escola,<br>
-                        É amar a Deus, seguir Sua Palavra que consola!<br>
-                        Quando colocamos Deus em primeiro lugar,<br>
-                        Ele nos ensina o melhor caminho a trilhar!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Provérbios 1:7</span>
+                <div class="bg-gradient-to-r from-amber-50 to-yellow-50 p-6 rounded-2xl border-l-4 border-amber-600">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🧠 Primeiro Segredo: Sabedoria Começa com Deus</h3>
+                    <p class="italic text-gray-800">
+                        Provérbios começa com a melhor lição do mundo,<br>
+                        Que torna tudo claro, não deixa nada no fundo:<br>
+                        O temor do Senhor é o início da sabedoria,<br>
+                        Respeitar e amar a Deus é a maior vitória!<br>
+                        <span class="text-amber-700 font-semibold">Ser sábio não é saber muito na escola,<br>
+                        É seguir o Senhor — essa é a palavra que consola!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Provérbios 1:7 — "O temor do Senhor é o princípio da sabedoria."</p>
                 </div>
 
-                <!-- Segredo 2 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">💬 2️⃣ Nossas palavras têm muito poder</h3>
-                    <p>
-                        Provérbios fala muito sobre o que dizemos,<br>
-                        Como nossas palavras afetam o que fazemos.<br>
-                        Palavras gentis curam como remédio,<br>
-                        Palavras ruins machucam, causam tédio!<br><br>
-
-                        🗨️ Pense antes de falar, escolha bem o que dizer,<br>
-                        Palavras de amor podem vidas erguer!<br>
-                        Use sua boca pra abençoar e alegrar,<br>
-                        Não pra ferir, julgar ou magoar!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Provérbios 16:24</span>
+                <div class="bg-gradient-to-r from-yellow-50 to-orange-50 p-6 rounded-2xl border-l-4 border-yellow-600">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">💬 Segundo Segredo: Palavras Têm Muito Poder</h3>
+                    <p class="italic text-gray-800">
+                        O que você fala importa — Provérbios ensina assim,<br>
+                        Palavras gentis curam; palavras ruins trazem fim!<br>
+                        Pense antes de falar, escolha o que vai dizer,<br>
+                        Uma palavra de amor pode uma vida erguer!<br>
+                        <span class="text-yellow-700 font-semibold">Use sua boca pra abençoar, não pra ferir,<br>
+                        Palavras certas fazem o coração sorrir!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Provérbios 16:24 — "Palavras agradáveis são como favo de mel, doces para a alma e saúde para o corpo."</p>
                 </div>
 
-                <!-- Segredo 3 -->
-                <div>
-                    <h3 class="text-2xl font-bold text-amber-700 mb-2">🎯 3️⃣ Escolhas certas trazem bons frutos</h3>
-                    <p>
-                        <b>Atenção aqui!</b> Cada escolha que fazemos,<br>
-                        Tem consequências, sejam boas ou não vemos.<br>
-                        Escolher a preguiça traz pobreza e dor,<br>
-                        Mas trabalhar com dedicação traz favor!<br><br>
-
-                        🌱 Semeie bondade, honestidade e amor,<br>
-                        E colherá bênçãos, alegria e vigor!<br>
-                        As escolhas de hoje moldam o amanhã,<br>
-                        Então escolha o bem, seja irmã ou irmão!<br><br>
-
-                        <span class="block text-sm text-gray-500 mt-2 italic">📖 Referência: Provérbios 12:14</span>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-2xl border-l-4 border-orange-500">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">🌱 Terceiro Segredo: Boas Escolhas Trazem Bons Frutos</h3>
+                    <p class="italic text-gray-800">
+                        Cada escolha que fazemos planta uma semente,<br>
+                        Boa ou ruim, ela brota — e isso é evidente!<br>
+                        Confie em Deus e não apenas em seu pensamento,<br>
+                        Ele vai te guiar com amor e discernimento!<br>
+                        <span class="text-orange-700 font-semibold">Semeie bondade, honestidade e amor,<br>
+                        E colherá bênçãos do nosso bom Senhor!</span>
                     </p>
+                    <p class="text-sm text-gray-600 mt-3">📖 Provérbios 3:5-6 — "Confia no Senhor de todo o teu coração... e ele endireitará as tuas veredas."</p>
                 </div>
 
-                <!-- Moral -->
-                <div class="text-center mt-10">
-                    <p class="text-xl font-semibold text-amber-800">
-                        📘 Moral da história:<br>
-                        Viva com sabedoria, fale com amor,<br>
-                        E escolha o bem para honrar o Senhor! 💕
-                    </p>
-                </div>
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script Modal -->
     <script>
-        const imgProverbios = document.getElementById("img-proverbios");
+        const img = document.getElementById("img-proverbios");
         const modal = document.getElementById("modal-proverbios");
         const closeModal = document.getElementById("close-modal");
-
-        imgProverbios.addEventListener("click", () => {
-            modal.classList.remove("modal-hidden");
-            modal.classList.add("modal-visible");
-        });
-
-        closeModal.addEventListener("click", () => {
-            modal.classList.remove("modal-visible");
-            modal.classList.add("modal-hidden");
-        });
-
-        // Fechar ao clicar fora
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.classList.remove("modal-visible");
-                modal.classList.add("modal-hidden");
-            }
-        });
+        img.addEventListener("click", () => { modal.classList.remove("modal-hidden"); modal.classList.add("modal-visible"); });
+        closeModal.addEventListener("click", () => { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); });
+        modal.addEventListener("click", (e) => { if (e.target === modal) { modal.classList.remove("modal-visible"); modal.classList.add("modal-hidden"); } });
     </script>
 
-    <!-- Seção 1: Quem são os personagens principais? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="proverbios-personagem.png" alt="Quem são os personagens principais?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+    <!-- Versículo para Guardar no Coração -->
+    <section class="section bg-gradient-to-br from-amber-600 to-yellow-700 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-8 text-white">
+            💛 Versículo para Guardar no Coração
+        </h2>
+        <div class="max-w-3xl mx-auto">
+            <div class="bg-white rounded-3xl p-8 shadow-2xl border-4 border-amber-300 text-center">
+                <p class="text-5xl mb-4">💡</p>
+                <blockquote class="text-3xl font-black text-amber-700 leading-snug mb-4">
+                    "Confia no Senhor de todo o teu coração e não te apoies no teu próprio entendimento."
+                </blockquote>
+                <p class="text-xl font-bold text-yellow-700 mb-6">Provérbios 3:5</p>
+                <div class="bg-amber-50 rounded-2xl p-4 border-2 border-amber-200">
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        Salomão foi o homem mais sábio que já viveu — e ainda assim disse que precisamos confiar em Deus, não só no que pensamos. Sabedoria de verdade começa em reconhecer que Deus sabe mais do que nós!
+                    </p>
                 </div>
-                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-8 rounded-2xl border-4 border-amber-500">
-                    <h2 class="text-4xl font-black text-amber-700 mb-6">👥 Quem são os personagens principais?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-amber-600">Salomão</span>, o rei mais sábio, que foi o principal autor deste livro incrível.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-amber-600">Outros sábios</span> que também contribuíram com seus ensinamentos valiosos.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E o <span class="font-bold text-amber-600">povo que ouve e aprende</span> esses conselhos preciosos para a vida.
-                        </p>
+                <div class="mt-6 flex flex-wrap gap-3 justify-center">
+                    <span class="bg-amber-100 text-amber-800 px-4 py-2 rounded-full font-bold text-sm">✍️ Copie no caderno</span>
+                    <span class="bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full font-bold text-sm">🗣️ Diga em voz alta</span>
+                    <span class="bg-orange-100 text-orange-800 px-4 py-2 rounded-full font-bold text-sm">🖨️ Imprima e coloque na parede</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção 1: Quem são os personagens principais? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            👥 Quem São os Personagens Principais?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-2">👑 Salomão — O Rei Mais Sábio</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Salomão escreveu a maior parte de Provérbios. Deus lhe deu sabedoria como nenhum outro homem teve — ele conhecia plantas, animais, negócios, relacionamentos e muito mais. Mas sua maior sabedoria era reconhecer que tudo vinha de Deus!
+                    </p>
+                    <div class="versiculo-card bg-white border-amber-500" style="background:#fffbeb;">
+                        <p class="text-sm font-bold text-amber-700 mb-1">📖 Leia na Bíblia — Provérbios 1:7</p>
+                        <p class="text-gray-700 italic">"O temor do Senhor é o princípio da sabedoria; os loucos desprezam a sabedoria e a instrução."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-2">🤔 Agur — O Pensador Humilde</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Agur escreveu o capítulo 30 de Provérbios e começou dizendo que não sabia nada! Ele observava a natureza — formigas, aranhas, águias — e via a sabedoria de Deus em tudo. Às vezes admitir que não sabe é o começo da sabedoria!
+                    </p>
+                    <div class="versiculo-card bg-white border-yellow-500" style="background:#fefce8;">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Leia na Bíblia — Provérbios 30:24</p>
+                        <p class="text-gray-700 italic">"Há quatro coisas pequenas sobre a terra, mas mais sábias que os sábios: as formigas..."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-2">👩 Lemuel — O Filho que Ouviu sua Mãe</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        O capítulo 31 foi ensinado pela mãe do rei Lemuel. Ela ensinou ao filho como ser um bom líder e descreveu a mulher virtuosa — alguém trabalhadora, generosa e sábia. Um dos textos mais famosos da Bíblia!
+                    </p>
+                    <div class="versiculo-card bg-white border-orange-500" style="background:#fff7ed;">
+                        <p class="text-sm font-bold text-orange-700 mb-1">📖 Leia na Bíblia — Provérbios 31:10</p>
+                        <p class="text-gray-700 italic">"Mulher virtuosa, quem a achará? O seu valor muito excede o de rubis."</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="proverbios-personagem.png" alt="Personagens de Provérbios" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 2: O que o livro conta? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-4 border-yellow-500">
-                        <h2 class="text-4xl font-black text-yellow-700 mb-6">📖 O que o livro conta?</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Reúne <span class="font-bold text-yellow-600">ensinamentos práticos para viver com sabedoria</span> todos os dias!
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Fala sobre <span class="font-bold text-yellow-600">amizade, trabalho, palavras e escolhas</span> que fazem diferença.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ensina <span class="font-bold text-yellow-600">como agradar a Deus no dia a dia</span> com atitudes certas.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                O livro tem <span class="font-bold text-yellow-600">31 capítulos</span> — um para cada dia do mês!
-                            </p>
-                        </div>
-                    </div>
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            📖 O Que o Livro Conta?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="proverbios-o-que-conta.png" alt="História de Provérbios" class="w-full h-auto rounded-xl shadow-xl mb-4">
+                <div class="bg-white p-4 rounded-2xl border-2 border-amber-200 shadow text-center">
+                    <p class="text-sm font-bold text-amber-700 mb-1">📖 Leia em casa!</p>
+                    <p class="text-gray-700">Provérbios tem <strong>31 capítulos</strong> — um para cada dia do mês! Que tal ler um capítulo por dia?</p>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="proverbios-o-que-conta.png" alt="O que o livro conta?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+            </div>
+            <div class="order-2 space-y-4">
+                <h3 class="text-2xl font-bold text-amber-700 mb-2">💡 Os Três Grandes Temas</h3>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-amber-600 shadow">
+                    <p class="font-bold text-amber-700 mb-1">🧠 Sabedoria vs. Loucura</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Provérbios apresenta dois caminhos: o do sábio (que teme a Deus e aprende) e o do tolo (que acha que já sabe tudo). Qual caminho você vai escolher?</p>
+                    <p class="text-sm text-amber-600 italic border-t border-amber-100 pt-2">📖 Provérbios 12:15 — "O caminho do tolo é reto aos seus próprios olhos, mas o sábio ouve os conselhos."</p>
                 </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-yellow-600 shadow">
+                    <p class="font-bold text-yellow-700 mb-1">💬 Palavras e Relacionamentos</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Mais de 100 provérbios falam sobre o poder das palavras — na amizade, na família, no trabalho. Palavras gentis constroem; palavras duras destroem.</p>
+                    <p class="text-sm text-yellow-600 italic border-t border-yellow-100 pt-2">📖 Provérbios 16:24 — "Palavras agradáveis são como favo de mel, doces para a alma e saúde para o corpo."</p>
+                </div>
+
+                <div class="bg-white p-4 rounded-2xl border-l-4 border-orange-600 shadow">
+                    <p class="font-bold text-orange-700 mb-1">🌱 Trabalho, Família e Escolhas</p>
+                    <p class="text-gray-700 leading-relaxed mb-2">Provérbios ensina sobre ser trabalhador (não preguiçoso), honrar pai e mãe, ser honesto no comércio e fazer boas escolhas antes de agir por impulso.</p>
+                    <p class="text-sm text-orange-600 italic border-t border-orange-100 pt-2">📖 Provérbios 6:6 — "Vai ter com a formiga, ó preguiçoso; considera o seu proceder e sê sábio."</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Seção 3: Por que é importante? -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="proverbios-importante.png" alt="Por que é importante?"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-8 rounded-2xl border-4 border-orange-500">
-                    <h2 class="text-4xl font-black text-orange-700 mb-6">💫 Por que é importante?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Mostra que <span class="font-bold text-orange-600">sabedoria não é saber tudo</span>, mas saber escolher o que é certo.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Ensina as crianças a <span class="font-bold text-orange-600">agirem com bondade e inteligência</span> em todas as situações.
-                        </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            Traz <span class="font-bold text-orange-600">conselhos práticos</span> que podemos usar na escola, em casa e com os amigos!
-                        </p>
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            ⭐ Por Que é Importante?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-2 md:order-1 space-y-5">
+
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-5 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">📚 O Manual da Vida Prática!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Provérbios é o livro mais prático da Bíblia — fala sobre <strong class="text-amber-600">amizade, dinheiro, escola, família, palavras e decisões</strong>. É como um guia de como viver bem com Deus e com as pessoas.
+                    </p>
+                    <div class="versiculo-card bg-amber-50 border-amber-500">
+                        <p class="text-sm font-bold text-amber-700 mb-1">📖 Provérbios 3:1-2</p>
+                        <p class="text-gray-700 italic">"Filho meu, não te esqueças da minha lei; guarda no teu coração os meus mandamentos, pois eles prolongarão os teus dias."</p>
                     </div>
                 </div>
+
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-2xl border-2 border-yellow-200">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">🎯 Sabedoria é Diferente de Inteligência!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Inteligência é saber muitas coisas. Sabedoria é <strong class="text-yellow-600">saber o que fazer com o que você sabe</strong>! Provérbios ensina que a verdadeira sabedoria vem do relacionamento com Deus — não de notas altas.
+                    </p>
+                    <div class="versiculo-card bg-yellow-50 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Provérbios 9:10</p>
+                        <p class="text-gray-700 italic">"O temor do Senhor é o princípio da sabedoria, e o conhecimento do Santo é a inteligência."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-5 rounded-2xl border-2 border-orange-200">
+                    <h3 class="text-2xl font-bold text-orange-700 mb-3">✝️ Provérbios Aponta para Jesus!</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed">
+                        O capítulo 8 fala sobre a Sabedoria como uma pessoa — que estava com Deus desde o início da criação. Os cristãos reconhecem isso como Jesus, pois João 1 diz que "no princípio era o Verbo", e Paulo chama Jesus de <strong class="text-orange-600">"sabedoria de Deus"</strong> (1 Co 1:24)!
+                    </p>
+                </div>
+
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="proverbios-importante.png" alt="Importância de Provérbios" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
     <!-- Seção 4: Propósito do livro -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="bg-gradient-to-br from-lime-50 to-green-50 p-8 rounded-2xl border-4 border-lime-500">
-                        <h2 class="text-4xl font-black text-lime-700 mb-6">🎯 Propósito do livro</h2>
-                        <div class="space-y-4">
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                <span class="font-bold text-lime-600">Ajudar as pessoas a viverem de forma sábia e justa</span>, honrando a Deus em tudo.
-                            </p>
-                            <p class="text-gray-800 text-lg leading-relaxed">
-                                Ensinar <span class="font-bold text-lime-600">como tomar boas decisões</span>, aprendendo com a sabedoria que vem de Deus.
-                            </p>
-                        </div>
+    <section class="section bg-gradient-to-br from-yellow-50 to-orange-50 p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            🎯 Qual é o Propósito do Livro?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-start max-w-5xl mx-auto">
+            <div class="order-1">
+                <img src="proverbios-proposito.png" alt="Propósito de Provérbios" class="w-full h-auto rounded-xl shadow-xl">
+            </div>
+            <div class="order-2 space-y-5">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-amber-200 shadow">
+                    <h3 class="text-2xl font-bold text-amber-700 mb-3">🧭 Guia para Tomar Boas Decisões</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Provérbios foi escrito para que <strong class="text-amber-600">jovens e crianças aprendam a fazer boas escolhas</strong> antes de cometer erros. É um livro de conselho de pai para filho — e de Deus para você!
+                    </p>
+                    <div class="versiculo-card bg-amber-50 border-amber-500">
+                        <p class="text-sm font-bold text-amber-700 mb-1">📖 Provérbios 1:4</p>
+                        <p class="text-gray-700 italic">"Para dar aos simples prudência e ao jovem conhecimento e bom senso."</p>
                     </div>
                 </div>
-                <div class="order-1 md:order-2">
-                    <img src="proverbios-proposito.png" alt="Propósito do livro"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
+
+                <div class="bg-white p-5 rounded-2xl border-2 border-yellow-200 shadow">
+                    <h3 class="text-2xl font-bold text-yellow-700 mb-3">❤️ Formar o Caráter de Dentro para Fora</h3>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-3">
+                        Provérbios não foca apenas no comportamento externo, mas em <strong class="text-yellow-600">formar o coração</strong>: ser humilde, honesto, generoso, trabalhador e confiante em Deus. Caráter bom = vida boa!
+                    </p>
+                    <div class="versiculo-card bg-yellow-50 border-yellow-500">
+                        <p class="text-sm font-bold text-yellow-700 mb-1">📖 Provérbios 4:23</p>
+                        <p class="text-gray-700 italic">"Sobre tudo o que se deve guardar, guarda o teu coração, porque dele procedem as fontes da vida."</p>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-amber-100 to-yellow-100 p-4 rounded-xl border-l-4 border-amber-500">
+                    <p class="text-gray-700 font-semibold">
+                        🌟 Lição Principal: <span class="text-amber-700">A vida mais sábia não é a que sabe mais — é a que confia mais em Deus em cada detalhe do dia a dia!</span>
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção 5: Curiosidade Divertida -->
-    <section class="section bg-white p-8 mb-4 shadow-lg">
-        <div class="max-w-4xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <img src="proverbios-curiosidade.png" alt="Curiosidade Divertida"
-                        class="w-full h-auto rounded-xl shadow-lg object-contain">
-                </div>
-                <div class="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-2xl border-4 border-emerald-500">
-                    <h2 class="text-4xl font-black text-emerald-700 mb-6">💡 Você sabia?</h2>
-                    <div class="space-y-4">
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            <span class="font-bold text-emerald-600">Salomão escreveu mais de 3.000 provérbios!</span>
+    <!-- Seção 5: Você Sabia? -->
+    <section class="section bg-white p-8 mb-4">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-yellow-600">
+            🤔 Você Sabia?
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8 items-center max-w-5xl mx-auto">
+            <div class="order-2 md:order-1">
+                <div class="bg-gradient-to-br from-amber-50 to-yellow-50 p-6 rounded-2xl border-2 border-amber-200">
+                    <h3 class="text-3xl font-bold text-amber-700 mb-4">📏 Curiosidades Incríveis!</h3>
+
+                    <div class="bg-white p-4 rounded-xl border-l-4 border-amber-500 mb-4">
+                        <p class="text-gray-700">
+                            📅 <strong>31 capítulos = 31 dias:</strong> Provérbios tem exatamente 31 capítulos — um para cada dia do mês! Muitas famílias cristãs leem um capítulo de Provérbios por dia. Em um mês, você lê o livro inteiro!
                         </p>
-                        <p class="text-gray-800 text-lg leading-relaxed">
-                            E muitos deles <span class="font-bold text-emerald-600">ainda ensinam lições importantes até hoje</span>, milhares de anos depois!
+                    </div>
+
+                    <div class="bg-amber-100 p-4 rounded-xl border-l-4 border-amber-600 mb-4">
+                        <p class="text-gray-700">
+                            📝 <strong>Salomão escreveu 3.000 provérbios:</strong> A Bíblia diz que Salomão compôs 3.000 provérbios (1 Rs 4:32), mas o livro de Provérbios só tem uma seleção. Imagina a sabedoria que ele tinha!
                         </p>
-                        <div class="bg-white p-4 rounded-lg mt-6 border-2 border-emerald-300">
-                            <p class="text-sm text-gray-700 italic">A sabedoria de Deus é atemporal e sempre atual! 📚✨
-                                </br></br>
-                                O temor do Senhor é o princípio do conhecimento, mas os tolos desprezam a sabedoria e a disciplina.</br>Provérbios 1:7</p>
-                        </div>
+                    </div>
+
+                    <div class="bg-yellow-100 p-4 rounded-xl border-l-4 border-yellow-600">
+                        <p class="text-gray-700">
+                            🐜 <strong>A formiga como professora:</strong> Provérbios 6 manda aprender com a formiga! Ela não tem chefe nem líder, mas trabalha com dedicação o tempo todo. Às vezes os menores têm as maiores lições!
+                        </p>
                     </div>
                 </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="proverbios-curiosidade.png" alt="Curiosidades sobre Provérbios" class="w-full h-auto rounded-xl shadow-xl">
             </div>
         </div>
     </section>
 
-    <!-- NAVEGAÇÃO -->
-    <section
-        class="no-print text-center bg-gradient-to-r from-amber-700/20 to-yellow-700/20 border-2 border-amber-600/30 rounded-2xl p-10">
-        <h3 class="text-3xl font-black text-white mb-6">🌟 Continue Sua Jornada!</h3>
+    <!-- Seção 6: Perguntas para Pensar -->
+    <section class="section bg-gradient-to-br from-amber-50 to-yellow-50 p-8 mb-4 rounded-2xl border-2 border-amber-200">
+        <h2 class="text-4xl font-black text-center mb-8 text-transparent bg-clip-text bg-gradient-to-r from-amber-700 to-yellow-600">
+            💭 Perguntas para Pensar
+        </h2>
+        <p class="text-center text-lg text-gray-600 mb-8">Converse com sua família, turma ou professor sobre essas perguntas!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-amber-600">
+                <p class="text-5xl text-center mb-4">🧠</p>
+                <h3 class="text-xl font-bold text-amber-700 mb-3 text-center">Questão 1</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Provérbios diz que a sabedoria começa com o temor de Deus — respeitar e amar a Ele. <strong>Como você demonstra respeito por Deus no seu dia a dia? No que você precisa melhorar?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-yellow-600">
+                <p class="text-5xl text-center mb-4">💬</p>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3 text-center">Questão 2</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Provérbios fala muito sobre palavras — que curam ou machucam. <strong>Você já disse uma palavra que magoou alguém? Ou que ajudou alguém de verdade? O que aconteceu depois?</strong>
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-lg border-t-4 border-orange-600">
+                <p class="text-5xl text-center mb-4">🌱</p>
+                <h3 class="text-xl font-bold text-orange-700 mb-3 text-center">Questão 3</h3>
+                <p class="text-gray-700 leading-relaxed text-center">
+                    Provérbios 3:5 diz para confiar em Deus e não só no que você pensa. <strong>Tem alguma decisão difícil que você está enfrentando agora? Como você pode pedir a ajuda de Deus nessa situação?</strong>
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Seção 7: Desafio da Semana -->
+    <section class="section bg-gradient-to-br from-amber-700 to-yellow-800 p-8 mb-4 rounded-2xl shadow-2xl">
+        <h2 class="text-4xl font-black text-center mb-2 text-white">
+            🚀 Desafio da Semana
+        </h2>
+        <p class="text-center text-amber-200 text-lg mb-8">Escolha um desafio (ou faça os três!) e seja um explorador da Bíblia!</p>
+        <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">📖</p>
+                <div class="bg-amber-100 text-amber-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 1</div>
+                <h3 class="text-xl font-bold text-amber-700 mb-3">Leia Provérbios 3</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Leia o <strong>capítulo 3 de Provérbios</strong> em voz alta — ele tem os versículos mais famosos do livro! Depois, sublinhe ou anote qual versículo você mais gostou e por quê.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">✍️</p>
+                <div class="bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 2</div>
+                <h3 class="text-xl font-bold text-yellow-700 mb-3">Memorize Provérbios 3:5</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Escreva <strong>"Confia no Senhor de todo o teu coração"</strong> (Pv 3:5) em um papel e cole em algum lugar que você vai ver todo dia — espelho, caderno, geladeira!
+                </p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 shadow-xl text-center">
+                <p class="text-5xl mb-3">💬</p>
+                <div class="bg-orange-100 text-orange-800 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">DESAFIO 3</div>
+                <h3 class="text-xl font-bold text-orange-700 mb-3">Semana das Palavras Gentis</h3>
+                <p class="text-gray-700 leading-relaxed">
+                    Durante esta semana, toda vez que você for falar algo, pause um segundo e pergunte: <strong>"Essa palavra vai construir ou destruir?"</strong> Pratique dizer algo gentil a pelo menos 3 pessoas por dia!
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Navegação -->
+    <section class="no-print text-center bg-gradient-to-r from-amber-600/20 to-yellow-600/20 border-2 border-amber-600/30 rounded-2xl p-10 mb-4">
+        <h3 class="text-3xl font-black text-gray-800 mb-6">🌟 Continue Sua Jornada!</h3>
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="../salmos/salmos.html"
-                class="bg-gradient-to-r from-amber-700 to-yellow-600 hover:from-amber-800 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../salmos/salmos.html" class="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 ⬅️ Salmos
             </a>
-            <a href="../poeticos.html"
-                class="bg-gradient-to-r from-yellow-600 to-amber-700 hover:from-yellow-700 hover:to-amber-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../poeticos.html" class="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-700 hover:to-yellow-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 📚 Ver Livros Poéticos
             </a>
-            <a href="../eclesiastes/eclesiastes.html"
-                class="bg-gradient-to-r from-slate-600 to-gray-600 hover:from-slate-700 hover:to-gray-700 text-white px-8 py-3 rounded-lg font-bold transition-all">
+            <a href="../eclesiastes/eclesiastes.html" class="bg-gradient-to-r from-slate-600 to-gray-700 hover:from-slate-700 hover:to-gray-800 text-white px-8 py-3 rounded-lg font-bold transition-all">
                 Eclesiastes ➡️
             </a>
         </div>
@@ -339,8 +427,8 @@
 
     <!-- Rodapé -->
     <section class="section bg-gradient-to-r from-amber-600 to-yellow-600 text-white p-8 text-center">
-        <h3 class="text-2xl font-black mb-2">✨ Livro de Provérbios - Sabedoria para a Vida ✨</h3>
-        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para criança © 2025</p>
+        <h3 class="text-2xl font-black mb-2">💡 Livro de Provérbios — Sabedoria para Cada Dia 💡</h3>
+        <p class="text-lg">Trilho Kids | Desenvolvido com ❤️ para crianças © 2025</p>
     </section>
 
     <script src="/menu.js"></script>
@@ -349,5 +437,4 @@
         trilhoGame.visitarLivro('Provérbios');
     </script>
 </body>
-
 </html>
