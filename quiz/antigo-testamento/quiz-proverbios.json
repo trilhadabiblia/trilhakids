@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Segundo o livro de Provérbios, o que é o princípio da sabedoria?",
+      "opcoes": [
+        "Estudar muito na escola",
+        "O temor do Senhor",
+        "Ser muito inteligente",
+        "Ler muitos livros"
+      ],
+      "correta": 1,
+      "justificativa": "A Bíblia ensina em Provérbios 1:7 que 'O temor do Senhor é o princípio da sabedoria'. Isso significa que respeitar e amar a Deus é o primeiro passo para ser verdadeiramente sábio!"
+    },
+    {
+      "pergunta": "Quem foi o principal autor do livro de Provérbios?",
+      "opcoes": [
+        "Rei Davi",
+        "Rei Salomão",
+        "Moisés",
+        "Daniel"
+      ],
+      "correta": 1,
+      "justificativa": "O rei Salomão foi o principal autor de Provérbios. Ele era conhecido como o homem mais sábio do mundo e escreveu mais de 3.000 provérbios!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Provérbios?",
+      "opcoes": [
+        "30 capítulos",
+        "31 capítulos",
+        "32 capítulos",
+        "25 capítulos"
+      ],
+      "correta": 1,
+      "justificativa": "Provérbios tem 31 capítulos - um para cada dia do mês! Isso torna muito fácil ler um capítulo por dia e aprender sabedoria de Deus durante todo o mês."
+    },
+    {
+      "pergunta": "Segundo Provérbios, como nossas palavras podem afetar outras pessoas?",
+      "opcoes": [
+        "Palavras não fazem diferença",
+        "Apenas palavras ruins têm poder",
+        "Palavras gentis curam como remédio",
+        "Só adultos são afetados por palavras"
+      ],
+      "correta": 2,
+      "justificativa": "Provérbios 16:24 nos ensina que palavras gentis são como mel - doces e que curam! Nossas palavras têm muito poder e podem alegrar ou magoar as pessoas."
+    },
+    {
+      "pergunta": "O que Provérbios ensina sobre nossas escolhas?",
+      "opcoes": [
+        "Escolhas não importam muito",
+        "Só escolhas grandes têm consequências",
+        "Cada escolha tem consequências, boas ou ruins",
+        "Apenas adultos precisam se preocupar com escolhas"
+      ],
+      "correta": 2,
+      "justificativa": "Provérbios 12:14 nos ensina que cada escolha que fazemos traz consequências. Se escolhermos o bem, colheremos coisas boas. Por isso é importante escolher sempre o que agrada a Deus!"
+    },
+    {
+      "pergunta": "Qual é uma das principais lições sobre a preguiça em Provérbios?",
+      "opcoes": [
+        "A preguiça traz riqueza",
+        "A preguiça traz pobreza e problemas",
+        "A preguiça é sempre boa",
+        "A preguiça não afeta nossa vida"
+      ],
+      "correta": 1,
+      "justificativa": "Provérbios ensina que a preguiça traz pobreza e problemas, mas trabalhar com dedicação traz bênçãos e sucesso. Deus quer que sejamos pessoas trabalhadoras e responsáveis!"
+    },
+    {
+      "pergunta": "Segundo o resumo, ser sábio significa:",
+      "opcoes": [
+        "Saber tudo sobre matemática",
+        "Amar a Deus e seguir Sua Palavra",
+        "Ter muitos brinquedos",
+        "Ser o mais forte da turma"
+      ],
+      "correta": 1,
+      "justificativa": "Ser sábio não é apenas saber muito na escola, mas sim amar a Deus e seguir Sua Palavra. Quando colocamos Deus em primeiro lugar, Ele nos ensina o melhor caminho!"
+    },
+    {
+      "pergunta": "O que devemos fazer antes de falar, segundo os ensinamentos de Provérbios?",
+      "opcoes": [
+        "Falar o que vem na cabeça",
+        "Pensar antes de falar",
+        "Nunca falar com ninguém",
+        "Apenas gritar"
+      ],
+      "correta": 1,
+      "justificativa": "Provérbios nos ensina a pensar antes de falar e escolher bem nossas palavras. Devemos usar nossa boca para abençoar e alegrar, não para ferir ou magoar outras pessoas!"
+    },
+    {
+      "pergunta": "Qual versículo é citado como referência para 'O temor do Senhor é o princípio da sabedoria'?",
+      "opcoes": [
+        "Provérbios 1:7",
+        "Provérbios 16:24",
+        "Provérbios 12:14",
+        "Provérbios 31:1"
+      ],
+      "correta": 0,
+      "justificativa": "Provérbios 1:7 é o versículo que nos ensina que 'O temor do Senhor é o princípio da sabedoria'. Este é um dos versículos mais importantes de todo o livro!"
+    },
+    {
+      "pergunta": "Segundo o resumo, o que devemos semear para colher boas coisas?",
+      "opcoes": [
+        "Egoísmo e mentiras",
+        "Bondade, honestidade e amor",
+        "Preguiça e desobediência",
+        "Palavras ruins e brigas"
+      ],
+      "correta": 1,
+      "justificativa": "Provérbios nos ensina que se semearmos bondade, honestidade e amor, colheremos bênçãos, alegria e coisas boas! As escolhas certas de hoje moldam nosso futuro!"
+    }
+  ]
+}

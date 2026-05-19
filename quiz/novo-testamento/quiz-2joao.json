@@ -1,0 +1,64 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de 2João e como ele se identifica?",
+      "opcoes": ["Paulo, o apóstolo das nações", "Pedro, o pescador de Galileia", "João, que se identifica como 'o ancião'", "Tiago, irmão de Jesus"],
+      "correta": 2,
+      "justificativa": "João se chama de 'o ancião' — uma palavra que significa 'o velho', alguém de muita experiência e sabedoria. Era uma forma de mostrar sua autoridade espiritual. João era já muito idoso quando escreveu essa cartinha!"
+    },
+    {
+      "pergunta": "2João é uma das menores cartas da Bíblia. Quantos versículos ela tem?",
+      "opcoes": ["5 versículos", "13 versículos", "25 versículos", "50 versículos"],
+      "correta": 1,
+      "justificativa": "2João tem apenas 13 versículos — é uma das menores cartas do Novo Testamento! Mas mesmo sendo pequena, ela está cheia de ensinamentos importantes sobre andar na verdade e ter cuidado com os falsos mestres."
+    },
+    {
+      "pergunta": "Para quem João escreveu 2João?",
+      "opcoes": ["Para o imperador romano Nero", "Para a senhora eleita e seus filhos — provavelmente uma Igreja local e seus membros", "Para os 12 apóstolos reunidos em Jerusalém", "Para Pedro, seu amigo e apóstolo"],
+      "correta": 1,
+      "justificativa": "A maioria dos estudiosos acredita que 'a senhora eleita e seus filhos' era uma forma carinhosa de falar de uma comunidade cristã (a Igreja) e seus membros. João se preocupava com essa comunidade e escreveu para protegê-la!"
+    },
+    {
+      "pergunta": "O que deixou João muito alegre em relação a alguns membros dessa comunidade?",
+      "opcoes": ["Que eles tinham construído uma grande e bonita igreja", "Que eles haviam dado muito dinheiro para as missões", "Que encontrou alguns dos seus filhos andando na verdade, conforme o mandamento de Deus", "Que eles haviam memorizado toda a Bíblia"],
+      "correta": 2,
+      "justificativa": "João ficou emocionado ao encontrar pessoas vivendo conforme a verdade de Deus! Não é só saber a Bíblia na cabeça — é 'andar na verdade', viver de acordo com o que Deus ensina. Isso alegra os líderes e agrada a Deus!"
+    },
+    {
+      "pergunta": "Qual é o 'mandamento antigo' que João pede para seguirem, que eles já tinham desde o início?",
+      "opcoes": ["Guardar o sábado e não trabalhar", "Que andemos uns para com os outros em amor", "Dar dízimo fielmente todo mês", "Orar três vezes por dia voltados para Jerusalém"],
+      "correta": 1,
+      "justificativa": "O amor não é regra nova — é o mandamento mais antigo e mais importante! Jesus já havia dito: amem uns aos outros. João repete isso porque o amor é o fundamento de tudo. Quando amamos, estamos fazendo exatamente o que Deus quer!"
+    },
+    {
+      "pergunta": "Que ensinamento falso João avisa para tomar cuidado?",
+      "opcoes": ["A falsa ideia de que Deus não perdoa os pecados", "A falsa ideia de que devemos pagar para entrar no céu", "A falsa ideia de que Jesus Cristo não veio em carne — os que ensinam isso são enganadores", "A falsa ideia de que a Bíblia foi escrita por anjos"],
+      "correta": 2,
+      "justificativa": "João avisa: cuidado com quem nega que Jesus veio de verdade em carne e osso! Isso era o ensino dos gnósticos. Jesus não era um fantasma — Ele nasceu de verdade, viveu de verdade, morreu de verdade e ressuscitou de verdade!"
+    },
+    {
+      "pergunta": "O que João chama de pessoa que nega que Jesus Cristo veio em carne?",
+      "opcoes": ["Um teólogo equivocado que precisa de mais estudo", "Um enganador e anticristo", "Um amigo que precisa de paciência", "Um líder que merece respeito mesmo discordando"],
+      "correta": 1,
+      "justificativa": "João é firme na verdade! Não é falta de amor ser direto sobre ensinamentos errados e perigosos. Quem nega que Jesus veio em carne está atacando o fundamento da fé cristã. Precisamos conhecer a verdade para não ser enganados."
+    },
+    {
+      "pergunta": "O que João diz que não devemos fazer quando alguém vem pregar um ensinamento que contraria a doutrina de Cristo?",
+      "opcoes": ["Devemos recebê-lo em casa e discutir com calma por horas", "Não devemos recebê-lo em casa nem saudá-lo, para não participar de suas más obras", "Devemos deixar que ele fale e depois decidir se cremos", "Devemos escondê-lo para que outros não o ouçam"],
+      "correta": 1,
+      "justificativa": "João dá um conselho prático de proteção! Receber em casa e saudar calorosamente era como endossar e apoiar alguém naquela cultura. Não é falta de amor, é proteger a comunidade de ensinamentos que podem destruir a fé das pessoas."
+    },
+    {
+      "pergunta": "Por que João diz que preferia visitar pessoalmente em vez de escrever mais coisas?",
+      "opcoes": ["Porque ele não sabia escrever muito bem", "Para que a alegria de ambos fosse completa — ele queria falar face a face", "Porque as cartas eram caras e difíceis de enviar naquela época", "Porque as pessoas da comunidade não sabiam ler"],
+      "correta": 1,
+      "justificativa": "João ansiava pelo encontro presencial! Há coisas que uma carta não consegue transmitir como um abraço, um olhar, uma conversa ao vivo. João valorizava muito a comunhão pessoal. Isso nos lembra como o convívio da Igreja é precioso!"
+    },
+    {
+      "pergunta": "Qual é a mensagem central de 2João para as crianças de hoje?",
+      "opcoes": ["Devemos ler muitos livros de teologia para ser bons cristãos", "Devemos andar na verdade de Jesus e ter cuidado com ensinamentos que contradizem a Bíblia", "Devemos construir igrejas maiores para agradar a Deus", "Devemos evitar qualquer conversa sobre fé com pessoas de fora da igreja"],
+      "correta": 1,
+      "justificativa": "2João nos ensina duas coisas juntas: VIVER na verdade de Deus com amor E estar atentos a ensinamentos falsos. Como cristãos, precisamos conhecer bem a Bíblia para reconhecer o que é verdade e o que é mentira disfarçada de verdade."
+    }
+  ]
+}

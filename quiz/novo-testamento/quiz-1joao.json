@@ -1,0 +1,64 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de 1João?",
+      "opcoes": ["Pedro, o apóstolo pescador", "Paulo, o missionário das nações", "João, o discípulo amado de Jesus, já idoso", "Tiago, irmão de Jesus"],
+      "correta": 2,
+      "justificativa": "João foi um dos discípulos mais próximos de Jesus — era chamado 'o discípulo amado'! Quando escreveu 1João, era um ancião cheio de experiência e amor. Sua carta transborda carinho pelos crentes, chamando-os sempre de 'filhinhos'."
+    },
+    {
+      "pergunta": "Qual é o versículo mais famoso sobre o amor em 1João?",
+      "opcoes": ["'Teme a Deus e guarda os Seus mandamentos'", "'Deus é amor; e quem permanece no amor permanece em Deus, e Deus nele'", "'A fé sem obras é morta'", "'Crescei na graça e no conhecimento de Jesus'"],
+      "correta": 1,
+      "justificativa": "Que versículo lindo! João nos diz que Deus não apenas ama — Deus É amor. Isso significa que tudo o que Deus faz, faz por amor. E quando amamos uns aos outros, estamos deixando o amor de Deus fluir através de nós!"
+    },
+    {
+      "pergunta": "João diz que 'Deus é luz'. O que isso significa para quem anda nas trevas?",
+      "opcoes": ["Que devemos ligar a luz de casa antes de orar", "Que quem vive no pecado não tem comunhão verdadeira com Deus, que é puro", "Que Deus só nos ama quando estamos em lugares iluminados", "Que devemos ter muito medo do escuro"],
+      "correta": 1,
+      "justificativa": "João usa 'luz' para falar da pureza e santidade de Deus. Assim como não dá para misturar luz e escuridão, não dá para ter comunhão real com Deus enquanto vivemos no pecado. Mas quando confessamos nossos erros, Deus nos perdoa e nos limpa!"
+    },
+    {
+      "pergunta": "Como podemos saber que realmente amamos a Deus, segundo João?",
+      "opcoes": ["Quando frequentamos a igreja todos os domingos", "Quando guardamos os Seus mandamentos e amamos nossos irmãos", "Quando lemos a Bíblia inteira de uma vez", "Quando fazemos muitas orações longas"],
+      "correta": 1,
+      "justificativa": "João é direto: não adianta dizer que amamos a Deus e não amar as pessoas ao nosso redor! Amar a Deus e amar as pessoas andam juntos. E obedecer a Deus também é uma forma de mostrar nosso amor — não por medo, mas por gratidão!"
+    },
+    {
+      "pergunta": "Quem eram os gnósticos que preocupavam João?",
+      "opcoes": ["Soldados romanos que perseguiam os cristãos", "Pessoas que negavam que Jesus havia vindo em carne e osso — diziam que Ele era só espírito", "Um grupo que queria destruir as cartas de Paulo", "Líderes religiosos judeus que não aceitavam Jesus"],
+      "correta": 1,
+      "justificativa": "Os gnósticos achavam que a matéria (o corpo, a carne) era má, então não podiam aceitar que Deus Se tornasse humano. João defendeu com firmeza: Jesus veio de verdade em carne e osso! Ele nasceu, cresceu, sentiu fome e sede — é real!"
+    },
+    {
+      "pergunta": "O que João diz sobre quem afirma amar a Deus mas odeia o irmão?",
+      "opcoes": ["Que essa pessoa é muito corajosa por manter sua fé mesmo assim", "Que essa pessoa é mentirosa, pois quem não ama o irmão que vê não pode amar a Deus que não vê", "Que Deus vai resolver esse problema com o tempo", "Que odiar um irmão é permitido se ele fez algo muito errado"],
+      "correta": 1,
+      "justificativa": "João não tem medo de ser direto! Como você pode amar alguém invisível se não consegue amar quem está bem do seu lado? O amor a Deus se prova no amor que mostramos às pessoas. São duas coisas que não se separam!"
+    },
+    {
+      "pergunta": "Como podemos ter certeza de que recebemos o perdão dos nossos pecados, segundo 1João 1:9?",
+      "opcoes": ["Fazendo muitas boas obras para compensar os erros", "Confessando nossos pecados, pois Deus é fiel e justo para nos perdoar e purificar", "Pagando uma oferta especial na igreja", "Ficando muito triste e chorando bastante pelos erros"],
+      "correta": 1,
+      "justificativa": "Que promessa maravilhosa! Deus não guarda rancor. Quando confessamos honestamente nossos erros, Ele nos perdoa completamente. 'Confessar' significa ser honesto com Deus sobre o que fizemos — e Ele sempre responde com perdão!"
+    },
+    {
+      "pergunta": "João escreve que Jesus Cristo é o nosso advogado junto ao Pai. O que isso quer dizer?",
+      "opcoes": ["Que Jesus vai nos defender no tribunal quando for o dia do julgamento", "Que precisamos pagar Jesus para nos defender", "Que somente advogados profissionais podem ser cristãos", "Que Deus só nos aceita se tivermos um defensor humano"],
+      "correta": 0,
+      "justificativa": "Que imagem linda! No tribunal espiritual, quando pecamos, Jesus fala por nós ao Pai, mostrando que Ele já pagou o preço pelos nossos erros com Sua morte na cruz. Ele é o melhor advogado — e Seu serviço é gratuito, pago com amor!"
+    },
+    {
+      "pergunta": "Como João diz que vencemos o mundo e suas tentações?",
+      "opcoes": ["Pela nossa força de vontade e dedicação pessoal", "Pela nossa fé em Jesus — essa é a vitória que vence o mundo", "Pelo dinheiro e poder que acumulamos", "Pelo esforço de obedecer todas as regras perfeitamente"],
+      "correta": 1,
+      "justificativa": "A vitória não depende de nós sermos super-heróis! João diz que é a nossa fé em Jesus que nos faz vencedores. Jesus já venceu o mundo — e ao confiar nEle, compartilhamos dessa vitória. Incrível, não é?"
+    },
+    {
+      "pergunta": "Por que João diz que escreveu sua carta, segundo 1João 5:13?",
+      "opcoes": ["Para que as pessoas se sintam culpadas pelos seus pecados", "Para que os que creem em Jesus saibam que têm a vida eterna — para terem certeza!", "Para ensinar todas as doutrinas teológicas mais difíceis", "Para que as pessoas tenham medo do juízo final"],
+      "correta": 1,
+      "justificativa": "João quer que você tenha certeza da sua salvação! Ele não quer que você fique sempre em dúvida se Deus te ama ou se você é salvo. Se você crê em Jesus, você TEM a vida eterna — pode ter certeza disso hoje!"
+    }
+  ]
+}

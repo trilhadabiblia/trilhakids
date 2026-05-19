@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o significado da palavra 'Deuteronômio'?",
+      "opcoes": [
+        "Primeira lei",
+        "Segunda lei",
+        "Terceira lei",
+        "Lei antiga"
+      ],
+      "correta": 1,
+      "justificativa": "Deuteronômio significa 'segunda lei' porque Moisés estava revisando as leis de Deus para a nova geração, como uma professora que revisa a matéria antes da prova!"
+    },
+    {
+      "pergunta": "Quem é o personagem principal que dá os últimos ensinamentos no livro de Deuteronômio?",
+      "opcoes": [
+        "Josué",
+        "Abraão",
+        "Moisés",
+        "Davi"
+      ],
+      "correta": 2,
+      "justificativa": "Moisés é o grande líder que, já idoso e sábio, dá suas últimas palavras ao povo antes de entrarem na Terra Prometida!"
+    },
+    {
+      "pergunta": "Segundo Deuteronômio 6:5, como devemos amar ao Senhor nosso Deus?",
+      "opcoes": [
+        "Só nos domingos",
+        "Com todo coração, alma e força",
+        "Apenas quando estamos felizes",
+        "Só quando oramos"
+      ],
+      "correta": 1,
+      "justificativa": "Este é o segundo segredo de Deuteronômio! Devemos amar a Deus de todo coração, alma e força - com tudo que temos!"
+    },
+    {
+      "pergunta": "O que Moisés aconselha o povo a fazer quando a vida parecer difícil?",
+      "opcoes": [
+        "Desistir de tudo",
+        "Reclamar muito",
+        "Lembrar como Deus os protegeu",
+        "Fugir dos problemas"
+      ],
+      "correta": 2,
+      "justificativa": "O primeiro segredo de Deuteronômio nos ensina: quando a vida ficar difícil, devemos olhar para trás e ver como Deus sempre nos protegeu!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Deuteronômio?",
+      "opcoes": [
+        "30 capítulos",
+        "34 capítulos",
+        "40 capítulos",
+        "50 capítulos"
+      ],
+      "correta": 1,
+      "justificativa": "Deuteronômio tem 34 capítulos cheios de sabedoria, onde Moisés explica como viver de forma que agrade a Deus!"
+    },
+    {
+      "pergunta": "Em Deuteronômio 30:19, o que Moisés diz para o povo escolher?",
+      "opcoes": [
+        "A tristeza e a dor",
+        "A vida e as bênçãos",
+        "O caminho mais fácil",
+        "Fazer o que quiserem"
+      ],
+      "correta": 1,
+      "justificativa": "Este é o terceiro segredo! Moisés disse para escolhermos a vida e as bênçãos que vêm de obedecer a Deus, não o caminho da tristeza!"
+    },
+    {
+      "pergunta": "Para onde o povo de Israel estava se preparando para ir?",
+      "opcoes": [
+        "Voltar ao Egito",
+        "Ficar no deserto",
+        "Entrar na Terra Prometida",
+        "Ir para outro país"
+      ],
+      "correta": 2,
+      "justificativa": "A nova geração estava se preparando para finalmente entrar na terra que Deus havia prometido aos seus pais!"
+    },
+    {
+      "pergunta": "O que acontece quando obedecemos a Deus, segundo o livro de Deuteronômio?",
+      "opcoes": [
+        "Ficamos tristes",
+        "Temos vida abundante e bênçãos",
+        "Perdemos nossos amigos",
+        "Nada muda"
+      ],
+      "correta": 1,
+      "justificativa": "O livro mostra que seguir a Palavra de Deus traz vida abundante e muitas bênçãos! Quando obedecemos, vivemos melhor e mais felizes!"
+    },
+    {
+      "pergunta": "Segundo Deuteronômio 8:2, por que devemos lembrar da jornada pelo deserto?",
+      "opcoes": [
+        "Para ficar com raiva",
+        "Para ver como Deus nos protegeu",
+        "Para reclamar das dificuldades",
+        "Para esquecer o passado"
+      ],
+      "correta": 1,
+      "justificativa": "Devemos lembrar para ver como Deus sempre nos protegeu! Ele nos tirou do Egito com amor e poder, e nunca devemos esquecer isso!"
+    },
+    {
+      "pergunta": "Qual é o principal propósito do livro de Deuteronômio?",
+      "opcoes": [
+        "Contar histórias engraçadas",
+        "Preparar o povo com fé renovada",
+        "Falar sobre animais",
+        "Ensinar matemática"
+      ],
+      "correta": 1,
+      "justificativa": "O propósito é preparar o povo para uma nova fase da vida, mostrando o amor de Deus e fortalecendo a fé para os desafios que virão!"
+    }
+  ]
+}

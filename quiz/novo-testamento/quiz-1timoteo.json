@@ -1,0 +1,104 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Para quem Paulo escreveu a primeira carta a Timóteo?",
+      "opcoes": ["Para uma grande Igreja em Roma", "Para um jovem líder chamado Timóteo", "Para o rei da cidade", "Para um grupo de fariseus"],
+      "correta": 1,
+      "justificativa": "Paulo escreveu pessoalmente para Timóteo, um jovem que ele chamava de 'verdadeiro filho na fé'. Que lindo ter um mentor que acredita em você e te orienta!"
+    },
+    {
+      "pergunta": "Em qual cidade Timóteo liderava a Igreja?",
+      "opcoes": ["Jerusalém", "Roma", "Éfeso", "Corinto"],
+      "correta": 2,
+      "justificativa": "Timóteo liderava a Igreja em Éfeso, uma cidade importante e cheia de desafios. Paulo o enviou para um lugar difícil porque confiava muito nele!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave de 1Timóteo sobre a idade de Timóteo?",
+      "opcoes": [
+        "Persevera no que aprendeste, pois conheces as Sagradas Escrituras.",
+        "Ninguém te despreze por seres jovem; antes, sê o exemplo dos fiéis.",
+        "O jovem que segue os maus caminhos envergonhará sua família.",
+        "Honra os mais velhos e aprende com eles sempre."
+      ],
+      "correta": 1,
+      "justificativa": "Em 1Tm 4:12, Paulo diz a Timóteo: 'Ninguém te despreze por seres jovem!' Isso vale para você também! Jovens podem ser exemplos de fé, amor e pureza. Sua idade não limita o que Deus pode fazer através de você!"
+    },
+    {
+      "pergunta": "Por que Paulo enviou Timóteo para Éfeso?",
+      "opcoes": [
+        "Para aprender a língua grega",
+        "Para combater os falsos mestres que ensinavam coisas erradas",
+        "Para arrecadar dinheiro para a Igreja de Jerusalém",
+        "Para construir um novo templo"
+      ],
+      "correta": 1,
+      "justificativa": "Havia falsos mestres em Éfeso ensinando doutrinas erradas e confundindo as pessoas. Paulo confiou a Timóteo a missão de corrigir isso. Defender a verdade é muito importante!"
+    },
+    {
+      "pergunta": "O que Paulo diz sobre a oração na carta a Timóteo?",
+      "opcoes": [
+        "Que a oração deve ser feita somente pelos líderes",
+        "Que se deve fazer súplicas, orações e intercessões por todas as pessoas",
+        "Que a oração só funciona se for em hebraico",
+        "Que orar duas vezes por dia é suficiente"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo pede que se ore por todas as pessoas — inclusive pelos governantes! A oração é uma ferramenta poderosa que qualquer cristão pode usar. Você também pode orar por outras pessoas hoje!"
+    },
+    {
+      "pergunta": "Quais são algumas qualidades que um líder da Igreja deve ter, segundo Paulo?",
+      "opcoes": [
+        "Ser muito rico e famoso",
+        "Ser irrepreensível, sóbrio, hospitaleiro e bom mestre",
+        "Saber tocar instrumentos musicais",
+        "Ter estudado nas melhores escolas"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo lista qualidades de caráter para os líderes: irrepreensível, sóbrio, hospitaleiro, bom mestre. O mais importante não é fama ou riqueza, mas ter um bom caráter!"
+    },
+    {
+      "pergunta": "O que Paulo diz sobre o contentamento em 1Timóteo?",
+      "opcoes": [
+        "Que devemos pedir a Deus para ficarmos ricos",
+        "Que a piedade com contentamento é grande ganho",
+        "Que quem tem pouco não pode servir a Deus",
+        "Que dinheiro é sempre mau e deve ser evitado"
+      ],
+      "correta": 1,
+      "justificativa": "Em 1Tm 6:6, Paulo diz que a piedade com contentamento é grande ganho! Ser grato pelo que temos e confiar em Deus vale muito mais do que ter muitas riquezas."
+    },
+    {
+      "pergunta": "Como Paulo descreve o 'amor ao dinheiro'?",
+      "opcoes": [
+        "Como algo necessário para crescer na fé",
+        "Como raiz de todos os males",
+        "Como um sinal de bênção de Deus",
+        "Como uma virtude para os cristãos diligentes"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo diz em 1Tm 6:10 que o amor ao dinheiro é raiz de todos os males. Não é o dinheiro em si que é mau, mas o amor exagerado por ele, que pode nos afastar de Deus."
+    },
+    {
+      "pergunta": "Paulo fala sobre as viúvas na carta a Timóteo. O que ele instrui?",
+      "opcoes": [
+        "Que as viúvas não devem participar da Igreja",
+        "Que a Igreja deve cuidar das viúvas verdadeiramente necessitadas",
+        "Que as viúvas devem se mudar para Jerusalém",
+        "Que apenas parentes ricos podem cuidar das viúvas"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo orienta a Igreja a cuidar das viúvas que realmente precisam de ajuda. Cuidar dos vulneráveis é uma marca do amor cristão — isso agrada muito a Deus!"
+    },
+    {
+      "pergunta": "Em que áreas Paulo diz que Timóteo deve ser exemplo para os fiéis?",
+      "opcoes": [
+        "Em riqueza, força e conhecimento",
+        "Na palavra, no procedimento, no amor, na fé e na pureza",
+        "Na musica, na arte e na escrita",
+        "Na política, no esporte e nos estudos"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo diz em 1Tm 4:12 que Timóteo deve ser exemplo na palavra, no procedimento, no amor, na fé e na pureza. Isso mostra que ser um bom exemplo vai muito além da aparência — é uma questão do coração!"
+    }
+  ]
+}

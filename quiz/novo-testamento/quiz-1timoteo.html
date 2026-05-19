@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - 1Timóteo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6">
+      <div class="text-center">
+        <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - 1TIMÓTEO</h1>
+        <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-12">
+
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre 1Timóteo te esperam!</p>
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-green-500/50">
+          Começar Quiz 🚀
+        </button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6">
+          <div class="text-4xl mb-2">❓</div>
+          <div class="text-3xl font-bold text-blue-300 mb-2">10</div>
+          <p class="text-gray-300">Perguntas</p>
+        </div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6">
+          <div class="text-4xl mb-2">⭐</div>
+          <div class="text-3xl font-bold text-yellow-300 mb-2">10</div>
+          <p class="text-gray-300">Pontos cada</p>
+        </div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6">
+          <div class="text-4xl mb-2">🏆</div>
+          <div class="text-3xl font-bold text-purple-300 mb-2">100</div>
+          <p class="text-gray-300">Pontos máximos</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold text-sm md:text-base">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg md:text-xl"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6 md:mb-8"></h3>
+        <div id="options-container" class="space-y-3 md:space-y-4"></div>
+      </div>
+      <div id="feedback" class="hidden bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200 text-base md:text-lg"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg md:text-xl font-bold py-3 md:py-4 rounded-full hover:scale-105 transition-all duration-300">
+          Próxima Pergunta →
+        </button>
+      </div>
+    </div>
+
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 md:p-8 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg md:text-xl opacity-90">de 100 pontos</div>
+        </div>
+        <p id="result-message" class="text-xl md:text-2xl text-gray-200 mb-8"></p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-3 md:py-4 px-8 rounded-full hover:scale-105 transition-all duration-300">
+            🔄 Tentar Novamente
+          </button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg md:text-xl font-bold py-3 md:py-4 px-8 rounded-full hover:scale-105 transition-all duration-300">
+            ← Voltar
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+
+  <script>
+    const quizData = {
+  "questoes": [
+    {
+      "pergunta": "Para quem Paulo escreveu a primeira carta a Timóteo?",
+      "opcoes": ["Para uma grande Igreja em Roma", "Para um jovem líder chamado Timóteo", "Para o rei da cidade", "Para um grupo de fariseus"],
+      "correta": 1,
+      "justificativa": "Paulo escreveu pessoalmente para Timóteo, um jovem que ele chamava de 'verdadeiro filho na fé'. Que lindo ter um mentor que acredita em você e te orienta!"
+    },
+    {
+      "pergunta": "Em qual cidade Timóteo liderava a Igreja?",
+      "opcoes": ["Jerusalém", "Roma", "Éfeso", "Corinto"],
+      "correta": 2,
+      "justificativa": "Timóteo liderava a Igreja em Éfeso, uma cidade importante e cheia de desafios. Paulo o enviou para um lugar difícil porque confiava muito nele!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave de 1Timóteo sobre a idade de Timóteo?",
+      "opcoes": [
+        "Persevera no que aprendeste, pois conheces as Sagradas Escrituras.",
+        "Ninguém te despreze por seres jovem; antes, sê o exemplo dos fiéis.",
+        "O jovem que segue os maus caminhos envergonhará sua família.",
+        "Honra os mais velhos e aprende com eles sempre."
+      ],
+      "correta": 1,
+      "justificativa": "Em 1Tm 4:12, Paulo diz a Timóteo: 'Ninguém te despreze por seres jovem!' Isso vale para você também! Jovens podem ser exemplos de fé, amor e pureza. Sua idade não limita o que Deus pode fazer através de você!"
+    },
+    {
+      "pergunta": "Por que Paulo enviou Timóteo para Éfeso?",
+      "opcoes": [
+        "Para aprender a língua grega",
+        "Para combater os falsos mestres que ensinavam coisas erradas",
+        "Para arrecadar dinheiro para a Igreja de Jerusalém",
+        "Para construir um novo templo"
+      ],
+      "correta": 1,
+      "justificativa": "Havia falsos mestres em Éfeso ensinando doutrinas erradas e confundindo as pessoas. Paulo confiou a Timóteo a missão de corrigir isso. Defender a verdade é muito importante!"
+    },
+    {
+      "pergunta": "O que Paulo diz sobre a oração na carta a Timóteo?",
+      "opcoes": [
+        "Que a oração deve ser feita somente pelos líderes",
+        "Que se deve fazer súplicas, orações e intercessões por todas as pessoas",
+        "Que a oração só funciona se for em hebraico",
+        "Que orar duas vezes por dia é suficiente"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo pede que se ore por todas as pessoas — inclusive pelos governantes! A oração é uma ferramenta poderosa que qualquer cristão pode usar. Você também pode orar por outras pessoas hoje!"
+    },
+    {
+      "pergunta": "Quais são algumas qualidades que um líder da Igreja deve ter, segundo Paulo?",
+      "opcoes": [
+        "Ser muito rico e famoso",
+        "Ser irrepreensível, sóbrio, hospitaleiro e bom mestre",
+        "Saber tocar instrumentos musicais",
+        "Ter estudado nas melhores escolas"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo lista qualidades de caráter para os líderes: irrepreensível, sóbrio, hospitaleiro, bom mestre. O mais importante não é fama ou riqueza, mas ter um bom caráter!"
+    },
+    {
+      "pergunta": "O que Paulo diz sobre o contentamento em 1Timóteo?",
+      "opcoes": [
+        "Que devemos pedir a Deus para ficarmos ricos",
+        "Que a piedade com contentamento é grande ganho",
+        "Que quem tem pouco não pode servir a Deus",
+        "Que dinheiro é sempre mau e deve ser evitado"
+      ],
+      "correta": 1,
+      "justificativa": "Em 1Tm 6:6, Paulo diz que a piedade com contentamento é grande ganho! Ser grato pelo que temos e confiar em Deus vale muito mais do que ter muitas riquezas."
+    },
+    {
+      "pergunta": "Como Paulo descreve o 'amor ao dinheiro'?",
+      "opcoes": [
+        "Como algo necessário para crescer na fé",
+        "Como raiz de todos os males",
+        "Como um sinal de bênção de Deus",
+        "Como uma virtude para os cristãos diligentes"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo diz em 1Tm 6:10 que o amor ao dinheiro é raiz de todos os males. Não é o dinheiro em si que é mau, mas o amor exagerado por ele, que pode nos afastar de Deus."
+    },
+    {
+      "pergunta": "Paulo fala sobre as viúvas na carta a Timóteo. O que ele instrui?",
+      "opcoes": [
+        "Que as viúvas não devem participar da Igreja",
+        "Que a Igreja deve cuidar das viúvas verdadeiramente necessitadas",
+        "Que as viúvas devem se mudar para Jerusalém",
+        "Que apenas parentes ricos podem cuidar das viúvas"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo orienta a Igreja a cuidar das viúvas que realmente precisam de ajuda. Cuidar dos vulneráveis é uma marca do amor cristão — isso agrada muito a Deus!"
+    },
+    {
+      "pergunta": "Em que áreas Paulo diz que Timóteo deve ser exemplo para os fiéis?",
+      "opcoes": [
+        "Em riqueza, força e conhecimento",
+        "Na palavra, no procedimento, no amor, na fé e na pureza",
+        "Na música, na arte e na escrita",
+        "Na política, no esporte e nos estudos"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo diz em 1Tm 4:12 que Timóteo deve ser exemplo na palavra, no procedimento, no amor, na fé e na pureza. Isso mostra que ser um bom exemplo vai muito além da aparência — é uma questão do coração!"
+    }
+  ]
+};
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function startQuiz() {
+      document.getElementById('start-screen').classList.add('hidden');
+      document.getElementById('quiz-screen').classList.remove('hidden');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      const q = quizData.questoes[currentQuestion];
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / quizData.questoes.length * 100) + '%';
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('feedback').classList.add('hidden');
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-4 md:p-5 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:bg-purple-50 hover:border-purple-300 transition-all duration-200 text-gray-800 font-medium text-base md:text-lg';
+        btn.textContent = opcao;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+
+    function selectAnswer(selected) {
+      const q = quizData.questoes[currentQuestion];
+      document.querySelectorAll('#options-container button').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.correta) btn.className = btn.className + ' bg-green-100 border-green-500 text-green-800';
+        else if (i === selected && selected !== q.correta) btn.className = btn.className + ' bg-red-100 border-red-500 text-red-800';
+      });
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      if (isCorrect) {
+        score += 10;
+        document.getElementById('score').textContent = score;
+        feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8';
+        document.getElementById('feedback-icon').textContent = '✅';
+        document.getElementById('feedback-title').textContent = 'Muito bem!';
+      } else {
+        feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8';
+        document.getElementById('feedback-icon').textContent = '❌';
+        document.getElementById('feedback-title').textContent = 'Quase lá!';
+      }
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.questoes.length) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').textContent = score;
+      if (typeof trilhoGame !== 'undefined') {
+        const acertos = Math.round(score / 10);
+        const total = quizData.questoes.length;
+        const nomeQuiz = document.title.replace('Quiz - ', '');
+        trilhoGame.completarQuiz(nomeQuiz, acertos, total);
+      }
+      let emoji, message;
+      if (score === 100) { emoji = '🏆'; message = 'PERFEITO! Você é um expert em 1Timóteo!'; }
+      else if (score >= 80) { emoji = '🌟'; message = 'Excelente! Você conhece muito bem 1Timóteo!'; }
+      else if (score >= 60) { emoji = '😊'; message = 'Muito bom! Continue estudando 1Timóteo!'; }
+      else if (score >= 40) { emoji = '📖'; message = 'Bom trabalho! Revise 1Timóteo para melhorar!'; }
+      else { emoji = '💪'; message = 'Continue praticando! 1Timóteo é fascinante!'; }
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+
+    function restartQuiz() {
+      currentQuestion = 0;
+      score = 0;
+      document.getElementById('score').textContent = '0';
+      document.getElementById('result-screen').classList.add('hidden');
+      document.getElementById('start-screen').classList.remove('hidden');
+    }
+  </script>
+
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
+</body>
+</html>

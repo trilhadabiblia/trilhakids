@@ -1,0 +1,89 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta aos Colossenses?",
+      "opcoes": ["Pedro", "Paulo", "João", "Tiago"],
+      "correta": 1,
+      "justificativa": "Paulo escreveu a carta aos Colossenses enquanto estava preso! Mesmo na prisão, ele amava tanto a Igreja que continuou escrevendo cartas cheias de esperança e ensinamento."
+    },
+    {
+      "pergunta": "De onde Paulo escreveu a carta aos Colossenses?",
+      "opcoes": ["De uma viagem no barco", "Da sua casa em Antioquia", "Da prisão", "Do templo em Jerusalém"],
+      "correta": 2,
+      "justificativa": "Paulo estava na prisão quando escreveu esta carta! Isso mostra que nenhuma situação difícil pode nos impedir de servirmos a Deus e ajudarmos as pessoas."
+    },
+    {
+      "pergunta": "Quem fundou a Igreja em Colossos?",
+      "opcoes": ["Paulo", "Pedro", "Epafras", "Barnabé"],
+      "correta": 2,
+      "justificativa": "Epafras foi quem fundou a Igreja em Colossos e depois foi visitar Paulo na prisão para contar como a igreja estava. Ele era um servo fiel de Deus!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave de Colossenses que fala sobre Jesus?",
+      "opcoes": [
+        "Jesus veio ao mundo para salvar os pecadores.",
+        "Em Cristo habita corporalmente toda a plenitude da divindade.",
+        "Deus amou o mundo de tal maneira que deu o seu Filho.",
+        "O Senhor é o meu pastor e nada me faltará."
+      ],
+      "correta": 1,
+      "justificativa": "Em Colossenses 2:9, Paulo diz que toda a plenitude de Deus habita em Jesus! Isso significa que Jesus é completamente Deus — não existe ninguém maior ou igual a Ele."
+    },
+    {
+      "pergunta": "Por que Paulo escreveu a carta aos Colossenses?",
+      "opcoes": [
+        "Para convidar todos para uma festa",
+        "Para combater ensinamentos errados que diminuíam Jesus",
+        "Para pedir dinheiro para a Igreja",
+        "Para contar suas viagens missionárias"
+      ],
+      "correta": 1,
+      "justificativa": "Algumas pessoas estavam ensinando que precisavam de anjos, rituais especiais ou sabedoria secreta além de Jesus. Paulo corrigiu isso: Jesus é suficiente — Ele é tudo que precisamos!"
+    },
+    {
+      "pergunta": "Segundo Colossenses, Jesus é a cabeça de qual grupo?",
+      "opcoes": ["Da família de Abraão", "Da Igreja", "Do povo de Israel", "Dos anjos"],
+      "correta": 1,
+      "justificativa": "Paulo ensina que Jesus é a cabeça da Igreja, assim como a cabeça dirige o corpo! Isso significa que Jesus guia, protege e cuida de todos que creem nEle."
+    },
+    {
+      "pergunta": "Qual era o nome do homem que levou a carta de Paulo para Colossos?",
+      "opcoes": ["Silas", "Timóteo", "Onésimo", "Barnabé"],
+      "correta": 2,
+      "justificativa": "Onésimo foi quem levou a carta de Paulo para a Igreja em Colossos. Ele era um mensageiro fiel — uma responsabilidade muito importante!"
+    },
+    {
+      "pergunta": "O que Paulo pede aos Colossenses que façam acima de tudo?",
+      "opcoes": [
+        "Que guardem todos os sábados",
+        "Que façam muitos jejuns",
+        "Que se revistam de amor",
+        "Que estudem filosofia grega"
+      ],
+      "correta": 2,
+      "justificativa": "Em Colossenses 3:14, Paulo diz que o amor é o laço perfeito que une tudo. O amor é o mais importante de todos os comportamentos de um cristão!"
+    },
+    {
+      "pergunta": "O que Paulo fala sobre o perdão em Colossenses?",
+      "opcoes": [
+        "Que devemos perdoar apenas três vezes",
+        "Que não precisamos perdoar quem nos machucou",
+        "Que devemos perdoar uns aos outros assim como Cristo nos perdoou",
+        "Que o perdão é só para os adultos"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo ensina em Colossenses 3:13 que devemos perdoar uns aos outros assim como o Senhor nos perdoou. Que motivo incrível para perdoar: lembrar que Jesus já nos perdoou tudo!"
+    },
+    {
+      "pergunta": "Que conselho Paulo dá às crianças na carta aos Colossenses?",
+      "opcoes": [
+        "Que leiam a Bíblia todos os dias sozinhos",
+        "Que obedeçam aos pais em tudo, pois isso agrada ao Senhor",
+        "Que escolham seus próprios líderes",
+        "Que não brinquem com crianças de outras crenças"
+      ],
+      "correta": 1,
+      "justificativa": "Em Colossenses 3:20, Paulo diz que as crianças devem obedecer aos pais em tudo, pois isso agrada ao Senhor. Obedecer com amor é uma forma de honrar a Deus!"
+    }
+  ]
+}

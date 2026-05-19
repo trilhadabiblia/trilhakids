@@ -1,0 +1,64 @@
+{
+  "questoes": [
+    {
+      "pergunta": "3João é a menor carta da Bíblia. Quantos versículos ela tem?",
+      "opcoes": ["5 versículos", "10 versículos", "14 versículos", "20 versículos"],
+      "correta": 2,
+      "justificativa": "3João tem apenas 14 versículos — é a menor carta de toda a Bíblia! Mas mesmo sendo pequenininha, ela traz lições enormes sobre hospitalidade, humildade e fidelidade. Tamanho não é documento quando se trata da Palavra de Deus!"
+    },
+    {
+      "pergunta": "Para quem João escreveu 3João?",
+      "opcoes": ["Para uma grande assembleia de líderes cristãos", "Para Gaio, um amigo fiel e hospitaleiro da comunidade", "Para o imperador Romano Trajano", "Para todos os cristãos do Império Romano"],
+      "correta": 1,
+      "justificativa": "João escreveu essa carta pessoal para Gaio, alguém que ele amava muito e considerava um filho espiritual. Gaio era conhecido por sua hospitalidade e fidelidade à verdade — um verdadeiro modelo para todos nós!"
+    },
+    {
+      "pergunta": "Qual é o versículo de bênção com que João abre sua carta a Gaio?",
+      "opcoes": ["'A graça e a paz sejam convosco de Deus nosso Pai'", "'Amado, rogo que te vá bem em tudo e que tenhas saúde, assim como bem vai à tua alma'", "'Graça, misericórdia e paz de Deus Pai'", "'O Senhor esteja contigo em todos os teus caminhos'"],
+      "correta": 1,
+      "justificativa": "Que oração bonita! João deseja que Gaio tenha sucesso e saúde no corpo assim como sua alma ia bem. Isso nos mostra que Deus se importa com toda a nossa vida — nossa saúde, nossos relacionamentos, nosso trabalho. Podemos orar assim uns pelos outros!"
+    },
+    {
+      "pergunta": "Pelo que João mais elogia Gaio em sua carta?",
+      "opcoes": ["Por ser o cristão mais rico da região", "Por ter construído a maior igreja da cidade", "Por andar na verdade e receber com hospitalidade os irmãos — mesmo os que não conhecia", "Por ter memorizado toda a lei de Moisés"],
+      "correta": 2,
+      "justificativa": "Gaio era generoso e acolhedor! Ele recebia os missionários e irmãos itinerantes em sua casa, cuidava deles e os ajudava a continuar a jornada. Hospitalidade — receber e cuidar das pessoas — é um dom precioso que agrada muito a Deus!"
+    },
+    {
+      "pergunta": "Quem era Diótrefes e por que João o reprende?",
+      "opcoes": ["Era um missionário fiel que pregava em lugares distantes", "Era um cristão humilde que sempre servia sem receber reconhecimento", "Era um líder orgulhoso que queria ser o primeiro em tudo e rejeitava a autoridade dos apóstolos", "Era um estudioso da Bíblia muito admirado por todos"],
+      "correta": 2,
+      "justificativa": "Diótrefes é o oposto de Gaio! Ele queria ser o mais importante, não aceitava as cartas de João, falava mal dos apóstolos e ainda expulsava da igreja quem acolhia os missionários. Orgullo e sede de poder causam muitos estragos!"
+    },
+    {
+      "pergunta": "Quem era Demétrio, mencionado na carta?",
+      "opcoes": ["Um falso profeta que João mandava expulsar da comunidade", "Um homem que recebia bom testemunho de todos e da própria verdade — um modelo a seguir", "O filho de Diótrefes que ajudava o pai a controlar a igreja", "Um soldado romano convertido ao cristianismo"],
+      "correta": 1,
+      "justificativa": "Demétrio é apresentado como alguém que tem boa reputação com todos — inclusive com a própria verdade de Deus! Que elogio incrível: sua vida inteira confirmava o que ele pregava. Esse é o objetivo de todo cristão!"
+    },
+    {
+      "pergunta": "O que João diz sobre receber e ajudar os irmãos viajantes que pregavam o evangelho?",
+      "opcoes": ["Que era opcional — cada um decidia conforme seu espaço e dinheiro", "Que recebê-los é trabalhar junto com eles pela verdade — é missão!", "Que era perigoso pois poderiam trazer falsos ensinamentos", "Que somente os líderes da igreja tinham obrigação de hospedá-los"],
+      "correta": 1,
+      "justificativa": "João diz algo lindo: ao receber e sustentar esses pregadores, Gaio se tornava parceiro deles na missão! Você não precisa viajar para participar das missões — cuidar de quem vai, orar por eles e apoiá-los já é missão! Todo mundo pode participar!"
+    },
+    {
+      "pergunta": "Qual contraste importante 3João apresenta para nós aprendermos?",
+      "opcoes": ["O contraste entre ricos e pobres na igreja primitiva", "O contraste entre Gaio (hospitaleiro e fiel) e Diótrefes (orgulhoso e divisor)", "O contraste entre o Antigo e o Novo Testamento", "O contraste entre judeus e gentios na Igreja"],
+      "correta": 1,
+      "justificativa": "3João é uma 'fotografia' de duas atitudes opostas na Igreja: Gaio que serve com amor e humildade, e Diótrefes que quer poder e rejeita a autoridade. Qual dos dois você quer ser parecido? A resposta é clara!"
+    },
+    {
+      "pergunta": "O que João aconselha sobre o exemplo do bem e do mal?",
+      "opcoes": ["Que devemos estudar o mal para entendê-lo melhor", "Que não imites o mal, mas imita o bem — quem faz o bem é de Deus", "Que devemos evitar qualquer comparação entre pessoas", "Que o bem e o mal são relativos e cada um decide o que é certo"],
+      "correta": 1,
+      "justificativa": "João é direto: não copie o mal — copie o bem! Olhe para as pessoas que vivem para Deus com fidelidade e imite o que há de bom nelas. E lembre-se: quem faz o bem demonstra que conhece e ama a Deus!"
+    },
+    {
+      "pergunta": "Qual é a grande lição de 3João para as crianças cristãs hoje?",
+      "opcoes": ["Que devemos sempre tentar ser os líderes mais importantes da nossa turma", "Que hospitalidade, humildade e fidelidade à verdade são virtudes que agradam muito a Deus", "Que cartas e mensagens são mais importantes do que encontros pessoais", "Que somente os adultos podem servir na Igreja"],
+      "correta": 1,
+      "justificativa": "3João nos ensina que coisas simples importam muito para Deus: receber bem as pessoas, ser humilde, viver a verdade, não querer ser 'o melhor'. Gaio não era famoso — mas era fiel. E isso era o suficiente para ganhar o elogio de João e de Deus!"
+    }
+  ]
+}

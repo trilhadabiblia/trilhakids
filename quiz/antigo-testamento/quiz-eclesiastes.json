@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem foi o personagem principal que escreveu o livro de Eclesiastes?",
+      "opcoes": [
+        "Davi",
+        "Salomão",
+        "Moisés",
+        "Daniel"
+      ],
+      "correta": 1,
+      "justificativa": "Salomão foi o sábio rei que escreveu Eclesiastes. Ele teve muita riqueza, sabedoria e poder, mas descobriu que só Deus preenche verdadeiramente o coração!"
+    },
+    {
+      "pergunta": "Segundo Eclesiastes, o que acontece quando vivemos sem Deus?",
+      "opcoes": [
+        "Ficamos muito ricos",
+        "Nada faz sentido na vida",
+        "Nos tornamos mais inteligentes",
+        "Ganhamos muitos amigos"
+      ],
+      "correta": 1,
+      "justificativa": "Salomão aprendeu que sem Deus no centro da nossa vida, nada faz sentido. Nem riquezas, nem fama, nem prazeres conseguem preencher nosso coração como Deus pode fazer!"
+    },
+    {
+      "pergunta": "Complete a famosa frase de Eclesiastes: 'Tudo tem o seu _______ determinado'.",
+      "opcoes": [
+        "lugar",
+        "tempo",
+        "valor",
+        "nome"
+      ],
+      "correta": 1,
+      "justificativa": "A frase completa é 'Tudo tem o seu tempo determinado'. Isso nos ensina que cada momento da vida tem um propósito especial e que Deus controla tudo com amor!"
+    },
+    {
+      "pergunta": "Qual é a principal lição sobre o verdadeiro propósito da vida em Eclesiastes?",
+      "opcoes": [
+        "Juntar muitas riquezas",
+        "Ser famoso e conhecido",
+        "Amar e obedecer a Deus",
+        "Estudar muito na escola"
+      ],
+      "correta": 2,
+      "justificativa": "Eclesiastes 12:13 nos ensina que o propósito da vida é temer a Deus e guardar Seus mandamentos. Viver para Deus é o que dá verdadeiro sentido à nossa vida!"
+    },
+    {
+      "pergunta": "Segundo o livro, há 'tempo de plantar e tempo de ________'.",
+      "opcoes": [
+        "dormir",
+        "colher",
+        "brincar",
+        "estudar"
+      ],
+      "correta": 1,
+      "justificativa": "O texto diz 'tempo de plantar e tempo de colher'. Isso nos ensina que cada fase da vida tem seu valor especial e devemos confiar no tempo perfeito de Deus!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Eclesiastes?",
+      "opcoes": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correta": 2,
+      "justificativa": "Eclesiastes tem 12 capítulos cheios de reflexões profundas sobre a vida. Cada capítulo nos ensina algo importante sobre viver com Deus no centro de tudo!"
+    },
+    {
+      "pergunta": "O que Salomão descobriu sobre as coisas materiais (dinheiro, brinquedos, casa grande)?",
+      "opcoes": [
+        "Elas nos fazem completamente felizes",
+        "São a coisa mais importante da vida",
+        "Não conseguem preencher nosso coração",
+        "Devemos viver só para consegui-las"
+      ],
+      "correta": 2,
+      "justificativa": "Salomão tinha tudo que alguém poderia querer, mas descobriu que as coisas materiais não preenchem nosso coração. Só Deus pode dar verdadeira satisfação e alegria!"
+    },
+    {
+      "pergunta": "De acordo com Eclesiastes, há 'tempo de chorar e tempo de ________'.",
+      "opcoes": [
+        "gritar",
+        "correr",
+        "rir",
+        "cantar"
+      ],
+      "correta": 2,
+      "justificativa": "O texto menciona 'tempo de chorar e tempo de rir'. Isso nos mostra que tanto os momentos tristes quanto os alegres têm seu lugar na vida, e Deus está conosco em todos eles!"
+    },
+    {
+      "pergunta": "Qual é a expressão que Salomão usou para mostrar que as coisas passam rapidamente?",
+      "opcoes": [
+        "'Alegria das alegrias'",
+        "'Vaidade de vaidades'",
+        "'Tempo dos tempos'",
+        "'Sabedoria das sabedorias'"
+      ],
+      "correta": 1,
+      "justificativa": "Salomão disse 'Vaidade de vaidades' para mostrar que tudo é passageiro, tudo se vai como o vento. Mas quando vivemos com Deus, nossa vida ganha verdadeiro sentido!"
+    },
+    {
+      "pergunta": "Segundo Eclesiastes, como devemos viver cada momento da nossa vida?",
+      "opcoes": [
+        "Pensando só em nós mesmos",
+        "Com Deus no coração",
+        "Preocupados com o futuro",
+        "Fazendo só o que queremos"
+      ],
+      "correta": 1,
+      "justificativa": "A moral do livro nos ensina a viver cada momento com Deus no coração, pois só Ele dá sentido e direção para nossa vida. Essa é a chave para uma vida com propósito!"
+    }
+  ]
+}

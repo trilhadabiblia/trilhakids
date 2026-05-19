@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem foi Ezequiel?",
+      "opcoes": [
+        "Um rei de Israel",
+        "Um profeta sacerdote",
+        "Um soldado babilônico",
+        "Um comerciante"
+      ],
+      "correta": 1,
+      "justificativa": "Ezequiel era um profeta sacerdote que recebeu visões impressionantes de Deus e falou ao povo que estava exilado na Babilônia."
+    },
+    {
+      "pergunta": "Na visão de Ezequiel sobre o vale de ossos secos, o que aconteceu quando ele profetizou?",
+      "opcoes": [
+        "Os ossos desapareceram",
+        "Os ossos ganharam vida e ficaram de pé",
+        "Os ossos viraram pedra",
+        "Nada aconteceu"
+      ],
+      "correta": 1,
+      "justificativa": "Quando Ezequiel profetizou aos ossos secos, Deus os trouxe à vida, mostrando que Ele pode dar vida ao que parece morto e impossível!"
+    },
+    {
+      "pergunta": "O que Deus prometeu fazer com o coração das pessoas?",
+      "opcoes": [
+        "Deixar como está",
+        "Tirar o coração de pedra e dar um coração de carne",
+        "Torná-lo mais duro",
+        "Escondê-lo"
+      ],
+      "correta": 1,
+      "justificativa": "Deus prometeu tirar o coração de pedra (duro e frio) e dar um coração de carne (novo e cheio de vida), transformando as pessoas por dentro."
+    },
+    {
+      "pergunta": "Onde estava o povo de Israel quando Ezequiel profetizou?",
+      "opcoes": [
+        "Em Jerusalém",
+        "No Egito",
+        "Na Babilônia",
+        "No deserto"
+      ],
+      "correta": 2,
+      "justificativa": "O povo de Israel estava exilado na Babilônia, longe de casa, quando Ezequiel trouxe as mensagens de Deus para eles."
+    },
+    {
+      "pergunta": "Nas visões de Ezequiel sobre a glória de Deus, o que ele viu?",
+      "opcoes": [
+        "Apenas nuvens escuras",
+        "Querubins com asas e rodas de fogo",
+        "Uma cidade vazia",
+        "Animais comuns"
+      ],
+      "correta": 1,
+      "justificativa": "Ezequiel teve visões maravilhosas da glória de Deus, vendo querubins com asas, rodas de fogo e tudo muito grandioso, mostrando como Deus é poderoso!"
+    },
+    {
+      "pergunta": "Qual era a principal mensagem de esperança que Ezequiel trouxe?",
+      "opcoes": [
+        "Que eles nunca voltariam para casa",
+        "Que Deus os havia esquecido",
+        "Que Deus pode restaurar e dar nova vida",
+        "Que tudo estava perdido"
+      ],
+      "correta": 2,
+      "justificativa": "A principal mensagem de Ezequiel era de esperança: Deus não havia esquecido Seu povo e tinha poder para restaurar tudo - sonhos, esperanças e vidas!"
+    },
+    {
+      "pergunta": "O que a visão dos ossos secos nos ensina sobre Deus?",
+      "opcoes": [
+        "Que Ele é fraco",
+        "Que nada é impossível para Ele",
+        "Que Ele não se importa",
+        "Que Ele está distante"
+      ],
+      "correta": 1,
+      "justificativa": "A visão dos ossos secos nos ensina que nada é impossível para Deus! Ele pode trazer vida onde parece não haver esperança."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Ezequiel?",
+      "opcoes": [
+        "24 capítulos",
+        "36 capítulos",
+        "48 capítulos",
+        "52 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Ezequiel tem 48 capítulos cheios de visões e profecias poderosas que Deus deu ao profeta."
+    },
+    {
+      "pergunta": "O que Deus prometeu colocar dentro das pessoas junto com o coração novo?",
+      "opcoes": [
+        "Medo",
+        "Seu Espírito",
+        "Tristeza",
+        "Confusão"
+      ],
+      "correta": 1,
+      "justificativa": "Além do coração novo, Deus prometeu colocar Seu Espírito dentro das pessoas, transformando-as completamente por dentro!"
+    },
+    {
+      "pergunta": "Por que o livro de Ezequiel é importante para nós hoje?",
+      "opcoes": [
+        "Só conta histórias antigas",
+        "Mostra que Deus pode renovar nossa vida",
+        "Não tem importância",
+        "Apenas para adultos"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Ezequiel é importante porque nos ensina que Deus tem poder para renovar nossa vida, transformar nosso coração e dar esperança mesmo nas situações difíceis!"
+    }
+  ]
+}

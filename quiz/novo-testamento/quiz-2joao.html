@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - 2João</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+      <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - 2João</h1>
+      <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre 2João te esperam!</p>
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">Começar Quiz 🚀</button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">❓</div><div class="text-3xl font-bold text-blue-300 mb-2">10</div><p class="text-gray-300">Perguntas</p></div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">⭐</div><div class="text-3xl font-bold text-yellow-300 mb-2">10</div><p class="text-gray-300">Pontos cada</p></div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">🏆</div><div class="text-3xl font-bold text-purple-300 mb-2">100</div><p class="text-gray-300">Pontos máximos</p></div>
+      </div>
+    </div>
+    <div id="quiz-screen" class="hidden">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6"></h3>
+        <div id="options-container" class="space-y-3"></div>
+      </div>
+      <div id="feedback" class="hidden rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg font-bold py-3 rounded-full hover:scale-105 transition-all">Próxima Pergunta →</button>
+      </div>
+    </div>
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg opacity-90">de 100 pontos</div>
+        </div>
+        <p id="result-message" class="text-xl text-gray-200 mb-8"></p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">🔄 Tentar Novamente</button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">← Voltar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+  <script>
+    const quizData = {"questoes":[{"pergunta":"Quem escreveu a carta de 2João e como ele se identifica?","opcoes":["Paulo, o apóstolo das nações","Pedro, o pescador de Galileia","João, que se identifica como 'o ancião'","Tiago, irmão de Jesus"],"correta":2,"justificativa":"João se chama de 'o ancião' — uma palavra que significa 'o velho', alguém de muita experiência e sabedoria. Era uma forma de mostrar sua autoridade espiritual. João era já muito idoso quando escreveu essa cartinha!"},{"pergunta":"2João é uma das menores cartas da Bíblia. Quantos versículos ela tem?","opcoes":["5 versículos","13 versículos","25 versículos","50 versículos"],"correta":1,"justificativa":"2João tem apenas 13 versículos — é uma das menores cartas do Novo Testamento! Mas mesmo sendo pequena, ela está cheia de ensinamentos importantes sobre andar na verdade e ter cuidado com os falsos mestres."},{"pergunta":"Para quem João escreveu 2João?","opcoes":["Para o imperador romano Nero","Para a senhora eleita e seus filhos — provavelmente uma Igreja local e seus membros","Para os 12 apóstolos reunidos em Jerusalém","Para Pedro, seu amigo e apóstolo"],"correta":1,"justificativa":"A maioria dos estudiosos acredita que 'a senhora eleita e seus filhos' era uma forma carinhosa de falar de uma comunidade cristã (a Igreja) e seus membros. João se preocupava com essa comunidade e escreveu para protegê-la!"},{"pergunta":"O que deixou João muito alegre em relação a alguns membros dessa comunidade?","opcoes":["Que eles tinham construído uma grande e bonita igreja","Que eles haviam dado muito dinheiro para as missões","Que encontrou alguns dos seus filhos andando na verdade, conforme o mandamento de Deus","Que eles haviam memorizado toda a Bíblia"],"correta":2,"justificativa":"João ficou emocionado ao encontrar pessoas vivendo conforme a verdade de Deus! Não é só saber a Bíblia na cabeça — é 'andar na verdade', viver de acordo com o que Deus ensina. Isso alegra os líderes e agrada a Deus!"},{"pergunta":"Qual é o 'mandamento antigo' que João pede para seguirem, que eles já tinham desde o início?","opcoes":["Guardar o sábado e não trabalhar","Que andemos uns para com os outros em amor","Dar dízimo fielmente todo mês","Orar três vezes por dia voltados para Jerusalém"],"correta":1,"justificativa":"O amor não é regra nova — é o mandamento mais antigo e mais importante! Jesus já havia dito: amem uns aos outros. João repete isso porque o amor é o fundamento de tudo. Quando amamos, estamos fazendo exatamente o que Deus quer!"},{"pergunta":"Que ensinamento falso João avisa para tomar cuidado?","opcoes":["A falsa ideia de que Deus não perdoa os pecados","A falsa ideia de que devemos pagar para entrar no céu","A falsa ideia de que Jesus Cristo não veio em carne — os que ensinam isso são enganadores","A falsa ideia de que a Bíblia foi escrita por anjos"],"correta":2,"justificativa":"João avisa: cuidado com quem nega que Jesus veio de verdade em carne e osso! Isso era o ensino dos gnósticos. Jesus não era um fantasma — Ele nasceu de verdade, viveu de verdade, morreu de verdade e ressuscitou de verdade!"},{"pergunta":"O que João chama de pessoa que nega que Jesus Cristo veio em carne?","opcoes":["Um teólogo equivocado que precisa de mais estudo","Um enganador e anticristo","Um amigo que precisa de paciência","Um líder que merece respeito mesmo discordando"],"correta":1,"justificativa":"João é firme na verdade! Não é falta de amor ser direto sobre ensinamentos errados e perigosos. Quem nega que Jesus veio em carne está atacando o fundamento da fé cristã. Precisamos conhecer a verdade para não ser enganados."},{"pergunta":"O que João diz que não devemos fazer quando alguém vem pregar um ensinamento que contraria a doutrina de Cristo?","opcoes":["Devemos recebê-lo em casa e discutir com calma por horas","Não devemos recebê-lo em casa nem saudá-lo, para não participar de suas más obras","Devemos deixar que ele fale e depois decidir se cremos","Devemos escondê-lo para que outros não o ouçam"],"correta":1,"justificativa":"João dá um conselho prático de proteção! Receber em casa e saudar calorosamente era como endossar e apoiar alguém naquela cultura. Não é falta de amor, é proteger a comunidade de ensinamentos que podem destruir a fé das pessoas."},{"pergunta":"Por que João diz que preferia visitar pessoalmente em vez de escrever mais coisas?","opcoes":["Porque ele não sabia escrever muito bem","Para que a alegria de ambos fosse completa — ele queria falar face a face","Porque as cartas eram caras e difíceis de enviar naquela época","Porque as pessoas da comunidade não sabiam ler"],"correta":1,"justificativa":"João ansiava pelo encontro presencial! Há coisas que uma carta não consegue transmitir como um abraço, um olhar, uma conversa ao vivo. João valorizava muito a comunhão pessoal. Isso nos lembra como o convívio da Igreja é precioso!"},{"pergunta":"Qual é a mensagem central de 2João para as crianças de hoje?","opcoes":["Devemos ler muitos livros de teologia para ser bons cristãos","Devemos andar na verdade de Jesus e ter cuidado com ensinamentos que contradizem a Bíblia","Devemos construir igrejas maiores para agradar a Deus","Devemos evitar qualquer conversa sobre fé com pessoas de fora da igreja"],"correta":1,"justificativa":"2João nos ensina duas coisas juntas: VIVER na verdade de Deus com amor E estar atentos a ensinamentos falsos. Como cristãos, precisamos conhecer bem a Bíblia para reconhecer o que é verdade e o que é mentira disfarçada de verdade."}]};
+    let currentQuestion = 0, score = 0;
+    function startQuiz() { document.getElementById('start-screen').classList.add('hidden'); document.getElementById('quiz-screen').classList.remove('hidden'); loadQuestion(); }
+    function loadQuestion() {
+      const q = quizData.questoes[currentQuestion];
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / quizData.questoes.length * 100) + '%';
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('feedback').classList.add('hidden');
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:bg-purple-50 hover:border-purple-300 transition-all text-gray-800 font-medium text-base md:text-lg';
+        btn.textContent = opcao;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+    function selectAnswer(selected) {
+      const q = quizData.questoes[currentQuestion];
+      document.querySelectorAll('#options-container button').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.correta) btn.className += ' bg-green-100 border-green-500 text-green-800';
+        else if (i === selected && selected !== q.correta) btn.className += ' bg-red-100 border-red-500 text-red-800';
+      });
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      if (isCorrect) { score += 10; document.getElementById('score').textContent = score; feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '✅'; document.getElementById('feedback-title').textContent = 'Muito bem!'; }
+      else { feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '❌'; document.getElementById('feedback-title').textContent = 'Quase lá!'; }
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+    function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.questoes.length) loadQuestion(); else showResults(); }
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').textContent = score;
+      if (typeof trilhoGame !== 'undefined') trilhoGame.completarQuiz(document.title.replace('Quiz - ', ''), Math.round(score/10), quizData.questoes.length);
+      const msgs = [[100,'🏆','PERFEITO! Você é um expert em 2João!'],[80,'🌟','Excelente! Você conhece muito bem 2João!'],[60,'😊','Muito bom! Continue estudando 2João!'],[40,'📖','Bom trabalho! Revise 2João para melhorar!'],[0,'💪','Continue praticando! 2João é fascinante!']];
+      const [,emoji,message] = msgs.find(([min]) => score >= min);
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+    function restartQuiz() { currentQuestion = 0; score = 0; document.getElementById('score').textContent = '0'; document.getElementById('result-screen').classList.add('hidden'); document.getElementById('start-screen').classList.remove('hidden'); }
+  </script>
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
+</body>
+</html>

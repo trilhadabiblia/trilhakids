@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual era a principal característica de Jó no início da história?",
+      "opcoes": [
+        "Ele era muito rico apenas",
+        "Ele era bom, fiel e temente a Deus",
+        "Ele era orgulhoso",
+        "Ele não acreditava em Deus"
+      ],
+      "correta": 1,
+      "justificativa": "Jó era conhecido por ser um homem bom e fiel a Deus, além de ser próspero. Sua fé era sua maior qualidade!"
+    },
+    {
+      "pergunta": "O que aconteceu com Jó durante suas provações?",
+      "opcoes": [
+        "Perdeu apenas seu dinheiro",
+        "Perdeu apenas sua família",
+        "Perdeu seus bens, família e saúde",
+        "Não perdeu nada importante"
+      ],
+      "correta": 2,
+      "justificativa": "Jó perdeu tudo o que tinha de mais precioso: seus bens, sua família e sua saúde, mas manteve sua fé em Deus."
+    },
+    {
+      "pergunta": "Como Jó reagiu quando perdeu tudo?",
+      "opcoes": [
+        "Ficou muito bravo com Deus",
+        "Parou de acreditar em Deus",
+        "Manteve sua fé, mesmo sofrendo",
+        "Fugiu para outro lugar"
+      ],
+      "correta": 2,
+      "justificativa": "Mesmo com tanto sofrimento, Jó continuou confiando em Deus. Sua fé não vacilou nas tempestades da vida!"
+    },
+    {
+      "pergunta": "Quantos amigos vieram visitar Jó durante seu sofrimento?",
+      "opcoes": [
+        "Dois amigos",
+        "Três amigos",
+        "Quatro amigos",
+        "Cinco amigos"
+      ],
+      "correta": 1,
+      "justificativa": "Três amigos vieram visitar Jó: Elifaz, Bildade e Zofar. Eles tentaram consolá-lo, mas nem sempre disseram as coisas certas."
+    },
+    {
+      "pergunta": "Qual é uma das principais lições que aprendemos com Jó?",
+      "opcoes": [
+        "Devemos sempre entender tudo que Deus faz",
+        "A fé verdadeira resiste às tempestades",
+        "Nunca devemos fazer perguntas a Deus",
+        "Deus não se importa com nosso sofrimento"
+      ],
+      "correta": 1,
+      "justificativa": "Jó nos ensina que a fé verdadeira permanece firme mesmo nas dificuldades. Podemos confiar em Deus sempre!"
+    },
+    {
+      "pergunta": "No final da história, o que Deus fez por Jó?",
+      "opcoes": [
+        "Deu a ele apenas a metade do que tinha antes",
+        "Restaurou exatamente o que ele tinha antes",
+        "Deu a ele o dobro de tudo que havia perdido",
+        "Não devolveu nada"
+      ],
+      "correta": 2,
+      "justificativa": "Deus é maravilhoso! Ele abençoou Jó com o dobro de tudo que ele tinha antes, recompensando sua fidelidade."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Jó?",
+      "opcoes": [
+        "40 capítulos",
+        "41 capítulos",
+        "42 capítulos",
+        "43 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Jó tem 42 capítulos cheios de histórias sobre sofrimento, questionamentos e, no final, restauração!"
+    },
+    {
+      "pergunta": "Segundo o texto, por que às vezes não entendemos os planos de Deus?",
+      "opcoes": [
+        "Porque Deus não nos ama",
+        "Porque somos muito inteligentes",
+        "Porque Deus é maior e Seus caminhos são altos",
+        "Porque Deus não tem planos"
+      ],
+      "correta": 2,
+      "justificativa": "Deus é muito maior que nós! Sua sabedoria é perfeita e profunda. Não precisamos entender tudo, só confiar nEle."
+    },
+    {
+      "pergunta": "Qual versículo mostra a restauração de Jó?",
+      "opcoes": [
+        "Jó 1:21-22",
+        "Jó 38:1-4",
+        "Jó 42:12",
+        "Jó 20:15"
+      ],
+      "correta": 2,
+      "justificativa": "Jó 42:12 conta como Deus abençoou o final da vida de Jó mais do que o início, dando-lhe muitas ovelhas, camelos e outros bens!"
+    },
+    {
+      "pergunta": "Qual é a moral principal da história de Jó?",
+      "opcoes": [
+        "Nunca confie em ninguém",
+        "Sempre reclame quando algo der errado",
+        "Confie em Deus nas tempestades, pois Ele transforma dor em felicidades",
+        "Deus só ajuda pessoas ricas"
+      ],
+      "correta": 2,
+      "justificativa": "A linda lição de Jó é que podemos confiar em Deus sempre, mesmo nos momentos difíceis, porque Ele nos ama e cuida de nós!"
+    }
+  ]
+}

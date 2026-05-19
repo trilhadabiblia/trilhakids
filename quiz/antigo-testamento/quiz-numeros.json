@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Como Deus guiou o povo de Israel durante o dia no deserto?",
+      "opcoes": [
+        "Com uma estrela brilhante",
+        "Com uma nuvem",
+        "Com um arco-íris",
+        "Com pássaros voando"
+      ],
+      "correta": 1,
+      "justificativa": "Deus guiou Seu povo com uma nuvem durante o dia e com fogo durante a noite, mostrando Seu cuidado constante!"
+    },
+    {
+      "pergunta": "Quem foi o líder que guiou o povo de Israel durante toda a jornada no deserto?",
+      "opcoes": [
+        "Abraão",
+        "Davi",
+        "Moisés",
+        "José"
+      ],
+      "correta": 2,
+      "justificativa": "Moisés foi o líder fiel escolhido por Deus para guiar o povo durante os 40 anos no deserto!"
+    },
+    {
+      "pergunta": "Por que o livro se chama 'Números'?",
+      "opcoes": [
+        "Porque ensina matemática",
+        "Porque tem muitos números",
+        "Porque Deus mandou contar o povo",
+        "Porque tem 10 mandamentos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro se chama Números porque Deus mandou Moisés fazer contagens e registros do povo de Israel no deserto!"
+    },
+    {
+      "pergunta": "Quantos anos o povo de Israel caminhou no deserto?",
+      "opcoes": [
+        "20 anos",
+        "30 anos",
+        "40 anos",
+        "50 anos"
+      ],
+      "correta": 2,
+      "justificativa": "O povo caminhou 40 anos no deserto, aprendendo a confiar em Deus durante todo esse tempo!"
+    },
+    {
+      "pergunta": "O que acontecia quando o povo reclamava e desobedecia a Deus?",
+      "opcoes": [
+        "Ganhavam presentes",
+        "Enfrentavam problemas",
+        "Chegavam mais rápido",
+        "Nada acontecia"
+      ],
+      "correta": 1,
+      "justificativa": "Quando o povo desobedecia, enfrentava consequências. Isso nos ensina que obedecer a Deus é sempre o melhor caminho!"
+    },
+    {
+      "pergunta": "Como Deus cuidava da alimentação do povo no deserto?",
+      "opcoes": [
+        "Enviando chuva",
+        "Dando maná todos os dias",
+        "Fazendo plantas crescerem",
+        "Trazendo animais"
+      ],
+      "correta": 1,
+      "justificativa": "Deus mostrou Seu amor providenciando maná (pão do céu) todos os dias para alimentar Seu povo!"
+    },
+    {
+      "pergunta": "Qual é uma das principais lições que aprendemos no livro de Números?",
+      "opcoes": [
+        "Sempre reclamar quando algo está difícil",
+        "Confiar em Deus mesmo em tempos difíceis",
+        "Desistir quando o caminho é longo",
+        "Fazer tudo sozinho"
+      ],
+      "correta": 1,
+      "justificativa": "A grande lição é confiar em Deus sempre, mesmo quando as situações parecem difíceis, pois Ele nunca nos abandona!"
+    },
+    {
+      "pergunta": "Para onde Deus estava levando o povo de Israel?",
+      "opcoes": [
+        "De volta ao Egito",
+        "Para a Terra Prometida",
+        "Para o mar",
+        "Para as montanhas"
+      ],
+      "correta": 1,
+      "justificativa": "Deus prometeu levar o povo à Terra Prometida, e cumpriu Sua promessa, mostrando que Ele é sempre fiel!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Números?",
+      "opcoes": [
+        "26 capítulos",
+        "30 capítulos",
+        "36 capítulos",
+        "40 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Números tem 36 capítulos cheios de aventuras e lições sobre a fidelidade de Deus!"
+    },
+    {
+      "pergunta": "O que o versículo 'Nem uma palavra falhou' nos ensina sobre Deus?",
+      "opcoes": [
+        "Que Deus esquece suas promessas",
+        "Que Deus muda de ideia",
+        "Que todas as promessas de Deus se cumprem",
+        "Que Deus não fala conosco"
+      ],
+      "correta": 2,
+      "justificativa": "Este versículo nos ensina que Deus é fiel e todas as Suas promessas se cumprem no tempo certo. Podemos confiar nEle sempre!"
+    }
+  ]
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - 3João</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+      <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - 3João</h1>
+      <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre 3João te esperam!</p>
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">Começar Quiz 🚀</button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">❓</div><div class="text-3xl font-bold text-blue-300 mb-2">10</div><p class="text-gray-300">Perguntas</p></div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">⭐</div><div class="text-3xl font-bold text-yellow-300 mb-2">10</div><p class="text-gray-300">Pontos cada</p></div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">🏆</div><div class="text-3xl font-bold text-purple-300 mb-2">100</div><p class="text-gray-300">Pontos máximos</p></div>
+      </div>
+    </div>
+    <div id="quiz-screen" class="hidden">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6"></h3>
+        <div id="options-container" class="space-y-3"></div>
+      </div>
+      <div id="feedback" class="hidden rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg font-bold py-3 rounded-full hover:scale-105 transition-all">Próxima Pergunta →</button>
+      </div>
+    </div>
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg opacity-90">de 100 pontos</div>
+        </div>
+        <p id="result-message" class="text-xl text-gray-200 mb-8"></p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">🔄 Tentar Novamente</button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">← Voltar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+  <script>
+    const quizData = {"questoes":[{"pergunta":"3João é a menor carta da Bíblia. Quantos versículos ela tem?","opcoes":["5 versículos","10 versículos","14 versículos","20 versículos"],"correta":2,"justificativa":"3João tem apenas 14 versículos — é a menor carta de toda a Bíblia! Mas mesmo sendo pequenininha, ela traz lições enormes sobre hospitalidade, humildade e fidelidade. Tamanho não é documento quando se trata da Palavra de Deus!"},{"pergunta":"Para quem João escreveu 3João?","opcoes":["Para uma grande assembleia de líderes cristãos","Para Gaio, um amigo fiel e hospitaleiro da comunidade","Para o imperador Romano Trajano","Para todos os cristãos do Império Romano"],"correta":1,"justificativa":"João escreveu essa carta pessoal para Gaio, alguém que ele amava muito e considerava um filho espiritual. Gaio era conhecido por sua hospitalidade e fidelidade à verdade — um verdadeiro modelo para todos nós!"},{"pergunta":"Qual é o versículo de bênção com que João abre sua carta a Gaio?","opcoes":["'A graça e a paz sejam convosco de Deus nosso Pai'","'Amado, rogo que te vá bem em tudo e que tenhas saúde, assim como bem vai à tua alma'","'Graça, misericórdia e paz de Deus Pai'","'O Senhor esteja contigo em todos os teus caminhos'"],"correta":1,"justificativa":"Que oração bonita! João deseja que Gaio tenha sucesso e saúde no corpo assim como sua alma ia bem. Isso nos mostra que Deus se importa com toda a nossa vida — nossa saúde, nossos relacionamentos, nosso trabalho. Podemos orar assim uns pelos outros!"},{"pergunta":"Pelo que João mais elogia Gaio em sua carta?","opcoes":["Por ser o cristão mais rico da região","Por ter construído a maior igreja da cidade","Por andar na verdade e receber com hospitalidade os irmãos — mesmo os que não conhecia","Por ter memorizado toda a lei de Moisés"],"correta":2,"justificativa":"Gaio era generoso e acolhedor! Ele recebia os missionários e irmãos itinerantes em sua casa, cuidava deles e os ajudava a continuar a jornada. Hospitalidade — receber e cuidar das pessoas — é um dom precioso que agrada muito a Deus!"},{"pergunta":"Quem era Diótrefes e por que João o reprende?","opcoes":["Era um missionário fiel que pregava em lugares distantes","Era um cristão humilde que sempre servia sem receber reconhecimento","Era um líder orgulhoso que queria ser o primeiro em tudo e rejeitava a autoridade dos apóstolos","Era um estudioso da Bíblia muito admirado por todos"],"correta":2,"justificativa":"Diótrefes é o oposto de Gaio! Ele queria ser o mais importante, não aceitava as cartas de João, falava mal dos apóstolos e ainda expulsava da igreja quem acolhia os missionários. Orgulho e sede de poder causam muitos estragos!"},{"pergunta":"Quem era Demétrio, mencionado na carta?","opcoes":["Um falso profeta que João mandava expulsar da comunidade","Um homem que recebia bom testemunho de todos e da própria verdade — um modelo a seguir","O filho de Diótrefes que ajudava o pai a controlar a igreja","Um soldado romano convertido ao cristianismo"],"correta":1,"justificativa":"Demétrio é apresentado como alguém que tem boa reputação com todos — inclusive com a própria verdade de Deus! Que elogio incrível: sua vida inteira confirmava o que ele pregava. Esse é o objetivo de todo cristão!"},{"pergunta":"O que João diz sobre receber e ajudar os irmãos viajantes que pregavam o evangelho?","opcoes":["Que era opcional — cada um decidia conforme seu espaço e dinheiro","Que recebê-los é trabalhar junto com eles pela verdade — é missão!","Que era perigoso pois poderiam trazer falsos ensinamentos","Que somente os líderes da igreja tinham obrigação de hospedá-los"],"correta":1,"justificativa":"João diz algo lindo: ao receber e sustentar esses pregadores, Gaio se tornava parceiro deles na missão! Você não precisa viajar para participar das missões — cuidar de quem vai, orar por eles e apoiá-los já é missão! Todo mundo pode participar!"},{"pergunta":"Qual contraste importante 3João apresenta para nós aprendermos?","opcoes":["O contraste entre ricos e pobres na igreja primitiva","O contraste entre Gaio (hospitaleiro e fiel) e Diótrefes (orgulhoso e divisor)","O contraste entre o Antigo e o Novo Testamento","O contraste entre judeus e gentios na Igreja"],"correta":1,"justificativa":"3João é uma 'fotografia' de duas atitudes opostas na Igreja: Gaio que serve com amor e humildade, e Diótrefes que quer poder e rejeita a autoridade. Qual dos dois você quer ser parecido? A resposta é clara!"},{"pergunta":"O que João aconselha sobre o exemplo do bem e do mal?","opcoes":["Que devemos estudar o mal para entendê-lo melhor","Que não imites o mal, mas imita o bem — quem faz o bem é de Deus","Que devemos evitar qualquer comparação entre pessoas","Que o bem e o mal são relativos e cada um decide o que é certo"],"correta":1,"justificativa":"João é direto: não copie o mal — copie o bem! Olhe para as pessoas que vivem para Deus com fidelidade e imite o que há de bom nelas. E lembre-se: quem faz o bem demonstra que conhece e ama a Deus!"},{"pergunta":"Qual é a grande lição de 3João para as crianças cristãs hoje?","opcoes":["Que devemos sempre tentar ser os líderes mais importantes da nossa turma","Que hospitalidade, humildade e fidelidade à verdade são virtudes que agradam muito a Deus","Que cartas e mensagens são mais importantes do que encontros pessoais","Que somente os adultos podem servir na Igreja"],"correta":1,"justificativa":"3João nos ensina que coisas simples importam muito para Deus: receber bem as pessoas, ser humilde, viver a verdade, não querer ser 'o melhor'. Gaio não era famoso — mas era fiel. E isso era o suficiente para ganhar o elogio de João e de Deus!"}]};
+    let currentQuestion = 0, score = 0;
+    function startQuiz() { document.getElementById('start-screen').classList.add('hidden'); document.getElementById('quiz-screen').classList.remove('hidden'); loadQuestion(); }
+    function loadQuestion() {
+      const q = quizData.questoes[currentQuestion];
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / quizData.questoes.length * 100) + '%';
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('feedback').classList.add('hidden');
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:bg-purple-50 hover:border-purple-300 transition-all text-gray-800 font-medium text-base md:text-lg';
+        btn.textContent = opcao;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+    function selectAnswer(selected) {
+      const q = quizData.questoes[currentQuestion];
+      document.querySelectorAll('#options-container button').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.correta) btn.className += ' bg-green-100 border-green-500 text-green-800';
+        else if (i === selected && selected !== q.correta) btn.className += ' bg-red-100 border-red-500 text-red-800';
+      });
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      if (isCorrect) { score += 10; document.getElementById('score').textContent = score; feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '✅'; document.getElementById('feedback-title').textContent = 'Muito bem!'; }
+      else { feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '❌'; document.getElementById('feedback-title').textContent = 'Quase lá!'; }
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+    function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.questoes.length) loadQuestion(); else showResults(); }
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').textContent = score;
+      if (typeof trilhoGame !== 'undefined') trilhoGame.completarQuiz(document.title.replace('Quiz - ', ''), Math.round(score/10), quizData.questoes.length);
+      const msgs = [[100,'🏆','PERFEITO! Você é um expert em 3João!'],[80,'🌟','Excelente! Você conhece muito bem 3João!'],[60,'😊','Muito bom! Continue estudando 3João!'],[40,'📖','Bom trabalho! Revise 3João para melhorar!'],[0,'💪','Continue praticando! 3João é fascinante!']];
+      const [,emoji,message] = msgs.find(([min]) => score >= min);
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+    function restartQuiz() { currentQuestion = 0; score = 0; document.getElementById('score').textContent = '0'; document.getElementById('result-screen').classList.add('hidden'); document.getElementById('start-screen').classList.remove('hidden'); }
+  </script>
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
+</body>
+</html>

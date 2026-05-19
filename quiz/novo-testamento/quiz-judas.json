@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de Judas?",
+      "opcoes": [
+        "O apóstolo Paulo",
+        "Judas, irmão de Jesus e de Tiago",
+        "O apóstolo João",
+        "Judas Iscariotes"
+      ],
+      "correta": 1,
+      "justificativa": "Judas, irmão de Jesus e de Tiago, escreveu esta carta. Ele se apresenta como servo de Jesus Cristo — que humildade! Mesmo sendo irmão de Jesus, o que mais importava para ele era ser servo Dele."
+    },
+    {
+      "pergunta": "Quantos versículos tem a carta de Judas?",
+      "opcoes": [
+        "50 versículos",
+        "10 versículos",
+        "25 versículos",
+        "100 versículos"
+      ],
+      "correta": 2,
+      "justificativa": "A carta de Judas tem apenas 25 versículos — é uma das menores cartas da Bíblia! Mas mesmo sendo pequena, ela traz uma mensagem muito importante sobre defender a fé verdadeira."
+    },
+    {
+      "pergunta": "Qual era o principal pedido de Judas aos cristãos na sua carta?",
+      "opcoes": [
+        "Que construíssem igrejas maiores",
+        "Que combatessem pela fé que foi entregue aos santos",
+        "Que fizessem muitas orações em público",
+        "Que dessem muito dinheiro para os pobres"
+      ],
+      "correta": 1,
+      "justificativa": "Judas pedia que os cristãos 'combatessem pela fé que foi uma vez por todas entregue aos santos' (Jd 1:3). Isso significa guardar e defender os ensinamentos verdadeiros de Jesus!"
+    },
+    {
+      "pergunta": "Por que Judas se preocupou em escrever esta carta urgente?",
+      "opcoes": [
+        "Porque havia pessoas ensinando coisas erradas dentro da igreja",
+        "Porque os cristãos estavam com preguiça de orar",
+        "Porque a igreja estava sem dinheiro",
+        "Porque ninguém lia a Bíblia"
+      ],
+      "correta": 0,
+      "justificativa": "Judas ficou preocupado porque pessoas com ensinamentos errados tinham entrado na igreja. Ele queria alertar os cristãos para ficarem atentos e não serem enganados por palavras que parecem boas, mas não vêm de Deus."
+    },
+    {
+      "pergunta": "Qual é o nome do arcanjo mencionado na carta de Judas?",
+      "opcoes": [
+        "Gabriel",
+        "Rafael",
+        "Miguel",
+        "Uriel"
+      ],
+      "correta": 2,
+      "justificativa": "Judas fala do arcanjo Miguel (Jd 1:9), que é o líder dos anjos guerreiros de Deus. Mesmo Miguel, sendo tão poderoso, confiava no Senhor para enfrentar o diabo — que exemplo!"
+    },
+    {
+      "pergunta": "Judas lembra o exemplo de Sodoma e Gomorra para ensinar que Deus:",
+      "opcoes": [
+        "Esquece os erros das pessoas",
+        "Não se importa com o que fazemos",
+        "Julga quem persiste na maldade",
+        "Só castiga os que não oram"
+      ],
+      "correta": 2,
+      "justificativa": "Judas usa o exemplo de Sodoma e Gomorra para mostrar que Deus é justo e não ignora o mal. Isso nos ensina a respeitar a Deus e a fazer o que é certo!"
+    },
+    {
+      "pergunta": "Quem foi Coré, mencionado como exemplo de rebeldia na carta de Judas?",
+      "opcoes": [
+        "Um rei malvado de Israel",
+        "Um homem que se rebelou contra Moisés e Deus no deserto",
+        "Um profeta falso que enganou Davi",
+        "Um soldado que fugiu da batalha"
+      ],
+      "correta": 1,
+      "justificativa": "Coré foi um homem que se rebelou contra Moisés e contra Deus no deserto (Números 16). Judas usa esse exemplo para mostrar que a rebeldia traz consequências sérias."
+    },
+    {
+      "pergunta": "Como Judas ensina que devemos ajudar pessoas que estão em dúvida sobre a fé?",
+      "opcoes": [
+        "Ignorando-as completamente",
+        "Tendo compaixão e tentando salvá-las com amor",
+        "Expulsando-as da igreja imediatamente",
+        "Discutindo com elas em público"
+      ],
+      "correta": 1,
+      "justificativa": "Judas ensina que devemos ter compaixão pelas pessoas em dúvida e tentar ajudá-las com amor, 'arrancando-as do fogo' (Jd 1:23). Cuidar dos outros com amor faz parte de viver a fé!"
+    },
+    {
+      "pergunta": "O que Judas manda os cristãos fazerem para se manterem fortes na fé?",
+      "opcoes": [
+        "Trabalhar muito e nunca descansar",
+        "Orar no Espírito Santo e se manter no amor de Deus",
+        "Evitar todos os amigos que não são cristãos",
+        "Ler apenas as cartas de Paulo"
+      ],
+      "correta": 1,
+      "justificativa": "Judas encoraja os cristãos a 'orar no Espírito Santo e manter-se no amor de Deus' (Jd 1:20-21). Orar e permanecer no amor de Deus é o segredo para ser forte na fé!"
+    },
+    {
+      "pergunta": "A doxologia final de Judas (Jd 24-25) diz que Deus é capaz de:",
+      "opcoes": [
+        "Destruir todos os inimigos rapidamente",
+        "Guardar-nos sem tropeços e apresentar-nos cheios de alegria",
+        "Dar riquezas a quem obedece",
+        "Fazer milagres somente nos tempos antigos"
+      ],
+      "correta": 1,
+      "justificativa": "A linda doxologia final diz que Deus 'é poderoso para guardar-vos sem tropeços e apresentar-vos irrepreensíveis e cheios de alegria' (Jd 1:24). Que promessa maravilhosa — Deus cuida de nós até o fim!"
+    }
+  ]
+}

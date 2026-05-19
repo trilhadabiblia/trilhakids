@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu o livro de Lamentações?",
+      "opcoes": [
+        "Davi",
+        "Jeremias",
+        "Daniel",
+        "Moisés"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias foi o profeta que escreveu este livro, expressando sua tristeza pela destruição de Jerusalém através de poemas."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Lamentações?",
+      "opcoes": [
+        "3 capítulos",
+        "4 capítulos",
+        "5 capítulos",
+        "6 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Lamentações tem 5 capítulos, cada um sendo um poema de lamento e esperança."
+    },
+    {
+      "pergunta": "Sobre o que Jeremias estava triste no livro de Lamentações?",
+      "opcoes": [
+        "A morte de seus pais",
+        "A destruição de Jerusalém",
+        "Uma doença grave",
+        "A falta de comida"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias estava profundamente triste com a destruição de Jerusalém e o sofrimento do povo de Deus."
+    },
+    {
+      "pergunta": "Segundo Lamentações 3:22-23, as misericórdias de Deus são renovadas quando?",
+      "opcoes": [
+        "A cada semana",
+        "A cada mês",
+        "A cada manhã",
+        "A cada ano"
+      ],
+      "correta": 2,
+      "justificativa": "A Bíblia nos ensina que as misericórdias de Deus se renovam a cada manhã, mostrando Sua fidelidade diária."
+    },
+    {
+      "pergunta": "Qual é a primeira lição importante que aprendemos no livro de Lamentações?",
+      "opcoes": [
+        "Devemos sempre estar alegres",
+        "Podemos ser honestos com Deus sobre nossa dor",
+        "Nunca devemos chorar",
+        "Deus não nos escuta quando estamos tristes"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias nos ensina que podemos ser honestos com Deus sobre nossos sentimentos, incluindo nossa tristeza e dor."
+    },
+    {
+      "pergunta": "O que o livro de Lamentações nos ensina sobre chorar e sentir tristeza?",
+      "opcoes": [
+        "É pecado chorar",
+        "É normal sentir tristeza às vezes",
+        "Só adultos podem chorar",
+        "Deus fica bravo quando choramos"
+      ],
+      "correta": 1,
+      "justificativa": "O livro nos mostra que é normal sentir tristeza e que Deus entende nossos sentimentos, estando sempre presente para nos confortar."
+    },
+    {
+      "pergunta": "Mesmo na tristeza, o que Jeremias não perdeu?",
+      "opcoes": [
+        "Sua casa",
+        "Sua família",
+        "Sua esperança em Deus",
+        "Suas roupas"
+      ],
+      "correta": 2,
+      "justificativa": "Mesmo em meio ao lamento e tristeza, Jeremias manteve sua esperança em Deus e em Sua fidelidade."
+    },
+    {
+      "pergunta": "O que Lamentações 3:24-25 nos ensina sobre Deus?",
+      "opcoes": [
+        "Ele está distante de nós",
+        "Ele é bom para os que nEle esperam",
+        "Ele não se importa conosco",
+        "Ele só ajuda adultos"
+      ],
+      "correta": 1,
+      "justificativa": "Estes versículos nos ensinam que Deus é bom para aqueles que esperam nEle e O buscam com sinceridade."
+    },
+    {
+      "pergunta": "Qual é o formato dos escritos no livro de Lamentações?",
+      "opcoes": [
+        "Histórias",
+        "Poemas",
+        "Cartas",
+        "Listas"
+      ],
+      "correta": 1,
+      "justificativa": "O livro de Lamentações é composto por cinco poemas tristes nos quais Jeremias expressa sua dor e esperança."
+    },
+    {
+      "pergunta": "Qual é o principal propósito do livro de Lamentações?",
+      "opcoes": [
+        "Ensinar sobre guerra",
+        "Mostrar que há esperança em Deus mesmo na dor",
+        "Contar histórias engraçadas",
+        "Ensinar sobre animais"
+      ],
+      "correta": 1,
+      "justificativa": "O livro nos ensina que mesmo em meio à dor e tristeza, sempre há esperança em Deus e em Sua fidelidade conosco."
+    }
+  ]
+}

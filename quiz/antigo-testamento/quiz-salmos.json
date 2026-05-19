@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a maioria dos Salmos?",
+      "opcoes": [
+        "Moisés",
+        "Davi",
+        "Salomão",
+        "Pedro"
+      ],
+      "correta": 1,
+      "justificativa": "Davi, o rei de Israel, escreveu a maioria dos salmos, expressando seu coração sincero a Deus em diferentes momentos de sua vida."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Salmos?",
+      "opcoes": [
+        "100",
+        "120",
+        "150",
+        "200"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Salmos tem 150 capítulos cheios de cânticos, orações e adoração a Deus!"
+    },
+    {
+      "pergunta": "Segundo o primeiro segredo dos Salmos, sobre o que podemos falar com Deus?",
+      "opcoes": [
+        "Apenas quando estamos felizes",
+        "Só sobre coisas importantes",
+        "Sobre tudo o que sentimos",
+        "Apenas aos domingos"
+      ],
+      "correta": 2,
+      "justificativa": "Os Salmos nos ensinam que podemos falar com Deus sobre tudo - quando estamos felizes, tristes, com medo ou gratos. Deus quer ouvir nosso coração!"
+    },
+    {
+      "pergunta": "Qual é o maior capítulo da Bíblia?",
+      "opcoes": [
+        "Salmo 1",
+        "Salmo 23",
+        "Salmo 117",
+        "Salmo 119"
+      ],
+      "correta": 3,
+      "justificativa": "O Salmo 119 é o maior capítulo da Bíblia, com 176 versículos que falam sobre o amor pela Palavra de Deus!"
+    },
+    {
+      "pergunta": "O que a Palavra de Deus é para nosso caminho, segundo Salmo 119:105?",
+      "opcoes": [
+        "Uma música",
+        "Uma luz",
+        "Uma estrada",
+        "Uma casa"
+      ],
+      "correta": 1,
+      "justificativa": "A Palavra de Deus é luz para o nosso caminho, nos guiando e mostrando a direção certa para seguirmos!"
+    },
+    {
+      "pergunta": "Qual é o menor capítulo da Bíblia?",
+      "opcoes": [
+        "Salmo 117",
+        "Salmo 1",
+        "Salmo 150",
+        "Salmo 23"
+      ],
+      "correta": 0,
+      "justificativa": "O Salmo 117 é o menor capítulo da Bíblia, com apenas 2 versículos, mas cheio de louvor a Deus!"
+    },
+    {
+      "pergunta": "Segundo o segundo segredo dos Salmos, adorar a Deus é como:",
+      "opcoes": [
+        "Uma tarefa difícil",
+        "Uma festa do coração",
+        "Algo chato",
+        "Apenas para adultos"
+      ],
+      "correta": 1,
+      "justificativa": "Adorar a Deus é uma festa do coração! Os Salmos são cheios de alegria, música e celebração do amor de Deus!"
+    },
+    {
+      "pergunta": "Quem era Asafe no livro de Salmos?",
+      "opcoes": [
+        "Um rei",
+        "Um músico e poeta do templo",
+        "Um soldado",
+        "Um fazendeiro"
+      ],
+      "correta": 1,
+      "justificativa": "Asafe era um músico e poeta do templo que também compôs salmos lindos para adorar a Deus!"
+    },
+    {
+      "pergunta": "O que devemos fazer quando lemos a Palavra de Deus segundo os Salmos?",
+      "opcoes": [
+        "Decorar tudo",
+        "Deixar ela guiar nossa vida",
+        "Ler apenas uma vez",
+        "Guardar segredo"
+      ],
+      "correta": 1,
+      "justificativa": "A Palavra de Deus deve guiar nossa vida! Ela nos consola, fortalece e nos mostra o caminho certo a seguir!"
+    },
+    {
+      "pergunta": "Qual versículo nos ensina que podemos confiar nossos sentimentos a Deus?",
+      "opcoes": [
+        "Salmo 150:1-6",
+        "Salmo 119:105",
+        "Salmo 62:8",
+        "Salmo 117:1"
+      ],
+      "correta": 2,
+      "justificativa": "Salmo 62:8 nos ensina que podemos abrir nosso coração para Deus e confiar Nele em todos os momentos!"
+    }
+  ]
+}

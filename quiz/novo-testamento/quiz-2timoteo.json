@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de 2 Timóteo?",
+      "opcoes": [
+        "Pedro",
+        "Paulo",
+        "João",
+        "Tiago"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreveu esta carta para seu amigo Timóteo. Ela foi a última carta de Paulo, escrita de dentro da prisão antes de ser martirizado pela fé!"
+    },
+    {
+      "pergunta": "Onde Paulo estava quando escreveu esta carta?",
+      "opcoes": [
+        "Em casa",
+        "Em uma viagem",
+        "Na prisão",
+        "No templo"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo escreveu 2 Timóteo de dentro de uma prisão em Roma. Mesmo preso, ele não parou de incentivar as pessoas a seguirem Jesus!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave de 2 Timóteo que Paulo disse sobre sua própria vida?",
+      "opcoes": [
+        "'Deus é amor.'",
+        "'Combati o bom combate, terminei a corrida, guardei a fé.'",
+        "'Posso tudo naquele que me fortalece.'",
+        "'O Senhor é o meu pastor.'"
+      ],
+      "correta": 1,
+      "justificativa": "Em 2 Timóteo 4:7, Paulo disse com alegria: 'Combati o bom combate, terminei a corrida, guardei a fé.' É uma das frases mais bonitas de toda a Bíblia!"
+    },
+    {
+      "pergunta": "O que Paulo disse sobre as Escrituras Sagradas (a Bíblia)?",
+      "opcoes": [
+        "Que foram escritas por homens apenas",
+        "Que não são importantes",
+        "Que são inspiradas por Deus e úteis para nos ensinar",
+        "Que só os adultos devem ler"
+      ],
+      "correta": 2,
+      "justificativa": "Em 2 Timóteo 3:16, Paulo ensina que toda a Bíblia é inspirada por Deus e nos serve para aprender, corrigir erros e crescer na fé. Que livro poderoso!"
+    },
+    {
+      "pergunta": "Quem era Timóteo para Paulo?",
+      "opcoes": [
+        "Um inimigo",
+        "Um estranho",
+        "Um fiel discípulo e amigo querido",
+        "Um governador romano"
+      ],
+      "correta": 2,
+      "justificativa": "Timóteo era o discípulo fiel e amigo querido de Paulo. Paulo o chamava de 'meu amado filho na fé'. Que amizade bonita e verdadeira!"
+    },
+    {
+      "pergunta": "O que Paulo pediu que Timóteo fizesse com a fé?",
+      "opcoes": [
+        "Esconder a fé",
+        "Ser firme e não desistir",
+        "Mudar de religião",
+        "Fazer apenas o que fosse fácil"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo encorajou Timóteo a ser firme, corajoso e não desistir, mesmo quando as coisas ficassem difíceis. Com Deus, somos mais fortes!"
+    },
+    {
+      "pergunta": "Quem abandonou Paulo por amar as coisas do mundo?",
+      "opcoes": [
+        "Timóteo",
+        "Lucas",
+        "Demas",
+        "Tito"
+      ],
+      "correta": 2,
+      "justificativa": "Demas abandonou Paulo porque passou a amar mais as coisas do mundo do que a Jesus. Paulo ficou triste com isso, mas Jesus nunca nos abandona!"
+    },
+    {
+      "pergunta": "Paulo disse que Jesus nunca vai nos abandonar. Que frase resume isso?",
+      "opcoes": [
+        "'Se formos infiéis, Ele também será infiel.'",
+        "'Se perseverarmos, com Ele também reinaremos.'",
+        "'Deus não existe para quem sofre.'",
+        "'A fé não serve para nada.'"
+      ],
+      "correta": 1,
+      "justificativa": "Em 2 Timóteo 2:12, Paulo promete que se perseverarmos, vamos reinar com Jesus. Nunca desista de Jesus, porque Ele nunca desiste de você!"
+    },
+    {
+      "pergunta": "Como Paulo descreveu a vida de fé usando uma imagem de esporte?",
+      "opcoes": [
+        "Como nadar no mar",
+        "Como jogar futebol",
+        "Como terminar uma corrida",
+        "Como uma luta de braço"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo usou a imagem de uma corrida para falar da vida cristã. Ele terminou a corrida! Da mesma forma, Deus quer que você complete sua jornada com Ele!"
+    },
+    {
+      "pergunta": "Qual era o espírito que Deus deu a nós, segundo Paulo em 2 Timóteo 1:7?",
+      "opcoes": [
+        "Espírito de medo e tristeza",
+        "Espírito de covardia",
+        "Espírito de poder, amor e domínio próprio",
+        "Espírito de preguiça"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo diz em 2 Timóteo 1:7 que Deus não nos deu espírito de covardia, mas de poder, amor e domínio próprio. Você é forte com Deus!"
+    }
+  ]
+}

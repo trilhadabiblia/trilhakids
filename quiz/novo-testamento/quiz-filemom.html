@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - Filemom</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+      <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - FILEMOM</h1>
+      <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre Filemom te esperam!</p>
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">Começar Quiz 🚀</button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">❓</div><div class="text-3xl font-bold text-blue-300 mb-2">10</div><p class="text-gray-300">Perguntas</p></div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">⭐</div><div class="text-3xl font-bold text-yellow-300 mb-2">10</div><p class="text-gray-300">Pontos cada</p></div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">🏆</div><div class="text-3xl font-bold text-purple-300 mb-2">100</div><p class="text-gray-300">Pontos máximos</p></div>
+      </div>
+    </div>
+    <div id="quiz-screen" class="hidden">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6"></h3>
+        <div id="options-container" class="space-y-3"></div>
+      </div>
+      <div id="feedback" class="hidden rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200 text-base md:text-lg"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg font-bold py-3 rounded-full hover:scale-105 transition-all">Próxima Pergunta →</button>
+      </div>
+    </div>
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg opacity-90">de 100 pontos</div>
+        </div>
+        <p id="result-message" class="text-xl text-gray-200 mb-8"></p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">🔄 Tentar Novamente</button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">← Voltar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+  <script>
+    const quizData = {"questoes":[{"pergunta":"Para quem Paulo escreveu a carta de Filemom?","opcoes":["Para um imperador romano","Para um cristão chamado Filemom","Para uma Igreja inteira","Para os judeus em Jerusalém"],"correta":1,"justificativa":"Paulo escreveu esta cartinha especial para um cristão chamado Filemom, pedindo um favor muito importante e cheio de amor!"},{"pergunta":"Quem era Onésimo?","opcoes":["Um discípulo famoso","Um soldado romano","Um escravo que havia fugido de Filemom","Um filho de Paulo"],"correta":2,"justificativa":"Onésimo era um escravo que havia fugido de seu dono Filemom. Mas enquanto estava longe, ele encontrou Paulo e se converteu a Jesus!"},{"pergunta":"O que aconteceu com Onésimo quando ele encontrou Paulo na prisão?","opcoes":["Ficou com raiva","Se tornou cristão e mudou de vida","Fugiu novamente","Virou soldado"],"correta":1,"justificativa":"Onésimo conheceu Paulo na prisão e se converteu a Jesus! Sua vida mudou completamente. O Evangelho transforma qualquer pessoa!"},{"pergunta":"O que Paulo pediu a Filemom nesta carta?","opcoes":["Que punisse Onésimo severamente","Que perdoasse e recebesse Onésimo de volta como irmão","Que vendesse Onésimo","Que ignorasse o que aconteceu"],"correta":1,"justificativa":"Paulo pediu com muito amor que Filemom perdoasse Onésimo e o recebesse de volta, não mais como escravo, mas como irmão em Cristo. Que lição de perdão!"},{"pergunta":"Qual é o versículo-chave de Filemom?","opcoes":["'Deus é amor e bondade.'","'Talvez ele se tenha separado de ti por algum tempo, para que o recuperasses para sempre.'","'Perdoai e sereis perdoados.'","'O amor cobre uma multidão de pecados.'"],"correta":1,"justificativa":"Em Filemom 1:15, Paulo diz que talvez Onésimo tenha se separado por um tempo para que Filemom o recebesse de volta para sempre como irmão. Deus tem planos incríveis!"},{"pergunta":"O que Paulo ofereceu fazer se Onésimo devia algo a Filemom?","opcoes":["Pagar a dívida por ele","Colocar Onésimo na prisão","Esquecer tudo sem resolver","Pedir ajuda ao imperador"],"correta":0,"justificativa":"Paulo disse que pagaria qualquer dívida de Onésimo! Ele se colocou no lugar de Onésimo, assim como Jesus faz por nós ao perdoar nossos erros. Que amor!"},{"pergunta":"Qual grande tema o livro de Filemom nos ensina?","opcoes":["Como ficar rico","Como ser um bom soldado","Perdão e restauração de relacionamentos","Como construir templos"],"correta":2,"justificativa":"Filemom nos ensina sobre o perdão e a restauração de amizades! O Evangelho tem o poder de consertar relacionamentos quebrados. Deus quer que nos amemos!"},{"pergunta":"Segundo a carta de Filemom, em Cristo Jesus, o que acontece com as diferenças entre as pessoas?","opcoes":["Ficam ainda maiores","São ignoradas completamente","Somos todos irmãos e iguais","Apenas os ricos importam"],"correta":2,"justificativa":"Em Cristo, Onésimo (escravo) e Filemom (dono) eram irmãos! O Evangelho derruba as barreiras e nos une como família de Deus. Que maravilha!"},{"pergunta":"De onde Paulo escreveu a carta de Filemom?","opcoes":["De uma viagem no mar","De Jerusalém","De uma prisão","De Creta"],"correta":2,"justificativa":"Mesmo estando preso, Paulo usou seu tempo para fazer o bem e promover reconciliação entre Filemom e Onésimo. Nada impede quem tem amor!"},{"pergunta":"Qual a grande lição de Filemom para nossas amizades e família?","opcoes":["Nunca perdoar quem nos magoou","Perdoar e restaurar os relacionamentos, assim como Deus nos perdoa","Só andar com pessoas perfeitas","Esquecer as pessoas que nos decepcionaram"],"correta":1,"justificativa":"Filemom nos ensina a perdoar assim como Deus nos perdoa! Se Deus nos perdoa de tudo, podemos perdoar também. O perdão nos liberta e restaura nossas amizades!"}]};
+    let currentQuestion = 0, score = 0;
+    function startQuiz() { document.getElementById('start-screen').classList.add('hidden'); document.getElementById('quiz-screen').classList.remove('hidden'); loadQuestion(); }
+    function loadQuestion() {
+      const q = quizData.questoes[currentQuestion];
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / quizData.questoes.length * 100) + '%';
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('feedback').classList.add('hidden');
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:bg-purple-50 hover:border-purple-300 transition-all text-gray-800 font-medium text-base md:text-lg';
+        btn.textContent = opcao;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+    function selectAnswer(selected) {
+      const q = quizData.questoes[currentQuestion];
+      document.querySelectorAll('#options-container button').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.correta) btn.className += ' bg-green-100 border-green-500 text-green-800';
+        else if (i === selected && selected !== q.correta) btn.className += ' bg-red-100 border-red-500 text-red-800';
+      });
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      if (isCorrect) { score += 10; document.getElementById('score').textContent = score; feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '✅'; document.getElementById('feedback-title').textContent = 'Muito bem!'; }
+      else { feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '❌'; document.getElementById('feedback-title').textContent = 'Quase lá!'; }
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+    function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.questoes.length) loadQuestion(); else showResults(); }
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').textContent = score;
+      if (typeof trilhoGame !== 'undefined') { trilhoGame.completarQuiz(document.title.replace('Quiz - ', ''), Math.round(score/10), quizData.questoes.length); }
+      const msgs = [[100,'🏆','PERFEITO! Você é um expert em Filemom!'],[80,'🌟','Excelente! Você conhece muito bem Filemom!'],[60,'😊','Muito bom! Continue estudando Filemom!'],[40,'📖','Bom trabalho! Revise Filemom para melhorar!'],[0,'💪','Continue praticando! Filemom é fascinante!']];
+      const [,emoji,message] = msgs.find(([min]) => score >= min);
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+    function restartQuiz() { currentQuestion = 0; score = 0; document.getElementById('score').textContent = '0'; document.getElementById('result-screen').classList.add('hidden'); document.getElementById('start-screen').classList.remove('hidden'); }
+  </script>
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
+</body>
+</html>

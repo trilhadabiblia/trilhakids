@@ -1,0 +1,99 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a primeira carta aos Tessalonicenses?",
+      "opcoes": ["Só Paulo", "Paulo, Silas e Timóteo", "Pedro e João", "Tiago e Barnabé"],
+      "correta": 1,
+      "justificativa": "A carta tem três autores: Paulo, Silas e Timóteo! É lindo ver como eles trabalhavam juntos como equipe para cuidar das igrejas. Trabalhar em equipe para Deus é muito especial."
+    },
+    {
+      "pergunta": "1Tessalonicenses é considerada qual carta de Paulo?",
+      "opcoes": ["A primeira carta que Paulo escreveu", "A última carta de Paulo", "A carta mais longa de Paulo", "A carta escrita do exílio"],
+      "correta": 0,
+      "justificativa": "1Tessalonicenses provavelmente é a carta mais antiga de Paulo que chegou até nós! Isso a torna muito especial — é como um tesouro histórico da fé cristã."
+    },
+    {
+      "pergunta": "Por que a Igreja em Tessalônica era elogiada por Paulo?",
+      "opcoes": [
+        "Por ter o maior templo da região",
+        "Por ter muitos ricos e poderosos",
+        "Por sua fé, amor e esperança mesmo sofrendo perseguição",
+        "Por nunca ter cometido pecados"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo ficou muito orgulhoso dos Tessalonicenses porque eles mantiveram a fé, o amor e a esperança mesmo sendo perseguidos. Fé que resiste nas dificuldades é fé verdadeira!"
+    },
+    {
+      "pergunta": "Qual é o tema principal da segunda parte de 1Tessalonicenses?",
+      "opcoes": [
+        "Como construir igrejas maiores",
+        "A volta de Jesus e a ressurreição dos mortos",
+        "Como ganhar mais dinheiro sendo honesto",
+        "As regras para o casamento"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo fala muito sobre a volta de Jesus! Ele consola os cristãos dizendo que quando Jesus voltar, os que morreram crendo nEle ressurgirão. Que esperança maravilhosa!"
+    },
+    {
+      "pergunta": "O que Paulo diz que acontecerá quando Jesus voltar? (1Ts 4:16)",
+      "opcoes": [
+        "Só os que estiverem dormindo serão salvos",
+        "O próprio Senhor descerá do céu com alarido e os mortos em Cristo ressurgirão primeiro",
+        "Jesus virá silenciosamente, e ninguém vai perceber",
+        "Os anjos buscarão apenas as crianças"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreve em 1Ts 4:16 que o próprio Senhor descerá do céu com grande alarido e os mortos em Cristo ressurgirão primeiro. A volta de Jesus será gloriosa e cheia de esperança!"
+    },
+    {
+      "pergunta": "O que Paulo pede aos cristãos em relação à santidade?",
+      "opcoes": [
+        "Que sejam santos apenas nos dias de culto",
+        "Que fujam de toda a maldade e vivam de forma pura",
+        "Que a santidade é impossível, então não adianta tentar",
+        "Que só os líderes precisam ser santos"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo ensina que Deus nos chamou para sermos santos — isso significa viver de forma pura e agradável a Ele. Não é fácil, mas com a ajuda do Espírito Santo é possível!"
+    },
+    {
+      "pergunta": "Como Paulo descreve a vinda do dia do Senhor em 1Tessalonicenses?",
+      "opcoes": [
+        "Como um dia de tristeza para todos",
+        "Como ladrão na noite — virá de surpresa para quem não está preparado",
+        "Como uma festa anunciada com muito tempo de antecedência",
+        "Como uma guerra muito longa"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo diz que o dia do Senhor virá como ladrão na noite para quem não está preparado. Por isso devemos sempre viver prontos, vivendo com fé, amor e esperança!"
+    },
+    {
+      "pergunta": "O que Paulo manda os cristãos fazerem 'sem cessar'?",
+      "opcoes": ["Jejuar", "Orar", "Cantar", "Pregar"],
+      "correta": 1,
+      "justificativa": "Em 1Tessalonicenses 5:17, Paulo diz para orarmos sem cessar! Isso não significa ficar de joelhos o dia todo, mas ter uma conversa contínua com Deus em qualquer lugar e hora."
+    },
+    {
+      "pergunta": "Paulo manda os Tessalonicenses amarem uns aos outros. Como ele descreve esse amor?",
+      "opcoes": [
+        "Um amor que escolhe apenas os melhores amigos",
+        "Um amor que cresce e transborda para todas as pessoas",
+        "Um amor que exige retribuição",
+        "Um amor apenas entre os membros da mesma família"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo fala de um amor que cresce e transborda, alcançando cada vez mais pessoas! O amor cristão não tem limite — começa em casa e vai se espalhando para o mundo todo."
+    },
+    {
+      "pergunta": "Com qual sentimento Paulo diz que devemos receber os que morreram em Cristo?",
+      "opcoes": [
+        "Com medo e desespero",
+        "Com raiva de Deus",
+        "Com consolação e esperança, pois ressurgirão",
+        "Com indiferença, pois já não podemos fazer nada"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo consola os cristãos dizendo que não devemos nos entristecer como os que não têm esperança, pois os que morreram em Cristo ressurgirão! A morte não é o fim para quem crê em Jesus."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quantas vezes por dia Daniel orava a Deus?",
+      "opcoes": [
+        "Uma vez",
+        "Duas vezes",
+        "Três vezes",
+        "Cinco vezes"
+      ],
+      "correta": 2,
+      "justificativa": "Daniel orava três vezes ao dia, mesmo sabendo que isso era proibido e poderia custar sua vida. Ele não tinha medo de mostrar sua fé!"
+    },
+    {
+      "pergunta": "Quais são os nomes dos três amigos corajosos de Daniel?",
+      "opcoes": [
+        "Pedro, Paulo e João",
+        "Sadraque, Mesaque e Abede-Nego",
+        "Moisés, Arão e Josué",
+        "Davi, Salomão e Samuel"
+      ],
+      "correta": 1,
+      "justificativa": "Os três amigos de Daniel eram Sadraque, Mesaque e Abede-Nego, que foram corajosos e não adoraram o ídolo do rei, sendo protegidos por Deus na fornalha ardente!"
+    },
+    {
+      "pergunta": "O que aconteceu quando Daniel foi jogado na cova dos leões?",
+      "opcoes": [
+        "Ele foi ferido pelos leões",
+        "Um anjo fechou a boca dos leões",
+        "Ele conseguiu fugir",
+        "Os leões estavam dormindo"
+      ],
+      "correta": 1,
+      "justificativa": "Deus enviou um anjo que fechou a boca dos leões, protegendo Daniel completamente. Ele não teve nem um arranhão porque confiou em Deus!"
+    },
+    {
+      "pergunta": "Qual era o nome do rei poderoso da Babilônia que teve sonhos interpretados por Daniel?",
+      "opcoes": [
+        "Faraó",
+        "Nabucodonosor",
+        "Herodes",
+        "Pilatos"
+      ],
+      "correta": 1,
+      "justificativa": "O rei Nabucodonosor da Babilônia teve sonhos misteriosos que Daniel interpretou, mostrando que Deus controla o futuro de todos os reinos!"
+    },
+    {
+      "pergunta": "Por que Daniel foi jogado na cova dos leões?",
+      "opcoes": [
+        "Porque roubou comida do rei",
+        "Porque desobedeceu uma ordem de batalha",
+        "Porque continuou orando a Deus",
+        "Porque brigou com outros servos"
+      ],
+      "correta": 2,
+      "justificativa": "Daniel foi jogado na cova dos leões porque continuou orando a Deus, mesmo quando o rei proibiu. Sua fidelidade a Deus era mais importante que sua própria vida!"
+    },
+    {
+      "pergunta": "O que o livro de Daniel nos ensina sobre o Reino de Deus?",
+      "opcoes": [
+        "Que durará apenas 100 anos",
+        "Que é menor que outros reinos",
+        "Que durará para sempre",
+        "Que já terminou"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Daniel revela que o Reino de Deus durará para sempre, enquanto os reinos dos homens passam como sonhos. Que esperança maravilhosa!"
+    },
+    {
+      "pergunta": "Como Daniel demonstrava sua fé mesmo estando em terra estrangeira?",
+      "opcoes": [
+        "Escondendo que era hebreu",
+        "Orando três vezes ao dia voltado para Jerusalém",
+        "Adorando os deuses locais",
+        "Nunca falando de Deus"
+      ],
+      "correta": 1,
+      "justificativa": "Daniel demonstrava sua fé orando três vezes ao dia voltado para Jerusalém, mostrando coragem e fidelidade a Deus mesmo longe de casa!"
+    },
+    {
+      "pergunta": "O que aconteceu com os três amigos de Daniel na fornalha ardente?",
+      "opcoes": [
+        "Foram queimados",
+        "Fugiram antes de entrar",
+        "Foram protegidos por Deus e não se queimaram",
+        "Foram salvos pelos soldados"
+      ],
+      "correta": 2,
+      "justificativa": "Sadraque, Mesaque e Abede-Nego foram protegidos por Deus na fornalha ardente e não se queimaram nem um pouco! Deus honra quem O honra!"
+    },
+    {
+      "pergunta": "Qual foi a reação do rei Dario depois que Daniel foi salvo dos leões?",
+      "opcoes": [
+        "Ficou com raiva de Daniel",
+        "Decretou que todos deveriam respeitar o Deus de Daniel",
+        "Baniu Daniel do reino",
+        "Não se importou com o que aconteceu"
+      ],
+      "correta": 1,
+      "justificativa": "O rei Dario ficou tão impressionado com o milagre que decretou que todos deveriam respeitar o Deus de Daniel! Deus usou esse milagre para Se glorificar!"
+    },
+    {
+      "pergunta": "Qual é a principal lição que aprendemos com a história de Daniel?",
+      "opcoes": [
+        "Devemos ter medo dos reis",
+        "Devemos esconder nossa fé",
+        "Devemos ser corajosos e confiar em Deus sempre",
+        "Devemos evitar orar em público"
+      ],
+      "correta": 2,
+      "justificativa": "A principal lição é que devemos ser corajosos e confiar em Deus sempre, mesmo quando enfrentamos perigos. Deus protege e honra aqueles que O honram!"
+    }
+  ]
+}

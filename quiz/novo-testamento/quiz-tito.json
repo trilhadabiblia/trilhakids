@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem Paulo enviou para organizar a Igreja em Creta?",
+      "opcoes": [
+        "Timóteo",
+        "Tito",
+        "Silas",
+        "Barnabé"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo enviou Tito para a ilha de Creta com a missão de organizar e fortalecer a Igreja de lá. Tito era um líder fiel e corajoso!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave da carta a Tito?",
+      "opcoes": [
+        "'Amai-vos uns aos outros.'",
+        "'Em tudo mostra-te modelo de boas obras.'",
+        "'Deus é fiel.'",
+        "'A fé sem obras é morta.'"
+      ],
+      "correta": 1,
+      "justificativa": "Em Tito 2:7, Paulo diz: 'Em tudo mostra-te modelo de boas obras.' Isso significa que nossas ações devem mostrar o amor de Jesus às pessoas!"
+    },
+    {
+      "pergunta": "Quem escreveu a carta de Tito?",
+      "opcoes": [
+        "Pedro",
+        "Tito",
+        "Paulo",
+        "João"
+      ],
+      "correta": 2,
+      "justificativa": "Paulo escreveu esta carta para instruir e encorajar seu colaborador Tito na missão de organizar a Igreja em Creta!"
+    },
+    {
+      "pergunta": "Em qual ilha Tito ficou para trabalhar?",
+      "opcoes": [
+        "Malta",
+        "Chipre",
+        "Patmos",
+        "Creta"
+      ],
+      "correta": 3,
+      "justificativa": "Tito ficou na ilha de Creta, no Mar Mediterrâneo, para fortalecer a Igreja que havia sido fundada lá. Que missão importante!"
+    },
+    {
+      "pergunta": "Que tipo de pessoas Paulo pediu que Tito escolhesse como líderes da Igreja?",
+      "opcoes": [
+        "As mais ricas",
+        "As mais famosas",
+        "As mais inteligentes",
+        "As mais íntegras e de boa conduta"
+      ],
+      "correta": 3,
+      "justificativa": "Paulo ensinou que os líderes da Igreja devem ser pessoas de boa conduta, honestas e fiéis a Deus, não apenas os mais ricos ou famosos!"
+    },
+    {
+      "pergunta": "Segundo a carta de Tito, o que transforma nossa vida e nos ensina a fazer o bem?",
+      "opcoes": [
+        "Muito dinheiro",
+        "A graça de Deus",
+        "Ser famoso",
+        "Fazer muitas regras"
+      ],
+      "correta": 1,
+      "justificativa": "Em Tito 2:11-12, Paulo diz que é a graça de Deus que nos salva e nos ensina a viver de forma boa e justa. A graça de Deus muda tudo!"
+    },
+    {
+      "pergunta": "O que Paulo disse que devemos fazer com as falsas doutrinas (ensinamentos errados)?",
+      "opcoes": [
+        "Aceitar tudo",
+        "Rejeitar e ficar firme na verdade",
+        "Ignorar completamente",
+        "Discutir sem parar"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo aconselhou Tito a rejeitar os ensinamentos errados e se manter firme na verdade da Bíblia. É muito importante conhecer a Palavra de Deus!"
+    },
+    {
+      "pergunta": "Segundo Tito 3:5, como somos salvos?",
+      "opcoes": [
+        "Por sermos muito bonzinhos",
+        "Por fazermos obras de justiça",
+        "Pela misericórdia de Deus",
+        "Por sermos muito inteligentes"
+      ],
+      "correta": 2,
+      "justificativa": "Tito 3:5 ensina que somos salvos pela misericórdia de Deus, não pelas nossas obras. É um presente de amor que Deus nos dá!"
+    },
+    {
+      "pergunta": "O que Paulo disse que as boas obras devem mostrar para as pessoas ao redor?",
+      "opcoes": [
+        "Que somos melhores que os outros",
+        "O amor e a vida transformada por Jesus",
+        "Que somos muito esforçados",
+        "Que ganhamos muitos pontos"
+      ],
+      "correta": 1,
+      "justificativa": "As boas obras devem mostrar o amor de Jesus aos outros! Quando fazemos o bem, as pessoas veem Jesus em nós. Que responsabilidade bonita!"
+    },
+    {
+      "pergunta": "Qual a principal mensagem da carta de Tito para nós hoje?",
+      "opcoes": [
+        "Só os adultos devem fazer o bem",
+        "Devemos ser modelos de boas obras e viver a graça de Deus",
+        "Precisamos seguir muitas regras complicadas",
+        "A fé não precisa de ações"
+      ],
+      "correta": 1,
+      "justificativa": "A grande lição de Tito é que nossa fé deve aparecer em ações! Ser modelo de boas obras significa que qualquer pessoa, até você, pode ser um exemplo de amor!"
+    }
+  ]
+}

@@ -10,7 +10,14 @@
       "Bash(python -m json.tool)",
       "Bash(curl -si \"http://localhost:3000/entrar.html?token=27722464fa498d8f\")",
       "Bash(node *)",
-      "Skill(update-config)"
+      "Skill(update-config)",
+      "Bash(xargs cat)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(xargs basename -a)",
+      "Bash(mv /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemon.html /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.html)",
+      "Bash(mv /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemon.json /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.json)",
+      "Bash(sed -i 's/Quiz - Filemom\\\\|Quiz - Filemon/Quiz - Filemom/g' /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.html)"
     ]
   }
 }

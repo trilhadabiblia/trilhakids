@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - 2Pedro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+      <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - 2Pedro</h1>
+      <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre 2Pedro te esperam!</p>
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">Começar Quiz 🚀</button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">❓</div><div class="text-3xl font-bold text-blue-300 mb-2">10</div><p class="text-gray-300">Perguntas</p></div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">⭐</div><div class="text-3xl font-bold text-yellow-300 mb-2">10</div><p class="text-gray-300">Pontos cada</p></div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">🏆</div><div class="text-3xl font-bold text-purple-300 mb-2">100</div><p class="text-gray-300">Pontos máximos</p></div>
+      </div>
+    </div>
+    <div id="quiz-screen" class="hidden">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6"></h3>
+        <div id="options-container" class="space-y-3"></div>
+      </div>
+      <div id="feedback" class="hidden rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg font-bold py-3 rounded-full hover:scale-105 transition-all">Próxima Pergunta →</button>
+      </div>
+    </div>
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg opacity-90">de 100 pontos</div>
+        </div>
+        <p id="result-message" class="text-xl text-gray-200 mb-8"></p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">🔄 Tentar Novamente</button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">← Voltar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+  <script>
+    const quizData = {"questoes":[{"pergunta":"Quando Pedro escreveu sua segunda carta, o que ele sabia que estava prestes a acontecer?","opcoes":["Que ele seria preso novamente em Jerusalém","Que ele em breve morreria como mártir pela fé em Jesus","Que ele faria uma grande viagem missionária","Que ele se tornaria imperador de Roma"],"correta":1,"justificativa":"Pedro escreveu 2Pedro como sua última carta, sabendo que seria martirizado em breve. Por isso, quis deixar ensinamentos importantes para fortalecer a fé dos cristãos mesmo depois que ele não estivesse mais presente."},{"pergunta":"Qual é o versículo-chave de 2Pedro sobre crescimento cristão?","opcoes":["'A fé sem obras é morta'","'Crescei na graça e no conhecimento de nosso Senhor e Salvador Jesus Cristo'","'Deus é amor'","'Lançai sobre ele toda a vossa ansiedade'"],"correta":1,"justificativa":"Pedro nos manda crescer! Ser cristão não é parar no lugar — é crescer sempre mais na graça (no amor e bondade de Deus) e no conhecimento (aprender mais sobre Jesus). Cada dia podemos conhecer melhor a Deus!"},{"pergunta":"Pedro lista virtudes que devemos acrescentar à nossa fé. Qual sequência está correta?","opcoes":["Fé, riqueza, saúde, felicidade e sucesso","Fé, virtude, conhecimento, domínio próprio, perseverança, piedade, fraternidade e amor","Fé, batismo, louvor, jejum e dízimo","Fé, obediência, silêncio e isolamento do mundo"],"correta":1,"justificativa":"Pedro nos dá uma lista linda de crescimento! É como uma escada: fé, virtude, conhecimento, domínio próprio, perseverança, piedade, amor fraternal e amor a todos. Cada degrau nos torna mais parecidos com Jesus!"},{"pergunta":"O que Pedro diz sobre os falsos mestres que estavam surgindo nas igrejas?","opcoes":["São boas pessoas que apenas se confundiram um pouco","Introduzem heresias destruidoras e enganam muitas pessoas com falsas promessas","Devemos sempre ouvi-los com atenção e respeito","Não existem falsos mestres na Igreja verdadeira"],"correta":1,"justificativa":"Pedro nos avisa com seriedade: existem pessoas que ensinam coisas erradas e perigosas nas igrejas. Por isso é tão importante conhecer bem a Bíblia! Quando sabemos a verdade, fica mais fácil perceber quando alguém está ensinando errado."},{"pergunta":"Algumas pessoas zombavam dizendo que Jesus não voltaria. O que Pedro responde sobre o tempo para Deus?","opcoes":["Que Deus prometeu que Jesus voltaria em exatamente 2000 anos","Que um dia para o Senhor é como mil anos e mil anos como um dia — Deus não atrasa Suas promessas","Que talvez Jesus realmente não voltasse mais","Que somente Pedro sabia a data exata da volta de Jesus"],"correta":1,"justificativa":"Que resposta sábia! Deus não 'atrasa' — Ele é eterno e vê o tempo de forma diferente de nós. Se Jesus ainda não voltou, é porque Deus está sendo paciente, dando a mais pessoas a oportunidade de se arrepender e crer nEle."},{"pergunta":"Como Pedro descreve a origem das profecias da Bíblia?","opcoes":["Foram inventadas por homens muito inteligentes da antiguidade","Foram escritas pelos reis para controlar o povo","Os santos homens de Deus falaram movidos pelo Espírito Santo","Foram descobertas em antigas cavernas do deserto"],"correta":2,"justificativa":"A Bíblia é especial porque veio de Deus! Pedro explica que homens santos foram inspirados — movidos como pelo vento — pelo Espírito Santo para escreverem as Escrituras. Por isso podemos confiar em cada palavra dela!"},{"pergunta":"Pedro faz referência a um evento do Antigo Testamento para mostrar que Deus julga o pecado. Qual foi esse grande evento?","opcoes":["A construção da Torre de Babel","O dilúvio nos dias de Noé, quando Deus julgou o mundo","A queda de Jericó com Josué","A divisão do Mar Vermelho com Moisés"],"correta":1,"justificativa":"Pedro usa o dilúvio como exemplo de que Deus leva o pecado a sério. Assim como Noé e sua família foram salvos por obedecerem a Deus, aqueles que confiam em Jesus são salvos do julgamento. O passado nos ensina sobre o futuro!"},{"pergunta":"Como Pedro diz que o dia do Senhor virá?","opcoes":["Com muito aviso, para que todos possam se preparar","Como ladrão, de forma inesperada","Somente quando todos os cristãos orarem juntos ao mesmo tempo","Após 1000 anos de paz na terra"],"correta":1,"justificativa":"Pedro nos avisa para sempre estarmos prontos! A volta de Jesus será inesperada, como um ladrão que ninguém espera. Por isso, devemos viver cada dia de forma que agrada a Deus, sempre prontos para encontrá-Lo!"},{"pergunta":"O que Pedro diz que devemos fazer enquanto esperamos a volta de Cristo?","opcoes":["Apenas aguardar sem fazer nada especial","Diligenciar para sermos achados por Ele em paz, sem mácula e irrepreensíveis","Guardar nosso dinheiro para quando Ele chegar","Parar de estudar e trabalhar pois tudo vai acabar"],"correta":1,"justificativa":"Esperar a volta de Jesus não é ficar parado! Pedro diz que devemos viver com paz, sem mácula (sem pecado) e irrepreensíveis (de forma honesta). É como quando esperamos um convidado especial: arrumamos a casa e nos preparamos!"},{"pergunta":"Pedro menciona que seu 'amado irmão Paulo' escreveu coisas difíceis de entender. O que Pedro diz sobre quem distorce essas escrituras?","opcoes":["Que essas pessoas só precisam de mais aulas de Bíblia","Que distorcer as Escrituras é aceitável se a intenção for boa","Que os que distorcem as Escrituras o fazem para destruição própria","Que devemos ignorar as cartas de Paulo por serem confusas"],"correta":2,"justificativa":"Pedro elogia Paulo e avisa sobre o perigo de torcer o sentido da Bíblia para enganar as pessoas. Isso é sério! Por isso devemos estudar a Palavra de Deus com cuidado, sempre pedindo ao Espírito Santo que nos ajude a entender."}]};
+    let currentQuestion = 0, score = 0;
+    function startQuiz() { document.getElementById('start-screen').classList.add('hidden'); document.getElementById('quiz-screen').classList.remove('hidden'); loadQuestion(); }
+    function loadQuestion() {
+      const q = quizData.questoes[currentQuestion];
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / quizData.questoes.length * 100) + '%';
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('feedback').classList.add('hidden');
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:bg-purple-50 hover:border-purple-300 transition-all text-gray-800 font-medium text-base md:text-lg';
+        btn.textContent = opcao;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+    function selectAnswer(selected) {
+      const q = quizData.questoes[currentQuestion];
+      document.querySelectorAll('#options-container button').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.correta) btn.className += ' bg-green-100 border-green-500 text-green-800';
+        else if (i === selected && selected !== q.correta) btn.className += ' bg-red-100 border-red-500 text-red-800';
+      });
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      if (isCorrect) { score += 10; document.getElementById('score').textContent = score; feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '✅'; document.getElementById('feedback-title').textContent = 'Muito bem!'; }
+      else { feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '❌'; document.getElementById('feedback-title').textContent = 'Quase lá!'; }
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+    function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.questoes.length) loadQuestion(); else showResults(); }
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').textContent = score;
+      if (typeof trilhoGame !== 'undefined') trilhoGame.completarQuiz(document.title.replace('Quiz - ', ''), Math.round(score/10), quizData.questoes.length);
+      const msgs = [[100,'🏆','PERFEITO! Você é um expert em 2Pedro!'],[80,'🌟','Excelente! Você conhece muito bem 2Pedro!'],[60,'😊','Muito bom! Continue estudando 2Pedro!'],[40,'📖','Bom trabalho! Revise 2Pedro para melhorar!'],[0,'💪','Continue praticando! 2Pedro é fascinante!']];
+      const [,emoji,message] = msgs.find(([min]) => score >= min);
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+    function restartQuiz() { currentQuestion = 0; score = 0; document.getElementById('score').textContent = '0'; document.getElementById('result-screen').classList.add('hidden'); document.getElementById('start-screen').classList.remove('hidden'); }
+  </script>
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
+</body>
+</html>

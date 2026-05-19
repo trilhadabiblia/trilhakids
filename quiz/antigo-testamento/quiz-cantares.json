@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o nome do livro da Bíblia que é como uma canção cheia de versos sobre o amor?",
+      "opcoes": [
+        "Salmos",
+        "Cantares",
+        "Provérbios",
+        "Eclesiastes"
+      ],
+      "correta": 1,
+      "justificativa": "Cantares é conhecido como o livro mais poético da Bíblia, sendo como uma canção cheia de versos e metáforas sobre o amor verdadeiro!"
+    },
+    {
+      "pergunta": "Quem são os dois personagens principais do livro de Cantares?",
+      "opcoes": [
+        "Davi e Bate-Seba",
+        "Salomão e a jovem sulamita",
+        "Adão e Eva",
+        "Abraão e Sara"
+      ],
+      "correta": 1,
+      "justificativa": "Salomão, o sábio rei, e a jovem sulamita são os personagens principais que mostram o amor verdadeiro e puro que Deus criou."
+    },
+    {
+      "pergunta": "Segundo Cantares, quem criou o amor verdadeiro?",
+      "opcoes": [
+        "Os anjos",
+        "Os pais",
+        "Deus",
+        "As pessoas"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Cantares nos ensina que o amor foi criado por Deus como um presente precioso e especial para nós!"
+    },
+    {
+      "pergunta": "Como o livro de Cantares descreve a força do amor verdadeiro?",
+      "opcoes": [
+        "Fraco como uma folha",
+        "Forte como a morte",
+        "Leve como o vento",
+        "Pequeno como uma formiga"
+      ],
+      "correta": 1,
+      "justificativa": "Cantares 8:6-7 nos ensina que 'o amor é forte como a morte' e que as águas não podem apagar esse amor verdadeiro!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Cantares?",
+      "opcoes": [
+        "6 capítulos",
+        "10 capítulos",
+        "8 capítulos",
+        "12 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Cantares tem 8 capítulos repletos de poesia e ensinamentos sobre o amor verdadeiro!"
+    },
+    {
+      "pergunta": "Qual das características NÃO representa o amor verdadeiro segundo Cantares?",
+      "opcoes": [
+        "É puro e respeitoso",
+        "É egoísta e busca só prazer",
+        "É paciente e gentil",
+        "Cuida e protege"
+      ],
+      "correta": 1,
+      "justificativa": "O amor verdadeiro não é egoísta! Cantares nos ensina que o amor verdadeiro cuida, protege, é paciente e se preocupa com o bem-estar do outro."
+    },
+    {
+      "pergunta": "O que significa quando Cantares fala que o amor é como uma 'chama que não se apaga'?",
+      "opcoes": [
+        "Que o amor verdadeiro é eterno e fiel",
+        "Que o amor queima as pessoas",
+        "Que o amor é perigoso",
+        "Que o amor faz calor"
+      ],
+      "correta": 0,
+      "justificativa": "Esta linda metáfora nos ensina que o amor verdadeiro é eterno, permanece firme e resiste a todas as dificuldades!"
+    },
+    {
+      "pergunta": "Qual é o versículo famoso que fala sobre colocar alguém como selo sobre o coração?",
+      "opcoes": [
+        "Cantares 2:16",
+        "Cantares 5:1",
+        "Cantares 8:6-7",
+        "Cantares 1:2"
+      ],
+      "correta": 2,
+      "justificativa": "Cantares 8:6-7 contém essa linda passagem que fala sobre o selo no coração e ensina que o amor é forte como a morte!"
+    },
+    {
+      "pergunta": "Segundo a moral do livro de Cantares, como devemos amar?",
+      "opcoes": [
+        "Com pressa e ansiedade",
+        "Com pureza, respeito e fidelidade",
+        "Apenas quando nos convém",
+        "Sem se importar com o outro"
+      ],
+      "correta": 1,
+      "justificativa": "A linda lição de Cantares nos ensina a amar com pureza, respeito e fidelidade, assim como Deus nos ama!"
+    },
+    {
+      "pergunta": "Por que o livro de Cantares é importante para aprendermos sobre o amor?",
+      "opcoes": [
+        "Porque fala sobre brigas",
+        "Porque ensina que o amor é ruim",
+        "Porque mostra a beleza do amor verdadeiro que Deus criou",
+        "Porque conta histórias de guerra"
+      ],
+      "correta": 2,
+      "justificativa": "Cantares é importante porque nos ensina sobre o valor do amor verdadeiro, mostrando que é um presente maravilhoso de Deus, cheio de pureza e beleza!"
+    }
+  ]
+}

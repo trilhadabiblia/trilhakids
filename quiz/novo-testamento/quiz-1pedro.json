@@ -1,0 +1,64 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de 1Pedro?",
+      "opcoes": ["Paulo, que viajava muito pregando", "Pedro, o apóstolo que escreveu de Roma", "Tiago, irmão de Jesus", "Lucas, o médico e escritor"],
+      "correta": 1,
+      "justificativa": "Pedro, um dos primeiros discípulos de Jesus, escreveu essa carta de Roma para encorajar cristãos que sofriam perseguições. Pedro conhecia bem o sofrimento — ele mesmo havia negado Jesus — mas foi restaurado e se tornou um líder forte!"
+    },
+    {
+      "pergunta": "O que Pedro chama de 'esperança viva' em sua carta?",
+      "opcoes": ["A esperança de ficar rico neste mundo", "A esperança baseada na ressurreição de Jesus Cristo", "A esperança de que os perseguidores parem logo", "A esperança de construir uma grande igreja"],
+      "correta": 1,
+      "justificativa": "Pedro nos diz que temos uma esperança viva porque Jesus ressuscitou! Essa esperança não é um sonho fraco — é certeza! Porque Jesus venceu a morte, nós também temos esperança de vida eterna com Ele."
+    },
+    {
+      "pergunta": "Segundo 1Pedro 5:7, o que devemos fazer com nossas ansiedades e preocupações?",
+      "opcoes": ["Guardar tudo no coração e não falar com ninguém", "Lançar sobre Deus toda a nossa ansiedade, porque Ele tem cuidado de nós", "Tentar resolver tudo sozinhos sem pedir ajuda", "Fingir que os problemas não existem"],
+      "correta": 1,
+      "justificativa": "Que versículo maravilhoso! Deus não quer que fiquemos sozinhos com nossas preocupações. Podemos entregar tudo a Ele em oração porque Ele nos ama e cuida de cada detalhe da nossa vida — até os menores detalhes!"
+    },
+    {
+      "pergunta": "Pedro chama Jesus de 'pedra viva'. O que isso significa?",
+      "opcoes": ["Que Jesus era duro e insensível como uma rocha", "Que Jesus foi transformado em pedra após a ressurreição", "Que Jesus é o fundamento da nossa fé — rejeitado pelos homens mas precioso para Deus", "Que Jesus vivia perto de pedreiras na Galileia"],
+      "correta": 2,
+      "justificativa": "Pedro usa a imagem da pedra para dizer que Jesus é a base de tudo! Mesmo sendo rejeitado pelos líderes religiosos, Jesus é a pedra mais preciosa de todas — o fundamento da nossa fé e da Igreja."
+    },
+    {
+      "pergunta": "Para quem Pedro escrevia sua carta?",
+      "opcoes": ["Para os governantes do Império Romano", "Para os sacerdotes do templo em Jerusalém", "Para os cristãos espalhados pelo Império Romano que sofriam perseguições", "Apenas para os cristãos que moravam em Roma"],
+      "correta": 2,
+      "justificativa": "Pedro escreveu para cristãos que viviam em várias regiões do Império Romano e sofriam por causa da sua fé em Jesus. Era como uma carta de encorajamento para pessoas longe de casa e com dificuldades."
+    },
+    {
+      "pergunta": "Como Pedro diz que devemos nos comportar entre as pessoas que não creem em Jesus?",
+      "opcoes": ["Devemos evitar qualquer contato com elas", "Devemos ter conduta honrosa para que vejam nossas boas obras e glorifiquem a Deus", "Devemos criticá-las publicamente pelo seu modo de vida", "Devemos esconder nossa fé para não ter problemas"],
+      "correta": 1,
+      "justificativa": "Pedro ensina que a melhor missão é viver bem! Quando as pessoas ao nosso redor veem nossas ações boas e cheias de amor, isso pode fazer com que elas também queiram conhecer a Deus. Nossa vida é um testemunho!"
+    },
+    {
+      "pergunta": "O que Pedro diz sobre sofrer injustamente por causa da fé?",
+      "opcoes": ["Devemos reclamar sempre que formos tratados injustamente", "É melhor sofrermos injustamente, fazendo o bem, do que sofrendo por fazer o mal", "Devemos nos vingar de quem nos trata mal", "Deus nunca deixa seus filhos sofrerem injustamente"],
+      "correta": 1,
+      "justificativa": "Pedro aprendeu com o exemplo de Jesus, que sofreu sendo inocente e não se vingou. Quando sofremos injustamente e ainda assim agimos com bondade, mostramos a força do amor de Deus em nós."
+    },
+    {
+      "pergunta": "A quem Pedro compara o diabo, dizendo que andamos alerta a ele?",
+      "opcoes": ["A uma serpente rastejando no chão", "A um leão que ruge procurando alguém para devorar", "A um lobo disfarçado de ovelha", "A um ladrão que entra de noite"],
+      "correta": 1,
+      "justificativa": "Pedro nos avisa para ficarmos atentos! O diabo procura pessoas desprevenidas. Mas não precisamos ter medo — Deus é mais poderoso! Ficando próximos de Deus e da Sua Palavra, estamos seguros."
+    },
+    {
+      "pergunta": "Pedro diz que nós, os cristãos, somos um povo especial. Com quantas coisas ele nos descreve?",
+      "opcoes": ["Somos apenas 'filhos de Deus'", "Somos geração eleita, sacerdócio real, nação santa e povo adquirido por Deus", "Somos apenas 'servos de Jesus'", "Somos somente 'herdeiros do reino'"],
+      "correta": 1,
+      "justificativa": "Que identidade incrível! Pedro diz que somos: geração eleita (escolhidos por Deus!), sacerdócio real (com acesso direto a Deus!), nação santa (separados para Deus!) e povo adquirido (amados e resgatados por Deus!). Somos muito especiais!"
+    },
+    {
+      "pergunta": "Qual é a mensagem central de 1Pedro para os cristãos que sofriam perseguição?",
+      "opcoes": ["Fujam das perseguições e se escondam", "Lutem com armas contra os que os perseguem", "Tenham esperança firme em Deus e vivam com santidade mesmo no sofrimento", "Deixem a fé até que as perseguições acabem"],
+      "correta": 2,
+      "justificativa": "Pedro escreve para encorajar! Mesmo sofrendo, podemos ter esperança porque Jesus ressuscitou. Deus não nos abandonou — Ele cuida de nós. E a nossa fé firme nas dificuldades glorifica a Deus e inspira outras pessoas!"
+    }
+  ]
+}

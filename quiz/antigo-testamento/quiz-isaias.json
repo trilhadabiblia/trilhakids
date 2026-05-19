@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quando Isaías viu Deus no trono celestial, o que os anjos cantavam?",
+      "opcoes": [
+        "Santo, santo, santo é o Senhor",
+        "Aleluia, aleluia, aleluia",
+        "Glória, glória, glória a Deus",
+        "Hosana, hosana, hosana"
+      ],
+      "correta": 0,
+      "justificativa": "Os anjos cantavam 'Santo, santo, santo é o Senhor', mostrando que Deus é perfeito e puro em todo o Seu ser!"
+    },
+    {
+      "pergunta": "Qual é o nome especial que Isaías disse que o menino Salvador receberia?",
+      "opcoes": [
+        "Messias",
+        "Emanuel",
+        "Salvador",
+        "Cristo"
+      ],
+      "correta": 1,
+      "justificativa": "Emanuel significa 'Deus conosco', mostrando que Jesus viria para estar sempre perto de nós!"
+    },
+    {
+      "pergunta": "Quantos anos antes Jesus nasceu que Isaías profetizou sobre Ele?",
+      "opcoes": [
+        "50 anos",
+        "100 anos",
+        "Centenas de anos",
+        "10 anos"
+      ],
+      "correta": 2,
+      "justificativa": "Isaías profetizou sobre Jesus centenas de anos antes! Isso prova que Deus conhece o futuro e cumpre todas as Suas promessas."
+    },
+    {
+      "pergunta": "Segundo Isaías, como será o futuro que Deus preparou para nós?",
+      "opcoes": [
+        "Com muito trabalho",
+        "Sem choro, dor ou guerra",
+        "Cheio de desafios",
+        "Igual ao presente"
+      ],
+      "correta": 1,
+      "justificativa": "Deus promete um novo céu e nova terra onde não haverá choro, dor ou guerra - apenas paz e alegria eterna!"
+    },
+    {
+      "pergunta": "Por que Isaías é chamado de 'profeta evangelista'?",
+      "opcoes": [
+        "Porque era muito jovem",
+        "Porque falou muito sobre Jesus",
+        "Porque morava no templo",
+        "Porque era rei"
+      ],
+      "correta": 1,
+      "justificativa": "Isaías falou muito sobre Jesus centenas de anos antes do Seu nascimento, anunciando as boas novas da salvação!"
+    },
+    {
+      "pergunta": "Qual era a principal mensagem de Isaías para o povo de Israel?",
+      "opcoes": [
+        "Construir mais templos",
+        "Se arrepender e voltar para Deus",
+        "Fazer mais sacrifícios",
+        "Mudar de cidade"
+      ],
+      "correta": 1,
+      "justificativa": "Isaías chamava o povo ao arrependimento, mostrando que nunca é tarde para voltar aos braços amorosos de Deus!"
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Isaías?",
+      "opcoes": [
+        "50 capítulos",
+        "40 capítulos",
+        "66 capítulos",
+        "30 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Isaías tem 66 capítulos repletos de profecias, esperança e mensagens sobre o amor de Deus!"
+    },
+    {
+      "pergunta": "O que Isaías ensina sobre o caráter de Deus?",
+      "opcoes": [
+        "Deus é apenas justo",
+        "Deus é santo, mas também misericordioso",
+        "Deus é apenas amoroso",
+        "Deus não se importa conosco"
+      ],
+      "correta": 1,
+      "justificativa": "Isaías mostra que Deus é santo e perfeito, mas também cheio de amor e misericórdia, sempre pronto a nos perdoar!"
+    },
+    {
+      "pergunta": "Qual rei de Judá foi mencionado como um dos que precisava ouvir as mensagens de Deus através de Isaías?",
+      "opcoes": [
+        "Rei Davi",
+        "Rei Salomão",
+        "Rei Ezequias",
+        "Rei Saul"
+      ],
+      "correta": 2,
+      "justificativa": "O rei Ezequias foi um dos reis de Judá que recebeu mensagens de Deus através do profeta Isaías!"
+    },
+    {
+      "pergunta": "Qual é a principal lição que o livro de Isaías nos ensina?",
+      "opcoes": [
+        "Devemos ter medo de Deus",
+        "Nunca é tarde para se arrepender",
+        "Deus não perdoa erros",
+        "Só pessoas perfeitas vão para o céu"
+      ],
+      "correta": 1,
+      "justificativa": "Isaías nos ensina que nunca é tarde para se arrepender e voltar para Deus, pois Ele sempre nos recebe com amor e perdão!"
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Qual é o versículo-chave do livro de Hebreus?",
+      "opcoes": [
+        "'Deus é amor.'",
+        "'Jesus Cristo é o mesmo, ontem, hoje e eternamente.'",
+        "'Posso tudo naquele que me fortalece.'",
+        "'O Senhor é o meu pastor.'"
+      ],
+      "correta": 1,
+      "justificativa": "Hebreus 13:8 diz: 'Jesus Cristo é o mesmo, ontem, hoje e eternamente.' Isso significa que Jesus nunca muda! Ele é sempre fiel, para sempre!"
+    },
+    {
+      "pergunta": "Em Hebreus, Jesus é chamado de nosso grande Sumo Sacerdote. O que um Sumo Sacerdote faz?",
+      "opcoes": [
+        "Comanda um exército",
+        "Governa o país",
+        "Representa o povo diante de Deus e pede perdão pelos pecados",
+        "Ensina matemática"
+      ],
+      "correta": 2,
+      "justificativa": "O Sumo Sacerdote era quem levava os pedidos de perdão do povo a Deus. Jesus é o nosso Sumo Sacerdote perfeito que nos representa diante de Deus para sempre!"
+    },
+    {
+      "pergunta": "Segundo Hebreus, Jesus é superior a quem ou ao quê?",
+      "opcoes": [
+        "Apenas aos anjos",
+        "Apenas a Moisés",
+        "Aos anjos, a Moisés, ao sistema de sacrifícios e a tudo mais",
+        "Apenas aos reis de Israel"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Hebreus mostra que Jesus é superior a tudo: anjos, Moisés, Arão e ao sistema antigo de sacrifícios. Jesus é o melhor de todos!"
+    },
+    {
+      "pergunta": "O famoso capítulo 11 de Hebreus é chamado de qual capítulo?",
+      "opcoes": [
+        "O capítulo da esperança",
+        "O capítulo dos reis",
+        "O capítulo dos heróis da fé",
+        "O capítulo das profecias"
+      ],
+      "correta": 2,
+      "justificativa": "Hebreus 11 é o maravilhoso capítulo dos heróis da fé! Ele fala de pessoas como Abraão, Moisés, Gideão e muitos outros que confiaram em Deus com coragem!"
+    },
+    {
+      "pergunta": "Como Hebreus 11:1 define a fé?",
+      "opcoes": [
+        "'Fé é ver tudo antes de acontecer.'",
+        "'Fé é a certeza daquilo que esperamos e a prova das coisas que não vemos.'",
+        "'Fé é fazer muitas orações.'",
+        "'Fé é ir à Igreja todos os domingos.'"
+      ],
+      "correta": 1,
+      "justificativa": "Hebreus 11:1 diz que fé é a certeza do que esperamos e a prova do que não vemos. É confiar em Deus mesmo sem ver tudo ainda. Você tem essa fé!"
+    },
+    {
+      "pergunta": "Qual herói da fé em Hebreus 11 obedeceu a Deus e saiu sem saber para onde ia?",
+      "opcoes": [
+        "Moisés",
+        "Davi",
+        "Elias",
+        "Abraão"
+      ],
+      "correta": 3,
+      "justificativa": "Abraão obedeceu a Deus e saiu sem saber para onde ia, confiando apenas na promessa de Deus. Que fé enorme! Ele é chamado de pai dos fiéis!"
+    },
+    {
+      "pergunta": "Em Hebreus 12:1, como o escritor descreve a vida cristã?",
+      "opcoes": [
+        "Como um passeio tranquilo",
+        "Como uma corrida em que devemos lançar fora tudo que nos atrapalha",
+        "Como uma batalha com espadas",
+        "Como construir uma casa"
+      ],
+      "correta": 1,
+      "justificativa": "Hebreus 12:1 fala que devemos correr a corrida da fé, lançando fora tudo que nos atrapalha, olhando sempre para Jesus. Continue correndo, você consegue!"
+    },
+    {
+      "pergunta": "Segundo Hebreus, qual era o problema com os sacrifícios de animais do Antigo Testamento?",
+      "opcoes": [
+        "Os animais eram muito caros",
+        "Precisavam ser repetidos sempre, pois não podiam tirar os pecados de vez",
+        "Os sacerdotes eram preguiçosos",
+        "Deus não gostava de animais"
+      ],
+      "correta": 1,
+      "justificativa": "Os sacrifícios de animais precisavam ser repetidos sempre porque não podiam tirar os pecados definitivamente. Mas Jesus se ofereceu uma única vez e nos perdoou para sempre!"
+    },
+    {
+      "pergunta": "Em Hebreus 4:12, como é descrita a Palavra de Deus (a Bíblia)?",
+      "opcoes": [
+        "Como um livro bonito",
+        "Como uma história antiga",
+        "Como viva, eficaz e mais afiada que qualquer espada de dois gumes",
+        "Como um conjunto de regras chatas"
+      ],
+      "correta": 2,
+      "justificativa": "Hebreus 4:12 diz que a Palavra de Deus é viva, eficaz e mais afiada que qualquer espada! A Bíblia tem poder de verdade para transformar nossas vidas!"
+    },
+    {
+      "pergunta": "Qual é a mensagem principal do livro de Hebreus para nós?",
+      "opcoes": [
+        "Seguir muitas regras complicadas",
+        "Jesus é superior a tudo e não devemos desistir de seguir a Ele",
+        "Fazer sacrifícios de animais",
+        "Ser o melhor da turma na escola"
+      ],
+      "correta": 1,
+      "justificativa": "Hebreus nos diz: Jesus é o melhor de todos! Ele é nosso Sumo Sacerdote perfeito, o mesmo para sempre. Não desista de seguir a Ele, porque a vitória é certa!"
+    }
+  ]
+}

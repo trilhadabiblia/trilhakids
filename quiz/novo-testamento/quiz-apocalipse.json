@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu o livro do Apocalipse?",
+      "opcoes": [
+        "Paulo, na prisão em Roma",
+        "Pedro, em Jerusalém",
+        "João, na ilha de Patmos",
+        "Tiago, em Antioquia"
+      ],
+      "correta": 2,
+      "justificativa": "João escreveu o Apocalipse enquanto estava na ilha de Patmos (Ap 1:9). Mesmo longe e sozinho, Deus lhe deu uma visão incrível para mostrar que Jesus é o vencedor de tudo!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave do Apocalipse que Jesus fala sobre Sua vinda?",
+      "opcoes": [
+        "'Eu sou o caminho, a verdade e a vida.'",
+        "'Eis que venho sem demora, e comigo está o meu galardão.'",
+        "'Deus amou o mundo de tal maneira que deu o Seu Filho.'",
+        "'Sede fortes e corajosos.'"
+      ],
+      "correta": 1,
+      "justificativa": "'Eis que venho sem demora, e comigo está o meu galardão' (Ap 22:12). Jesus promete que vai voltar e trazer a recompensa para todos que O amam. Que promessa linda!"
+    },
+    {
+      "pergunta": "Para quantas igrejas Jesus enviou mensagens especiais no Apocalipse?",
+      "opcoes": [
+        "3 igrejas",
+        "5 igrejas",
+        "7 igrejas",
+        "12 igrejas"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus enviou mensagens para 7 igrejas (Ap 2-3): Éfeso, Esmirna, Pérgamo, Tiatira, Sardes, Filadélfia e Laodiceia. O número 7 na Bíblia representa completude — Jesus cuida de toda a Sua Igreja!"
+    },
+    {
+      "pergunta": "Qual o nome da Igreja que Jesus elogiou por ser fiel mesmo em meio ao sofrimento?",
+      "opcoes": [
+        "Éfeso",
+        "Laodiceia",
+        "Esmirna",
+        "Sardes"
+      ],
+      "correta": 2,
+      "justificativa": "Jesus elogiou a igreja de Esmirna por ser fiel mesmo sofrendo (Ap 2:8-11). Ele disse 'não temas' e prometeu a coroa da vida. Jesus sempre está perto dos que sofrem por Ele!"
+    },
+    {
+      "pergunta": "No Apocalipse, Jesus aparece como o Cordeiro de Deus. O que isso significa?",
+      "opcoes": [
+        "Que Jesus é fraco e precisa de ajuda",
+        "Que Jesus morreu por nós e por isso tem todo poder e vitória",
+        "Que Jesus gostava de animais",
+        "Que Jesus vivia no campo"
+      ],
+      "correta": 1,
+      "justificativa": "O Cordeiro representa Jesus que morreu por nós — e exatamente por causa disso Ele recebe honra e glória no céu! O Cordeiro que parecia fraco é na verdade o Rei que vence tudo (Ap 5:6-12)!"
+    },
+    {
+      "pergunta": "O que acontece com o dragão (o diabo) no final do Apocalipse?",
+      "opcoes": [
+        "Ele foge e continua assustando as pessoas para sempre",
+        "Ele se torna um anjo bom",
+        "Ele é derrotado e preso para sempre — Jesus vence!",
+        "Ele vira o rei de uma terra distante"
+      ],
+      "correta": 2,
+      "justificativa": "O dragão, que representa o diabo, é derrotado e jogado no lago de fogo (Ap 20:10). Jesus vence! O mal não tem poder sobre Deus. Podemos viver sem medo porque Jesus é mais forte!"
+    },
+    {
+      "pergunta": "O que é a Nova Jerusalém descrita no Apocalipse?",
+      "opcoes": [
+        "Uma cidade destruída por inimigos",
+        "O lugar perfeito e maravilhoso onde Deus morará com o Seu povo para sempre",
+        "Uma cidade no deserto sem água",
+        "Um palácio só para os anjos"
+      ],
+      "correta": 1,
+      "justificativa": "A Nova Jerusalém é o lugar perfeito que Deus preparou onde Ele morará com o Seu povo para sempre (Ap 21:1-4). Sem lágrimas, sem tristeza, sem dor — só alegria e amor! Que futuro lindo nos espera!"
+    },
+    {
+      "pergunta": "Qual promessa linda Deus faz no Apocalipse 21:4?",
+      "opcoes": [
+        "Que vai destruir todos os países do mundo",
+        "Que vai encher o céu de ouro e prata",
+        "Que vai enxugar toda lágrima e não haverá mais morte nem tristeza",
+        "Que vai dar a cada pessoa uma espada de fogo"
+      ],
+      "correta": 2,
+      "justificativa": "'Ele enxugará dos olhos deles toda lágrima; e não haverá mais morte, nem pranto, nem clamor, nem dor' (Ap 21:4). Deus promete cuidar de nós e fazer tudo novo e perfeito. Que amor imenso!"
+    },
+    {
+      "pergunta": "O Apocalipse é um livro que fala principalmente sobre:",
+      "opcoes": [
+        "Medo e destruição sem esperança",
+        "A vitória de Jesus e a esperança certa para quem O ama",
+        "Regras difíceis para os cristãos seguirem",
+        "A história de batalhas entre países"
+      ],
+      "correta": 1,
+      "justificativa": "O Apocalipse é um livro de ESPERANÇA e VITÓRIA! Ele mostra que Jesus é o Rei que vence tudo, que Deus cuida dos Seus filhos e que o futuro dos que amam a Deus é lindo e cheio de alegria!"
+    },
+    {
+      "pergunta": "Como o Apocalipse termina? Com Jesus dizendo:",
+      "opcoes": [
+        "'Cuidado, pois o fim está chegando!'",
+        "'Sim, venho sem demora. Amém! Vem, Senhor Jesus!'",
+        "'Fechai as portas, pois o tempo acabou.'",
+        "'Guardem tudo em segredo.'"
+      ],
+      "correta": 1,
+      "justificativa": "O Apocalipse termina com Jesus prometendo 'Sim, venho sem demora!' e João respondendo 'Amém! Vem, Senhor Jesus!' (Ap 22:20). É um final cheio de esperança: Jesus virá e estará com o Seu povo para sempre!"
+    }
+  ]
+}

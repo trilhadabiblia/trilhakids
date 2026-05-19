@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz - 1Pedro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+    .float-animation { animation: float 3s ease-in-out infinite; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen font-sans text-gray-100">
+  <header class="bg-gradient-to-r from-violet-600 to-purple-600 backdrop-blur-xl border-b border-purple-400/30 sticky top-0 z-20 shadow-2xl">
+    <div class="max-w-7xl mx-auto px-4 py-6 text-center">
+      <h1 class="text-3xl md:text-5xl font-black text-white drop-shadow-lg mb-3 float-animation">📖 QUIZ - 1Pedro</h1>
+      <p class="text-purple-100 text-lg">Teste seus conhecimentos sobre este livro da Bíblia!</p>
+    </div>
+  </header>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div id="start-screen" class="text-center">
+      <div class="bg-gradient-to-br from-purple-500/20 to-violet-500/20 border border-purple-500/30 rounded-3xl p-8 md:p-12 mb-8">
+        <div class="text-6xl md:text-8xl mb-6">🎯</div>
+        <h2 class="text-3xl md:text-4xl font-black text-white mb-4">Pronto para o Desafio?</h2>
+        <p class="text-lg md:text-xl text-gray-300 mb-8">10 perguntas sobre 1Pedro te esperam!</p>
+        <button onclick="startQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg md:text-xl font-bold py-4 px-12 rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">Começar Quiz 🚀</button>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div class="bg-blue-500/10 border border-blue-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">❓</div><div class="text-3xl font-bold text-blue-300 mb-2">10</div><p class="text-gray-300">Perguntas</p></div>
+        <div class="bg-yellow-500/10 border border-yellow-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">⭐</div><div class="text-3xl font-bold text-yellow-300 mb-2">10</div><p class="text-gray-300">Pontos cada</p></div>
+        <div class="bg-purple-500/10 border border-purple-500/30 rounded-2xl p-6"><div class="text-4xl mb-2">🏆</div><div class="text-3xl font-bold text-purple-300 mb-2">100</div><p class="text-gray-300">Pontos máximos</p></div>
+      </div>
+    </div>
+    <div id="quiz-screen" class="hidden">
+      <div class="mb-8">
+        <div class="flex justify-between items-center mb-3">
+          <span class="text-white font-bold">Questão <span id="current-question">1</span> de 10</span>
+          <span class="text-yellow-300 font-bold text-lg"><span id="score">0</span> pts</span>
+        </div>
+        <div class="bg-white/20 rounded-full h-4 overflow-hidden">
+          <div id="progress-bar" class="bg-gradient-to-r from-purple-500 to-pink-500 h-full transition-all duration-300" style="width: 10%"></div>
+        </div>
+      </div>
+      <div class="bg-white rounded-3xl shadow-2xl p-6 md:p-8 mb-6">
+        <h3 id="question-text" class="text-xl md:text-3xl font-bold text-gray-800 mb-6"></h3>
+        <div id="options-container" class="space-y-3"></div>
+      </div>
+      <div id="feedback" class="hidden rounded-3xl p-6 md:p-8">
+        <div class="flex items-start gap-4 mb-6">
+          <div id="feedback-icon" class="text-4xl md:text-6xl"></div>
+          <div class="flex-1">
+            <h4 id="feedback-title" class="text-xl md:text-2xl font-bold text-white mb-3"></h4>
+            <p id="feedback-text" class="text-gray-200"></p>
+          </div>
+        </div>
+        <button onclick="nextQuestion()" class="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-lg font-bold py-3 rounded-full hover:scale-105 transition-all">Próxima Pergunta →</button>
+      </div>
+    </div>
+    <div id="result-screen" class="hidden text-center">
+      <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 rounded-3xl p-8 md:p-12">
+        <div id="result-emoji" class="text-7xl md:text-9xl mb-6">🎉</div>
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">Quiz Concluído!</h2>
+        <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-2xl p-6 mb-8 inline-block">
+          <div class="text-5xl md:text-7xl font-black mb-2"><span id="final-score">0</span></div>
+          <div class="text-lg opacity-90">de 100 pontos</div>
+        </div>
+        <p id="result-message" class="text-xl text-gray-200 mb-8"></p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <button onclick="restartQuiz()" class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">🔄 Tentar Novamente</button>
+          <button onclick="window.history.back()" class="bg-gradient-to-r from-gray-600 to-gray-700 text-white text-lg font-bold py-3 px-8 rounded-full hover:scale-105 transition-all">← Voltar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-gradient-to-r from-slate-800 to-slate-900 border-t border-purple-500/30 p-6 text-center text-gray-400 mt-12">
+    <p class="font-semibold mb-2">© 2025 - Trilho Kids</p>
+    <p class="text-sm">Desenvolvido com ❤️ para crianças</p>
+  </footer>
+  <script>
+    const quizData = {"questoes":[{"pergunta":"Quem escreveu a carta de 1Pedro?","opcoes":["Paulo, que viajava muito pregando","Pedro, o apóstolo que escreveu de Roma","Tiago, irmão de Jesus","Lucas, o médico e escritor"],"correta":1,"justificativa":"Pedro, um dos primeiros discípulos de Jesus, escreveu essa carta de Roma para encorajar cristãos que sofriam perseguições. Pedro conhecia bem o sofrimento — ele mesmo havia negado Jesus — mas foi restaurado e se tornou um líder forte!"},{"pergunta":"O que Pedro chama de 'esperança viva' em sua carta?","opcoes":["A esperança de ficar rico neste mundo","A esperança baseada na ressurreição de Jesus Cristo","A esperança de que os perseguidores parem logo","A esperança de construir uma grande igreja"],"correta":1,"justificativa":"Pedro nos diz que temos uma esperança viva porque Jesus ressuscitou! Essa esperança não é um sonho fraco — é certeza! Porque Jesus venceu a morte, nós também temos esperança de vida eterna com Ele."},{"pergunta":"Segundo 1Pedro 5:7, o que devemos fazer com nossas ansiedades e preocupações?","opcoes":["Guardar tudo no coração e não falar com ninguém","Lançar sobre Deus toda a nossa ansiedade, porque Ele tem cuidado de nós","Tentar resolver tudo sozinhos sem pedir ajuda","Fingir que os problemas não existem"],"correta":1,"justificativa":"Que versículo maravilhoso! Deus não quer que fiquemos sozinhos com nossas preocupações. Podemos entregar tudo a Ele em oração porque Ele nos ama e cuida de cada detalhe da nossa vida — até os menores detalhes!"},{"pergunta":"Pedro chama Jesus de 'pedra viva'. O que isso significa?","opcoes":["Que Jesus era duro e insensível como uma rocha","Que Jesus foi transformado em pedra após a ressurreição","Que Jesus é o fundamento da nossa fé — rejeitado pelos homens mas precioso para Deus","Que Jesus vivia perto de pedreiras na Galileia"],"correta":2,"justificativa":"Pedro usa a imagem da pedra para dizer que Jesus é a base de tudo! Mesmo sendo rejeitado pelos líderes religiosos, Jesus é a pedra mais preciosa de todas — o fundamento da nossa fé e da Igreja."},{"pergunta":"Para quem Pedro escrevia sua carta?","opcoes":["Para os governantes do Império Romano","Para os sacerdotes do templo em Jerusalém","Para os cristãos espalhados pelo Império Romano que sofriam perseguições","Apenas para os cristãos que moravam em Roma"],"correta":2,"justificativa":"Pedro escreveu para cristãos que viviam em várias regiões do Império Romano e sofriam por causa da sua fé em Jesus. Era como uma carta de encorajamento para pessoas longe de casa e com dificuldades."},{"pergunta":"Como Pedro diz que devemos nos comportar entre as pessoas que não creem em Jesus?","opcoes":["Devemos evitar qualquer contato com elas","Devemos ter conduta honrosa para que vejam nossas boas obras e glorifiquem a Deus","Devemos criticá-las publicamente pelo seu modo de vida","Devemos esconder nossa fé para não ter problemas"],"correta":1,"justificativa":"Pedro ensina que a melhor missão é viver bem! Quando as pessoas ao nosso redor veem nossas ações boas e cheias de amor, isso pode fazer com que elas também queiram conhecer a Deus. Nossa vida é um testemunho!"},{"pergunta":"O que Pedro diz sobre sofrer injustamente por causa da fé?","opcoes":["Devemos reclamar sempre que formos tratados injustamente","É melhor sofrermos injustamente, fazendo o bem, do que sofrendo por fazer o mal","Devemos nos vingar de quem nos trata mal","Deus nunca deixa seus filhos sofrerem injustamente"],"correta":1,"justificativa":"Pedro aprendeu com o exemplo de Jesus, que sofreu sendo inocente e não se vingou. Quando sofremos injustamente e ainda assim agimos com bondade, mostramos a força do amor de Deus em nós."},{"pergunta":"A quem Pedro compara o diabo, dizendo que andamos alerta a ele?","opcoes":["A uma serpente rastejando no chão","A um leão que ruge procurando alguém para devorar","A um lobo disfarçado de ovelha","A um ladrão que entra de noite"],"correta":1,"justificativa":"Pedro nos avisa para ficarmos atentos! O diabo procura pessoas desprevenidas. Mas não precisamos ter medo — Deus é mais poderoso! Ficando próximos de Deus e da Sua Palavra, estamos seguros."},{"pergunta":"Pedro diz que nós, os cristãos, somos um povo especial. Com quantas coisas ele nos descreve?","opcoes":["Somos apenas 'filhos de Deus'","Somos geração eleita, sacerdócio real, nação santa e povo adquirido por Deus","Somos apenas 'servos de Jesus'","Somos somente 'herdeiros do reino'"],"correta":1,"justificativa":"Que identidade incrível! Pedro diz que somos: geração eleita (escolhidos por Deus!), sacerdócio real (com acesso direto a Deus!), nação santa (separados para Deus!) e povo adquirido (amados e resgatados por Deus!). Somos muito especiais!"},{"pergunta":"Qual é a mensagem central de 1Pedro para os cristãos que sofriam perseguição?","opcoes":["Fujam das perseguições e se escondam","Lutem com armas contra os que os perseguem","Tenham esperança firme em Deus e vivam com santidade mesmo no sofrimento","Deixem a fé até que as perseguições acabem"],"correta":2,"justificativa":"Pedro escreve para encorajar! Mesmo sofrendo, podemos ter esperança porque Jesus ressuscitou. Deus não nos abandonou — Ele cuida de nós. E a nossa fé firme nas dificuldades glorifica a Deus e inspira outras pessoas!"}]};
+    let currentQuestion = 0, score = 0;
+    function startQuiz() { document.getElementById('start-screen').classList.add('hidden'); document.getElementById('quiz-screen').classList.remove('hidden'); loadQuestion(); }
+    function loadQuestion() {
+      const q = quizData.questoes[currentQuestion];
+      document.getElementById('current-question').textContent = currentQuestion + 1;
+      document.getElementById('progress-bar').style.width = ((currentQuestion + 1) / quizData.questoes.length * 100) + '%';
+      document.getElementById('question-text').textContent = q.pergunta;
+      document.getElementById('feedback').classList.add('hidden');
+      const container = document.getElementById('options-container');
+      container.innerHTML = '';
+      q.opcoes.forEach((opcao, index) => {
+        const btn = document.createElement('button');
+        btn.className = 'w-full text-left p-4 rounded-2xl border-2 border-gray-200 bg-gray-50 hover:bg-purple-50 hover:border-purple-300 transition-all text-gray-800 font-medium text-base md:text-lg';
+        btn.textContent = opcao;
+        btn.onclick = () => selectAnswer(index);
+        container.appendChild(btn);
+      });
+    }
+    function selectAnswer(selected) {
+      const q = quizData.questoes[currentQuestion];
+      document.querySelectorAll('#options-container button').forEach((btn, i) => {
+        btn.disabled = true;
+        if (i === q.correta) btn.className += ' bg-green-100 border-green-500 text-green-800';
+        else if (i === selected && selected !== q.correta) btn.className += ' bg-red-100 border-red-500 text-red-800';
+      });
+      const feedback = document.getElementById('feedback');
+      const isCorrect = selected === q.correta;
+      if (isCorrect) { score += 10; document.getElementById('score').textContent = score; feedback.className = 'bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '✅'; document.getElementById('feedback-title').textContent = 'Muito bem!'; }
+      else { feedback.className = 'bg-gradient-to-br from-red-500/20 to-rose-500/20 border border-red-500/30 rounded-3xl p-6 md:p-8'; document.getElementById('feedback-icon').textContent = '❌'; document.getElementById('feedback-title').textContent = 'Quase lá!'; }
+      document.getElementById('feedback-text').textContent = q.justificativa;
+      feedback.classList.remove('hidden');
+    }
+    function nextQuestion() { currentQuestion++; if (currentQuestion < quizData.questoes.length) loadQuestion(); else showResults(); }
+    function showResults() {
+      document.getElementById('quiz-screen').classList.add('hidden');
+      document.getElementById('result-screen').classList.remove('hidden');
+      document.getElementById('final-score').textContent = score;
+      if (typeof trilhoGame !== 'undefined') trilhoGame.completarQuiz(document.title.replace('Quiz - ', ''), Math.round(score/10), quizData.questoes.length);
+      const msgs = [[100,'🏆','PERFEITO! Você é um expert em 1Pedro!'],[80,'🌟','Excelente! Você conhece muito bem 1Pedro!'],[60,'😊','Muito bom! Continue estudando 1Pedro!'],[40,'📖','Bom trabalho! Revise 1Pedro para melhorar!'],[0,'💪','Continue praticando! 1Pedro é fascinante!']];
+      const [,emoji,message] = msgs.find(([min]) => score >= min);
+      document.getElementById('result-emoji').textContent = emoji;
+      document.getElementById('result-message').textContent = message;
+    }
+    function restartQuiz() { currentQuestion = 0; score = 0; document.getElementById('score').textContent = '0'; document.getElementById('result-screen').classList.add('hidden'); document.getElementById('start-screen').classList.remove('hidden'); }
+  </script>
+  <script src="../../gamificacao.js"></script>
+  <script src="../../menu.js"></script>
+</body>
+</html>

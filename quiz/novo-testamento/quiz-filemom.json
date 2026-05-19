@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Para quem Paulo escreveu a carta de Filemom?",
+      "opcoes": [
+        "Para um imperador romano",
+        "Para um cristão chamado Filemom",
+        "Para uma Igreja inteira",
+        "Para os judeus em Jerusalém"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo escreveu esta cartinha especial para um cristão chamado Filemom, pedindo um favor muito importante e cheio de amor!"
+    },
+    {
+      "pergunta": "Quem era Onésimo?",
+      "opcoes": [
+        "Um discípulo famoso",
+        "Um soldado romano",
+        "Um escravo que havia fugido de Filemom",
+        "Um filho de Paulo"
+      ],
+      "correta": 2,
+      "justificativa": "Onésimo era um escravo que havia fugido de seu dono Filemom. Mas enquanto estava longe, ele encontrou Paulo e se converteu a Jesus!"
+    },
+    {
+      "pergunta": "O que aconteceu com Onésimo quando ele encontrou Paulo na prisão?",
+      "opcoes": [
+        "Ficou com raiva",
+        "Se tornou cristão e mudou de vida",
+        "Fugiu novamente",
+        "Virou soldado"
+      ],
+      "correta": 1,
+      "justificativa": "Onésimo conheceu Paulo na prisão e se converteu a Jesus! Sua vida mudou completamente. O Evangelho transforma qualquer pessoa!"
+    },
+    {
+      "pergunta": "O que Paulo pediu a Filemom nesta carta?",
+      "opcoes": [
+        "Que punisse Onésimo severamente",
+        "Que perdoasse e recebesse Onésimo de volta como irmão",
+        "Que vendesse Onésimo",
+        "Que ignorasse o que aconteceu"
+      ],
+      "correta": 1,
+      "justificativa": "Paulo pediu com muito amor que Filemom perdoasse Onésimo e o recebesse de volta, não mais como escravo, mas como irmão em Cristo. Que lição de perdão!"
+    },
+    {
+      "pergunta": "Qual é o versículo-chave de Filemom?",
+      "opcoes": [
+        "'Deus é amor e bondade.'",
+        "'Talvez ele se tenha separado de ti por algum tempo, para que o recuperasses para sempre.'",
+        "'Perdoai e sereis perdoados.'",
+        "'O amor cobre uma multidão de pecados.'"
+      ],
+      "correta": 1,
+      "justificativa": "Em Filemom 1:15, Paulo diz que talvez Onésimo tenha se separado por um tempo para que Filemom o recebesse de volta para sempre como irmão. Deus tem planos incríveis!"
+    },
+    {
+      "pergunta": "O que Paulo ofereceu fazer se Onésimo devia algo a Filemom?",
+      "opcoes": [
+        "Pagar a dívida por ele",
+        "Colocar Onésimo na prisão",
+        "Esquecer tudo sem resolver",
+        "Pedir ajuda ao imperador"
+      ],
+      "correta": 0,
+      "justificativa": "Paulo disse que pagaria qualquer dívida de Onésimo! Ele se colocou no lugar de Onésimo, assim como Jesus faz por nós ao perdoar nossos erros. Que amor!"
+    },
+    {
+      "pergunta": "Qual grande tema o livro de Filemom nos ensina?",
+      "opcoes": [
+        "Como ficar rico",
+        "Como ser um bom soldado",
+        "Perdão e restauração de relacionamentos",
+        "Como construir templos"
+      ],
+      "correta": 2,
+      "justificativa": "Filemom nos ensina sobre o perdão e a restauração de amizades! O Evangelho tem o poder de consertar relacionamentos quebrados. Deus quer que nos amemos!"
+    },
+    {
+      "pergunta": "Segundo a carta de Filemom, em Cristo Jesus, o que acontece com as diferenças entre as pessoas?",
+      "opcoes": [
+        "Ficam ainda maiores",
+        "São ignoradas completamente",
+        "Somos todos irmãos e iguais",
+        "Apenas os ricos importam"
+      ],
+      "correta": 2,
+      "justificativa": "Em Cristo, Onésimo (escravo) e Filemom (dono) eram irmãos! O Evangelho derruba as barreiras e nos une como família de Deus. Que maravilha!"
+    },
+    {
+      "pergunta": "De onde Paulo escreveu a carta de Filemom?",
+      "opcoes": [
+        "De uma viagem no mar",
+        "De Jerusalém",
+        "De uma prisão",
+        "De Creta"
+      ],
+      "correta": 2,
+      "justificativa": "Mesmo estando preso, Paulo usou seu tempo para fazer o bem e promover reconciliação entre Filemom e Onésimo. Nada impede quem tem amor!"
+    },
+    {
+      "pergunta": "Qual a grande lição de Filemom para nossas amizades e família?",
+      "opcoes": [
+        "Nunca perdoar quem nos magoou",
+        "Perdoar e restaurar os relacionamentos, assim como Deus nos perdoa",
+        "Só andar com pessoas perfeitas",
+        "Esquecer as pessoas que nos decepcionaram"
+      ],
+      "correta": 1,
+      "justificativa": "Filemom nos ensina a perdoar assim como Deus nos perdoa! Se Deus nos perdoa de tudo, podemos perdoar também. O perdão nos liberta e restaura nossas amizades!"
+    }
+  ]
+}

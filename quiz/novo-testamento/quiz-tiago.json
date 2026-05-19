@@ -1,0 +1,64 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quem escreveu a carta de Tiago?",
+      "opcoes": ["Pedro, o apóstolo", "Tiago, irmão de Jesus e líder da Igreja de Jerusalém", "Paulo, o missionário", "João, o discípulo amado"],
+      "correta": 1,
+      "justificativa": "Tiago era irmão de Jesus e liderava a Igreja de Jerusalém. Ele escreveu essa carta para ajudar os cristãos que sofriam perseguições e estavam espalhados por vários lugares."
+    },
+    {
+      "pergunta": "Segundo Tiago 2:17, como é a fé que não tem obras?",
+      "opcoes": ["É forte e poderosa", "É pequena mas viva", "É morta em si mesma", "É suficiente para agradar a Deus"],
+      "correta": 2,
+      "justificativa": "Tiago ensina que a fé verdadeira sempre gera ações. Se alguém diz que acredita em Deus mas nunca age com amor e bondade, essa fé está morta — ela não é real."
+    },
+    {
+      "pergunta": "Tiago compara a língua a uma pequena parte do corpo que pode causar muito mal. Com o que ele a compara?",
+      "opcoes": ["Um anzol de pesca", "Uma pequena faísca que pode incendiar uma grande floresta", "Uma semente de mostarda", "Uma gota de água no oceano"],
+      "correta": 1,
+      "justificativa": "Assim como uma faísca minúscula pode queimar uma floresta enorme, a língua — por ser pequena — pode causar grandes estragos com palavras feias, mentiras ou fofocas. Por isso, devemos falar com cuidado!"
+    },
+    {
+      "pergunta": "O que Tiago diz que devemos fazer quando passamos por provações e momentos difíceis?",
+      "opcoes": ["Ficar com raiva de Deus", "Desistir de tudo", "Considerar como motivo de grande alegria, porque isso desenvolve a paciência", "Fugir dos problemas o mais rápido possível"],
+      "correta": 2,
+      "justificativa": "Tiago nos ensina que os momentos difíceis nos fazem crescer! Quando somos pacientes nas dificuldades, nos tornamos mais fortes e maduros na fé. É como um músculo que fica mais forte quando é exercitado."
+    },
+    {
+      "pergunta": "Para Tiago, o que é a religião pura e sem mácula diante de Deus?",
+      "opcoes": ["Rezar muitas orações todos os dias", "Visitar o templo toda semana", "Cuidar dos órfãos e das viúvas e guardar-se sem contaminação do mundo", "Ler a Bíblia por várias horas ao dia"],
+      "correta": 2,
+      "justificativa": "Deus se agrada quando ajudamos quem precisa! Tiago ensina que a verdadeira fé não é só fazer rituais religiosos, mas agir com amor: cuidar das crianças sem família e das pessoas que perderam seus maridos."
+    },
+    {
+      "pergunta": "Tiago diz que não devemos fazer 'acepção de pessoas'. O que isso significa?",
+      "opcoes": ["Não devemos aceitar presentes de ninguém", "Não devemos tratar pessoas ricas melhor do que pessoas pobres", "Não devemos conversar com estranhos na igreja", "Não devemos aceitar membros novos na congregação"],
+      "correta": 1,
+      "justificativa": "Tiago repreende os cristãos que davam lugares especiais aos ricos e ignoravam os pobres. Para Deus, todo ser humano tem o mesmo valor! Devemos tratar todas as pessoas com igual respeito e carinho."
+    },
+    {
+      "pergunta": "O que Tiago diz que devemos fazer quando alguém da igreja estiver doente?",
+      "opcoes": ["Apenas esperar que melhore sozinho", "Chamar os líderes para ungi-lo com azeite e orar por ele", "Dar muito remédio e não incomodar Deus com isso", "Pedir que ele saia da comunidade até melhorar"],
+      "correta": 1,
+      "justificativa": "Tiago 5:14-15 ensina que devemos chamar os líderes da igreja para orar pelos enfermos. Deus ouve nossas orações e pode curar! Cuidar uns dos outros com oração é um dos presentes mais bonitos que podemos dar."
+    },
+    {
+      "pergunta": "Segundo Tiago, como devemos ser em relação a ouvir e falar?",
+      "opcoes": ["Rápidos para falar e lentos para ouvir", "Prontos para falar, prontos para ouvir e prontos para nos irar", "Prontos para ouvir, lentos para falar e lentos para nos irar", "Lentos para ouvir e lentos para falar"],
+      "correta": 2,
+      "justificativa": "Que boa lição! Tiago nos ensina a ouvir muito antes de falar e a não ter raiva fácil. Isso é sabedoria! Quando ouvimos com atenção e falamos com calma, evitamos muitas brigas e desentendimentos."
+    },
+    {
+      "pergunta": "Tiago compara o rico que se vangloria a algo que desaparece rapidamente. O que é?",
+      "opcoes": ["A uma estrela que cai do céu", "À flor da erva que murcha com o calor", "A um pássaro que voa para longe", "A uma nuvem que passa no verão"],
+      "correta": 1,
+      "justificativa": "As flores são lindas, mas murcham depressa quando o sol forte bate. Tiago usa essa imagem para lembrar que as riquezas e o sucesso deste mundo passam rápido. O que realmente dura é nossa relação com Deus!"
+    },
+    {
+      "pergunta": "Para quem Tiago escreveu sua carta?",
+      "opcoes": ["Para uma única igreja em Roma", "Para os doze apóstolos de Jesus", "Para as doze tribos da dispersão — cristãos espalhados pelas perseguições", "Somente para os líderes e pastores das igrejas"],
+      "correta": 2,
+      "justificativa": "Tiago escreveu para os cristãos judeus que haviam sido espalhados pelas perseguições. Eles estavam longe de casa e passando por dificuldades, e Tiago queria encorajá-los a viver com fé que age na prática!"
+    }
+  ]
+}

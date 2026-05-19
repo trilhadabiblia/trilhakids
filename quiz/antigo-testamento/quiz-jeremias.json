@@ -1,0 +1,114 @@
+{
+  "questoes": [
+    {
+      "pergunta": "Quando Deus chamou Jeremias para ser profeta, qual foi a desculpa que ele deu?",
+      "opcoes": [
+        "Eu não sei ler",
+        "Eu sou muito jovem e não sei falar",
+        "Eu tenho medo das pessoas",
+        "Eu não gosto de viajar"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias disse que era muito jovem e não sabia falar, mas Deus o tranquilizou dizendo que estaria com ele e lhe daria as palavras certas."
+    },
+    {
+      "pergunta": "Por que Jeremias é conhecido como 'o profeta chorão'?",
+      "opcoes": [
+        "Porque ele sempre estava triste",
+        "Porque chorava ao ver o povo se afastando de Deus",
+        "Porque tinha alergia nos olhos",
+        "Porque não gostava de seu trabalho"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias chorava porque tinha um coração sensível e ficava triste ao ver o povo ignorando as advertências de Deus e se afastando dEle."
+    },
+    {
+      "pergunta": "Qual é o versículo mais famoso do livro de Jeremias que fala sobre os planos de Deus?",
+      "opcoes": [
+        "'Eu estarei sempre contigo'",
+        "'Tenho planos de paz e não de mal, para dar futuro e esperança'",
+        "'Obedeça e será abençoado'",
+        "'Ame ao próximo como a si mesmo'"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias 29:11 é um dos versículos mais conhecidos, onde Deus declara ter planos de paz, futuro e esperança para Seu povo."
+    },
+    {
+      "pergunta": "Quantos capítulos tem o livro de Jeremias?",
+      "opcoes": [
+        "40 capítulos",
+        "50 capítulos",
+        "52 capítulos",
+        "55 capítulos"
+      ],
+      "correta": 2,
+      "justificativa": "O livro de Jeremias tem 52 capítulos cheios de advertências e promessas de Deus para Seu povo."
+    },
+    {
+      "pergunta": "Qual foi a principal mensagem que Jeremias teve que dar ao povo de Judá?",
+      "opcoes": [
+        "Que teriam muitas riquezas",
+        "Que Jerusalém seria destruída se não mudassem seus caminhos",
+        "Que deveriam mudar de cidade",
+        "Que deveriam construir um templo novo"
+      ],
+      "correta": 1,
+      "justificativa": "Jeremias avisou que Jerusalém seria destruída se o povo não se arrependesse e voltasse para Deus, mas eles não quiseram ouvir."
+    },
+    {
+      "pergunta": "Quem era Nabucodonosor no livro de Jeremias?",
+      "opcoes": [
+        "Um profeta de Deus",
+        "O rei da Babilônia usado por Deus para corrigir Seu povo",
+        "Um amigo de Jeremias",
+        "O sumo sacerdote do templo"
+      ],
+      "correta": 1,
+      "justificativa": "Nabucodonosor era o rei da Babilônia que Deus usou como instrumento para corrigir o povo de Judá por sua desobediência."
+    },
+    {
+      "pergunta": "Segundo o livro de Jeremias, por que Deus corrige Seu povo?",
+      "opcoes": [
+        "Porque está com raiva",
+        "Porque quer castigar",
+        "Porque ama e quer o melhor para eles",
+        "Porque não tem paciência"
+      ],
+      "correta": 2,
+      "justificativa": "Deus corrige porque ama Seu povo, assim como um pai que cuida e quer guiar seus filhos pelo caminho certo."
+    },
+    {
+      "pergunta": "Qual era o nome do rei que liderava Judá mas não ouvia a Deus, mencionado no resumo?",
+      "opcoes": [
+        "Davi",
+        "Salomão",
+        "Zedequias",
+        "Josias"
+      ],
+      "correta": 2,
+      "justificativa": "Zedequias foi um dos reis mencionados que liderava o povo mas não ouvia as advertências de Deus através de Jeremias."
+    },
+    {
+      "pergunta": "O que Deus promete fazer depois da correção, segundo o livro de Jeremias?",
+      "opcoes": [
+        "Esquecer do povo para sempre",
+        "Restaurar e dar esperança",
+        "Escolher outro povo",
+        "Não falar mais com ninguém"
+      ],
+      "correta": 1,
+      "justificativa": "Mesmo após a correção, Deus promete restauração e esperança, pois Ele nunca desiste do Seu povo e sempre o ama."
+    },
+    {
+      "pergunta": "Qual é a principal lição que aprendemos com a história de Jeremias?",
+      "opcoes": [
+        "Que devemos ter medo de Deus",
+        "Que obedecer a Deus é sempre o melhor caminho",
+        "Que só adultos podem servir a Deus",
+        "Que Deus não se importa conosco"
+      ],
+      "correta": 1,
+      "justificativa": "A principal lição é que obedecer a Deus é sempre o melhor caminho, mesmo quando parece difícil, e que Deus nos ama e tem planos maravilhosos para nós."
+    }
+  ]
+}
