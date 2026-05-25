@@ -1,410 +1,489 @@
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Aura Quest: O Caminho do Rei Alfa</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --g:#FFD700;--gd:#B8860B;--aq:#00DDCC;--bg:#0a0a18;--bp:#0d0d28;--tm:#e0e0ff;
-  --mu:#7777aa;--re:#ff4455;--gr:#33ee77;--pu:#bb44ff;--or:#ff8833;
+html,body{
+  height:100%;width:100%;
+  background:#06060f;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Press Start 2P',monospace;
+  overflow:hidden;
 }
-.gw{background:var(--bg);color:var(--tm);font-family:'Press Start 2P',monospace;font-size:11px;width:100%;max-width:100%;overflow:hidden}
+:root{
+  --g:#FFD700;--gd:#B8860B;--aq:#00DDCC;--bg:#0a0a18;--bp:#0d0d28;
+  --tm:#e0e0ff;--mu:#6666aa;--re:#ff4455;--gr:#33ee77;--pu:#bb44ff;--or:#ff8833;
+}
 
-.hdr{background:var(--bp);border-bottom:2px solid var(--g);padding:6px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
-.htitle{font-size:9px;color:var(--g);letter-spacing:1px;line-height:1.5;white-space:nowrap}
-.hud-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
-.hstat{background:#111128;border:1px solid #33336a;padding:3px 7px;font-size:7px;white-space:nowrap}
-.hstat span{color:var(--aq);font-size:9px}
-.abar-wrap{background:#111128;border:1px solid #33336a;padding:3px 7px;flex:1;min-width:100px}
-.abar-bg{background:#111;height:8px;border-radius:1px;overflow:hidden;margin-top:2px}
-.abar-fill{height:100%;background:var(--aq);transition:width .5s ease;min-width:2px}
+/* GAME SHELL — 90% viewport, centered */
+.shell{
+  width:min(1100px, 92vw);
+  height:min(640px, 92vh);
+  background:var(--bg);
+  border:3px solid var(--g);
+  box-shadow:0 0 0 1px #000, 0 0 0 4px var(--gd), 0 0 50px rgba(255,215,0,.15);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  position:relative;
+}
 
-.pills{display:flex;gap:3px;padding:5px 8px;background:#080816;border-bottom:1px solid #22224a;overflow-x:auto;scrollbar-width:none}
+/* HEADER */
+.hdr{
+  background:var(--bp);
+  border-bottom:2px solid var(--g);
+  padding:6px 14px;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:10px;flex-shrink:0;
+}
+.htitle{font-size:9px;color:var(--g);letter-spacing:1px;line-height:1.6;white-space:nowrap}
+.hud{display:flex;gap:6px;align-items:center}
+.hs{background:#111128;border:1px solid #33336a;padding:4px 9px;font-size:7px;white-space:nowrap;flex-shrink:0}
+.hs b{color:var(--aq);font-size:10px}
+.abar-w{min-width:140px}
+.abar-bg{background:#111;height:7px;border-radius:1px;overflow:hidden;margin-top:3px}
+.abar-f{height:100%;background:var(--aq);transition:width .5s;min-width:2px}
+
+/* PILLS */
+.pills{
+  display:flex;gap:4px;padding:5px 10px;
+  background:#080816;border-bottom:1px solid #1a1a3a;
+  overflow-x:auto;flex-shrink:0;scrollbar-width:none;
+  align-items:center;
+}
 .pills::-webkit-scrollbar{display:none}
-.pill{font-size:6px;padding:4px 7px;border:1px solid #333;color:#555;background:#111;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .1s}
+.pill{font-size:6px;padding:4px 10px;border:1px solid #333;color:#444;background:#0a0a1a;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .1s}
 .pill.done{border-color:var(--gr);color:var(--gr)}
 .pill.active{border-color:var(--g);color:var(--g);background:rgba(255,215,0,.1)}
 .pill:hover{background:rgba(255,255,255,.05)}
 
-.main{display:flex;gap:0;height:340px}
-.scene-col{flex:1;display:flex;flex-direction:column;overflow:hidden;border-right:1px solid #22224a}
-.scene{display:none;flex:1;flex-direction:column;padding:8px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#33336a transparent}
+/* MAIN — fills all remaining height, no overflow */
+.main{
+  display:flex;
+  flex:1;
+  min-height:0; /* critical for flex children to shrink */
+  overflow:hidden;
+}
+
+/* GAME COLUMN */
+.gcol{
+  flex:1;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  border-right:1px solid #1a1a3a;
+  overflow:hidden;
+}
+
+/* Each scene fills the column completely */
+.scene{
+  display:none;
+  flex:1;
+  flex-direction:column;
+  padding:12px 14px;
+  gap:8px;
+  overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:#33336a transparent;
+}
 .scene::-webkit-scrollbar{width:3px}
 .scene::-webkit-scrollbar-thumb{background:#33336a}
 .scene.active{display:flex}
-.side-col{width:180px;display:flex;flex-direction:column;background:#080816}
 
-.stitle{font-size:6px;color:var(--g);border-bottom:1px solid var(--gd);padding-bottom:3px;margin-bottom:6px;letter-spacing:1px}
-
-.abtn{font-family:'Press Start 2P',monospace;font-size:7px;padding:6px 5px;background:rgba(0,0,30,.9);border:1px solid var(--gd);color:var(--g);cursor:pointer;text-align:left;line-height:1.5;transition:all .1s;width:100%}
-.abtn:hover{background:rgba(255,215,0,.12);border-color:var(--g)}
-.abtn:active{transform:scale(.98)}
-.abtn.ok{border-color:var(--gr);color:var(--gr);background:rgba(51,238,119,.1)}
-.abtn.no{border-color:var(--re);color:var(--re);animation:hs .3s}
-.abtn:disabled{opacity:.4;cursor:not-allowed}
-@keyframes hs{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
-
-.agrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px}
-.bbtn{font-family:'Press Start 2P',monospace;font-size:7px;padding:7px 10px;background:rgba(255,215,0,.1);border:1px solid var(--g);color:var(--g);cursor:pointer;transition:all .12s;text-align:center;width:100%;margin-top:4px}
-.bbtn:hover{background:rgba(255,215,0,.2);transform:scale(1.02)}
-.bbtn.g{border-color:var(--gr);color:var(--gr);background:rgba(51,238,119,.1)}
-.bbtn.r{border-color:var(--re);color:var(--re);background:rgba(255,68,85,.1)}
-.bbtn.p{border-color:var(--pu);color:var(--pu);background:rgba(187,68,255,.1)}
-
-.hprow{display:flex;align-items:center;gap:4px;margin-bottom:4px}
-.hpn{font-size:6px;width:56px;flex-shrink:0}
-.hpbg{flex:1;background:#111;border:1px solid #333;height:10px;border-radius:1px;overflow:hidden}
-.hpfill{height:100%;transition:width .4s}
-.hpnum{font-size:6px;width:42px;text-align:right;flex-shrink:0}
-
-.dbox{background:#111128;border:1px solid var(--g);padding:6px 8px;font-size:13px;line-height:1.5;color:var(--tm);min-height:50px;margin-bottom:5px}
-.dspk{font-size:6px;color:var(--g);margin-bottom:3px;letter-spacing:1px}
-
-.clog{background:rgba(0,0,0,.5);border:1px solid #22224a;padding:4px 6px;font-size:10px;color:var(--mu);max-height:52px;overflow-y:auto;margin-top:4px;scrollbar-width:thin;scrollbar-color:#33336a transparent}
-.clog .ent{margin:1px 0}
-.clog .ent.ok{color:var(--gr)}
-.clog .ent.no{color:var(--re)}
-.clog .ent.gl{color:var(--g)}
-
-.side-dialog{flex:1;padding:6px 8px;border-top:1px solid #22224a;overflow-y:auto;display:flex;flex-direction:column}
-.sdspk{font-size:6px;color:var(--g);margin-bottom:3px;letter-spacing:1px}
-.sdtxt{font-size:10px;line-height:1.6;color:var(--tm)}
+/* SIDEBAR */
+.side{
+  width:220px;
+  flex-shrink:0;
+  display:flex;
+  flex-direction:column;
+  background:#080816;
+  overflow:hidden;
+}
+.sdlg{
+  flex:1;
+  padding:10px 12px;
+  overflow-y:auto;
+  min-height:0;
+  scrollbar-width:none;
+}
+.sdlg::-webkit-scrollbar{display:none}
+.sdspk{font-size:6px;color:var(--g);letter-spacing:1px;margin-bottom:5px;padding-bottom:4px;border-bottom:1px solid #1a1a3a}
+.sdtxt{font-size:10px;color:var(--tm);line-height:1.8}
 .cur{display:inline-block;width:6px;height:10px;background:var(--tm);animation:bl .7s step-end infinite;vertical-align:bottom;margin-left:1px}
 @keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.psec{
+  padding:10px 12px;
+  flex-shrink:0;
+  border-top:1px solid #1a1a3a;
+  background:#080816;
+}
+.pgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;margin-top:4px}
+.psl{aspect-ratio:1;background:#111;border:1px solid #1f1f3a;display:flex;align-items:center;justify-content:center;font-size:8px}
+.psl.f{background:rgba(255,215,0,.18);border-color:var(--g)}
 
-.proph-sec{padding:6px 8px;border-top:1px solid #22224a}
-.pgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;margin-top:3px}
-.pslot{aspect-ratio:1;background:#111;border:1px solid #222;font-size:7px;display:flex;align-items:center;justify-content:center}
-.pslot.f{background:rgba(255,215,0,.15);border-color:var(--g)}
-.pslot.nw{animation:pop .3s ease-out}
-@keyframes pop{0%{transform:scale(0)}80%{transform:scale(1.2)}100%{transform:scale(1)}}
+/* SHARED COMPONENTS */
+.stitle{font-size:6px;color:var(--g);border-bottom:1px solid var(--gd);padding-bottom:4px;letter-spacing:1px;flex-shrink:0}
+.muted{font-size:10px;color:var(--mu);line-height:1.7}
 
-.notif-area{position:absolute;top:6px;left:50%;transform:translateX(-50%);z-index:99;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:3px;width:90%}
-.nf{background:var(--bp);border:1px solid var(--aq);padding:5px 12px;font-size:7px;color:var(--aq);text-align:center;animation:nfin .3s ease;white-space:nowrap}
-.nf.r{border-color:var(--re);color:var(--re)}
-.nf.g{border-color:var(--gr);color:var(--gr)}
-.nf.gld{border-color:var(--g);color:var(--g)}
-@keyframes nfin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+.hprow{display:flex;align-items:center;gap:5px}
+.hpn{font-size:6px;width:60px;flex-shrink:0}
+.hpbg{flex:1;background:#111;border:1px solid #2a2a4a;height:10px;border-radius:1px;overflow:hidden}
+.hpf{height:100%;transition:width .4s}
+.hpnum{font-size:6px;width:40px;text-align:right;flex-shrink:0}
 
-.faith-wrap{background:#111;border:1px solid #334;height:16px;border-radius:1px;overflow:hidden;margin:3px 0}
-.faith-fill{height:100%;background:var(--aq);transition:width .3s;position:relative}
-.water-vis{height:52px;background:#001133;border:1px solid #003366;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;margin:4px 0}
-.wave-strip{position:absolute;bottom:0;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,#0055aa 0,#0055aa 8px,#002288 8px,#002288 16px);animation:wm 1s linear infinite}
+.callout{background:#111128;border:1px solid var(--g);padding:10px;font-size:12px;color:var(--g);text-align:center;flex-shrink:0}
+.qbox{background:#111128;border:1px solid var(--pu);padding:10px;font-size:10px;color:var(--tm);line-height:1.7;flex-shrink:0}
+.gankq{background:#111128;border:1px solid var(--or);padding:10px;font-size:10px;color:var(--or);line-height:1.7;flex-shrink:0}
+
+/* BUTTONS */
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex-shrink:0}
+.abtn{
+  font-family:'Press Start 2P',monospace;font-size:8px;
+  padding:10px 8px;background:rgba(0,0,30,.9);
+  border:1px solid var(--gd);color:var(--g);
+  cursor:pointer;text-align:left;line-height:1.6;
+  transition:all .1s;width:100%;
+}
+.abtn:hover{background:rgba(255,215,0,.12);border-color:var(--g)}
+.abtn:active{transform:scale(.97)}
+.abtn.ok{border-color:var(--gr);color:var(--gr);background:rgba(51,238,119,.08)}
+.abtn.no{border-color:var(--re);color:var(--re);animation:hs .3s}
+.abtn:disabled{opacity:.35;cursor:not-allowed}
+@keyframes hs{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+
+.bbtn{
+  font-family:'Press Start 2P',monospace;font-size:8px;
+  padding:10px 14px;background:rgba(255,215,0,.08);
+  border:1px solid var(--g);color:var(--g);
+  cursor:pointer;transition:all .12s;width:100%;text-align:center;flex-shrink:0;
+}
+.bbtn:hover{background:rgba(255,215,0,.2);transform:scale(1.02)}
+.bbtn.g{border-color:var(--gr);color:var(--gr);background:rgba(51,238,119,.08)}
+.bbtn.r{border-color:var(--re);color:var(--re);background:rgba(255,68,85,.08)}
+.bbtn.p{border-color:var(--pu);color:var(--pu);background:rgba(187,68,255,.08)}
+
+/* SPRITE */
+.sp{text-align:center;flex-shrink:0}
+.sp svg{display:block;margin:0 auto 3px;image-rendering:pixelated;animation:fl 2s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.en svg{animation:sh .4s ease-in-out infinite alternate}
+@keyframes sh{0%{transform:translateX(-2px)}100%{transform:translateX(2px)}}
+.spn{font-size:6px;color:var(--mu)}
+
+/* COMBAT LOG — grows to fill leftover space */
+.clog{
+  background:rgba(0,0,0,.5);border:1px solid #1a1a3a;
+  padding:5px 8px;font-size:10px;color:var(--mu);
+  flex:1;min-height:40px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:#33336a transparent;
+}
+.clog .e{margin:2px 0}.clog .e.ok{color:var(--gr)}.clog .e.no{color:var(--re)}.clog .e.gl{color:var(--g)}
+
+/* MIRACLE */
+.mcards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;flex-shrink:0}
+.mc{background:#0d0d24;border:1px solid #1f1f3a;padding:8px;text-align:center}
+.mc-ico{font-size:24px}.mc-n{font-size:15px;color:var(--tm);margin:3px 0}.mc-l{font-size:6px;color:var(--mu)}
+.npcgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex-shrink:0}
+.npcb{background:#0d0d24;border:1px solid #1f1f3a;padding:8px 4px;text-align:center;cursor:pointer;font-family:'Press Start 2P',monospace;transition:all .12s}
+.npcb:hover:not(:disabled){background:rgba(255,255,255,.04);border-color:#33336a}
+.npcb:disabled{opacity:.45}
+.npcico{font-size:24px}.npclbl{font-size:6px;color:var(--mu);display:block;margin-top:3px}
+
+/* FAITH / WATER */
+.fbar-w{background:#111;border:1px solid #2a2a4a;height:16px;border-radius:1px;overflow:hidden}
+.fbar-f{height:100%;background:var(--aq);transition:width .3s}
+.wvis{height:68px;background:#001133;border:1px solid #003060;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative}
+.wave{position:absolute;bottom:0;left:0;right:0;height:16px;background:repeating-linear-gradient(90deg,#0055aa 0,#0055aa 8px,#002288 8px,#002288 16px);animation:wm 1s linear infinite}
 @keyframes wm{to{background-position:16px 0}}
-.peter{position:relative;z-index:2;font-size:22px;transition:transform .3s,filter .3s}
-.peter.sink{transform:translateY(16px);filter:brightness(.4)}
+.peter{position:relative;z-index:2;font-size:28px;transition:transform .3s,filter .3s}
+.peter.sink{transform:translateY(22px);filter:brightness(.3)}
+.wbtns{display:flex;gap:6px;flex-shrink:0}
 
-.miracle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px}
-.mg-card{background:#111128;border:1px solid #33336a;padding:4px;text-align:center}
-.mg-icon{font-size:18px}
-.mg-count{font-size:13px;color:var(--tm);margin:1px 0}
-.mg-label{font-size:5px;color:var(--mu)}
-
-.npc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-.npc-btn{background:#111128;border:1px solid #22224a;padding:5px 3px;text-align:center;cursor:pointer;transition:all .12s;font-family:'Press Start 2P',monospace}
-.npc-btn:hover{background:rgba(255,255,255,.05);border-color:#33336a}
-.npc-btn:disabled{opacity:.5}
-.npc-ico{font-size:18px}
-.npc-lbl{font-size:5px;color:var(--mu);margin-top:2px;display:block}
-
-.finale-box{text-align:center;padding:10px 8px}
-.final-title{font-size:11px;color:var(--g);margin:6px 0;animation:glow 1.5s ease-in-out infinite}
-@keyframes glow{0%,100%{color:var(--g)}50%{color:#fff}}
-.final-aura{font-size:16px;color:var(--aq);margin:4px 0}
-
-.nation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:6px 0}
-
-.go-screen{text-align:center;padding:10px}
-.go-title{font-size:14px;color:var(--re);margin:8px 0;animation:glow2 .8s ease-in-out infinite alternate}
+/* GAMEOVER / FINAL */
+.gosec{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;padding:16px}
+.go-t{font-size:20px;color:var(--re);animation:glow2 .8s ease-in-out infinite alternate}
 @keyframes glow2{from{color:var(--re)}to{color:#ff8888}}
-.dots-row{display:flex;gap:3px;justify-content:center;margin:6px 0}
+.dots{display:flex;gap:4px;justify-content:center}
+.finsec{flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;padding:12px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#33336a transparent}
+.finsec::-webkit-scrollbar{width:3px}
+.finsec::-webkit-scrollbar-thumb{background:#33336a}
+.fin-t{font-size:13px;color:var(--g);animation:glow 1.5s ease-in-out infinite;flex-shrink:0}
+@keyframes glow{0%,100%{color:var(--g)}50%{color:#fff}}
+.fin-a{font-size:18px;color:var(--aq);flex-shrink:0}
+.natgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:100%;flex-shrink:0}
+.natb{background:#0d0d24;border:1px solid #1f1f3a;padding:8px 4px;font-family:'Press Start 2P',monospace;font-size:10px;text-align:center;cursor:pointer;transition:all .12s}
+.natb:hover:not(:disabled){background:rgba(255,255,255,.04)}
+.natb.ok{border-color:var(--gr);color:var(--gr)}
+.natb:disabled{opacity:.5}
 
-@media(max-width:520px){
-  .side-col{display:none}
-  .main{height:auto;min-height:300px}
-  .scene-col{height:auto}
-  .scene{overflow:visible}
-  .htitle{font-size:7px}
-  .hud-row{width:100%}
+/* FILLER — pushes content apart in scenes with sparse content */
+.spacer{flex:1}
+
+/* TOASTS */
+.toasts{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:99;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:3px;min-width:220px}
+.toast{background:var(--bp);border:1px solid var(--aq);padding:5px 16px;font-size:7px;color:var(--aq);text-align:center;white-space:nowrap;animation:tin .25s ease;transition:opacity .4s}
+.toast.r{border-color:var(--re);color:var(--re)}.toast.gld{border-color:var(--g);color:var(--g)}
+@keyframes tin{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+
+/* MOBILE */
+@media(max-width:640px){
+  html,body{align-items:flex-start;overflow-y:auto}
+  .shell{width:100vw;height:auto;min-height:100dvh;border:none;box-shadow:none;border-radius:0}
+  .side{display:none}
+  .gcol{overflow:visible}
+  .scene{overflow:visible;flex:none;min-height:calc(100dvh - 100px)}
+  .main{flex:1;height:auto;overflow:visible}
 }
 </style>
+</head>
+<body>
+<div class="shell">
+  <div class="toasts" id="toasts"></div>
 
-<h2 class="sr-only">Aura Quest: O Caminho do Rei Alfa — jogo RPG educativo sobre o Evangelho de Mateus</h2>
-
-<div class="gw" style="position:relative">
-
-<div class="notif-area" id="notifArea"></div>
-
-<div class="hdr">
-  <div class="htitle">⚔️ AURA QUEST<br>REI ALFA</div>
-  <div class="hud-row">
-    <div class="hstat">FASE <span id="phaseNum">1</span></div>
-    <div class="abar-wrap hstat" style="min-width:120px">
-      AURA <span id="auraDisp">0</span>
-      <div class="abar-bg"><div class="abar-fill" id="auraBar" style="width:0%"></div></div>
+  <!-- HEADER -->
+  <div class="hdr">
+    <div class="htitle">⚔ AURA QUEST<br>REI ALFA</div>
+    <div class="hud">
+      <div class="hs">FASE <b id="phN">1</b></div>
+      <div class="hs abar-w">AURA <b id="aDisp">0</b>
+        <div class="abar-bg"><div class="abar-f" id="aBar" style="width:0%"></div></div>
+      </div>
+      <div class="hs">📜 <b id="pDisp">0</b>/60</div>
     </div>
-    <div class="hstat">📜 <span id="prophDisp">0</span>/60</div>
-  </div>
-</div>
-
-<div class="pills" id="phasePills">
-  <div class="pill active" data-p="1">I · CHAMADO</div>
-  <div class="pill" data-p="2">II · DESERTO</div>
-  <div class="pill" data-p="3">III · MILAGRES</div>
-  <div class="pill" data-p="4">IV · DEBATE</div>
-  <div class="pill" data-p="5">V · RESSURR.</div>
-</div>
-
-<div class="main">
-  <div class="scene-col">
-
-    <!-- FASE 1 -->
-    <div class="scene active" id="sc1">
-      <div class="stitle">FASE I — COLETORIA DE MATEUS</div>
-      <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
-        <div style="text-align:center;flex-shrink:0">
-          <svg width="32" height="44" viewBox="0 0 16 22">
-            <rect x="5" y="0" width="6" height="6" fill="#8B6914"/>
-            <rect x="4" y="6" width="8" height="10" fill="#8B4513"/>
-            <rect x="3" y="7" width="2" height="7" fill="#8B4513"/>
-            <rect x="11" y="7" width="2" height="7" fill="#8B4513"/>
-            <rect x="4" y="16" width="3" height="6" fill="#5C3317"/>
-            <rect x="9" y="16" width="3" height="6" fill="#5C3317"/>
-            <rect x="6" y="2" width="1" height="1" fill="#000"/>
-            <rect x="9" y="2" width="1" height="1" fill="#000"/>
-            <rect x="6" y="4" width="4" height="1" fill="#c0392b"/>
-          </svg>
-          <div style="font-size:6px;color:var(--mu)">MATEUS</div>
-        </div>
-        <div id="jspr1" style="display:none;text-align:center;flex-shrink:0">
-          <svg width="32" height="44" viewBox="0 0 16 22">
-            <rect x="5" y="0" width="6" height="6" fill="#C4A052"/>
-            <rect x="4" y="6" width="8" height="10" fill="#FFFFF0"/>
-            <rect x="3" y="7" width="2" height="7" fill="#FFFFF0"/>
-            <rect x="11" y="7" width="2" height="7" fill="#FFFFF0"/>
-            <rect x="4" y="16" width="3" height="6" fill="#D4B48C"/>
-            <rect x="9" y="16" width="3" height="6" fill="#D4B48C"/>
-            <rect x="6" y="2" width="1" height="1" fill="#000"/>
-            <rect x="9" y="2" width="1" height="1" fill="#000"/>
-            <circle cx="8" cy="0" r="3" fill="none" stroke="#FFD700" stroke-width=".5"/>
-          </svg>
-          <div style="font-size:6px;color:var(--g)">JESUS ✦</div>
-        </div>
-        <div style="flex:1;font-size:10px;color:var(--mu);line-height:1.6">
-          Mateus estava na mesa de impostos.<br>
-          Todo mundo dava hate nele.<br>
-          Era o <span style="color:var(--re)">beta dos betas</span>...<br>
-          Então Jesus chegou e disse:
-        </div>
-      </div>
-      <div style="background:#111128;border:1px solid var(--g);padding:6px 8px;font-size:13px;color:var(--g);margin-bottom:8px;text-align:center">
-        "EI, MATEUS. VEM."
-      </div>
-      <div class="agrid" id="p1btns">
-        <button class="abtn" onclick="p1('n')">💰 FICAR<br><span style="color:var(--mu);font-size:5px">Manter o dinheiro</span></button>
-        <button class="abtn ok" onclick="p1('s')">🚶 SEGUIR<br><span style="font-size:5px">+1000 AURA!</span></button>
-      </div>
-      <div id="p1msg" style="font-size:9px;color:var(--aq);margin-top:5px;min-height:16px;text-align:center"></div>
-    </div>
-
-    <!-- FASE 2 -->
-    <div class="scene" id="sc2">
-      <div class="stitle">FASE II — GANK NO DESERTO</div>
-      <div class="hprow"><div class="hpn" style="color:var(--g)">REI ALFA</div><div class="hpbg"><div class="hpfill" id="jHp" style="width:100%;background:var(--gr)"></div></div><div class="hpnum" id="jHpN" style="color:var(--gr)">3/3</div></div>
-      <div class="hprow"><div class="hpn" style="color:var(--re)">DIABO</div><div class="hpbg"><div class="hpfill" id="dHp" style="width:100%;background:var(--re)"></div></div><div class="hpnum" id="dHpN" style="color:var(--re)">3/3</div></div>
-      <div id="gankMsg" style="font-size:10px;color:var(--or);margin:5px 0;min-height:32px;line-height:1.5;background:#111128;padding:5px 6px;border:1px solid #33336a"></div>
-      <div class="agrid" id="gankBtns"></div>
-      <div class="clog" id="gankLog"></div>
-    </div>
-
-    <!-- FASE 3 -->
-    <div class="scene" id="sc3">
-      <div class="stitle">FASE III — FARM DE MILAGRES</div>
-      <div class="miracle-grid">
-        <div class="mg-card"><div class="mg-icon">👁️</div><div class="mg-count" id="mc0">3</div><div class="mg-label">CEGOS</div></div>
-        <div class="mg-card"><div class="mg-icon">🤒</div><div class="mg-count" id="mc1">3</div><div class="mg-label">LEPROSOS</div></div>
-        <div class="mg-card"><div class="mg-icon">🦽</div><div class="mg-count" id="mc2">3</div><div class="mg-label">PARALÍTICOS</div></div>
-      </div>
-      <div class="npc-grid" id="npcGrid"></div>
-      <div id="waterSec" style="display:none;margin-top:6px">
-        <div class="stitle" style="margin-top:4px">PEDRO — WALKING ON WATER</div>
-        <div style="font-size:7px;color:var(--mu);margin-bottom:3px">Fé de Pedro: <span id="faithPct">70</span>%</div>
-        <div class="faith-wrap"><div class="faith-fill" id="faithFill" style="width:70%"></div></div>
-        <div class="water-vis"><div class="wave-strip"></div><div class="peter" id="peterEl">🧑</div></div>
-        <div style="display:flex;gap:4px;margin-top:4px">
-          <button class="bbtn g" onclick="bf(1)" style="flex:1">🙏 ORAR +20</button>
-          <button class="bbtn r" onclick="bf(-1)" style="flex:1">😨 DUVIDAR -25</button>
-        </div>
-        <div id="waterMsg" style="font-size:7px;color:var(--aq);text-align:center;margin-top:3px;min-height:14px"></div>
-      </div>
-    </div>
-
-    <!-- FASE 4 -->
-    <div class="scene" id="sc4">
-      <div class="stitle">FASE IV — ARENA DE DEBATES</div>
-      <div class="hprow"><div class="hpn" style="color:var(--g)">JESUS</div><div class="hpbg"><div class="hpfill" id="djH" style="width:100%;background:var(--gr)"></div></div><div class="hpnum" id="djHN" style="color:var(--gr)">3/3</div></div>
-      <div class="hprow"><div class="hpn" style="color:var(--pu)">FARISEUS</div><div class="hpbg"><div class="hpfill" id="dfH" style="width:100%;background:var(--pu)"></div></div><div class="hpnum" id="dfHN" style="color:var(--pu)">3/3</div></div>
-      <div id="debQ" style="background:#111128;border:1px solid var(--pu);padding:6px 8px;font-size:10px;color:var(--tm);min-height:46px;line-height:1.6;margin:5px 0"></div>
-      <div class="agrid" id="debBtns"></div>
-      <div id="debRes" style="font-size:7px;text-align:center;margin-top:3px;min-height:14px"></div>
-      <div class="clog" id="debLog"></div>
-    </div>
-
-    <!-- FASE 5 -->
-    <div class="scene" id="sc5">
-      <div id="goSec" class="go-screen">
-        <div style="font-size:36px;margin-bottom:4px">✝️</div>
-        <div class="go-title">GAME OVER</div>
-        <div style="font-size:9px;color:var(--mu);line-height:1.8;margin:4px 0">Judas traiu por 30 moedas...<br>Jesus foi crucificado.<br>Parecia que havia acabado...</div>
-        <div style="font-size:7px;color:#444;margin:5px 0">AGUARDANDO DIA 3...</div>
-        <div class="dots-row" id="dotRow"></div>
-        <button class="bbtn p" id="ressBtn" style="display:none" onclick="doRess()">⚡ DIA 3: RESSURGIR!</button>
-      </div>
-      <div id="ressSec" class="finale-box" style="display:none">
-        <div style="font-size:36px">👑</div>
-        <div class="final-title">RESSURREIÇÃO!</div>
-        <div class="final-aura">∞ AURA INFINITA</div>
-        <div style="font-size:10px;color:var(--tm);line-height:1.7;margin:6px 0">"Toda autoridade no céu<br>e na terra foi dada a mim.<br>Vai e faz discípulos em<br>todas as nações."<br><span style="color:var(--g);font-size:7px">— Mt 28:18-19</span></div>
-        <div class="stitle" style="margin-top:6px">GRANDE COMISSÃO</div>
-        <div class="nation-grid" id="natGrid"></div>
-        <div id="commProg" style="font-size:7px;color:var(--aq);margin:4px 0;min-height:14px"></div>
-        <div id="finalBox" style="display:none">
-          <div style="font-size:9px;color:var(--g);margin:6px 0">🏆 COMISSÃO COMPLETA!</div>
-          <div id="fAura" style="font-size:11px;color:var(--aq);margin:2px 0"></div>
-          <div id="fProph" style="font-size:7px;color:var(--g);margin:2px 0"></div>
-          <div id="fBadge" style="font-size:9px;margin:4px 0"></div>
-          <button class="bbtn" onclick="restartGame()" style="margin-top:6px">↺ JOGAR NOVAMENTE</button>
-        </div>
-      </div>
-    </div>
-
   </div>
 
-  <!-- SIDEBAR -->
-  <div class="side-col">
-    <div class="side-dialog">
-      <div class="sdspk" id="sdSpk">NARRADOR</div>
-      <div class="sdtxt" id="sdTxt">Bem-vindo ao Aura Quest! Siga o Rei Alfa pelo Evangelho de Mateus. Farme aura, colete profecias e prove que Jesus é o Rei prometido!<span class="cur"></span></div>
-    </div>
-    <div class="proph-sec">
-      <div class="stitle">📖 PROFECIAS DO AT</div>
-      <div class="pgrid" id="prophGrid"></div>
-    </div>
+  <!-- PILLS -->
+  <div class="pills">
+    <div class="pill active" data-p="1">I · CHAMADO</div>
+    <div class="pill" data-p="2">II · DESERTO</div>
+    <div class="pill" data-p="3">III · MILAGRES</div>
+    <div class="pill" data-p="4">IV · DEBATE</div>
+    <div class="pill" data-p="5">V · RESSURR.</div>
   </div>
-</div>
 
-</div>
+  <!-- MAIN AREA -->
+  <div class="main">
+    <div class="gcol">
+
+      <!-- ═══ FASE 1 ═══ -->
+      <div class="scene active" id="sc1">
+        <div class="stitle">FASE I — COLETORIA DE MATEUS</div>
+        <!-- Sprite + intro -->
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;flex-shrink:0">
+            <div class="sp">
+              <svg width="44" height="60" viewBox="0 0 16 22"><rect x="5" y="0" width="6" height="6" fill="#8B6914"/><rect x="4" y="6" width="8" height="10" fill="#8B4513"/><rect x="3" y="7" width="2" height="7" fill="#8B4513"/><rect x="11" y="7" width="2" height="7" fill="#8B4513"/><rect x="4" y="16" width="3" height="6" fill="#5C3317"/><rect x="9" y="16" width="3" height="6" fill="#5C3317"/><rect x="6" y="2" width="1" height="1" fill="#000"/><rect x="9" y="2" width="1" height="1" fill="#000"/><rect x="6" y="4" width="4" height="1" fill="#c0392b"/></svg>
+              <div class="spn">MATEUS</div>
+            </div>
+            <div class="sp" id="jsprite1" style="display:none">
+              <svg width="44" height="60" viewBox="0 0 16 22"><rect x="5" y="0" width="6" height="6" fill="#C4A052"/><rect x="4" y="6" width="8" height="10" fill="#FFFFF0"/><rect x="3" y="7" width="2" height="7" fill="#FFFFF0"/><rect x="11" y="7" width="2" height="7" fill="#FFFFF0"/><rect x="4" y="16" width="3" height="6" fill="#D4B48C"/><rect x="9" y="16" width="3" height="6" fill="#D4B48C"/><rect x="6" y="2" width="1" height="1" fill="#000"/><rect x="9" y="2" width="1" height="1" fill="#000"/><circle cx="8" cy="0" r="3" fill="none" stroke="#FFD700" stroke-width=".5"/></svg>
+              <div class="spn" style="color:var(--g)">JESUS ✦</div>
+            </div>
+          </div>
+          <div style="flex:1;display:flex;flex-direction:column;gap:8px">
+            <div class="muted">Mateus estava na mesa de impostos.<br>Todo mundo dava hate nele. Era o <span style="color:var(--re)">beta dos betas</span>...<br>Então Jesus chegou e disse:</div>
+            <div class="callout">"EI, MATEUS. VEM."</div>
+            <div class="muted" style="font-size:9px;color:#444">Apenas 2 palavras. O que você faz?</div>
+          </div>
+        </div>
+        <!-- Escolha -->
+        <div class="agrid" id="p1b">
+          <button class="abtn" onclick="p1('n')">💰 FICAR NA MESA<br><span style="color:var(--mu);font-size:6px">Manter o dinheiro</span></button>
+          <button class="abtn ok" onclick="p1('s')">🚶 SEGUIR JESUS<br><span style="font-size:6px">+1000 AURA!</span></button>
+        </div>
+        <div id="p1msg" style="font-size:9px;color:var(--aq);text-align:center;min-height:14px;flex-shrink:0"></div>
+        <!-- Filler info block -->
+        <div class="spacer"></div>
+        <div style="background:#0d0d24;border:1px solid #1a1a3a;padding:10px 12px;flex-shrink:0">
+          <div style="font-size:5px;color:var(--mu);margin-bottom:4px;letter-spacing:1px">MISSÃO SECUNDÁRIA — INVENTÁRIO DE PROFECIAS</div>
+          <div style="font-size:9px;color:#555;line-height:1.8">Mateus vai citar o Antigo Testamento mais de <span style="color:var(--g)">60 vezes</span> no seu livro.<br>Colete profecias ao longo do jogo para provar a realeza do Rei!</div>
+        </div>
+      </div>
+
+      <!-- ═══ FASE 2 ═══ -->
+      <div class="scene" id="sc2">
+        <div class="stitle">FASE II — GANK NO DESERTO</div>
+        <div style="display:flex;gap:16px;align-items:center;flex-shrink:0">
+          <div style="flex:1;display:flex;flex-direction:column;gap:5px">
+            <div class="hprow"><div class="hpn" style="color:var(--g)">REI ALFA</div><div class="hpbg"><div class="hpf" id="jHp" style="width:100%;background:var(--gr)"></div></div><div class="hpnum" id="jHpN" style="color:var(--gr)">3/3</div></div>
+            <div class="hprow"><div class="hpn" style="color:var(--re)">DIABO</div><div class="hpbg"><div class="hpf" id="dHp" style="width:100%;background:var(--re)"></div></div><div class="hpnum" id="dHpN" style="color:var(--re)">3/3</div></div>
+          </div>
+          <div style="display:flex;gap:12px;align-items:flex-end;flex-shrink:0">
+            <div class="sp"><svg width="38" height="52" viewBox="0 0 16 22"><rect x="5" y="0" width="6" height="6" fill="#C4A052"/><rect x="4" y="6" width="8" height="10" fill="#FFFFF0"/><rect x="3" y="7" width="2" height="7" fill="#FFFFF0"/><rect x="11" y="7" width="2" height="7" fill="#FFFFF0"/><rect x="4" y="16" width="3" height="6" fill="#D4B48C"/><rect x="9" y="16" width="3" height="6" fill="#D4B48C"/><rect x="6" y="2" width="1" height="1" fill="#000"/><rect x="9" y="2" width="1" height="1" fill="#000"/><circle cx="8" cy="0" r="3" fill="none" stroke="#FFD700" stroke-width=".5"/></svg><div class="spn" style="color:var(--g)">JESUS</div></div>
+            <div style="font-size:13px;color:var(--or);padding-bottom:16px;font-family:'Press Start 2P',monospace">VS</div>
+            <div class="sp en"><svg width="38" height="52" viewBox="0 0 16 22"><rect x="5" y="1" width="6" height="6" fill="#880000"/><rect x="4" y="7" width="8" height="10" fill="#660000"/><rect x="3" y="8" width="2" height="7" fill="#660000"/><rect x="11" y="8" width="2" height="7" fill="#660000"/><rect x="4" y="17" width="3" height="5" fill="#440000"/><rect x="9" y="17" width="3" height="5" fill="#440000"/><rect x="5" y="2" width="1" height="2" fill="#ffaa00"/><rect x="10" y="2" width="1" height="2" fill="#ffaa00"/><rect x="6" y="4" width="1" height="1" fill="#ff0000"/><rect x="9" y="4" width="1" height="1" fill="#ff0000"/><rect x="6" y="6" width="4" height="1" fill="#ff6600"/></svg><div class="spn" style="color:var(--re)">DIABO</div></div>
+          </div>
+        </div>
+        <div class="gankq" id="gankMsg">Preparando gank...</div>
+        <div class="agrid" id="gankBtns"></div>
+        <div class="clog" id="gankLog"></div>
+      </div>
+
+      <!-- ═══ FASE 3 ═══ -->
+      <div class="scene" id="sc3">
+        <div class="stitle">FASE III — FARM DE MILAGRES</div>
+        <div class="mcards">
+          <div class="mc"><div class="mc-ico">👁️</div><div class="mc-n" id="mc0">3</div><div class="mc-l">CEGOS</div></div>
+          <div class="mc"><div class="mc-ico">🤒</div><div class="mc-n" id="mc1">3</div><div class="mc-l">LEPROSOS</div></div>
+          <div class="mc"><div class="mc-ico">🦽</div><div class="mc-n" id="mc2">3</div><div class="mc-l">PARALÍT.</div></div>
+        </div>
+        <div class="npcgrid" id="npcGrid"></div>
+        <div class="spacer"></div>
+        <div id="wSec" style="display:none;flex-direction:column;gap:7px;flex-shrink:0">
+          <div style="background:#0d0d24;border:1px solid #1a1a3a;padding:10px 12px">
+            <div class="stitle" style="margin-bottom:6px">PEDRO — WALKING ON WATER 🌊</div>
+            <div style="font-size:7px;color:var(--mu);margin-bottom:4px">Fé de Pedro: <span id="fPct">70</span>%</div>
+            <div class="fbar-w"><div class="fbar-f" id="fFill" style="width:70%"></div></div>
+            <div class="wvis" style="margin:6px 0"><div class="wave"></div><div class="peter" id="peterEl">🧑</div></div>
+            <div class="wbtns">
+              <button class="bbtn g" onclick="bf(1)" style="flex:1">🙏 ORAR +20</button>
+              <button class="bbtn r" onclick="bf(-1)" style="flex:1">😨 DUVIDAR -25</button>
+            </div>
+            <div id="wMsg" style="font-size:7px;color:var(--aq);text-align:center;margin-top:5px;min-height:14px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ FASE 4 ═══ -->
+      <div class="scene" id="sc4">
+        <div class="stitle">FASE IV — ARENA DE DEBATES</div>
+        <div style="display:flex;flex-direction:column;gap:5px;flex-shrink:0">
+          <div class="hprow"><div class="hpn" style="color:var(--g)">JESUS</div><div class="hpbg"><div class="hpf" id="djH" style="width:100%;background:var(--gr)"></div></div><div class="hpnum" id="djHN" style="color:var(--gr)">3/3</div></div>
+          <div class="hprow"><div class="hpn" style="color:var(--pu)">FARISEUS</div><div class="hpbg"><div class="hpf" id="dfH" style="width:100%;background:var(--pu)"></div></div><div class="hpnum" id="dfHN" style="color:var(--pu)">3/3</div></div>
+        </div>
+        <div class="qbox" id="debQ"></div>
+        <div class="agrid" id="debBtns"></div>
+        <div id="debRes" style="font-size:7px;text-align:center;min-height:16px;flex-shrink:0"></div>
+        <div class="clog" id="debLog"></div>
+      </div>
+
+      <!-- ═══ FASE 5 ═══ -->
+      <div class="scene" id="sc5">
+        <div class="gosec" id="goSec">
+          <div style="font-size:52px">✝️</div>
+          <div class="go-t">GAME OVER</div>
+          <div class="muted" style="text-align:center;line-height:2.1">Judas traiu por 30 moedas...<br>Jesus foi crucificado.<br>Parecia que havia acabado...</div>
+          <div style="font-size:7px;color:#333">AGUARDANDO DIA 3...</div>
+          <div class="dots" id="dotRow"></div>
+          <button class="bbtn p" id="ressBtn" style="display:none;width:auto;padding:10px 24px" onclick="doRess()">⚡ DIA 3: RESSURGIR!</button>
+        </div>
+        <div class="finsec" id="finSec" style="display:none">
+          <div style="font-size:48px">👑</div>
+          <div class="fin-t">RESSURREIÇÃO!</div>
+          <div class="fin-a">∞ AURA INFINITA</div>
+          <div class="muted" style="text-align:center;line-height:2">"Toda autoridade no céu e na terra foi dada a mim.<br>Vai e faz discípulos em todas as nações."<br><span style="color:var(--g);font-size:8px">— Mateus 28:18-19</span></div>
+          <div class="stitle" style="width:100%">GRANDE COMISSÃO</div>
+          <div class="natgrid" id="natGrid"></div>
+          <div id="cProg" style="font-size:7px;color:var(--aq);min-height:14px"></div>
+          <div id="finBox" style="display:none;width:100%;text-align:center">
+            <div style="font-size:9px;color:var(--g);margin:5px 0">🏆 COMISSÃO COMPLETA!</div>
+            <div id="fA" style="font-size:11px;color:var(--aq);margin:3px 0"></div>
+            <div id="fP" style="font-size:7px;color:var(--g);margin:3px 0"></div>
+            <div id="fB" style="font-size:10px;margin:5px 0"></div>
+            <button class="bbtn" onclick="restart()" style="width:auto;padding:10px 20px;margin-top:6px">↺ JOGAR NOVAMENTE</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /gcol -->
+
+    <!-- SIDEBAR -->
+    <div class="side">
+      <div class="sdlg">
+        <div class="sdspk" id="sdSpk">NARRADOR</div>
+        <div class="sdtxt" id="sdTxt">Bem-vindo ao Aura Quest! Siga o Rei Alfa pelo Evangelho de Mateus. Farme aura, colete profecias e prove que Jesus é o Rei prometido!<span class="cur"></span></div>
+      </div>
+      <div class="psec">
+        <div class="stitle">📖 PROFECIAS DO AT</div>
+        <div class="pgrid" id="pGrid"></div>
+        <div id="pLbl" style="font-size:7px;color:var(--mu);margin-top:6px">0 de 60 coletadas</div>
+      </div>
+    </div>
+
+  </div><!-- /main -->
+</div><!-- /shell -->
 
 <script>
-const G={aura:0,max:10000,pr:0,phase:1,gR:0,jHp:3,dHp:3,mr:{c:3,l:3,p:3},
-  faith:70,wDone:false,dR:0,djH:3,dfH:3,nR:0};
-
+const G={a:0,max:10000,pr:0,phase:1,gR:0,jH:3,dH:3,mr:{c:3,l:3,p:3},faith:70,wD:false,dR:0,djH:3,dfH:3,nR:0};
 const GANKS=[
-  {a:"Se você é Filho de Deus, transforme estas pedras em pão!",
-   ops:[{t:"Fazer milagre pra provar",c:false},{t:"Mt 4:4 — Não só de pão viverá o homem...",c:true},{t:"Ignorar completamente",c:false},{t:"Aceitar o desafio",c:false}],v:"Mt 4:4"},
-  {a:"Jogue-se do alto do templo! Os anjos te carregarão!",
-   ops:[{t:"Saltar do templo",c:false},{t:"Mt 4:7 — Não tentarás o Senhor teu Deus",c:true},{t:"Negociar com o diabo",c:false},{t:"Chamar os anjos",c:false}],v:"Mt 4:7"},
-  {a:"Curve-se a mim e darei todos os reinos do mundo!",
-   ops:[{t:"Aceitar o negócio",c:false},{t:"Pedir mais tempo pra pensar",c:false},{t:"Mt 4:10 — Ao Senhor teu Deus adorarás!",c:true},{t:"Contra-propor",c:false}],v:"Mt 4:10"}
+  {q:"Se você é Filho de Deus, transforme estas pedras em pão!",ops:[{t:"Fazer milagre pra provar",c:false},{t:'Mt 4:4 — "Não só de pão viverá o homem..."',c:true},{t:"Ignorar completamente",c:false},{t:"Aceitar o desafio",c:false}],v:"Mt 4:4"},
+  {q:"Jogue-se do alto do templo! Os anjos te carregarão!",ops:[{t:"Saltar do templo",c:false},{t:'Mt 4:7 — "Não tentarás o Senhor teu Deus"',c:true},{t:"Negociar com o diabo",c:false},{t:"Chamar os anjos",c:false}],v:"Mt 4:7"},
+  {q:"Curve-se a mim e darei todos os reinos do mundo!",ops:[{t:"Aceitar o negócio",c:false},{t:"Pedir mais tempo pra pensar",c:false},{t:'Mt 4:10 — "Ao Senhor teu Deus adorarás!"',c:true},{t:"Contra-propor",c:false}],v:"Mt 4:10"}
 ];
 const DEBS=[
-  {q:"Por que seus discípulos comem sem lavar as mãos?",
-   ops:[{t:"Desculpa, vou obrigá-los a lavar.",c:false},{t:"Honrar a Deus importa mais que tradições! (Mt 15:3)",c:true},{t:"Higiene não é importante.",c:false},{t:"Silêncio estratégico.",c:false}]},
-  {q:"Por qual autoridade você faz essas coisas?",
-   ops:[{t:"Respondo tudo sem questionar.",c:false},{t:"Me diga sobre João Batista primeiro... (Mt 21:24)",c:true},{t:"Ignorar e continuar.",c:false},{t:"Pedir ajuda dos discípulos.",c:false}]},
-  {q:"Devemos pagar impostos a César ou não?",
-   ops:[{t:"Sim, paguem tudo ao governo.",c:false},{t:"Não, resistam ao império!",c:false},{t:"Dai a César o de César, a Deus o de Deus. (Mt 22:21)",c:true},{t:"Sem resposta certa.",c:false}]}
+  {q:"Por que seus discípulos comem sem lavar as mãos?",ops:[{t:"Desculpa, vou obrigá-los a lavar.",c:false},{t:"Honrar a Deus importa mais que tradições humanas! (Mt 15:3)",c:true},{t:"Higiene não é importante.",c:false},{t:"Silêncio estratégico.",c:false}]},
+  {q:"Por qual autoridade você faz essas coisas?",ops:[{t:"Respondo tudo sem questionar.",c:false},{t:"Me diga sobre João Batista primeiro... (Mt 21:24)",c:true},{t:"Ignorar e continuar.",c:false},{t:"Pedir ajuda dos discípulos.",c:false}]},
+  {q:"Devemos pagar impostos a César ou não?",ops:[{t:"Sim, paguem tudo ao governo.",c:false},{t:"Não, resistam ao império!",c:false},{t:"Dai a César o de César, a Deus o de Deus. (Mt 22:21)",c:true},{t:"Sem resposta certa.",c:false}]}
 ];
 const NATIONS=["🌍 África","🌎 Américas","🌏 Ásia","🏔️ Europa","🏝️ Oceania","🕌 Oriente M."];
 
-function addA(n,r){G.aura=Math.min(G.max,G.aura+n);updHUD();notif('+'+n+' AURA'+(r?' — '+r:''),'aura')}
-function loseA(n,r){G.aura=Math.max(0,G.aura-n);updHUD();notif('-'+n+' AURA'+(r?' — '+r:''),'r')}
-function addP(n){const a=Math.min(n,60-G.pr);G.pr+=a;updHUD();renderPG();if(a>0)notif('+'+a+' profecias!','gld')}
-function updHUD(){
-  document.getElementById('auraDisp').textContent=G.aura.toLocaleString();
-  document.getElementById('auraBar').style.width=Math.round((G.aura/G.max)*100)+'%';
-  document.getElementById('prophDisp').textContent=G.pr;
-  document.getElementById('phaseNum').textContent=G.phase;
+function addA(n,r){G.a=Math.min(G.max,G.a+n);upd();toast('+'+n+' AURA'+(r?' — '+r:''),'aura')}
+function loseA(n,r){G.a=Math.max(0,G.a-n);upd();toast('-'+n+' AURA'+(r?' — '+r:''),'r')}
+function addP(n){const a=Math.min(n,60-G.pr);G.pr+=a;upd();renderPG();if(a>0)toast('+'+a+' profecias!','gld')}
+function upd(){
+  document.getElementById('aDisp').textContent=G.a.toLocaleString('pt-BR');
+  document.getElementById('aBar').style.width=Math.round((G.a/G.max)*100)+'%';
+  document.getElementById('pDisp').textContent=G.pr;
+  document.getElementById('phN').textContent=G.phase;
+  const l=document.getElementById('pLbl');if(l)l.textContent=G.pr+' de 60 coletadas';
 }
-function setD(spk,txt){document.getElementById('sdSpk').textContent=spk;document.getElementById('sdTxt').textContent=txt;}
-function notif(msg,type){
-  const a=document.getElementById('notifArea');
-  const el=document.createElement('div');
-  el.className='nf '+(type||'');el.textContent=msg;
+function setD(s,t){document.getElementById('sdSpk').textContent=s;document.getElementById('sdTxt').textContent=t;}
+function toast(msg,type){
+  const a=document.getElementById('toasts');
+  const el=document.createElement('div');el.className='toast '+(type||'');el.textContent=msg;
   a.appendChild(el);
-  setTimeout(()=>{el.style.opacity='0';el.style.transition='opacity .4s';setTimeout(()=>el.remove(),450)},1800);
+  setTimeout(()=>{el.style.opacity='0';setTimeout(()=>el.remove(),450)},1800);
 }
 function renderPG(){
-  const g=document.getElementById('prophGrid');g.innerHTML='';
-  for(let i=0;i<60;i++){const d=document.createElement('div');d.className='pslot'+(i<G.pr?' f':'');d.textContent=i<G.pr?'📜':'';g.appendChild(d);}
+  const g=document.getElementById('pGrid');g.innerHTML='';
+  for(let i=0;i<60;i++){const d=document.createElement('div');d.className='psl'+(i<G.pr?' f':'');d.textContent=i<G.pr?'📜':'';g.appendChild(d);}
 }
 function goTo(n){
   document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
   document.getElementById('sc'+n).classList.add('active');
   G.phase=n;
-  document.querySelectorAll('.pill').forEach(p=>{
-    p.classList.remove('active','done');
-    const ph=+p.dataset.p;
-    if(ph===n)p.classList.add('active');
-    else if(ph<n)p.classList.add('done');
-  });
-  updHUD();
+  document.querySelectorAll('.pill').forEach(p=>{p.classList.remove('active','done');const ph=+p.dataset.p;if(ph===n)p.classList.add('active');else if(ph<n)p.classList.add('done');});
+  upd();
 }
-document.querySelectorAll('.pill').forEach(p=>{
-  p.addEventListener('click',()=>{
-    if(p.classList.contains('done')||p.classList.contains('active'))goTo(+p.dataset.p);
-  });
-});
+document.querySelectorAll('.pill').forEach(p=>{p.addEventListener('click',()=>{if(p.classList.contains('done')||p.classList.contains('active'))goTo(+p.dataset.p);});});
 
-/* FASE 1 */
 function p1(c){
-  document.getElementById('p1btns').querySelectorAll('button').forEach(b=>b.disabled=true);
-  document.getElementById('jspr1').style.display='block';
+  document.getElementById('p1b').querySelectorAll('button').forEach(b=>b.disabled=true);
   if(c==='s'){
+    document.getElementById('jsprite1').style.display='block';
     addA(1000,'Largou tudo pra seguir!');addP(8);
-    setD('JESUS','Mateus foi. Sem hesitar. Farmou a primeira aura da vida só de seguir o mestre.');
+    setD('JESUS','Mateus foi. Sem hesitar. Farmou a primeira aura da vida só de seguir o mestre!');
     document.getElementById('p1msg').textContent='✅ Fase 1 completa!';
-    setTimeout(()=>{
-      document.getElementById('p1btns').innerHTML='<button class="bbtn g" onclick="goP2()" style="grid-column:span 2">▶ IR PARA O DESERTO</button>';
-      document.getElementById('p1btns').querySelector('button').disabled=false;
-    },1200);
-  } else {
+    setTimeout(()=>{document.getElementById('p1b').innerHTML='<button class="bbtn g" onclick="goP2()" style="grid-column:span 2">▶ IR PARA O DESERTO</button>';document.getElementById('p1b').querySelector('button').disabled=false;},1200);
+  }else{
     loseA(500,'Ficou na mesa das moedas');
     setD('NARRADOR','Mateus hesitou. Perdeu a maior oportunidade da vida. Tente de novo!');
-    setTimeout(()=>document.getElementById('p1btns').querySelectorAll('button').forEach(b=>b.disabled=false),800);
-    document.getElementById('jspr1').style.display='none';
+    setTimeout(()=>document.getElementById('p1b').querySelectorAll('button').forEach(b=>b.disabled=false),800);
   }
 }
-function goP2(){
-  goTo(2);setD('NARRADOR','Jesus foi ao deserto. O Diabo tentou dar gank 3 vezes. Selecione o versículo correto!');
-  renderGank();
-}
-
-/* FASE 2 */
+function goP2(){goTo(2);setD('NARRADOR','Jesus foi ao deserto. O Diabo tentou dar gank 3 vezes. Selecione o versículo correto!');renderGank();}
 function renderGank(){
   if(G.gR>=3){p2Win();return;}
   const gk=GANKS[G.gR];
-  document.getElementById('gankMsg').textContent='GANK '+(G.gR+1)+'/3: "'+gk.a+'"';
+  document.getElementById('gankMsg').textContent='GANK '+(G.gR+1)+'/3: "'+gk.q+'"';
   const el=document.getElementById('gankBtns');el.innerHTML='';
-  gk.ops.forEach(op=>{
-    const b=document.createElement('button');b.className='abtn';b.textContent=op.t;
-    b.onclick=()=>doGank(op.c,b,gk.v);el.appendChild(b);
-  });
+  gk.ops.forEach(op=>{const b=document.createElement('button');b.className='abtn';b.textContent=op.t;b.onclick=()=>doGank(op.c,b,gk.v);el.appendChild(b);});
 }
 function doGank(ok,btn,v){
   document.getElementById('gankBtns').querySelectorAll('button').forEach(b=>b.disabled=true);
   const log=document.getElementById('gankLog');
   if(ok){
-    btn.classList.add('ok');G.dHp--;
-    addA(1000,'Versículo certeiro!');addP(3);
-    document.getElementById('dHp').style.width=Math.round((G.dHp/3)*100)+'%';
-    document.getElementById('dHpN').textContent=G.dHp+'/3';
-    const e=document.createElement('div');e.className='ent ok';e.textContent='✅ '+v+' — Gank bloqueado!';
-    log.appendChild(e);log.scrollTop=9999;
-    setD('JESUS','"'+v+'" — Respondeu na lógica. Diabo sem resposta!');
-    G.gR++;setTimeout(renderGank,1100);
-  } else {
+    btn.classList.add('ok');G.dH--;addA(1000,'Versículo certeiro!');addP(3);
+    document.getElementById('dHp').style.width=Math.round((G.dH/3)*100)+'%';document.getElementById('dHpN').textContent=G.dH+'/3';
+    const e=document.createElement('div');e.className='e ok';e.textContent='✅ '+v+' — Gank bloqueado!';log.appendChild(e);log.scrollTop=9999;
+    setD('JESUS','"'+v+'" — Respondeu na lógica. Diabo sem resposta!');G.gR++;setTimeout(renderGank,1100);
+  }else{
     btn.classList.add('no');loseA(300,'Versículo errado');
-    const e=document.createElement('div');e.className='ent no';e.textContent='❌ Errou! Tente outro versículo.';
-    log.appendChild(e);log.scrollTop=9999;
+    const e=document.createElement('div');e.className='e no';e.textContent='❌ Errou! Tente outro.';log.appendChild(e);log.scrollTop=9999;
     setD('NARRADOR','Versículo errado! O Diabo aproveitou a brecha. Tente outro!');
     setTimeout(()=>document.getElementById('gankBtns').querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('no');}),700);
   }
@@ -413,160 +492,114 @@ function p2Win(){
   document.getElementById('dHp').style.width='0%';document.getElementById('dHpN').textContent='0 — FOI!';
   document.getElementById('gankMsg').textContent='🏆 DIABO DERROTADO! Fugiu sem aura nenhuma.';
   document.getElementById('gankBtns').innerHTML='<button class="bbtn g" onclick="goP3()" style="grid-column:span 2">▶ IR PARA OS MILAGRES</button>';
-  addA(2000,'3 ganks bloqueados!');
-  setD('SISTEMA','3 tentativas, 3 derrotas. O Diabo foi embora com aura zero. Missão completa!');
+  addA(2000,'3 ganks bloqueados!');setD('SISTEMA','3 tentativas, 3 derrotas. O Diabo foi embora com zero aura!');
 }
-
-/* FASE 3 */
 function goP3(){goTo(3);setD('NARRADOR','Galileia aberta! Cure os NPCs e depois ajude Pedro a andar sobre as águas!');renderNPCs();}
 function renderNPCs(){
-  const types=[{k:'c',i:'👁️',l:'Cego'},{k:'c',i:'👁️',l:'Cego'},{k:'c',i:'👁️',l:'Cego'},
-    {k:'l',i:'🤒',l:'Leproso'},{k:'l',i:'🤒',l:'Leproso'},{k:'l',i:'🤒',l:'Leproso'},
-    {k:'p',i:'🦽',l:'Paralítico'},{k:'p',i:'🦽',l:'Paralítico'},{k:'p',i:'🦽',l:'Paralítico'}];
+  const types=[{k:'c',i:'👁️',l:'Cego'},{k:'c',i:'👁️',l:'Cego'},{k:'c',i:'👁️',l:'Cego'},{k:'l',i:'🤒',l:'Leproso'},{k:'l',i:'🤒',l:'Leproso'},{k:'l',i:'🤒',l:'Leproso'},{k:'p',i:'🦽',l:'Paralítico'},{k:'p',i:'🦽',l:'Paralítico'},{k:'p',i:'🦽',l:'Paralítico'}];
   const g=document.getElementById('npcGrid');g.innerHTML='';
-  types.forEach((t,i)=>{
-    const b=document.createElement('button');b.className='npc-btn';
-    b.innerHTML=`<div class="npc-ico">${t.i}</div><span class="npc-lbl">${t.l}</span>`;
-    b.id='npc'+i;b.onclick=()=>cureNPC(t.k,b,i);g.appendChild(b);
-  });
+  types.forEach(t=>{const b=document.createElement('button');b.className='npcb';b.innerHTML='<div class="npcico">'+t.i+'</div><span class="npclbl">'+t.l+'</span>';b.onclick=()=>cureNPC(t.k,b);g.appendChild(b);});
 }
-function cureNPC(k,btn,i){
-  btn.disabled=true;btn.innerHTML='<div class="npc-ico">✨</div><span class="npc-lbl" style="color:var(--gr)">CURADO!</span>';
-  const map={c:'mc0',l:'mc1',p:'mc2'};
-  G.mr[{c:'c',l:'l',p:'p'}[k]]--;
-  document.getElementById(map[k]).textContent=G.mr[{c:'c',l:'l',p:'p'}[k]];
-  addA(500,'Milagre realizado!');addP(2);
-  setD('JESUS','Seja curado! Sua fé te salvou.');
+function cureNPC(k,btn){
+  btn.disabled=true;btn.innerHTML='<div class="npcico">✨</div><span class="npclbl" style="color:var(--gr)">CURADO!</span>';
+  const map={c:'mc0',l:'mc1',p:'mc2'};G.mr[k]--;document.getElementById(map[k]).textContent=G.mr[k];
+  addA(500,'Milagre realizado!');addP(2);setD('JESUS','Seja curado! Sua fé te salvou.');
   if(G.mr.c+G.mr.l+G.mr.p===0){
     setD('SISTEMA','Todos curados! Agora Pedro vai tentar andar sobre as águas...');
-    setTimeout(()=>{document.getElementById('waterSec').style.display='block';},600);
+    setTimeout(()=>{const ws=document.getElementById('wSec');ws.style.display='flex';},600);
   }
 }
 function bf(dir){
   G.faith=Math.min(100,Math.max(0,G.faith+(dir>0?20:-25)));
-  document.getElementById('faithFill').style.width=G.faith+'%';
-  document.getElementById('faithPct').textContent=G.faith;
+  document.getElementById('fFill').style.width=G.faith+'%';document.getElementById('fPct').textContent=G.faith;
   if(G.faith<=20){
     document.getElementById('peterEl').classList.add('sink');
-    document.getElementById('waterMsg').textContent='😱 MODO BETA! Pedro afundou...';
-    document.getElementById('waterMsg').style.color='var(--re)';
-    loseA(500,'Pedro entrou em modo beta!');
-    setTimeout(()=>{document.getElementById('peterEl').classList.remove('sink');G.faith=40;bf(0);},1400);
-  } else if(G.faith>=80&&!G.wDone){
-    G.wDone=true;
-    document.getElementById('waterMsg').textContent='⚡ Fé inabalável! Pedro está firme!';
-    document.getElementById('waterMsg').style.color='var(--gr)';
+    document.getElementById('wMsg').textContent='😱 MODO BETA! Pedro afundou...';document.getElementById('wMsg').style.color='var(--re)';
+    loseA(500,'Pedro em modo beta!');
+    setTimeout(()=>{document.getElementById('peterEl').classList.remove('sink');G.faith=40;document.getElementById('fFill').style.width='40%';document.getElementById('fPct').textContent=40;},1400);
+  }else if(G.faith>=80&&!G.wD){
+    G.wD=true;
+    document.getElementById('wMsg').textContent='⚡ Fé inabalável! Pedro está firme!';document.getElementById('wMsg').style.color='var(--gr)';
     addA(1500,'Milagres + Pedro!');
-    setD('SISTEMA','Pedro foi resgatado! Jesus disse: "Por que duvidaste?" Próximo: Debates em Jerusalém.');
-    setTimeout(()=>{
-      document.getElementById('waterSec').innerHTML+='<button class="bbtn g" onclick="goP4()" style="margin-top:6px">▶ IR PARA JERUSALÉM</button>';
-    },800);
+    setD('SISTEMA','Pedro resgatado! Jesus: "Por que duvidaste?" Próximo: Debates em Jerusalém.');
+    setTimeout(()=>{document.getElementById('wSec').innerHTML+='<button class="bbtn g" onclick="goP4()" style="margin-top:6px">▶ IR PARA JERUSALÉM</button>';},800);
   }
 }
-
-/* FASE 4 */
-function goP4(){goTo(4);setD('FARISEUS','Achamos que podemos derrotar o Rei Alfa com palavras capciosas! Começa o debate!');G.dR=0;G.djH=3;G.dfH=3;renderDeb();}
+function goP4(){goTo(4);setD('FARISEUS','Pensamos que podemos derrotar o Rei Alfa com palavras capciosas! Começa o debate!');G.dR=0;G.djH=3;G.dfH=3;renderDeb();}
 function renderDeb(){
   if(G.dR>=3){p4Win();return;}
   const d=DEBS[G.dR];
-  document.getElementById('debQ').textContent='🧔 FARISEU: "'+d.q+'"';
-  document.getElementById('debRes').textContent='';
+  document.getElementById('debQ').textContent='🧔 FARISEU: "'+d.q+'"';document.getElementById('debRes').textContent='';
   const el=document.getElementById('debBtns');el.innerHTML='';
-  d.ops.forEach(op=>{
-    const b=document.createElement('button');b.className='abtn';b.textContent=op.t;
-    b.onclick=()=>doDeb(op.c,b);el.appendChild(b);
-  });
+  d.ops.forEach(op=>{const b=document.createElement('button');b.className='abtn';b.textContent=op.t;b.onclick=()=>doDeb(op.c,b);el.appendChild(b);});
 }
 function doDeb(ok,btn){
   document.getElementById('debBtns').querySelectorAll('button').forEach(b=>b.disabled=true);
   const log=document.getElementById('debLog');
   if(ok){
-    btn.classList.add('ok');G.dfH--;
-    addA(1000,'Debate vencido!');addP(4);
-    document.getElementById('dfH').style.width=Math.round((G.dfH/3)*100)+'%';
-    document.getElementById('dfHN').textContent=G.dfH+'/3';
-    const e=document.createElement('div');e.className='ent gl';e.textContent='✅ Debate '+(G.dR+1)+' VENCIDO! +1000 AURA';
-    log.appendChild(e);log.scrollTop=9999;
-    document.getElementById('debRes').textContent='🔥 +1000 AURA no debate!';
-    document.getElementById('debRes').style.color='var(--g)';
+    btn.classList.add('ok');G.dfH--;addA(1000,'Debate vencido!');addP(4);
+    document.getElementById('dfH').style.width=Math.round((G.dfH/3)*100)+'%';document.getElementById('dfHN').textContent=G.dfH+'/3';
+    const e=document.createElement('div');e.className='e gl';e.textContent='✅ Debate '+(G.dR+1)+' vencido! +1000 aura';log.appendChild(e);log.scrollTop=9999;
+    document.getElementById('debRes').style.color='var(--g)';document.getElementById('debRes').textContent='🔥 +1000 AURA no debate!';
     G.dR++;setTimeout(renderDeb,1100);
-  } else {
+  }else{
     btn.classList.add('no');G.djH--;loseA(300,'Resposta errada');
-    document.getElementById('djH').style.width=Math.round((G.djH/3)*100)+'%';
-    document.getElementById('djHN').textContent=G.djH+'/3';
-    const e=document.createElement('div');e.className='ent no';e.textContent='❌ Fariseus aproveitaram...';
-    log.appendChild(e);log.scrollTop=9999;
-    document.getElementById('debRes').textContent='Resposta errada! Tente outra.';
-    document.getElementById('debRes').style.color='var(--re)';
+    document.getElementById('djH').style.width=Math.round((G.djH/3)*100)+'%';document.getElementById('djHN').textContent=G.djH+'/3';
+    const e=document.createElement('div');e.className='e no';e.textContent='❌ Fariseus aproveitaram...';log.appendChild(e);log.scrollTop=9999;
+    document.getElementById('debRes').style.color='var(--re)';document.getElementById('debRes').textContent='Resposta errada! Tente outra.';
     setTimeout(()=>document.getElementById('debBtns').querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('no');}),700);
   }
 }
 function p4Win(){
   document.getElementById('dfH').style.width='0%';
-  document.getElementById('debQ').innerHTML='<span style="color:var(--re)">JUDAS virou beta e vendeu Jesus por 30 moedas...<br>O Rei foi crucificado. O maior gank da história.</span>';
+  document.getElementById('debQ').innerHTML='<span style="color:var(--re)">JUDAS virou beta e vendeu Jesus por 30 moedas de prata...<br>O Rei foi crucificado. O maior gank da história.</span>';
   document.getElementById('debBtns').innerHTML='<button class="bbtn p" onclick="goTo(5);startGO()" style="grid-column:span 2">▶ FASE FINAL: O RESPAWN</button>';
-  addA(2000,'3 debates vencidos!');
-  setD('SISTEMA','Judas — 30 moedas. Que betona. Os discípulos fugiram com menos infinito de aura. Mas aguarde...');
+  addA(2000,'3 debates vencidos!');setD('SISTEMA','Judas — 30 moedas. Os discípulos fugiram. Mas aguarde o dia 3...');
 }
-
-/* FASE 5 */
 function startGO(){
   setD('NARRADOR','Game Over temporário. A morte parecia ter vencido. Mas espere o dia 3...');
   let d=0;const dr=document.getElementById('dotRow');
-  const iv=setInterval(()=>{
-    d++;const sp=document.createElement('span');sp.style.cssText='font-size:16px;color:var(--g)';sp.textContent='•';
-    dr.appendChild(sp);
-    if(d>=9){clearInterval(iv);document.getElementById('ressBtn').style.display='block';}
-  },450);
+  const iv=setInterval(()=>{d++;const s=document.createElement('span');s.style.cssText='font-size:20px;color:var(--g)';s.textContent='•';dr.appendChild(s);if(d>=9){clearInterval(iv);document.getElementById('ressBtn').style.display='inline-block';}},450);
 }
 function doRess(){
   document.getElementById('goSec').style.display='none';
-  document.getElementById('ressSec').style.display='block';
-  G.aura=G.max;updHUD();
-  addP(6);
+  document.getElementById('finSec').style.display='flex';
+  G.a=G.max;addP(6);upd();
   setD('JESUS','Toda autoridade no céu e na terra foi dada a mim! Vai e faz discípulos em todas as nações!');
   renderNations();
 }
 function renderNations(){
   const g=document.getElementById('natGrid');g.innerHTML='';
-  NATIONS.forEach((n,i)=>{
-    const b=document.createElement('button');b.className='abtn';
-    b.style.cssText='font-size:10px;text-align:center;padding:6px 4px;';
-    b.innerHTML=n+'<br><span style="font-size:5px;color:var(--mu)">Recrutar</span>';
-    b.onclick=()=>recruit(b,n,i);g.appendChild(b);
-  });
+  NATIONS.forEach(n=>{const b=document.createElement('button');b.className='natb';b.innerHTML=n+'<br><span style="font-size:6px;color:var(--mu)">Recrutar</span>';b.onclick=()=>recruit(b,n);g.appendChild(b);});
 }
-function recruit(btn,n,i){
-  btn.disabled=true;btn.classList.add('ok');
-  btn.innerHTML=n+'<br><span style="font-size:5px;color:var(--gr)">✅ Discípulos!</span>';
+function recruit(btn,n){
+  btn.disabled=true;btn.classList.add('ok');btn.innerHTML=n+'<br><span style="font-size:6px">✅ Discípulos!</span>';
   G.nR++;addA(500,'Nação recrutada!');addP(2);
-  document.getElementById('commProg').textContent=G.nR+'/'+NATIONS.length+' nações alcançadas';
+  document.getElementById('cProg').textContent=G.nR+'/'+NATIONS.length+' nações alcançadas';
   if(G.nR>=NATIONS.length)showFinal();
 }
 function showFinal(){
-  const fs=document.getElementById('finalBox');fs.style.display='block';
-  document.getElementById('fAura').textContent='AURA: '+G.aura.toLocaleString();
-  document.getElementById('fProph').textContent='PROFECIAS: '+G.pr+'/60';
-  const badge=G.pr>=55?'🏆 DISCÍPULO ALFA DESBLOQUEADO!':G.pr>=40?'⭐ Estudioso do Reino!':'📜 Continue coletando!';
-  document.getElementById('fBadge').textContent=badge;
+  const fb=document.getElementById('finBox');fb.style.display='block';
+  document.getElementById('fA').textContent='AURA: '+G.a.toLocaleString('pt-BR');
+  document.getElementById('fP').textContent='PROFECIAS: '+G.pr+'/60';
+  document.getElementById('fB').textContent=G.pr>=55?'🏆 DISCÍPULO ALFA DESBLOQUEADO!':G.pr>=40?'⭐ Estudioso do Reino!':'📜 Continue coletando!';
   setD('SISTEMA','Grande Comissão completa! Você farmou aura por toda a eternidade com o Rei Alfa!');
 }
-function restartGame(){
-  Object.assign(G,{aura:0,pr:0,phase:1,gR:0,jHp:3,dHp:3,mr:{c:3,l:3,p:3},faith:70,wDone:false,dR:0,djH:3,dfH:3,nR:0});
-  updHUD();renderPG();
+function restart(){
+  Object.assign(G,{a:0,pr:0,phase:1,gR:0,jH:3,dH:3,mr:{c:3,l:3,p:3},faith:70,wD:false,dR:0,djH:3,dfH:3,nR:0});
+  upd();renderPG();
   document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active','done'));
   document.querySelector('[data-p="1"]').classList.add('active');
-  document.getElementById('jspr1').style.display='none';
+  document.getElementById('jsprite1').style.display='none';
   document.getElementById('p1msg').textContent='';
-  document.getElementById('p1btns').innerHTML=`
-    <button class="abtn" onclick="p1('n')">💰 FICAR<br><span style="color:var(--mu);font-size:5px">Manter o dinheiro</span></button>
-    <button class="abtn ok" onclick="p1('s')">🚶 SEGUIR<br><span style="font-size:5px">+1000 AURA!</span></button>`;
-  document.getElementById('goSec').style.display='block';
-  document.getElementById('ressSec').style.display='none';
-  document.getElementById('dotRow').innerHTML='';
-  document.getElementById('ressBtn').style.display='none';
-  setD('NARRADOR','Bem-vindo de volta ao Aura Quest! Siga o Rei Alfa pelo Evangelho de Mateus!');
+  document.getElementById('p1b').innerHTML=`<button class="abtn" onclick="p1('n')">💰 FICAR NA MESA<br><span style="color:var(--mu);font-size:6px">Manter o dinheiro</span></button><button class="abtn ok" onclick="p1('s')">🚶 SEGUIR JESUS<br><span style="font-size:6px">+1000 AURA!</span></button>`;
+  document.getElementById('goSec').style.display='flex';document.getElementById('finSec').style.display='none';
+  document.getElementById('dotRow').innerHTML='';document.getElementById('ressBtn').style.display='none';
+  setD('NARRADOR','Bem-vindo de volta! Siga o Rei Alfa pelo Evangelho de Mateus!');
   goTo(1);
 }
-renderPG();updHUD();
+renderPG();upd();
+setD('NARRADOR','Bem-vindo ao Aura Quest! Siga o Rei Alfa pelo Evangelho de Mateus. Farme aura, colete profecias e prove que Jesus é o Rei prometido!');
 </script>
+</body>
+</html>
