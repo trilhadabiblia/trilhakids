@@ -1,1147 +1,572 @@
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g:#FFD700;--gd:#B8860B;--aq:#00DDCC;--bg:#0a0a18;--bp:#0d0d28;--tm:#e0e0ff;
+  --mu:#7777aa;--re:#ff4455;--gr:#33ee77;--pu:#bb44ff;--or:#ff8833;
+}
+.gw{background:var(--bg);color:var(--tm);font-family:'Press Start 2P',monospace;font-size:11px;width:100%;max-width:100%;overflow:hidden}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+.hdr{background:var(--bp);border-bottom:2px solid var(--g);padding:6px 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.htitle{font-size:9px;color:var(--g);letter-spacing:1px;line-height:1.5;white-space:nowrap}
+.hud-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.hstat{background:#111128;border:1px solid #33336a;padding:3px 7px;font-size:7px;white-space:nowrap}
+.hstat span{color:var(--aq);font-size:9px}
+.abar-wrap{background:#111128;border:1px solid #33336a;padding:3px 7px;flex:1;min-width:100px}
+.abar-bg{background:#111;height:8px;border-radius:1px;overflow:hidden;margin-top:2px}
+.abar-fill{height:100%;background:var(--aq);transition:width .5s ease;min-width:2px}
 
-:root {
-  --gold: #FFD700;
-  --gold-dark: #B8860B;
-  --aura: #00FFFF;
-  --aura-dark: #006666;
-  --bg-dark: #0a0a1a;
-  --bg-mid: #111133;
-  --bg-panel: #0d0d2b;
-  --text-main: #e8e8ff;
-  --text-muted: #8888bb;
-  --red: #ff4444;
-  --green: #44ff88;
-  --purple: #cc44ff;
-  --orange: #ff8844;
-}
+.pills{display:flex;gap:3px;padding:5px 8px;background:#080816;border-bottom:1px solid #22224a;overflow-x:auto;scrollbar-width:none}
+.pills::-webkit-scrollbar{display:none}
+.pill{font-size:6px;padding:4px 7px;border:1px solid #333;color:#555;background:#111;cursor:pointer;white-space:nowrap;flex-shrink:0;transition:all .1s}
+.pill.done{border-color:var(--gr);color:var(--gr)}
+.pill.active{border-color:var(--g);color:var(--g);background:rgba(255,215,0,.1)}
+.pill:hover{background:rgba(255,255,255,.05)}
 
-body { background: var(--bg-dark); color: var(--text-main); font-family: 'VT323', monospace; font-size: 18px; }
+.main{display:flex;gap:0;height:340px}
+.scene-col{flex:1;display:flex;flex-direction:column;overflow:hidden;border-right:1px solid #22224a}
+.scene{display:none;flex:1;flex-direction:column;padding:8px;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#33336a transparent}
+.scene::-webkit-scrollbar{width:3px}
+.scene::-webkit-scrollbar-thumb{background:#33336a}
+.scene.active{display:flex}
+.side-col{width:180px;display:flex;flex-direction:column;background:#080816}
 
-.game-wrapper { max-width: 680px; margin: 0 auto; padding: 12px; }
+.stitle{font-size:6px;color:var(--g);border-bottom:1px solid var(--gd);padding-bottom:3px;margin-bottom:6px;letter-spacing:1px}
 
-.pixel-border {
-  border: 3px solid var(--gold);
-  box-shadow: 0 0 0 1px var(--bg-dark), 0 0 0 4px var(--gold-dark), inset 0 0 0 1px var(--gold-dark);
-  image-rendering: pixelated;
-}
+.abtn{font-family:'Press Start 2P',monospace;font-size:7px;padding:6px 5px;background:rgba(0,0,30,.9);border:1px solid var(--gd);color:var(--g);cursor:pointer;text-align:left;line-height:1.5;transition:all .1s;width:100%}
+.abtn:hover{background:rgba(255,215,0,.12);border-color:var(--g)}
+.abtn:active{transform:scale(.98)}
+.abtn.ok{border-color:var(--gr);color:var(--gr);background:rgba(51,238,119,.1)}
+.abtn.no{border-color:var(--re);color:var(--re);animation:hs .3s}
+.abtn:disabled{opacity:.4;cursor:not-allowed}
+@keyframes hs{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
 
-/* HEADER */
-.game-header {
-  background: linear-gradient(180deg, #1a1a4e 0%, #0d0d2b 100%);
-  border: 3px solid var(--gold);
-  padding: 10px 14px 8px;
-  text-align: center;
-  margin-bottom: 10px;
-  position: relative;
-}
-.game-title {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 11px;
-  color: var(--gold);
-  letter-spacing: 1px;
-  text-shadow: 2px 2px 0 #000, 0 0 20px rgba(255,215,0,0.4);
-  line-height: 1.8;
-}
-.game-subtitle {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 6px;
-  color: #aaaadd;
-  margin-top: 4px;
-  letter-spacing: 2px;
-}
+.agrid{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-top:6px}
+.bbtn{font-family:'Press Start 2P',monospace;font-size:7px;padding:7px 10px;background:rgba(255,215,0,.1);border:1px solid var(--g);color:var(--g);cursor:pointer;transition:all .12s;text-align:center;width:100%;margin-top:4px}
+.bbtn:hover{background:rgba(255,215,0,.2);transform:scale(1.02)}
+.bbtn.g{border-color:var(--gr);color:var(--gr);background:rgba(51,238,119,.1)}
+.bbtn.r{border-color:var(--re);color:var(--re);background:rgba(255,68,85,.1)}
+.bbtn.p{border-color:var(--pu);color:var(--pu);background:rgba(187,68,255,.1)}
 
-/* HUD */
-.hud {
-  display: flex; gap: 8px; margin-bottom: 10px; align-items: stretch;
-}
-.hud-panel {
-  background: var(--bg-panel);
-  border: 2px solid var(--gold-dark);
-  padding: 8px 10px;
-  flex: 1;
-}
-.hud-label {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 6px;
-  color: var(--text-muted);
-  margin-bottom: 4px;
-  letter-spacing: 1px;
-}
-.hud-value {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 10px;
-  color: var(--aura);
-  text-shadow: 0 0 8px rgba(0,255,255,0.5);
-}
-.aura-bar-wrap { flex: 2; }
-.aura-bar-bg {
-  background: #111;
-  border: 1px solid var(--aura-dark);
-  height: 20px;
-  border-radius: 2px;
-  overflow: hidden;
-  margin-top: 4px;
-}
-.aura-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #00aaaa, #00ffff);
-  transition: width 0.6s ease;
-  position: relative;
-}
-.aura-bar-fill::after {
-  content: '';
-  position: absolute; right: 0; top: 0; bottom: 0;
-  width: 3px; background: white; opacity: 0.6;
-  animation: shimmer 1s infinite;
-}
-@keyframes shimmer { 0%,100%{opacity:.3} 50%{opacity:.9} }
-.phase-pills { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
-.phase-pill {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 5px;
-  padding: 3px 6px;
-  border: 1px solid #333;
-  border-radius: 2px;
-  color: #555;
-  background: #111;
-  cursor: pointer;
-  transition: all 0.15s;
-}
-.phase-pill.done { border-color: var(--green); color: var(--green); }
-.phase-pill.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.1); }
-.phase-pill:hover { background: rgba(255,255,255,0.05); }
+.hprow{display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.hpn{font-size:6px;width:56px;flex-shrink:0}
+.hpbg{flex:1;background:#111;border:1px solid #333;height:10px;border-radius:1px;overflow:hidden}
+.hpfill{height:100%;transition:width .4s}
+.hpnum{font-size:6px;width:42px;text-align:right;flex-shrink:0}
 
-/* SCENE AREA */
-.scene-area {
-  background: var(--bg-panel);
-  border: 3px solid var(--gold);
-  min-height: 320px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 10px;
-}
-.scene { display: none; width: 100%; height: 100%; padding: 16px; }
-.scene.active { display: flex; flex-direction: column; }
+.dbox{background:#111128;border:1px solid var(--g);padding:6px 8px;font-size:13px;line-height:1.5;color:var(--tm);min-height:50px;margin-bottom:5px}
+.dspk{font-size:6px;color:var(--g);margin-bottom:3px;letter-spacing:1px}
 
-/* Pixel art backgrounds per scene */
-.scene-bg {
-  position: absolute; inset: 0;
-  opacity: 0.15;
-  background-size: 20px 20px;
-  pointer-events: none;
-}
-.bg-city { background-image:
-  linear-gradient(#334 1px, transparent 1px),
-  linear-gradient(90deg, #334 1px, transparent 1px);
-}
-.bg-desert { background-image:
-  radial-gradient(circle at 20px 20px, #553300 1px, transparent 1px);
-}
-.bg-water {
-  background-image: repeating-linear-gradient(90deg, #003366 0, #003366 10px, #002244 10px, #002244 20px);
-  animation: wave 3s linear infinite;
-}
-@keyframes wave { 0%{background-position:0 0} 100%{background-position:20px 0} }
-.bg-temple { background-image:
-  linear-gradient(#220044 1px, transparent 1px),
-  linear-gradient(90deg, #220044 1px, transparent 1px);
-  background-size: 30px 30px;
-}
-.bg-heaven { background-image:
-  radial-gradient(circle at 50% 50%, rgba(255,215,0,0.3) 0%, transparent 70%);
-  opacity: 0.3;
-}
+.clog{background:rgba(0,0,0,.5);border:1px solid #22224a;padding:4px 6px;font-size:10px;color:var(--mu);max-height:52px;overflow-y:auto;margin-top:4px;scrollbar-width:thin;scrollbar-color:#33336a transparent}
+.clog .ent{margin:1px 0}
+.clog .ent.ok{color:var(--gr)}
+.clog .ent.no{color:var(--re)}
+.clog .ent.gl{color:var(--g)}
 
-/* DIALOG BOX */
-.dialog-box {
-  background: rgba(0,0,20,0.95);
-  border: 2px solid var(--gold);
-  padding: 10px 14px;
-  margin-bottom: 10px;
-  min-height: 80px;
-  position: relative;
-}
-.dialog-speaker {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 7px;
-  color: var(--gold);
-  margin-bottom: 6px;
-  letter-spacing: 1px;
-}
-.dialog-text {
-  font-size: 20px;
-  line-height: 1.4;
-  color: var(--text-main);
-  min-height: 48px;
-}
-.dialog-cursor {
-  display: inline-block;
-  width: 10px; height: 14px;
-  background: var(--text-main);
-  animation: blink 0.7s step-end infinite;
-  vertical-align: bottom; margin-left: 2px;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.side-dialog{flex:1;padding:6px 8px;border-top:1px solid #22224a;overflow-y:auto;display:flex;flex-direction:column}
+.sdspk{font-size:6px;color:var(--g);margin-bottom:3px;letter-spacing:1px}
+.sdtxt{font-size:10px;line-height:1.6;color:var(--tm)}
+.cur{display:inline-block;width:6px;height:10px;background:var(--tm);animation:bl .7s step-end infinite;vertical-align:bottom;margin-left:1px}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
 
-/* CHARACTER SPRITES (CSS pixel art) */
-.sprite-row { display: flex; align-items: flex-end; gap: 16px; padding: 8px 0; justify-content: center; }
-.sprite { text-align: center; }
-.sprite-img {
-  width: 48px; height: 64px;
-  image-rendering: pixelated;
-  display: block; margin: 0 auto 4px;
-  animation: float 2s ease-in-out infinite;
-}
-@keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-4px)} }
-.sprite-name {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 5px;
-  color: var(--text-muted);
-}
-.sprite-img.enemy { animation: shake 0.3s ease-in-out infinite alternate; }
-@keyframes shake { 0%{transform:translateX(-2px)} 100%{transform:translateX(2px)} }
+.proph-sec{padding:6px 8px;border-top:1px solid #22224a}
+.pgrid{display:grid;grid-template-columns:repeat(10,1fr);gap:2px;margin-top:3px}
+.pslot{aspect-ratio:1;background:#111;border:1px solid #222;font-size:7px;display:flex;align-items:center;justify-content:center}
+.pslot.f{background:rgba(255,215,0,.15);border-color:var(--g)}
+.pslot.nw{animation:pop .3s ease-out}
+@keyframes pop{0%{transform:scale(0)}80%{transform:scale(1.2)}100%{transform:scale(1)}}
 
-/* BATTLE SECTION */
-.battle-section { margin: 8px 0; }
-.battle-hp-row { display: flex; gap: 8px; margin-bottom: 8px; align-items: center; }
-.battle-name {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 7px;
-  width: 80px;
-  flex-shrink: 0;
-}
-.hp-bar-wrap { flex: 1; background: #111; border: 1px solid #333; height: 14px; border-radius: 1px; overflow: hidden; }
-.hp-bar { height: 100%; transition: width 0.5s ease; border-radius: 1px; }
-.hp-bar.good { background: var(--green); }
-.hp-bar.bad { background: var(--red); }
-.hp-num {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 6px;
-  width: 60px;
-  text-align: right;
-  flex-shrink: 0;
-}
+.notif-area{position:absolute;top:6px;left:50%;transform:translateX(-50%);z-index:99;pointer-events:none;display:flex;flex-direction:column;align-items:center;gap:3px;width:90%}
+.nf{background:var(--bp);border:1px solid var(--aq);padding:5px 12px;font-size:7px;color:var(--aq);text-align:center;animation:nfin .3s ease;white-space:nowrap}
+.nf.r{border-color:var(--re);color:var(--re)}
+.nf.g{border-color:var(--gr);color:var(--gr)}
+.nf.gld{border-color:var(--g);color:var(--g)}
+@keyframes nfin{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
 
-/* ACTION BUTTONS */
-.action-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6px;
-  margin-top: 8px;
-}
-.action-btn {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 7px;
-  padding: 8px 6px;
-  background: rgba(0,0,40,0.9);
-  border: 2px solid var(--gold-dark);
-  color: var(--gold);
-  cursor: pointer;
-  transition: all 0.1s;
-  text-align: left;
-  line-height: 1.6;
-  letter-spacing: 0.3px;
-}
-.action-btn:hover { background: rgba(255,215,0,0.15); border-color: var(--gold); transform: scale(1.02); }
-.action-btn:active { transform: scale(0.98); }
-.action-btn.correct { border-color: var(--green); color: var(--green); background: rgba(68,255,136,0.1); }
-.action-btn.wrong { border-color: var(--red); color: var(--red); background: rgba(255,68,68,0.1); animation: hitshake 0.3s; }
-.action-btn:disabled { opacity: 0.4; cursor: not-allowed; }
-@keyframes hitshake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+.faith-wrap{background:#111;border:1px solid #334;height:16px;border-radius:1px;overflow:hidden;margin:3px 0}
+.faith-fill{height:100%;background:var(--aq);transition:width .3s;position:relative}
+.water-vis{height:52px;background:#001133;border:1px solid #003366;display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;margin:4px 0}
+.wave-strip{position:absolute;bottom:0;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,#0055aa 0,#0055aa 8px,#002288 8px,#002288 16px);animation:wm 1s linear infinite}
+@keyframes wm{to{background-position:16px 0}}
+.peter{position:relative;z-index:2;font-size:22px;transition:transform .3s,filter .3s}
+.peter.sink{transform:translateY(16px);filter:brightness(.4)}
 
-.btn-big {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 8px;
-  padding: 10px 18px;
-  background: rgba(255,215,0,0.1);
-  border: 2px solid var(--gold);
-  color: var(--gold);
-  cursor: pointer;
-  transition: all 0.15s;
-  letter-spacing: 1px;
-  margin: 4px 0;
-}
-.btn-big:hover { background: rgba(255,215,0,0.25); transform: scale(1.03); }
-.btn-big.green { border-color: var(--green); color: var(--green); background: rgba(68,255,136,0.1); }
-.btn-big.red { border-color: var(--red); color: var(--red); background: rgba(255,68,68,0.1); }
-.btn-big.purple { border-color: var(--purple); color: var(--purple); background: rgba(204,68,255,0.1); }
+.miracle-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-bottom:6px}
+.mg-card{background:#111128;border:1px solid #33336a;padding:4px;text-align:center}
+.mg-icon{font-size:18px}
+.mg-count{font-size:13px;color:var(--tm);margin:1px 0}
+.mg-label{font-size:5px;color:var(--mu)}
 
-/* FAITH BAR */
-.faith-section { margin: 8px 0; }
-.faith-label { font-family:'Press Start 2P',monospace; font-size:6px; color:var(--text-muted); margin-bottom:4px; }
-.faith-bar-wrap { background:#111; border: 2px solid #334; height: 28px; position: relative; border-radius: 2px; overflow:hidden; }
-.faith-fill {
-  height: 100%; width: 70%;
-  background: linear-gradient(90deg, #0044ff, #4488ff);
-  transition: width 0.3s ease;
-  position: relative;
-}
-.faith-fill::after {
-  content: '⚡';
-  position:absolute; right:4px; top:50%;
-  transform:translateY(-50%); font-size:16px;
-}
-.faith-val { font-family:'Press Start 2P',monospace; font-size:7px; color:var(--aura); margin-top:3px; }
+.npc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
+.npc-btn{background:#111128;border:1px solid #22224a;padding:5px 3px;text-align:center;cursor:pointer;transition:all .12s;font-family:'Press Start 2P',monospace}
+.npc-btn:hover{background:rgba(255,255,255,.05);border-color:#33336a}
+.npc-btn:disabled{opacity:.5}
+.npc-ico{font-size:18px}
+.npc-lbl{font-size:5px;color:var(--mu);margin-top:2px;display:block}
 
-/* MINIGAME WALKING */
-.water-game { text-align: center; padding: 8px; }
-.water-visual {
-  height: 80px; background: linear-gradient(180deg, #001133 0%, #003366 50%, #002244 100%);
-  border: 2px solid #0066aa; border-radius: 2px;
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden; margin: 8px 0;
-}
-.water-waves {
-  position: absolute; bottom: 0; left: 0; right: 0; height: 20px;
-  background: repeating-linear-gradient(90deg, #0055aa 0, #0055aa 8px, #003388 8px, #003388 16px);
-  animation: waveMove 1s linear infinite;
-}
-@keyframes waveMove { to { background-position: 16px 0; } }
-.peter-sprite {
-  position: relative; z-index: 2;
-  font-size: 32px;
-  transition: transform 0.3s, filter 0.3s;
-}
-.peter-sprite.sinking { transform: translateY(20px); filter: brightness(0.4); }
+.finale-box{text-align:center;padding:10px 8px}
+.final-title{font-size:11px;color:var(--g);margin:6px 0;animation:glow 1.5s ease-in-out infinite}
+@keyframes glow{0%,100%{color:var(--g)}50%{color:#fff}}
+.final-aura{font-size:16px;color:var(--aq);margin:4px 0}
 
-/* PROPHECY INVENTORY */
-.prophecy-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 3px;
-  margin: 6px 0;
-}
-.proph-slot {
-  width: 100%; aspect-ratio: 1;
-  background: #111;
-  border: 1px solid #333;
-  border-radius: 1px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 10px;
-  transition: all 0.2s;
-}
-.proph-slot.filled { background: rgba(255,215,0,0.2); border-color: var(--gold); }
-.proph-slot.new { animation: popIn 0.3s ease-out; }
-@keyframes popIn { 0%{transform:scale(0)} 80%{transform:scale(1.2)} 100%{transform:scale(1)} }
+.nation-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin:6px 0}
 
-/* SCROLL LOG */
-.combat-log {
-  background: rgba(0,0,0,0.6);
-  border: 1px solid #334;
-  padding: 6px 10px;
-  max-height: 70px;
-  overflow-y: auto;
-  font-size: 15px;
-  color: var(--text-muted);
-  margin-top: 6px;
-}
-.combat-log .entry { margin: 1px 0; }
-.combat-log .entry.good { color: var(--green); }
-.combat-log .entry.bad { color: var(--red); }
-.combat-log .entry.gold { color: var(--gold); }
+.go-screen{text-align:center;padding:10px}
+.go-title{font-size:14px;color:var(--re);margin:8px 0;animation:glow2 .8s ease-in-out infinite alternate}
+@keyframes glow2{from{color:var(--re)}to{color:#ff8888}}
+.dots-row{display:flex;gap:3px;justify-content:center;margin:6px 0}
 
-/* NOTIFICATIONS */
-.notif {
-  position: fixed;
-  top: 20px; left: 50%; transform: translateX(-50%);
-  background: var(--bg-panel);
-  border: 2px solid var(--gold);
-  padding: 8px 18px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 8px;
-  color: var(--gold);
-  z-index: 9999;
-  text-align: center;
-  pointer-events: none;
-  transition: opacity 0.4s;
-  max-width: 90%;
+@media(max-width:520px){
+  .side-col{display:none}
+  .main{height:auto;min-height:300px}
+  .scene-col{height:auto}
+  .scene{overflow:visible}
+  .htitle{font-size:7px}
+  .hud-row{width:100%}
 }
-.notif.aura { border-color: var(--aura); color: var(--aura); }
-.notif.red { border-color: var(--red); color: var(--red); }
-.notif.green { border-color: var(--green); color: var(--green); }
-
-/* FINAL SCREEN */
-.final-screen {
-  text-align: center; padding: 20px 16px;
-  background: radial-gradient(circle at center, rgba(255,215,0,0.15) 0%, transparent 70%);
-}
-.final-title {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 14px;
-  color: var(--gold);
-  margin: 10px 0 6px;
-  text-shadow: 0 0 20px rgba(255,215,0,0.8);
-  animation: pulse 1.5s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{text-shadow:0 0 10px rgba(255,215,0,0.4)} 50%{text-shadow:0 0 30px rgba(255,215,0,1)} }
-.final-aura {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 22px;
-  color: var(--aura);
-  margin: 10px 0;
-  text-shadow: 0 0 30px rgba(0,255,255,0.8);
-}
-.stars { font-size: 28px; letter-spacing: 4px; margin: 8px 0; }
-
-/* GAME OVER */
-.gameover-screen {
-  text-align: center; padding: 20px;
-  animation: fadeIn 0.5s ease;
-}
-@keyframes fadeIn { from{opacity:0} to{opacity:1} }
-.gameover-title {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 18px;
-  color: var(--red);
-  margin: 10px 0;
-  text-shadow: 0 0 20px rgba(255,0,0,0.5);
-}
-
-.section-title {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 7px;
-  color: var(--gold);
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-  border-bottom: 1px solid var(--gold-dark);
-  padding-bottom: 4px;
-}
-
-.flex-center { display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin:6px 0; }
-
-.tag {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 6px;
-  padding: 3px 8px;
-  border-radius: 2px;
-}
-.tag-aura { background: rgba(0,255,255,0.15); color: var(--aura); border: 1px solid var(--aura-dark); }
-.tag-phase { background: rgba(255,215,0,0.1); color: var(--gold); border: 1px solid var(--gold-dark); }
-.tag-beta { background: rgba(255,68,68,0.15); color: var(--red); border: 1px solid #882222; }
-
-hr.pixel-hr { border: none; border-top: 1px solid #334; margin: 8px 0; }
-
-canvas#waterCanvas { display:block; margin:4px auto; }
 </style>
 
-<h2 class="sr-only">Aura Quest: O Caminho do Rei Alfa - Jogo RPG educativo baseado no Evangelho de Mateus</h2>
+<h2 class="sr-only">Aura Quest: O Caminho do Rei Alfa — jogo RPG educativo sobre o Evangelho de Mateus</h2>
 
-<div class="game-wrapper">
+<div class="gw" style="position:relative">
 
-  <!-- HEADER -->
-  <div class="game-header pixel-border">
-    <div class="game-title">⚔️ AURA QUEST ⚔️<br>O CAMINHO DO REI ALFA</div>
-    <div class="game-subtitle">▶ EVANGELHO DE MATEUS ◀</div>
+<div class="notif-area" id="notifArea"></div>
+
+<div class="hdr">
+  <div class="htitle">⚔️ AURA QUEST<br>REI ALFA</div>
+  <div class="hud-row">
+    <div class="hstat">FASE <span id="phaseNum">1</span></div>
+    <div class="abar-wrap hstat" style="min-width:120px">
+      AURA <span id="auraDisp">0</span>
+      <div class="abar-bg"><div class="abar-fill" id="auraBar" style="width:0%"></div></div>
+    </div>
+    <div class="hstat">📜 <span id="prophDisp">0</span>/60</div>
+  </div>
+</div>
+
+<div class="pills" id="phasePills">
+  <div class="pill active" data-p="1">I · CHAMADO</div>
+  <div class="pill" data-p="2">II · DESERTO</div>
+  <div class="pill" data-p="3">III · MILAGRES</div>
+  <div class="pill" data-p="4">IV · DEBATE</div>
+  <div class="pill" data-p="5">V · RESSURR.</div>
+</div>
+
+<div class="main">
+  <div class="scene-col">
+
+    <!-- FASE 1 -->
+    <div class="scene active" id="sc1">
+      <div class="stitle">FASE I — COLETORIA DE MATEUS</div>
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:6px">
+        <div style="text-align:center;flex-shrink:0">
+          <svg width="32" height="44" viewBox="0 0 16 22">
+            <rect x="5" y="0" width="6" height="6" fill="#8B6914"/>
+            <rect x="4" y="6" width="8" height="10" fill="#8B4513"/>
+            <rect x="3" y="7" width="2" height="7" fill="#8B4513"/>
+            <rect x="11" y="7" width="2" height="7" fill="#8B4513"/>
+            <rect x="4" y="16" width="3" height="6" fill="#5C3317"/>
+            <rect x="9" y="16" width="3" height="6" fill="#5C3317"/>
+            <rect x="6" y="2" width="1" height="1" fill="#000"/>
+            <rect x="9" y="2" width="1" height="1" fill="#000"/>
+            <rect x="6" y="4" width="4" height="1" fill="#c0392b"/>
+          </svg>
+          <div style="font-size:6px;color:var(--mu)">MATEUS</div>
+        </div>
+        <div id="jspr1" style="display:none;text-align:center;flex-shrink:0">
+          <svg width="32" height="44" viewBox="0 0 16 22">
+            <rect x="5" y="0" width="6" height="6" fill="#C4A052"/>
+            <rect x="4" y="6" width="8" height="10" fill="#FFFFF0"/>
+            <rect x="3" y="7" width="2" height="7" fill="#FFFFF0"/>
+            <rect x="11" y="7" width="2" height="7" fill="#FFFFF0"/>
+            <rect x="4" y="16" width="3" height="6" fill="#D4B48C"/>
+            <rect x="9" y="16" width="3" height="6" fill="#D4B48C"/>
+            <rect x="6" y="2" width="1" height="1" fill="#000"/>
+            <rect x="9" y="2" width="1" height="1" fill="#000"/>
+            <circle cx="8" cy="0" r="3" fill="none" stroke="#FFD700" stroke-width=".5"/>
+          </svg>
+          <div style="font-size:6px;color:var(--g)">JESUS ✦</div>
+        </div>
+        <div style="flex:1;font-size:10px;color:var(--mu);line-height:1.6">
+          Mateus estava na mesa de impostos.<br>
+          Todo mundo dava hate nele.<br>
+          Era o <span style="color:var(--re)">beta dos betas</span>...<br>
+          Então Jesus chegou e disse:
+        </div>
+      </div>
+      <div style="background:#111128;border:1px solid var(--g);padding:6px 8px;font-size:13px;color:var(--g);margin-bottom:8px;text-align:center">
+        "EI, MATEUS. VEM."
+      </div>
+      <div class="agrid" id="p1btns">
+        <button class="abtn" onclick="p1('n')">💰 FICAR<br><span style="color:var(--mu);font-size:5px">Manter o dinheiro</span></button>
+        <button class="abtn ok" onclick="p1('s')">🚶 SEGUIR<br><span style="font-size:5px">+1000 AURA!</span></button>
+      </div>
+      <div id="p1msg" style="font-size:9px;color:var(--aq);margin-top:5px;min-height:16px;text-align:center"></div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="scene" id="sc2">
+      <div class="stitle">FASE II — GANK NO DESERTO</div>
+      <div class="hprow"><div class="hpn" style="color:var(--g)">REI ALFA</div><div class="hpbg"><div class="hpfill" id="jHp" style="width:100%;background:var(--gr)"></div></div><div class="hpnum" id="jHpN" style="color:var(--gr)">3/3</div></div>
+      <div class="hprow"><div class="hpn" style="color:var(--re)">DIABO</div><div class="hpbg"><div class="hpfill" id="dHp" style="width:100%;background:var(--re)"></div></div><div class="hpnum" id="dHpN" style="color:var(--re)">3/3</div></div>
+      <div id="gankMsg" style="font-size:10px;color:var(--or);margin:5px 0;min-height:32px;line-height:1.5;background:#111128;padding:5px 6px;border:1px solid #33336a"></div>
+      <div class="agrid" id="gankBtns"></div>
+      <div class="clog" id="gankLog"></div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="scene" id="sc3">
+      <div class="stitle">FASE III — FARM DE MILAGRES</div>
+      <div class="miracle-grid">
+        <div class="mg-card"><div class="mg-icon">👁️</div><div class="mg-count" id="mc0">3</div><div class="mg-label">CEGOS</div></div>
+        <div class="mg-card"><div class="mg-icon">🤒</div><div class="mg-count" id="mc1">3</div><div class="mg-label">LEPROSOS</div></div>
+        <div class="mg-card"><div class="mg-icon">🦽</div><div class="mg-count" id="mc2">3</div><div class="mg-label">PARALÍTICOS</div></div>
+      </div>
+      <div class="npc-grid" id="npcGrid"></div>
+      <div id="waterSec" style="display:none;margin-top:6px">
+        <div class="stitle" style="margin-top:4px">PEDRO — WALKING ON WATER</div>
+        <div style="font-size:7px;color:var(--mu);margin-bottom:3px">Fé de Pedro: <span id="faithPct">70</span>%</div>
+        <div class="faith-wrap"><div class="faith-fill" id="faithFill" style="width:70%"></div></div>
+        <div class="water-vis"><div class="wave-strip"></div><div class="peter" id="peterEl">🧑</div></div>
+        <div style="display:flex;gap:4px;margin-top:4px">
+          <button class="bbtn g" onclick="bf(1)" style="flex:1">🙏 ORAR +20</button>
+          <button class="bbtn r" onclick="bf(-1)" style="flex:1">😨 DUVIDAR -25</button>
+        </div>
+        <div id="waterMsg" style="font-size:7px;color:var(--aq);text-align:center;margin-top:3px;min-height:14px"></div>
+      </div>
+    </div>
+
+    <!-- FASE 4 -->
+    <div class="scene" id="sc4">
+      <div class="stitle">FASE IV — ARENA DE DEBATES</div>
+      <div class="hprow"><div class="hpn" style="color:var(--g)">JESUS</div><div class="hpbg"><div class="hpfill" id="djH" style="width:100%;background:var(--gr)"></div></div><div class="hpnum" id="djHN" style="color:var(--gr)">3/3</div></div>
+      <div class="hprow"><div class="hpn" style="color:var(--pu)">FARISEUS</div><div class="hpbg"><div class="hpfill" id="dfH" style="width:100%;background:var(--pu)"></div></div><div class="hpnum" id="dfHN" style="color:var(--pu)">3/3</div></div>
+      <div id="debQ" style="background:#111128;border:1px solid var(--pu);padding:6px 8px;font-size:10px;color:var(--tm);min-height:46px;line-height:1.6;margin:5px 0"></div>
+      <div class="agrid" id="debBtns"></div>
+      <div id="debRes" style="font-size:7px;text-align:center;margin-top:3px;min-height:14px"></div>
+      <div class="clog" id="debLog"></div>
+    </div>
+
+    <!-- FASE 5 -->
+    <div class="scene" id="sc5">
+      <div id="goSec" class="go-screen">
+        <div style="font-size:36px;margin-bottom:4px">✝️</div>
+        <div class="go-title">GAME OVER</div>
+        <div style="font-size:9px;color:var(--mu);line-height:1.8;margin:4px 0">Judas traiu por 30 moedas...<br>Jesus foi crucificado.<br>Parecia que havia acabado...</div>
+        <div style="font-size:7px;color:#444;margin:5px 0">AGUARDANDO DIA 3...</div>
+        <div class="dots-row" id="dotRow"></div>
+        <button class="bbtn p" id="ressBtn" style="display:none" onclick="doRess()">⚡ DIA 3: RESSURGIR!</button>
+      </div>
+      <div id="ressSec" class="finale-box" style="display:none">
+        <div style="font-size:36px">👑</div>
+        <div class="final-title">RESSURREIÇÃO!</div>
+        <div class="final-aura">∞ AURA INFINITA</div>
+        <div style="font-size:10px;color:var(--tm);line-height:1.7;margin:6px 0">"Toda autoridade no céu<br>e na terra foi dada a mim.<br>Vai e faz discípulos em<br>todas as nações."<br><span style="color:var(--g);font-size:7px">— Mt 28:18-19</span></div>
+        <div class="stitle" style="margin-top:6px">GRANDE COMISSÃO</div>
+        <div class="nation-grid" id="natGrid"></div>
+        <div id="commProg" style="font-size:7px;color:var(--aq);margin:4px 0;min-height:14px"></div>
+        <div id="finalBox" style="display:none">
+          <div style="font-size:9px;color:var(--g);margin:6px 0">🏆 COMISSÃO COMPLETA!</div>
+          <div id="fAura" style="font-size:11px;color:var(--aq);margin:2px 0"></div>
+          <div id="fProph" style="font-size:7px;color:var(--g);margin:2px 0"></div>
+          <div id="fBadge" style="font-size:9px;margin:4px 0"></div>
+          <button class="bbtn" onclick="restartGame()" style="margin-top:6px">↺ JOGAR NOVAMENTE</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <!-- HUD -->
-  <div class="hud">
-    <div class="hud-panel">
-      <div class="hud-label">FASE</div>
-      <div class="hud-value" id="currentPhaseNum">1</div>
+  <!-- SIDEBAR -->
+  <div class="side-col">
+    <div class="side-dialog">
+      <div class="sdspk" id="sdSpk">NARRADOR</div>
+      <div class="sdtxt" id="sdTxt">Bem-vindo ao Aura Quest! Siga o Rei Alfa pelo Evangelho de Mateus. Farme aura, colete profecias e prove que Jesus é o Rei prometido!<span class="cur"></span></div>
     </div>
-    <div class="hud-panel aura-bar-wrap">
-      <div class="hud-label">AURA <span id="auraDisplay" style="color:var(--aura)">0</span></div>
-      <div class="aura-bar-bg">
-        <div class="aura-bar-fill" id="auraBar" style="width:0%"></div>
-      </div>
-    </div>
-    <div class="hud-panel">
-      <div class="hud-label">PROFECIAS</div>
-      <div class="hud-value" id="prophecyCount" style="color:var(--gold)">0/60</div>
+    <div class="proph-sec">
+      <div class="stitle">📖 PROFECIAS DO AT</div>
+      <div class="pgrid" id="prophGrid"></div>
     </div>
   </div>
-
-  <div class="phase-pills" id="phasePills">
-    <div class="phase-pill active" data-phase="1">I.CHAMADO</div>
-    <div class="phase-pill" data-phase="2">II.DESERTO</div>
-    <div class="phase-pill" data-phase="3">III.MILAGRES</div>
-    <div class="phase-pill" data-phase="4">IV.DEBATE</div>
-    <div class="phase-pill" data-phase="5">V.RESSURR.</div>
-  </div>
-
-  <div style="height:8px"></div>
-
-  <!-- ===== SCENE AREA ===== -->
-  <div class="scene-area pixel-border">
-
-    <!-- FASE 1: Coletoria -->
-    <div class="scene active" id="scene1">
-      <div class="scene-bg bg-city"></div>
-      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column">
-        <div class="section-title">FASE I — O CHAMADO NA COLETORIA</div>
-        <div class="sprite-row">
-          <div class="sprite">
-            <svg class="sprite-img" viewBox="0 0 16 22" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="0" width="6" height="6" fill="#8B6914"/><rect x="4" y="6" width="8" height="10" fill="#8B4513"/>
-              <rect x="3" y="7" width="2" height="7" fill="#8B4513"/><rect x="11" y="7" width="2" height="7" fill="#8B4513"/>
-              <rect x="4" y="16" width="3" height="6" fill="#5C3317"/><rect x="9" y="16" width="3" height="6" fill="#5C3317"/>
-              <rect x="6" y="2" width="1" height="1" fill="#000"/><rect x="9" y="2" width="1" height="1" fill="#000"/>
-              <rect x="6" y="4" width="4" height="1" fill="#c0392b"/>
-              <rect x="0" y="8" width="14" height="4" fill="#c0392b" opacity="0.3"/>
-            </svg>
-            <div class="sprite-name">MATEUS</div>
-          </div>
-          <div class="sprite" id="jesusSprite1" style="display:none">
-            <svg class="sprite-img" viewBox="0 0 16 22" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="0" width="6" height="6" fill="#C4A052"/><rect x="4" y="6" width="8" height="10" fill="#FFFFF0"/>
-              <rect x="3" y="7" width="2" height="7" fill="#FFFFF0"/><rect x="11" y="7" width="2" height="7" fill="#FFFFF0"/>
-              <rect x="4" y="16" width="3" height="6" fill="#D4B48C"/><rect x="9" y="16" width="3" height="6" fill="#D4B48C"/>
-              <rect x="6" y="2" width="1" height="1" fill="#000"/><rect x="9" y="2" width="1" height="1" fill="#000"/>
-              <rect x="6" y="4" width="4" height="1" fill="#FFFFFF"/>
-              <circle cx="8" cy="0" r="3" fill="none" stroke="#FFD700" stroke-width="0.5"/>
-            </svg>
-            <div class="sprite-name" style="color:var(--gold)">JESUS ✦</div>
-          </div>
-        </div>
-        <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end">
-          <p style="font-size:15px;color:var(--text-muted);margin-bottom:8px">Mateus estava em sua mesa cobrando impostos. Todo mundo dava hate nele. Era o beta dos betas...</p>
-          <div class="flex-center">
-            <span class="tag tag-beta">-500 aura social</span>
-            <span class="tag tag-phase">Missão: O Chamado</span>
-          </div>
-          <hr class="pixel-hr">
-          <p id="p1dialog" style="font-size:17px;color:var(--gold);margin:6px 0;min-height:28px"></p>
-          <div class="action-grid" id="p1actions">
-            <button class="action-btn" onclick="p1escolha('ficar')">💰 FICAR NA MESA<br><span style="color:var(--text-muted);font-size:6px">Manter o dinheiro</span></button>
-            <button class="action-btn correct" onclick="p1escolha('seguir')">🚶 SEGUIR JESUS<br><span style="color:var(--green);font-size:6px">+1000 AURA INICIAL</span></button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FASE 2: Deserto -->
-    <div class="scene" id="scene2">
-      <div class="scene-bg bg-desert"></div>
-      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column">
-        <div class="section-title">FASE II — SURVIVAL NO DESERTO 🏜️</div>
-        <div class="battle-section">
-          <div class="battle-hp-row">
-            <div class="battle-name" style="color:var(--gold)">REI ALFA</div>
-            <div class="hp-bar-wrap"><div class="hp-bar good" id="jesusHp" style="width:100%"></div></div>
-            <div class="hp-num" id="jesusHpNum" style="color:var(--green)">3/3 FOCO</div>
-          </div>
-          <div class="battle-hp-row">
-            <div class="battle-name" style="color:var(--red)">DIABO</div>
-            <div class="hp-bar-wrap"><div class="hp-bar bad" id="devilHp" style="width:100%"></div></div>
-            <div class="hp-num" id="devilHpNum" style="color:var(--red)">3 GANKS</div>
-          </div>
-        </div>
-        <div class="sprite-row">
-          <div class="sprite">
-            <svg class="sprite-img" viewBox="0 0 16 22" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="0" width="6" height="6" fill="#C4A052"/>
-              <rect x="4" y="6" width="8" height="10" fill="#FFFFF0"/>
-              <rect x="3" y="7" width="2" height="7" fill="#FFFFF0"/>
-              <rect x="11" y="7" width="2" height="7" fill="#FFFFF0"/>
-              <rect x="4" y="16" width="3" height="6" fill="#D4B48C"/>
-              <rect x="9" y="16" width="3" height="6" fill="#D4B48C"/>
-              <rect x="6" y="2" width="1" height="1" fill="#000"/><rect x="9" y="2" width="1" height="1" fill="#000"/>
-              <circle cx="8" cy="0" r="3" fill="none" stroke="#FFD700" stroke-width="0.5"/>
-            </svg>
-            <div class="sprite-name" style="color:var(--gold)">JESUS</div>
-          </div>
-          <div style="font-family:'Press Start 2P',monospace;font-size:14px;color:var(--orange);align-self:center">VS</div>
-          <div class="sprite">
-            <svg class="sprite-img enemy" viewBox="0 0 16 22" xmlns="http://www.w3.org/2000/svg">
-              <rect x="5" y="1" width="6" height="6" fill="#880000"/>
-              <rect x="4" y="7" width="8" height="10" fill="#660000"/>
-              <rect x="3" y="8" width="2" height="7" fill="#660000"/>
-              <rect x="11" y="8" width="2" height="7" fill="#660000"/>
-              <rect x="4" y="17" width="3" height="5" fill="#440000"/>
-              <rect x="9" y="17" width="3" height="5" fill="#440000"/>
-              <rect x="5" y="2" width="1" height="2" fill="#ffaa00"/>
-              <rect x="10" y="2" width="1" height="2" fill="#ffaa00"/>
-              <rect x="6" y="4" width="1" height="1" fill="#ff0000"/><rect x="9" y="4" width="1" height="1" fill="#ff0000"/>
-              <rect x="6" y="6" width="4" height="1" fill="#ff6600"/>
-            </svg>
-            <div class="sprite-name" style="color:var(--red)">DIABO 👿</div>
-          </div>
-        </div>
-        <div id="gankMsg" style="font-size:16px;color:var(--orange);margin:4px 0;min-height:24px;text-align:center"></div>
-        <div class="action-grid" id="gankButtons"></div>
-        <div class="combat-log" id="combatLog"></div>
-      </div>
-    </div>
-
-    <!-- FASE 3: Milagres -->
-    <div class="scene" id="scene3">
-      <div class="scene-bg bg-water"></div>
-      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column">
-        <div class="section-title">FASE III — FARM DE MILAGRES ✨</div>
-        <div id="miraclesSection">
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px">
-            <div class="hud-panel" style="text-align:center">
-              <div class="hud-label">CEGOS</div>
-              <div id="cegoCount" style="font-size:22px;color:var(--text-main)">3</div>
-            </div>
-            <div class="hud-panel" style="text-align:center">
-              <div class="hud-label">LEPROSOS</div>
-              <div id="lepCount" style="font-size:22px;color:var(--text-main)">3</div>
-            </div>
-            <div class="hud-panel" style="text-align:center">
-              <div class="hud-label">PARALÍT.</div>
-              <div id="paralCount" style="font-size:22px;color:var(--text-main)">3</div>
-            </div>
-          </div>
-          <div class="section-title" style="margin-top:4px">MAPA DA GALILEIA</div>
-          <div id="miracleMap" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px"></div>
-          <div id="waterGame" style="display:none">
-            <hr class="pixel-hr">
-            <div class="section-title">MINIGAME: WALKING ON WATER 🌊</div>
-            <div class="faith-section">
-              <div class="faith-label">BARRA DE FÉ DE PEDRO</div>
-              <div class="faith-bar-wrap">
-                <div class="faith-fill" id="faithBar" style="width:70%"></div>
-              </div>
-              <div class="faith-val" id="faithVal">Fé: 70%</div>
-            </div>
-            <div class="water-visual">
-              <div class="water-waves"></div>
-              <div class="peter-sprite" id="peterSprite">🧑</div>
-            </div>
-            <div class="flex-center" style="gap:8px">
-              <button class="btn-big green" onclick="boostFaith()">🙏 ORAR +20 FÉ</button>
-              <button class="btn-big red" onclick="loseFaith()">😨 DUVIDAR -25 FÉ</button>
-            </div>
-            <div id="waterMsg" style="font-family:'Press Start 2P',monospace;font-size:7px;color:var(--aura);text-align:center;margin-top:4px;min-height:18px"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FASE 4: Debate -->
-    <div class="scene" id="scene4">
-      <div class="scene-bg bg-temple"></div>
-      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column">
-        <div class="section-title">FASE IV — ARENA DE DEBATES ⚖️</div>
-        <div class="battle-section">
-          <div class="battle-hp-row">
-            <div class="battle-name" style="color:var(--gold)">JESUS</div>
-            <div class="hp-bar-wrap"><div class="hp-bar good" id="debateHpJ" style="width:100%"></div></div>
-            <div class="hp-num" id="debateHpJN" style="color:var(--green)">3/3</div>
-          </div>
-          <div class="battle-hp-row">
-            <div class="battle-name" style="color:var(--purple)">FARISEUS</div>
-            <div class="hp-bar-wrap"><div class="hp-bar" id="debateHpF" style="width:100%;background:var(--purple)"></div></div>
-            <div class="hp-num" id="debateHpFN" style="color:var(--purple)">3/3</div>
-          </div>
-        </div>
-        <div id="debateQuestion" style="background:rgba(0,0,40,0.8);border:1px solid var(--purple);padding:8px;margin:6px 0;font-size:17px;color:var(--text-main);min-height:60px;line-height:1.5"></div>
-        <div class="action-grid" id="debateAnswers"></div>
-        <div id="debateResult" style="font-family:'Press Start 2P',monospace;font-size:7px;text-align:center;margin-top:4px;min-height:20px"></div>
-        <div class="combat-log" id="debateLog"></div>
-      </div>
-    </div>
-
-    <!-- FASE 5: Ressurreição -->
-    <div class="scene" id="scene5">
-      <div class="scene-bg bg-heaven"></div>
-      <div style="position:relative;z-index:1;flex:1;display:flex;flex-direction:column">
-        <div id="gameoverSection" class="gameover-screen">
-          <div style="font-size:60px;margin-bottom:8px">✝️</div>
-          <div class="gameover-title">GAME OVER</div>
-          <p style="font-size:16px;color:var(--text-muted);margin:8px 0">Judas traiu por 30 moedas...<br>Jesus foi crucificado.<br>Parecia que havia acabado...</p>
-          <div style="font-family:'Press Start 2P',monospace;font-size:7px;color:#555;margin:6px 0">AGUARDANDO... DIA 3...</div>
-          <div style="display:flex;gap:2px;justify-content:center;margin:6px 0" id="countDots"></div>
-          <button class="btn-big purple" id="ressBtn" style="display:none" onclick="showRessurrection()">⚡ DIA 3: RESSURGIR ⚡</button>
-        </div>
-        <div id="ressurrectionSection" class="final-screen" style="display:none">
-          <div style="font-size:48px;margin-bottom:4px">👑</div>
-          <div class="final-title">RESSURREIÇÃO!</div>
-          <div class="final-aura">∞ AURA INFINITA</div>
-          <div class="stars">⭐⭐⭐</div>
-          <p style="font-size:16px;color:var(--text-main);margin:8px 0;line-height:1.6">"Toda autoridade no céu e na terra<br>foi dada a mim.<br>Vai e faz discípulos em todas as nações."</p>
-          <div style="font-family:'Press Start 2P',monospace;font-size:7px;color:var(--gold);margin:6px 0">— MATEUS 28:18-19</div>
-          <hr class="pixel-hr">
-          <div class="section-title" style="margin-top:8px">RECRUTAMENTO FINAL</div>
-          <p style="font-size:15px;color:var(--text-muted);margin:4px 0">Recrute discípulos em todas as nações para completar a Grande Comissão!</p>
-          <div id="nationGrid" style="display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:8px 0"></div>
-          <div id="commissionProgress" style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--aura);margin:8px 0"></div>
-          <div id="finalScore" style="display:none">
-            <hr class="pixel-hr">
-            <div style="font-family:'Press Start 2P',monospace;font-size:9px;color:var(--gold);margin:8px 0">🏆 GRANDE COMISSÃO COMPLETA!</div>
-            <div id="finalAuraDisplay" style="font-family:'Press Start 2P',monospace;font-size:16px;color:var(--aura);margin:4px 0"></div>
-            <div id="finalProphecy" style="font-family:'Press Start 2P',monospace;font-size:8px;color:var(--gold);margin:4px 0"></div>
-            <div id="finalBadge" style="margin:8px 0;font-size:14px"></div>
-            <button class="btn-big" onclick="restartGame()" style="margin-top:8px">↺ JOGAR NOVAMENTE</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /scene-area -->
-
-  <!-- DIALOG BOX -->
-  <div class="dialog-box pixel-border">
-    <div class="dialog-speaker" id="dialogSpeaker">NARRADOR</div>
-    <div class="dialog-text" id="dialogText">
-      <span id="dialogContent">Bem-vindo ao Aura Quest! Você está prestes a seguir o Rei Alfa pelo Evangelho de Mateus. Farme aura, colete profecias e prove que Jesus é o Rei prometido!</span><span class="dialog-cursor"></span>
-    </div>
-  </div>
-
-  <!-- PROPHECY INVENTORY -->
-  <div style="background:var(--bg-panel);border:2px solid var(--gold-dark);padding:10px 12px;">
-    <div class="section-title">📖 INVENTÁRIO DE PROFECIAS (60 TOTAL)</div>
-    <div class="prophecy-grid" id="prophecyGrid"></div>
-    <div style="font-size:14px;color:var(--text-muted);margin-top:4px">Colete citações do AT ao longo do jogo para provar a realeza do Rei!</div>
-  </div>
+</div>
 
 </div>
 
 <script>
-const G = {
-  aura: 0,
-  maxAura: 10000,
-  prophecies: 0,
-  phase: 1,
-  gankRound: 0,
-  jesusHp: 3,
-  devilHp: 3,
-  miraclesLeft: { cego:3, leproso:3, paralitico:3 },
-  faithPct: 70,
-  waterDone: false,
-  debateRound: 0,
-  debateJHp: 3,
-  debateFHp: 3,
-  nationsRecruited: 0,
-  totalNations: 6,
-  phase1Done: false, phase2Done:false, phase3Done:false, phase4Done:false
-};
+const G={aura:0,max:10000,pr:0,phase:1,gR:0,jHp:3,dHp:3,mr:{c:3,l:3,p:3},
+  faith:70,wDone:false,dR:0,djH:3,dfH:3,nR:0};
 
-const GANKS = [
-  {
-    attack:"Se você é o Filho de Deus, transforme estas pedras em pão!",
-    options:[
-      {txt:"Fazer milagre pra provar", correct:false},
-      {txt:"Mt 4:4 — Não só de pão viverá o homem...", correct:true},
-      {txt:"Ignorar completamente", correct:false},
-      {txt:"Comer as pedras mesmo", correct:false}
-    ],
-    verse:"Mt 4:4"
-  },
-  {
-    attack:"Jogue-se do alto do templo! Os anjos te carregarão!",
-    options:[
-      {txt:"Saltar do templo", correct:false},
-      {txt:"Mt 4:7 — Não tentarás o Senhor teu Deus", correct:true},
-      {txt:"Negociar com o diabo", correct:false},
-      {txt:"Chamar os anjos pra ajudar", correct:false}
-    ],
-    verse:"Mt 4:7"
-  },
-  {
-    attack:"Curve-se a mim e darei todos os reinos do mundo!",
-    options:[
-      {txt:"Aceitar o negócio", correct:false},
-      {txt:"Perguntar os termos", correct:false},
-      {txt:"Mt 4:10 — Ao Senhor teu Deus adorarás!", correct:true},
-      {txt:"Pedir mais tempo pra pensar", correct:false}
-    ],
-    verse:"Mt 4:10"
-  }
+const GANKS=[
+  {a:"Se você é Filho de Deus, transforme estas pedras em pão!",
+   ops:[{t:"Fazer milagre pra provar",c:false},{t:"Mt 4:4 — Não só de pão viverá o homem...",c:true},{t:"Ignorar completamente",c:false},{t:"Aceitar o desafio",c:false}],v:"Mt 4:4"},
+  {a:"Jogue-se do alto do templo! Os anjos te carregarão!",
+   ops:[{t:"Saltar do templo",c:false},{t:"Mt 4:7 — Não tentarás o Senhor teu Deus",c:true},{t:"Negociar com o diabo",c:false},{t:"Chamar os anjos",c:false}],v:"Mt 4:7"},
+  {a:"Curve-se a mim e darei todos os reinos do mundo!",
+   ops:[{t:"Aceitar o negócio",c:false},{t:"Pedir mais tempo pra pensar",c:false},{t:"Mt 4:10 — Ao Senhor teu Deus adorarás!",c:true},{t:"Contra-propor",c:false}],v:"Mt 4:10"}
 ];
-
-const DEBATES = [
-  {
-    pharisee:"Por que seus discípulos comem sem lavar as mãos?",
-    options:[
-      {txt:"Desculpa, vou obrigar eles a lavar.", correct:false},
-      {txt:"Honrar a Deus importa mais que tradições humanas! (Mt 15:3)", correct:true},
-      {txt:"Higiene não é importante.", correct:false},
-      {txt:"Silêncio estratégico.", correct:false}
-    ]
-  },
-  {
-    pharisee:"Por qual autoridade você faz essas coisas? Quem te deu essa autoridade?",
-    options:[
-      {txt:"Responder diretamente sem questionar.", correct:false},
-      {txt:"Me dê a resposta sobre João Batista primeiro... (Mt 21:24)", correct:true},
-      {txt:"Ignorar e continuar ensinando.", correct:false},
-      {txt:"Chamar os discípulos pra debater.", correct:false}
-    ]
-  },
-  {
-    pharisee:"Devemos pagar impostos a César ou não?",
-    options:[
-      {txt:"Sim, paguem tudo ao governo.", correct:false},
-      {txt:"Não, resistam ao governo romano!", correct:false},
-      {txt:"Dai a César o que é de César e a Deus o que é de Deus. (Mt 22:21)", correct:true},
-      {txt:"Essa pergunta não tem resposta certa.", correct:false}
-    ]
-  }
+const DEBS=[
+  {q:"Por que seus discípulos comem sem lavar as mãos?",
+   ops:[{t:"Desculpa, vou obrigá-los a lavar.",c:false},{t:"Honrar a Deus importa mais que tradições! (Mt 15:3)",c:true},{t:"Higiene não é importante.",c:false},{t:"Silêncio estratégico.",c:false}]},
+  {q:"Por qual autoridade você faz essas coisas?",
+   ops:[{t:"Respondo tudo sem questionar.",c:false},{t:"Me diga sobre João Batista primeiro... (Mt 21:24)",c:true},{t:"Ignorar e continuar.",c:false},{t:"Pedir ajuda dos discípulos.",c:false}]},
+  {q:"Devemos pagar impostos a César ou não?",
+   ops:[{t:"Sim, paguem tudo ao governo.",c:false},{t:"Não, resistam ao império!",c:false},{t:"Dai a César o de César, a Deus o de Deus. (Mt 22:21)",c:true},{t:"Sem resposta certa.",c:false}]}
 ];
+const NATIONS=["🌍 África","🌎 Américas","🌏 Ásia","🏔️ Europa","🏝️ Oceania","🕌 Oriente M."];
 
-const NATIONS = ["🌍 África","🌎 Américas","🌏 Ásia","🏔️ Europa","🏝️ Oceania","🕌 Oriente Médio"];
-
-function addAura(amount, reason) {
-  G.aura = Math.min(G.maxAura, G.aura + amount);
-  updateHUD();
-  showNotif(`+${amount} AURA${reason?' — '+reason:''}`, 'aura');
+function addA(n,r){G.aura=Math.min(G.max,G.aura+n);updHUD();notif('+'+n+' AURA'+(r?' — '+r:''),'aura')}
+function loseA(n,r){G.aura=Math.max(0,G.aura-n);updHUD();notif('-'+n+' AURA'+(r?' — '+r:''),'r')}
+function addP(n){const a=Math.min(n,60-G.pr);G.pr+=a;updHUD();renderPG();if(a>0)notif('+'+a+' profecias!','gld')}
+function updHUD(){
+  document.getElementById('auraDisp').textContent=G.aura.toLocaleString();
+  document.getElementById('auraBar').style.width=Math.round((G.aura/G.max)*100)+'%';
+  document.getElementById('prophDisp').textContent=G.pr;
+  document.getElementById('phaseNum').textContent=G.phase;
 }
-function loseAura(amount, reason) {
-  G.aura = Math.max(0, G.aura - amount);
-  updateHUD();
-  showNotif(`-${amount} AURA${reason?' — '+reason:''}`, 'red');
+function setD(spk,txt){document.getElementById('sdSpk').textContent=spk;document.getElementById('sdTxt').textContent=txt;}
+function notif(msg,type){
+  const a=document.getElementById('notifArea');
+  const el=document.createElement('div');
+  el.className='nf '+(type||'');el.textContent=msg;
+  a.appendChild(el);
+  setTimeout(()=>{el.style.opacity='0';el.style.transition='opacity .4s';setTimeout(()=>el.remove(),450)},1800);
 }
-function addProphecy(n) {
-  const added = Math.min(n, 60 - G.prophecies);
-  G.prophecies += added;
-  updateHUD();
-  renderProphecyGrid();
-  if(added > 0) showNotif(`+${added} PROFECIAS DO AT!`, 'gold');
+function renderPG(){
+  const g=document.getElementById('prophGrid');g.innerHTML='';
+  for(let i=0;i<60;i++){const d=document.createElement('div');d.className='pslot'+(i<G.pr?' f':'');d.textContent=i<G.pr?'📜':'';g.appendChild(d);}
 }
-function updateHUD() {
-  document.getElementById('auraDisplay').textContent = G.aura.toLocaleString();
-  const pct = Math.min(100, (G.aura / G.maxAura) * 100);
-  document.getElementById('auraBar').style.width = pct + '%';
-  document.getElementById('prophecyCount').textContent = G.prophecies + '/60';
-  document.getElementById('currentPhaseNum').textContent = G.phase;
-}
-function setDialog(speaker, text) {
-  document.getElementById('dialogSpeaker').textContent = speaker;
-  document.getElementById('dialogContent').textContent = text;
-}
-function showNotif(msg, type='aura') {
-  const el = document.createElement('div');
-  el.className = 'notif ' + type;
-  el.textContent = msg;
-  document.body.appendChild(el);
-  setTimeout(()=>{ el.style.opacity='0'; setTimeout(()=>el.remove(),500); }, 2000);
-}
-function renderProphecyGrid() {
-  const grid = document.getElementById('prophecyGrid');
-  grid.innerHTML = '';
-  for(let i=0;i<60;i++){
-    const slot = document.createElement('div');
-    slot.className = 'proph-slot' + (i < G.prophecies ? ' filled' : '');
-    slot.textContent = i < G.prophecies ? '📜' : '';
-    grid.appendChild(slot);
-  }
-}
-function goToPhase(n) {
+function goTo(n){
   document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));
-  document.getElementById('scene'+n).classList.add('active');
-  G.phase = n;
-  document.querySelectorAll('.phase-pill').forEach(p=>{
-    p.classList.remove('active');
-    const ph = parseInt(p.dataset.phase);
-    if(ph === n) p.classList.add('active');
-    else if(ph < n) p.classList.add('done');
+  document.getElementById('sc'+n).classList.add('active');
+  G.phase=n;
+  document.querySelectorAll('.pill').forEach(p=>{
+    p.classList.remove('active','done');
+    const ph=+p.dataset.p;
+    if(ph===n)p.classList.add('active');
+    else if(ph<n)p.classList.add('done');
   });
-  updateHUD();
+  updHUD();
 }
-
-/* PHASE 1 */
-function p1escolha(choice) {
-  const btns = document.getElementById('p1actions');
-  btns.querySelectorAll('button').forEach(b=>b.disabled=true);
-  document.getElementById('jesusSprite1').style.display='block';
-  if(choice === 'seguir') {
-    addAura(1000, 'Largou tudo pra seguir!');
-    addProphecy(8);
-    setDialog('SISTEMA','Mateus largou TUDO. Farmou a primeira aura só de seguir o Rei Alfa. Ele vai escrever um livro inteiro citando 60 profecias!');
-    setTimeout(()=>{
-      G.phase1Done=true;
-      document.getElementById('p1dialog').textContent='✅ Fase 1 completa! Próxima: Deserto...';
-      document.getElementById('p1actions').innerHTML=`<button class="btn-big green" onclick="startPhase2()" style="grid-column:span 2">▶ AVANÇAR PARA O DESERTO</button>`;
-      document.getElementById('p1actions').querySelector('button').disabled=false;
-    },1500);
-  } else {
-    loseAura(500,'Ficou na mesa das moedas...');
-    setDialog('NARRADOR','Mateus hesitou... perdeu a maior oportunidade da vida. Tente novamente!');
-    btns.querySelectorAll('button').forEach(b=>b.disabled=false);
-    document.getElementById('jesusSprite1').style.display='none';
-  }
-}
-function startPhase2() {
-  goToPhase(2);
-  setDialog('NARRADOR','Jesus foi ao deserto jejuar por 40 dias. O Diabo resolveu tentar dar um GANK três vezes. Selecione o versículo correto para contra-atacar!');
-  renderGankRound();
-}
-
-/* PHASE 2 */
-function renderGankRound() {
-  const round = G.gankRound;
-  if(round >= 3) { phase2Win(); return; }
-  const gank = GANKS[round];
-  document.getElementById('gankMsg').textContent = `GANK ${round+1}/3: "${gank.attack}"`;
-  const btns = document.getElementById('gankButtons');
-  btns.innerHTML = '';
-  gank.options.forEach((opt,i)=>{
-    const b = document.createElement('button');
-    b.className = 'action-btn';
-    b.textContent = opt.txt;
-    b.onclick = ()=>handleGank(opt.correct, b, btns, gank.verse);
-    btns.appendChild(b);
-  });
-}
-function handleGank(correct, btn, btns, verse) {
-  btns.querySelectorAll('button').forEach(b=>b.disabled=true);
-  const log = document.getElementById('combatLog');
-  if(correct){
-    btn.classList.add('correct');
-    G.devilHp--;
-    addAura(1000,'Versículo certeiro!');
-    addProphecy(3);
-    const devilPct = (G.devilHp/3)*100;
-    document.getElementById('devilHp').style.width=devilPct+'%';
-    document.getElementById('devilHpNum').textContent=G.devilHp+' GANKS';
-    const entry = document.createElement('div');
-    entry.className='entry good'; entry.textContent=`✅ ACERTOU! ${verse} — Diabo: ${G.devilHp} HP restante.`;
-    log.appendChild(entry); log.scrollTop=log.scrollHeight;
-    setDialog('JESUS',`"${verse}" — Respondeu na lógica. +1000 AURA!`);
-    G.gankRound++;
-    setTimeout(()=>renderGankRound(), 1200);
-  } else {
-    btn.classList.add('wrong');
-    loseAura(300,'Versículo errado...');
-    const entry = document.createElement('div');
-    entry.className='entry bad'; entry.textContent=`❌ Errou! O Diabo aproveitou...`;
-    log.appendChild(entry); log.scrollTop=log.scrollHeight;
-    setDialog('NARRADOR','Versículo errado! O Diabo ganhou uma brecha. Tente outro!');
-    setTimeout(()=>{ btns.querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('wrong');}); }, 800);
-  }
-}
-function phase2Win(){
-  document.getElementById('devilHp').style.width='0%';
-  document.getElementById('devilHpNum').textContent='0 — FOI EMBORA';
-  document.getElementById('gankMsg').textContent='🏆 DIABO DERROTADO! Fugiu sem NENHUMA AURA!';
-  document.getElementById('gankButtons').innerHTML=`<button class="btn-big green" onclick="startPhase3()" style="grid-column:span 2">▶ AVANÇAR PARA OS MILAGRES</button>`;
-  setDialog('SISTEMA','3 ganks, 3 derrotas. O Diabo foi embora com aura zero. Jesus farmou absurdo no deserto!');
-  addAura(2000,'Derrotou o Diabo 3x!');
-}
-
-/* PHASE 3 */
-function startPhase3(){
-  goToPhase(3);
-  setDialog('NARRADOR','Jesus desceu do deserto e começou a farmear milagres pela Galileia! Cure os NPCs e depois enfrente o minigame das águas com Pedro!');
-  renderMiracleMap();
-}
-function renderMiracleMap(){
-  const map = document.getElementById('miracleMap');
-  map.innerHTML='';
-  const npcs = [
-    {type:'cego',icon:'👁️',label:'Cego NPC'},
-    {type:'cego',icon:'👁️',label:'Cego NPC'},
-    {type:'cego',icon:'👁️',label:'Cego NPC'},
-    {type:'leproso',icon:'🤒',label:'Leproso NPC'},
-    {type:'leproso',icon:'🤒',label:'Leproso NPC'},
-    {type:'leproso',icon:'🤒',label:'Leproso NPC'},
-    {type:'paralitico',icon:'🦽',label:'Paralítico NPC'},
-    {type:'paralitico',icon:'🦽',label:'Paralítico NPC'},
-    {type:'paralitico',icon:'🦽',label:'Paralítico NPC'},
-  ];
-  npcs.forEach((npc,i)=>{
-    const btn = document.createElement('button');
-    btn.className='action-btn';
-    btn.style.cssText='font-size:20px;text-align:center;padding:8px;border-color:#334;';
-    btn.innerHTML=`${npc.icon}<br><span style="font-size:6px">${npc.label}</span>`;
-    btn.id=`npc${i}`;
-    btn.onclick=()=>cureNpc(npc.type, btn, i);
-    map.appendChild(btn);
-  });
-}
-function cureNpc(type, btn, idx){
-  btn.disabled=true;
-  btn.innerHTML=`✨<br><span style="font-size:6px;color:var(--green)">CURADO!</span>`;
-  btn.style.borderColor='var(--green)';
-  const labels = {cego:'cegoCount',leproso:'lepCount',paralitico:'paralCount'};
-  G.miraclesLeft[type]--;
-  document.getElementById(labels[type]).textContent=G.miraclesLeft[type];
-  addAura(500,'Milagre realizado!');
-  addProphecy(2);
-  setDialog('JESUS','Seja curado! Sua fé te salvou.');
-  const total = G.miraclesLeft.cego + G.miraclesLeft.leproso + G.miraclesLeft.paralitico;
-  if(total === 0){
-    setDialog('SISTEMA','Todos os NPCs curados! Agora Pedro vai tentar andar sobre as águas...');
-    setTimeout(()=>{ document.getElementById('waterGame').style.display='block'; }, 600);
-  }
-}
-function boostFaith(){
-  G.faithPct = Math.min(100, G.faithPct + 20);
-  updateFaithBar();
-  if(G.faithPct >= 80){
-    document.getElementById('waterMsg').textContent='⚡ Pedro tá firme! Fé inabalável!';
-    document.getElementById('waterMsg').style.color='var(--green)';
-    if(!G.waterDone){ G.waterDone=true; phase3Win(); }
-  }
-}
-function loseFaith(){
-  G.faithPct = Math.max(0, G.faithPct - 25);
-  updateFaithBar();
-  if(G.faithPct <= 20){
-    document.getElementById('peterSprite').classList.add('sinking');
-    document.getElementById('waterMsg').textContent='😱 MODO BETA ATIVADO! Pedro afundou...';
-    document.getElementById('waterMsg').style.color='var(--red)';
-    loseAura(500,'Pedro entrou em modo beta!');
-    setTimeout(()=>{
-      document.getElementById('peterSprite').classList.remove('sinking');
-      G.faithPct=40; updateFaithBar();
-    },1500);
-  }
-}
-function updateFaithBar(){
-  document.getElementById('faithBar').style.width=G.faithPct+'%';
-  document.getElementById('faithVal').textContent='Fé: '+G.faithPct+'%';
-}
-function phase3Win(){
-  addAura(1500,'Milagres + Pedro resgatado!');
-  setDialog('SISTEMA','Pedro foi resgatado. Jesus disse: "Por que duvidaste?" -500 de aura de Pedro. Galileia farmada! Próximo: Debates com os Fariseus!');
-  document.getElementById('waterGame').innerHTML+=`<button class="btn-big green" onclick="startPhase4()" style="margin-top:8px">▶ IR PARA JERUSALÉM</button>`;
-}
-
-/* PHASE 4 */
-function startPhase4(){
-  goToPhase(4);
-  setDialog('FARISEUS','Pensamos que podemos derrotar o Rei Alfa com perguntas capciosas! Começamos o debate!');
-  G.debateRound=0; G.debateJHp=3; G.debateFHp=3;
-  renderDebateRound();
-}
-function renderDebateRound(){
-  if(G.debateRound >= 3){ phase4Win(); return; }
-  const d = DEBATES[G.debateRound];
-  document.getElementById('debateQuestion').textContent=`🧔 FARISEU: "${d.pharisee}"`;
-  document.getElementById('debateResult').textContent='';
-  const ansList = document.getElementById('debateAnswers');
-  ansList.innerHTML='';
-  d.options.forEach(opt=>{
-    const b = document.createElement('button');
-    b.className='action-btn';
-    b.textContent=opt.txt;
-    b.onclick=()=>handleDebate(opt.correct, b, ansList);
-    ansList.appendChild(b);
-  });
-}
-function handleDebate(correct, btn, ansList){
-  ansList.querySelectorAll('button').forEach(b=>b.disabled=true);
-  const log = document.getElementById('debateLog');
-  if(correct){
-    btn.classList.add('correct');
-    G.debateFHp--;
-    addAura(1000,'Debate vencido!');
-    addProphecy(4);
-    const pct=(G.debateFHp/3)*100;
-    document.getElementById('debateHpF').style.width=pct+'%';
-    document.getElementById('debateHpFN').textContent=G.debateFHp+'/3';
-    const e=document.createElement('div'); e.className='entry gold';
-    e.textContent=`✅ Debate ${G.debateRound+1} VENCIDO! +1000 AURA`;
-    log.appendChild(e); log.scrollTop=log.scrollHeight;
-    document.getElementById('debateResult').textContent='🔥 +1000 AURA farmada no debate!';
-    document.getElementById('debateResult').style.color='var(--gold)';
-    G.debateRound++;
-    setTimeout(()=>renderDebateRound(), 1200);
-  } else {
-    btn.classList.add('wrong');
-    G.debateJHp--;
-    loseAura(300,'Resposta errada no debate!');
-    const pct=(G.debateJHp/3)*100;
-    document.getElementById('debateHpJ').style.width=pct+'%';
-    document.getElementById('debateHpJN').textContent=G.debateJHp+'/3';
-    const e=document.createElement('div'); e.className='entry bad';
-    e.textContent='❌ Os Fariseus aproveitaram a falha...';
-    log.appendChild(e); log.scrollTop=log.scrollHeight;
-    document.getElementById('debateResult').textContent='Resposta errada! Tente outra.';
-    document.getElementById('debateResult').style.color='var(--red)';
-    setTimeout(()=>{ ansList.querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('wrong');}); },800);
-  }
-}
-function phase4Win(){
-  document.getElementById('debateHpF').style.width='0%';
-  document.getElementById('debateHpFN').textContent='0/3 — DERROTADOS';
-  document.getElementById('debateQuestion').innerHTML=`<span style="color:var(--red)">JUDAS virou beta e vendeu Jesus por 30 moedas de prata...<br>O Rei foi preso, julgado e crucificado.<br><br><strong style="color:var(--text-muted)">O pior gank da história.</strong></span>`;
-  document.getElementById('debateAnswers').innerHTML=`<button class="btn-big purple" onclick="startPhase5()" style="grid-column:span 2;margin-top:8px">▶ FASE FINAL: O RESPAWN</button>`;
-  setDialog('SISTEMA','Judas — 30 moedas. Que betona. Os fariseus comemoraram. Os discípulos fugiram com menos infinito de aura. Mas...');
-  addAura(2000,'3 debates vencidos!');
-}
-
-/* PHASE 5 */
-function startPhase5(){
-  goToPhase(5);
-  setDialog('NARRADOR','Game Over temporário. Todos acharam que tinha acabado. Os discípulos fugiram. A morte parecia ter vencido. Mas espere o dia 3...');
-  let dots=0;
-  const dotEl=document.getElementById('countDots');
-  const iv=setInterval(()=>{
-    dots++;
-    dotEl.innerHTML+='<span style="font-size:18px;color:var(--gold)">•</span>';
-    if(dots>=9){ clearInterval(iv); document.getElementById('ressBtn').style.display='block'; }
-  },500);
-}
-function showRessurrection(){
-  document.getElementById('gameoverSection').style.display='none';
-  document.getElementById('ressurrectionSection').style.display='block';
-  addAura(3000,'RESSURREIÇÃO! Aura máxima!');
-  G.aura = G.maxAura;
-  updateHUD();
-  setDialog('JESUS','Toda autoridade no céu e na terra foi dada a mim. Vai e faz discípulos em todas as nações!');
-  renderNationGrid();
-}
-function renderNationGrid(){
-  const grid=document.getElementById('nationGrid');
-  grid.innerHTML='';
-  NATIONS.forEach((nation,i)=>{
-    const btn=document.createElement('button');
-    btn.className='action-btn';
-    btn.style.cssText='text-align:center;font-size:13px;padding:8px 6px;';
-    btn.innerHTML=nation+'<br><span style="font-size:6px;color:var(--text-muted)">Recrutar</span>';
-    btn.onclick=()=>recruitNation(btn,nation,i);
-    grid.appendChild(btn);
-  });
-}
-function recruitNation(btn,nation,i){
-  btn.disabled=true;
-  btn.classList.add('correct');
-  btn.innerHTML=nation+'<br><span style="font-size:6px;color:var(--green)">✅ Discípulos!</span>';
-  G.nationsRecruited++;
-  addAura(500,'Nação recrutada!');
-  addProphecy(i<G.prophecies?0:3);
-  document.getElementById('commissionProgress').textContent=`${G.nationsRecruited}/${G.totalNations} nações alcançadas`;
-  if(G.nationsRecruited >= G.totalNations){ showFinalScore(); }
-}
-function showFinalScore(){
-  const fs=document.getElementById('finalScore');
-  fs.style.display='block';
-  document.getElementById('finalAuraDisplay').textContent='AURA TOTAL: '+G.aura.toLocaleString();
-  document.getElementById('finalProphecy').textContent='PROFECIAS: '+G.prophecies+'/60';
-  const badge = G.prophecies>=55?'🏆 DISCÍPULO ALFA — Badge Desbloqueado!'
-    : G.prophecies>=40?'⭐ Estudioso do Reino!'
-    : '📜 Continue coletando profecias!';
-  document.getElementById('finalBadge').textContent=badge;
-  setDialog('SISTEMA','Grande Comissão completa! Você farmou aura por toda a eternidade com o Rei Alfa!');
-}
-function restartGame(){
-  Object.assign(G,{aura:0,prophecies:0,phase:1,gankRound:0,jesusHp:3,devilHp:3,
-    miraclesLeft:{cego:3,leproso:3,paralitico:3},faithPct:70,waterDone:false,
-    debateRound:0,debateJHp:3,debateFHp:3,nationsRecruited:0});
-  updateHUD();
-  renderProphecyGrid();
-  document.querySelectorAll('.phase-pill').forEach(p=>{ p.classList.remove('active','done'); });
-  document.querySelector('[data-phase="1"]').classList.add('active');
-  goToPhase(1);
-  const btns=document.getElementById('p1actions');
-  btns.querySelectorAll('button').forEach(b=>b.disabled=false);
-  btns.innerHTML=`
-    <button class="action-btn" onclick="p1escolha('ficar')">💰 FICAR NA MESA<br><span style="color:var(--text-muted);font-size:6px">Manter o dinheiro</span></button>
-    <button class="action-btn correct" onclick="p1escolha('seguir')">🚶 SEGUIR JESUS<br><span style="color:var(--green);font-size:6px">+1000 AURA INICIAL</span></button>`;
-  document.getElementById('jesusSprite1').style.display='none';
-  document.getElementById('p1dialog').textContent='';
-  setDialog('NARRADOR','Bem-vindo de volta ao Aura Quest! Farme aura e siga o Rei Alfa!');
-}
-
-// Phase pill navigation
-document.querySelectorAll('.phase-pill').forEach(p=>{
+document.querySelectorAll('.pill').forEach(p=>{
   p.addEventListener('click',()=>{
-    const ph=parseInt(p.dataset.phase);
-    if(p.classList.contains('done')||p.classList.contains('active')) goToPhase(ph);
+    if(p.classList.contains('done')||p.classList.contains('active'))goTo(+p.dataset.p);
   });
 });
 
-// Init
-renderProphecyGrid();
-updateHUD();
+/* FASE 1 */
+function p1(c){
+  document.getElementById('p1btns').querySelectorAll('button').forEach(b=>b.disabled=true);
+  document.getElementById('jspr1').style.display='block';
+  if(c==='s'){
+    addA(1000,'Largou tudo pra seguir!');addP(8);
+    setD('JESUS','Mateus foi. Sem hesitar. Farmou a primeira aura da vida só de seguir o mestre.');
+    document.getElementById('p1msg').textContent='✅ Fase 1 completa!';
+    setTimeout(()=>{
+      document.getElementById('p1btns').innerHTML='<button class="bbtn g" onclick="goP2()" style="grid-column:span 2">▶ IR PARA O DESERTO</button>';
+      document.getElementById('p1btns').querySelector('button').disabled=false;
+    },1200);
+  } else {
+    loseA(500,'Ficou na mesa das moedas');
+    setD('NARRADOR','Mateus hesitou. Perdeu a maior oportunidade da vida. Tente de novo!');
+    setTimeout(()=>document.getElementById('p1btns').querySelectorAll('button').forEach(b=>b.disabled=false),800);
+    document.getElementById('jspr1').style.display='none';
+  }
+}
+function goP2(){
+  goTo(2);setD('NARRADOR','Jesus foi ao deserto. O Diabo tentou dar gank 3 vezes. Selecione o versículo correto!');
+  renderGank();
+}
+
+/* FASE 2 */
+function renderGank(){
+  if(G.gR>=3){p2Win();return;}
+  const gk=GANKS[G.gR];
+  document.getElementById('gankMsg').textContent='GANK '+(G.gR+1)+'/3: "'+gk.a+'"';
+  const el=document.getElementById('gankBtns');el.innerHTML='';
+  gk.ops.forEach(op=>{
+    const b=document.createElement('button');b.className='abtn';b.textContent=op.t;
+    b.onclick=()=>doGank(op.c,b,gk.v);el.appendChild(b);
+  });
+}
+function doGank(ok,btn,v){
+  document.getElementById('gankBtns').querySelectorAll('button').forEach(b=>b.disabled=true);
+  const log=document.getElementById('gankLog');
+  if(ok){
+    btn.classList.add('ok');G.dHp--;
+    addA(1000,'Versículo certeiro!');addP(3);
+    document.getElementById('dHp').style.width=Math.round((G.dHp/3)*100)+'%';
+    document.getElementById('dHpN').textContent=G.dHp+'/3';
+    const e=document.createElement('div');e.className='ent ok';e.textContent='✅ '+v+' — Gank bloqueado!';
+    log.appendChild(e);log.scrollTop=9999;
+    setD('JESUS','"'+v+'" — Respondeu na lógica. Diabo sem resposta!');
+    G.gR++;setTimeout(renderGank,1100);
+  } else {
+    btn.classList.add('no');loseA(300,'Versículo errado');
+    const e=document.createElement('div');e.className='ent no';e.textContent='❌ Errou! Tente outro versículo.';
+    log.appendChild(e);log.scrollTop=9999;
+    setD('NARRADOR','Versículo errado! O Diabo aproveitou a brecha. Tente outro!');
+    setTimeout(()=>document.getElementById('gankBtns').querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('no');}),700);
+  }
+}
+function p2Win(){
+  document.getElementById('dHp').style.width='0%';document.getElementById('dHpN').textContent='0 — FOI!';
+  document.getElementById('gankMsg').textContent='🏆 DIABO DERROTADO! Fugiu sem aura nenhuma.';
+  document.getElementById('gankBtns').innerHTML='<button class="bbtn g" onclick="goP3()" style="grid-column:span 2">▶ IR PARA OS MILAGRES</button>';
+  addA(2000,'3 ganks bloqueados!');
+  setD('SISTEMA','3 tentativas, 3 derrotas. O Diabo foi embora com aura zero. Missão completa!');
+}
+
+/* FASE 3 */
+function goP3(){goTo(3);setD('NARRADOR','Galileia aberta! Cure os NPCs e depois ajude Pedro a andar sobre as águas!');renderNPCs();}
+function renderNPCs(){
+  const types=[{k:'c',i:'👁️',l:'Cego'},{k:'c',i:'👁️',l:'Cego'},{k:'c',i:'👁️',l:'Cego'},
+    {k:'l',i:'🤒',l:'Leproso'},{k:'l',i:'🤒',l:'Leproso'},{k:'l',i:'🤒',l:'Leproso'},
+    {k:'p',i:'🦽',l:'Paralítico'},{k:'p',i:'🦽',l:'Paralítico'},{k:'p',i:'🦽',l:'Paralítico'}];
+  const g=document.getElementById('npcGrid');g.innerHTML='';
+  types.forEach((t,i)=>{
+    const b=document.createElement('button');b.className='npc-btn';
+    b.innerHTML=`<div class="npc-ico">${t.i}</div><span class="npc-lbl">${t.l}</span>`;
+    b.id='npc'+i;b.onclick=()=>cureNPC(t.k,b,i);g.appendChild(b);
+  });
+}
+function cureNPC(k,btn,i){
+  btn.disabled=true;btn.innerHTML='<div class="npc-ico">✨</div><span class="npc-lbl" style="color:var(--gr)">CURADO!</span>';
+  const map={c:'mc0',l:'mc1',p:'mc2'};
+  G.mr[{c:'c',l:'l',p:'p'}[k]]--;
+  document.getElementById(map[k]).textContent=G.mr[{c:'c',l:'l',p:'p'}[k]];
+  addA(500,'Milagre realizado!');addP(2);
+  setD('JESUS','Seja curado! Sua fé te salvou.');
+  if(G.mr.c+G.mr.l+G.mr.p===0){
+    setD('SISTEMA','Todos curados! Agora Pedro vai tentar andar sobre as águas...');
+    setTimeout(()=>{document.getElementById('waterSec').style.display='block';},600);
+  }
+}
+function bf(dir){
+  G.faith=Math.min(100,Math.max(0,G.faith+(dir>0?20:-25)));
+  document.getElementById('faithFill').style.width=G.faith+'%';
+  document.getElementById('faithPct').textContent=G.faith;
+  if(G.faith<=20){
+    document.getElementById('peterEl').classList.add('sink');
+    document.getElementById('waterMsg').textContent='😱 MODO BETA! Pedro afundou...';
+    document.getElementById('waterMsg').style.color='var(--re)';
+    loseA(500,'Pedro entrou em modo beta!');
+    setTimeout(()=>{document.getElementById('peterEl').classList.remove('sink');G.faith=40;bf(0);},1400);
+  } else if(G.faith>=80&&!G.wDone){
+    G.wDone=true;
+    document.getElementById('waterMsg').textContent='⚡ Fé inabalável! Pedro está firme!';
+    document.getElementById('waterMsg').style.color='var(--gr)';
+    addA(1500,'Milagres + Pedro!');
+    setD('SISTEMA','Pedro foi resgatado! Jesus disse: "Por que duvidaste?" Próximo: Debates em Jerusalém.');
+    setTimeout(()=>{
+      document.getElementById('waterSec').innerHTML+='<button class="bbtn g" onclick="goP4()" style="margin-top:6px">▶ IR PARA JERUSALÉM</button>';
+    },800);
+  }
+}
+
+/* FASE 4 */
+function goP4(){goTo(4);setD('FARISEUS','Achamos que podemos derrotar o Rei Alfa com palavras capciosas! Começa o debate!');G.dR=0;G.djH=3;G.dfH=3;renderDeb();}
+function renderDeb(){
+  if(G.dR>=3){p4Win();return;}
+  const d=DEBS[G.dR];
+  document.getElementById('debQ').textContent='🧔 FARISEU: "'+d.q+'"';
+  document.getElementById('debRes').textContent='';
+  const el=document.getElementById('debBtns');el.innerHTML='';
+  d.ops.forEach(op=>{
+    const b=document.createElement('button');b.className='abtn';b.textContent=op.t;
+    b.onclick=()=>doDeb(op.c,b);el.appendChild(b);
+  });
+}
+function doDeb(ok,btn){
+  document.getElementById('debBtns').querySelectorAll('button').forEach(b=>b.disabled=true);
+  const log=document.getElementById('debLog');
+  if(ok){
+    btn.classList.add('ok');G.dfH--;
+    addA(1000,'Debate vencido!');addP(4);
+    document.getElementById('dfH').style.width=Math.round((G.dfH/3)*100)+'%';
+    document.getElementById('dfHN').textContent=G.dfH+'/3';
+    const e=document.createElement('div');e.className='ent gl';e.textContent='✅ Debate '+(G.dR+1)+' VENCIDO! +1000 AURA';
+    log.appendChild(e);log.scrollTop=9999;
+    document.getElementById('debRes').textContent='🔥 +1000 AURA no debate!';
+    document.getElementById('debRes').style.color='var(--g)';
+    G.dR++;setTimeout(renderDeb,1100);
+  } else {
+    btn.classList.add('no');G.djH--;loseA(300,'Resposta errada');
+    document.getElementById('djH').style.width=Math.round((G.djH/3)*100)+'%';
+    document.getElementById('djHN').textContent=G.djH+'/3';
+    const e=document.createElement('div');e.className='ent no';e.textContent='❌ Fariseus aproveitaram...';
+    log.appendChild(e);log.scrollTop=9999;
+    document.getElementById('debRes').textContent='Resposta errada! Tente outra.';
+    document.getElementById('debRes').style.color='var(--re)';
+    setTimeout(()=>document.getElementById('debBtns').querySelectorAll('button').forEach(b=>{b.disabled=false;b.classList.remove('no');}),700);
+  }
+}
+function p4Win(){
+  document.getElementById('dfH').style.width='0%';
+  document.getElementById('debQ').innerHTML='<span style="color:var(--re)">JUDAS virou beta e vendeu Jesus por 30 moedas...<br>O Rei foi crucificado. O maior gank da história.</span>';
+  document.getElementById('debBtns').innerHTML='<button class="bbtn p" onclick="goTo(5);startGO()" style="grid-column:span 2">▶ FASE FINAL: O RESPAWN</button>';
+  addA(2000,'3 debates vencidos!');
+  setD('SISTEMA','Judas — 30 moedas. Que betona. Os discípulos fugiram com menos infinito de aura. Mas aguarde...');
+}
+
+/* FASE 5 */
+function startGO(){
+  setD('NARRADOR','Game Over temporário. A morte parecia ter vencido. Mas espere o dia 3...');
+  let d=0;const dr=document.getElementById('dotRow');
+  const iv=setInterval(()=>{
+    d++;const sp=document.createElement('span');sp.style.cssText='font-size:16px;color:var(--g)';sp.textContent='•';
+    dr.appendChild(sp);
+    if(d>=9){clearInterval(iv);document.getElementById('ressBtn').style.display='block';}
+  },450);
+}
+function doRess(){
+  document.getElementById('goSec').style.display='none';
+  document.getElementById('ressSec').style.display='block';
+  G.aura=G.max;updHUD();
+  addP(6);
+  setD('JESUS','Toda autoridade no céu e na terra foi dada a mim! Vai e faz discípulos em todas as nações!');
+  renderNations();
+}
+function renderNations(){
+  const g=document.getElementById('natGrid');g.innerHTML='';
+  NATIONS.forEach((n,i)=>{
+    const b=document.createElement('button');b.className='abtn';
+    b.style.cssText='font-size:10px;text-align:center;padding:6px 4px;';
+    b.innerHTML=n+'<br><span style="font-size:5px;color:var(--mu)">Recrutar</span>';
+    b.onclick=()=>recruit(b,n,i);g.appendChild(b);
+  });
+}
+function recruit(btn,n,i){
+  btn.disabled=true;btn.classList.add('ok');
+  btn.innerHTML=n+'<br><span style="font-size:5px;color:var(--gr)">✅ Discípulos!</span>';
+  G.nR++;addA(500,'Nação recrutada!');addP(2);
+  document.getElementById('commProg').textContent=G.nR+'/'+NATIONS.length+' nações alcançadas';
+  if(G.nR>=NATIONS.length)showFinal();
+}
+function showFinal(){
+  const fs=document.getElementById('finalBox');fs.style.display='block';
+  document.getElementById('fAura').textContent='AURA: '+G.aura.toLocaleString();
+  document.getElementById('fProph').textContent='PROFECIAS: '+G.pr+'/60';
+  const badge=G.pr>=55?'🏆 DISCÍPULO ALFA DESBLOQUEADO!':G.pr>=40?'⭐ Estudioso do Reino!':'📜 Continue coletando!';
+  document.getElementById('fBadge').textContent=badge;
+  setD('SISTEMA','Grande Comissão completa! Você farmou aura por toda a eternidade com o Rei Alfa!');
+}
+function restartGame(){
+  Object.assign(G,{aura:0,pr:0,phase:1,gR:0,jHp:3,dHp:3,mr:{c:3,l:3,p:3},faith:70,wDone:false,dR:0,djH:3,dfH:3,nR:0});
+  updHUD();renderPG();
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active','done'));
+  document.querySelector('[data-p="1"]').classList.add('active');
+  document.getElementById('jspr1').style.display='none';
+  document.getElementById('p1msg').textContent='';
+  document.getElementById('p1btns').innerHTML=`
+    <button class="abtn" onclick="p1('n')">💰 FICAR<br><span style="color:var(--mu);font-size:5px">Manter o dinheiro</span></button>
+    <button class="abtn ok" onclick="p1('s')">🚶 SEGUIR<br><span style="font-size:5px">+1000 AURA!</span></button>`;
+  document.getElementById('goSec').style.display='block';
+  document.getElementById('ressSec').style.display='none';
+  document.getElementById('dotRow').innerHTML='';
+  document.getElementById('ressBtn').style.display='none';
+  setD('NARRADOR','Bem-vindo de volta ao Aura Quest! Siga o Rei Alfa pelo Evangelho de Mateus!');
+  goTo(1);
+}
+renderPG();updHUD();
 </script>
