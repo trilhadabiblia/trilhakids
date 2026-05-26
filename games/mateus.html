@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mateus</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Montserrat:wght@200;400&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f0ece4;
+      --accent: #c9a96e;
+      --btn-size: 52px;
+      --transition: 600ms cubic-bezier(0.77, 0, 0.175, 1);
+    }
+
+    html, body {
+      width: 100%; height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+
+    /* ── Gallery wrapper ── */
+    #gallery {
+      position: relative;
+      width: 100vw; height: 100vh;
+    }
+
+    /* ── Slides ── */
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity var(--transition);
+      pointer-events: none;
+    }
+    .slide.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .slide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* subtle dark vignette */
+    .slide::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,.55) 100%);
+      pointer-events: none;
+    }
+
+    /* ── Counter ── */
+    #counter {
+      position: fixed;
+      top: 28px; right: 36px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(13px, 1.4vw, 18px);
+      letter-spacing: .18em;
+      color: var(--fg);
+      opacity: .75;
+      z-index: 20;
+      text-shadow: 0 1px 8px rgba(0,0,0,.6);
+    }
+
+    /* ── Nav buttons ── */
+    .nav-btn {
+      position: fixed;
+      top: 50%; transform: translateY(-50%);
+      z-index: 20;
+      width: var(--btn-size); height: var(--btn-size);
+      border: 1px solid rgba(240,236,228,.28);
+      background: rgba(10,10,10,.38);
+      backdrop-filter: blur(6px);
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 280ms, border-color 280ms, transform 280ms;
+      outline: none;
+    }
+    .nav-btn:hover {
+      background: rgba(201,169,110,.22);
+      border-color: var(--accent);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .nav-btn:active { transform: translateY(-50%) scale(.95); }
+
+    #btn-prev { left: 28px; }
+    #btn-next { right: 28px; }
+
+    .nav-btn svg {
+      width: 20px; height: 20px;
+      stroke: var(--fg); stroke-width: 1.5;
+      fill: none; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    /* ── Progress bar ── */
+    #progress {
+      position: fixed;
+      bottom: 0; left: 0;
+      height: 2px;
+      background: var(--accent);
+      z-index: 20;
+      transition: width var(--transition);
+    }
+
+    /* ── Thumbnail dots ── */
+    #dots {
+      position: fixed;
+      bottom: 22px; left: 50%;
+      transform: translateX(-50%);
+      display: flex; gap: 8px;
+      z-index: 20;
+    }
+    .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: rgba(240,236,228,.35);
+      cursor: pointer;
+      transition: background 300ms, transform 300ms;
+      border: none; outline: none;
+    }
+    .dot.active {
+      background: var(--accent);
+      transform: scale(1.4);
+    }
+
+    /* ── No images message ── */
+    #empty {
+      display: none;
+      position: fixed; inset: 0;
+      align-items: center; justify-content: center; flex-direction: column;
+      gap: 16px; text-align: center; padding: 32px;
+    }
+    #empty h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 300; letter-spacing: .06em;
+    }
+    #empty p {
+      font-size: 13px; font-weight: 200; letter-spacing: .12em;
+      opacity: .55; max-width: 360px; line-height: 1.7;
+    }
+
+    /* keyboard hint */
+    #hint {
+      position: fixed;
+      bottom: 52px; left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px; letter-spacing: .2em;
+      opacity: 0; color: var(--fg);
+      animation: fadeHint 3s ease 1.2s forwards;
+      white-space: nowrap; z-index: 20;
+    }
+    @keyframes fadeHint {
+      0%   { opacity: 0; }
+      20%  { opacity: .4; }
+      80%  { opacity: .4; }
+      100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div id="gallery"></div>
+
+<span id="counter"></span>
+
+<button id="btn-prev" class="nav-btn" aria-label="Anterior">
+  <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+</button>
+
+<button id="btn-next" class="nav-btn" aria-label="Próxima">
+  <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
+</button>
+
+<div id="progress"></div>
+<div id="dots"></div>
+<div id="hint">← TECLAS DE SETA →</div>
+
+<div id="empty">
+  <h2>Nenhuma imagem encontrada</h2>
+  <p>Adicione arquivos <code>.png</code> na pasta <strong>images/</strong> ao lado do <strong>index.html</strong>.</p>
+</div>
+
+<script>
+  /*
+   * Auto-discovery: lista de imagens PNG na pasta images/.
+   * Para adicionar imagens basta colocar os arquivos .png em images/.
+   * Se o servidor não permitir listagem de diretório, edite o array
+   * `images` manualmente, ex:
+   *   const images = ['images/foto1.png', 'images/foto2.png'];
+   */
+
+  // ── Configuração ──────────────────────────────────────────────
+  // Opção A (recomendado): liste seus arquivos aqui.
+  // Se deixar vazio, o script tentará descobrir via fetch (funciona em
+  // servidores com directory listing habilitado).
+  const IMAGES_MANUAL = [
+     'images/Mateus_RPG-1.png',
+     'images/Mateus_RPG-2.png',
+	 'images/Mateus_RPG-3.png',
+	 'images/Mateus_RPG-4.png',
+	 'images/Mateus_RPG-5.png',
+	 'images/Mateus_RPG-6.png',
+	 'images/Mateus_RPG-7.png',
+	 'images/Mateus_RPG-8.png',
+	 'images/Mateus_RPG-9.png',
+	 'images/Mateus_RPG-10.png',
+	 'images/Mateus_RPG-11.png',
+	 'images/Mateus_RPG-12.png',
+	 'images/Mateus_RPG-13.png',
+	 'images/Mateus_RPG-14.png',
+  ];
+  // ─────────────────────────────────────────────────────────────
+
+  const gallery = document.getElementById('gallery');
+  const counter  = document.getElementById('counter');
+  const progress = document.getElementById('progress');
+  const dotsEl   = document.getElementById('dots');
+  const emptyEl  = document.getElementById('empty');
+  const btnPrev  = document.getElementById('btn-prev');
+  const btnNext  = document.getElementById('btn-next');
+
+  let slides = [];
+  let current = 0;
+
+  async function discoverImages() {
+    if (IMAGES_MANUAL.length > 0) return IMAGES_MANUAL;
+
+    // Tenta ler o diretório via fetch (funciona se o servidor
+    // tiver directory listing ligado, ex: python -m http.server)
+    try {
+      const res  = await fetch('images/');
+      const html = await res.text();
+      const matches = [...html.matchAll(/href="([^"]+\.png)"/gi)];
+      return matches.map(m => {
+        const f = m[1];
+        return f.startsWith('images/') ? f : 'images/' + f;
+      });
+    } catch {
+      return [];
+    }
+  }
+
+  function buildGallery(images) {
+    if (!images.length) {
+      emptyEl.style.display = 'flex';
+      document.getElementById('btn-prev').style.display = 'none';
+      document.getElementById('btn-next').style.display = 'none';
+      return;
+    }
+
+    images.forEach((src, i) => {
+      const div = document.createElement('div');
+      div.className = 'slide' + (i === 0 ? ' active' : '');
+
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = `Imagem ${i + 1}`;
+      img.loading = i === 0 ? 'eager' : 'lazy';
+
+      div.appendChild(img);
+      gallery.appendChild(div);
+      slides.push(div);
+
+      // dot
+      const dot = document.createElement('button');
+      dot.className = 'dot' + (i === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', `Ir para imagem ${i + 1}`);
+      dot.addEventListener('click', () => goTo(i));
+      dotsEl.appendChild(dot);
+    });
+
+    updateUI();
+  }
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dotsEl.children[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dotsEl.children[current].classList.add('active');
+    updateUI();
+  }
+
+  function updateUI() {
+    counter.textContent = (current + 1).toString().padStart(2,'0')
+      + ' / ' + slides.length.toString().padStart(2,'0');
+    progress.style.width = ((current + 1) / slides.length * 100) + '%';
+  }
+
+  btnPrev.addEventListener('click', () => goTo(current - 1));
+  btnNext.addEventListener('click', () => goTo(current + 1));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') goTo(current + 1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')  goTo(current - 1);
+  });
+
+  // Swipe touch
+  let touchStartX = 0;
+  document.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  document.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? goTo(current + 1) : goTo(current - 1);
+  });
+
+  // Init
+  discoverImages().then(buildGallery);
+</script>
+</body>
+</html>
