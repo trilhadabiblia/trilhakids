@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,200&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #0e0e0e;
+    --surface: #161616;
+    --border: #2a2a2a;
+    --text: #e8e2d9;
+    --muted: #6b6460;
+    --accent: #c8a96e;
+    --accent-dim: rgba(200,169,110,0.15);
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    overflow-x: hidden;
+  }
+
+  /* ── Header ── */
+  header {
+    padding: 3rem 3rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+  }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 200;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    color: var(--accent);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  header span {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ── Grid ── */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 2px;
+    padding: 2px;
+  }
+
+  .thumb {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--surface);
+  }
+  .thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s cubic-bezier(0.25,0.46,0.45,0.94),
+                filter 0.4s ease;
+    filter: brightness(0.85) saturate(0.9);
+  }
+  .thumb:hover img {
+    transform: scale(1.06);
+    filter: brightness(1) saturate(1.1);
+  }
+  .thumb .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem;
+  }
+  .thumb:hover .overlay { opacity: 1; }
+  .thumb .index-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  /* ── Modal ── */
+  #slides-modal {
+    position: fixed;
+    inset: 0;
+    background: #000;
+    z-index: 50;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  #slides-modal.open {
+    display: flex;
+    flex-direction: column;
+  }
+  #slides-modal.visible { opacity: 1; }
+
+  /* top bar */
+  .modal-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%);
+  }
+  .modal-bar-left { display: flex; align-items: center; gap: 1rem; }
+
+  .btn-icon {
+    width: 2.5rem; height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  }
+  .btn-icon:hover {
+    background: rgba(200,169,110,0.25);
+    border-color: var(--accent);
+    transform: scale(1.08);
+  }
+
+  .counter {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: rgba(255,255,255,0.5);
+  }
+  .counter strong { color: var(--accent); font-weight: 400; }
+
+  /* image area */
+  .modal-stage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4rem;
+    position: relative;
+  }
+
+  #current-image, #current-video {
+    max-width: 100%;
+    max-height: 100vh;
+    object-fit: contain;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    border-radius: 2px;
+  }
+  .hidden { display: none !important; }
+
+  /* nav arrows */
+  .btn-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3rem; height: 3rem;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    z-index: 5;
+  }
+  .btn-nav:hover {
+    background: rgba(200,169,110,0.25);
+    border-color: var(--accent);
+    transform: translateY(-50%) scale(1.1);
+  }
+  #btn-prev { left: 1rem; }
+  #btn-next { right: 1rem; }
+
+  /* thumbnails strip */
+  .strip-wrap {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 1.5rem 1rem 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%);
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    z-index: 10;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .strip-wrap::-webkit-scrollbar { display: none; }
+  .strip-thumb {
+    width: 44px; height: 30px;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: border-color 0.2s, opacity 0.2s, transform 0.2s;
+    opacity: 0.45;
+  }
+  .strip-thumb img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .strip-thumb.active {
+    border-color: var(--accent);
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .strip-thumb:hover { opacity: 0.8; }
+
+  /* keyboard hint */
+  .hint {
+    position: absolute;
+    bottom: 5.5rem;
+    right: 1.5rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.2);
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Galeria</h1>
+  <span>9 imagens</span>
+</header>
+
+<div class="grid" id="gallery"></div>
+
+<!-- Modal -->
+<div id="slides-modal">
+  <div class="modal-bar">
+    <div class="modal-bar-left">
+      <button class="btn-icon" onclick="closeSlides()" title="Fechar (Esc)">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <span class="counter">
+        <strong id="counter-cur">1</strong> / <span id="counter-total">9</span>
+      </span>
+    </div>
+  </div>
+
+  <div class="modal-stage">
+    <button class="btn-nav" id="btn-prev" onclick="previousSlide()" title="Anterior (←)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <img id="current-image" class="max-w-full max-h-screen object-contain hidden" alt="" />
+    <video id="current-video" class="max-w-full max-h-screen object-contain hidden" controls autoplay></video>
+
+    <button class="btn-nav" id="btn-next" onclick="nextSlide()" title="Próxima (→)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <div class="strip-wrap" id="strip"></div>
+  <p class="hint">← → navegar &nbsp;·&nbsp; esc fechar</p>
+</div>
+
+<script>
+  const images = Array.from({length: 9}, (_, i) => `imagem${i+1}.png`);
+  let current = 0;
+
+  // Build grid
+  const gallery = document.getElementById('gallery');
+  images.forEach((src, i) => {
+    const div = document.createElement('div');
+    div.className = 'thumb';
+    div.innerHTML = `
+      <img src="${src}" alt="Imagem ${i+1}" loading="lazy">
+      <div class="overlay"><span class="index-label">0${i+1}</span></div>
+    `;
+    div.addEventListener('click', () => openSlides(i));
+    gallery.appendChild(div);
+  });
+
+  // Build strip
+  const strip = document.getElementById('strip');
+  images.forEach((src, i) => {
+    const d = document.createElement('div');
+    d.className = 'strip-thumb';
+    d.id = `strip-${i}`;
+    d.innerHTML = `<img src="${src}" alt="">`;
+    d.addEventListener('click', () => goTo(i));
+    strip.appendChild(d);
+  });
+
+  // Modal controls
+  const modal = document.getElementById('slides-modal');
+  const imgEl = document.getElementById('current-image');
+  const vidEl = document.getElementById('current-video');
+
+  function openSlides(index) {
+    current = index;
+    modal.classList.add('open');
+    requestAnimationFrame(() => modal.classList.add('visible'));
+    document.body.style.overflow = 'hidden';
+    showSlide();
+  }
+
+  function closeSlides() {
+    modal.classList.remove('visible');
+    setTimeout(() => {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  function goTo(index) {
+    current = (index + images.length) % images.length;
+    showSlide();
+  }
+
+  function nextSlide()     { goTo(current + 1); }
+  function previousSlide() { goTo(current - 1); }
+
+  function showSlide() {
+    const src = images[current];
+    const isVideo = /\.(mp4|webm|ogg)$/i.test(src);
+
+    imgEl.style.opacity = 0; imgEl.style.transform = 'scale(0.97)';
+    setTimeout(() => {
+      if (isVideo) {
+        imgEl.classList.add('hidden');
+        vidEl.src = src;
+        vidEl.classList.remove('hidden');
+      } else {
+        vidEl.classList.add('hidden');
+        vidEl.src = '';
+        imgEl.src = src;
+        imgEl.alt = `Imagem ${current + 1}`;
+        imgEl.classList.remove('hidden');
+      }
+      imgEl.style.opacity = 1; imgEl.style.transform = 'scale(1)';
+    }, 120);
+
+    document.getElementById('counter-cur').textContent = current + 1;
+    document.getElementById('counter-total').textContent = images.length;
+
+    document.querySelectorAll('.strip-thumb').forEach((el, i) =>
+      el.classList.toggle('active', i === current)
+    );
+    const activeThumb = document.getElementById(`strip-${current}`);
+    if (activeThumb) activeThumb.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'ArrowRight') nextSlide();
+    if (e.key === 'ArrowLeft')  previousSlide();
+    if (e.key === 'Escape')     closeSlides();
+  });
+
+  // Click backdrop to close
+  modal.addEventListener('click', e => {
+    if (e.target === modal) closeSlides();
+  });
+
+  // Abre automaticamente na primeira imagem
+  openSlides(0);
+</script>
+</body>
+</html>
