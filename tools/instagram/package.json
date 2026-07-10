@@ -1,0 +1,18 @@
+{
+  "name": "trilhokids-instagram",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Gera e publica posts, stories e carrosséis no Instagram a partir do conteúdo do portal Trilho Kids.",
+  "scripts": {
+    "post": "node cli.js post",
+    "story": "node cli.js story",
+    "carrossel": "node cli.js carrossel",
+    "listar": "node cli.js listar"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.68.0",
+    "dotenv": "^16.4.5",
+    "puppeteer": "^23.0.0"
+  }
+}

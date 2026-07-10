@@ -1,0 +1,6 @@
+.env
+.vps-env
+.ig-token.json
+out/
+node_modules/
+agenda.json

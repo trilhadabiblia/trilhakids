@@ -17,7 +17,22 @@
       "Bash(xargs basename -a)",
       "Bash(mv /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemon.html /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.html)",
       "Bash(mv /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemon.json /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.json)",
-      "Bash(sed -i 's/Quiz - Filemom\\\\|Quiz - Filemon/Quiz - Filemom/g' /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.html)"
+      "Bash(sed -i 's/Quiz - Filemom\\\\|Quiz - Filemon/Quiz - Filemom/g' /mnt/d/Claudecir/IBP/kids/bibliologia/trilhakids/quiz/novo-testamento/quiz-filemom.html)",
+      "Bash(npm install *)",
+      "Bash(ls -la config/)",
+      "Bash(find . -name \"env*.php\" -not -path \"*/node_modules/*\")",
+      "Bash(ls data/)",
+      "Read(//d/work/cafe-homens-deus/public_html/**)",
+      "Bash(TRILHO_ENV_PHP=\"D:/work/cafe-homens-deus/public_html/config/env.php\" node cli.js config)",
+      "Bash(rm -f out/*.png)",
+      "Bash(export TRILHO_ENV_PHP=\"D:/work/cafe-homens-deus/public_html/config/env.php\")",
+      "Bash(grep -E \"-carrossel-\")",
+      "Bash(node cli.js carrossel --livro genesis --max 3 --dry-run)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://cafecomhomensdedeus.com.br/api/ig_upload.php)",
+      "Bash(curl -s https://cafecomhomensdedeus.com.br/api/ig_upload.php)",
+      "Bash(export TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\")",
+      "Bash(TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\" node cli.js config)"
     ]
   }
 }
