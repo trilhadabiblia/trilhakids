@@ -51,7 +51,7 @@ export async function buildPost(chave, sufixo) {
   const livro = acharLivro(chave);
   if (!livro) throw new Error(`Livro não encontrado: ${chave}`);
   const imgs = await imagensDoLivro(livro);
-  if (!imgs.length) throw new Error(`Nenhuma imagem encontrada para ${livro.nome}`);
+  if (!imgs.length) throw new Error(`Nenhuma imagem encontrada para ${livro.nome} — rode: node cli.js diag --livro ${livro.pasta}`);
 
   let escolhida;
   if (sufixo) {
@@ -83,7 +83,7 @@ export async function buildCarrossel(chave, max = 6) {
   const livro = acharLivro(chave);
   if (!livro) throw new Error(`Livro não encontrado: ${chave}`);
   const imgs = await imagensDoLivro(livro);
-  if (!imgs.length) throw new Error(`Nenhuma imagem encontrada para ${livro.nome}`);
+  if (!imgs.length) throw new Error(`Nenhuma imagem encontrada para ${livro.nome} — rode: node cli.js diag --livro ${livro.pasta}`);
 
   const ordenadas = [];
   for (const suf of ORDEM_SLIDES) {

@@ -13,14 +13,14 @@
 import fs from 'fs';
 import path from 'path';
 import { OUT_DIR, cfg, TOKEN_FILE } from './config.js';
-import { buildPost, buildStory, buildCarrossel, listarLivros } from './content.js';
+import { buildPost, buildStory, buildCarrossel, listarLivros, acharLivro } from './content.js';
 import { slideHTML, storyHTML, versiculoHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { hospedar } from './host.js';
 import { publicarImagem, publicarStory, publicarCarrossel, refrescarToken } from './instagram.js';
 import { proximoLivro, avancar } from './agenda.js';
-import { REMOTO, BASE } from './source.js';
+import { REMOTO, BASE, LIVROS, relativo, listarImagens } from './source.js';
 
 function parseArgs(argv) {
   const args = { _: [] };
@@ -141,6 +141,48 @@ async function run() {
     return;
   }
 
+  if (cmd === 'diag') {
+    const chave = args.livro || 'jonas';
+    console.log(`\n🔎 Diagnóstico — modo: ${REMOTO ? 'REMOTO' : 'LOCAL'} | base: ${BASE}`);
+    console.log(`   Node ${process.version} | livros carregados: ${LIVROS.length}`);
+
+    if (REMOTO) {
+      const u = `${BASE}/livros.js`;
+      try {
+        const r = await fetch(u);
+        console.log(`   livros.js: HTTP ${r.status} ${r.ok ? 'OK' : 'FALHOU'}  ${u}`);
+      } catch (e) { console.log(`   livros.js: ERRO ${e.message}  ${u}`); }
+    }
+
+    const livro = acharLivro(chave);
+    if (!livro) { console.log(`   ❌ livro não encontrado: ${chave}`); return; }
+    const rel = relativo(livro);
+    console.log(`   livro: ${livro.nome} | pasta relativa: ${rel} | seção: ${livro.secao}`);
+
+    if (REMOTO) {
+      const hu = `${BASE}/${rel}/${livro.pasta}.html`;
+      try {
+        const r = await fetch(hu);
+        const t = r.ok ? await r.text() : '';
+        const srcs = [...t.matchAll(/src="([^"]+\.png)"/gi)].map((m) => m[1]);
+        console.log(`   HTML: HTTP ${r.status} ${r.ok ? 'OK' : 'FALHOU'}  tamanho=${t.length}  pngRefs=${srcs.length}  ${hu}`);
+        console.log(`   refs: ${srcs.slice(0, 6).join(', ') || '(nenhuma)'}`);
+      } catch (e) { console.log(`   HTML: ERRO ${e.message}  ${hu}`); }
+    }
+
+    const imgs = await listarImagens(livro);
+    console.log(`   imagens encontradas: ${imgs.length}`);
+    imgs.slice(0, 4).forEach((i) => console.log(`     - ${i.url || i.caminho}`));
+    if (imgs[0]?.url) {
+      try {
+        const r = await fetch(imgs[0].url);
+        console.log(`   GET 1ª imagem: HTTP ${r.status} ${r.ok ? 'OK' : 'FALHOU'}`);
+      } catch (e) { console.log(`   GET 1ª imagem: ERRO ${e.message}`); }
+    }
+    console.log('');
+    return;
+  }
+
   if (cmd === 'listar') {
     const livros = await listarLivros();
     console.log(`\n${livros.length} livros disponíveis:\n`);
@@ -168,7 +210,7 @@ async function run() {
   }
 
   if (!['post', 'story', 'carrossel'].includes(cmd)) {
-    console.log('Comandos: config | listar | post | story | carrossel | proximo | refresh-token');
+    console.log('Comandos: config | diag | listar | post | story | carrossel | proximo | refresh-token');
     process.exit(1);
   }
   if (!args.livro) { console.error('Faltou --livro <pasta>. Ex: --livro jonas'); process.exit(1); }
