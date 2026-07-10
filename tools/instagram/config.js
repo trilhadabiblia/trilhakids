@@ -74,7 +74,7 @@ export const cfg = {
   captionModel: val('CAPTION_MODEL') || 'claude-opus-4-8',
   // Origem dos assets dos livros (HTML + imagens). Na VPS (sem repo local) o
   // pipeline puxa deste host; localmente usa o disco. Force com TRILHO_SOURCE_BASE.
-  sourceBase: val('TRILHO_SOURCE_BASE') || 'https://trilhokids.com.br',
+  sourceBase: val('TRILHO_SOURCE_BASE') || 'https://www.trilhokids.com.br',
   sourceForce: !!val('TRILHO_SOURCE_BASE'),
   ig: {
     userId: val('IG_USER_ID'),

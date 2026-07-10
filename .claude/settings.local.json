@@ -32,7 +32,14 @@
       "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" https://cafecomhomensdedeus.com.br/api/ig_upload.php)",
       "Bash(curl -s https://cafecomhomensdedeus.com.br/api/ig_upload.php)",
       "Bash(export TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\")",
-      "Bash(TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\" node cli.js config)"
+      "Bash(TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\" node cli.js config)",
+      "Bash(curl -s -I -o /dev/null -w \"%{http_code}\\\\n\" https://trilhokids.com.br/jonas/jonas-capa.png)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://trilhokids.com.br/jonas/jonas-capa.png)",
+      "Bash(curl -s -I https://trilhokids.com.br/jonas/jonas-capa.png)",
+      "Bash(curl -s -L -o /dev/null -w \"final: %{http_code}  redirects: %{num_redirects}  url: %{url_effective}\\\\n\" https://trilhokids.com.br/jonas/jonas-capa.png)",
+      "Bash(export TRILHO_SOURCE_BASE=\"https://www.trilhokids.com.br\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://www.trilhokids.com.br/livros.js)",
+      "Bash(unset TRILHO_SOURCE_BASE)"
     ]
   }
 }

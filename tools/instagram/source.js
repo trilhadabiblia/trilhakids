@@ -31,20 +31,22 @@ async function carregarRemoto() {
 // Lista canônica dos livros, carregada uma vez.
 export const LIVROS = REMOTO ? await carregarRemoto() : carregarLivrosLocal();
 
-// HTML da página do livro (para versículo + tema).
+// HTML da página do livro (para versículo + tema + descoberta de imagens).
+const htmlCache = new Map();
 export async function htmlDoLivro(livro) {
+  if (htmlCache.has(livro.pasta)) return htmlCache.get(livro.pasta);
   const rel = relativo(livro);
+  let html = '';
   if (!REMOTO) {
     const p = path.join(ROOT, rel, `${livro.pasta}.html`);
-    return fs.existsSync(p) ? fs.readFileSync(p, 'utf8') : '';
+    if (fs.existsSync(p)) html = fs.readFileSync(p, 'utf8');
+  } else {
+    const resp = await fetch(`${BASE}/${rel}/${livro.pasta}.html`);
+    if (resp.ok) html = await resp.text();
   }
-  const resp = await fetch(`${BASE}/${rel}/${livro.pasta}.html`);
-  return resp.ok ? await resp.text() : '';
+  htmlCache.set(livro.pasta, html);
+  return html;
 }
-
-// Sufixos de imagem conhecidos (para descoberta remota via HEAD).
-const SUFIXOS = ['capa', 'o-que-conta', 'proposito', 'curiosidade', 'importante',
-  'por-que-importante', 'quem-e', 'personagem', 'quem-sao'];
 
 // Imagens do livro: [{ arquivo, caminho? (local) | url? (remoto) }]
 export async function listarImagens(livro) {
@@ -56,14 +58,10 @@ export async function listarImagens(livro) {
       .filter((f) => /\.png$/i.test(f) && !/_old/i.test(f) && f.startsWith(livro.pasta))
       .map((f) => ({ arquivo: f, caminho: path.join(dir, f) }));
   }
-  // Remoto: testa (HEAD) os sufixos conhecidos.
-  const achados = [];
-  await Promise.all(SUFIXOS.map(async (suf) => {
-    const arquivo = `${livro.pasta}-${suf}.png`;
-    try {
-      const r = await fetch(`${BASE}/${rel}/${arquivo}`, { method: 'HEAD' });
-      if (r.ok) achados.push({ arquivo, url: `${BASE}/${rel}/${arquivo}` });
-    } catch { /* ignora */ }
-  }));
-  return achados;
+  // Remoto: descobre as imagens lendo o HTML do livro (robusto, sem HEAD).
+  const html = await htmlDoLivro(livro);
+  const nomes = [...new Set(
+    [...html.matchAll(/src="([^"]+\.png)"/gi)].map((m) => m[1].split('/').pop())
+  )].filter((f) => f.startsWith(`${livro.pasta}-`) && !/_old/i.test(f));
+  return nomes.map((arquivo) => ({ arquivo, url: `${BASE}/${rel}/${arquivo}` }));
 }
