@@ -8,7 +8,11 @@ import path from 'path';
 import { ROOT, cfg, carregarLivros as carregarLivrosLocal } from './config.js';
 
 const NT = new Set(['evangelhos', 'historico-nt', 'cartas-paulo', 'outras-cartas', 'profetico-nt']);
-const LOCAL_OK = fs.existsSync(path.join(ROOT, 'livros.js'));
+
+// Local só quando o repositório COMPLETO está presente (as pastas dos livros).
+// Ter apenas o livros.js (ex: sparse-checkout de tools/instagram na VPS, que
+// traz os arquivos da raiz mas não as pastas dos livros) NÃO conta como local.
+const LOCAL_OK = ['genesis', 'jonas', 'salmos'].some((p) => fs.existsSync(path.join(ROOT, p)));
 
 // Remoto quando não há repo local (VPS) ou quando TRILHO_SOURCE_BASE força.
 export const REMOTO = cfg.sourceForce || !LOCAL_OK;
