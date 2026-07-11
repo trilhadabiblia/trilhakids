@@ -4,6 +4,8 @@
 // Estruturas variam por livro; ancoramos no título da seção e nas
 // aspas do versículo, então pegamos referência e texto por proximidade.
 // ============================================================
+import { limpa } from './secoes.js';
+
 export function extrairVersiculo(html) {
   if (!html) return null;
 
@@ -17,7 +19,7 @@ export function extrairVersiculo(html) {
   const frags = trecho
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .split(/<[^>]+>/)
-    .map((s) => s.replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim())
+    .map(limpa)
     .filter(Boolean);
 
   // Versículo = primeiro fragmento com aspas (retas ou tipográficas).

@@ -61,7 +61,6 @@ function carregarEnvPhp() {
 }
 
 const envPhp = carregarEnvPhp();
-export const ENV_PHP_PATH = envPhp.caminho;
 
 // process.env (.env local) vence; senão usa o env.php do projeto.
 function val(chave) {
@@ -70,8 +69,15 @@ function val(chave) {
 
 export const cfg = {
   envPhpPath: envPhp.caminho,
+  // Legendas: NVIDIA é o provider principal; Anthropic é o fallback (ver llm.js).
+  nvidia: {
+    apiKey: val('NVIDIA_API_KEY'),
+    model: val('NVIDIA_MODEL') || 'deepseek-ai/deepseek-v4-flash',
+    baseUrl: val('NVIDIA_BASE_URL') || 'https://integrate.api.nvidia.com/v1/chat/completions',
+  },
   anthropicKey: val('ANTHROPIC_API_KEY'),
   captionModel: val('CAPTION_MODEL') || 'claude-opus-4-8',
+  handle: val('IG_HANDLE') || '@portaltrilhokids',
   // Origem dos assets dos livros (HTML + imagens). Na VPS (sem repo local) o
   // pipeline puxa deste host; localmente usa o disco. Force com TRILHO_SOURCE_BASE.
   sourceBase: val('TRILHO_SOURCE_BASE') || 'https://www.trilhokids.com.br',
@@ -94,13 +100,34 @@ export const cfg = {
   },
 };
 
-// Carrega window.LIVROS_CANONICOS do livros.js do portal sem duplicar dados.
-export function carregarLivros() {
-  const code = fs.readFileSync(path.join(ROOT, 'livros.js'), 'utf8');
+// Seções bíblicas → rótulo (usado no badge dos cards e no prompt das legendas).
+export const SECOES = {
+  pentateuco: 'Pentateuco',
+  historicos: 'Históricos',
+  poeticos: 'Poéticos',
+  'profetas-maiores': 'Profetas Maiores',
+  'profetas-menores': 'Profetas Menores',
+  evangelhos: 'Evangelhos',
+  'historico-nt': 'Histórico',
+  'cartas-paulo': 'Cartas de Paulo',
+  'outras-cartas': 'Outras Cartas',
+  'profetico-nt': 'Apocalipse',
+};
+
+// Seções do Novo Testamento (livros ficam sob novotestamento/).
+export const SECOES_NT = new Set(['evangelhos', 'historico-nt', 'cartas-paulo', 'outras-cartas', 'profetico-nt']);
+
+// Avalia o livros.js (script de browser) e devolve window.LIVROS_CANONICOS.
+export function evalLivros(code) {
   const window = {}; // shim para o script do browser
   // eslint-disable-next-line no-eval
-  eval(code); // popula window.LIVROS_CANONICOS
+  eval(code);
   return window.LIVROS_CANONICOS || [];
+}
+
+// Carrega os livros canônicos do livros.js local (repositório no disco).
+export function carregarLivros() {
+  return evalLivros(fs.readFileSync(path.join(ROOT, 'livros.js'), 'utf8'));
 }
 
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });

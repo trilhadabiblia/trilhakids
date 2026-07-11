@@ -6,7 +6,9 @@ Visual **misto**: molduras novas na identidade da marca (violeta `#7c3aed` / fun
 
 ```
 content.js   →  descobre livro + imagens do portal (usa livros.js)
-caption.js   →  legenda + hashtags em pt-BR (API da Claude)
+secoes.js    →  extrai os pontos-chave de cada seção (bullets do carrossel, sem IA)
+caption.js   →  legenda + hashtags em pt-BR (via llm.js)
+llm.js       →  cadeia de providers p/ legenda: NVIDIA (principal) → Anthropic (fallback)
 templates.js →  HTML da moldura (post 1080x1080, story 1080x1920)
 render.js    →  HTML → PNG (Puppeteer)
 host.js      →  sobe o PNG para URL pública (api/ig_upload.php)
@@ -25,7 +27,9 @@ A Graph API do Instagram **não recebe o arquivo** — ela **baixa a imagem de u
    - Conta Instagram **Business ou Creator** conectada a uma Página do Facebook.
    - Permissões: `instagram_content_publish`, `instagram_basic`, `pages_read_engagement`.
    - Um **token de longa duração** (idealmente de *System User*, que não expira).
-3. **Chave da Anthropic** (para as legendas).
+3. **Chave da NVIDIA** (`NVIDIA_API_KEY`, provider principal das legendas) e/ou
+   **Anthropic** (`ANTHROPIC_API_KEY`, fallback). Sem nenhuma das duas, a legenda
+   cai num texto offline simples (o conteúdo das imagens é determinístico, não usa IA).
 
 ## Instalação
 

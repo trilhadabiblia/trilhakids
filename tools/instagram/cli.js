@@ -17,6 +17,7 @@ import { buildPost, buildStory, buildCarrossel, listarLivros, acharLivro } from 
 import { slideHTML, storyHTML, versiculoHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
+import { provedores } from './llm.js';
 import { hospedar } from './host.js';
 import { publicarImagem, publicarStory, publicarCarrossel, refrescarToken } from './instagram.js';
 import { proximoLivro, avancar } from './agenda.js';
@@ -42,6 +43,8 @@ function salvar(buffer, nome) {
   return p;
 }
 
+const FORMATOS = ['post', 'story', 'carrossel'];
+
 async function montarItem(tipo, { livro, imagem, max }) {
   if (tipo === 'post') return buildPost(livro, imagem);
   if (tipo === 'story') return buildStory(livro, imagem);
@@ -64,7 +67,8 @@ async function renderSlides(item) {
       const imagem = item.imagens[i];
       const html = slideHTML({
         imagem, nome: item.nome, secao: item.secao,
-        label: imagem.rotulo || item.titulo, texto: imagem.texto, tema: item.tema,
+        label: imagem.rotulo || item.titulo, texto: imagem.texto,
+        pontos: imagem.pontos, tema: item.tema,
       });
       out.push({ buffer: await renderHTML(html, 1080, 1080), filename: `${item.livro}-${item.tipo}-${++n}.png` });
     }
@@ -77,13 +81,14 @@ async function fluxo(tipo, opts) {
   const item = await montarItem(tipo, opts);
   console.log(`\n▶ ${tipo.toUpperCase()} — ${item.nome} (${item.imagens.length} imagem/ns)`);
 
-  let caption = '';
-  if (tipo !== 'story') {
-    caption = montarCaption(await gerarLegenda(item));
-    console.log(`\n📝 Legenda:\n${caption}\n`);
-  }
+  // Legenda (Anthropic) e render (Puppeteer) são independentes → em paralelo.
+  const [legenda, slides] = await Promise.all([
+    tipo === 'story' ? Promise.resolve(null) : gerarLegenda(item),
+    renderSlides(item),
+  ]);
+  const caption = legenda ? montarCaption(legenda) : '';
+  if (caption) console.log(`\n📝 Legenda:\n${caption}\n`);
 
-  const slides = await renderSlides(item);
   const salvos = slides.map((s) => salvar(s.buffer, s.filename));
   console.log(`🖼  Renderizado:\n${salvos.map((p) => '   ' + p).join('\n')}`);
   await fecharBrowser();
@@ -94,8 +99,8 @@ async function fluxo(tipo, opts) {
   }
 
   console.log('\n☁  Hospedando imagens...');
-  const urls = [];
-  for (const s of slides) urls.push(await hospedar(s.buffer, s.filename));
+  // Uploads são independentes; Promise.all preserva a ordem dos slides.
+  const urls = await Promise.all(slides.map((s) => hospedar(s.buffer, s.filename)));
   urls.forEach((u) => console.log('   ' + u));
 
   console.log('\n📤 Publicando no Instagram...');
@@ -123,9 +128,12 @@ async function run() {
     console.log('  IG_ACCESS_TOKEN   ', mask(cfg.ig.token));
     console.log('  Graph host        ', cfg.ig.graphHost + '/' + cfg.ig.version);
     console.log('  FB_APP_ID/SECRET  ', cfg.ig.fbAppId ? 'presente' : '— (refresh manual)');
-    console.log('\nLegendas (Anthropic):');
+    console.log('\nLegendas (providers em ordem: NVIDIA → Anthropic):');
+    console.log('  NVIDIA_API_KEY    ', mask(cfg.nvidia.apiKey));
+    console.log('  NVIDIA modelo     ', cfg.nvidia.model);
     console.log('  ANTHROPIC_API_KEY ', mask(cfg.anthropicKey));
-    console.log('  Modelo            ', cfg.captionModel);
+    console.log('  Anthropic modelo  ', cfg.captionModel);
+    console.log('  Ativos            ', provedores().join(' → ') || '❌ nenhum (legenda offline)');
     console.log('\nHospedagem dos assets:');
     console.log('  IG_UPLOAD_URL     ', cfg.upload.url || '❌ vazio (só --dry-run)');
     console.log('  IG_UPLOAD_TOKEN   ', cfg.upload.token ? 'presente' : '❌ vazio');
@@ -194,7 +202,7 @@ async function run() {
 
   if (cmd === 'proximo') {
     const formato = args.formato || 'carrossel';
-    if (!['post', 'story', 'carrossel'].includes(formato)) {
+    if (!FORMATOS.includes(formato)) {
       console.error(`--formato inválido: ${formato}`); process.exit(1);
     }
     const { livro, nome, indice, total } = await proximoLivro();
@@ -209,7 +217,7 @@ async function run() {
     return;
   }
 
-  if (!['post', 'story', 'carrossel'].includes(cmd)) {
+  if (!FORMATOS.includes(cmd)) {
     console.log('Comandos: config | diag | listar | post | story | carrossel | proximo | refresh-token');
     process.exit(1);
   }

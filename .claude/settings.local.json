@@ -41,7 +41,11 @@
       "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://www.trilhokids.com.br/livros.js)",
       "Bash(unset TRILHO_SOURCE_BASE)",
       "Bash(TRILHO_SOURCE_BASE=\"https://www.trilhokids.com.br\" node cli.js diag --livro jonas)",
-      "Bash(TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\" node cli.js diag --livro jonas)"
+      "Bash(TRILHO_SOURCE_BASE=\"https://trilhokids.com.br\" node cli.js diag --livro jonas)",
+      "Bash(git rev-list *)",
+      "Bash(TRILHO_SOURCE_BASE=\"https://www.trilhokids.com.br\" node cli.js diag --livro mateus)",
+      "Bash(NVIDIA_API_KEY=nvapi-invalida node --input-type=module -e ' *)",
+      "Bash(NVIDIA_API_KEY=nvapi-invalida node cli.js carrossel --livro isaias --dry-run)"
     ]
   }
 }

@@ -6,8 +6,7 @@
 import { LIVROS, REMOTO, htmlDoLivro, listarImagens } from './source.js';
 import { extrairVersiculo } from './versiculo.js';
 import { extrairTema } from './cores.js';
-import { extrairSecoes, sufixoDe } from './secoes.js';
-import { gerarSinteses } from './caption.js';
+import { extrairSecoes, extrairPontos, sufixoDe } from './secoes.js';
 
 // Rótulos amigáveis por sufixo de imagem (usados como legenda do slide).
 const ROTULOS = [
@@ -48,12 +47,18 @@ async function contexto(livro) {
   return { html, tema: extrairTema(html) };
 }
 
-// Um único post (1080x1080): usa uma imagem (default: capa > o-que-conta...).
-export async function buildPost(chave, sufixo) {
+// Resolve o livro pela chave e garante que ele tem imagens.
+async function resolver(chave) {
   const livro = acharLivro(chave);
   if (!livro) throw new Error(`Livro não encontrado: ${chave}`);
   const imgs = await imagensDoLivro(livro);
   if (!imgs.length) throw new Error(`Nenhuma imagem encontrada para ${livro.nome} — rode: node cli.js diag --livro ${livro.pasta}`);
+  return { livro, imgs };
+}
+
+// Um único post (1080x1080): usa uma imagem (default: capa > o-que-conta...).
+export async function buildPost(chave, sufixo) {
+  const { livro, imgs } = await resolver(chave);
 
   let escolhida;
   if (sufixo) {
@@ -86,10 +91,7 @@ export async function buildStory(chave, sufixo) {
 
 // Carrossel (versículo de abertura + várias imagens do livro).
 export async function buildCarrossel(chave, max = 6) {
-  const livro = acharLivro(chave);
-  if (!livro) throw new Error(`Livro não encontrado: ${chave}`);
-  const imgs = await imagensDoLivro(livro);
-  if (!imgs.length) throw new Error(`Nenhuma imagem encontrada para ${livro.nome} — rode: node cli.js diag --livro ${livro.pasta}`);
+  const { livro, imgs } = await resolver(chave);
 
   const ordenadas = [];
   for (const suf of ORDEM_SLIDES) {
@@ -101,13 +103,15 @@ export async function buildCarrossel(chave, max = 6) {
   const { html, tema } = await contexto(livro);
   const versiculo = extrairVersiculo(html);
 
-  // Texto por slide: capa = subtítulo real; demais = síntese (IA) da seção.
+  // Conteúdo por slide (determinístico, sem IA): capa = subtítulo real;
+  // demais = títulos-chave dos cards da seção, renderizados como bullets.
   const slides = ordenadas.slice(0, max);
   const sec = extrairSecoes(html);
-  const sint = await gerarSinteses(livro.nome, sec.secoes);
+  const pontos = extrairPontos(html);
   for (const img of slides) {
     const suf = sufixoDe(img.arquivo, livro.pasta);
-    img.texto = suf === 'capa' ? sec.subtitulo : (sint[suf] || '');
+    if (suf === 'capa') img.texto = sec.subtitulo;
+    else img.pontos = pontos[suf] || [];
   }
 
   return {

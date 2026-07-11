@@ -5,35 +5,31 @@
 // ============================================================
 import fs from 'fs';
 import path from 'path';
-import { ROOT, cfg, carregarLivros as carregarLivrosLocal } from './config.js';
+import { ROOT, cfg, SECOES_NT, evalLivros, carregarLivros as carregarLivrosLocal } from './config.js';
 
-const NT = new Set(['evangelhos', 'historico-nt', 'cartas-paulo', 'outras-cartas', 'profetico-nt']);
+// Caminho relativo da pasta do livro (NT fica sob novotestamento/).
+export function relativo(livro) {
+  return SECOES_NT.has(livro.secao) ? `novotestamento/${livro.pasta}` : livro.pasta;
+}
 
-// Local só quando o repositório COMPLETO está presente (as pastas dos livros).
-// Ter apenas o livros.js (ex: sparse-checkout de tools/instagram na VPS, que
-// traz os arquivos da raiz mas não as pastas dos livros) NÃO conta como local.
-const LOCAL_OK = ['genesis', 'jonas', 'salmos'].some((p) => fs.existsSync(path.join(ROOT, p)));
+// Livros do livros.js local, se presente no disco (existe até em sparse-checkout).
+const livrosLocais = fs.existsSync(path.join(ROOT, 'livros.js')) ? carregarLivrosLocal() : [];
+
+// Local só quando o repositório COMPLETO está no disco: além do livros.js, a
+// pasta de algum livro precisa existir (num sparse-checkout de tools/ elas não vêm).
+const LOCAL_OK = livrosLocais.some((l) => fs.existsSync(path.join(ROOT, relativo(l))));
 
 // Remoto quando não há repo local (VPS) ou quando TRILHO_SOURCE_BASE força.
 export const REMOTO = cfg.sourceForce || !LOCAL_OK;
 export const BASE = cfg.sourceBase.replace(/\/+$/, '');
 
-// Caminho relativo da pasta do livro (NT fica sob novotestamento/).
-export function relativo(livro) {
-  return NT.has(livro.secao) ? `novotestamento/${livro.pasta}` : livro.pasta;
-}
-
 async function carregarRemoto() {
   const resp = await fetch(`${BASE}/livros.js`);
-  const txt = await resp.text();
-  const window = {}; // shim do browser
-  // eslint-disable-next-line no-eval
-  eval(txt);
-  return window.LIVROS_CANONICOS || [];
+  return evalLivros(await resp.text());
 }
 
 // Lista canônica dos livros, carregada uma vez.
-export const LIVROS = REMOTO ? await carregarRemoto() : carregarLivrosLocal();
+export const LIVROS = REMOTO ? await carregarRemoto() : livrosLocais;
 
 // HTML da página do livro (para versículo + tema + descoberta de imagens).
 const htmlCache = new Map();

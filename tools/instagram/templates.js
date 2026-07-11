@@ -5,22 +5,10 @@
 // ============================================================
 import fs from 'fs';
 import { TEMA_PADRAO } from './cores.js';
+import { cfg, SECOES } from './config.js';
 
-const SECOES = {
-  pentateuco: 'Pentateuco',
-  historicos: 'Históricos',
-  poeticos: 'Poéticos',
-  'profetas-maiores': 'Profetas Maiores',
-  'profetas-menores': 'Profetas Menores',
-  evangelhos: 'Evangelhos',
-  'historico-nt': 'Histórico',
-  'cartas-paulo': 'Cartas de Paulo',
-  'outras-cartas': 'Outras Cartas',
-  'profetico-nt': 'Apocalipse',
-};
-
-// @ exibido no rodapé. Defina IG_HANDLE no ambiente para trocar sem editar código.
-const HANDLE = process.env.IG_HANDLE || '@portaltrilhokids';
+// @ exibido no rodapé (cfg.handle, default @portaltrilhokids).
+const HANDLE = cfg.handle;
 
 // Imagem local → base64 (self-contained); imagem remota → URL (Puppeteer baixa).
 function srcDe(imagem) {
@@ -92,22 +80,40 @@ function marca() {
 }
 
 // Slide quadrado 1080x1080 (post e cada item do carrossel).
-// label = rótulo curto da seção; texto = conteúdo (subtítulo da capa ou síntese).
-export function slideHTML({ imagem, nome, secao, label, texto, tema }) {
+// label = rótulo curto da seção; texto = subtítulo (capa) OU pontos = bullets
+// determinísticos com os títulos-chave dos cards da seção.
+export function slideHTML({ imagem, nome, secao, label, texto, pontos, tema }) {
   const t = tema || TEMA_PADRAO;
   const w = 1080, h = 1080;
-  const grande = texto || label || nome;      // conteúdo em destaque
   const pequeno = label ? `${nome} · ${label}` : nome;
-  const fonteGrande = texto ? 46 : 60;         // síntese é maior → fonte menor
+  const bullets = Array.isArray(pontos) ? pontos.filter(Boolean) : [];
+
+  // Fonte dos bullets: encolhe conforme a quantidade para caber acima da imagem.
+  const fontePonto = bullets.length >= 4 ? 26 : bullets.length === 3 ? 30 : 34;
+
+  const conteudo = bullets.length
+    ? `<div class="cabecalho"><small>${pequeno}</small></div>
+       <ul class="pontos" style="font-size:${fontePonto}px">
+         ${bullets.map((p) => `<li>${p}</li>`).join('')}
+       </ul>`
+    : `<div class="title" style="font-size:${texto ? 46 : 60}px"><small>${pequeno}</small>${texto || label || nome}</div>`;
+
   return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
-    .title { z-index: 2; font-size: ${fonteGrande}px; font-weight: 900; line-height: 1.15; margin: 18px 0 16px; }
+    .title { z-index: 2; font-weight: 900; line-height: 1.15; margin: 18px 0 16px; }
     .title small { display: block; font-size: 30px; font-weight: 700; color: ${t.light}; margin-bottom: 8px; }
+    .cabecalho { z-index: 2; margin: 14px 0 2px; }
+    .cabecalho small { font-size: 28px; font-weight: 800; color: ${t.light}; }
+    .pontos { z-index: 2; list-style: none; display: flex; flex-direction: column;
+      gap: 8px; margin: 6px 0 8px; }
+    .pontos li { font-weight: 700; line-height: 1.15; color: #fff;
+      background: ${hexA(t.to, 0.20)}; border-left: 5px solid ${t.light};
+      padding: 10px 18px; border-radius: 12px; }
   </style></head><body>
     <div class="frame">
       <div class="glow"></div>
       ${marca()}
       <div class="badge">${escBadge(secao)}</div>
-      <div class="title"><small>${pequeno}</small>${grande}</div>
+      ${conteudo}
       <div class="media"><img src="${srcDe(imagem)}"></div>
       <div class="foot">
         <div class="cta">Aprenda a Bíblia <b>brincando</b></div>
