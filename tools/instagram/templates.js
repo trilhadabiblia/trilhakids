@@ -92,19 +92,22 @@ function marca() {
 }
 
 // Slide quadrado 1080x1080 (post e cada item do carrossel).
-export function slideHTML({ imagem, nome, secao, kicker, tema }) {
+// label = rótulo curto da seção; texto = conteúdo (subtítulo da capa ou síntese).
+export function slideHTML({ imagem, nome, secao, label, texto, tema }) {
   const t = tema || TEMA_PADRAO;
   const w = 1080, h = 1080;
-  const titulo = kicker || nome;
+  const grande = texto || label || nome;      // conteúdo em destaque
+  const pequeno = label ? `${nome} · ${label}` : nome;
+  const fonteGrande = texto ? 46 : 60;         // síntese é maior → fonte menor
   return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
-    .title { z-index: 2; font-size: 60px; font-weight: 900; line-height: 1.05; margin: 22px 0 20px; }
-    .title small { display: block; font-size: 32px; font-weight: 700; color: ${t.light}; margin-bottom: 6px; }
+    .title { z-index: 2; font-size: ${fonteGrande}px; font-weight: 900; line-height: 1.15; margin: 18px 0 16px; }
+    .title small { display: block; font-size: 30px; font-weight: 700; color: ${t.light}; margin-bottom: 8px; }
   </style></head><body>
     <div class="frame">
       <div class="glow"></div>
       ${marca()}
       <div class="badge">${escBadge(secao)}</div>
-      <div class="title"><small>${nome}</small>${titulo}</div>
+      <div class="title"><small>${pequeno}</small>${grande}</div>
       <div class="media"><img src="${srcDe(imagem)}"></div>
       <div class="foot">
         <div class="cta">Aprenda a Bíblia <b>brincando</b></div>

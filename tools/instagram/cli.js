@@ -64,7 +64,7 @@ async function renderSlides(item) {
       const imagem = item.imagens[i];
       const html = slideHTML({
         imagem, nome: item.nome, secao: item.secao,
-        kicker: imagem.rotulo || item.titulo, tema: item.tema,
+        label: imagem.rotulo || item.titulo, texto: imagem.texto, tema: item.tema,
       });
       out.push({ buffer: await renderHTML(html, 1080, 1080), filename: `${item.livro}-${item.tipo}-${++n}.png` });
     }

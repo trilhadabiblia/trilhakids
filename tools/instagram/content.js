@@ -6,6 +6,8 @@
 import { LIVROS, REMOTO, htmlDoLivro, listarImagens } from './source.js';
 import { extrairVersiculo } from './versiculo.js';
 import { extrairTema } from './cores.js';
+import { extrairSecoes, sufixoDe } from './secoes.js';
+import { gerarSinteses } from './caption.js';
 
 // Rótulos amigáveis por sufixo de imagem (usados como legenda do slide).
 const ROTULOS = [
@@ -65,7 +67,11 @@ export async function buildPost(chave, sufixo) {
       imgs.find((i) => /-personagem|-quem-e/.test(i.arquivo)) ||
       imgs[0];
   }
-  const { tema } = await contexto(livro);
+  const { html, tema } = await contexto(livro);
+  // Post de capa ganha o subtítulo real da página como texto.
+  if (sufixoDe(escolhida.arquivo, livro.pasta) === 'capa') {
+    escolhida.texto = extrairSecoes(html).subtitulo;
+  }
   return {
     tipo: 'post', livro: livro.pasta, nome: livro.nome, secao: livro.secao, tema,
     imagens: [escolhida], titulo: escolhida.rotulo || livro.nome,
@@ -95,9 +101,18 @@ export async function buildCarrossel(chave, max = 6) {
   const { html, tema } = await contexto(livro);
   const versiculo = extrairVersiculo(html);
 
+  // Texto por slide: capa = subtítulo real; demais = síntese (IA) da seção.
+  const slides = ordenadas.slice(0, max);
+  const sec = extrairSecoes(html);
+  const sint = await gerarSinteses(livro.nome, sec.secoes);
+  for (const img of slides) {
+    const suf = sufixoDe(img.arquivo, livro.pasta);
+    img.texto = suf === 'capa' ? sec.subtitulo : (sint[suf] || '');
+  }
+
   return {
     tipo: 'carrossel', livro: livro.pasta, nome: livro.nome, secao: livro.secao, tema,
-    versiculo, imagens: ordenadas.slice(0, max), titulo: livro.nome,
+    versiculo, imagens: slides, titulo: livro.nome,
   };
 }
 
