@@ -8,7 +8,7 @@ Visual **misto**: molduras novas na identidade da marca (violeta `#7c3aed` / fun
 content.js   →  descobre livro + imagens do portal (usa livros.js)
 secoes.js    →  extrai os pontos-chave de cada seção (bullets do carrossel, sem IA)
 caption.js   →  legenda + hashtags em pt-BR (via llm.js)
-llm.js       →  cadeia de providers p/ legenda: NVIDIA (principal) → Anthropic (fallback)
+llm.js       →  cadeia de providers p/ legenda: Groq → NVIDIA → Anthropic
 templates.js →  HTML da moldura (post 1080x1080, story 1080x1920)
 render.js    →  HTML → PNG (Puppeteer)
 host.js      →  sobe o PNG para URL pública (api/ig_upload.php)
@@ -27,9 +27,9 @@ A Graph API do Instagram **não recebe o arquivo** — ela **baixa a imagem de u
    - Conta Instagram **Business ou Creator** conectada a uma Página do Facebook.
    - Permissões: `instagram_content_publish`, `instagram_basic`, `pages_read_engagement`.
    - Um **token de longa duração** (idealmente de *System User*, que não expira).
-3. **Chave da NVIDIA** (`NVIDIA_API_KEY`, provider principal das legendas) e/ou
-   **Anthropic** (`ANTHROPIC_API_KEY`, fallback). Sem nenhuma das duas, a legenda
-   cai num texto offline simples (o conteúdo das imagens é determinístico, não usa IA).
+3. **Uma chave de LLM para as legendas** — na ordem `GROQ_API_KEY` (principal) →
+   `NVIDIA_API_KEY` → `ANTHROPIC_API_KEY`. Basta uma; sem nenhuma, a legenda cai num
+   texto offline simples (o conteúdo das imagens é determinístico, não usa IA).
 
 ## Instalação
 
@@ -45,8 +45,20 @@ O pipeline **lê as credenciais do `config/env.php`** (formato PHP `putenv('KEY=
 o mesmo usado pela pipeline do devocional. Não precisa duplicar nada num `.env`.
 
 Chaves reaproveitadas: `IG_USER_ID`, `IG_ACCESS_TOKEN`, `IG_API_VERSION`,
-`ANTHROPIC_API_KEY`, `FB_APP_ID`, `FB_APP_SECRET`, e `IG_ENDPOINT_TOKEN`
+`GROQ_API_KEY` (principal das legendas), `NVIDIA_API_KEY` / `ANTHROPIC_API_KEY`
+(fallbacks), `FB_APP_ID`, `FB_APP_SECRET`, e `IG_ENDPOINT_TOKEN`
 (usado como segredo do upload, se `IG_UPLOAD_TOKEN` não estiver definido).
+
+**Legendas — cadeia de providers:** `llm.js` tenta em ordem **Groq → NVIDIA → Anthropic**
+(só os que têm chave; o 1º que responder vence). Groq e NVIDIA usam API compatível com
+OpenAI (retry automático em erros transitórios 429/5xx antes de passar ao próximo).
+Modelos default: Groq `llama-3.3-70b-versatile`, NVIDIA `deepseek-ai/deepseek-v4-flash`,
+Anthropic `claude-opus-4-8`. Sobrescreva a ordem com `CAPTION_PROVIDERS` (csv) e os
+modelos/URLs com `GROQ_MODEL`/`GROQ_BASE_URL`/`NVIDIA_MODEL`/`NVIDIA_BASE_URL`.
+Adicione no `config/env.php` (ou `.env`):
+```php
+putenv('GROQ_API_KEY=gsk_...');
+```
 
 **Onde o pipeline procura o `env.php`** (primeiro que existir):
 1. variável de ambiente `TRILHO_ENV_PHP` (caminho absoluto — recomendado);

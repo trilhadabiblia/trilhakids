@@ -128,12 +128,11 @@ async function run() {
     console.log('  IG_ACCESS_TOKEN   ', mask(cfg.ig.token));
     console.log('  Graph host        ', cfg.ig.graphHost + '/' + cfg.ig.version);
     console.log('  FB_APP_ID/SECRET  ', cfg.ig.fbAppId ? 'presente' : '— (refresh manual)');
-    console.log('\nLegendas (providers em ordem: NVIDIA → Anthropic):');
-    console.log('  NVIDIA_API_KEY    ', mask(cfg.nvidia.apiKey));
-    console.log('  NVIDIA modelo     ', cfg.nvidia.model);
-    console.log('  ANTHROPIC_API_KEY ', mask(cfg.anthropicKey));
-    console.log('  Anthropic modelo  ', cfg.captionModel);
-    console.log('  Ativos            ', provedores().join(' → ') || '❌ nenhum (legenda offline)');
+    console.log('\nLegendas (ordem padrão: Groq → NVIDIA → Anthropic):');
+    console.log('  GROQ_API_KEY      ', mask(cfg.groq.apiKey), '| modelo', cfg.groq.model);
+    console.log('  NVIDIA_API_KEY    ', mask(cfg.nvidia.apiKey), '| modelo', cfg.nvidia.model);
+    console.log('  ANTHROPIC_API_KEY ', mask(cfg.anthropicKey), '| modelo', cfg.captionModel);
+    console.log('  Ativos (em uso)   ', provedores().join(' → ') || '❌ nenhum (legenda offline)');
     console.log('\nHospedagem dos assets:');
     console.log('  IG_UPLOAD_URL     ', cfg.upload.url || '❌ vazio (só --dry-run)');
     console.log('  IG_UPLOAD_TOKEN   ', cfg.upload.token ? 'presente' : '❌ vazio');

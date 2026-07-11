@@ -69,7 +69,15 @@ function val(chave) {
 
 export const cfg = {
   envPhpPath: envPhp.caminho,
-  // Legendas: NVIDIA é o provider principal; Anthropic é o fallback (ver llm.js).
+  // Legendas: cadeia de providers (ver llm.js). Ordem padrão groq → nvidia →
+  // anthropic; sobrescreva com CAPTION_PROVIDERS (csv). Só entram os com credencial.
+  captionProviders: (val('CAPTION_PROVIDERS') || '')
+    .split(',').map((s) => s.trim().toLowerCase()).filter(Boolean),
+  groq: {
+    apiKey: val('GROQ_API_KEY'),
+    model: val('GROQ_MODEL') || 'llama-3.3-70b-versatile',
+    baseUrl: val('GROQ_BASE_URL') || 'https://api.groq.com/openai/v1/chat/completions',
+  },
   nvidia: {
     apiKey: val('NVIDIA_API_KEY'),
     model: val('NVIDIA_MODEL') || 'deepseek-ai/deepseek-v4-flash',

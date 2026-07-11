@@ -45,7 +45,8 @@
       "Bash(git rev-list *)",
       "Bash(TRILHO_SOURCE_BASE=\"https://www.trilhokids.com.br\" node cli.js diag --livro mateus)",
       "Bash(NVIDIA_API_KEY=nvapi-invalida node --input-type=module -e ' *)",
-      "Bash(NVIDIA_API_KEY=nvapi-invalida node cli.js carrossel --livro isaias --dry-run)"
+      "Bash(NVIDIA_API_KEY=nvapi-invalida node cli.js carrossel --livro isaias --dry-run)",
+      "Bash(GROQ_API_KEY=gsk-invalida NVIDIA_API_KEY=nvapi-invalida node --input-type=module -e ' *)"
     ]
   }
 }

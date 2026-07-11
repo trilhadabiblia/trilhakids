@@ -51,9 +51,15 @@ Preencha com os valores do `config/env.php` do host:
 nano .vps-env
 # IG_USER_ID          = 17841471595196388
 # IG_ACCESS_TOKEN     = <token longo IGAA...>
-# ANTHROPIC_API_KEY   = <chave da Anthropic>
+# GROQ_API_KEY        = <chave do Groq — provider principal das legendas>
+# NVIDIA_API_KEY      = <chave da NVIDIA — fallback (opcional)>
+# ANTHROPIC_API_KEY   = <chave da Anthropic — fallback (opcional)>
 # IG_UPLOAD_TOKEN     = <o mesmo IG_ENDPOINT_TOKEN do env.php do host>
 ```
+
+> Legendas: `llm.js` usa **Groq → NVIDIA → Anthropic** (o primeiro que responder vence).
+> Basta uma das chaves; sem nenhuma, a legenda cai no texto offline. Reordene com
+> `CAPTION_PROVIDERS` (csv, ex.: `groq,anthropic`).
 
 Conferir (sem expor segredos):
 ```bash

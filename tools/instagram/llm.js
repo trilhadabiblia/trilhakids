@@ -1,20 +1,30 @@
 // ============================================================
 // Camada de LLM com cadeia de providers para gerar JSON estruturado.
-// Ordem: NVIDIA (principal) → Anthropic (fallback). O primeiro que
-// responder com sucesso vence; se um falhar, tenta o próximo.
+// Ordem padrão: Groq (principal) → NVIDIA → Anthropic (fallback). O primeiro
+// que responder com sucesso vence; se um falhar, tenta o próximo.
+// Ordem sobrescrevível por CAPTION_PROVIDERS (csv). Só entram os com credencial.
 //
-// NVIDIA usa a API compatível com OpenAI (/v1/chat/completions):
+// Groq e NVIDIA usam a API compatível com OpenAI (/v1/chat/completions):
 //   response_format json_object + instrução de schema no prompt.
 // Anthropic usa structured outputs nativo (output_config.format).
 // ============================================================
 import { cfg } from './config.js';
 
+// Config de cada provider OpenAI-compatível (mesmo client, endpoints distintos).
+const OPENAI_COMPAT = { groq: () => cfg.groq, nvidia: () => cfg.nvidia };
+
+// Tem credencial para este provider?
+function temChave(p) {
+  if (p === 'anthropic') return !!cfg.anthropicKey;
+  return !!OPENAI_COMPAT[p]?.().apiKey;
+}
+
+const ORDEM_PADRAO = ['groq', 'nvidia', 'anthropic'];
+
 // Providers disponíveis, na ordem de preferência (só os que têm credencial).
 export function provedores() {
-  const list = [];
-  if (cfg.nvidia.apiKey) list.push('nvidia');
-  if (cfg.anthropicKey) list.push('anthropic');
-  return list;
+  const ordem = cfg.captionProviders.length ? cfg.captionProviders : ORDEM_PADRAO;
+  return ordem.filter((p) => (p === 'anthropic' || OPENAI_COMPAT[p]) && temChave(p));
 }
 
 export function temLLM() {
@@ -42,31 +52,51 @@ function parseJSONsolto(txt) {
   return JSON.parse(s);
 }
 
-// --- NVIDIA (OpenAI-compatível) ---
-async function nvidiaJSON(schema, prompt, maxTokens) {
-  const { apiKey, model, baseUrl } = cfg.nvidia;
-  const resp = await fetch(baseUrl, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
-    body: JSON.stringify({
-      model,
-      messages: [{ role: 'user', content: `${prompt}\n\n${instrucaoJSON(schema)}` }],
-      temperature: 0.7,
-      top_p: 0.95,
-      max_tokens: maxTokens || 1200,
-      stream: false,
-      response_format: { type: 'json_object' },
-    }),
-    signal: AbortSignal.timeout(180000), // geração pode ser lenta
-  });
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-  const body = await resp.json().catch(() => null);
-  if (!resp.ok) {
-    const msg = body?.error?.message || (body ? JSON.stringify(body) : `HTTP ${resp.status}`);
-    throw new Error(`NVIDIA HTTP ${resp.status}: ${msg}`);
+// Erro transitório = vale a pena tentar de novo antes de cair pro fallback:
+// 429 (rate limit), 5xx (ex.: 503 ResourceExhausted), timeout e falha de rede.
+function transitorio(err) {
+  if (err?.status) return err.status === 429 || err.status >= 500;
+  return err?.name === 'TimeoutError' || err instanceof TypeError; // fetch aborta/rede
+}
+
+// --- Providers OpenAI-compatíveis (Groq, NVIDIA) ---
+// Tenta até 3x com backoff (1s, 2s) nos erros transitórios; nos demais, falha na hora.
+async function openaiCompatJSON(label, { apiKey, model, baseUrl }, schema, prompt, maxTokens) {
+  const tentativas = 3;
+
+  for (let i = 1; ; i++) {
+    try {
+      const resp = await fetch(baseUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+        body: JSON.stringify({
+          model,
+          messages: [{ role: 'user', content: `${prompt}\n\n${instrucaoJSON(schema)}` }],
+          temperature: 0.7,
+          top_p: 0.95,
+          max_tokens: maxTokens || 1200,
+          stream: false,
+          response_format: { type: 'json_object' },
+        }),
+        signal: AbortSignal.timeout(180000), // geração pode ser lenta
+      });
+
+      const body = await resp.json().catch(() => null);
+      if (!resp.ok) {
+        const msg = body?.error?.message || (body ? JSON.stringify(body) : `HTTP ${resp.status}`);
+        const err = new Error(`${label.toUpperCase()} HTTP ${resp.status}: ${msg}`);
+        err.status = resp.status;
+        throw err;
+      }
+      return parseJSONsolto(body?.choices?.[0]?.message?.content || '');
+    } catch (err) {
+      if (i >= tentativas || !transitorio(err)) throw err;
+      console.warn(`⚠  ${label} transitório (${err.message}) — retry ${i}/${tentativas - 1} em ${i}s`);
+      await sleep(i * 1000);
+    }
   }
-  const content = body?.choices?.[0]?.message?.content || '';
-  return parseJSONsolto(content);
 }
 
 // --- Anthropic (structured outputs nativo) ---
@@ -83,7 +113,11 @@ async function anthropicJSON(schema, prompt, maxTokens) {
   return JSON.parse(resp.content.find((b) => b.type === 'text')?.text || '{}');
 }
 
-const IMPL = { nvidia: nvidiaJSON, anthropic: anthropicJSON };
+const IMPL = {
+  groq: (s, p, m) => openaiCompatJSON('groq', cfg.groq, s, p, m),
+  nvidia: (s, p, m) => openaiCompatJSON('nvidia', cfg.nvidia, s, p, m),
+  anthropic: anthropicJSON,
+};
 
 // Pede um JSON conforme `schema`, tentando os providers em ordem.
 // Lança se todos falharem (ou se nenhum estiver configurado).
