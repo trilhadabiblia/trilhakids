@@ -17,6 +17,21 @@ export function limpa(s) {
     .trim();
 }
 
+// Como `limpa`, mas preserva as quebras de linha dos <br> (ex.: poemas dos
+// "segredos", que só fazem sentido em versos).
+export function limpaMultilinha(s) {
+  return s
+    .replace(/\r/g, '')
+    .replace(/<br\s*\/?>/gi, '\n')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/ *\n */g, '\n')
+    .replace(/\n{2,}/g, '\n')
+    .trim();
+}
+
 // Sufixo de imagem ↔ frase-chave da seção (buscada no texto limpo da página).
 const CHAVES = [
   { suf: 'o-que-conta', re: /O Que o Livro Conta\??/i },
@@ -112,4 +127,63 @@ export function extrairPontos(html) {
     if (pontos.length) out[alvo.suf] = pontos;
   }
   return out;
+}
+
+// ------------------------------------------------------------
+// Blocos de conteúdo para carrosséis extras (só texto, sem imagem própria):
+//  - Segredos: o modal "Os N Segredos" (título + poema + versículo por card).
+//  - Perguntas para Pensar / Desafio da Semana (título + corpo por card).
+// ------------------------------------------------------------
+
+// Devolve o HTML interno da <section> cujo <h2> casa com `re` (ou '' se não achar).
+function secaoPorH2(html, re) {
+  const blocos = [...html.matchAll(/<section\b[^>]*>([\s\S]*?)<\/section>/gi)].map((m) => m[1]);
+  const alvo = blocos.find((b) => {
+    const h2 = b.match(/<h2[^>]*>([\s\S]*?)<\/h2>/i);
+    return h2 && re.test(limpa(h2[1]));
+  });
+  return alvo || '';
+}
+
+// Cards no formato <h3>título</h3> seguido do <p class="…text-gray-700…">corpo</p>.
+// Usado por Perguntas e Desafios (mesma marcação de card).
+function cardsTituloCorpo(bloco) {
+  if (!bloco) return [];
+  const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*class="[^"]*text-gray-700[^"]*"[^>]*>([\s\S]*?)<\/p>/gi;
+  const out = [];
+  let m;
+  while ((m = re.exec(bloco)) !== null) {
+    out.push({ titulo: limpa(m[1]), corpo: limpa(m[2]) });
+  }
+  return out;
+}
+
+// Modal "Os N Segredos": título do modal + [{ titulo, corpo(poema), versiculo }].
+// Cada card = <h3> IMEDIATAMENTE seguido de <p class="…italic…"> (exclusivo do
+// modal; os versículos das seções têm um <p> descritivo entre o h3 e o italic).
+export function extrairSegredos(html) {
+  const out = { titulo: '', cards: [] };
+  if (!html) return out;
+
+  const h2 = html.match(/<h2[^>]*>([\s\S]*?Segredos[\s\S]*?)<\/h2>/i);
+  if (h2) out.titulo = limpa(h2[1]);
+
+  const re = /<h3[^>]*>([\s\S]*?)<\/h3>\s*<p[^>]*class="[^"]*\bitalic\b[^"]*"[^>]*>([\s\S]*?)<\/p>\s*(?:<p[^>]*class="[^"]*text-sm[^"]*"[^>]*>([\s\S]*?)<\/p>)?/gi;
+  let m;
+  while ((m = re.exec(html)) !== null) {
+    out.cards.push({
+      titulo: limpa(m[1]),
+      corpo: limpaMultilinha(m[2]),
+      versiculo: m[3] ? limpa(m[3]) : '',
+    });
+  }
+  return out;
+}
+
+export function extrairPerguntas(html) {
+  return cardsTituloCorpo(secaoPorH2(html, /Perguntas para Pensar/i));
+}
+
+export function extrairDesafios(html) {
+  return cardsTituloCorpo(secaoPorH2(html, /Desafio da Semana/i));
 }

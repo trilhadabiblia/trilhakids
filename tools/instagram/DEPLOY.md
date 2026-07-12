@@ -66,6 +66,33 @@ Conferir (sem expor segredos):
 source .vps-env && node cli.js config
 ```
 
+## 3.1. Em QUAL perfil o pipeline publica (e como trocar)
+
+O perfil de destino é definido por **`IG_USER_ID` + `IG_ACCESS_TOKEN`** (o token do
+Instagram Login pertence a UMA conta). O host de upload (`IG_UPLOAD_URL`,
+`cafecomhomensdedeus.com.br`) é só onde os PNGs ficam hospedados para a Graph API
+baixar — **não** tem relação com o perfil publicado.
+
+Confirme a conta do token atual:
+```bash
+source .vps-env && node cli.js whoami   # 👤 @usuario (user_id: ...) + checa se bate com IG_USER_ID
+```
+
+**Trocar de perfil** (ex.: de `@cafecomhomensdedeus` para `@portaltrilhokids`):
+1. A conta destino precisa ser **Profissional** (Business/Creator) e estar autorizada no
+   mesmo app Meta (login via Instagram Business Login **como a conta destino**).
+2. Gere o **token longo (60d)** dessa conta (mesmo processo do token atual, autorizando a
+   conta destino) e descubra o id:
+   `curl "https://graph.instagram.com/me?fields=user_id,username&access_token=SEU_TOKEN"`.
+3. Atualize `IG_USER_ID` e `IG_ACCESS_TOKEN` no `.vps-env` (no host: `config/env.php`).
+4. **Apague o `.ig-token.json`** — ele SOBREPÕE o `IG_ACCESS_TOKEN`; se tiver o token
+   antigo, você continuaria publicando na conta antiga:
+   ```bash
+   rm -f .ig-token.json
+   source .vps-env && node cli.js refresh-token   # recria já com o token novo
+   ```
+5. Confirme: `node cli.js whoami` deve mostrar a conta destino e `✅ IG_USER_ID confere`.
+
 ## 4. Renovação automática do token (60 dias)
 
 O token do Instagram Login expira em 60 dias, mas se renova sozinho (sem app secret):

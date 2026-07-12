@@ -21,6 +21,15 @@ function truncar(txt, max) {
   return txt.length > max ? txt.slice(0, max - 1).trim() + '…' : txt;
 }
 
+// Escapa texto vindo do HTML da página para uso seguro como nó de texto
+// (preserva \n, que o CSS `white-space: pre-line` transforma em quebra).
+function esc(s) {
+  return String(s || '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
 function escBadge(secao) {
   return SECOES[secao] || 'Bíblia';
 }
@@ -180,6 +189,48 @@ export function versiculoHTML({ versiculo, referencia, texto, nome, secao, tema 
         ${referencia ? `<div class="ref">— ${referencia}</div>` : ''}
         ${explic ? `<div class="explic">${explic}</div>` : ''}
       </div>
+      <div class="foot">
+        <div class="cta">Aprenda a Bíblia <b>brincando</b></div>
+        <div class="pill">${HANDLE}</div>
+      </div>
+    </div>
+  </body></html>`;
+}
+
+// Card de texto genérico (1080x1080) para carrosséis extras (segredos,
+// perguntas, desafios). Estrutura: sobrancelha + título + corpo (multilinha)
+// + rodapé opcional (versículo). Fonte do corpo escala com o tamanho do texto.
+export function cartaoHTML({ eyebrow, titulo, corpo, versiculo, nome, secao, tema, contador }) {
+  const t = tema || TEMA_PADRAO;
+  const w = 1080, h = 1080;
+  const len = (corpo || '').length;
+  const fCorpo = len > 340 ? 36 : len > 220 ? 42 : 48;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
+    .frame { justify-content: flex-start; }
+    .eyebrow { z-index: 2; margin-top: 26px; font-size: 30px; font-weight: 800;
+      letter-spacing: 1px; text-transform: uppercase; color: #fcd34d; }
+    .livro { z-index: 2; font-size: 30px; font-weight: 800; color: ${t.light}; margin-top: 2px; }
+    .cardtitle { z-index: 2; margin-top: 16px; font-size: 52px; font-weight: 900;
+      line-height: 1.1; color: #fff; }
+    .body { z-index: 2; flex: 1; display: flex; align-items: center; }
+    .body p { font-size: ${fCorpo}px; line-height: 1.4; color: #f3f0ff;
+      white-space: pre-line; font-weight: 600; }
+    .ref { z-index: 2; margin: 8px 0 4px; font-size: 26px; font-weight: 700;
+      font-style: italic; color: #f9a8d4; line-height: 1.35; }
+    .foot .cta { font-size: 26px; }
+    .count { z-index: 2; position: absolute; top: 64px; right: 64px;
+      font-size: 26px; font-weight: 800; color: ${hexA(t.light, 0.9)}; }
+  </style></head><body>
+    <div class="frame">
+      <div class="glow"></div>
+      ${marca()}
+      ${contador ? `<div class="count">${contador}</div>` : ''}
+      <div class="badge">${escBadge(secao)}</div>
+      ${eyebrow ? `<div class="eyebrow">${esc(eyebrow)}</div>` : ''}
+      <div class="livro">${esc(nome)}</div>
+      ${titulo ? `<div class="cardtitle">${esc(titulo)}</div>` : ''}
+      <div class="body"><p>${esc(corpo)}</p></div>
+      ${versiculo ? `<div class="ref">${esc(versiculo)}</div>` : ''}
       <div class="foot">
         <div class="cta">Aprenda a Bíblia <b>brincando</b></div>
         <div class="pill">${HANDLE}</div>

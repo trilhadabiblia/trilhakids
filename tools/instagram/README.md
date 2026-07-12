@@ -6,10 +6,10 @@ Visual **misto**: molduras novas na identidade da marca (violeta `#7c3aed` / fun
 
 ```
 content.js   →  descobre livro + imagens do portal (usa livros.js)
-secoes.js    →  extrai os pontos-chave de cada seção (bullets do carrossel, sem IA)
+secoes.js    →  extrai conteúdo determinístico da página (bullets, segredos, perguntas, desafios) — sem IA
 caption.js   →  legenda + hashtags em pt-BR (via llm.js)
 llm.js       →  cadeia de providers p/ legenda: Groq → NVIDIA → Anthropic
-templates.js →  HTML da moldura (post 1080x1080, story 1080x1920)
+templates.js →  HTML da moldura (post/slide 1080x1080, story 1080x1920, card de texto)
 render.js    →  HTML → PNG (Puppeteer)
 host.js      →  sobe o PNG para URL pública (api/ig_upload.php)
 instagram.js →  publica via Instagram Graph API
@@ -98,6 +98,9 @@ putenv('IG_UPLOAD_URL=https://cafecomhomensdedeus.com.br/trilhokids/api/ig_uploa
 # Conferir credenciais carregadas do env.php (sem expor segredos)
 node cli.js config
 
+# Ver em QUAL perfil o token atual publica (confirmar antes de postar)
+node cli.js whoami
+
 # Ver os livros com imagens disponíveis
 node cli.js listar
 
@@ -105,15 +108,33 @@ node cli.js listar
 node cli.js post --livro jonas --dry-run
 node cli.js carrossel --livro genesis --dry-run
 node cli.js story --livro jonas --dry-run
+node cli.js segredos --livro isaias --dry-run   # carrossel dos "N Segredos" (modal da página)
+node cli.js reflexao --livro isaias --dry-run    # carrossel "Perguntas para Pensar" + "Desafio da Semana"
 
 # Publicar de verdade
 node cli.js post      --livro jonas
 node cli.js carrossel --livro genesis --max 5
 node cli.js story     --livro jonas
+node cli.js segredos  --livro isaias
+node cli.js reflexao  --livro isaias
 
 # Rotação automática (para o cron): publica o PRÓXIMO livro da sequência
-node cli.js proximo --formato carrossel
+node cli.js proximo --formato carrossel   # aceita: carrossel | segredos | reflexao | post | story
 ```
+
+### Formatos
+
+| Comando | O que gera |
+|---|---|
+| `post` | 1 imagem do livro (capa por padrão) |
+| `story` | 1 imagem vertical (1080x1920) + CTA |
+| `carrossel` | versículo + slides das seções (bullets determinísticos por seção) |
+| `segredos` | capa + 1 card por "segredo" do modal (título + poema + versículo) |
+| `reflexao` | capa + "Perguntas para Pensar" + "Desafio da Semana" |
+
+> `segredos` e `reflexao` são carrosséis **só de texto** (extraídos deterministicamente
+> da página), abertos pela capa do livro. Se a página do livro não tiver essas seções,
+> o comando avisa e não gera nada.
 
 > **Publicação via `graph.instagram.com`** (Instagram Business Login), o mesmo host do
 > `InstagramClient.php` do devocional — compatível com o token `IGAA…`. Ajuste com `IG_GRAPH_HOST` se precisar.

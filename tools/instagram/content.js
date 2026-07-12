@@ -6,7 +6,7 @@
 import { LIVROS, REMOTO, htmlDoLivro, listarImagens } from './source.js';
 import { extrairVersiculo } from './versiculo.js';
 import { extrairTema } from './cores.js';
-import { extrairSecoes, extrairPontos, sufixoDe } from './secoes.js';
+import { extrairSecoes, extrairPontos, sufixoDe, extrairSegredos, extrairPerguntas, extrairDesafios } from './secoes.js';
 
 // Rótulos amigáveis por sufixo de imagem (usados como legenda do slide).
 const ROTULOS = [
@@ -117,6 +117,55 @@ export async function buildCarrossel(chave, max = 6) {
   return {
     tipo: 'carrossel', livro: livro.pasta, nome: livro.nome, secao: livro.secao, tema,
     versiculo, imagens: slides, titulo: livro.nome,
+  };
+}
+
+// Imagem de capa do livro (para abrir os carrosséis de texto).
+function capaDe(imgs) {
+  return imgs.find((i) => i.arquivo.includes('-capa')) || imgs[0];
+}
+
+// Carrossel dos "N Segredos" (modal da página): capa + 1 card por segredo
+// (título + poema + versículo). Só texto — sem imagens por card.
+export async function buildSegredos(chave) {
+  const { livro, imgs } = await resolver(chave);
+  const { html, tema } = await contexto(livro);
+  const seg = extrairSegredos(html);
+  if (!seg.cards.length) {
+    throw new Error(`Sem a seção de "Segredos" em ${livro.nome} (modal não encontrado na página).`);
+  }
+  return {
+    tipo: 'segredos', livro: livro.pasta, nome: livro.nome, secao: livro.secao, tema,
+    capa: capaDe(imgs),
+    titulo: seg.titulo || `Os Segredos de ${livro.nome}`,
+    assunto: `os segredos escondidos no livro de ${livro.nome}`,
+    cartoes: seg.cards.map((c) => ({
+      titulo: c.titulo, corpo: c.corpo, versiculo: c.versiculo,
+    })),
+  };
+}
+
+// Carrossel de aplicação: capa + "Perguntas para Pensar" + "Desafio da Semana".
+export async function buildReflexao(chave) {
+  const { livro, imgs } = await resolver(chave);
+  const { html, tema } = await contexto(livro);
+  const perguntas = extrairPerguntas(html);
+  const desafios = extrairDesafios(html);
+  if (!perguntas.length && !desafios.length) {
+    throw new Error(`Sem "Perguntas para Pensar"/"Desafio da Semana" em ${livro.nome}.`);
+  }
+  const cartoes = [
+    // Nas perguntas o <h3> é só "Questão N" (redundante) → vira sobrancelha e o
+    // destaque é a própria pergunta (corpo).
+    ...perguntas.map((c, i) => ({ eyebrow: `Pergunta ${i + 1}`, corpo: c.corpo })),
+    ...desafios.map((c, i) => ({ eyebrow: `Desafio ${i + 1}`, titulo: c.titulo, corpo: c.corpo })),
+  ];
+  return {
+    tipo: 'reflexao', livro: livro.pasta, nome: livro.nome, secao: livro.secao, tema,
+    capa: capaDe(imgs),
+    titulo: 'Para Pensar e Praticar',
+    assunto: `perguntas para refletir e o desafio da semana sobre ${livro.nome}`,
+    cartoes,
   };
 }
 

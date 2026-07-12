@@ -62,6 +62,13 @@ export async function publicarStory({ imageUrl }) {
   return publicar(c.id);
 }
 
+// Identidade do token atual: em QUAL perfil ele publica. Útil para confirmar
+// a conta antes de postar (evita publicar no perfil errado ao trocar creds).
+export async function quemSou() {
+  if (!cfg.ig.token) throw new Error('Sem IG_ACCESS_TOKEN para consultar.');
+  return api('me', { fields: 'user_id,username' }, 'GET');
+}
+
 // Renova o token longo (Instagram Login, 60 dias). Não precisa de app secret.
 // Requer token com >= 24h de vida. Retorna { access_token, expires_in }.
 export async function refrescarToken() {

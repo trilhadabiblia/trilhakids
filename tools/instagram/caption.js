@@ -35,12 +35,12 @@ export async function gerarLegenda(item) {
   if (!temLLM()) return legendaOffline(item); // sem provider → legenda simples
 
   const secao = SECOES[item.secao] || 'Bíblia';
-  const formato =
-    item.tipo === 'story' ? 'story (vertical)' : item.tipo === 'carrossel' ? 'carrossel' : 'post único';
+  const formato = item.tipo === 'story' ? 'story (vertical)' : item.tipo === 'post' ? 'post único' : 'carrossel';
+  const foco = item.assunto ? `\nO conteúdo é sobre: ${item.assunto}.` : '';
 
   const prompt = `Você escreve para o Instagram do "Trilho Kids", um portal cristão que ensina a Bíblia para crianças (8-12 anos) da igreja IBP, de forma gamificada (pontos, badges, quizzes, QR Code pessoal).
 
-Crie a legenda de um ${formato} sobre o livro bíblico de "${item.nome}" (seção: ${secao}).
+Crie a legenda de um ${formato} sobre o livro bíblico de "${item.nome}" (seção: ${secao}).${foco}
 
 Diretrizes:
 - Tom caloroso, alegre e acolhedor, falando com pais, professores e ministério infantil.

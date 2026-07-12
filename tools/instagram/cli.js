@@ -13,13 +13,13 @@
 import fs from 'fs';
 import path from 'path';
 import { OUT_DIR, cfg, TOKEN_FILE } from './config.js';
-import { buildPost, buildStory, buildCarrossel, listarLivros, acharLivro } from './content.js';
-import { slideHTML, storyHTML, versiculoHTML } from './templates.js';
+import { buildPost, buildStory, buildCarrossel, buildSegredos, buildReflexao, listarLivros, acharLivro } from './content.js';
+import { slideHTML, storyHTML, versiculoHTML, cartaoHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { provedores } from './llm.js';
 import { hospedar } from './host.js';
-import { publicarImagem, publicarStory, publicarCarrossel, refrescarToken } from './instagram.js';
+import { publicarImagem, publicarStory, publicarCarrossel, refrescarToken, quemSou } from './instagram.js';
 import { proximoLivro, avancar } from './agenda.js';
 import { REMOTO, BASE, LIVROS, relativo, listarImagens } from './source.js';
 
@@ -43,11 +43,13 @@ function salvar(buffer, nome) {
   return p;
 }
 
-const FORMATOS = ['post', 'story', 'carrossel'];
+const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao'];
 
 async function montarItem(tipo, { livro, imagem, max }) {
   if (tipo === 'post') return buildPost(livro, imagem);
   if (tipo === 'story') return buildStory(livro, imagem);
+  if (tipo === 'segredos') return buildSegredos(livro);
+  if (tipo === 'reflexao') return buildReflexao(livro);
   return buildCarrossel(livro, Number(max) || 6);
 }
 
@@ -56,6 +58,21 @@ async function renderSlides(item) {
   if (item.tipo === 'story') {
     const html = storyHTML({ imagem: item.imagens[0], nome: item.nome, secao: item.secao, tema: item.tema });
     out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `${item.livro}-story.png` });
+  } else if (item.tipo === 'segredos' || item.tipo === 'reflexao') {
+    // Carrossel só de texto: capa (imagem do livro) + 1 card de texto por item.
+    let n = 0;
+    const capaHtml = slideHTML({
+      imagem: item.capa, nome: item.nome, secao: item.secao,
+      label: '', texto: item.titulo, tema: item.tema,
+    });
+    out.push({ buffer: await renderHTML(capaHtml, 1080, 1080), filename: `${item.livro}-${item.tipo}-${++n}-capa.png` });
+    for (const c of item.cartoes) {
+      const html = cartaoHTML({
+        ...c, nome: item.nome, secao: item.secao, tema: item.tema,
+        contador: `${n}/${item.cartoes.length}`,
+      });
+      out.push({ buffer: await renderHTML(html, 1080, 1080), filename: `${item.livro}-${item.tipo}-${++n}.png` });
+    }
   } else {
     let n = 0;
     // Carrossel abre com o card do "Versículo para guardar no coração".
@@ -79,7 +96,8 @@ async function renderSlides(item) {
 // Fluxo completo de um formato. Retorna o media_id (ou null em dry-run).
 async function fluxo(tipo, opts) {
   const item = await montarItem(tipo, opts);
-  console.log(`\n▶ ${tipo.toUpperCase()} — ${item.nome} (${item.imagens.length} imagem/ns)`);
+  const nItens = item.imagens?.length ?? item.cartoes?.length ?? 0;
+  console.log(`\n▶ ${tipo.toUpperCase()} — ${item.nome} (${nItens} ${item.imagens ? 'imagem/ns' : 'cards'})`);
 
   // Legenda (Anthropic) e render (Puppeteer) são independentes → em paralelo.
   const [legenda, slides] = await Promise.all([
@@ -136,6 +154,19 @@ async function run() {
     console.log('\nHospedagem dos assets:');
     console.log('  IG_UPLOAD_URL     ', cfg.upload.url || '❌ vazio (só --dry-run)');
     console.log('  IG_UPLOAD_TOKEN   ', cfg.upload.token ? 'presente' : '❌ vazio');
+    console.log('');
+    return;
+  }
+
+  if (cmd === 'whoami') {
+    const eu = await quemSou();
+    console.log(`\n👤 O token atual publica em: @${eu.username} (user_id: ${eu.user_id})`);
+    if (cfg.ig.userId && String(eu.user_id) !== String(cfg.ig.userId)) {
+      console.log(`⚠  IG_USER_ID configurado (${cfg.ig.userId}) DIFERE do id do token (${eu.user_id}).`);
+      console.log('   A publicação usa /{IG_USER_ID}/media — alinhe IG_USER_ID ao id acima.');
+    } else if (cfg.ig.userId) {
+      console.log('✅ IG_USER_ID confere com o token.');
+    }
     console.log('');
     return;
   }
@@ -217,7 +248,7 @@ async function run() {
   }
 
   if (!FORMATOS.includes(cmd)) {
-    console.log('Comandos: config | diag | listar | post | story | carrossel | proximo | refresh-token');
+    console.log('Comandos: config | whoami | diag | listar | post | story | carrossel | segredos | reflexao | proximo | refresh-token');
     process.exit(1);
   }
   if (!args.livro) { console.error('Faltou --livro <pasta>. Ex: --livro jonas'); process.exit(1); }

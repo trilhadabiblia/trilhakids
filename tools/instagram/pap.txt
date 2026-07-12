@@ -1,0 +1,34 @@
+Pronto! Aqui estão os passos.
+
+O que decide o perfil
+
+Só duas variáveis: IG_USER_ID + IG_ACCESS_TOKEN. O token do Instagram Login pertence a uma conta específica — hoje é o @cafecomhomensdedeus.
+
+⚠️ Não confunda: o host de upload (cafecomhomensdedeus.com.br, no IG_UPLOAD_URL) é só onde os PNGs ficam hospedados pra Graph API baixar. Ele não define o perfil — pode continuar como está.
+
+Passo a passo para publicar no @portaltrilhokids
+
+1. Conta profissional + app. Garanta que @portaltrilhokids é conta Profissional (Business/Creator) e autorize-a no mesmo app Meta que já publica no cafe — fazendo o login do Instagram Business Login como o @portaltrilhokids (não como o cafe).
+2. Gere o token longo (60 dias) do @portaltrilhokids — mesmo processo que você usou pro cafe, só que autorizando essa conta.
+3. Pegue o IG_USER_ID da conta:
+curl "https://graph.instagram.com/me?fields=user_id,username&access_token=SEU_TOKEN_NOVO"
+3. Confirme "username":"portaltrilhokids" e anote o user_id.
+4. Atualize as credenciais (VPS → .vps-env; host → config/env.php):
+  - IG_USER_ID = user_id do portaltrilhokids
+  - IG_ACCESS_TOKEN = token novo
+5. ⚠️ Apague o .ig-token.json (o pulo do gato). Esse arquivo sobrepõe o IG_ACCESS_TOKEN — se ele tiver o token antigo do cafe, você continuaria postando no cafe mesmo trocando o env:
+rm -f .ig-token.json
+node cli.js refresh-token      # recria já com o token novo
+6. Confirme antes de postar (comando que acabei de criar):
+node cli.js whoami
+# 👤 O token atual publica em: @portaltrilhokids (user_id: ...)
+# ✅ IG_USER_ID confere com o token.
+7. Teste real com 1 publicação e confira no perfil:
+node cli.js carrossel --livro isaias
+
+O que fiz agora
+
+- Novo comando node cli.js whoami — mostra em qual perfil o token publica e avisa se IG_USER_ID diverge do token (evita postar no lugar errado).
+- Documentei o procedimento no DEPLOY.md (seção "3.1 Trocar de perfil"), README.md e memória.
+
+O único passo que depende de você (fora do meu alcance) é o 2 — gerar o token do @portaltrilhokids no painel/OAuth da Meta. Se quiser, me diz como você gerou o token do cafe (Graph API Explorer? script OAuth próprio?) que eu te detalho exatamente essa parte para o novo perfil. Quer que eu já deixe o commit da sessão pronto também?

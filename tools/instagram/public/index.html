@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trilho Kids → Instagram</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --fundo: #0a0818;
+    --card: #141024;
+    --borda: #2a2344;
+    --violeta: #7c3aed;
+    --violeta-claro: #a78bfa;
+    --texto: #ece9f8;
+    --texto-suave: #9a93b8;
+    --ok: #34d399;
+    --erro: #f87171;
+    --raio: 14px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--fundo); color: var(--texto);
+    font: 15px/1.5 Inter, system-ui, sans-serif;
+    min-height: 100vh;
+  }
+  header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 18px 22px; border-bottom: 1px solid var(--borda);
+  }
+  header .logo {
+    width: 38px; height: 38px; border-radius: 11px;
+    background: linear-gradient(135deg, var(--violeta), #4c1d95);
+    display: grid; place-items: center; font-size: 20px;
+  }
+  header h1 { font: 600 19px Fredoka, sans-serif; margin: 0; letter-spacing: .3px; }
+  header .status { margin-left: auto; font-size: 13px; color: var(--texto-suave); }
+  header .status .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); margin-right: 6px; }
+  header .status .dot.busy { background: #fbbf24; }
+
+  main { max-width: 1020px; margin: 0 auto; padding: 24px 18px 60px; }
+  .painel {
+    background: var(--card); border: 1px solid var(--borda);
+    border-radius: var(--raio); padding: 20px; margin-bottom: 22px;
+  }
+  .painel h2 { font: 600 15px Fredoka, sans-serif; margin: 0 0 14px; color: var(--violeta-claro); text-transform: uppercase; letter-spacing: 1px; }
+
+  .linha { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; }
+  .campo { display: flex; flex-direction: column; gap: 5px; }
+  .campo label { font-size: 12.5px; color: var(--texto-suave); }
+  select, input[type=password], input[type=number], textarea {
+    background: #0e0b1e; color: var(--texto); border: 1px solid var(--borda);
+    border-radius: 9px; padding: 9px 12px; font: inherit; min-width: 170px;
+  }
+  select:focus, input:focus, textarea:focus { outline: 2px solid var(--violeta); outline-offset: 1px; border-color: transparent; }
+  input[type=number] { min-width: 90px; }
+
+  .formatos { display: flex; gap: 8px; }
+  .formatos button {
+    background: #0e0b1e; border: 1px solid var(--borda); color: var(--texto-suave);
+    padding: 9px 16px; border-radius: 9px; font: 500 14px Inter, sans-serif; cursor: pointer;
+  }
+  .formatos button.ativo { background: var(--violeta); border-color: var(--violeta); color: #fff; }
+
+  .btn {
+    background: var(--violeta); color: #fff; border: 0; border-radius: 10px;
+    padding: 11px 22px; font: 600 14.5px Inter, sans-serif; cursor: pointer;
+  }
+  .btn:hover { background: #6d28d9; }
+  .btn:disabled { opacity: .45; cursor: wait; }
+  .btn.fantasma { background: transparent; border: 1px solid var(--borda); color: var(--texto-suave); }
+  .btn.publicar { background: var(--ok); color: #052e21; }
+  .btn.publicar:hover { background: #2cc189; }
+
+  .slides { display: flex; gap: 14px; overflow-x: auto; padding: 4px 2px 10px; }
+  .slide { flex: 0 0 auto; text-align: center; }
+  .slide img {
+    height: 300px; border-radius: 12px; border: 1px solid var(--borda);
+    display: block; background: #0e0b1e;
+  }
+  .slide span { display: block; margin-top: 6px; font-size: 11.5px; color: var(--texto-suave); }
+
+  textarea#caption { width: 100%; min-height: 130px; resize: vertical; line-height: 1.55; }
+
+  .aviso { padding: 11px 14px; border-radius: 10px; font-size: 14px; margin-top: 14px; display: none; }
+  .aviso.ok { display: block; background: rgba(52,211,153,.12); color: var(--ok); border: 1px solid rgba(52,211,153,.35); }
+  .aviso.erro { display: block; background: rgba(248,113,113,.1); color: var(--erro); border: 1px solid rgba(248,113,113,.3); }
+
+  .rodape-acoes { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
+  .meta { font-size: 13px; color: var(--texto-suave); margin: 4px 0 12px; }
+  .spinner { display: none; margin-top: 14px; color: var(--violeta-claro); font-size: 14px; }
+  .spinner.ativo { display: block; }
+  #login { max-width: 420px; margin: 12vh auto; }
+  .oculto { display: none !important; }
+  @media (prefers-reduced-motion: no-preference) {
+    .painel { animation: subir .25s ease-out; }
+    @keyframes subir { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">📖</div>
+  <h1>Trilho Kids → Instagram</h1>
+  <div class="status" id="status"></div>
+</header>
+
+<main>
+  <!-- Login -->
+  <section id="login" class="painel">
+    <h2>Acesso</h2>
+    <div class="campo">
+      <label for="token">Token de acesso (WEB_TOKEN)</label>
+      <input type="password" id="token" autocomplete="current-password">
+    </div>
+    <div class="rodape-acoes">
+      <button class="btn" onclick="entrar()">Entrar</button>
+    </div>
+    <div class="aviso" id="avisoLogin"></div>
+  </section>
+
+  <!-- Gerar -->
+  <section id="gerar" class="painel oculto">
+    <h2>1 · Gerar preview</h2>
+    <div class="linha">
+      <div class="campo">
+        <label>Formato</label>
+        <div class="formatos" id="formatos">
+          <button data-f="carrossel" class="ativo">Carrossel</button>
+          <button data-f="post">Post</button>
+          <button data-f="story">Story</button>
+        </div>
+      </div>
+      <div class="campo">
+        <label for="livro">Livro</label>
+        <select id="livro"></select>
+      </div>
+      <div class="campo" id="campoMax">
+        <label for="max">Slides (2–10)</label>
+        <input type="number" id="max" min="2" max="10" value="6">
+      </div>
+      <button class="btn" id="btnGerar" onclick="gerarPreview(false)">Gerar preview</button>
+      <button class="btn fantasma" id="btnProximo" onclick="gerarPreview(true)" title="Usa o próximo livro da rotação do cron"></button>
+    </div>
+    <div class="spinner" id="spinGerar">⏳ Renderizando os slides — o Chromium está trabalhando…</div>
+    <div class="aviso" id="avisoGerar"></div>
+  </section>
+
+  <!-- Revisar -->
+  <section id="revisar" class="painel oculto">
+    <h2>2 · Revisar e aprovar</h2>
+    <div class="meta" id="metaPreview"></div>
+    <div class="slides" id="slides"></div>
+    <div class="campo" id="campoCaption">
+      <label for="caption">Legenda (edite à vontade antes de publicar)</label>
+      <textarea id="caption"></textarea>
+    </div>
+    <div class="rodape-acoes">
+      <button class="btn publicar" id="btnPublicar" onclick="publicar()">Publicar no Instagram</button>
+      <button class="btn fantasma" onclick="descartar()">Descartar</button>
+    </div>
+    <div class="spinner" id="spinPub">⏳ Hospedando as imagens e publicando…</div>
+    <div class="aviso" id="avisoPub"></div>
+  </section>
+</main>
+
+<script>
+let TOKEN = sessionStorage.getItem('tk_token') || '';
+let previewAtual = null;
+let formato = 'carrossel';
+
+const $ = (id) => document.getElementById(id);
+const aviso = (id, msg, tipo) => { const el = $(id); el.textContent = msg; el.className = 'aviso ' + tipo; };
+const limparAviso = (id) => { $(id).className = 'aviso'; };
+
+async function api(caminho, opts = {}) {
+  const r = await fetch(caminho, {
+    ...opts,
+    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + TOKEN, ...(opts.headers || {}) },
+  });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok || !j.ok) throw new Error(j.erro || ('HTTP ' + r.status));
+  return j;
+}
+
+async function entrar() {
+  TOKEN = $('token').value.trim();
+  try {
+    await carregarTudo();
+    sessionStorage.setItem('tk_token', TOKEN);
+    $('login').classList.add('oculto');
+    $('gerar').classList.remove('oculto');
+  } catch (e) {
+    aviso('avisoLogin', 'Não entrou: ' + e.message, 'erro');
+  }
+}
+
+async function carregarTudo() {
+  const [st, lv] = await Promise.all([api('/api/status'), api('/api/livros')]);
+  $('status').innerHTML = `<span class="dot ${st.ocupado ? 'busy' : ''}"></span>` +
+    `legendas: ${st.legendas.join(' → ') || 'offline'} · upload: ${st.upload ? 'ok' : '⚠ sem IG_UPLOAD'}`;
+  $('btnProximo').textContent = st.rotacao
+    ? `Próximo da rotação (${st.rotacao.proximo} · ${st.rotacao.posicao})`
+    : 'Próximo da rotação';
+  const sel = $('livro');
+  sel.innerHTML = lv.livros.map((l) =>
+    `<option value="${l.pasta}">${l.nome} — ${l.imagens ?? '?'} imgs (${l.secao})</option>`).join('');
+}
+
+document.querySelectorAll('#formatos button').forEach((b) => {
+  b.onclick = () => {
+    document.querySelectorAll('#formatos button').forEach((x) => x.classList.remove('ativo'));
+    b.classList.add('ativo');
+    formato = b.dataset.f;
+    $('campoMax').style.display = formato === 'carrossel' ? '' : 'none';
+  };
+});
+
+async function gerarPreview(usarProximo) {
+  limparAviso('avisoGerar');
+  $('revisar').classList.add('oculto');
+  $('btnGerar').disabled = $('btnProximo').disabled = true;
+  $('spinGerar').classList.add('ativo');
+  try {
+    const body = usarProximo
+      ? { proximo: true, tipo: formato, max: Number($('max').value) }
+      : { tipo: formato, livro: $('livro').value, max: Number($('max').value) };
+    const { preview } = await api('/api/preview', { method: 'POST', body: JSON.stringify(body) });
+    mostrarPreview(preview);
+  } catch (e) {
+    aviso('avisoGerar', e.message, 'erro');
+  } finally {
+    $('btnGerar').disabled = $('btnProximo').disabled = false;
+    $('spinGerar').classList.remove('ativo');
+  }
+}
+
+function mostrarPreview(p) {
+  previewAtual = p;
+  limparAviso('avisoPub');
+  $('btnPublicar').disabled = false;
+  $('metaPreview').textContent =
+    `${p.tipo.toUpperCase()} · ${p.nome} · ${p.slides.length} slide(s)` +
+    (p.rotacao ? ` · rotação ${p.rotacao.indice}/${p.rotacao.total} (avança ao publicar)` : '');
+  $('slides').innerHTML = p.slides.map((s, i) =>
+    `<figure class="slide"><img src="${s.url}?t=${encodeURIComponent(TOKEN)}" alt="Slide ${i + 1}"><span>${i + 1} · ${s.nome}</span></figure>`
+  ).join('');
+  $('campoCaption').style.display = p.tipo === 'story' ? 'none' : '';
+  $('caption').value = p.caption || '';
+  $('revisar').classList.remove('oculto');
+  $('revisar').scrollIntoView({ behavior: 'smooth' });
+}
+
+async function publicar() {
+  if (!previewAtual) return;
+  limparAviso('avisoPub');
+  $('btnPublicar').disabled = true;
+  $('spinPub').classList.add('ativo');
+  try {
+    const { mediaId } = await api('/api/publicar', {
+      method: 'POST',
+      body: JSON.stringify({ id: previewAtual.id, caption: $('caption').value }),
+    });
+    aviso('avisoPub', `Publicado! media id: ${mediaId}`, 'ok');
+    carregarTudo(); // atualiza a rotação no botão
+  } catch (e) {
+    aviso('avisoPub', e.message, 'erro');
+    $('btnPublicar').disabled = false;
+  } finally {
+    $('spinPub').classList.remove('ativo');
+  }
+}
+
+async function descartar() {
+  if (previewAtual) await api('/api/preview/' + previewAtual.id, { method: 'DELETE' }).catch(() => {});
+  previewAtual = null;
+  $('revisar').classList.add('oculto');
+}
+
+// Sessão anterior? Tenta entrar direto.
+if (TOKEN) entrar();
+$('token').addEventListener('keydown', (e) => e.key === 'Enter' && entrar());
+</script>
+</body>
+</html>
