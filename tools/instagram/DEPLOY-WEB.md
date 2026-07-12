@@ -36,7 +36,7 @@ bash -c 'source .vps-env && pm2 start server.js --name trilho-ig-web --update-en
 pm2 save && pm2 startup
 ```
 
-Teste local: `curl -H "Authorization: Bearer $WEB_TOKEN" http://127.0.0.1:3000/api/status`
+Teste local: `curl -H "Authorization: Bearer $WEB_TOKEN" http://127.0.0.1:3001/api/status`
 
 ## 4. DNS + Nginx + HTTPS
 
@@ -51,7 +51,7 @@ server {
     client_max_body_size 20m;
 
     location / {
-        proxy_pass http://127.0.0.1:3000;
+        proxy_pass http://127.0.0.1:3001;
         proxy_http_version 1.1;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
@@ -64,7 +64,7 @@ server {
 sudo ln -s /etc/nginx/sites-available/trilho-ig /etc/nginx/sites-enabled/
 sudo nginx -t && sudo systemctl reload nginx
 sudo certbot --nginx -d ig.trilhokids.com.br
-sudo ufw allow 80/tcp && sudo ufw allow 443/tcp   # a 3000 fica fechada
+sudo ufw allow 80/tcp && sudo ufw allow 443/tcp   # a 3001 fica fechada
 ```
 
 ## 5. Usar

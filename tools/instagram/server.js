@@ -257,7 +257,7 @@ app.delete('/api/preview/:id', exigirToken, (req, res) => {
 // UI estática (a página pede o token e guarda no navegador).
 app.use(express.static(path.join(here, 'public')));
 
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, '172.17.0.1', () => {
   console.log(`✅ Trilho Kids → Instagram (web) em http://127.0.0.1:${PORT}`);
   console.log('   Exponha via Nginx com HTTPS; a porta não deve ser aberta no firewall.');
 });

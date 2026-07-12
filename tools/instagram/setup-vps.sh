@@ -14,18 +14,18 @@ echo "== Trilho Kids · preparação da VPS =="
 # 1) Node 20+
 if ! command -v node >/dev/null 2>&1; then
   echo "-> Node não encontrado. Instalando Node 20..."
-  curl -fsSL https://deb.nodesource.com/setup_20.x | $SUDO -E bash -
-  $SUDO apt-get install -y nodejs
+  curl -fsSL https://deb.nodesource.com/setup_20.x |  -E bash -
+   apt-get install -y nodejs
 fi
 echo "   Node $(node -v)"
 
 # 2) Chromium + dependências de headless
 echo "-> Instalando Chromium e dependências..."
-$SUDO apt-get update -y
-$SUDO apt-get install -y fonts-liberation libnss3 libatk-bridge2.0-0 \
+ apt-get update -y
+ apt-get install -y fonts-liberation libnss3 libatk-bridge2.0-0 \
   libgtk-3-0 libasound2 libgbm1 ca-certificates || true
-apt-cache show chromium         >/dev/null 2>&1 && $SUDO apt-get install -y chromium || true
-apt-cache show chromium-browser >/dev/null 2>&1 && $SUDO apt-get install -y chromium-browser || true
+apt-cache show chromium         >/dev/null 2>&1 &&  apt-get install -y chromium || true
+apt-cache show chromium-browser >/dev/null 2>&1 &&  apt-get install -y chromium-browser || true
 
 # 3) Descobre o binário do Chromium
 CHROME=""
