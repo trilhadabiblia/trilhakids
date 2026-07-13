@@ -134,6 +134,7 @@
           <button data-f="segredos">Segredos</button>
           <button data-f="reflexao">Reflexão</button>
           <button data-f="campanha">Campanha</button>
+          <button data-f="reel">Reel</button>
         </div>
       </div>
       <div class="campo" id="campoLivro">
@@ -143,6 +144,10 @@
       <div class="campo" id="campoPeca" style="display:none">
         <label for="peca">Peça da campanha</label>
         <select id="peca"></select>
+      </div>
+      <div class="campo" id="campoRoteiro" style="display:none">
+        <label for="roteiro">Roteiro do reel</label>
+        <select id="roteiro"></select>
       </div>
       <div class="campo" id="campoMax">
         <label for="max">Slides (2–10)</label>
@@ -205,7 +210,7 @@ async function entrar() {
 }
 
 async function carregarTudo() {
-  const [st, lv, cp] = await Promise.all([api('/api/status'), api('/api/livros'), api('/api/campanha')]);
+  const [st, lv, cp, rl] = await Promise.all([api('/api/status'), api('/api/livros'), api('/api/campanha'), api('/api/reels')]);
   const conta = st.conta?.username
     ? (st.conta.confere ? `publica em @${st.conta.username}` : `⚠ token de @${st.conta.username} ≠ IG_USER_ID!`)
     : '⚠ conta não verificada';
@@ -221,6 +226,8 @@ async function carregarTudo() {
     `<option value="${l.pasta}">${l.nome} — ${l.imagens ?? '?'} imgs (${l.secao})</option>`).join('');
   $('peca').innerHTML = (cp.pecas || []).map((p) =>
     `<option value="${p.id}">${p.titulo} — ${p.slides} slides</option>`).join('');
+  $('roteiro').innerHTML = (rl.roteiros || []).map((r) =>
+    `<option value="${r.id}">${r.titulo} — ${r.frames} frames</option>`).join('');
 }
 
 document.querySelectorAll('#formatos button').forEach((b) => {
@@ -229,10 +236,12 @@ document.querySelectorAll('#formatos button').forEach((b) => {
     b.classList.add('ativo');
     formato = b.dataset.f;
     const ehCampanha = formato === 'campanha';
+    const ehReel = formato === 'reel';
     $('campoMax').style.display = formato === 'carrossel' ? '' : 'none';
-    $('campoLivro').style.display = ehCampanha ? 'none' : '';
+    $('campoLivro').style.display = (ehCampanha || ehReel) ? 'none' : '';
     $('campoPeca').style.display = ehCampanha ? '' : 'none';
-    $('btnProximo').style.display = ehCampanha ? 'none' : '';
+    $('campoRoteiro').style.display = ehReel ? '' : 'none';
+    $('btnProximo').style.display = (ehCampanha || ehReel) ? 'none' : '';
   };
 });
 
@@ -246,7 +255,9 @@ async function gerarPreview(usarProximo) {
       ? { proximo: true, tipo: formato, max: Number($('max').value) }
       : formato === 'campanha'
         ? { tipo: 'campanha', peca: $('peca').value }
-        : { tipo: formato, livro: $('livro').value, max: Number($('max').value) };
+        : formato === 'reel'
+          ? { tipo: 'reel', peca: $('roteiro').value }
+          : { tipo: formato, livro: $('livro').value, max: Number($('max').value) };
     const { preview } = await api('/api/preview', { method: 'POST', body: JSON.stringify(body) });
     mostrarPreview(preview);
   } catch (e) {
@@ -260,14 +271,17 @@ async function gerarPreview(usarProximo) {
 function mostrarPreview(p) {
   previewAtual = p;
   limparAviso('avisoPub');
+  const ehReel = p.tipo === 'reel';
+  $('btnPublicar').style.display = ehReel ? 'none' : '';
   $('btnPublicar').disabled = false;
   $('metaPreview').textContent =
-    `${p.tipo.toUpperCase()} · ${p.nome} · ${p.slides.length} slide(s)` +
+    `${p.tipo.toUpperCase()} · ${p.nome} · ${p.slides.length} ${ehReel ? 'frame(s)' : 'slide(s)'}` +
+    (ehReel ? ' · baixe os frames (botão direito → salvar) e monte no CapCut' : '') +
     (p.rotacao ? ` · semana ${p.rotacao.indice}/${p.rotacao.total} (rotação semanal)` : '');
   $('slides').innerHTML = p.slides.map((s, i) =>
     `<figure class="slide"><img src="${s.url}?t=${encodeURIComponent(TOKEN)}" alt="Slide ${i + 1}"><span>${i + 1} · ${s.nome}</span></figure>`
   ).join('');
-  $('campoCaption').style.display = p.tipo === 'story' ? 'none' : '';
+  $('campoCaption').style.display = (p.tipo === 'story' || ehReel) ? 'none' : '';
   $('caption').value = p.caption || '';
   $('revisar').classList.remove('oculto');
   $('revisar').scrollIntoView({ behavior: 'smooth' });

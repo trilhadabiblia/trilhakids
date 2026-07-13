@@ -126,6 +126,10 @@ node cli.js proximo --formato carrossel    # força um formato: carrossel | segr
 # Campanha institucional (não é por livro — apresenta o projeto, a partir do pitch)
 node cli.js campanha                       # lista as peças
 node cli.js campanha --peca demonstracao   # gera/publica uma peça
+
+# Frames de Reel (1080x1920) para montar vídeo no CapCut — NÃO publica
+node cli.js reel                           # lista os roteiros
+node cli.js reel --roteiro reel2           # exporta os frames para ./out
 ```
 
 ### Formatos
@@ -138,6 +142,7 @@ node cli.js campanha --peca demonstracao   # gera/publica uma peça
 | `segredos` | capa + 1 card por "segredo" do modal (título + poema + versículo) |
 | `reflexao` | capa + "Perguntas para Pensar" + "Desafio da Semana" |
 | `campanha` | carrossel institucional on-brand (capa + cards), a partir do pitch |
+| `reel` | frames verticais 1080x1920 para montar reels no CapCut (**não publica**) |
 
 > `segredos` e `reflexao` são carrosséis **só de texto** (extraídos deterministicamente
 > da página), abertos pela capa do livro. Se a página do livro não tiver essas seções,
@@ -148,6 +153,13 @@ node cli.js campanha --peca demonstracao   # gera/publica uma peça
 > material de livro. Cada peça é um carrossel on-brand com legenda/hashtags prontas e CTA
 > para a bio. Peças: `problema`, `solucao`, `apostila`, `gamificacao`, `instituicoes`,
 > `demonstracao`. No web app aparecem no formato **Campanha** (seletor de peça).
+
+> **Frames de Reel** (`reels.js` + `prompt/reels-fase1.md`): cartelas verticais on-brand
+> (capa, "reviravolta", quiz) para montar os reels da Fase 1 no CapCut. O pipeline **não
+> publica reels** (é vídeo) — os frames são exportados para `./out` (CLI) ou visualizados
+> para download no web app (formato **Reel**, sem botão publicar). Roteiros: `reel1` (QR
+> mágico), `reel2` (Se a Bíblia fosse série), `reel3` (Quiz em 10s). Os roteiros completos,
+> com legenda/hashtags e ordem de publicação, estão em `prompt/reels-fase1.md`.
 
 > **Publicação via `graph.instagram.com`** (Instagram Business Login), o mesmo host do
 > `InstagramClient.php` do devocional — compatível com o token `IGAA…`. Ajuste com `IG_GRAPH_HOST` se precisar.

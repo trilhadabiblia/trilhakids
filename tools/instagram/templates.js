@@ -325,3 +325,126 @@ export function cartaoHTML({ eyebrow, titulo, corpo, versiculo, nome, secao, tem
     </div>
   </body></html>`;
 }
+
+// ============================================================
+// Frames de Reel (1080x1920, vertical) — cartelas estáticas on-brand para
+// montar reels no CapCut (NÃO são publicados pelo pipeline). Ver reels.js.
+// ============================================================
+
+// Capa/fecho do reel: kicker + título grande + subtítulo + rodapé/CTA.
+export function reelCapaHTML({ kicker, titulo, subtitulo, rodape, tema }) {
+  const t = tema || TEMA_PADRAO;
+  const w = 1080, h = 1920;
+  const len = (titulo || '').length;
+  const fT = len > 60 ? 78 : len > 36 ? 88 : 100;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
+    .frame { padding: 120px 84px; }
+    .hero { z-index: 2; flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center; }
+    .kicker { font-size: 40px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 2px; color: ${t.light}; margin-bottom: 30px; }
+    .htitle { font-size: ${fT}px; font-weight: 900; line-height: 1.08; color: #fff; }
+    .hsub { font-size: 46px; font-weight: 600; line-height: 1.35; color: #e5e0f5;
+      margin-top: 34px; max-width: 840px; }
+    .foot { flex-direction: column; gap: 22px; align-items: center; }
+    .foot .cta { font-size: 42px; font-weight: 800; text-align: center; color: #fff; }
+    .pill { font-size: 34px; padding: 16px 42px; }
+  </style></head><body>
+    <div class="frame">
+      <div class="glow"></div>
+      ${marca()}
+      <div class="hero">
+        ${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ''}
+        <div class="htitle">${esc(titulo)}</div>
+        ${subtitulo ? `<div class="hsub">${esc(subtitulo)}</div>` : ''}
+      </div>
+      <div class="foot">
+        ${rodape ? `<div class="cta">${esc(rodape)}</div>` : ''}
+        <div class="pill">${HANDLE}</div>
+      </div>
+    </div>
+  </body></html>`;
+}
+
+// Cartela de "reviravolta" (Reel 2): emoji grande + frase de impacto + rótulo.
+export function reelTwistHTML({ emoji, titulo, rotulo, rodape, tema }) {
+  const t = tema || TEMA_PADRAO;
+  const w = 1080, h = 1920;
+  const len = (titulo || '').length;
+  const fT = len > 66 ? 62 : len > 44 ? 70 : 78;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
+    .frame { padding: 120px 84px; }
+    .hero { z-index: 2; flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center; }
+    .emoji { font-size: 200px; line-height: 1; margin-bottom: 30px; }
+    .twist { font-size: ${fT}px; font-weight: 900; line-height: 1.14; color: #fff; max-width: 900px; }
+    .rotulo { margin-top: 36px; font-size: 40px; font-weight: 800; color: ${t.light}; }
+    .foot { flex-direction: column; gap: 18px; align-items: center; }
+    .foot .cta { font-size: 36px; font-weight: 800; text-align: center; color: #fff; }
+    .pill { font-size: 32px; padding: 14px 38px; }
+  </style></head><body>
+    <div class="frame">
+      <div class="glow"></div>
+      ${marca()}
+      <div class="hero">
+        <div class="emoji">${emoji || '✨'}</div>
+        <div class="twist">${esc(titulo)}</div>
+        ${rotulo ? `<div class="rotulo">${esc(rotulo)}</div>` : ''}
+      </div>
+      <div class="foot">
+        ${rodape ? `<div class="cta">${esc(rodape)}</div>` : ''}
+        <div class="pill">${HANDLE}</div>
+      </div>
+    </div>
+  </body></html>`;
+}
+
+// Cartela de quiz (Reel 3): pergunta + 4 opções; se `revelar`, marca a correta.
+export function reelQuizHTML({ numero, pergunta, opcoes, correta, revelar, justificativa, tema }) {
+  const t = tema || TEMA_PADRAO;
+  const w = 1080, h = 1920;
+  const letras = ['A', 'B', 'C', 'D', 'E'];
+  const lenP = (pergunta || '').length;
+  const fP = lenP > 90 ? 54 : lenP > 58 ? 62 : 70;
+  const opts = (opcoes || []).map((o, i) => {
+    const certo = revelar && i === correta;
+    const apagado = revelar && i !== correta;
+    return `<li class="opt${certo ? ' certo' : ''}${apagado ? ' apagado' : ''}">
+      <span class="letra">${letras[i]}</span><span class="txt">${esc(o)}</span>${certo ? '<span class="ck">✓</span>' : ''}</li>`;
+  }).join('');
+  const eyebrow = revelar ? 'Resposta ✅' : `Pergunta ${numero || ''} · ⏱ 10s`;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
+    .frame { padding: 110px 76px; justify-content: flex-start; }
+    .eyebrow { z-index: 2; margin-top: 30px; font-size: 40px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 1px; color: #fcd34d; }
+    .perg { z-index: 2; margin-top: 26px; font-size: ${fP}px; font-weight: 900;
+      line-height: 1.15; color: #fff; }
+    .opts { z-index: 2; flex: 1; list-style: none; display: flex; flex-direction: column;
+      justify-content: center; gap: 22px; }
+    .opt { display: flex; align-items: center; gap: 22px; font-size: 44px; font-weight: 700;
+      color: #fff; background: ${hexA(t.to, 0.16)}; border: 2px solid ${hexA(t.light, 0.35)};
+      border-radius: 20px; padding: 24px 28px; }
+    .opt .letra { font-weight: 900; color: ${t.light}; width: 52px; flex-shrink: 0; }
+    .opt .txt { flex: 1; }
+    .opt.certo { background: rgba(34,197,94,.22); border-color: #4ade80; }
+    .opt.certo .letra { color: #4ade80; }
+    .opt.apagado { opacity: .38; }
+    .opt .ck { color: #4ade80; font-weight: 900; font-size: 48px; }
+    .just { z-index: 2; font-size: 32px; line-height: 1.4; color: #e5e0f5; margin: 10px 0 6px; }
+    .foot .cta { font-size: 34px; font-weight: 800; color: #fff; }
+    .pill { font-size: 32px; padding: 14px 38px; }
+  </style></head><body>
+    <div class="frame">
+      <div class="glow"></div>
+      ${marca()}
+      <div class="eyebrow">${eyebrow}</div>
+      <div class="perg">${esc(pergunta)}</div>
+      <ul class="opts">${opts}</ul>
+      ${revelar && justificativa ? `<div class="just">💡 ${esc(justificativa)}</div>` : ''}
+      <div class="foot">
+        <div class="cta">Aprenda a Bíblia <b>brincando</b></div>
+        <div class="pill">${HANDLE}</div>
+      </div>
+    </div>
+  </body></html>`;
+}

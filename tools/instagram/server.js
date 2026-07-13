@@ -22,7 +22,7 @@ import { fileURLToPath } from 'url';
 
 import { OUT_DIR, cfg } from './config.js';
 import { buildPost, buildStory, buildCarrossel, buildSegredos, buildReflexao, listarLivros } from './content.js';
-import { slideHTML, storyHTML, versiculoHTML, cartaoHTML, campanhaCapaHTML, campanhaCartaoHTML } from './templates.js';
+import { slideHTML, storyHTML, versiculoHTML, cartaoHTML, campanhaCapaHTML, campanhaCartaoHTML, reelCapaHTML, reelTwistHTML, reelQuizHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { provedores } from './llm.js';
@@ -30,6 +30,7 @@ import { hospedar } from './host.js';
 import { publicarImagem, publicarStory, publicarCarrossel, quemSou } from './instagram.js';
 import { agendaDoDia } from './agenda.js';
 import { buildCampanha, listarCampanha } from './campanha.js';
+import { buildReel, listarReels } from './reels.js';
 import { REMOTO, BASE } from './source.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -93,7 +94,7 @@ function limparPreviewsAntigos() {
 setInterval(limparPreviewsAntigos, 10 * 60 * 1000).unref();
 
 // ---------- Núcleo: montar item + renderizar (mesma lógica do cli.js) ----------
-const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao', 'campanha'];
+const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao', 'campanha', 'reel'];
 
 async function montarItem(tipo, { livro, imagem, max, peca }) {
   if (tipo === 'post') return buildPost(livro, imagem);
@@ -101,6 +102,7 @@ async function montarItem(tipo, { livro, imagem, max, peca }) {
   if (tipo === 'segredos') return buildSegredos(livro);
   if (tipo === 'reflexao') return buildReflexao(livro);
   if (tipo === 'campanha') return buildCampanha(peca);
+  if (tipo === 'reel') return buildReel(peca);
   return buildCarrossel(livro, Number(max) || 6);
 }
 
@@ -109,6 +111,16 @@ async function renderSlides(item) {
   if (item.tipo === 'story') {
     const html = storyHTML({ imagem: item.imagens[0], nome: item.nome, secao: item.secao, tema: item.tema });
     out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `${item.livro}-story.png` });
+  } else if (item.tipo === 'reel') {
+    // Frames verticais (1080x1920) para montar o reel no CapCut. Não publica.
+    let n = 0;
+    for (const f of item.frames) {
+      const tema = f.tema || item.tema;
+      const html = f.template === 'twist' ? reelTwistHTML({ ...f, tema })
+        : f.template === 'quiz' ? reelQuizHTML({ ...f, tema })
+        : reelCapaHTML({ ...f, tema });
+      out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `reel-${item.id}-${String(++n).padStart(2, '0')}.png` });
+    }
   } else if (item.tipo === 'campanha') {
     // Peça institucional: capa + cards, sem imagem de livro (só templates da marca).
     const cards = item.slides.filter((s) => s.template !== 'capa').length;
@@ -156,7 +168,7 @@ async function gerarPreview({ tipo, livro, imagem, max, peca, rotacao }) {
   const item = await montarItem(tipo, { livro, imagem, max, peca });
 
   const [legenda, slides] = await Promise.all([
-    tipo === 'story' ? Promise.resolve(null) : gerarLegenda(item),
+    (tipo === 'story' || tipo === 'reel') ? Promise.resolve(null) : gerarLegenda(item),
     renderSlides(item),
   ]);
   await fecharBrowser(); // libera a RAM do Chromium entre jobs
@@ -169,7 +181,7 @@ async function gerarPreview({ tipo, livro, imagem, max, peca, rotacao }) {
   });
 
   previews.set(id, {
-    id, tipo, livro: item.livro, nome: tipo === 'campanha' ? item.titulo : item.nome,
+    id, tipo, livro: item.livro, nome: (tipo === 'campanha' || tipo === 'reel') ? item.titulo : item.nome,
     caption: legenda ? montarCaption(legenda, item) : '',
     slides: salvos, rotacao: rotacao || null,
     criadoEm: Date.now(), publicado: false,
@@ -179,6 +191,7 @@ async function gerarPreview({ tipo, livro, imagem, max, peca, rotacao }) {
 }
 
 async function publicarPreview(p, captionFinal) {
+  if (p.tipo === 'reel') throw new Error('Frames de reel são só para download — monte o vídeo no CapCut.');
   const buffers = p.slides.map((s) => fs.readFileSync(s.caminho));
   const urls = await Promise.all(buffers.map((b, i) => hospedar(b, p.slides[i].filename)));
 
@@ -258,6 +271,10 @@ app.get('/api/campanha', exigirToken, (_req, res) => {
   res.json({ ok: true, pecas: listarCampanha() });
 });
 
+app.get('/api/reels', exigirToken, (_req, res) => {
+  res.json({ ok: true, roteiros: listarReels() });
+});
+
 app.post('/api/preview', exigirToken, async (req, res) => {
   const { tipo, livro, imagem, max, proximo, peca } = req.body || {};
   try {
@@ -267,8 +284,8 @@ app.post('/api/preview', exigirToken, async (req, res) => {
       alvo = { tipo: tipo || ag.formatos[0] || 'carrossel', livro: ag.livro, max, rotacao: { indice: ag.indice, total: ag.total } };
     }
     if (!FORMATOS.includes(alvo.tipo)) return res.status(400).json({ ok: false, erro: `tipo inválido: ${alvo.tipo}` });
-    if (alvo.tipo === 'campanha') {
-      if (!alvo.peca) return res.status(400).json({ ok: false, erro: 'Informe a peça da campanha.' });
+    if (alvo.tipo === 'campanha' || alvo.tipo === 'reel') {
+      if (!alvo.peca) return res.status(400).json({ ok: false, erro: alvo.tipo === 'reel' ? 'Informe o roteiro do reel.' : 'Informe a peça da campanha.' });
     } else if (!alvo.livro) {
       return res.status(400).json({ ok: false, erro: 'Informe o livro.' });
     }

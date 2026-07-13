@@ -8,6 +8,7 @@
 //   node cli.js carrossel --livro jonas [--max 6] [--dry-run]
 //   node cli.js proximo   [--formato X] [--dry-run]           # agenda da semana (cron)
 //   node cli.js campanha  [--peca <id>] [--dry-run]           # campanha institucional (pitch)
+//   node cli.js reel      [--roteiro <id>]                    # exporta frames de reel p/ ./out (CapCut)
 //
 // --dry-run: só gera os PNGs em ./out e imprime a legenda (não hospeda/publica).
 // ============================================================
@@ -15,7 +16,7 @@ import fs from 'fs';
 import path from 'path';
 import { OUT_DIR, cfg, TOKEN_FILE } from './config.js';
 import { buildPost, buildStory, buildCarrossel, buildSegredos, buildReflexao, listarLivros, acharLivro } from './content.js';
-import { slideHTML, storyHTML, versiculoHTML, cartaoHTML, campanhaCapaHTML, campanhaCartaoHTML } from './templates.js';
+import { slideHTML, storyHTML, versiculoHTML, cartaoHTML, campanhaCapaHTML, campanhaCartaoHTML, reelCapaHTML, reelTwistHTML, reelQuizHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { provedores } from './llm.js';
@@ -23,6 +24,7 @@ import { hospedar } from './host.js';
 import { publicarImagem, publicarStory, publicarCarrossel, refrescarToken, quemSou } from './instagram.js';
 import { agendaDoDia } from './agenda.js';
 import { buildCampanha, listarCampanha } from './campanha.js';
+import { buildReel, listarReels } from './reels.js';
 import { REMOTO, BASE, LIVROS, relativo, listarImagens } from './source.js';
 
 function parseArgs(argv) {
@@ -61,6 +63,16 @@ async function renderSlides(item) {
   if (item.tipo === 'story') {
     const html = storyHTML({ imagem: item.imagens[0], nome: item.nome, secao: item.secao, tema: item.tema });
     out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `${item.livro}-story.png` });
+  } else if (item.tipo === 'reel') {
+    // Frames verticais (1080x1920) para montar o reel no CapCut. Não publica.
+    let n = 0;
+    for (const f of item.frames) {
+      const tema = f.tema || item.tema;
+      const html = f.template === 'twist' ? reelTwistHTML({ ...f, tema })
+        : f.template === 'quiz' ? reelQuizHTML({ ...f, tema })
+        : reelCapaHTML({ ...f, tema });
+      out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `reel-${item.id}-${String(++n).padStart(2, '0')}.png` });
+    }
   } else if (item.tipo === 'campanha') {
     // Peça institucional: capa + cards, sem imagem de livro (só templates da marca).
     const cards = item.slides.filter((s) => s.template !== 'capa').length;
@@ -276,8 +288,28 @@ async function run() {
     return;
   }
 
+  if (cmd === 'reel') {
+    const roteiros = listarReels();
+    if (!args.roteiro) {
+      console.log('\n🎬 Roteiros de reel — frames 1080x1920 p/ montar no CapCut:\n');
+      for (const r of roteiros) console.log(`  ${r.id.padEnd(8)} ${r.titulo.padEnd(30)} ${r.frames} frames`);
+      console.log('\nExporte os frames com: node cli.js reel --roteiro <id>');
+      console.log('Roteiros e legendas completos em: prompt/reels-fase1.md\n');
+      return;
+    }
+    const item = buildReel(args.roteiro);
+    console.log(`\n🎬 Frames do reel "${item.titulo}" (1080x1920)`);
+    if (item.nota) console.log(`   ℹ  ${item.nota}`);
+    const frames = await renderSlides(item);
+    const salvos = frames.map((s) => salvar(s.buffer, s.filename));
+    await fecharBrowser();
+    console.log(`\n🖼  ${salvos.length} frames em ./out:\n${salvos.map((p) => '   ' + p).join('\n')}`);
+    console.log('\n✅ Monte o vídeo no CapCut com a trilha (ver prompt/reels-fase1.md). Reels não são publicados pelo pipeline.\n');
+    return;
+  }
+
   if (!FORMATOS.includes(cmd)) {
-    console.log('Comandos: config | whoami | diag | listar | post | story | carrossel | segredos | reflexao | proximo | campanha | refresh-token');
+    console.log('Comandos: config | whoami | diag | listar | post | story | carrossel | segredos | reflexao | proximo | campanha | reel | refresh-token');
     process.exit(1);
   }
   if (!args.livro) { console.error('Faltou --livro <pasta>. Ex: --livro jonas'); process.exit(1); }
