@@ -77,3 +77,5 @@ cypress/screenshots/
 # Arquivos do sistema
 
 books/
+
+.claude/
