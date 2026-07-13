@@ -162,7 +162,12 @@ export function storyHTML({ imagem, nome, secao, tema }) {
 export function versiculoHTML({ versiculo, referencia, texto, nome, secao, tema }) {
   const t = tema || TEMA_PADRAO;
   const w = 1080, h = 1080;
-  const explic = truncar(texto, 220);
+  // Cap de segurança bem folgado (só corta casos extremos); o encaixe normal
+  // vem do dimensionamento dinâmico da fonte conforme o tamanho do texto.
+  const explic = truncar(texto, 360);
+  const vLen = (versiculo || '').length;
+  const fVerse = vLen > 150 ? 40 : vLen > 100 ? 46 : vLen > 60 ? 52 : 58;
+  const fExplic = explic.length > 280 ? 22 : explic.length > 230 ? 23 : explic.length > 180 ? 24 : 26;
   return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
     .frame { justify-content: flex-start; }
     .label { z-index: 2; margin-top: 26px; font-size: 30px; font-weight: 800; color: #fcd34d; }
@@ -172,9 +177,9 @@ export function versiculoHTML({ versiculo, referencia, texto, nome, secao, tema 
     .mark { font-family: Georgia, 'Times New Roman', serif; font-size: 160px; line-height: .5;
       color: ${hexA(t.light, 0.35)}; height: 70px; }
     .verse { font-family: Georgia, 'Times New Roman', serif; font-style: italic;
-      font-size: 58px; font-weight: 700; line-height: 1.25; color: #fff; max-width: 900px; }
+      font-size: ${fVerse}px; font-weight: 700; line-height: 1.25; color: #fff; max-width: 900px; }
     .ref { margin-top: 28px; font-size: 34px; font-weight: 800; color: #f9a8d4; }
-    .explic { margin-top: 26px; font-size: 26px; line-height: 1.45; color: #e5e0f5; max-width: 860px; }
+    .explic { margin-top: 26px; font-size: ${fExplic}px; line-height: 1.45; color: #e5e0f5; max-width: 860px; }
     .foot { margin-top: 10px; }
   </style></head><body>
     <div class="frame">
