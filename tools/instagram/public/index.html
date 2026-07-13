@@ -131,6 +131,8 @@
           <button data-f="carrossel" class="ativo">Carrossel</button>
           <button data-f="post">Post</button>
           <button data-f="story">Story</button>
+          <button data-f="segredos">Segredos</button>
+          <button data-f="reflexao">Reflexão</button>
         </div>
       </div>
       <div class="campo">
@@ -199,8 +201,11 @@ async function entrar() {
 
 async function carregarTudo() {
   const [st, lv] = await Promise.all([api('/api/status'), api('/api/livros')]);
+  const conta = st.conta?.username
+    ? (st.conta.confere ? `publica em @${st.conta.username}` : `⚠ token de @${st.conta.username} ≠ IG_USER_ID!`)
+    : '⚠ conta não verificada';
   $('status').innerHTML = `<span class="dot ${st.ocupado ? 'busy' : ''}"></span>` +
-    `legendas: ${st.legendas.join(' → ') || 'offline'} · upload: ${st.upload ? 'ok' : '⚠ sem IG_UPLOAD'}`;
+    `${conta} · legendas: ${st.legendas.join(' → ') || 'offline'} · upload: ${st.upload ? 'ok' : '⚠ sem IG_UPLOAD'}`;
   $('btnProximo').textContent = st.rotacao
     ? `Próximo da rotação (${st.rotacao.proximo} · ${st.rotacao.posicao})`
     : 'Próximo da rotação';

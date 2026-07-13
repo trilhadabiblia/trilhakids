@@ -21,13 +21,13 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 
 import { OUT_DIR, cfg } from './config.js';
-import { buildPost, buildStory, buildCarrossel, listarLivros } from './content.js';
-import { slideHTML, storyHTML, versiculoHTML } from './templates.js';
+import { buildPost, buildStory, buildCarrossel, buildSegredos, buildReflexao, listarLivros } from './content.js';
+import { slideHTML, storyHTML, versiculoHTML, cartaoHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { provedores } from './llm.js';
 import { hospedar } from './host.js';
-import { publicarImagem, publicarStory, publicarCarrossel } from './instagram.js';
+import { publicarImagem, publicarStory, publicarCarrossel, quemSou } from './instagram.js';
 import { proximoLivro, avancar } from './agenda.js';
 import { REMOTO, BASE } from './source.js';
 
@@ -92,11 +92,13 @@ function limparPreviewsAntigos() {
 setInterval(limparPreviewsAntigos, 10 * 60 * 1000).unref();
 
 // ---------- Núcleo: montar item + renderizar (mesma lógica do cli.js) ----------
-const FORMATOS = ['post', 'story', 'carrossel'];
+const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao'];
 
 async function montarItem(tipo, { livro, imagem, max }) {
   if (tipo === 'post') return buildPost(livro, imagem);
   if (tipo === 'story') return buildStory(livro, imagem);
+  if (tipo === 'segredos') return buildSegredos(livro);
+  if (tipo === 'reflexao') return buildReflexao(livro);
   return buildCarrossel(livro, Number(max) || 6);
 }
 
@@ -105,6 +107,21 @@ async function renderSlides(item) {
   if (item.tipo === 'story') {
     const html = storyHTML({ imagem: item.imagens[0], nome: item.nome, secao: item.secao, tema: item.tema });
     out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `${item.livro}-story.png` });
+  } else if (item.tipo === 'segredos' || item.tipo === 'reflexao') {
+    // Carrossel só de texto: capa (imagem do livro) + 1 card de texto por item.
+    let n = 0;
+    const capaHtml = slideHTML({
+      imagem: item.capa, nome: item.nome, secao: item.secao,
+      label: '', texto: item.titulo, tema: item.tema,
+    });
+    out.push({ buffer: await renderHTML(capaHtml, 1080, 1080), filename: `${item.livro}-${item.tipo}-${++n}-capa.png` });
+    for (const c of item.cartoes) {
+      const html = cartaoHTML({
+        ...c, nome: item.nome, secao: item.secao, tema: item.tema,
+        contador: `${n}/${item.cartoes.length}`,
+      });
+      out.push({ buffer: await renderHTML(html, 1080, 1080), filename: `${item.livro}-${item.tipo}-${++n}.png` });
+    }
   } else {
     let n = 0;
     if (item.tipo === 'carrossel' && item.versiculo) {
@@ -179,6 +196,26 @@ function resumoPreview(p) {
 }
 
 // ---------- Rotas ----------
+// Cache do whoami (1 chamada à Graph API a cada 10 min, não a cada status).
+let contaCache = { valor: null, em: 0 };
+async function contaDoToken() {
+  if (Date.now() - contaCache.em < 10 * 60 * 1000) return contaCache.valor;
+  try {
+    const eu = await quemSou();
+    contaCache = {
+      em: Date.now(),
+      valor: {
+        username: eu.username,
+        userId: String(eu.user_id),
+        confere: !cfg.ig.userId || String(eu.user_id) === String(cfg.ig.userId),
+      },
+    };
+  } catch (e) {
+    contaCache = { em: Date.now(), valor: { erro: e.message } };
+  }
+  return contaCache.valor;
+}
+
 app.get('/api/status', exigirToken, async (_req, res) => {
   const mask = (v) => (v ? v.slice(0, 4) + '…' + v.slice(-2) : null);
   let rotacao = null;
@@ -191,6 +228,7 @@ app.get('/api/status', exigirToken, async (_req, res) => {
     ocupado,
     assets: REMOTO ? `remoto → ${BASE}` : 'local',
     ig: { userId: cfg.ig.userId || null, token: mask(cfg.ig.token) },
+    conta: await contaDoToken(),
     legendas: provedores(),
     upload: !!(cfg.upload.url && cfg.upload.token),
     rotacao,
@@ -257,7 +295,7 @@ app.delete('/api/preview/:id', exigirToken, (req, res) => {
 // UI estática (a página pede o token e guarda no navegador).
 app.use(express.static(path.join(here, 'public')));
 
-app.listen(PORT, '172.17.0.1', () => {
+app.listen(PORT, '127.0.0.1', () => {
   console.log(`✅ Trilho Kids → Instagram (web) em http://127.0.0.1:${PORT}`);
   console.log('   Exponha via Nginx com HTTPS; a porta não deve ser aberta no firewall.');
 });
