@@ -126,15 +126,15 @@ crontab -e
 # Renova o token todo dia 1º às 03:00 (mantém sempre válido)
 0 3 1 * * /home/USUARIO/trilhakids/tools/instagram/publicar.sh refresh-token >> /var/log/trilho-ig.log 2>&1
 
-# Carrossel do próximo livro da rotação — seg/qua/sex às 09:00
-0 9 * * 1,3,5 /home/USUARIO/trilhakids/tools/instagram/publicar.sh proximo --formato carrossel >> /var/log/trilho-ig.log 2>&1
-
-# Story do próximo livro — ter/qui às 18:00
-0 18 * * 2,4 /home/USUARIO/trilhakids/tools/instagram/publicar.sh proximo --formato story >> /var/log/trilho-ig.log 2>&1
+# Agenda editorial: um cron só, todos os dias às 09:00. O `proximo` já sabe o
+# livro da semana e o(s) formato(s) do dia (seg=carrossel, ter=story, qua=segredos,
+# sex=reflexão, sáb=post+story; qui/dom folgam e o comando sai sem publicar).
+0 9 * * * /home/USUARIO/trilhakids/tools/instagram/publicar.sh proximo >> /var/log/trilho-ig.log 2>&1
 ```
 
-O `publicar.sh` carrega o `.vps-env` sozinho. `proximo` percorre os livros na ordem
-canônica (estado em `agenda.json`) e só avança quando publica com sucesso.
+O `publicar.sh` carrega o `.vps-env` sozinho. `proximo` trabalha **um livro por
+semana** (rotação determinística pela data, âncora em `agenda.json`) e publica o
+formato agendado para o dia. Force um formato pontual com `--formato <tipo>`.
 
 ## Solução de problemas
 

@@ -118,8 +118,14 @@ node cli.js story     --livro jonas
 node cli.js segredos  --livro isaias
 node cli.js reflexao  --livro isaias
 
-# Rotação automática (para o cron): publica o PRÓXIMO livro da sequência
-node cli.js proximo --formato carrossel   # aceita: carrossel | segredos | reflexao | post | story
+# Agenda da semana (para o cron): 1 livro/semana, formato conforme o dia
+#   seg=carrossel · ter=story · qua=segredos · sex=reflexão · sáb=post+story (qui/dom folgam)
+node cli.js proximo                        # publica o(s) formato(s) agendado(s) para hoje
+node cli.js proximo --formato carrossel    # força um formato: carrossel | segredos | reflexao | post | story
+
+# Campanha institucional (não é por livro — apresenta o projeto, a partir do pitch)
+node cli.js campanha                       # lista as peças
+node cli.js campanha --peca demonstracao   # gera/publica uma peça
 ```
 
 ### Formatos
@@ -131,10 +137,17 @@ node cli.js proximo --formato carrossel   # aceita: carrossel | segredos | refle
 | `carrossel` | versículo + slides das seções (bullets determinísticos por seção) |
 | `segredos` | capa + 1 card por "segredo" do modal (título + poema + versículo) |
 | `reflexao` | capa + "Perguntas para Pensar" + "Desafio da Semana" |
+| `campanha` | carrossel institucional on-brand (capa + cards), a partir do pitch |
 
 > `segredos` e `reflexao` são carrosséis **só de texto** (extraídos deterministicamente
 > da página), abertos pela capa do livro. Se a página do livro não tiver essas seções,
 > o comando avisa e não gera nada.
+
+> **Campanha institucional** (`campanha.js`): peças de marketing fixas para quem *decide*
+> (líderes de ministério, escolas cristãs), derivadas do `bio/pitch.html` — não puxam
+> material de livro. Cada peça é um carrossel on-brand com legenda/hashtags prontas e CTA
+> para a bio. Peças: `problema`, `solucao`, `apostila`, `gamificacao`, `instituicoes`,
+> `demonstracao`. No web app aparecem no formato **Campanha** (seletor de peça).
 
 > **Publicação via `graph.instagram.com`** (Instagram Business Login), o mesmo host do
 > `InstagramClient.php` do devocional — compatível com o token `IGAA…`. Ajuste com `IG_GRAPH_HOST` se precisar.

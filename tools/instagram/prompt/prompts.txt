@@ -1,0 +1,37 @@
+PROMPT 1
+
+Atue como um estrategista sênior de crescimento no Instagram. Analise meu nicho, identifique os 7 padrões de conteúdo mais saturados e crie 10 ideias de posts que quebrem esses padrões sem perder aderência ao algoritmo. Para cada ideia, traga: conceito, hook, formato ideal, por que parece nova e por que geraria salvamentos ou compartilhamentos.
+
+Nicho: [NICHO]
+Público: [PÚBLICO]
+Objetivo: [OBJETIVO]
+
+PROMPT 2
+
+Atue como estrategista de conteúdo para Instagram. Analise 5 concorrentes da ideia abaixo e identifique: posicionamento, temas recorrentes, formatos, hooks, diferenciais, pontos fracos e oportunidades pouco exploradas. Ao final, liste 5 recomendações práticas para criar conteúdo mais forte e distinto.
+
+Ideia: [IDEIA]
+Concorrentes: [CONCORRENTES]
+Público: [PÚBLICO]
+Objetivo: [OBJETIVO]
+
+PROMPT 3
+
+Atue como estrategista de Instagram e analise a bio abaixo em texto corrido, avaliando a clareza do posicionamento, o público percebido, a força da promessa, a credibilidade, a qualidade do CTA e os pontos confusos ou genéricos.
+
+Depois, crie 3 versões melhores da bio, curtas, específicas e adequadas ao limite do Instagram.
+
+Bio atual: [BIO]
+Público: [PÚBLICO]
+Objetivo: [OBJETIVO]
+
+PROMPT 4
+
+Atue como estrategista de conteúdo para Instagram. Analise o texto abaixo e identifique onde a atenção cai, quais trechos estão genéricos, repetitivos ou fracos e o que reduz o potencial de retenção, salvamentos e compartilhamentos.
+
+Em seguida, apresente uma versão revisada, mais clara, envolvente e natural, mantendo a voz original.
+
+Conteúdo: [COLE O TEXTO]
+Voz: [VOZ]
+Público: [PÚBLICO]
+Objetivo: [OBJETIVO]

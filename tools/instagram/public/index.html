@@ -133,11 +133,16 @@
           <button data-f="story">Story</button>
           <button data-f="segredos">Segredos</button>
           <button data-f="reflexao">Reflexão</button>
+          <button data-f="campanha">Campanha</button>
         </div>
       </div>
-      <div class="campo">
+      <div class="campo" id="campoLivro">
         <label for="livro">Livro</label>
         <select id="livro"></select>
+      </div>
+      <div class="campo" id="campoPeca" style="display:none">
+        <label for="peca">Peça da campanha</label>
+        <select id="peca"></select>
       </div>
       <div class="campo" id="campoMax">
         <label for="max">Slides (2–10)</label>
@@ -200,18 +205,22 @@ async function entrar() {
 }
 
 async function carregarTudo() {
-  const [st, lv] = await Promise.all([api('/api/status'), api('/api/livros')]);
+  const [st, lv, cp] = await Promise.all([api('/api/status'), api('/api/livros'), api('/api/campanha')]);
   const conta = st.conta?.username
     ? (st.conta.confere ? `publica em @${st.conta.username}` : `⚠ token de @${st.conta.username} ≠ IG_USER_ID!`)
     : '⚠ conta não verificada';
   $('status').innerHTML = `<span class="dot ${st.ocupado ? 'busy' : ''}"></span>` +
     `${conta} · legendas: ${st.legendas.join(' → ') || 'offline'} · upload: ${st.upload ? 'ok' : '⚠ sem IG_UPLOAD'}`;
-  $('btnProximo').textContent = st.rotacao
-    ? `Próximo da rotação (${st.rotacao.proximo} · ${st.rotacao.posicao})`
+  const rot = st.rotacao;
+  $('btnProximo').textContent = rot
+    ? `Próximo da rotação (${rot.proximo} · ${rot.posicao}` +
+      (rot.formatos?.length ? ` · ${rot.dia}: ${rot.formatos.join('+')})` : ` · ${rot.dia}: sem post)`)
     : 'Próximo da rotação';
   const sel = $('livro');
   sel.innerHTML = lv.livros.map((l) =>
     `<option value="${l.pasta}">${l.nome} — ${l.imagens ?? '?'} imgs (${l.secao})</option>`).join('');
+  $('peca').innerHTML = (cp.pecas || []).map((p) =>
+    `<option value="${p.id}">${p.titulo} — ${p.slides} slides</option>`).join('');
 }
 
 document.querySelectorAll('#formatos button').forEach((b) => {
@@ -219,7 +228,11 @@ document.querySelectorAll('#formatos button').forEach((b) => {
     document.querySelectorAll('#formatos button').forEach((x) => x.classList.remove('ativo'));
     b.classList.add('ativo');
     formato = b.dataset.f;
+    const ehCampanha = formato === 'campanha';
     $('campoMax').style.display = formato === 'carrossel' ? '' : 'none';
+    $('campoLivro').style.display = ehCampanha ? 'none' : '';
+    $('campoPeca').style.display = ehCampanha ? '' : 'none';
+    $('btnProximo').style.display = ehCampanha ? 'none' : '';
   };
 });
 
@@ -231,7 +244,9 @@ async function gerarPreview(usarProximo) {
   try {
     const body = usarProximo
       ? { proximo: true, tipo: formato, max: Number($('max').value) }
-      : { tipo: formato, livro: $('livro').value, max: Number($('max').value) };
+      : formato === 'campanha'
+        ? { tipo: 'campanha', peca: $('peca').value }
+        : { tipo: formato, livro: $('livro').value, max: Number($('max').value) };
     const { preview } = await api('/api/preview', { method: 'POST', body: JSON.stringify(body) });
     mostrarPreview(preview);
   } catch (e) {
@@ -248,7 +263,7 @@ function mostrarPreview(p) {
   $('btnPublicar').disabled = false;
   $('metaPreview').textContent =
     `${p.tipo.toUpperCase()} · ${p.nome} · ${p.slides.length} slide(s)` +
-    (p.rotacao ? ` · rotação ${p.rotacao.indice}/${p.rotacao.total} (avança ao publicar)` : '');
+    (p.rotacao ? ` · semana ${p.rotacao.indice}/${p.rotacao.total} (rotação semanal)` : '');
   $('slides').innerHTML = p.slides.map((s, i) =>
     `<figure class="slide"><img src="${s.url}?t=${encodeURIComponent(TOKEN)}" alt="Slide ${i + 1}"><span>${i + 1} · ${s.nome}</span></figure>`
   ).join('');

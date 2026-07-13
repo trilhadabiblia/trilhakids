@@ -6,7 +6,8 @@
 //   node cli.js post      --livro jonas [--imagem curiosidade] [--dry-run]
 //   node cli.js story     --livro jonas [--dry-run]
 //   node cli.js carrossel --livro jonas [--max 6] [--dry-run]
-//   node cli.js proximo   [--formato carrossel] [--dry-run]   # rotação (cron)
+//   node cli.js proximo   [--formato X] [--dry-run]           # agenda da semana (cron)
+//   node cli.js campanha  [--peca <id>] [--dry-run]           # campanha institucional (pitch)
 //
 // --dry-run: só gera os PNGs em ./out e imprime a legenda (não hospeda/publica).
 // ============================================================
@@ -14,13 +15,14 @@ import fs from 'fs';
 import path from 'path';
 import { OUT_DIR, cfg, TOKEN_FILE } from './config.js';
 import { buildPost, buildStory, buildCarrossel, buildSegredos, buildReflexao, listarLivros, acharLivro } from './content.js';
-import { slideHTML, storyHTML, versiculoHTML, cartaoHTML } from './templates.js';
+import { slideHTML, storyHTML, versiculoHTML, cartaoHTML, campanhaCapaHTML, campanhaCartaoHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { provedores } from './llm.js';
 import { hospedar } from './host.js';
 import { publicarImagem, publicarStory, publicarCarrossel, refrescarToken, quemSou } from './instagram.js';
-import { proximoLivro, avancar } from './agenda.js';
+import { agendaDoDia } from './agenda.js';
+import { buildCampanha, listarCampanha } from './campanha.js';
 import { REMOTO, BASE, LIVROS, relativo, listarImagens } from './source.js';
 
 function parseArgs(argv) {
@@ -45,11 +47,12 @@ function salvar(buffer, nome) {
 
 const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao'];
 
-async function montarItem(tipo, { livro, imagem, max }) {
+async function montarItem(tipo, { livro, imagem, max, peca }) {
   if (tipo === 'post') return buildPost(livro, imagem);
   if (tipo === 'story') return buildStory(livro, imagem);
   if (tipo === 'segredos') return buildSegredos(livro);
   if (tipo === 'reflexao') return buildReflexao(livro);
+  if (tipo === 'campanha') return buildCampanha(peca);
   return buildCarrossel(livro, Number(max) || 6);
 }
 
@@ -58,6 +61,16 @@ async function renderSlides(item) {
   if (item.tipo === 'story') {
     const html = storyHTML({ imagem: item.imagens[0], nome: item.nome, secao: item.secao, tema: item.tema });
     out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `${item.livro}-story.png` });
+  } else if (item.tipo === 'campanha') {
+    // Peça institucional: capa + cards, sem imagem de livro (só templates da marca).
+    const cards = item.slides.filter((s) => s.template !== 'capa').length;
+    let n = 0, c = 0;
+    for (const s of item.slides) {
+      const html = s.template === 'capa'
+        ? campanhaCapaHTML({ ...s, tema: item.tema })
+        : campanhaCartaoHTML({ ...s, tema: item.tema, contador: `${++c}/${cards}` });
+      out.push({ buffer: await renderHTML(html, 1080, 1080), filename: `campanha-${item.id}-${++n}.png` });
+    }
   } else if (item.tipo === 'segredos' || item.tipo === 'reflexao') {
     // Carrossel só de texto: capa (imagem do livro) + 1 card de texto por item.
     let n = 0;
@@ -96,7 +109,7 @@ async function renderSlides(item) {
 // Fluxo completo de um formato. Retorna o media_id (ou null em dry-run).
 async function fluxo(tipo, opts) {
   const item = await montarItem(tipo, opts);
-  const nItens = item.imagens?.length ?? item.cartoes?.length ?? 0;
+  const nItens = item.imagens?.length ?? item.cartoes?.length ?? item.slides?.length ?? 0;
   console.log(`\n▶ ${tipo.toUpperCase()} — ${item.nome} (${nItens} ${item.imagens ? 'imagem/ns' : 'cards'})`);
 
   // Legenda (Anthropic) e render (Puppeteer) são independentes → em paralelo.
@@ -104,7 +117,7 @@ async function fluxo(tipo, opts) {
     tipo === 'story' ? Promise.resolve(null) : gerarLegenda(item),
     renderSlides(item),
   ]);
-  const caption = legenda ? montarCaption(legenda) : '';
+  const caption = legenda ? montarCaption(legenda, item) : '';
   if (caption) console.log(`\n📝 Legenda:\n${caption}\n`);
 
   const salvos = slides.map((s) => salvar(s.buffer, s.filename));
@@ -231,24 +244,40 @@ async function run() {
   const dryRun = !!args['dry-run'];
 
   if (cmd === 'proximo') {
-    const formato = args.formato || 'carrossel';
-    if (!FORMATOS.includes(formato)) {
-      console.error(`--formato inválido: ${formato}`); process.exit(1);
+    // Agenda da semana: o livro roda semanalmente (por data) e os formatos
+    // saem conforme o dia. `--formato X` força um formato específico.
+    const ag = await agendaDoDia();
+    if (args.formato && !FORMATOS.includes(args.formato)) {
+      console.error(`--formato inválido: ${args.formato}`); process.exit(1);
     }
-    const { livro, nome, indice, total } = await proximoLivro();
-    console.log(`\n🗓  Rotação ${indice + 1}/${total}: ${nome} (${formato})`);
-    await fluxo(formato, { livro, max: args.max, dryRun });
-    if (!dryRun) {
-      const prox = avancar(indice, total);
-      console.log(`↻ Próximo da rotação: índice ${prox}/${total}\n`);
-    } else {
-      console.log('(dry-run: rotação não avançou)\n');
+    const formatos = args.formato ? [args.formato] : ag.formatos;
+    if (!formatos.length) {
+      console.log(`\n🗓  ${ag.dia}: sem publicação agendada para ${ag.nome} (livro ${ag.indice + 1}/${ag.total}). Grade: seg/ter/qua/sex/sáb.\n`);
+      return;
     }
+    console.log(`\n🗓  Semana ${ag.indice + 1}/${ag.total}: ${ag.nome} — ${ag.dia}: ${formatos.join(' + ')}`);
+    for (const formato of formatos) {
+      await fluxo(formato, { livro: ag.livro, max: args.max, dryRun });
+    }
+    if (dryRun) console.log('(dry-run: nada foi publicado)\n');
+    return;
+  }
+
+  if (cmd === 'campanha') {
+    const pecas = listarCampanha();
+    if (!args.peca) {
+      console.log('\n📣 Peças da campanha institucional (a partir do pitch):\n');
+      for (const p of pecas) console.log(`  ${p.id.padEnd(16)} ${p.titulo.padEnd(22)} ${p.slides} slides`);
+      console.log('\nGere com: node cli.js campanha --peca <id> [--dry-run]\n');
+      return;
+    }
+    console.log(`\n📣 Campanha — peça "${args.peca}"`);
+    await fluxo('campanha', { peca: args.peca, dryRun });
     return;
   }
 
   if (!FORMATOS.includes(cmd)) {
-    console.log('Comandos: config | whoami | diag | listar | post | story | carrossel | segredos | reflexao | proximo | refresh-token');
+    console.log('Comandos: config | whoami | diag | listar | post | story | carrossel | segredos | reflexao | proximo | campanha | refresh-token');
     process.exit(1);
   }
   if (!args.livro) { console.error('Faltou --livro <pasta>. Ex: --livro jonas'); process.exit(1); }

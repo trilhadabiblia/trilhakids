@@ -22,13 +22,14 @@ import { fileURLToPath } from 'url';
 
 import { OUT_DIR, cfg } from './config.js';
 import { buildPost, buildStory, buildCarrossel, buildSegredos, buildReflexao, listarLivros } from './content.js';
-import { slideHTML, storyHTML, versiculoHTML, cartaoHTML } from './templates.js';
+import { slideHTML, storyHTML, versiculoHTML, cartaoHTML, campanhaCapaHTML, campanhaCartaoHTML } from './templates.js';
 import { renderHTML, fecharBrowser } from './render.js';
 import { gerarLegenda, montarCaption } from './caption.js';
 import { provedores } from './llm.js';
 import { hospedar } from './host.js';
 import { publicarImagem, publicarStory, publicarCarrossel, quemSou } from './instagram.js';
-import { proximoLivro, avancar } from './agenda.js';
+import { agendaDoDia } from './agenda.js';
+import { buildCampanha, listarCampanha } from './campanha.js';
 import { REMOTO, BASE } from './source.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -92,13 +93,14 @@ function limparPreviewsAntigos() {
 setInterval(limparPreviewsAntigos, 10 * 60 * 1000).unref();
 
 // ---------- Núcleo: montar item + renderizar (mesma lógica do cli.js) ----------
-const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao'];
+const FORMATOS = ['post', 'story', 'carrossel', 'segredos', 'reflexao', 'campanha'];
 
-async function montarItem(tipo, { livro, imagem, max }) {
+async function montarItem(tipo, { livro, imagem, max, peca }) {
   if (tipo === 'post') return buildPost(livro, imagem);
   if (tipo === 'story') return buildStory(livro, imagem);
   if (tipo === 'segredos') return buildSegredos(livro);
   if (tipo === 'reflexao') return buildReflexao(livro);
+  if (tipo === 'campanha') return buildCampanha(peca);
   return buildCarrossel(livro, Number(max) || 6);
 }
 
@@ -107,6 +109,16 @@ async function renderSlides(item) {
   if (item.tipo === 'story') {
     const html = storyHTML({ imagem: item.imagens[0], nome: item.nome, secao: item.secao, tema: item.tema });
     out.push({ buffer: await renderHTML(html, 1080, 1920), filename: `${item.livro}-story.png` });
+  } else if (item.tipo === 'campanha') {
+    // Peça institucional: capa + cards, sem imagem de livro (só templates da marca).
+    const cards = item.slides.filter((s) => s.template !== 'capa').length;
+    let n = 0, c = 0;
+    for (const s of item.slides) {
+      const html = s.template === 'capa'
+        ? campanhaCapaHTML({ ...s, tema: item.tema })
+        : campanhaCartaoHTML({ ...s, tema: item.tema, contador: `${++c}/${cards}` });
+      out.push({ buffer: await renderHTML(html, 1080, 1080), filename: `campanha-${item.id}-${++n}.png` });
+    }
   } else if (item.tipo === 'segredos' || item.tipo === 'reflexao') {
     // Carrossel só de texto: capa (imagem do livro) + 1 card de texto por item.
     let n = 0;
@@ -140,8 +152,8 @@ async function renderSlides(item) {
   return out;
 }
 
-async function gerarPreview({ tipo, livro, imagem, max, rotacao }) {
-  const item = await montarItem(tipo, { livro, imagem, max });
+async function gerarPreview({ tipo, livro, imagem, max, peca, rotacao }) {
+  const item = await montarItem(tipo, { livro, imagem, max, peca });
 
   const [legenda, slides] = await Promise.all([
     tipo === 'story' ? Promise.resolve(null) : gerarLegenda(item),
@@ -157,8 +169,8 @@ async function gerarPreview({ tipo, livro, imagem, max, rotacao }) {
   });
 
   previews.set(id, {
-    id, tipo, livro: item.livro, nome: item.nome,
-    caption: legenda ? montarCaption(legenda) : '',
+    id, tipo, livro: item.livro, nome: tipo === 'campanha' ? item.titulo : item.nome,
+    caption: legenda ? montarCaption(legenda, item) : '',
     slides: salvos, rotacao: rotacao || null,
     criadoEm: Date.now(), publicado: false,
   });
@@ -175,9 +187,8 @@ async function publicarPreview(p, captionFinal) {
   else if (p.tipo === 'post') mediaId = await publicarImagem({ imageUrl: urls[0], caption: captionFinal });
   else mediaId = await publicarCarrossel({ imageUrls: urls, caption: captionFinal });
 
-  // Se o preview veio da rotação ("proximo"), avança o agenda.json.
-  if (p.rotacao) avancar(p.rotacao.indice, p.rotacao.total);
-
+  // A rotação de livro é semanal e determinística por data (agenda.js) —
+  // não há estado a "avançar" ao publicar.
   p.publicado = true;
   p.mediaId = mediaId;
   return mediaId;
@@ -220,8 +231,8 @@ app.get('/api/status', exigirToken, async (_req, res) => {
   const mask = (v) => (v ? v.slice(0, 4) + '…' + v.slice(-2) : null);
   let rotacao = null;
   try {
-    const { nome, indice, total } = await proximoLivro();
-    rotacao = { proximo: nome, posicao: `${indice + 1}/${total}` };
+    const ag = await agendaDoDia();
+    rotacao = { proximo: ag.nome, posicao: `${ag.indice + 1}/${ag.total}`, dia: ag.dia, formatos: ag.formatos };
   } catch { /* sem livros */ }
   res.json({
     ok: true,
@@ -243,16 +254,24 @@ app.get('/api/livros', exigirToken, async (_req, res) => {
   }
 });
 
+app.get('/api/campanha', exigirToken, (_req, res) => {
+  res.json({ ok: true, pecas: listarCampanha() });
+});
+
 app.post('/api/preview', exigirToken, async (req, res) => {
-  const { tipo, livro, imagem, max, proximo } = req.body || {};
+  const { tipo, livro, imagem, max, proximo, peca } = req.body || {};
   try {
-    let alvo = { tipo, livro, imagem, max, rotacao: null };
+    let alvo = { tipo, livro, imagem, max, peca, rotacao: null };
     if (proximo) {
-      const r = await proximoLivro();
-      alvo = { tipo: tipo || 'carrossel', livro: r.livro, max, rotacao: { indice: r.indice, total: r.total } };
+      const ag = await agendaDoDia();
+      alvo = { tipo: tipo || ag.formatos[0] || 'carrossel', livro: ag.livro, max, rotacao: { indice: ag.indice, total: ag.total } };
     }
     if (!FORMATOS.includes(alvo.tipo)) return res.status(400).json({ ok: false, erro: `tipo inválido: ${alvo.tipo}` });
-    if (!alvo.livro) return res.status(400).json({ ok: false, erro: 'Informe o livro.' });
+    if (alvo.tipo === 'campanha') {
+      if (!alvo.peca) return res.status(400).json({ ok: false, erro: 'Informe a peça da campanha.' });
+    } else if (!alvo.livro) {
+      return res.status(400).json({ ok: false, erro: 'Informe o livro.' });
+    }
 
     const p = await enfileirar(() => gerarPreview(alvo));
     res.json({ ok: true, preview: resumoPreview(p) });

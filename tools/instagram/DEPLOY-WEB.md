@@ -74,8 +74,8 @@ Abra `https://ig.trilhokids.com.br`, informe o `WEB_TOKEN` e:
 1. **Gerar preview** — escolha formato + livro (ou "Próximo da rotação"). Equivale ao
    `--dry-run`: renderiza os PNGs e a legenda, nada é publicado.
 2. **Revisar** — os slides aparecem lado a lado; a legenda é **editável**.
-3. **Publicar** — hospeda no `ig_upload.php` e publica via Graph API. Se o preview
-   veio da rotação, o `agenda.json` avança automaticamente (o cron continua em dia).
+3. **Publicar** — hospeda no `ig_upload.php` e publica via Graph API. "Próximo da
+   rotação" usa o livro da semana e o formato do dia (mesma agenda do cron).
 
 ## Notas de operação
 
@@ -83,7 +83,7 @@ Abra `https://ig.trilhokids.com.br`, informe o `WEB_TOKEN` e:
   disputar RAM com o WAHA na KVM. Requisições simultâneas aguardam na fila.
 - **Chromium**: fecha ao fim de cada geração (mesmo padrão do `cli.js`).
 - **Previews expiram em 1 h** (PNGs temporários em `out/` são apagados).
-- **Cron continua funcionando** normalmente — a web usa o mesmo `agenda.json`,
-  então rotação manual e agendada não se atropelam (mas evite publicar pela web
-  no exato horário do cron).
+- **Cron continua funcionando** normalmente — a web usa a mesma agenda (livro da
+  semana por data + formato do dia), então rotação manual e agendada mostram o
+  mesmo alvo (mas evite publicar pela web no exato horário do cron).
 - **Proteção anti-duplicidade**: um preview só pode ser publicado uma vez.

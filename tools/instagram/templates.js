@@ -197,6 +197,88 @@ export function versiculoHTML({ versiculo, referencia, texto, nome, secao, tema 
   </body></html>`;
 }
 
+// ============================================================
+// Campanha institucional (a partir do pitch): cards on-brand SEM imagem de
+// livro. Badge com texto livre (não a seção bíblica) e rodapé/CTA próprio.
+// ============================================================
+
+// Rodapé compartilhado das peças de campanha (CTA à esquerda + @ à direita).
+function rodapeCampanha(rodape) {
+  return `<div class="foot">
+    <div class="cta">${esc(rodape || 'Conheça o Trilho Kids')}</div>
+    <div class="pill">${HANDLE}</div>
+  </div>`;
+}
+
+// Capa da peça (1080x1080): badge + título grande + subtítulo + números.
+export function campanhaCapaHTML({ pill, titulo, subtitulo, stats, rodape, tema }) {
+  const t = tema || TEMA_PADRAO;
+  const w = 1080, h = 1080;
+  const chips = Array.isArray(stats) ? stats : [];
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
+    .hero { z-index: 2; flex: 1; display: flex; flex-direction: column; justify-content: center; }
+    .htitle { font-size: 72px; font-weight: 900; line-height: 1.1; margin: 20px 0 18px; }
+    .hsub { font-size: 34px; font-weight: 600; line-height: 1.35; color: #e5e0f5; max-width: 900px; }
+    .stats { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 40px; }
+    .stat { background: ${hexA(t.to, 0.18)}; border: 1px solid ${hexA(t.light, 0.5)};
+      border-radius: 18px; padding: 18px 26px; text-align: center; min-width: 150px; }
+    .stat .v { font-size: 52px; font-weight: 900; color: ${t.light}; line-height: 1; }
+    .stat .l { font-size: 24px; font-weight: 600; color: #cfc6ee; margin-top: 6px; }
+    .foot .cta { font-size: 30px; font-weight: 800; color: #fff; }
+  </style></head><body>
+    <div class="frame">
+      <div class="glow"></div>
+      ${marca()}
+      <div class="hero">
+        <div class="badge" style="align-self:flex-start">${esc(pill)}</div>
+        <div class="htitle">${esc(titulo)}</div>
+        ${subtitulo ? `<div class="hsub">${esc(subtitulo)}</div>` : ''}
+        ${chips.length ? `<div class="stats">${chips.map((s) =>
+          `<div class="stat"><div class="v">${esc(s.valor)}</div><div class="l">${esc(s.rotulo)}</div></div>`).join('')}</div>` : ''}
+      </div>
+      ${rodapeCampanha(rodape)}
+    </div>
+  </body></html>`;
+}
+
+// Card de conteúdo da peça (1080x1080): badge + título + corpo OU bullets.
+export function campanhaCartaoHTML({ pill, titulo, corpo, pontos, rodape, contador, tema }) {
+  const t = tema || TEMA_PADRAO;
+  const w = 1080, h = 1080;
+  const bullets = Array.isArray(pontos) ? pontos.filter(Boolean) : [];
+  const len = (corpo || '').length;
+  const fCorpo = len > 340 ? 38 : len > 220 ? 44 : 50;
+  const fPonto = bullets.length >= 4 ? 32 : bullets.length === 3 ? 36 : 40;
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${baseCSS(w, h, t)}
+    .frame { justify-content: flex-start; }
+    .cardtitle { z-index: 2; margin-top: 22px; font-size: 56px; font-weight: 900;
+      line-height: 1.12; color: #fff; }
+    .body { z-index: 2; flex: 1; display: flex; align-items: center; }
+    .body p { font-size: ${fCorpo}px; line-height: 1.4; color: #f3f0ff;
+      white-space: pre-line; font-weight: 600; }
+    .pontos { z-index: 2; flex: 1; list-style: none; display: flex; flex-direction: column;
+      justify-content: center; gap: 14px; }
+    .pontos li { font-size: ${fPonto}px; font-weight: 700; line-height: 1.2; color: #fff;
+      background: ${hexA(t.to, 0.20)}; border-left: 6px solid ${t.light};
+      padding: 16px 22px; border-radius: 14px; }
+    .foot .cta { font-size: 28px; font-weight: 800; color: #fff; }
+    .count { z-index: 2; position: absolute; top: 64px; right: 64px;
+      font-size: 26px; font-weight: 800; color: ${hexA(t.light, 0.9)}; }
+  </style></head><body>
+    <div class="frame">
+      <div class="glow"></div>
+      ${marca()}
+      ${contador ? `<div class="count">${contador}</div>` : ''}
+      <div class="badge">${esc(pill)}</div>
+      ${titulo ? `<div class="cardtitle">${esc(titulo)}</div>` : ''}
+      ${bullets.length
+        ? `<ul class="pontos">${bullets.map((p) => `<li>${esc(p)}</li>`).join('')}</ul>`
+        : `<div class="body"><p>${esc(corpo)}</p></div>`}
+      ${rodapeCampanha(rodape)}
+    </div>
+  </body></html>`;
+}
+
 // Card de texto genérico (1080x1080) para carrosséis extras (segredos,
 // perguntas, desafios). Estrutura: sobrancelha + título + corpo (multilinha)
 // + rodapé opcional (versículo). Fonte do corpo escala com o tamanho do texto.

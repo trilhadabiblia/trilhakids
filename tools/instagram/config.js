@@ -86,6 +86,14 @@ export const cfg = {
   anthropicKey: val('ANTHROPIC_API_KEY'),
   captionModel: val('CAPTION_MODEL') || 'claude-opus-4-8',
   handle: val('IG_HANDLE') || '@portaltrilhokids',
+  // CTA anexado às legendas (posts/carrosséis). O link não fica clicável no feed
+  // do Instagram, mas /bio é nosso → os UTMs deixam medir no portal quanto tráfego
+  // cada post/livro gera. Desative com IG_CTA=0; troque o destino com IG_CTA_URL.
+  cta: {
+    ativo: val('IG_CTA') !== '0',
+    url: val('IG_CTA_URL') || 'trilhokids.com.br/bio',
+    utmSource: val('IG_UTM_SOURCE') || 'instagram',
+  },
   // Origem dos assets dos livros (HTML + imagens). Na VPS (sem repo local) o
   // pipeline puxa deste host; localmente usa o disco. Force com TRILHO_SOURCE_BASE.
   sourceBase: val('TRILHO_SOURCE_BASE') || 'https://www.trilhokids.com.br',
